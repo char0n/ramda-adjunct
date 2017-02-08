@@ -16,18 +16,22 @@
     "test": "mocha --reporter spec",
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
-    "lint:fix": "better-npm-run lint:fix"
+    "lint:fix": "better-npm-run lint:fix",
+    "changelog": "better-npm-run changelog"
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json",
     "lint": "eslint ./",
-    "lint:fix": "eslint ./ --fix"
+    "lint:fix": "eslint ./ --fix",
+    "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s -r 0"
   },
+  "readme": "README.md",
   "dependencies": {
     "ramda": "=0.23.0"
   },
   "devDependencies": {
     "better-npm-run": "=0.0.14",
+    "conventional-changelog-cli": "=1.2.0",
     "docdash": "git+https://github.com/char0n/docdash.git#b831a5c746b36373ca44d6f0297c5621e34c7fc1",
     "eslint": "=3.15.0",
     "eslint-config-airbnb": "=14.1.0",
