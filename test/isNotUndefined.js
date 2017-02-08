@@ -1,3 +1,5 @@
+'use strict';
+
 const RA = require('../src/index');
 const eq = require('./shared/eq');
 

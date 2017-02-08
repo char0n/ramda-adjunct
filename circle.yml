@@ -3,8 +3,7 @@ machine:
     version: 6.9.5
 
 test:
-  pre:
-    - npm run docs
   override:
+    - npm run docs
     - npm run lint
     - npm run test
