@@ -12,6 +12,9 @@
     "url": "git://github.com/char0n/ramda-adjunct.git"
   },
   "main": "./src/index.js",
+  "engines":{
+    "node" : ">=6.9.5"
+  },
   "scripts": {
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
