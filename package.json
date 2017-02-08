@@ -13,17 +13,18 @@
   },
   "main": "./src/index.js",
   "scripts": {
-    "test": "mocha --reporter spec",
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
     "lint:fix": "better-npm-run lint:fix",
-    "changelog": "better-npm-run changelog"
+    "changelog": "better-npm-run changelog",
+    "test": "better-npm-run test"
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
-    "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s -r 0",
+    "test": "mocha"
   },
   "readme": "README.md",
   "dependencies": {
@@ -38,6 +39,7 @@
     "eslint-plugin-import": "=2.2.0",
     "eslint-plugin-jsx-a11y": "=4.0.0",
     "eslint-plugin-react": "=6.9.0",
-    "jsdoc": "=3.4.3"
+    "jsdoc": "=3.4.3",
+    "mocha": "=3.2.0"
   }
 }
