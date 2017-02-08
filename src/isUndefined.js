@@ -15,7 +15,7 @@
  *
  * RA.isUndefined(1); //=> false
  * RA.isUndefined(undefined); //=> true
- * RA.isUndefined(null): //=> false
+ * RA.isUndefined(null); //=> false
  */
 const isUndefined = val => typeof val === 'undefined';
 
