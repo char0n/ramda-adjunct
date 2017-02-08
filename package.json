@@ -1,0 +1,29 @@
+{
+  "author": "Vladimir Gorej <vladimir.gorej@gmail.com> (linkedin.com/in/vladimirgorej)",
+  "contributors": [],
+  "name": "ramda-adjunct",
+  "description": "",
+  "version": "0.0.1",
+  "homepage": "",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/char0n/ramda-adjunct.git"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "docs": "better-npm-run docs"
+  },
+  "betterScripts": {
+    "docs": "jsdoc -c jsdoc.json"
+  },
+  "dependencies": {
+    "ramda": "=0.23.0"
+  },
+  "devDependencies": {
+    "better-npm-run": "=0.0.14",
+    "docdash": "git+https://github.com/char0n/docdash.git#b831a5c746b36373ca44d6f0297c5621e34c7fc1",
+    "jsdoc": "=3.4.3"
+  }
+}
