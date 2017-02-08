@@ -20,4 +20,4 @@ deployment:
     branch: master
     commands:
       - chmod -R +x ./scripts
-      - ./scripts/deploy-ghpages.sh docs
+      - ./scripts/deploy-ghpages.sh docs/ramda-adjunct
