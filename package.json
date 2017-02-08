@@ -13,10 +13,14 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "mocha --reporter spec",
-    "docs": "better-npm-run docs"
+    "docs": "better-npm-run docs",
+    "lint": "better-npm-run lint",
+    "lint:fix": "better-npm-run lint:fix"
   },
   "betterScripts": {
-    "docs": "jsdoc -c jsdoc.json"
+    "docs": "jsdoc -c jsdoc.json",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix"
   },
   "dependencies": {
     "ramda": "=0.23.0"
@@ -24,6 +28,11 @@
   "devDependencies": {
     "better-npm-run": "=0.0.14",
     "docdash": "git+https://github.com/char0n/docdash.git#b831a5c746b36373ca44d6f0297c5621e34c7fc1",
+    "eslint": "=3.15.0",
+    "eslint-config-airbnb": "=14.1.0",
+    "eslint-plugin-import": "=2.2.0",
+    "eslint-plugin-jsx-a11y": "=4.0.0",
+    "eslint-plugin-react": "=6.9.0",
     "jsdoc": "=3.4.3"
   }
 }

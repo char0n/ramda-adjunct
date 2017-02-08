@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks if input `value` is `undefined`
  *

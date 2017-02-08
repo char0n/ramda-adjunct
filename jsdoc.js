@@ -1,5 +1,6 @@
 'use strict';
 
+/* eslint-disable no-param-reassign */
 exports.defineTags = (dictionary) => {
   dictionary.defineTag('sig', {
     mustHaveValue: true,
@@ -19,3 +20,4 @@ exports.defineTags = (dictionary) => {
     },
   });
 };
+/* eslint-enable no-param-reassign */

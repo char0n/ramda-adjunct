@@ -1,3 +1,5 @@
+'use strict';
+
 const { complement } = require('ramda');
 
 const isUndefined = require('./isUndefined');
