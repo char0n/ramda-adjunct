@@ -1,9 +1,22 @@
+general:
+  branches:
+    ignore:
+      - gh-pages
+
 machine:
   node:
     version: 6.9.5
-
+  environment:
+    GH_NAME: char0n
+    GH_EMAIL: vladimir.gorej@gmail.com
 test:
   override:
     - npm run docs
     - npm run lint
     - npm run test
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - ./scripts/deploy-ghpages.sh docs
