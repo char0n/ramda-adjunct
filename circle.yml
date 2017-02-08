@@ -1,0 +1,10 @@
+machine:
+  node:
+    version: 6.9.5
+
+test:
+  pre:
+    - npm run docs
+  override:
+    - npm run lint
+    - npm run test
