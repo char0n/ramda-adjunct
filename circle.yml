@@ -19,4 +19,5 @@ deployment:
   staging:
     branch: master
     commands:
+      - chmod -R +x ./scripts
       - ./scripts/deploy-ghpages.sh docs
