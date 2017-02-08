@@ -2,10 +2,11 @@
   "author": "Vladimir Gorej <vladimir.gorej@gmail.com> (linkedin.com/in/vladimirgorej)",
   "contributors": [],
   "name": "ramda-adjunct",
-  "description": "",
+  "description": "Extensions for Ramda",
+  "keywords": "ramda extensions addons cookbook adjunct",
   "version": "0.0.1",
-  "homepage": "",
-  "license": "",
+  "homepage": "https://github.com/char0n/ramda-adjunct",
+  "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/char0n/ramda-adjunct.git"
