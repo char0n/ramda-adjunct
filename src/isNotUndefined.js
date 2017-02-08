@@ -20,6 +20,6 @@ const isUndefined = require('./isUndefined');
  *
  * RA.isNotUndefined(1); //=> true
  * RA.isNotUndefined(undefined); //=> false
- * RA.isNotUndefined(null): //=> true
+ * RA.isNotUndefined(null); //=> true
  */
 module.exports = complement(isUndefined);
