@@ -1,9 +1,11 @@
 'use strict';
 
+const { equals } = require('ramda');
+
 /**
  * Checks if input `value` is `null`
  *
- * @func
+ * @func isNull
  * @memberOf RA
  * @since v0.1.0
  * @category Type
@@ -17,6 +19,4 @@
  * RA.isNull(undefined); //=> false
  * RA.isNull(null); //=> true
  */
-const isNull = val => val === null;
-
-module.exports = isNull;
+module.exports = equals(null);

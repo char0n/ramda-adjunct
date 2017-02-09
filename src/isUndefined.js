@@ -1,9 +1,11 @@
 'use strict';
 
+const { equals } = require('ramda');
+
 /**
  * Checks if input `value` is `undefined`
  *
- * @func
+ * @func isUndefined
  * @memberOf RA
  * @since v0.0.1
  * @category Type
@@ -17,6 +19,4 @@
  * RA.isUndefined(undefined); //=> true
  * RA.isUndefined(null); //=> false
  */
-const isUndefined = val => typeof val === 'undefined';
-
-module.exports = isUndefined;
+module.exports = equals(undefined);
