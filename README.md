@@ -77,6 +77,6 @@ guideline.
 
  char0n (Vladimir Gorej)
  
- vladimir@gorej@gmail.com
+ vladimir.gorej@gmail.com
  
  https://www.linkedin.com/in/vladimirgorej/
