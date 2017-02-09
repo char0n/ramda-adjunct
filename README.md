@@ -53,7 +53,7 @@ This just means that our tests run on these versions.
 
 ## Development
 
-If you want to contribute to this project, please consult the [CONTRIBUTING.MD](https://github.com/char0n/ramda-adjunct/blob/master/CHANGELOG.md) 
+If you want to contribute to this project, please consult the [CONTRIBUTING.MD](https://github.com/char0n/ramda-adjunct/blob/master/CONTRIBUTING.md) 
 guideline.
 
 **Obtaining project copy**
@@ -75,6 +75,8 @@ guideline.
 
 ## Author
 
-char0n (Vladimir Gorej)
-vladimir@gorej@gmail.com
-https://www.linkedin.com/in/vladimirgorej/
+ char0n (Vladimir Gorej)
+ 
+ vladimir@gorej@gmail.com
+ 
+ https://www.linkedin.com/in/vladimirgorej/
