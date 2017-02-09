@@ -3,6 +3,9 @@
     "mocha": true
   },
   "rules": {
-    "no-void": 0
+    "no-void": 0,
+    "func-names": 0,
+    "prefer-arrow-callback": 0,
+    "space-before-function-paren": 0
   }
 }
