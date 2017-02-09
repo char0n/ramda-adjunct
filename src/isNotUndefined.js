@@ -6,7 +6,7 @@ const isUndefined = require('./isUndefined');
 
 
 /**
- * Checks if input `value` is not `undefined`
+ * Checks if input `value` is complement `undefined`
  *
  * @func isNotUndefined
  * @memberOf RA

@@ -2,6 +2,8 @@
 
 const isNotUndefined = require('./isNotUndefined');
 const isUndefined = require('./isUndefined');
+const isNull = require('./isNull');
+const isNotNull = require('./isNotNull');
 
 /**
  * @namespace RA
@@ -9,4 +11,6 @@ const isUndefined = require('./isUndefined');
 module.exports = {
   isNotUndefined,
   isUndefined,
+  isNull,
+  isNotNull,
 };
