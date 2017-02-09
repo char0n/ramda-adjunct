@@ -13,7 +13,7 @@ test:
   override:
     - npm run docs
     - npm run lint
-    - npm run test
+    - npm run coverage
 
 deployment:
   staging:
