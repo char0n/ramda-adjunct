@@ -21,4 +21,4 @@ deployment:
     commands:
       - chmod -R +x ./scripts
       - ./scripts/deploy-ghpages.sh docs/ramda-adjunct
-      - ./node_modules/.bin/codeconv
+      - ./node_modules/.bin/codecov
