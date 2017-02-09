@@ -12,22 +12,24 @@
     "url": "git://github.com/char0n/ramda-adjunct.git"
   },
   "main": "./src/index.js",
-  "engines":{
-    "node" : ">=6.9.5"
+  "engines": {
+    "node": ">=6.9.5"
   },
   "scripts": {
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
     "lint:fix": "better-npm-run lint:fix",
     "changelog": "better-npm-run changelog",
-    "test": "better-npm-run test"
+    "test": "better-npm-run test",
+    "coverage": "better-npm-run coverage"
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s -r 0",
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha"
   },
   "readme": "README.md",
   "dependencies": {
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "better-npm-run": "=0.0.14",
+    "codecov": "=1.0.1",
     "conventional-changelog-cli": "=1.1.0",
     "docdash": "git+https://github.com/char0n/docdash.git#b831a5c746b36373ca44d6f0297c5621e34c7fc1",
     "eslint": "=3.15.0",
@@ -42,6 +45,7 @@
     "eslint-plugin-import": "=2.2.0",
     "eslint-plugin-jsx-a11y": "=4.0.0",
     "eslint-plugin-react": "=6.9.0",
+    "istanbul": "=0.4.5",
     "jsdoc": "=3.4.3",
     "mocha": "=3.2.0"
   }
