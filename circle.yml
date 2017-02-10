@@ -19,6 +19,7 @@ deployment:
   staging:
     branch: master
     commands:
+      - npm run dist
       - chmod -R +x ./scripts
       - ./scripts/deploy-ghpages.sh docs/ramda-adjunct
       - ./node_modules/.bin/codecov
