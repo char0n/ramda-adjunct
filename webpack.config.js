@@ -2,12 +2,28 @@
 
 const webpack = require('webpack');
 
-const RaMin = {
+const minimizeTrait = {
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+      output: {
+        comments: false,
+      },
+    }),
+  ],
+};
+
+const ra = {
   entry: './src/index.js',
   output: {
     path: './dist',
-    filename: 'RA.min.js',
-    libraryTarget: 'var',
+    filename: 'RA.js',
+    libraryTarget: 'umd',
     library: 'RA',
   },
   externals: {
@@ -25,27 +41,40 @@ const RaMin = {
       },
     }],
   },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-      output: {
-        comments: false,
-      },
-    }),
-  ],
 };
 
-const RaStandaloneMin = {
+
+const raMin = Object.assign({
   entry: './src/index.js',
   output: {
     path: './dist',
-    filename: 'RA-standalone.min.js',
-    libraryTarget: 'var',
+    filename: 'RA.min.js',
+    libraryTarget: 'umd',
+    library: 'RA',
+  },
+  externals: {
+    ramda: 'R',
+  },
+  module: {
+    loaders: [{
+      test: /\.(js)$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: [
+          ['es2015', { loose: true, modules: false }],
+        ],
+      },
+    }],
+  },
+}, minimizeTrait);
+
+const raStandalone = {
+  entry: './src/index.js',
+  output: {
+    path: './dist',
+    filename: 'RA-standalone.js',
+    libraryTarget: 'umd',
     library: 'RA',
   },
   module: {
@@ -60,23 +89,32 @@ const RaStandaloneMin = {
       },
     }],
   },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: false,
-      compress: {
-        warnings: false,
-      },
-      output: {
-        comments: false,
-      },
-    }),
-  ],
 };
 
+const raStandaloneMin = Object.assign({
+  entry: './src/index.js',
+  output: {
+    path: './dist',
+    filename: 'RA-standalone.min.js',
+    libraryTarget: 'umd',
+    library: 'RA',
+  },
+  module: {
+    loaders: [{
+      test: /\.(js)$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: [
+          ['es2015', { loose: true, modules: false }],
+        ],
+      },
+    }],
+  },
+}, minimizeTrait);
+
+
 module.exports = [
-  RaMin, RaStandaloneMin,
+  ra, raMin, raStandalone, raStandaloneMin,
 ];
 
