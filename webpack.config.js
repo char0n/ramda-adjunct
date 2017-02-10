@@ -1,13 +1,15 @@
+'use strict';
+
 const webpack = require('webpack');
 
 const RaMin = {
   entry: './src/index.js',
-    output: {
-  path: './dist',
+  output: {
+    path: './dist',
     filename: 'RA.min.js',
     libraryTarget: 'var',
     library: 'RA',
-},
+  },
   externals: {
     ramda: 'R',
   },
@@ -18,10 +20,10 @@ const RaMin = {
       loader: 'babel-loader',
       query: {
         presets: [
-          ['es2015', { loose: true, modules: false }]
-        ]
+          ['es2015', { loose: true, modules: false }],
+        ],
       },
-    }]
+    }],
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
@@ -35,7 +37,7 @@ const RaMin = {
         comments: false,
       },
     }),
-  ]
+  ],
 };
 
 const RaStandaloneMin = {
@@ -53,10 +55,10 @@ const RaStandaloneMin = {
       loader: 'babel-loader',
       query: {
         presets: [
-          ['es2015', { loose: true, modules: false }]
-        ]
+          ['es2015', { loose: true, modules: false }],
+        ],
       },
-    }]
+    }],
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
@@ -71,7 +73,7 @@ const RaStandaloneMin = {
         comments: false,
       },
     }),
-  ]
+  ],
 };
 
 module.exports = [
