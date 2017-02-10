@@ -27,6 +27,56 @@ const ra = {
     library: 'RA',
   },
   externals: {
+    ramda: 'ramda',
+  },
+  module: {
+    loaders: [{
+      test: /\.(js)$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: [
+          ['es2015', { loose: true, modules: false }],
+        ],
+      },
+    }],
+  },
+};
+
+const raMin = Object.assign({
+  entry: './src/index.js',
+  output: {
+    path: './dist',
+    filename: 'RA.min.js',
+    libraryTarget: 'umd',
+    library: 'RA',
+  },
+  externals: {
+    ramda: 'ramda',
+  },
+  module: {
+    loaders: [{
+      test: /\.(js)$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      query: {
+        presets: [
+          ['es2015', { loose: true, modules: false }],
+        ],
+      },
+    }],
+  },
+}, minimizeTrait);
+
+const raBrowser = {
+  entry: './src/index.js',
+  output: {
+    path: './dist',
+    filename: 'RA.browser.js',
+    libraryTarget: 'umd',
+    library: 'RA',
+  },
+  externals: {
     ramda: 'R',
   },
   module: {
@@ -44,11 +94,11 @@ const ra = {
 };
 
 
-const raMin = Object.assign({
+const raBrowserMin = Object.assign({
   entry: './src/index.js',
   output: {
     path: './dist',
-    filename: 'RA.min.js',
+    filename: 'RA.browser.min.js',
     libraryTarget: 'umd',
     library: 'RA',
   },
@@ -115,6 +165,6 @@ const raStandaloneMin = Object.assign({
 
 
 module.exports = [
-  ra, raMin, raStandalone, raStandaloneMin,
+  ra, raMin, raBrowser, raBrowserMin, raStandalone, raStandaloneMin,
 ];
 
