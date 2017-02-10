@@ -15,7 +15,6 @@ machine:
     GH_EMAIL: vladimir.gorej@gmail.com
 test:
   override:
-    - npm run docs
     - npm run lint
     - npm run coverage
 
@@ -23,6 +22,7 @@ deployment:
   staging:
     branch: master
     commands:
+      - npm run docs
       - npm run dist
       - chmod -R +x ./scripts
       - ./scripts/deploy-ghpages.sh docs/ramda-adjunct
