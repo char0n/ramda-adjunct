@@ -2,6 +2,10 @@ general:
   branches:
     ignore:
       - gh-pages
+  artifacts:
+    - "docs"
+    - "coverage"
+    - "dist"
 
 machine:
   node:
