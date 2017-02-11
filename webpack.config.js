@@ -20,9 +20,10 @@ const minimizeTrait = {
 
 const ra = {
   entry: './src/index.js',
+  target: 'node',
   output: {
     path: './dist',
-    filename: 'RA.js',
+    filename: 'RA.node.js',
     libraryTarget: 'umd',
     library: 'RA',
   },
@@ -45,9 +46,10 @@ const ra = {
 
 const raMin = Object.assign({
   entry: './src/index.js',
+  target: 'node',
   output: {
     path: './dist',
-    filename: 'RA.min.js',
+    filename: 'RA.node.min.js',
     libraryTarget: 'umd',
     library: 'RA',
   },
@@ -70,9 +72,10 @@ const raMin = Object.assign({
 
 const raBrowser = {
   entry: './src/index.js',
+  target: 'web',
   output: {
     path: './dist',
-    filename: 'RA.browser.js',
+    filename: 'RA.web.js',
     libraryTarget: 'umd',
     library: 'RA',
   },
@@ -96,9 +99,10 @@ const raBrowser = {
 
 const raBrowserMin = Object.assign({
   entry: './src/index.js',
+  target: 'web',
   output: {
     path: './dist',
-    filename: 'RA.browser.min.js',
+    filename: 'RA.web.min.js',
     libraryTarget: 'umd',
     library: 'RA',
   },
