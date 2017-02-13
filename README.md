@@ -2,7 +2,8 @@
 [![codecov](https://codecov.io/gh/char0n/ramda-adjunct/branch/master/graph/badge.svg)](https://codecov.io/gh/char0n/ramda-adjunct)
 [![jsdoc](https://img.shields.io/badge/docs-100%25-green.svg)](https://char0n.github.io/ramda-adjunct/)
 [![npm version](https://badge.fury.io/js/ramda-adjunct.svg)](https://www.npmjs.com/package/ramda-adjunct)
-[![dependencies](https://david-dm.org/char0n/ramda-adjunct.svg)](https://david-dm.org/char0n/ramda-adjunct)
+[![npm](https://img.shields.io/npm/dm/ramda-adjunct.svg)]()
+[![David](https://img.shields.io/david/peer/char0n/ramda-adjunct.svg)]()
 [![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Ramda Adjunct
