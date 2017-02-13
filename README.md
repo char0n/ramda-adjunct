@@ -78,6 +78,18 @@ guideline.
  $ npm run lint
 ```
 
+## Builds
+
+```sh
+ $ npm run dist
+```
+
+The command will create three types of builds.
+
+`dist/RA.node.js` - ES5 compliant build, running on all node versions
+`dist/RA.web.js` - ES5 compliant build, running in browsers. Requires `ramda.js` to be required before 
+`dist/RA.web.standalone.js` - ES5 compliant build, running in browsers. It has `ramda.js` prebundled
+
 ## Author
 
  char0n (Vladimir Gorej)
