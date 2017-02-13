@@ -1,0 +1,14 @@
+{
+  "framework": "mocha",
+  "cwd": ".",
+  "src_files": [
+    "src/*.js",
+    "test/*.js"
+  ],
+  "serve_files": [
+    "node_modules/ramda/dist/ramda.js",
+    "tmp-test-bundle.js"
+  ],
+  "before_tests": "npm run test:bundle-create",
+  "after_tests": "npm run test:bundle-clean"
+}

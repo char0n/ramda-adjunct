@@ -70,7 +70,7 @@ const raMin = Object.assign({
   },
 }, minimizeTrait);
 
-const raBrowser = {
+const raWeb = {
   entry: './src/index.js',
   target: 'web',
   output: {
@@ -97,7 +97,7 @@ const raBrowser = {
 };
 
 
-const raBrowserMin = Object.assign({
+const raWebMin = Object.assign({
   entry: './src/index.js',
   target: 'web',
   output: {
@@ -123,11 +123,12 @@ const raBrowserMin = Object.assign({
   },
 }, minimizeTrait);
 
-const raStandalone = {
+const raWebStandalone = {
   entry: './src/index.js',
+  target: 'web',
   output: {
     path: './dist',
-    filename: 'RA-standalone.js',
+    filename: 'RA.web.standalone.js',
     libraryTarget: 'umd',
     library: 'RA',
   },
@@ -145,11 +146,12 @@ const raStandalone = {
   },
 };
 
-const raStandaloneMin = Object.assign({
+const rawWebStandaloneMin = Object.assign({
   entry: './src/index.js',
+  target: 'web',
   output: {
     path: './dist',
-    filename: 'RA-standalone.min.js',
+    filename: 'RA.web.standalone.min.js',
     libraryTarget: 'umd',
     library: 'RA',
   },
@@ -169,6 +171,6 @@ const raStandaloneMin = Object.assign({
 
 
 module.exports = [
-  ra, raMin, raBrowser, raBrowserMin, raStandalone, raStandaloneMin,
+  ra, raMin, raWeb, raWebMin, raWebStandalone, rawWebStandaloneMin,
 ];
 

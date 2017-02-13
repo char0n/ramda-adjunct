@@ -17,6 +17,7 @@ test:
   override:
     - npm run lint
     - npm run coverage
+    - npm run test:web
 
 deployment:
   staging:
