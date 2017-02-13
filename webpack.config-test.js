@@ -1,6 +1,6 @@
 'use strict';
 
-const glob = require('glob');
+const glob = require('glob'); // eslint-disable-line import/no-extraneous-dependencies
 
 module.exports = {
   target: 'web',
