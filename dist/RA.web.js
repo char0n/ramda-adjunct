@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -151,6 +151,38 @@ module.exports = equals(undefined);
 "use strict";
 
 
+/**
+ * Checks if input `value` is Array
+ *
+ * @func
+ * @memberOf RA
+ * @since v0.3.0
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotArray|isNotArray}
+ * @example
+ *
+ * RA.isArray([1, 2, 3]);  // true
+ * RA.isArray({foo: 123}); // false
+ * RA.isArray('foobar');   // false
+ * RA.isArray(undefined);  // false
+ */
+
+var isArrayPolyfill = function isArrayPolyfill(val) {
+  return Object.prototype.toString.call(val) === '[object Array]';
+};
+
+module.exports = Array.isArray || isArrayPolyfill;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _require = __webpack_require__(0),
     isNil = _require.isNil,
     complement = _require.complement;
@@ -178,7 +210,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isNil);
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -211,7 +243,7 @@ var isNotNull = complement(isNull);
 module.exports = isNotNull;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -242,17 +274,18 @@ var isUndefined = __webpack_require__(2);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(5);
+var isNotUndefined = __webpack_require__(6);
 var isUndefined = __webpack_require__(2);
 var isNull = __webpack_require__(1);
-var isNotNull = __webpack_require__(4);
-var isNotNil = __webpack_require__(3);
+var isNotNull = __webpack_require__(5);
+var isNotNil = __webpack_require__(4);
+var isArray = __webpack_require__(3);
 
 /**
  * @namespace RA
@@ -262,7 +295,8 @@ module.exports = {
   isUndefined: isUndefined,
   isNull: isNull,
   isNotNull: isNotNull,
-  isNotNil: isNotNil
+  isNotNil: isNotNil,
+  isArray: isArray
 };
 
 /***/ })
