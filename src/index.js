@@ -5,6 +5,7 @@ const isUndefined = require('./isUndefined');
 const isNull = require('./isNull');
 const isNotNull = require('./isNotNull');
 const isNotNil = require('./isNotNil');
+const isArray = require('./isArray');
 
 /**
  * @namespace RA
@@ -15,4 +16,5 @@ module.exports = {
   isNull,
   isNotNull,
   isNotNil,
+  isArray,
 };
