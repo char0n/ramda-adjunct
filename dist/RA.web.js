@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -152,6 +152,39 @@ module.exports = equals(undefined);
 
 
 var _require = __webpack_require__(0),
+    isNil = _require.isNil,
+    complement = _require.complement;
+
+/**
+ * Checks if input `value` is complement of `null` or `undefined`
+ *
+ * @func isNotNil
+ * @memberOf RA
+ * @since v0.3.0
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link http://ramdajs.com/docs/#isNil|isNil}
+ * @example
+ *
+ * RA.isNotNil(null); //=> false
+ * RA.isNotNil(undefined); //=> false
+ * RA.isNotNil(0); //=> true
+ * RA.isNotNil([]); //=> true
+ */
+
+
+module.exports = complement(isNil);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
     complement = _require.complement;
 
 var isNull = __webpack_require__(1);
@@ -178,7 +211,7 @@ var isNotNull = complement(isNull);
 module.exports = isNotNull;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -209,16 +242,17 @@ var isUndefined = __webpack_require__(2);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(4);
+var isNotUndefined = __webpack_require__(5);
 var isUndefined = __webpack_require__(2);
 var isNull = __webpack_require__(1);
-var isNotNull = __webpack_require__(3);
+var isNotNull = __webpack_require__(4);
+var isNotNil = __webpack_require__(3);
 
 /**
  * @namespace RA
@@ -227,7 +261,8 @@ module.exports = {
   isNotUndefined: isNotUndefined,
   isUndefined: isUndefined,
   isNull: isNull,
-  isNotNull: isNotNull
+  isNotNull: isNotNull,
+  isNotNil: isNotNil
 };
 
 /***/ })
