@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="RA.html">RA</a><ul class='methods'><li data-type='method'><a href="RA.html#.isNotNil">isNotNil</a></li><li data-type='method'><a href="RA.html#.isNotNull">isNotNull</a></li><li data-type='method'><a href="RA.html#.isNotUndefined">isNotUndefined</a></li><li data-type='method'><a href="RA.html#.isNull">isNull</a></li><li data-type='method'><a href="RA.html#.isUndefined">isUndefined</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="RA.html">RA</a><ul class='methods'><li data-type='method'><a href="RA.html#.isArray">isArray</a></li><li data-type='method'><a href="RA.html#.isNotArray">isNotArray</a></li><li data-type='method'><a href="RA.html#.isNotNil">isNotNil</a></li><li data-type='method'><a href="RA.html#.isNotNull">isNotNull</a></li><li data-type='method'><a href="RA.html#.isNotUndefined">isNotUndefined</a></li><li data-type='method'><a href="RA.html#.isNull">isNull</a></li><li data-type='method'><a href="RA.html#.isUndefined">isUndefined</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -56,7 +56,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line9">line 9</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -118,6 +118,372 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isArray"><span class="type-signature">(static) </span>isArray<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isArray.js.html">isArray.js</a>, <a href="isArray.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>v0.3.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotArray"><code>isNotArray</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input <code>value</code> is Array</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isArray([1, 2, 3]);  // true
+RA.isArray({foo: 123}); // false
+RA.isArray('foobar');   // false
+RA.isArray(undefined);  // false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotArray"><span class="type-signature">(static) </span>isNotArray<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotArray.js.html">isNotArray.js</a>, <a href="isNotArray.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>v0.3.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isArray"><code>isArray</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input <code>value</code> is complement of Array</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotArray([1, 2, 3]);  // false
+RA.isNotArray({foo: 123}); // true
+RA.isNotArray('foobar');   // true
+RA.isNotArray(undefined);  // true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
 
         
             
@@ -1048,7 +1414,7 @@ RA.isUndefined(null); //=> false</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Feb 15 2017 21:32:42 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Feb 15 2017 22:12:52 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNil.js - Documentation</title>
+    <title>isNotArray.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNil.js</h1>
+    <h1 class="page-title">isNotArray.js</h1>
     
 
     
@@ -39,27 +39,30 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { isNil, complement } = require('ramda');
+const { complement } = require('ramda');
+
+const isArray = require('./isArray');
 
 /**
- * Checks if input `value` is complement of `null` or `undefined`
+ * Checks if input `value` is complement of Array
  *
- * @func isNotNil
+ * @func isNotArray
  * @memberOf RA
  * @since v0.3.0
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isNil|isNil}
+ * @see {@link RA.isArray|isArray}
  * @example
  *
- * RA.isNotNil(null); //=> false
- * RA.isNotNil(undefined); //=> false
- * RA.isNotNil(0); //=> true
- * RA.isNotNil([]); //=> true
+ * RA.isNotArray([1, 2, 3]);  // false
+ * RA.isNotArray({foo: 123}); // true
+ * RA.isNotArray('foobar');   // true
+ * RA.isNotArray(undefined);  // true
  */
-module.exports = complement(isNil);
+
+module.exports = complement(isArray);
 </code></pre>
         </article>
     </section>
