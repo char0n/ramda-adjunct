@@ -1,9 +1,11 @@
 'use strict';
 
+const isArrayPolyfill = val => Object.prototype.toString.call(val) === '[object Array]';
+
 /**
  * Checks if input `value` is Array
  *
- * @func
+ * @func isArray
  * @memberOf RA
  * @since v0.3.0
  * @category Type
@@ -18,7 +20,5 @@
  * RA.isArray('foobar');   // false
  * RA.isArray(undefined);  // false
  */
-
-const isArrayPolyfill = val => Object.prototype.toString.call(val) === '[object Array]';
 
 module.exports = Array.isArray || isArrayPolyfill;
