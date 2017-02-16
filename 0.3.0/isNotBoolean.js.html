@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNull.js - Documentation</title>
+    <title>isNotBoolean.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNull.js</h1>
+    <h1 class="page-title">isNotBoolean.js</h1>
     
 
     
@@ -39,26 +39,29 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { equals } = require('ramda');
+const { complement } = require('ramda');
+
+const isBoolean = require('./isBoolean');
 
 /**
- * Checks if input `value` is `null`
+ * Checks if input `value` is complement of Boolean
  *
- * @func isNull
+ * @func isBoolean
  * @memberOf RA
- * @since v0.1.0
+ * @since v0.3.0
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotNull|isNotNull}
+ * @see {@link RA.isBoolean|isBoolean}
  * @example
  *
- * RA.isNull(1); //=> false
- * RA.isNull(undefined); //=> false
- * RA.isNull(null); //=> true
+ * RA.isNotBoolean(false);  // false
+ * RA.isNotBoolean(true);   // false
+ * RA.isNotBoolean(null);   // true
  */
-module.exports = equals(null);
+
+module.exports = complement(isBoolean);
 </code></pre>
         </article>
     </section>
