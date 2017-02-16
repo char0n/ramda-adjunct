@@ -1,10 +1,20 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/char0n/ramda-adjunct/compare/v0.2.0...v0.3.0) (2017-02-16)
+
+
+### Features
+
+* add isArray ([5bf4ab9](https://github.com/char0n/ramda-adjunct/commit/5bf4ab9))
+* add isBoolean, isNotBoolean ([5400527](https://github.com/char0n/ramda-adjunct/commit/5400527))
+* add isNotArray ([17d11c2](https://github.com/char0n/ramda-adjunct/commit/17d11c2))
+* add isNotNil ([f49962a](https://github.com/char0n/ramda-adjunct/commit/f49962a))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/char0n/ramda-adjunct/compare/v0.1.0...v0.2.0) (2017-02-13)
 
-* **build:** add support for older node versions
-* **build** add various dist files
-* **build** make enhancements in entire infra
-* **test:** add tests that run in browsers  
+
 
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/char0n/ramda-adjunct/compare/v0.0.1...v0.1.0) (2017-02-09)
