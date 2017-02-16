@@ -5,7 +5,7 @@ const { complement } = require('ramda');
 const isBoolean = require('./isBoolean');
 
 /**
- * Checks if input `value` is complement of Boolean
+ * Checks if input `value` is complement of `Boolean`
  *
  * @func isNotBoolean
  * @memberOf RA
