@@ -15,9 +15,9 @@ const isArray = require('ramda/src/internal/_isArray');
  * @see {@link RA.isNotArray|isNotArray}
  * @example
  *
- * RA.isArray([]);    //=> true
- * RA.isArray(null);  //=> false
- * RA.isArray({});    //=> false
+ * RA.isArray([]); //=> true
+ * RA.isArray(null); //=> false
+ * RA.isArray({}); //=> false
  */
 
 module.exports = isArray;

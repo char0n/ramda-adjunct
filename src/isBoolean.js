@@ -15,9 +15,9 @@ const { is } = require('ramda');
  * @see {@link RA.isNotBoolean|isNotBoolean}
  * @example
  *
- * RA.isBoolean(false);  // true
- * RA.isBoolean(true);  // true
- * RA.isBoolean(null);   // false
+ * RA.isBoolean(false); //=> true
+ * RA.isBoolean(true); //=> true
+ * RA.isBoolean(null); //=> false
  */
 
 module.exports = is(Boolean);

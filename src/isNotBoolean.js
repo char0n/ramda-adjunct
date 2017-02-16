@@ -7,7 +7,7 @@ const isBoolean = require('./isBoolean');
 /**
  * Checks if input `value` is complement of Boolean
  *
- * @func isBoolean
+ * @func isNotBoolean
  * @memberOf RA
  * @since v0.3.0
  * @category Type
@@ -17,9 +17,9 @@ const isBoolean = require('./isBoolean');
  * @see {@link RA.isBoolean|isBoolean}
  * @example
  *
- * RA.isNotBoolean(false);  // false
- * RA.isNotBoolean(true);   // false
- * RA.isNotBoolean(null);   // true
+ * RA.isNotBoolean(false); //=> false
+ * RA.isNotBoolean(true); //=> false
+ * RA.isNotBoolean(null); //=> true
  */
 
 module.exports = complement(isBoolean);

@@ -17,9 +17,9 @@ const isArray = require('./isArray');
  * @see {@link RA.isArray|isArray}
  * @example
  *
- * RA.isNotArray([]);    //=> false
- * RA.isNotArray(null);  //=> true
- * RA.isNotArray({});    //=> true
+ * RA.isNotArray([]); //=> false
+ * RA.isNotArray(null); //=> true
+ * RA.isNotArray({}); //=> true
  */
 
 module.exports = complement(isArray);
