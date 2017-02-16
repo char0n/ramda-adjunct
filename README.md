@@ -95,8 +95,39 @@ The command will create three types of builds.
 
 `dist/RA.web.standalone.js` - ES5 compliant build, running in browsers. It has `ramda.js` pre-bundled
 
-
 You can always find fresh build files in circle-ci [artifacts](https://circleci.com/gh/char0n/ramda-adjunct).
+
+## Usage
+
+### Web browser
+
+```html
+<script src="RA.web.js"></script>
+```
+or 
+```html
+<script src="RA.web.standalone.js"></script>
+```
+
+Including Ramda Adjunct into HTML document exposes global variable **RA** on `window` object.
+
+```javascript
+RA.isArray([]);
+```
+
+### Node
+
+```javascript
+const RA = require('ramda-adjunct');
+
+RA.isArray([]);
+```
+or
+```javascript
+const { isArray } = require('ramda-adjunct');
+
+isArray([]);
+``` 
 
 ## Author
 
