@@ -1,6 +1,6 @@
 'use strict';
 
-const isArrayPolyfill = val => Object.prototype.toString.call(val) === '[object Array]';
+const isArray = require('ramda/src/internal/_isArray');
 
 /**
  * Checks if input `value` is Array
@@ -15,10 +15,9 @@ const isArrayPolyfill = val => Object.prototype.toString.call(val) === '[object 
  * @see {@link RA.isNotArray|isNotArray}
  * @example
  *
- * RA.isArray([1, 2, 3]);  // true
- * RA.isArray({foo: 123}); // false
- * RA.isArray('foobar');   // false
- * RA.isArray(undefined);  // false
+ * RA.isArray([]);    //=> true
+ * RA.isArray(null);  //=> false
+ * RA.isArray({});    //=> false
  */
 
-module.exports = Array.isArray || isArrayPolyfill;
+module.exports = isArray;
