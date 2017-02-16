@@ -17,4 +17,7 @@
 /jsdoc.js
 /jsdoc.json
 /tmp-test-bundle.js
+/testem.json
+/webpack.config.js
+/webpack.config-test.js
 
