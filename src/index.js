@@ -10,7 +10,7 @@ const isNotArray = require('./isNotArray');
 const isBoolean = require('./isBoolean');
 const isNotBoolean = require('./isNotBoolean');
 const isNotEmpty = require('./isNotEmpty');
-const isNilOrEmpty = require('./IsNilOrEmpty');
+const isNilOrEmpty = require('./isNilOrEmpty');
 
 /**
  * @namespace RA
