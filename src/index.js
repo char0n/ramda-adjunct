@@ -9,6 +9,7 @@ const isArray = require('./isArray');
 const isNotArray = require('./isNotArray');
 const isBoolean = require('./isBoolean');
 const isNotBoolean = require('./isNotBoolean');
+const isNotEmpty = require('./isNotEmpty');
 
 /**
  * @namespace RA
@@ -23,4 +24,5 @@ module.exports = {
   isNotArray,
   isBoolean,
   isNotBoolean,
+  isNotEmpty,
 };

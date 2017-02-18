@@ -7,7 +7,7 @@ const isNull = require('./isNull');
 /**
  * Checks if input `value` is complement of `null`
  *
- * @func
+ * @func isNotNull
  * @memberOf RA
  * @since v0.1.0
  * @category Type
@@ -21,6 +21,5 @@ const isNull = require('./isNull');
  * RA.isNotNull(undefined); //=> true
  * RA.isNotNull(null); //=> false
  */
-const isNotNull = complement(isNull);
 
-module.exports = isNotNull;
+module.exports = complement(isNull);
