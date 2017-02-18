@@ -5,6 +5,7 @@ general:
   artifacts:
     - "docs"
     - "coverage"
+    - "test-results.xml"
     - "dist"
 
 machine:
