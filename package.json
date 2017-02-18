@@ -26,6 +26,7 @@
     "test:bundle-clean": "better-npm-run test:bundle-clean",
     "coverage": "better-npm-run coverage",
     "dist": "better-npm-run dist",
+    "nsp:check": "better-npm-run nsp:check",
     "clean": "better-npm-run clean"
   },
   "betterScripts": {
@@ -39,6 +40,7 @@
     "test:bundle-clean": "rimraf tmp-test-bundle.js",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "dist": "rimraf dist && webpack --config webpack.config.js",
+    "nsp:check": "nsp check",
     "clean": "rimraf docs && rimraf coverage && rimraf tmp-test-bundle.js"
   },
   "readme": "README.md",

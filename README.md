@@ -5,6 +5,7 @@
 [![npm](https://img.shields.io/npm/dm/ramda-adjunct.svg)](https://www.npmjs.com/package/ramda-adjunct)
 [![devDependencies Status](https://david-dm.org/char0n/ramda-adjunct/dev-status.svg)](https://david-dm.org/char0n/ramda-adjunct?type=dev)
 [![peerDependencies Status](https://david-dm.org/char0n/ramda-adjunct/peer-status.svg)](https://david-dm.org/char0n/ramda-adjunct?type=peer)
+[![NSP Status](https://nodesecurity.io/orgs/mortality/projects/70e819a7-1551-4973-801e-0315fed21068/badge)](https://nodesecurity.io/orgs/mortality/projects/70e819a7-1551-4973-801e-0315fed21068)
 [![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Ramda Adjunct
