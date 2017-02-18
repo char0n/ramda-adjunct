@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isBoolean.js - Documentation</title>
+    <title>isNotEmpty.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isBoolean.js</h1>
+    <h1 class="page-title">isNotEmpty.js</h1>
     
 
     
@@ -39,27 +39,31 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { is } = require('ramda');
+const { complement, isEmpty } = require('ramda');
 
 /**
- * Checks if input `value` is `Boolean`
+ * Returns true if the given value is not its type's empty value; false otherwise.
  *
- * @func isBoolean
+ * @func isNotEmpty
  * @memberOf RA
- * @since v0.3.0
+ * @since v0.4.0
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotBoolean|isNotBoolean}
+ * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}
  * @example
  *
- * RA.isBoolean(false); //=> true
- * RA.isBoolean(true); //=> true
- * RA.isBoolean(null); //=> false
+ * RA.isNotEmpty([1, 2, 3]); //=> true
+ * RA.isNotEmpty([]); //=> false
+ * RA.isNotEmpty(''); //=> false
+ * RA.isNotEmpty(null); //=> true
+ * RA.isNotEmpty(undefined): //=> true
+ * RA.isNotEmpty({}); //=> false
+ * RA.isNotEmpty({length: 0}); //=> true
  */
 
-module.exports = is(Boolean);
+module.exports = complement(isEmpty);
 </code></pre>
         </article>
     </section>
