@@ -92,7 +92,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 var isArray = __webpack_require__(10);
 
 /**
- * Checks if input `value` is Array
+ * Checks if input `value` is `Array`
  *
  * @func isArray
  * @memberOf RA
@@ -122,7 +122,7 @@ var _require = __webpack_require__(0),
     is = _require.is;
 
 /**
- * Checks if input `value` is Array
+ * Checks if input `value` is `Boolean`
  *
  * @func isBoolean
  * @memberOf RA
@@ -216,7 +216,7 @@ var _require = __webpack_require__(0),
 var isArray = __webpack_require__(1);
 
 /**
- * Checks if input `value` is complement of Array
+ * Checks if input `value` is complement of `Array`
  *
  * @func isNotArray
  * @memberOf RA
@@ -248,7 +248,7 @@ var _require = __webpack_require__(0),
 var isBoolean = __webpack_require__(2);
 
 /**
- * Checks if input `value` is complement of Boolean
+ * Checks if input `value` is complement of `Boolean`
  *
  * @func isNotBoolean
  * @memberOf RA

@@ -2350,7 +2350,7 @@ module.exports = _curry2(function uniqWith(pred, list) {
 var isArray = __webpack_require__(14);
 
 /**
- * Checks if input `value` is Array
+ * Checks if input `value` is `Array`
  *
  * @func isArray
  * @memberOf RA
@@ -2380,7 +2380,7 @@ var _require = __webpack_require__(15),
     is = _require.is;
 
 /**
- * Checks if input `value` is Array
+ * Checks if input `value` is `Boolean`
  *
  * @func isBoolean
  * @memberOf RA
@@ -4581,7 +4581,7 @@ var _require = __webpack_require__(15),
 var isArray = __webpack_require__(58);
 
 /**
- * Checks if input `value` is complement of Array
+ * Checks if input `value` is complement of `Array`
  *
  * @func isNotArray
  * @memberOf RA
@@ -4613,7 +4613,7 @@ var _require = __webpack_require__(15),
 var isBoolean = __webpack_require__(59);
 
 /**
- * Checks if input `value` is complement of Boolean
+ * Checks if input `value` is complement of `Boolean`
  *
  * @func isNotBoolean
  * @memberOf RA
