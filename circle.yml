@@ -20,6 +20,10 @@ test:
     - npm run coverage
     - npm run test:web
 
+notify:
+  webhooks:
+   - url: https://webhooks.gitter.im/e/4ab4df02852bdd010b3c
+
 deployment:
   staging:
     branch: master
