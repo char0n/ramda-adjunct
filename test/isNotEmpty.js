@@ -5,7 +5,6 @@ const eq = require('./shared/eq');
 
 
 describe('isNotEmpty', function() {
-
   it('returns true for null', function() {
     eq(RA.isNotEmpty(null), true);
   });
@@ -26,7 +25,7 @@ describe('isNotEmpty', function() {
 
   it('returns false for empty object', function() {
     eq(RA.isNotEmpty({}), false);
-    eq(RA.isNotEmpty({x: 0}), true);
+    eq(RA.isNotEmpty({ x: 0 }), true);
   });
 
   it('returns false for empty arguments object', function() {
@@ -39,5 +38,4 @@ describe('isNotEmpty', function() {
     eq(RA.isNotEmpty(NaN), true);
     eq(RA.isNotEmpty(['']), true);
   });
-
 });

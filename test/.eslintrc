@@ -7,6 +7,7 @@
     "func-names": 0,
     "prefer-arrow-callback": 0,
     "space-before-function-paren": 0,
-    "no-array-constructor": 0
+    "no-array-constructor": 0,
+    "prefer-rest-params": 0
   }
 }
