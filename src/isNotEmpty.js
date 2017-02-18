@@ -3,7 +3,7 @@
 const { complement, isEmpty } = require('ramda');
 
 /**
- * Returns true if the given value is not its type's empty value; false otherwise.
+ * Returns true if the given value is not its type's empty value; `false` otherwise.
  *
  * @func isNotEmpty
  * @memberOf RA

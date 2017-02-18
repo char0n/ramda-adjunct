@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -89,10 +89,10 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 "use strict";
 
 
-var isArray = __webpack_require__(10);
+var isArray = __webpack_require__(12);
 
 /**
- * Checks if input `value` is `Array`
+ * Checks if input value is `Array`
  *
  * @func isArray
  * @memberOf RA
@@ -152,7 +152,7 @@ var _require = __webpack_require__(0),
     equals = _require.equals;
 
 /**
- * Checks if input `value` is `null`
+ * Checks if input value is `null`
  *
  * @func isNull
  * @memberOf RA
@@ -183,7 +183,7 @@ var _require = __webpack_require__(0),
     equals = _require.equals;
 
 /**
- * Checks if input `value` is `undefined`
+ * Checks if input value is `undefined`
  *
  * @func isUndefined
  * @memberOf RA
@@ -211,12 +211,48 @@ module.exports = equals(undefined);
 
 
 var _require = __webpack_require__(0),
+    anyPass = _require.anyPass,
+    isEmpty = _require.isEmpty,
+    isNil = _require.isNil;
+
+/**
+ * Returns `true` if the given value is its type's empty value, `null` or `undefined`
+ *
+ * @func isNilOrEmpty
+ * @memberOf RA
+ * @since v0.4.0
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}, {@link http://ramdajs.com/docs/#isNil|isNil}
+ * @example
+ *
+ * RA.isNilOrEmpty([1, 2, 3]); //=> false
+ * RA.isNilOrEmpty([]); //=> true
+ * RA.isNilOrEmpty(''); //=> true
+ * RA.isNilOrEmpty(null); //=> true
+ * RA.isNilOrEmpty(undefined): //=> true
+ * RA.isNilOrEmpty({}); //=> true
+ * RA.isNilOrEmpty({length: 0}); //=> false
+ */
+
+module.exports = anyPass([isNil, isEmpty]);
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
     complement = _require.complement;
 
 var isArray = __webpack_require__(1);
 
 /**
- * Checks if input `value` is complement of `Array`
+ * Checks if input value is complement of `Array`
  *
  * @func isNotArray
  * @memberOf RA
@@ -236,7 +272,7 @@ var isArray = __webpack_require__(1);
 module.exports = complement(isArray);
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -248,7 +284,7 @@ var _require = __webpack_require__(0),
 var isBoolean = __webpack_require__(2);
 
 /**
- * Checks if input `value` is complement of `Boolean`
+ * Checks if input value is complement of `Boolean`
  *
  * @func isNotBoolean
  * @memberOf RA
@@ -268,7 +304,42 @@ var isBoolean = __webpack_require__(2);
 module.exports = complement(isBoolean);
 
 /***/ }),
-/* 7 */
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement,
+    isEmpty = _require.isEmpty;
+
+/**
+ * Returns true if the given value is not its type's empty value; `false` otherwise.
+ *
+ * @func isNotEmpty
+ * @memberOf RA
+ * @since v0.4.0
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}
+ * @example
+ *
+ * RA.isNotEmpty([1, 2, 3]); //=> true
+ * RA.isNotEmpty([]); //=> false
+ * RA.isNotEmpty(''); //=> false
+ * RA.isNotEmpty(null); //=> true
+ * RA.isNotEmpty(undefined): //=> true
+ * RA.isNotEmpty({}); //=> false
+ * RA.isNotEmpty({length: 0}); //=> true
+ */
+
+module.exports = complement(isEmpty);
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -279,7 +350,7 @@ var _require = __webpack_require__(0),
     complement = _require.complement;
 
 /**
- * Checks if input `value` is complement of `null` or `undefined`
+ * Checks if input value is complement of `null` or `undefined`
  *
  * @func isNotNil
  * @memberOf RA
@@ -301,7 +372,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isNil);
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -313,9 +384,9 @@ var _require = __webpack_require__(0),
 var isNull = __webpack_require__(3);
 
 /**
- * Checks if input `value` is complement of `null`
+ * Checks if input value is complement of `null`
  *
- * @func
+ * @func isNotNull
  * @memberOf RA
  * @since v0.1.0
  * @category Type
@@ -329,12 +400,11 @@ var isNull = __webpack_require__(3);
  * RA.isNotNull(undefined); //=> true
  * RA.isNotNull(null); //=> false
  */
-var isNotNull = complement(isNull);
 
-module.exports = isNotNull;
+module.exports = complement(isNull);
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -346,7 +416,7 @@ var _require = __webpack_require__(0),
 var isUndefined = __webpack_require__(4);
 
 /**
- * Checks if input `value` is complement `undefined`
+ * Checks if input value is complement `undefined`
  *
  * @func isNotUndefined
  * @memberOf RA
@@ -365,7 +435,7 @@ var isUndefined = __webpack_require__(4);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports) {
 
 /**
@@ -388,21 +458,23 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(9);
+var isNotUndefined = __webpack_require__(11);
 var isUndefined = __webpack_require__(4);
 var isNull = __webpack_require__(3);
-var isNotNull = __webpack_require__(8);
-var isNotNil = __webpack_require__(7);
+var isNotNull = __webpack_require__(10);
+var isNotNil = __webpack_require__(9);
 var isArray = __webpack_require__(1);
-var isNotArray = __webpack_require__(5);
+var isNotArray = __webpack_require__(6);
 var isBoolean = __webpack_require__(2);
-var isNotBoolean = __webpack_require__(6);
+var isNotBoolean = __webpack_require__(7);
+var isNotEmpty = __webpack_require__(8);
+var isNilOrEmpty = __webpack_require__(5);
 
 /**
  * @namespace RA
@@ -416,7 +488,9 @@ module.exports = {
   isArray: isArray,
   isNotArray: isNotArray,
   isBoolean: isBoolean,
-  isNotBoolean: isNotBoolean
+  isNotBoolean: isNotBoolean,
+  isNotEmpty: isNotEmpty,
+  isNilOrEmpty: isNilOrEmpty
 };
 
 /***/ })

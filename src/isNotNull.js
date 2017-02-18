@@ -5,7 +5,7 @@ const { complement } = require('ramda');
 const isNull = require('./isNull');
 
 /**
- * Checks if input `value` is complement of `null`
+ * Checks if input value is complement of `null`
  *
  * @func isNotNull
  * @memberOf RA

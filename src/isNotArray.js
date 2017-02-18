@@ -5,7 +5,7 @@ const { complement } = require('ramda');
 const isArray = require('./isArray');
 
 /**
- * Checks if input `value` is complement of `Array`
+ * Checks if input value is complement of `Array`
  *
  * @func isNotArray
  * @memberOf RA

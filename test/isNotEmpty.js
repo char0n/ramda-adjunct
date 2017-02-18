@@ -3,7 +3,6 @@
 const RA = require('../src/index');
 const eq = require('./shared/eq');
 
-
 describe('isNotEmpty', function() {
   it('returns true for null', function() {
     eq(RA.isNotEmpty(null), true);
