@@ -18,6 +18,8 @@ test:
     - npm run lint
     - npm run nsp:check
     - npm run coverage
+        environment:
+          MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
     - npm run test:web
 
 notify:

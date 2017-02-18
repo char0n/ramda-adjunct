@@ -22,4 +22,5 @@
 /testem.json
 /webpack.config.js
 /webpack.config-test.js
+/test-results.xml
 
