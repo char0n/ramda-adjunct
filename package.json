@@ -54,7 +54,7 @@
     "better-npm-run": "=0.0.14",
     "codecov": "=1.0.1",
     "conventional-changelog-cli": "=1.2.0",
-    "docdash": "git+https://github.com/char0n/docdash.git#4a6cb954650109b1be4f7efd4baf5ba191b46fba",
+    "docdash": "git+https://github.com/char0n/docdash.git#abb8b242321856b5ae9d90948cb5de4d960a45b2",
     "eslint": "=3.15.0",
     "eslint-config-airbnb": "=14.1.0",
     "eslint-plugin-import": "=2.2.0",

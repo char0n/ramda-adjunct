@@ -1,4 +1,5 @@
 {
+  "title": "Ramda Adjunct",
   "tags": {
     "allowUnknownTags": true,
     "dictionaries": ["jsdoc","closure"]
