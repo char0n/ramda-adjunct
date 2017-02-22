@@ -11,6 +11,8 @@ const isBoolean = require('./isBoolean');
 const isNotBoolean = require('./isNotBoolean');
 const isNotEmpty = require('./isNotEmpty');
 const isNilOrEmpty = require('./isNilOrEmpty');
+const isString = require('./isString');
+const isNotString = require('./isNotString');
 
 /**
  * @namespace RA
@@ -27,4 +29,6 @@ module.exports = {
   isNotBoolean,
   isNotEmpty,
   isNilOrEmpty,
+  isString,
+  isNotString,
 };

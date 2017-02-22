@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -89,7 +89,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 "use strict";
 
 
-var isArray = __webpack_require__(12);
+var isArray = __webpack_require__(14);
 
 /**
  * Checks if input value is `Array`
@@ -179,6 +179,34 @@ module.exports = equals(null);
 "use strict";
 
 
+var isString = __webpack_require__(15);
+
+/**
+ * Checks if input value is `String`
+ *
+ * @func isString
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotString|isNotString}
+ * @example
+ *
+ * RA.isString('abc'); //=> true
+ * RA.isString(1); //=> false
+ */
+
+module.exports = isString;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _require = __webpack_require__(0),
     equals = _require.equals;
 
@@ -204,7 +232,7 @@ var _require = __webpack_require__(0),
 module.exports = equals(undefined);
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -240,7 +268,7 @@ var _require = __webpack_require__(0),
 module.exports = anyPass([isNil, isEmpty]);
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -272,7 +300,7 @@ var isArray = __webpack_require__(1);
 module.exports = complement(isArray);
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -304,7 +332,7 @@ var isBoolean = __webpack_require__(2);
 module.exports = complement(isBoolean);
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -339,7 +367,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isEmpty);
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -372,7 +400,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isNil);
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -404,7 +432,7 @@ var isNull = __webpack_require__(3);
 module.exports = complement(isNull);
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -413,7 +441,38 @@ module.exports = complement(isNull);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isUndefined = __webpack_require__(4);
+var iString = __webpack_require__(4);
+
+/**
+ * Checks if input value is complement of `String`
+ *
+ * @func isNotString
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isString|isString}
+ * @example
+ *
+ * RA.isNotString('abc'); //=> false
+ * RA.isNotString(1); //=> true
+ */
+
+module.exports = complement(iString);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isUndefined = __webpack_require__(5);
 
 /**
  * Checks if input value is complement `undefined`
@@ -435,7 +494,7 @@ var isUndefined = __webpack_require__(4);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /**
@@ -458,23 +517,34 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 13 */
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = function _isString(x) {
+  return Object.prototype.toString.call(x) === '[object String]';
+};
+
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(11);
-var isUndefined = __webpack_require__(4);
+var isNotUndefined = __webpack_require__(13);
+var isUndefined = __webpack_require__(5);
 var isNull = __webpack_require__(3);
-var isNotNull = __webpack_require__(10);
-var isNotNil = __webpack_require__(9);
+var isNotNull = __webpack_require__(11);
+var isNotNil = __webpack_require__(10);
 var isArray = __webpack_require__(1);
-var isNotArray = __webpack_require__(6);
+var isNotArray = __webpack_require__(7);
 var isBoolean = __webpack_require__(2);
-var isNotBoolean = __webpack_require__(7);
-var isNotEmpty = __webpack_require__(8);
-var isNilOrEmpty = __webpack_require__(5);
+var isNotBoolean = __webpack_require__(8);
+var isNotEmpty = __webpack_require__(9);
+var isNilOrEmpty = __webpack_require__(6);
+var isString = __webpack_require__(4);
+var isNotString = __webpack_require__(12);
 
 /**
  * @namespace RA
@@ -490,7 +560,9 @@ module.exports = {
   isBoolean: isBoolean,
   isNotBoolean: isNotBoolean,
   isNotEmpty: isNotEmpty,
-  isNilOrEmpty: isNilOrEmpty
+  isNilOrEmpty: isNilOrEmpty,
+  isString: isString,
+  isNotString: isNotString
 };
 
 /***/ })
