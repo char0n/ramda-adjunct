@@ -10,7 +10,7 @@ const isUndefined = require('./isUndefined');
  *
  * @func isNotUndefined
  * @memberOf RA
- * @since v0.0.1
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test

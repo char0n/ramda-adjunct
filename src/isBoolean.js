@@ -7,7 +7,7 @@ const { is } = require('ramda');
  *
  * @func isBoolean
  * @memberOf RA
- * @since v0.3.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
