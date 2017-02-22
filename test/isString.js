@@ -13,10 +13,10 @@ describe('isString', function() {
     eq(RA.isString(args), false);
     eq(RA.isString([1, 2, 3]), false);
     eq(RA.isString(true), false);
-    eq(RA.isString(new Date), false);
-    eq(RA.isString(new Error), false);
+    eq(RA.isString(new Date()), false);
+    eq(RA.isString(new Error()), false);
     eq(RA.isString(Array.prototype.slice), false);
-    eq(RA.isString({ '0': 1, 'length': 1 }), false);
+    eq(RA.isString({ 0: 1, length: 1 }), false);
     eq(RA.isString(1), false);
     eq(RA.isString(/x/), false);
     eq(RA.isString(Symbol), false);
