@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isArray.js - Documentation</title>
+    <title>isNotString.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isArray.js</h1>
+    <h1 class="page-title">isNotString.js</h1>
     
 
     
@@ -39,27 +39,28 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const isArray = require('ramda/src/internal/_isArray');
+const { complement } = require('ramda');
+
+const iString = require('./isString');
 
 /**
- * Checks if input value is `Array`
+ * Checks if input value is complement of `String`
  *
- * @func isArray
+ * @func isNotString
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotArray|isNotArray}
+ * @see {@link RA.isString|isString}
  * @example
  *
- * RA.isArray([]); //=> true
- * RA.isArray(null); //=> false
- * RA.isArray({}); //=> false
+ * RA.isNotString('abc'); //=> false
+ * RA.isNotString(1); //=> true
  */
 
-module.exports = isArray;
+module.exports = complement(iString);
 </code></pre>
         </article>
     </section>
