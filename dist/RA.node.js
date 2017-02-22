@@ -96,7 +96,7 @@ var isArray = __webpack_require__(12);
  *
  * @func isArray
  * @memberOf RA
- * @since v0.3.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -126,7 +126,7 @@ var _require = __webpack_require__(0),
  *
  * @func isBoolean
  * @memberOf RA
- * @since v0.3.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -156,7 +156,7 @@ var _require = __webpack_require__(0),
  *
  * @func isNull
  * @memberOf RA
- * @since v0.1.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.1.0|v0.1.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -187,7 +187,7 @@ var _require = __webpack_require__(0),
  *
  * @func isUndefined
  * @memberOf RA
- * @since v0.0.1
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -220,7 +220,7 @@ var _require = __webpack_require__(0),
  *
  * @func isNilOrEmpty
  * @memberOf RA
- * @since v0.4.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -256,7 +256,7 @@ var isArray = __webpack_require__(1);
  *
  * @func isNotArray
  * @memberOf RA
- * @since v0.3.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -288,7 +288,7 @@ var isBoolean = __webpack_require__(2);
  *
  * @func isNotBoolean
  * @memberOf RA
- * @since v0.3.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -319,7 +319,7 @@ var _require = __webpack_require__(0),
  *
  * @func isNotEmpty
  * @memberOf RA
- * @since v0.4.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -354,7 +354,7 @@ var _require = __webpack_require__(0),
  *
  * @func isNotNil
  * @memberOf RA
- * @since v0.3.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -388,7 +388,7 @@ var isNull = __webpack_require__(3);
  *
  * @func isNotNull
  * @memberOf RA
- * @since v0.1.0
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.1.0|v0.1.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -420,7 +420,7 @@ var isUndefined = __webpack_require__(4);
  *
  * @func isNotUndefined
  * @memberOf RA
- * @since v0.0.1
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
