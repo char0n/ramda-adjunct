@@ -105,6 +105,7 @@ You can always find fresh build files in circle-ci [artifacts](https://circleci.
 ### Web browser
 
 ```html
+<script src="ramda.js"></script>
 <script src="RA.web.js"></script>
 ```
 or 
