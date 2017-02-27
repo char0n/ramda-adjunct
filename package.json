@@ -4,7 +4,7 @@
   "name": "ramda-adjunct",
   "description": "Extensions for Ramda",
   "keywords": "ramda extensions addons cookbook adjunct",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
