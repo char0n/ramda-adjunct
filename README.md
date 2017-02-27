@@ -60,6 +60,7 @@ This just means that our tests run on these versions.
  - [0.1.0](https://char0n.github.io/ramda-adjunct/0.1.0)
  - [0.2.0](https://char0n.github.io/ramda-adjunct/0.2.0)
  - [0.3.0](https://char0n.github.io/ramda-adjunct/0.3.0)
+ - [0.4.0](https://char0n.github.io/ramda-adjunct/0.4.0)
  - Latest: https://char0n.github.io/ramda-adjunct
 
 ## Development
