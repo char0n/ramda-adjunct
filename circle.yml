@@ -10,7 +10,7 @@ general:
 
 machine:
   node:
-    version: 6.9.5
+    version: 7.4.0
   environment:
     GH_NAME: char0n
     GH_EMAIL: vladimir.gorej@gmail.com
@@ -18,6 +18,10 @@ test:
   override:
     - npm run lint
     - npm run nsp:check
+    - nvm use 0.10 && npm run test
+    - nvm use 0.12 && npm run test
+    - nvm use 4 && npm run test
+    - nvm use 6 && npm run test
     - npm run coverage:
         environment:
           MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml

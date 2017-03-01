@@ -13,7 +13,7 @@
   },
   "main": "./dist/RA.node.js",
   "engines": {
-    "node": ">=6.9.5"
+    "node": ">=0.10.48"
   },
   "scripts": {
     "docs": "better-npm-run docs",

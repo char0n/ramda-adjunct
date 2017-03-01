@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ 	return __webpack_require__(__webpack_require__.s = 18);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -89,7 +89,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 "use strict";
 
 
-var isArray = __webpack_require__(15);
+var isArray = __webpack_require__(16);
 
 /**
  * Checks if input value is `Array`
@@ -149,6 +149,38 @@ module.exports = is(Boolean);
 
 
 var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isNull = __webpack_require__(4);
+
+/**
+ * Checks if input value is complement of `null`
+ *
+ * @func isNotNull
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.1.0|v0.1.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNull|isNull}
+ * @example
+ *
+ * RA.isNotNull(1); //=> true
+ * RA.isNotNull(undefined); //=> true
+ * RA.isNotNull(null); //=> false
+ */
+
+module.exports = complement(isNull);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
     equals = _require.equals;
 
 /**
@@ -173,13 +205,13 @@ var _require = __webpack_require__(0),
 module.exports = equals(null);
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isString = __webpack_require__(16);
+var isString = __webpack_require__(17);
 
 /**
  * Checks if input value is `String`
@@ -201,7 +233,7 @@ var isString = __webpack_require__(16);
 module.exports = isString;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -232,7 +264,53 @@ var _require = __webpack_require__(0),
 module.exports = equals(undefined);
 
 /***/ }),
-/* 6 */
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    or = _require.or;
+
+var isNotNull = __webpack_require__(3);
+
+var GeneratorFunction = null;
+try {
+  GeneratorFunction = new Function('return function* () {}')().constructor; // eslint-disable-line no-new-func
+} catch (e) {} // eslint-disable-line no-empty
+
+
+/* eslint-disable max-len */
+/**
+ * Checks if input `value` is `Generator Function`
+ *
+ * @func isGeneratorFunction
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isNotGeneratorFunction|isNotGeneratorFunction}
+ * @example
+ *
+ * RA.isGeneratorFunction(function* test() { }); //=> true
+ * RA.isGeneratorFunction(null); //=> false
+ * RA.isGeneratorFunction(function test() { }); //=> false
+ * RA.isGeneratorFunction(() => {}); //=> false
+ */
+/* eslint-enable max-len */
+
+module.exports = function (val) {
+  var toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
+  var legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
+
+  return or(toStringCheck, legacyConstructorCheck);
+};
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -268,7 +346,7 @@ var _require = __webpack_require__(0),
 module.exports = anyPass([isNil, isEmpty]);
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -300,7 +378,7 @@ var isArray = __webpack_require__(1);
 module.exports = complement(isArray);
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -333,7 +411,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isArrayLike);
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -365,7 +443,7 @@ var isBoolean = __webpack_require__(2);
 module.exports = complement(isBoolean);
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -400,7 +478,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isEmpty);
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -433,7 +511,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isNil);
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -442,39 +520,7 @@ module.exports = complement(isNil);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isNull = __webpack_require__(3);
-
-/**
- * Checks if input value is complement of `null`
- *
- * @func isNotNull
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.1.0|v0.1.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNull|isNull}
- * @example
- *
- * RA.isNotNull(1); //=> true
- * RA.isNotNull(undefined); //=> true
- * RA.isNotNull(null); //=> false
- */
-
-module.exports = complement(isNull);
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var iString = __webpack_require__(4);
+var iString = __webpack_require__(5);
 
 /**
  * Checks if input value is complement of `String`
@@ -496,7 +542,7 @@ var iString = __webpack_require__(4);
 module.exports = complement(iString);
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -505,7 +551,7 @@ module.exports = complement(iString);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isUndefined = __webpack_require__(5);
+var isUndefined = __webpack_require__(6);
 
 /**
  * Checks if input value is complement `undefined`
@@ -527,7 +573,7 @@ var isUndefined = __webpack_require__(5);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /**
@@ -550,7 +596,7 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = function _isString(x) {
@@ -559,26 +605,27 @@ module.exports = function _isString(x) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(14);
-var isUndefined = __webpack_require__(5);
-var isNull = __webpack_require__(3);
-var isNotNull = __webpack_require__(12);
-var isNotNil = __webpack_require__(11);
+var isNotUndefined = __webpack_require__(15);
+var isUndefined = __webpack_require__(6);
+var isNull = __webpack_require__(4);
+var isNotNull = __webpack_require__(3);
+var isNotNil = __webpack_require__(13);
 var isArray = __webpack_require__(1);
-var isNotArray = __webpack_require__(7);
+var isNotArray = __webpack_require__(9);
 var isBoolean = __webpack_require__(2);
-var isNotBoolean = __webpack_require__(9);
-var isNotEmpty = __webpack_require__(10);
-var isNilOrEmpty = __webpack_require__(6);
-var isString = __webpack_require__(4);
-var isNotString = __webpack_require__(13);
-var isNotArrayLike = __webpack_require__(8);
+var isNotBoolean = __webpack_require__(11);
+var isNotEmpty = __webpack_require__(12);
+var isNilOrEmpty = __webpack_require__(8);
+var isString = __webpack_require__(5);
+var isNotString = __webpack_require__(14);
+var isNotArrayLike = __webpack_require__(10);
+var isGeneratorFunction = __webpack_require__(7);
 
 /**
  * @namespace RA
@@ -597,7 +644,8 @@ module.exports = {
   isNilOrEmpty: isNilOrEmpty,
   isString: isString,
   isNotString: isNotString,
-  isNotArrayLike: isNotArrayLike
+  isNotArrayLike: isNotArrayLike,
+  isGeneratorFunction: isGeneratorFunction
 };
 
 /***/ })

@@ -43,7 +43,7 @@ its documentation directly from its codebase and uses patterns both found in Ram
 ## Requirements
 
  - ramda >= 0.23.0
- - node >=6.9.5
+ - node >=0.10.48
  
 It doesn't mean that Ramda Adjunct won't work on lower versions of node or ramda.
 This just means that our tests run on these versions.
