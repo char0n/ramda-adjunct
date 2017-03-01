@@ -69,6 +69,11 @@ declare namespace RamdaAdjunct {
         */
        isUndefined(val: any): val is undefined;
 
+      /**
+       * Tests whether or not an object is similar to an array.
+       */
+       isNotArrayLike(val: any): boolean
+
     }
 
 }

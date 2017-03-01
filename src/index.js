@@ -13,6 +13,7 @@ const isNotEmpty = require('./isNotEmpty');
 const isNilOrEmpty = require('./isNilOrEmpty');
 const isString = require('./isString');
 const isNotString = require('./isNotString');
+const isNotArrayLike = require('./isNotArrayLike');
 
 /**
  * @namespace RA
@@ -31,4 +32,5 @@ module.exports = {
   isNilOrEmpty,
   isString,
   isNotString,
+  isNotArrayLike,
 };

@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -89,7 +89,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 "use strict";
 
 
-var isArray = __webpack_require__(14);
+var isArray = __webpack_require__(15);
 
 /**
  * Checks if input value is `Array`
@@ -179,7 +179,7 @@ module.exports = equals(null);
 "use strict";
 
 
-var isString = __webpack_require__(15);
+var isString = __webpack_require__(16);
 
 /**
  * Checks if input value is `String`
@@ -307,6 +307,39 @@ module.exports = complement(isArray);
 
 
 var _require = __webpack_require__(0),
+    complement = _require.complement,
+    isArrayLike = _require.isArrayLike;
+
+/**
+ * Tests whether or not an object is similar to an array.
+ *
+ * @func isNotArrayLike
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link http://ramdajs.com/docs/#isArrayLike|isArrayLike}
+ * @example
+ *
+ * RA.isNotArrayLike([]); //=> false
+ * RA.isNotArrayLike(true); //=> true
+ * RA.isNotArrayLike({}); //=> true
+ * RA.isNotArrayLike({length: 10}); //=> true
+ * RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false
+ */
+
+module.exports = complement(isArrayLike);
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
     complement = _require.complement;
 
 var isBoolean = __webpack_require__(2);
@@ -332,7 +365,7 @@ var isBoolean = __webpack_require__(2);
 module.exports = complement(isBoolean);
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -367,7 +400,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isEmpty);
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -400,7 +433,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isNil);
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -432,7 +465,7 @@ var isNull = __webpack_require__(3);
 module.exports = complement(isNull);
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -463,7 +496,7 @@ var iString = __webpack_require__(4);
 module.exports = complement(iString);
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -494,7 +527,7 @@ var isUndefined = __webpack_require__(5);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /**
@@ -517,7 +550,7 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = function _isString(x) {
@@ -526,25 +559,26 @@ module.exports = function _isString(x) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(13);
+var isNotUndefined = __webpack_require__(14);
 var isUndefined = __webpack_require__(5);
 var isNull = __webpack_require__(3);
-var isNotNull = __webpack_require__(11);
-var isNotNil = __webpack_require__(10);
+var isNotNull = __webpack_require__(12);
+var isNotNil = __webpack_require__(11);
 var isArray = __webpack_require__(1);
 var isNotArray = __webpack_require__(7);
 var isBoolean = __webpack_require__(2);
-var isNotBoolean = __webpack_require__(8);
-var isNotEmpty = __webpack_require__(9);
+var isNotBoolean = __webpack_require__(9);
+var isNotEmpty = __webpack_require__(10);
 var isNilOrEmpty = __webpack_require__(6);
 var isString = __webpack_require__(4);
-var isNotString = __webpack_require__(12);
+var isNotString = __webpack_require__(13);
+var isNotArrayLike = __webpack_require__(8);
 
 /**
  * @namespace RA
@@ -562,7 +596,8 @@ module.exports = {
   isNotEmpty: isNotEmpty,
   isNilOrEmpty: isNilOrEmpty,
   isString: isString,
-  isNotString: isNotString
+  isNotString: isNotString,
+  isNotArrayLike: isNotArrayLike
 };
 
 /***/ })
