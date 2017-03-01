@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotBoolean.js - Documentation</title>
+    <title>isNotArrayLike.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,7 +27,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotBoolean.js</h1>
+    <h1 class="page-title">isNotArrayLike.js</h1>
     
 
     
@@ -39,29 +39,29 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { complement } = require('ramda');
-
-const isBoolean = require('./isBoolean');
+const { complement, isArrayLike } = require('ramda');
 
 /**
- * Checks if input value is complement of `Boolean`
+ * Tests whether or not an object is similar to an array.
  *
- * @func isNotBoolean
+ * @func isNotArrayLike
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isBoolean|isBoolean}
+ * @see {@link http://ramdajs.com/docs/#isArrayLike|isArrayLike}
  * @example
  *
- * RA.isNotBoolean(false); //=> false
- * RA.isNotBoolean(true); //=> false
- * RA.isNotBoolean(null); //=> true
+ * RA.isNotArrayLike([]); //=> false
+ * RA.isNotArrayLike(true); //=> true
+ * RA.isNotArrayLike({}); //=> true
+ * RA.isNotArrayLike({length: 10}); //=> true
+ * RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false
  */
 
-module.exports = complement(isBoolean);
+module.exports = complement(isArrayLike);
 </code></pre>
         </article>
     </section>
