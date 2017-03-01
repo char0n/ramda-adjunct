@@ -1,4 +1,5 @@
 /.idea
+/.tmp
 /coverage
 /docs
 /node_modules
@@ -21,6 +22,7 @@
 /tmp-test-bundle.js
 /testem.json
 /webpack.config.js
-/webpack.config-test.js
+/webpack.config-test.web.js
+/webpack.config-test.node.js
 /test-results.xml
 /tsconfig.json

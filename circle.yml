@@ -18,7 +18,6 @@ test:
   override:
     - npm run lint
     - npm run nsp:check
-    - nvm use 0.10 && npm run test
     - nvm use 0.12 && npm run test
     - nvm use 4 && npm run test
     - nvm use 6 && npm run test
