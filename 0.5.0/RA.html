@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Ramda Adjunct 0.5.0</a></h2><h3>Namespaces</h3><ul><li><a href="RA.html">RA</a><ul class='methods'><li data-type='method'><a href="RA.html#.isArray">isArray</a></li><li data-type='method'><a href="RA.html#.isBoolean">isBoolean</a></li><li data-type='method'><a href="RA.html#.isNilOrEmpty">isNilOrEmpty</a></li><li data-type='method'><a href="RA.html#.isNotArray">isNotArray</a></li><li data-type='method'><a href="RA.html#.isNotArrayLike">isNotArrayLike</a></li><li data-type='method'><a href="RA.html#.isNotBoolean">isNotBoolean</a></li><li data-type='method'><a href="RA.html#.isNotEmpty">isNotEmpty</a></li><li data-type='method'><a href="RA.html#.isNotNil">isNotNil</a></li><li data-type='method'><a href="RA.html#.isNotNull">isNotNull</a></li><li data-type='method'><a href="RA.html#.isNotString">isNotString</a></li><li data-type='method'><a href="RA.html#.isNotUndefined">isNotUndefined</a></li><li data-type='method'><a href="RA.html#.isNull">isNull</a></li><li data-type='method'><a href="RA.html#.isString">isString</a></li><li data-type='method'><a href="RA.html#.isUndefined">isUndefined</a></li></ul></li></ul>
+    <h2><a href="index.html">Ramda Adjunct 0.5.0</a></h2><h3>Namespaces</h3><ul><li><a href="RA.html">RA</a><ul class='methods'><li data-type='method'><a href="RA.html#.isArray">isArray</a></li><li data-type='method'><a href="RA.html#.isBoolean">isBoolean</a></li><li data-type='method'><a href="RA.html#.isGeneratorFunction">isGeneratorFunction</a></li><li data-type='method'><a href="RA.html#.isNilOrEmpty">isNilOrEmpty</a></li><li data-type='method'><a href="RA.html#.isNotArray">isNotArray</a></li><li data-type='method'><a href="RA.html#.isNotArrayLike">isNotArrayLike</a></li><li data-type='method'><a href="RA.html#.isNotBoolean">isNotBoolean</a></li><li data-type='method'><a href="RA.html#.isNotEmpty">isNotEmpty</a></li><li data-type='method'><a href="RA.html#.isNotNil">isNotNil</a></li><li data-type='method'><a href="RA.html#.isNotNull">isNotNull</a></li><li data-type='method'><a href="RA.html#.isNotString">isNotString</a></li><li data-type='method'><a href="RA.html#.isNotUndefined">isNotUndefined</a></li><li data-type='method'><a href="RA.html#.isNull">isNull</a></li><li data-type='method'><a href="RA.html#.isString">isString</a></li><li data-type='method'><a href="RA.html#.isUndefined">isUndefined</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -58,7 +58,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line18">line 18</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -400,6 +400,189 @@ RA.isArray({}); //=> false</code></pre>
     <pre class="prettyprint"><code>RA.isBoolean(false); //=> true
 RA.isBoolean(true); //=> true
 RA.isBoolean(null); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isGeneratorFunction"><span class="type-signature">(static) </span>isGeneratorFunction<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isGeneratorFunction.js.html">isGeneratorFunction.js</a>, <a href="isGeneratorFunction.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><code>isFunction</code>, <code>isAsyncFunction</code>, <code>isNotGeneratorFunction</code></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input <code>value</code> is <code>Generator Function</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isGeneratorFunction(function* test() { }); //=> true
+RA.isGeneratorFunction(null); //=> false
+RA.isGeneratorFunction(function test() { }); //=> false
+RA.isGeneratorFunction(() => {}); //=> false</code></pre>
 
 
 
@@ -2696,7 +2879,7 @@ RA.isUndefined(null); //=> false</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Mar 01 2017 19:49:11 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Mar 01 2017 21:35:25 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

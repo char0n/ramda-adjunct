@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotString.js - Documentation</title>
+    <title>isGeneratorFunction.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotString.js</h1>
+    <h1 class="page-title">isGeneratorFunction.js</h1>
     
 
     
@@ -41,28 +41,43 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { complement } = require('ramda');
+const isNotNull = require('./isNotNull');
 
-const iString = require('./isString');
+let GeneratorFunction;
+try {
+  GeneratorFunction = new Function('return function* () {}')().constructor; // eslint-disable-line no-new-func
+} catch (e) {
+  GeneratorFunction = null;
+}
 
+
+/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `String`
+ * Checks if input `value` is `Generator Function`
  *
- * @func isNotString
+ * @func isGeneratorFunction
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isString|isString}
+ * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isNotGeneratorFunction|isNotGeneratorFunction}
  * @example
  *
- * RA.isNotString('abc'); //=> false
- * RA.isNotString(1); //=> true
+ * RA.isGeneratorFunction(function* test() { }); //=> true
+ * RA.isGeneratorFunction(null); //=> false
+ * RA.isGeneratorFunction(function test() { }); //=> false
+ * RA.isGeneratorFunction(() => {}); //=> false
  */
+/* eslint-enable max-len */
 
-module.exports = complement(iString);
+module.exports = (val) => {
+  const toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
+  const legacyConstructorCheck = isNotNull(GeneratorFunction) &amp;&amp; val instanceof GeneratorFunction;
+
+  return toStringCheck || legacyConstructorCheck;
+};
 </code></pre>
         </article>
     </section>
