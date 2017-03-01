@@ -1,5 +1,15 @@
 'use strict';
 
+const isNotNull = require('./isNotNull');
+
+let GeneratorFunction;
+try {
+  GeneratorFunction = new Function('return function* () {}')().constructor; // eslint-disable-line no-new-func
+} catch (e) {
+  GeneratorFunction = null;
+}
+
+
 /* eslint-disable max-len */
 /**
  * Checks if input `value` is `Generator Function`
@@ -21,4 +31,9 @@
  */
 /* eslint-enable max-len */
 
-module.exports = val => Object.prototype.toString.call(val) === '[object GeneratorFunction]';
+module.exports = (val) => {
+  const toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
+  const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
+
+  return toStringCheck || legacyConstructorCheck;
+};
