@@ -43,7 +43,12 @@ its documentation directly from its codebase and uses patterns both found in Ram
 ## Requirements
 
  - ramda >= 0.23.0
- - node >= 0.10.3
+ - node >= 0.10.48
+ 
+Ramda Adjunct is being automatically tested against node version >=4 <=7.
+We are using webpack to build distributions that work also on older versions of node >=0.10.48,
+but these builds are not 100% guaranteed to work on such an old version of node.
+Although they are bundled by webpack they are not automatically tested by CI.
  
 ## Installation
 
