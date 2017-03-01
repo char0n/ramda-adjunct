@@ -1,13 +1,13 @@
 'use strict';
 
+const { or } = require('ramda');
+
 const isNotNull = require('./isNotNull');
 
-let GeneratorFunction;
+let GeneratorFunction = null;
 try {
   GeneratorFunction = new Function('return function* () {}')().constructor; // eslint-disable-line no-new-func
-} catch (e) {
-  GeneratorFunction = null;
-}
+} catch (e) { } // eslint-disable-line no-empty
 
 
 /* eslint-disable max-len */
@@ -35,5 +35,5 @@ module.exports = (val) => {
   const toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
   const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
 
-  return toStringCheck || legacyConstructorCheck;
+  return or(toStringCheck, legacyConstructorCheck);
 };
