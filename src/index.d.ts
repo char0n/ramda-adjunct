@@ -74,6 +74,11 @@ declare namespace RamdaAdjunct {
        */
        isNotArrayLike(val: any): boolean
 
+      /**
+       * Checks if input `value` is `Generator Function`
+       */
+       isGeneratorFunction(val: any): boolean
+
     }
 
 }

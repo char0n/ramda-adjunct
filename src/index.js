@@ -14,6 +14,7 @@ const isNilOrEmpty = require('./isNilOrEmpty');
 const isString = require('./isString');
 const isNotString = require('./isNotString');
 const isNotArrayLike = require('./isNotArrayLike');
+const isGeneratorFunction = require('./isGeneratorFunction');
 
 /**
  * @namespace RA
@@ -33,4 +34,5 @@ module.exports = {
   isString,
   isNotString,
   isNotArrayLike,
+  isGeneratorFunction,
 };
