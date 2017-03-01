@@ -37,8 +37,8 @@ describe('isNilOrEmpty', function() {
   });
 
   it('returns true for empty arguments object', function() {
-    eq(RA.isNilOrEmpty((function() { return arguments; })()), true);
-    eq(RA.isNilOrEmpty((function() { return arguments; })(0)), false);
+    eq(RA.isNilOrEmpty((function() { return arguments })()), true);
+    eq(RA.isNilOrEmpty((function() { return arguments })(0)), false);
   });
 
   it('returns false for every other value', function() {

@@ -28,8 +28,8 @@ describe('isNotEmpty', function() {
   });
 
   it('returns false for empty arguments object', function() {
-    eq(RA.isNotEmpty((function() { return arguments; })()), false);
-    eq(RA.isNotEmpty((function() { return arguments; })(0)), true);
+    eq(RA.isNotEmpty((function() { return arguments })()), false);
+    eq(RA.isNotEmpty((function() { return arguments })(0)), true);
   });
 
   it('returns true for every other value', function() {

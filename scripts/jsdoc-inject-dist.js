@@ -2,6 +2,7 @@
 
 const path = require('path');
 const fs = require('fs');
+const glob = require('glob');
 
 const pkg = require(path.join(__dirname, '..', 'package.json')); // eslint-disable-line import/no-dynamic-require
 
@@ -16,7 +17,6 @@ const distPath = path.join(rootPath, 'dist');
 const raWebDistPath = path.join(distPath, raWebName);
 const raWebDocsPath = path.join(docsScriptsPath, raWebName);
 const ramdaDocsPath = path.join(docsScriptsPath, ramdaName);
-const docsIndexFile = path.join(docsPath, 'index.html');
 
 // Copy Ramda to docs/scripts.
 fs.writeFileSync(ramdaDocsPath, fs.readFileSync(ramdaDistPath));
@@ -24,9 +24,15 @@ fs.writeFileSync(ramdaDocsPath, fs.readFileSync(ramdaDistPath));
 // Copy RA to docs/scripts.
 fs.writeFileSync(raWebDocsPath, fs.readFileSync(raWebDistPath));
 
-// Append RA into docs template.
-const html = fs.readFileSync(docsIndexFile, 'utf-8');
-const raHtmlFragment = `<script src="scripts/${raWebName}"></script>`;
-const ramdaHtmlFragment = `<script src="scripts/${ramdaName}"></script>`;
-const htmlWithRamdaAndRA = html.replace('</head>', `    ${ramdaHtmlFragment}\n    ${raHtmlFragment}\n</head>`);
-fs.writeFileSync(docsIndexFile, htmlWithRamdaAndRA);
+// Append RA into docs templates.
+glob(path.normalize(`${docsPath}/*.html`), null, (err, files) => {
+  if (err !== null) { console.error(err) }
+
+  files.forEach((htmlFile) => {
+    const html = fs.readFileSync(htmlFile, 'utf-8');
+    const raHtmlFragment = `<script src="scripts/${raWebName}"></script>`;
+    const ramdaHtmlFragment = `<script src="scripts/${ramdaName}"></script>`;
+    const htmlWithRamdaAndRA = html.replace('</head>', `    ${ramdaHtmlFragment}\n    ${raHtmlFragment}\n</head>`);
+    fs.writeFileSync(htmlFile, htmlWithRamdaAndRA);
+  });
+});
