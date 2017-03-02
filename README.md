@@ -46,9 +46,13 @@ its documentation directly from its codebase and uses patterns both found in Ram
  - node >= 0.10.48
  
 Ramda Adjunct is being automatically tested against node version >=4 <=7.
-We are using webpack to build distributions that work also on older versions of node >=0.10.48,
-but these builds are not 100% guaranteed to work on such an old version of node.
-Although they are bundled by webpack they are not automatically tested by CI.
+
+### Legacy builds
+
+We are building our npm distributions by Webpack to support also legacy versions of node starting from 0.10.48. 
+Although all tests are run only against node version >=4 <=7, we rely on Webpack to transpile ramda-adjunct
+into legacy ES5. It is also possible that our ES5 distributions run on node versions older than 0.10.48 as
+long as they support ES5. 
  
 ## Installation
 
