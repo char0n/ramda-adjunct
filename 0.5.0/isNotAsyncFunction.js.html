@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotGeneratorFunction.js - Documentation</title>
+    <title>isNotAsyncFunction.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotGeneratorFunction.js</h1>
+    <h1 class="page-title">isNotAsyncFunction.js</h1>
     
 
     
@@ -43,13 +43,14 @@
 
 const { complement } = require('ramda');
 
-const isGeneratorFunction = require('./isGeneratorFunction');
+const isAsyncFunction = require('./isAsyncFunction');
+
 
 /* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Generator Function`
+ * Checks if input value is complement of `Async Function`
  *
- * @func isNotGeneratorFunction
+ * @func isNotAsyncFunction
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
@@ -59,14 +60,14 @@ const isGeneratorFunction = require('./isGeneratorFunction');
  * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
  * @example
  *
- * RA.isNotGeneratorFunction(function* test() { }); //=> false
- * RA.isNotGeneratorFunction(null); //=> true
- * RA.isNotGeneratorFunction(function test() { }); //=> true
- * RA.isNotGeneratorFunction(() => {}); //=> true
+ * RA.isNotAsyncFunction(async function test() { }); //=> false
+ * RA.isNotAsyncFunction(null); //=> true
+ * RA.isNotAsyncFunction(function test() { }); //=> true
+ * RA.isNotAsyncFunction(() => {}); //=> true
  */
 /* eslint-enable max-len */
 
-module.exports = complement(isGeneratorFunction);
+module.exports = complement(isAsyncFunction);
 </code></pre>
         </article>
     </section>
