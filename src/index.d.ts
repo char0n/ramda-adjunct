@@ -92,6 +92,11 @@ declare namespace RamdaAdjunct {
          * Checks if input value is complement of `Async Function`
          */
         isNotAsyncFunction(val: any): boolean
+
+        /**
+         * Checks if input value is `Function`
+         */
+        isFunction(val: any): boolean
     }
 
 }

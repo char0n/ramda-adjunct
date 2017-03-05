@@ -18,6 +18,7 @@ const isGeneratorFunction = require('./isGeneratorFunction');
 const isNotGeneratorFunction = require('./isNotGeneratorFunction');
 const isAsyncFunction = require('./isAsyncFunction');
 const isNotAsyncFunction = require('./isNotAsyncFunction');
+const isFunction = require('./isFunction');
 
 /**
  * @namespace RA
@@ -41,4 +42,5 @@ module.exports = {
   isNotGeneratorFunction,
   isAsyncFunction,
   isNotAsyncFunction,
+  isFunction,
 };
