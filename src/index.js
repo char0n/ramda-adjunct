@@ -15,6 +15,7 @@ const isString = require('./isString');
 const isNotString = require('./isNotString');
 const isNotArrayLike = require('./isNotArrayLike');
 const isGeneratorFunction = require('./isGeneratorFunction');
+const isNotGeneratorFunction = require('./isNotGeneratorFunction');
 
 /**
  * @namespace RA
@@ -35,4 +36,5 @@ module.exports = {
   isNotString,
   isNotArrayLike,
   isGeneratorFunction,
+  isNotGeneratorFunction,
 };
