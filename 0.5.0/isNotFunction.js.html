@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotUndefined.js - Documentation</title>
+    <title>isNotFunction.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotUndefined.js</h1>
+    <h1 class="page-title">isNotFunction.js</h1>
     
 
     
@@ -43,27 +43,32 @@
 
 const { complement } = require('ramda');
 
-const isUndefined = require('./isUndefined');
+const isFunction = require('./isFunction');
 
-
+/* eslint-disable max-len */
 /**
- * Checks if input value is complement `undefined`
+ * Checks if input value is complement of `Function`
  *
- * @func isNotUndefined
+ * @func isNotFunction
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isUndefined|isUndefined}
+ * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
  * @example
  *
- * RA.isNotUndefined(1); //=> true
- * RA.isNotUndefined(undefined); //=> false
- * RA.isNotUndefined(null); //=> true
+ * RA.isNotFunction(function test() { }); //=> false
+ * RA.isNotFunction(function* test() { }); //=> false
+ * RA.isNotFunction(async function test() { }); //=> false
+ * RA.isNotFunction(() => {}); //=> false
+ * RA.isNotFunction(null); //=> true
+ * RA.isNotFunction('abc'); //=> true
  */
-module.exports = complement(isUndefined);
+/* eslint-enable max-len */
+
+module.exports = complement(isFunction);
 </code></pre>
         </article>
     </section>
