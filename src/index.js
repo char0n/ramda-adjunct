@@ -21,6 +21,7 @@ const isNotAsyncFunction = require('./isNotAsyncFunction');
 const isFunction = require('./isFunction');
 const isNotFunction = require('./isNotFunction');
 const isObject = require('./isObject');
+const isObjectLike = require('./isObjectLike');
 
 /**
  * @namespace RA
@@ -47,4 +48,5 @@ module.exports = {
   isFunction,
   isNotFunction,
   isObject,
+  isObjectLike,
 };

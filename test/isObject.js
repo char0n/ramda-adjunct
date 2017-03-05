@@ -8,9 +8,7 @@ const Symbol = require('./shared/Symbol');
 describe('isObject', function() {
   it('tests a value for language type of `Object`', function() {
     eq(RA.isObject({}), true);
-    eq(RA.isObject([]), true);
     eq(RA.isObject(Object(true)), true);
-    eq(RA.isObject(Object(false)), true);
     eq(RA.isObject(args), true);
     eq(RA.isObject([1, 2, 3]), true);
     eq(RA.isObject(Object(false)), true);
