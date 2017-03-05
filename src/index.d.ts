@@ -71,37 +71,42 @@ declare namespace RamdaAdjunct {
         /**
          * Tests whether or not an object is similar to an array.
          */
-        isNotArrayLike(val: any): boolean
+        isNotArrayLike(val: any): boolean;
 
         /**
          * Checks if input value is `Generator Function`
          */
-        isGeneratorFunction(val: any): boolean
+        isGeneratorFunction(val: any): boolean;
 
         /**
          * Checks if input value is complement of `Generator Function`
          */
-        isNotGeneratorFunction(val: any): boolean
+        isNotGeneratorFunction(val: any): boolean;
 
         /**
          * Checks if input value is `Async Function`
          */
-        isAsyncFunction(val: any): boolean
+        isAsyncFunction(val: any): boolean;
 
         /**
          * Checks if input value is complement of `Async Function`
          */
-        isNotAsyncFunction(val: any): boolean
+        isNotAsyncFunction(val: any): boolean;
 
         /**
          * Checks if input value is `Function`
          */
-        isFunction(val: any): boolean
+        isFunction(val: any): boolean;
 
         /**
          * Checks if input value is complement of `Function`
          */
-        isNotFunction(val: any): boolean
+        isNotFunction(val: any): boolean;
+
+        /**
+         * Checks if input value is language type of `Object`
+         */
+        isObject(val: any): val is Object;
     }
 
 }

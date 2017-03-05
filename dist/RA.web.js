@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 24);
+/******/ 	return __webpack_require__(__webpack_require__.s = 25);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -167,7 +167,7 @@ module.exports = function (val) {
 "use strict";
 
 
-var isArray = __webpack_require__(21);
+var isArray = __webpack_require__(22);
 
 /**
  * Checks if input value is `Array`
@@ -229,7 +229,7 @@ module.exports = is(Boolean);
 var _require = __webpack_require__(0),
     anyPass = _require.anyPass;
 
-var isFunction = __webpack_require__(22);
+var isFunction = __webpack_require__(23);
 
 var isGeneratorFunction = __webpack_require__(2);
 var isAsyncFunction = __webpack_require__(1);
@@ -329,7 +329,7 @@ module.exports = equals(null);
 "use strict";
 
 
-var isString = __webpack_require__(23);
+var isString = __webpack_require__(24);
 
 /**
  * Checks if input value is `String`
@@ -753,6 +753,40 @@ module.exports = complement(isUndefined);
 
 /***/ }),
 /* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    is = _require.is;
+
+/* eslint-disable max-len */
+/**
+ * Checks if input value is language type of `Object`
+ *
+ * @func isObject
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotObject|isNotObject}, {@link RA.isObjectLike|isObjectLike}, {@link RA.isPlainObject|isPlainObject}
+ * @example
+ *
+ * RA.isObject({}); //=> true
+ * RA.isObject([]); //=> true
+ * RA.isObject(() => {}); //=> true
+ * RA.isObject(null); //=> false
+ * RA.isObject(undefined); //=> false
+ */
+/* eslint-enable max-len */
+
+module.exports = is(Object);
+
+/***/ }),
+/* 22 */
 /***/ (function(module, exports) {
 
 /**
@@ -775,7 +809,7 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = function _isFunction(x) {
@@ -784,7 +818,7 @@ module.exports = function _isFunction(x) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = function _isString(x) {
@@ -793,7 +827,7 @@ module.exports = function _isString(x) {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -819,6 +853,7 @@ var isAsyncFunction = __webpack_require__(1);
 var isNotAsyncFunction = __webpack_require__(13);
 var isFunction = __webpack_require__(5);
 var isNotFunction = __webpack_require__(16);
+var isObject = __webpack_require__(21);
 
 /**
  * @namespace RA
@@ -843,7 +878,8 @@ module.exports = {
   isAsyncFunction: isAsyncFunction,
   isNotAsyncFunction: isNotAsyncFunction,
   isFunction: isFunction,
-  isNotFunction: isNotFunction
+  isNotFunction: isNotFunction,
+  isObject: isObject
 };
 
 /***/ })
