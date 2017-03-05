@@ -20,7 +20,7 @@ describe('isObject', function() {
     eq(RA.isObject(Object(0)), true);
     eq(RA.isObject(/x/), true);
     eq(RA.isObject(Object('a')), true);
-    eq(RA.isObject(Symbol), true);
+    eq(RA.isObject(Symbol), typeof Symbol !== 'undefined');
 
     eq(RA.isObject(null), false);
     eq(RA.isObject(undefined), false);
