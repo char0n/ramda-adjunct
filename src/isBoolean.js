@@ -3,7 +3,7 @@
 const { is } = require('ramda');
 
 /**
- * Checks if input `value` is `Boolean`
+ * Checks if input value is `Boolean`
  *
  * @func isBoolean
  * @memberOf RA

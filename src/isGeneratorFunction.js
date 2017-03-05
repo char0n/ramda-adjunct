@@ -12,7 +12,7 @@ try {
 
 /* eslint-disable max-len */
 /**
- * Checks if input `value` is `Generator Function`
+ * Checks if input value is `Generator Function`
  *
  * @func isGeneratorFunction
  * @memberOf RA
@@ -32,7 +32,7 @@ try {
 /* eslint-enable max-len */
 
 module.exports = (val) => {
-  const toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
+  const toStringCheck = Object.prototype.toString.call(val) === '[object AsyncFunction]';
   const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
 
   return or(toStringCheck, legacyConstructorCheck);

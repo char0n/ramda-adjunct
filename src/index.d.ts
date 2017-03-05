@@ -82,6 +82,11 @@ declare namespace RamdaAdjunct {
          * Checks if input value is complement of `Generator Function`
          */
         isNotGeneratorFunction(val: any): boolean
+
+        /**
+         * Checks if input value is `Async Function`
+         */
+        isAsyncFunction(val: any): boolean
     }
 
 }

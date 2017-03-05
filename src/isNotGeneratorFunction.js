@@ -6,7 +6,7 @@ const isGeneratorFunction = require('./isGeneratorFunction');
 
 /* eslint-disable max-len */
 /**
- * Checks if input `value` is complement of `Generator Function`
+ * Checks if input value is complement of `Generator Function`
  *
  * @func isNotGeneratorFunction
  * @memberOf RA
