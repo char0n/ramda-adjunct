@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotEmpty.js - Documentation</title>
+    <title>isFunction.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotEmpty.js</h1>
+    <h1 class="page-title">isFunction.js</h1>
     
 
     
@@ -41,31 +41,36 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { complement, isEmpty } = require('ramda');
+const { anyPass } = require('ramda');
+const isFunction = require('ramda/src/internal/_isFunction');
 
+const isGeneratorFunction = require('./isGeneratorFunction');
+const isAsyncFunction = require('./isAsyncFunction');
+
+/* eslint-disable max-len */
 /**
- * Returns true if the given value is not its type's empty value; `false` otherwise.
+ * Checks if input value is `Function`
  *
- * @func isNotEmpty
+ * @func isFunction
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}
+ * @see {@link RA.isNotFunction|isNotFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
  * @example
  *
- * RA.isNotEmpty([1, 2, 3]); //=> true
- * RA.isNotEmpty([]); //=> false
- * RA.isNotEmpty(''); //=> false
- * RA.isNotEmpty(null); //=> true
- * RA.isNotEmpty(undefined): //=> true
- * RA.isNotEmpty({}); //=> false
- * RA.isNotEmpty({length: 0}); //=> true
+ * RA.isFunction(function test() { }); //=> true
+ * RA.isFunction(function* test() { }); //=> true
+ * RA.isFunction(async function test() { }); //=> true
+ * RA.isFunction(() => {}); //=> true
+ * RA.isFunction(null); //=> false
+ * RA.isFunction('abc'); //=> false
  */
+/* eslint-enable max-len */
 
-module.exports = complement(isEmpty);
+module.exports = anyPass([isFunction, isGeneratorFunction, isAsyncFunction]);
 </code></pre>
         </article>
     </section>
