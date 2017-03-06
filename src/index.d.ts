@@ -127,6 +127,11 @@ declare namespace RamdaAdjunct {
          * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
          */
         isPlainObject(val: any): boolean
+
+        /**
+         * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
+         */
+        isNotPlainObject(val: any): boolean
     }
 
 }

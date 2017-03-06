@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 31);
+/******/ 	return __webpack_require__(__webpack_require__.s = 32);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 var _require = __webpack_require__(0),
     anyPass = _require.anyPass;
 
-var _isFunction = __webpack_require__(28);
+var _isFunction = __webpack_require__(29);
 
 var isGeneratorFunction = __webpack_require__(4);
 var isAsyncFunction = __webpack_require__(3);
@@ -274,7 +274,7 @@ var _require = __webpack_require__(0),
     both = _require.both;
 
 var isNotNull = __webpack_require__(2);
-var isOfTypeObject = __webpack_require__(12);
+var isOfTypeObject = __webpack_require__(13);
 
 /* eslint-disable max-len */
 /**
@@ -307,7 +307,7 @@ module.exports = both(isNotNull, isOfTypeObject);
 "use strict";
 
 
-var _isArray = __webpack_require__(27);
+var _isArray = __webpack_require__(28);
 
 /**
  * Checks if input value is `Array`
@@ -372,7 +372,7 @@ var _require = __webpack_require__(0),
 
 var isNotNull = __webpack_require__(2);
 var isFunction = __webpack_require__(1);
-var isOfTypeObject = __webpack_require__(12);
+var isOfTypeObject = __webpack_require__(13);
 
 /* eslint-disable max-len */
 /**
@@ -405,521 +405,7 @@ module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
 "use strict";
 
 
-var _isString = __webpack_require__(30);
-
-/**
- * Checks if input value is `String`
- *
- * @func isString
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotString|isNotString}
- * @example
- *
- * RA.isString('abc'); //=> true
- * RA.isString(1); //=> false
- */
-
-module.exports = _isString;
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    equals = _require.equals;
-
-/**
- * Checks if input value is `undefined`
- *
- * @func isUndefined
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotUndefined|isNotUndefined}
- * @example
- *
- * RA.isUndefined(1); //=> false
- * RA.isUndefined(undefined); //=> true
- * RA.isUndefined(null); //=> false
- */
-
-
-module.exports = equals(undefined);
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-module.exports = function (val) {
-  return (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object';
-};
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    anyPass = _require.anyPass,
-    isEmpty = _require.isEmpty,
-    isNil = _require.isNil;
-
-/**
- * Returns `true` if the given value is its type's empty value, `null` or `undefined`
- *
- * @func isNilOrEmpty
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}, {@link http://ramdajs.com/docs/#isNil|isNil}
- * @example
- *
- * RA.isNilOrEmpty([1, 2, 3]); //=> false
- * RA.isNilOrEmpty([]); //=> true
- * RA.isNilOrEmpty(''); //=> true
- * RA.isNilOrEmpty(null); //=> true
- * RA.isNilOrEmpty(undefined): //=> true
- * RA.isNilOrEmpty({}); //=> true
- * RA.isNilOrEmpty({length: 0}); //=> false
- */
-
-module.exports = anyPass([isNil, isEmpty]);
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var isArray = __webpack_require__(7);
-
-/**
- * Checks if input value is complement of `Array`
- *
- * @func isNotArray
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isArray|isArray}
- * @example
- *
- * RA.isNotArray([]); //=> false
- * RA.isNotArray(null); //=> true
- * RA.isNotArray({}); //=> true
- */
-
-module.exports = complement(isArray);
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement,
-    isArrayLike = _require.isArrayLike;
-
-/**
- * Tests whether or not an object is similar to an array.
- *
- * @func isNotArrayLike
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isArrayLike|isArrayLike}
- * @example
- *
- * RA.isNotArrayLike([]); //=> false
- * RA.isNotArrayLike(true); //=> true
- * RA.isNotArrayLike({}); //=> true
- * RA.isNotArrayLike({length: 10}); //=> true
- * RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false
- */
-
-module.exports = complement(isArrayLike);
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var isAsyncFunction = __webpack_require__(3);
-
-/* eslint-disable max-len */
-/**
- * Checks if input value is complement of `Async Function`
- *
- * @func isNotAsyncFunction
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
- * @example
- *
- * RA.isNotAsyncFunction(async function test() { }); //=> false
- * RA.isNotAsyncFunction(null); //=> true
- * RA.isNotAsyncFunction(function test() { }); //=> true
- * RA.isNotAsyncFunction(() => {}); //=> true
- */
-/* eslint-enable max-len */
-
-module.exports = complement(isAsyncFunction);
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var isBoolean = __webpack_require__(8);
-
-/**
- * Checks if input value is complement of `Boolean`
- *
- * @func isNotBoolean
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isBoolean|isBoolean}
- * @example
- *
- * RA.isNotBoolean(false); //=> false
- * RA.isNotBoolean(true); //=> false
- * RA.isNotBoolean(null); //=> true
- */
-
-module.exports = complement(isBoolean);
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement,
-    isEmpty = _require.isEmpty;
-
-/**
- * Returns true if the given value is not its type's empty value; `false` otherwise.
- *
- * @func isNotEmpty
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}
- * @example
- *
- * RA.isNotEmpty([1, 2, 3]); //=> true
- * RA.isNotEmpty([]); //=> false
- * RA.isNotEmpty(''); //=> false
- * RA.isNotEmpty(null); //=> true
- * RA.isNotEmpty(undefined): //=> true
- * RA.isNotEmpty({}); //=> false
- * RA.isNotEmpty({length: 0}); //=> true
- */
-
-module.exports = complement(isEmpty);
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var isFunction = __webpack_require__(1);
-
-/* eslint-disable max-len */
-/**
- * Checks if input value is complement of `Function`
- *
- * @func isNotFunction
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
- * @example
- *
- * RA.isNotFunction(function test() { }); //=> false
- * RA.isNotFunction(function* test() { }); //=> false
- * RA.isNotFunction(async function test() { }); //=> false
- * RA.isNotFunction(() => {}); //=> false
- * RA.isNotFunction(null); //=> true
- * RA.isNotFunction('abc'); //=> true
- */
-/* eslint-enable max-len */
-
-module.exports = complement(isFunction);
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var isGeneratorFunction = __webpack_require__(4);
-
-/* eslint-disable max-len */
-/**
- * Checks if input value is complement of `Generator Function`
- *
- * @func isNotGeneratorFunction
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
- * @example
- *
- * RA.isNotGeneratorFunction(function* test() { }); //=> false
- * RA.isNotGeneratorFunction(null); //=> true
- * RA.isNotGeneratorFunction(function test() { }); //=> true
- * RA.isNotGeneratorFunction(() => {}); //=> true
- */
-/* eslint-enable max-len */
-
-module.exports = complement(isGeneratorFunction);
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    isNil = _require.isNil,
-    complement = _require.complement;
-
-/**
- * Checks if input value is complement of `null` or `undefined`
- *
- * @func isNotNil
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isNil|isNil}
- * @example
- *
- * RA.isNotNil(null); //=> false
- * RA.isNotNil(undefined); //=> false
- * RA.isNotNil(0); //=> true
- * RA.isNotNil([]); //=> true
- */
-
-
-module.exports = complement(isNil);
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var isObject = __webpack_require__(9);
-
-/* eslint-disable max-len */
-/**
- * Checks if input value is complement of language type of `Object`
- *
- * @func isNotObject
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isObject|isObject}, {@link RA.isObjectLike|isObjectLike}, {@link RA.isPlainObject|isPlainObject}
- * @example
- *
- * RA.isNotObject({}); //=> false
- * RA.isNotObject([]); //=> false
- * RA.isNotObject(() => {}); //=> false
- * RA.isNotObject(null); //=> true
- * RA.isNotObject(undefined); //=> true
- */
-/* eslint-enable max-len */
-
-module.exports = complement(isObject);
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var isObjectLike = __webpack_require__(6);
-
-/* eslint-disable max-len */
-/**
- * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
- *
- * @func isNotObjectLike
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isObjectLike|isObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
- * @example
- *
- * RA.isNotObjectLike({}); //=> false
- * RA.isNotObjectLike([]); //=> false
- * RA.isNotObjectLike(() => {}); //=> true
- * RA.isNotObjectLike(null); //=> true
- * RA.isNotObjectLike(undefined); //=> true
- */
-/* eslint-enable max-len */
-
-module.exports = complement(isObjectLike);
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var iString = __webpack_require__(10);
-
-/**
- * Checks if input value is complement of `String`
- *
- * @func isNotString
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isString|isString}
- * @example
- *
- * RA.isNotString('abc'); //=> false
- * RA.isNotString(1); //=> true
- */
-
-module.exports = complement(iString);
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    complement = _require.complement;
-
-var isUndefined = __webpack_require__(11);
-
-/**
- * Checks if input value is complement `undefined`
- *
- * @func isNotUndefined
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isUndefined|isUndefined}
- * @example
- *
- * RA.isNotUndefined(1); //=> true
- * RA.isNotUndefined(undefined); //=> false
- * RA.isNotUndefined(null); //=> true
- */
-module.exports = complement(isUndefined);
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _isObject = __webpack_require__(29);
+var _isObject = __webpack_require__(30);
 
 var _require = __webpack_require__(0),
     pipe = _require.pipe,
@@ -978,7 +464,563 @@ module.exports = function (val) {
 };
 
 /***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _isString = __webpack_require__(31);
+
+/**
+ * Checks if input value is `String`
+ *
+ * @func isString
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotString|isNotString}
+ * @example
+ *
+ * RA.isString('abc'); //=> true
+ * RA.isString(1); //=> false
+ */
+
+module.exports = _isString;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    equals = _require.equals;
+
+/**
+ * Checks if input value is `undefined`
+ *
+ * @func isUndefined
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotUndefined|isNotUndefined}
+ * @example
+ *
+ * RA.isUndefined(1); //=> false
+ * RA.isUndefined(undefined); //=> true
+ * RA.isUndefined(null); //=> false
+ */
+
+
+module.exports = equals(undefined);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function (val) {
+  return (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object';
+};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    anyPass = _require.anyPass,
+    isEmpty = _require.isEmpty,
+    isNil = _require.isNil;
+
+/**
+ * Returns `true` if the given value is its type's empty value, `null` or `undefined`
+ *
+ * @func isNilOrEmpty
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}, {@link http://ramdajs.com/docs/#isNil|isNil}
+ * @example
+ *
+ * RA.isNilOrEmpty([1, 2, 3]); //=> false
+ * RA.isNilOrEmpty([]); //=> true
+ * RA.isNilOrEmpty(''); //=> true
+ * RA.isNilOrEmpty(null); //=> true
+ * RA.isNilOrEmpty(undefined): //=> true
+ * RA.isNilOrEmpty({}); //=> true
+ * RA.isNilOrEmpty({length: 0}); //=> false
+ */
+
+module.exports = anyPass([isNil, isEmpty]);
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isArray = __webpack_require__(7);
+
+/**
+ * Checks if input value is complement of `Array`
+ *
+ * @func isNotArray
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isArray|isArray}
+ * @example
+ *
+ * RA.isNotArray([]); //=> false
+ * RA.isNotArray(null); //=> true
+ * RA.isNotArray({}); //=> true
+ */
+
+module.exports = complement(isArray);
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement,
+    isArrayLike = _require.isArrayLike;
+
+/**
+ * Tests whether or not an object is similar to an array.
+ *
+ * @func isNotArrayLike
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link http://ramdajs.com/docs/#isArrayLike|isArrayLike}
+ * @example
+ *
+ * RA.isNotArrayLike([]); //=> false
+ * RA.isNotArrayLike(true); //=> true
+ * RA.isNotArrayLike({}); //=> true
+ * RA.isNotArrayLike({length: 10}); //=> true
+ * RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false
+ */
+
+module.exports = complement(isArrayLike);
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isAsyncFunction = __webpack_require__(3);
+
+/* eslint-disable max-len */
+/**
+ * Checks if input value is complement of `Async Function`
+ *
+ * @func isNotAsyncFunction
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @example
+ *
+ * RA.isNotAsyncFunction(async function test() { }); //=> false
+ * RA.isNotAsyncFunction(null); //=> true
+ * RA.isNotAsyncFunction(function test() { }); //=> true
+ * RA.isNotAsyncFunction(() => {}); //=> true
+ */
+/* eslint-enable max-len */
+
+module.exports = complement(isAsyncFunction);
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isBoolean = __webpack_require__(8);
+
+/**
+ * Checks if input value is complement of `Boolean`
+ *
+ * @func isNotBoolean
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isBoolean|isBoolean}
+ * @example
+ *
+ * RA.isNotBoolean(false); //=> false
+ * RA.isNotBoolean(true); //=> false
+ * RA.isNotBoolean(null); //=> true
+ */
+
+module.exports = complement(isBoolean);
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement,
+    isEmpty = _require.isEmpty;
+
+/**
+ * Returns true if the given value is not its type's empty value; `false` otherwise.
+ *
+ * @func isNotEmpty
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}
+ * @example
+ *
+ * RA.isNotEmpty([1, 2, 3]); //=> true
+ * RA.isNotEmpty([]); //=> false
+ * RA.isNotEmpty(''); //=> false
+ * RA.isNotEmpty(null); //=> true
+ * RA.isNotEmpty(undefined): //=> true
+ * RA.isNotEmpty({}); //=> false
+ * RA.isNotEmpty({length: 0}); //=> true
+ */
+
+module.exports = complement(isEmpty);
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isFunction = __webpack_require__(1);
+
+/* eslint-disable max-len */
+/**
+ * Checks if input value is complement of `Function`
+ *
+ * @func isNotFunction
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @example
+ *
+ * RA.isNotFunction(function test() { }); //=> false
+ * RA.isNotFunction(function* test() { }); //=> false
+ * RA.isNotFunction(async function test() { }); //=> false
+ * RA.isNotFunction(() => {}); //=> false
+ * RA.isNotFunction(null); //=> true
+ * RA.isNotFunction('abc'); //=> true
+ */
+/* eslint-enable max-len */
+
+module.exports = complement(isFunction);
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isGeneratorFunction = __webpack_require__(4);
+
+/* eslint-disable max-len */
+/**
+ * Checks if input value is complement of `Generator Function`
+ *
+ * @func isNotGeneratorFunction
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @example
+ *
+ * RA.isNotGeneratorFunction(function* test() { }); //=> false
+ * RA.isNotGeneratorFunction(null); //=> true
+ * RA.isNotGeneratorFunction(function test() { }); //=> true
+ * RA.isNotGeneratorFunction(() => {}); //=> true
+ */
+/* eslint-enable max-len */
+
+module.exports = complement(isGeneratorFunction);
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    isNil = _require.isNil,
+    complement = _require.complement;
+
+/**
+ * Checks if input value is complement of `null` or `undefined`
+ *
+ * @func isNotNil
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link http://ramdajs.com/docs/#isNil|isNil}
+ * @example
+ *
+ * RA.isNotNil(null); //=> false
+ * RA.isNotNil(undefined); //=> false
+ * RA.isNotNil(0); //=> true
+ * RA.isNotNil([]); //=> true
+ */
+
+
+module.exports = complement(isNil);
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isObject = __webpack_require__(9);
+
+/* eslint-disable max-len */
+/**
+ * Checks if input value is complement of language type of `Object`
+ *
+ * @func isNotObject
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isObject|isObject}, {@link RA.isObjectLike|isObjectLike}, {@link RA.isPlainObject|isPlainObject}
+ * @example
+ *
+ * RA.isNotObject({}); //=> false
+ * RA.isNotObject([]); //=> false
+ * RA.isNotObject(() => {}); //=> false
+ * RA.isNotObject(null); //=> true
+ * RA.isNotObject(undefined); //=> true
+ */
+/* eslint-enable max-len */
+
+module.exports = complement(isObject);
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isObjectLike = __webpack_require__(6);
+
+/* eslint-disable max-len */
+/**
+ * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
+ *
+ * @func isNotObjectLike
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isObjectLike|isObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
+ * @example
+ *
+ * RA.isNotObjectLike({}); //=> false
+ * RA.isNotObjectLike([]); //=> false
+ * RA.isNotObjectLike(() => {}); //=> true
+ * RA.isNotObjectLike(null); //=> true
+ * RA.isNotObjectLike(undefined); //=> true
+ */
+/* eslint-enable max-len */
+
+module.exports = complement(isObjectLike);
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isPlainObject = __webpack_require__(10);
+
+/* eslint-disable max-len */
+/**
+ * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`)
+ *
+ * @func isNotPlainObject
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isPlainObject|isPlainObject}, {@link RA.isObjectLike|isObjectLike}, {@link RA.isObject|isObject}
+ * @example
+ *
+ * class Bar {
+ *   constructor() {
+ *     this.prop = 'value';
+ *   }
+ * }
+ *
+ * RA.isNotPlainObject(new Bar()); //=> true
+ * RA.isNotPlainObject({ prop: 'value' }); //=> false
+ * RA.isNotPlainObject(['a', 'b', 'c']); //=> true
+ * RA.isNotPlainObject(Object.create(null); //=> false
+ * RA.isNotPlainObject(new Object()); //=> false
+ */
+/* eslint-enable max-len */
+
+module.exports = complement(isPlainObject);
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var iString = __webpack_require__(11);
+
+/**
+ * Checks if input value is complement of `String`
+ *
+ * @func isNotString
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isString|isString}
+ * @example
+ *
+ * RA.isNotString('abc'); //=> false
+ * RA.isNotString(1); //=> true
+ */
+
+module.exports = complement(iString);
+
+/***/ }),
 /* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isUndefined = __webpack_require__(12);
+
+/**
+ * Checks if input value is complement `undefined`
+ *
+ * @func isNotUndefined
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isUndefined|isUndefined}
+ * @example
+ *
+ * RA.isNotUndefined(1); //=> true
+ * RA.isNotUndefined(undefined); //=> false
+ * RA.isNotUndefined(null); //=> true
+ */
+module.exports = complement(isUndefined);
+
+/***/ }),
+/* 28 */
 /***/ (function(module, exports) {
 
 /**
@@ -1001,7 +1043,7 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = function _isFunction(x) {
@@ -1010,7 +1052,7 @@ module.exports = function _isFunction(x) {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = function _isObject(x) {
@@ -1019,7 +1061,7 @@ module.exports = function _isObject(x) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = function _isString(x) {
@@ -1028,37 +1070,38 @@ module.exports = function _isString(x) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(25);
-var isUndefined = __webpack_require__(11);
+var isNotUndefined = __webpack_require__(27);
+var isUndefined = __webpack_require__(12);
 var isNull = __webpack_require__(5);
 var isNotNull = __webpack_require__(2);
-var isNotNil = __webpack_require__(21);
+var isNotNil = __webpack_require__(22);
 var isArray = __webpack_require__(7);
-var isNotArray = __webpack_require__(14);
+var isNotArray = __webpack_require__(15);
 var isBoolean = __webpack_require__(8);
-var isNotBoolean = __webpack_require__(17);
-var isNotEmpty = __webpack_require__(18);
-var isNilOrEmpty = __webpack_require__(13);
-var isString = __webpack_require__(10);
-var isNotString = __webpack_require__(24);
-var isNotArrayLike = __webpack_require__(15);
+var isNotBoolean = __webpack_require__(18);
+var isNotEmpty = __webpack_require__(19);
+var isNilOrEmpty = __webpack_require__(14);
+var isString = __webpack_require__(11);
+var isNotString = __webpack_require__(26);
+var isNotArrayLike = __webpack_require__(16);
 var isGeneratorFunction = __webpack_require__(4);
-var isNotGeneratorFunction = __webpack_require__(20);
+var isNotGeneratorFunction = __webpack_require__(21);
 var isAsyncFunction = __webpack_require__(3);
-var isNotAsyncFunction = __webpack_require__(16);
+var isNotAsyncFunction = __webpack_require__(17);
 var isFunction = __webpack_require__(1);
-var isNotFunction = __webpack_require__(19);
+var isNotFunction = __webpack_require__(20);
 var isObject = __webpack_require__(9);
-var isNotObject = __webpack_require__(22);
+var isNotObject = __webpack_require__(23);
 var isObjectLike = __webpack_require__(6);
-var isNotObjectLike = __webpack_require__(23);
-var isPlainObject = __webpack_require__(26);
+var isNotObjectLike = __webpack_require__(24);
+var isPlainObject = __webpack_require__(10);
+var isNotPlainObject = __webpack_require__(25);
 
 /**
  * @namespace RA
@@ -1088,7 +1131,8 @@ module.exports = {
   isNotObject: isNotObject,
   isObjectLike: isObjectLike,
   isNotObjectLike: isNotObjectLike,
-  isPlainObject: isPlainObject
+  isPlainObject: isPlainObject,
+  isNotPlainObject: isNotPlainObject
 };
 
 /***/ })
