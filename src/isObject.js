@@ -1,6 +1,11 @@
 'use strict';
 
-const { is } = require('ramda');
+const { both, anyPass } = require('ramda');
+
+const isNotNull = require('./isNotNull');
+const isFunction = require('./isFunction');
+const isOfTypeObject = require('./internal/isOfTypeObject');
+
 
 /* eslint-disable max-len */
 /**
@@ -24,4 +29,4 @@ const { is } = require('ramda');
  */
 /* eslint-enable max-len */
 
-module.exports = is(Object);
+module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));

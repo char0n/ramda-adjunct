@@ -1,6 +1,6 @@
 'use strict';
 
-const isArray = require('ramda/src/internal/_isArray');
+const _isArray = require('ramda/src/internal/_isArray');
 
 /**
  * Checks if input value is `Array`
@@ -20,4 +20,4 @@ const isArray = require('ramda/src/internal/_isArray');
  * RA.isArray({}); //=> false
  */
 
-module.exports = isArray;
+module.exports = _isArray;

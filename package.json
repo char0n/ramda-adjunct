@@ -55,7 +55,7 @@
     "codecov": "=1.0.1",
     "conventional-changelog-cli": "=1.2.0",
     "docdash": "git+https://github.com/char0n/docdash.git#abb8b242321856b5ae9d90948cb5de4d960a45b2",
-    "eslint": "=3.15.0",
+    "eslint": "=3.17.0",
     "eslint-config-airbnb": "=14.1.0",
     "eslint-plugin-import": "=2.2.0",
     "eslint-plugin-jsx-a11y": "=4.0.0",

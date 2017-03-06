@@ -1,6 +1,6 @@
 'use strict';
 
-const isString = require('ramda/src/internal/_isString');
+const _isString = require('ramda/src/internal/_isString');
 
 /**
  * Checks if input value is `String`
@@ -19,4 +19,4 @@ const isString = require('ramda/src/internal/_isString');
  * RA.isString(1); //=> false
  */
 
-module.exports = isString;
+module.exports = _isString;

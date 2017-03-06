@@ -1,10 +1,10 @@
 'use strict';
 
-const { allPass } = require('ramda');
+const { both } = require('ramda');
 
 const isNotNull = require('./isNotNull');
+const isOfTypeObject = require('./internal/isOfTypeObject');
 
-const isTypeOfObject = val => typeof val === 'object';
 
 /* eslint-disable max-len */
 /**
@@ -28,4 +28,4 @@ const isTypeOfObject = val => typeof val === 'object';
  */
 /* eslint-enable max-len */
 
-module.exports = allPass([isNotNull, isTypeOfObject]);
+module.exports = both(isNotNull, isOfTypeObject);
