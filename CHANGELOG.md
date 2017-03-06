@@ -1,3 +1,30 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/char0n/ramda-adjunct/compare/v0.4.0...v0.5.0) (2017-03-06)
+
+
+### Bug Fixes
+
+* **isGeneratorFunction:** add legacy check ([24969a6](https://github.com/char0n/ramda-adjunct/commit/24969a6))
+
+
+### Features
+
+* add isFunction ([c0e45e7](https://github.com/char0n/ramda-adjunct/commit/c0e45e7))
+* **typescript:** add support for typescript by typings ([1ff7c61](https://github.com/char0n/ramda-adjunct/commit/1ff7c61))
+* add isAsyncFunction ([b72a040](https://github.com/char0n/ramda-adjunct/commit/b72a040))
+* add isGeneratorFunction ([08ee74b](https://github.com/char0n/ramda-adjunct/commit/08ee74b))
+* add isNotArrayLike ([dbf09b9](https://github.com/char0n/ramda-adjunct/commit/dbf09b9)), closes [#33](https://github.com/char0n/ramda-adjunct/issues/33)
+* add isNotAsyncFunction ([8194de9](https://github.com/char0n/ramda-adjunct/commit/8194de9))
+* add isNotFunction ([82b8295](https://github.com/char0n/ramda-adjunct/commit/82b8295)), closes [#31](https://github.com/char0n/ramda-adjunct/issues/31)
+* add isNotObjectLike ([9233e00](https://github.com/char0n/ramda-adjunct/commit/9233e00))
+* add isObject ([9f6e64a](https://github.com/char0n/ramda-adjunct/commit/9f6e64a))
+* add isObjectLike ([52b1917](https://github.com/char0n/ramda-adjunct/commit/52b1917))
+* add isPlainObject ([6e14291](https://github.com/char0n/ramda-adjunct/commit/6e14291))
+* isNotGeneratorFunction ([ffba8cd](https://github.com/char0n/ramda-adjunct/commit/ffba8cd))
+* isNotObject ([aa4a0df](https://github.com/char0n/ramda-adjunct/commit/aa4a0df))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/char0n/ramda-adjunct/compare/v0.3.0...v0.4.0) (2017-02-27)
 
