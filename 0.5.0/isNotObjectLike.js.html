@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isString.js - Documentation</title>
+    <title>isNotObjectLike.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isString.js</h1>
+    <h1 class="page-title">isNotObjectLike.js</h1>
     
 
     
@@ -41,26 +41,34 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const _isString = require('ramda/src/internal/_isString');
+const { complement } = require('ramda');
 
+const isObjectLike = require('./isObjectLike');
+
+
+/* eslint-disable max-len */
 /**
- * Checks if input value is `String`
+ * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
  *
- * @func isString
+ * @func isNotObjectLike
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotString|isNotString}
+ * @see {@link RA.isObjectLike|isObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
  * @example
  *
- * RA.isString('abc'); //=> true
- * RA.isString(1); //=> false
+ * RA.isNotObjectLike({}); //=> false
+ * RA.isNotObjectLike([]); //=> false
+ * RA.isNotObjectLike(() => {}); //=> true
+ * RA.isNotObjectLike(null); //=> true
+ * RA.isNotObjectLike(undefined); //=> true
  */
+/* eslint-enable max-len */
 
-module.exports = _isString;
+module.exports = complement(isObjectLike);
 </code></pre>
         </article>
     </section>
