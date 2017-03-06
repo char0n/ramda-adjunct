@@ -109,6 +109,11 @@ declare namespace RamdaAdjunct {
         isObject(val: any): val is Object;
 
         /**
+         * Checks if input value is complement of language type of `Object`
+         */
+        isNotObject(val: any): boolean;
+
+        /**
          * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
          */
         isObjectLike(val: any): boolean;

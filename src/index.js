@@ -21,6 +21,7 @@ const isNotAsyncFunction = require('./isNotAsyncFunction');
 const isFunction = require('./isFunction');
 const isNotFunction = require('./isNotFunction');
 const isObject = require('./isObject');
+const isNotObject = require('./isNotObject');
 const isObjectLike = require('./isObjectLike');
 const isPlainObject = require('./isPlainObject');
 
@@ -49,6 +50,7 @@ module.exports = {
   isFunction,
   isNotFunction,
   isObject,
+  isNotObject,
   isObjectLike,
   isPlainObject,
 };
