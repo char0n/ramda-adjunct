@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 30);
+/******/ 	return __webpack_require__(__webpack_require__.s = 31);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 var _require = __webpack_require__(0),
     anyPass = _require.anyPass;
 
-var _isFunction = __webpack_require__(27);
+var _isFunction = __webpack_require__(28);
 
 var isGeneratorFunction = __webpack_require__(4);
 var isAsyncFunction = __webpack_require__(3);
@@ -270,7 +270,44 @@ module.exports = equals(null);
 "use strict";
 
 
-var _isArray = __webpack_require__(26);
+var _require = __webpack_require__(0),
+    both = _require.both;
+
+var isNotNull = __webpack_require__(2);
+var isOfTypeObject = __webpack_require__(12);
+
+/* eslint-disable max-len */
+/**
+ * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
+ *
+ * @func isObjectLike
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotObjectLike|isNotObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
+ * @example
+ *
+ * RA.isObjectLike({}); //=> true
+ * RA.isObjectLike([]); //=> true
+ * RA.isObjectLike(() => {}); //=> false
+ * RA.isObjectLike(null); //=> false
+ * RA.isObjectLike(undefined); //=> false
+ */
+/* eslint-enable max-len */
+
+module.exports = both(isNotNull, isOfTypeObject);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _isArray = __webpack_require__(27);
 
 /**
  * Checks if input value is `Array`
@@ -293,7 +330,7 @@ var _isArray = __webpack_require__(26);
 module.exports = _isArray;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -323,7 +360,7 @@ var _require = __webpack_require__(0),
 module.exports = is(Boolean);
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -362,50 +399,13 @@ var isOfTypeObject = __webpack_require__(12);
 module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    both = _require.both;
-
-var isNotNull = __webpack_require__(2);
-var isOfTypeObject = __webpack_require__(12);
-
-/* eslint-disable max-len */
-/**
- * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
- *
- * @func isObjectLike
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotObjectLike|isNotObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
- * @example
- *
- * RA.isObjectLike({}); //=> true
- * RA.isObjectLike([]); //=> true
- * RA.isObjectLike(() => {}); //=> false
- * RA.isObjectLike(null); //=> false
- * RA.isObjectLike(undefined); //=> false
- */
-/* eslint-enable max-len */
-
-module.exports = both(isNotNull, isOfTypeObject);
-
-/***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _isString = __webpack_require__(29);
+var _isString = __webpack_require__(30);
 
 /**
  * Checks if input value is `String`
@@ -516,7 +516,7 @@ module.exports = anyPass([isNil, isEmpty]);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isArray = __webpack_require__(6);
+var isArray = __webpack_require__(7);
 
 /**
  * Checks if input value is complement of `Array`
@@ -616,7 +616,7 @@ module.exports = complement(isAsyncFunction);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isBoolean = __webpack_require__(7);
+var isBoolean = __webpack_require__(8);
 
 /**
  * Checks if input value is complement of `Boolean`
@@ -788,13 +788,13 @@ module.exports = complement(isNil);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isObject = __webpack_require__(8);
+var isObject = __webpack_require__(9);
 
 /* eslint-disable max-len */
 /**
  * Checks if input value is complement of language type of `Object`
  *
- * @func isObject
+ * @func isNotObject
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
@@ -816,6 +816,42 @@ module.exports = complement(isObject);
 
 /***/ }),
 /* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isObjectLike = __webpack_require__(6);
+
+/* eslint-disable max-len */
+/**
+ * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
+ *
+ * @func isNotObjectLike
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isObjectLike|isObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
+ * @example
+ *
+ * RA.isNotObjectLike({}); //=> false
+ * RA.isNotObjectLike([]); //=> false
+ * RA.isNotObjectLike(() => {}); //=> true
+ * RA.isNotObjectLike(null); //=> true
+ * RA.isNotObjectLike(undefined); //=> true
+ */
+/* eslint-enable max-len */
+
+module.exports = complement(isObjectLike);
+
+/***/ }),
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -846,7 +882,7 @@ var iString = __webpack_require__(10);
 module.exports = complement(iString);
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -877,13 +913,13 @@ var isUndefined = __webpack_require__(11);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _isObject = __webpack_require__(28);
+var _isObject = __webpack_require__(29);
 
 var _require = __webpack_require__(0),
     pipe = _require.pipe,
@@ -893,7 +929,7 @@ var _require = __webpack_require__(0),
     pathSatisfies = _require.pathSatisfies;
 
 var isNull = __webpack_require__(5);
-var isObjectLike = __webpack_require__(9);
+var isObjectLike = __webpack_require__(6);
 var isFunction = __webpack_require__(1);
 
 var isObjectConstructor = pipe(toString, equals(toString(Object)));
@@ -942,7 +978,7 @@ module.exports = function (val) {
 };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 /**
@@ -965,7 +1001,7 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = function _isFunction(x) {
@@ -974,7 +1010,7 @@ module.exports = function _isFunction(x) {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 module.exports = function _isObject(x) {
@@ -983,7 +1019,7 @@ module.exports = function _isObject(x) {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = function _isString(x) {
@@ -992,25 +1028,25 @@ module.exports = function _isString(x) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(24);
+var isNotUndefined = __webpack_require__(25);
 var isUndefined = __webpack_require__(11);
 var isNull = __webpack_require__(5);
 var isNotNull = __webpack_require__(2);
 var isNotNil = __webpack_require__(21);
-var isArray = __webpack_require__(6);
+var isArray = __webpack_require__(7);
 var isNotArray = __webpack_require__(14);
-var isBoolean = __webpack_require__(7);
+var isBoolean = __webpack_require__(8);
 var isNotBoolean = __webpack_require__(17);
 var isNotEmpty = __webpack_require__(18);
 var isNilOrEmpty = __webpack_require__(13);
 var isString = __webpack_require__(10);
-var isNotString = __webpack_require__(23);
+var isNotString = __webpack_require__(24);
 var isNotArrayLike = __webpack_require__(15);
 var isGeneratorFunction = __webpack_require__(4);
 var isNotGeneratorFunction = __webpack_require__(20);
@@ -1018,10 +1054,11 @@ var isAsyncFunction = __webpack_require__(3);
 var isNotAsyncFunction = __webpack_require__(16);
 var isFunction = __webpack_require__(1);
 var isNotFunction = __webpack_require__(19);
-var isObject = __webpack_require__(8);
+var isObject = __webpack_require__(9);
 var isNotObject = __webpack_require__(22);
-var isObjectLike = __webpack_require__(9);
-var isPlainObject = __webpack_require__(25);
+var isObjectLike = __webpack_require__(6);
+var isNotObjectLike = __webpack_require__(23);
+var isPlainObject = __webpack_require__(26);
 
 /**
  * @namespace RA
@@ -1050,6 +1087,7 @@ module.exports = {
   isObject: isObject,
   isNotObject: isNotObject,
   isObjectLike: isObjectLike,
+  isNotObjectLike: isNotObjectLike,
   isPlainObject: isPlainObject
 };
 

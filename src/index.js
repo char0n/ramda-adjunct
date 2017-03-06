@@ -23,6 +23,7 @@ const isNotFunction = require('./isNotFunction');
 const isObject = require('./isObject');
 const isNotObject = require('./isNotObject');
 const isObjectLike = require('./isObjectLike');
+const isNotObjectLike = require('./isNotObjectLike');
 const isPlainObject = require('./isPlainObject');
 
 /**
@@ -52,5 +53,6 @@ module.exports = {
   isObject,
   isNotObject,
   isObjectLike,
+  isNotObjectLike,
   isPlainObject,
 };

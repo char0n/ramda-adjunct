@@ -119,6 +119,11 @@ declare namespace RamdaAdjunct {
         isObjectLike(val: any): boolean;
 
         /**
+         * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
+         */
+        isNotObjectLike(val: any): boolean;
+
+        /**
          * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
          */
         isPlainObject(val: any): boolean

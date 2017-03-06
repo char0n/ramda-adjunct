@@ -9,7 +9,7 @@ const isObject = require('./isObject');
 /**
  * Checks if input value is complement of language type of `Object`
  *
- * @func isObject
+ * @func isNotObject
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
