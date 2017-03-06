@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotGeneratorFunction.js - Documentation</title>
+    <title>isNotPlainObject.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotGeneratorFunction.js</h1>
+    <h1 class="page-title">isNotPlainObject.js</h1>
     
 
     
@@ -43,30 +43,37 @@
 
 const { complement } = require('ramda');
 
-const isGeneratorFunction = require('./isGeneratorFunction');
+const isPlainObject = require('./isPlainObject');
 
 /* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Generator Function`
+ * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`)
  *
- * @func isNotGeneratorFunction
+ * @func isNotPlainObject
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isPlainObject|isPlainObject}, {@link RA.isObjectLike|isObjectLike}, {@link RA.isObject|isObject}
  * @example
  *
- * RA.isNotGeneratorFunction(function* test() { }); //=> false
- * RA.isNotGeneratorFunction(null); //=> true
- * RA.isNotGeneratorFunction(function test() { }); //=> true
- * RA.isNotGeneratorFunction(() => {}); //=> true
+ * class Bar {
+ *   constructor() {
+ *     this.prop = 'value';
+ *   }
+ * }
+ *
+ * RA.isNotPlainObject(new Bar()); //=> true
+ * RA.isNotPlainObject({ prop: 'value' }); //=> false
+ * RA.isNotPlainObject(['a', 'b', 'c']); //=> true
+ * RA.isNotPlainObject(Object.create(null); //=> false
+ * RA.isNotPlainObject(new Object()); //=> false
  */
 /* eslint-enable max-len */
 
-module.exports = complement(isGeneratorFunction);
+module.exports = complement(isPlainObject);
 </code></pre>
         </article>
     </section>
