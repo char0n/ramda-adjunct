@@ -20,7 +20,11 @@ describe('isDate', function() {
     eq(RA.isDate(Object(0)), false);
     eq(RA.isDate(/x/), false);
     eq(RA.isDate(Object('a')), false);
-    eq(RA.isDate(Symbol), typeof Symbol === 'undefined');
+
+    if (Symbol !== 'undefined') {
+      eq(RA.isDate(Symbol), false);
+    }
+
     eq(RA.isDate(null), false);
     eq(RA.isDate(undefined), false);
   });
