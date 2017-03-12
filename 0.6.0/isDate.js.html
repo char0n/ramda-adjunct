@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isObjectLike.js - Documentation</title>
+    <title>isDate.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isObjectLike.js</h1>
+    <h1 class="page-title">isDate.js</h1>
     
 
     
@@ -41,35 +41,26 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { both } = require('ramda');
+const { is } = require('ramda');
 
-const isNotNull = require('./isNotNull');
-const isOfTypeObject = require('./internal/isOfTypeObject');
-
-
-/* eslint-disable max-len */
 /**
- * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
+ * Checks if value is `Date` object
  *
- * @func isObjectLike
+ * @func isDate
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotObjectLike|isNotObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
+ * @see {@link RA.isNotDate|isNotDate}
  * @example
  *
- * RA.isObjectLike({}); //=> true
- * RA.isObjectLike([]); //=> true
- * RA.isObjectLike(() => {}); //=> false
- * RA.isObjectLike(null); //=> false
- * RA.isObjectLike(undefined); //=> false
+ * RA.isDate(new Date()); //=> true
+ * RA.isDate('1997-07-16T19:20+01:00'); //=> false
  */
-/* eslint-enable max-len */
 
-module.exports = both(isNotNull, isOfTypeObject);
+module.exports = is(Date);
 </code></pre>
         </article>
     </section>
