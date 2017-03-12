@@ -132,6 +132,16 @@ declare namespace RamdaAdjunct {
          * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
          */
         isNotPlainObject(val: any): boolean
+
+        /**
+         * Checks if value is `Date` object.
+         */
+        isDate(val: any): val is Date
+
+        /**
+         * Checks if value is complement of `Date` object
+         */
+        isNotDate(val: any): boolean
     }
 
 }

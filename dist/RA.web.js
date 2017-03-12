@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 32);
+/******/ 	return __webpack_require__(__webpack_require__.s = 33);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 var _require = __webpack_require__(0),
     anyPass = _require.anyPass;
 
-var _isFunction = __webpack_require__(29);
+var _isFunction = __webpack_require__(30);
 
 var isGeneratorFunction = __webpack_require__(4);
 var isAsyncFunction = __webpack_require__(3);
@@ -307,7 +307,7 @@ module.exports = both(isNotNull, isOfTypeObject);
 "use strict";
 
 
-var _isArray = __webpack_require__(28);
+var _isArray = __webpack_require__(29);
 
 /**
  * Checks if input value is `Array`
@@ -405,7 +405,7 @@ module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
 "use strict";
 
 
-var _isObject = __webpack_require__(30);
+var _isObject = __webpack_require__(31);
 
 var _require = __webpack_require__(0),
     pipe = _require.pipe,
@@ -470,7 +470,7 @@ module.exports = function (val) {
 "use strict";
 
 
-var _isString = __webpack_require__(31);
+var _isString = __webpack_require__(32);
 
 /**
  * Checks if input value is `String`
@@ -543,6 +543,35 @@ module.exports = function (val) {
 
 
 var _require = __webpack_require__(0),
+    is = _require.is;
+
+/**
+ * Checks if value is `Date` object
+ *
+ * @func isDate
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotDate|isNotDate}
+ * @example
+ *
+ * RA.isDate(new Date()); //=> true
+ * RA.isDate('1997-07-16T19:20+01:00'); //=> false
+ */
+
+module.exports = is(Date);
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
     anyPass = _require.anyPass,
     isEmpty = _require.isEmpty,
     isNil = _require.isNil;
@@ -572,7 +601,7 @@ var _require = __webpack_require__(0),
 module.exports = anyPass([isNil, isEmpty]);
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -604,7 +633,7 @@ var isArray = __webpack_require__(7);
 module.exports = complement(isArray);
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -637,7 +666,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isArrayLike);
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -672,7 +701,7 @@ var isAsyncFunction = __webpack_require__(3);
 module.exports = complement(isAsyncFunction);
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -704,7 +733,7 @@ var isBoolean = __webpack_require__(8);
 module.exports = complement(isBoolean);
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -739,7 +768,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isEmpty);
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -776,7 +805,7 @@ var isFunction = __webpack_require__(1);
 module.exports = complement(isFunction);
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -811,7 +840,7 @@ var isGeneratorFunction = __webpack_require__(4);
 module.exports = complement(isGeneratorFunction);
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -844,7 +873,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isNil);
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -880,7 +909,7 @@ var isObject = __webpack_require__(9);
 module.exports = complement(isObject);
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -916,7 +945,7 @@ var isObjectLike = __webpack_require__(6);
 module.exports = complement(isObjectLike);
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -958,7 +987,7 @@ var isPlainObject = __webpack_require__(10);
 module.exports = complement(isPlainObject);
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -989,7 +1018,7 @@ var iString = __webpack_require__(11);
 module.exports = complement(iString);
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1020,7 +1049,7 @@ var isUndefined = __webpack_require__(12);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports) {
 
 /**
@@ -1043,7 +1072,7 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = function _isFunction(x) {
@@ -1052,7 +1081,7 @@ module.exports = function _isFunction(x) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = function _isObject(x) {
@@ -1061,7 +1090,7 @@ module.exports = function _isObject(x) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = function _isString(x) {
@@ -1070,38 +1099,39 @@ module.exports = function _isString(x) {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(27);
+var isNotUndefined = __webpack_require__(28);
 var isUndefined = __webpack_require__(12);
 var isNull = __webpack_require__(5);
 var isNotNull = __webpack_require__(2);
-var isNotNil = __webpack_require__(22);
+var isNotNil = __webpack_require__(23);
 var isArray = __webpack_require__(7);
-var isNotArray = __webpack_require__(15);
+var isNotArray = __webpack_require__(16);
 var isBoolean = __webpack_require__(8);
-var isNotBoolean = __webpack_require__(18);
-var isNotEmpty = __webpack_require__(19);
-var isNilOrEmpty = __webpack_require__(14);
+var isNotBoolean = __webpack_require__(19);
+var isNotEmpty = __webpack_require__(20);
+var isNilOrEmpty = __webpack_require__(15);
 var isString = __webpack_require__(11);
-var isNotString = __webpack_require__(26);
-var isNotArrayLike = __webpack_require__(16);
+var isNotString = __webpack_require__(27);
+var isNotArrayLike = __webpack_require__(17);
 var isGeneratorFunction = __webpack_require__(4);
-var isNotGeneratorFunction = __webpack_require__(21);
+var isNotGeneratorFunction = __webpack_require__(22);
 var isAsyncFunction = __webpack_require__(3);
-var isNotAsyncFunction = __webpack_require__(17);
+var isNotAsyncFunction = __webpack_require__(18);
 var isFunction = __webpack_require__(1);
-var isNotFunction = __webpack_require__(20);
+var isNotFunction = __webpack_require__(21);
 var isObject = __webpack_require__(9);
-var isNotObject = __webpack_require__(23);
+var isNotObject = __webpack_require__(24);
 var isObjectLike = __webpack_require__(6);
-var isNotObjectLike = __webpack_require__(24);
+var isNotObjectLike = __webpack_require__(25);
 var isPlainObject = __webpack_require__(10);
-var isNotPlainObject = __webpack_require__(25);
+var isNotPlainObject = __webpack_require__(26);
+var isDate = __webpack_require__(14);
 
 /**
  * @namespace RA
@@ -1132,7 +1162,8 @@ module.exports = {
   isObjectLike: isObjectLike,
   isNotObjectLike: isNotObjectLike,
   isPlainObject: isPlainObject,
-  isNotPlainObject: isNotPlainObject
+  isNotPlainObject: isNotPlainObject,
+  isDate: isDate
 };
 
 /***/ })
