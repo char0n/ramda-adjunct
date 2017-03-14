@@ -1,6 +1,6 @@
 'use strict';
 
-const { pipe, type, equals } = require('ramda');
+const _isNumber = require('ramda/src/internal/_isNumber');
 
 
 /**
@@ -22,4 +22,4 @@ const { pipe, type, equals } = require('ramda');
  * RA.isNumber('5'); // => false
  */
 
-module.exports = pipe(type, equals('Number'));
+module.exports = _isNumber;
