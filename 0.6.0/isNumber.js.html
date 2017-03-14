@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isObject.js - Documentation</title>
+    <title>isNumber.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isObject.js</h1>
+    <h1 class="page-title">isNumber.js</h1>
     
 
     
@@ -41,36 +41,29 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { both, anyPass } = require('ramda');
-
-const isNotNull = require('./isNotNull');
-const isFunction = require('./isFunction');
-const isOfTypeObject = require('./internal/isOfTypeObject');
+const { pipe, type, equals } = require('ramda');
 
 
-/* eslint-disable max-len */
 /**
- * Checks if input value is language type of `Object`
+ * Checks if value is a `Number` primitive or object
  *
- * @func isObject
+ * @func isNumber
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotObject|isNotObject}, {@link RA.isObjectLike|isObjectLike}, {@link RA.isPlainObject|isPlainObject}
+ * @see {@link RA.isNotNumber|isNotNumber}
  * @example
  *
- * RA.isObject({}); //=> true
- * RA.isObject([]); //=> true
- * RA.isObject(() => {}); //=> true
- * RA.isObject(null); //=> false
- * RA.isObject(undefined); //=> false
+ * RA.isNumber(5); // => true
+ * RA.isNumber(Number.MAX_VALUE); // => true
+ * RA.isNumber(-Infinity); // => true
+ * RA.isNumber('5'); // => false
  */
-/* eslint-enable max-len */
 
-module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
+module.exports = pipe(type, equals('Number'));
 </code></pre>
         </article>
     </section>
