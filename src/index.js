@@ -28,6 +28,7 @@ const isPlainObject = require('./isPlainObject');
 const isNotPlainObject = require('./isNotPlainObject');
 const isDate = require('./isDate');
 const isNotDate = require('./isNotDate');
+const isNumber = require('./isNumber');
 const isNaN = require('./isNaN');
 
 /**
@@ -62,5 +63,6 @@ module.exports = {
   isNotPlainObject,
   isDate,
   isNotDate,
+  isNumber,
   isNaN,
 };

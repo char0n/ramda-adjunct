@@ -148,6 +148,11 @@ declare namespace RamdaAdjunct {
          * It is a more robust version of the original, global isNaN().
          */
         isNaN(val: any): boolean
+
+        /**
+         * Checks if value is a `Number` primitive or object
+         */
+        isNumber(val: any): val is Number
     }
 
 }
