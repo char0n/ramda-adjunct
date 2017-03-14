@@ -27,6 +27,7 @@ const isNotObjectLike = require('./isNotObjectLike');
 const isPlainObject = require('./isPlainObject');
 const isNotPlainObject = require('./isNotPlainObject');
 const isDate = require('./isDate');
+const isNotDate = require('./isNotDate');
 
 /**
  * @namespace RA
@@ -59,4 +60,5 @@ module.exports = {
   isPlainObject,
   isNotPlainObject,
   isDate,
+  isNotDate,
 };

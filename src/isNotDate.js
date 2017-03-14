@@ -1,0 +1,24 @@
+'use strict';
+
+const { complement } = require('ramda');
+
+const isDate = require('./isDate');
+
+/**
+ * Checks if value is complement of `Date` object
+ *
+ * @func isNotDate
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isDate|isDate}
+ * @example
+ *
+ * RA.isNotDate(new Date()); //=> false
+ * RA.isNotDate('1997-07-16T19:20+01:00'); //=> true
+ */
+
+module.exports = complement(isDate);
