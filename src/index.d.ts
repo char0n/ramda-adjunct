@@ -142,6 +142,12 @@ declare namespace RamdaAdjunct {
          * Checks if value is complement of `Date` object
          */
         isNotDate(val: any): boolean
+
+        /**
+         * Checks whether the passed value is `NaN` and its type is `Number`.
+         * It is a more robust version of the original, global isNaN().
+         */
+        isNaN(val: any): boolean
     }
 
 }
