@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotGeneratorFunction.js - Documentation</title>
+    <title>isNotDate.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotGeneratorFunction.js</h1>
+    <h1 class="page-title">isNotDate.js</h1>
     
 
     
@@ -43,30 +43,26 @@
 
 const { complement } = require('ramda');
 
-const isGeneratorFunction = require('./isGeneratorFunction');
+const isDate = require('./isDate');
 
-/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Generator Function`
+ * Checks if value is complement of `Date` object
  *
- * @func isNotGeneratorFunction
+ * @func isNotDate
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isDate|isDate}
  * @example
  *
- * RA.isNotGeneratorFunction(function* test() { }); //=> false
- * RA.isNotGeneratorFunction(null); //=> true
- * RA.isNotGeneratorFunction(function test() { }); //=> true
- * RA.isNotGeneratorFunction(() => {}); //=> true
+ * RA.isNotDate(new Date()); //=> false
+ * RA.isNotDate('1997-07-16T19:20+01:00'); //=> true
  */
-/* eslint-enable max-len */
 
-module.exports = complement(isGeneratorFunction);
+module.exports = complement(isDate);
 </code></pre>
         </article>
     </section>
