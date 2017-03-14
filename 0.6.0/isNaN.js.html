@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isAsyncFunction.js - Documentation</title>
+    <title>isNaN.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isAsyncFunction.js</h1>
+    <h1 class="page-title">isNaN.js</h1>
     
 
     
@@ -41,28 +41,46 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-/* eslint-disable max-len */
+const { or } = require('ramda');
+
+const polyfill = require('./internal/polyfills/Number.isNaN');
+
 /**
- * Checks if input value is `Async Function`
+ * Checks whether the passed value is `NaN` and its type is `Number`.
+ * It is a more robust version of the original, global isNaN().
  *
- * @func isAsyncFunction
+ *
+ * @func isNaN
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isNotAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isNotNaN|isNotNaN}
  * @example
  *
- * RA.isAsyncFunction(async function test() { }); //=> true
- * RA.isAsyncFunction(null); //=> false
- * RA.isAsyncFunction(function test() { }); //=> false
- * RA.isAsyncFunction(() => {}); //=> false
+ * RA.isNaN(NaN);        // true
+ * RA.isNaN(Number.NaN); // true
+ * RA.isNaN(0 / 0);      // true
+ *
+ * // e.g. these would have been true with global isNaN().
+ * RA.isNaN('NaN');      // false
+ * RA.isNaN(undefined);  // false
+ * RA.isNaN({});         // false
+ * RA.isNaN('blabla');   // false
+ *
+ * // These all return false.
+ * RA.isNaN(true);
+ * RA.isNaN(null);
+ * RA.isNaN(37);
+ * RA.isNaN('37');
+ * RA.isNaN('37.37');
+ * RA.isNaN('');
+ * RA.isNaN(' ');
  */
-/* eslint-enable max-len */
 
-module.exports = val => Object.prototype.toString.call(val) === '[object AsyncFunction]';
+module.exports = or(Number.isNaN, polyfill);
 </code></pre>
         </article>
     </section>
