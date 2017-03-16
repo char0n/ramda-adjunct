@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isObjectLike.js - Documentation</title>
+    <title>isNotNumber.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isObjectLike.js</h1>
+    <h1 class="page-title">isNotNumber.js</h1>
     
 
     
@@ -41,35 +41,31 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { both } = require('ramda');
+const { complement } = require('ramda');
 
-const isNotNull = require('./isNotNull');
-const isOfTypeObject = require('./internal/isOfTypeObject');
+const isNumber = require('./isNumber');
 
 
-/* eslint-disable max-len */
 /**
- * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
+ * Checks if value is a complement of `Number` primitive or object
  *
- * @func isObjectLike
+ * @func isNotNumber
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotObjectLike|isNotObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
+ * @see {@link RA.isNumber|isNumber}
  * @example
  *
- * RA.isObjectLike({}); //=> true
- * RA.isObjectLike([]); //=> true
- * RA.isObjectLike(() => {}); //=> false
- * RA.isObjectLike(null); //=> false
- * RA.isObjectLike(undefined); //=> false
+ * RA.isNotNumber(5); // => false
+ * RA.isNotNumber(Number.MAX_VALUE); // => false
+ * RA.isNotNumber(-Infinity); // => false
+ * RA.isNotNumber('5'); // => true
  */
-/* eslint-enable max-len */
 
-module.exports = both(isNotNull, isOfTypeObject);
+module.exports = complement(isNumber);
 </code></pre>
         </article>
     </section>
