@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotArray.js - Documentation</title>
+    <title>isNotNaN.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotArray.js</h1>
+    <h1 class="page-title">isNotNaN.js</h1>
     
 
     
@@ -43,27 +43,40 @@
 
 const { complement } = require('ramda');
 
-const isArray = require('./isArray');
+const isNaN = require('./isNaN');
 
 /**
- * Checks if input value is complement of `Array`
+ * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
  *
- * @func isNotArray
+ * @func isNotNaN
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isArray|isArray}
+ * @see {@link RA.isNaN|isNaN}
  * @example
  *
- * RA.isNotArray([]); //=> false
- * RA.isNotArray(null); //=> true
- * RA.isNotArray({}); //=> true
+ * RA.isNotNaN(NaN); // => false
+ * RA.isNotNaN(Number.NaN); // => false
+ * RA.isNotNaN(0 / 0); // => false
+ *
+ * RA.isNotNaN('NaN'); // => true
+ * RA.isNotNaN(undefined); // => true
+ * RA.isNotNaN({}); // => true
+ * RA.isNotNaN('blabla'); // => true
+ *
+ * RA.isNotNaN(true); // => true
+ * RA.isNotNaN(null); // => true
+ * RA.isNotNaN(37); // => true
+ * RA.isNotNaN('37'); // => true
+ * RA.isNotNaN('37.37'); // => true
+ * RA.isNotNaN(''); // => true
+ * RA.isNotNaN(' '); // => true
  */
 
-module.exports = complement(isArray);
+module.exports = complement(isNaN);
 </code></pre>
         </article>
     </section>
