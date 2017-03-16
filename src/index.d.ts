@@ -153,6 +153,11 @@ declare namespace RamdaAdjunct {
          * Checks if value is a `Number` primitive or object
          */
         isNumber(val: any): val is Number
+
+        /**
+         * Checks if value is a complement of `Number` primitive or object
+         */
+        isNotNumber(val: any): boolean
     }
 
 }

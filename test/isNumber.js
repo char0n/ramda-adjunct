@@ -1,6 +1,8 @@
 'use strict';
 
 const RA = require('../src/index');
+const MAX_SAFE_INTEGER = require('../src/internal/polyfills/Number.MAX_SAFE_INTEGER');
+const MIN_SAFE_INTEGER = require('../src/internal/polyfills/Number.MIN_SAFE_INTEGER');
 const eq = require('./shared/eq');
 const args = require('./shared/arguments');
 const Symbol = require('./shared/Symbol');
@@ -14,8 +16,8 @@ describe('isNumber', function() {
     eq(RA.isNumber(NaN), true);
     eq(RA.isNumber(Infinity), true);
     eq(RA.isNumber(-Infinity), true);
-    eq(RA.isNumber(Number.MAX_SAFE_INTEGER || 9007199254740991), true);
-    eq(RA.isNumber(Number.MIN_SAFE_INTEGER || -9007199254740991), true);
+    eq(RA.isNumber(MAX_SAFE_INTEGER), true);
+    eq(RA.isNumber(MIN_SAFE_INTEGER), true);
     eq(RA.isNumber(Number.MAX_VALUE), true);
     eq(RA.isNumber(Number.MIN_VALUE), true);
 
