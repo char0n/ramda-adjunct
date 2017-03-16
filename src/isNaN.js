@@ -19,24 +19,23 @@ const polyfill = require('./internal/polyfills/Number.isNaN');
  * @see {@link RA.isNotNaN|isNotNaN}
  * @example
  *
- * RA.isNaN(NaN);        // true
- * RA.isNaN(Number.NaN); // true
- * RA.isNaN(0 / 0);      // true
+ * RA.isNaN(NaN); // => true
+ * RA.isNaN(Number.NaN); // => true
+ * RA.isNaN(0 / 0); // => true
  *
  * // e.g. these would have been true with global isNaN().
- * RA.isNaN('NaN');      // false
- * RA.isNaN(undefined);  // false
- * RA.isNaN({});         // false
- * RA.isNaN('blabla');   // false
+ * RA.isNaN('NaN'); // => false
+ * RA.isNaN(undefined); // => false
+ * RA.isNaN({}); // => false
+ * RA.isNaN('blabla'); // => false
  *
- * // These all return false.
- * RA.isNaN(true);
- * RA.isNaN(null);
- * RA.isNaN(37);
- * RA.isNaN('37');
- * RA.isNaN('37.37');
- * RA.isNaN('');
- * RA.isNaN(' ');
+ * RA.isNaN(true); // => false
+ * RA.isNaN(null); // => false
+ * RA.isNaN(37); // => false
+ * RA.isNaN('37'); // => false
+ * RA.isNaN('37.37'); // => false
+ * RA.isNaN(''); // => false
+ * RA.isNaN(' '); // => false
  */
 
 module.exports = or(Number.isNaN, polyfill);

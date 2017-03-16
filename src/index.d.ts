@@ -150,6 +150,11 @@ declare namespace RamdaAdjunct {
         isNaN(val: any): boolean
 
         /**
+         * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
+         */
+        isNotNaN(val: any): boolean
+
+        /**
          * Checks if value is a `Number` primitive or object
          */
         isNumber(val: any): val is Number

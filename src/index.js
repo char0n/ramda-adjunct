@@ -31,6 +31,7 @@ const isNotDate = require('./isNotDate');
 const isNumber = require('./isNumber');
 const isNotNumber = require('./isNotNumber');
 const isNaN = require('./isNaN');
+const isNotNaN = require('./isNotNaN');
 
 /**
  * @namespace RA
@@ -67,4 +68,5 @@ module.exports = {
   isNumber,
   isNotNumber,
   isNaN,
+  isNotNaN,
 };

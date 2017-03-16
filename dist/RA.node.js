@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 var _require = __webpack_require__(0),
     anyPass = _require.anyPass;
 
-var _isFunction = __webpack_require__(34);
+var _isFunction = __webpack_require__(36);
 
 var isGeneratorFunction = __webpack_require__(4);
 var isAsyncFunction = __webpack_require__(3);
@@ -270,11 +270,41 @@ module.exports = equals(null);
 "use strict";
 
 
+var _isNumber = __webpack_require__(37);
+
+/**
+ * Checks if value is a `Number` primitive or object
+ *
+ * @func isNumber
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotNumber|isNotNumber}
+ * @example
+ *
+ * RA.isNumber(5); // => true
+ * RA.isNumber(Number.MAX_VALUE); // => true
+ * RA.isNumber(-Infinity); // => true
+ * RA.isNumber('5'); // => false
+ */
+
+module.exports = _isNumber;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _require = __webpack_require__(0),
     both = _require.both;
 
 var isNotNull = __webpack_require__(2);
-var isOfTypeObject = __webpack_require__(15);
+var isOfTypeObject = __webpack_require__(16);
 
 /* eslint-disable max-len */
 /**
@@ -301,13 +331,13 @@ var isOfTypeObject = __webpack_require__(15);
 module.exports = both(isNotNull, isOfTypeObject);
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _isArray = __webpack_require__(33);
+var _isArray = __webpack_require__(35);
 
 /**
  * Checks if input value is `Array`
@@ -330,7 +360,7 @@ var _isArray = __webpack_require__(33);
 module.exports = _isArray;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -360,7 +390,7 @@ var _require = __webpack_require__(0),
 module.exports = is(Boolean);
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -389,40 +419,55 @@ var _require = __webpack_require__(0),
 module.exports = is(Date);
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var _require = __webpack_require__(0),
-    pipe = _require.pipe,
-    type = _require.type,
-    equals = _require.equals;
+    or = _require.or;
+
+var polyfill = __webpack_require__(34);
 
 /**
- * Checks if value is a `Number` primitive or object
+ * Checks whether the passed value is `NaN` and its type is `Number`.
+ * It is a more robust version of the original, global isNaN().
  *
- * @func isNumber
+ *
+ * @func isNaN
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotNumber|isNotNumber}
+ * @see {@link RA.isNotNaN|isNotNaN}
  * @example
  *
- * RA.isNumber(5); // => true
- * RA.isNumber(Number.MAX_VALUE); // => true
- * RA.isNumber(-Infinity); // => true
- * RA.isNumber('5'); // => false
+ * RA.isNaN(NaN); // => true
+ * RA.isNaN(Number.NaN); // => true
+ * RA.isNaN(0 / 0); // => true
+ *
+ * // e.g. these would have been true with global isNaN().
+ * RA.isNaN('NaN'); // => false
+ * RA.isNaN(undefined); // => false
+ * RA.isNaN({}); // => false
+ * RA.isNaN('blabla'); // => false
+ *
+ * RA.isNaN(true); // => false
+ * RA.isNaN(null); // => false
+ * RA.isNaN(37); // => false
+ * RA.isNaN('37'); // => false
+ * RA.isNaN('37.37'); // => false
+ * RA.isNaN(''); // => false
+ * RA.isNaN(' '); // => false
  */
 
-module.exports = pipe(type, equals('Number'));
+module.exports = or(Number.isNaN, polyfill);
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -434,7 +479,7 @@ var _require = __webpack_require__(0),
 
 var isNotNull = __webpack_require__(2);
 var isFunction = __webpack_require__(1);
-var isOfTypeObject = __webpack_require__(15);
+var isOfTypeObject = __webpack_require__(16);
 
 /* eslint-disable max-len */
 /**
@@ -461,13 +506,13 @@ var isOfTypeObject = __webpack_require__(15);
 module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _isObject = __webpack_require__(35);
+var _isObject = __webpack_require__(38);
 
 var _require = __webpack_require__(0),
     pipe = _require.pipe,
@@ -477,7 +522,7 @@ var _require = __webpack_require__(0),
     pathSatisfies = _require.pathSatisfies;
 
 var isNull = __webpack_require__(5);
-var isObjectLike = __webpack_require__(6);
+var isObjectLike = __webpack_require__(7);
 var isFunction = __webpack_require__(1);
 
 var isObjectConstructor = pipe(toString, equals(toString(Object)));
@@ -526,13 +571,13 @@ module.exports = function (val) {
 };
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _isString = __webpack_require__(36);
+var _isString = __webpack_require__(39);
 
 /**
  * Checks if input value is `String`
@@ -554,7 +599,7 @@ var _isString = __webpack_require__(36);
 module.exports = _isString;
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -585,7 +630,7 @@ var _require = __webpack_require__(0),
 module.exports = equals(undefined);
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -596,55 +641,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 module.exports = function (val) {
   return (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object';
 };
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    or = _require.or;
-
-var polyfill = __webpack_require__(32);
-
-/**
- * Checks whether the passed value is `NaN` and its type is `Number`.
- * It is a more robust version of the original, global isNaN().
- *
- *
- * @func isNaN
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotNaN|isNotNaN}
- * @example
- *
- * RA.isNaN(NaN);        // true
- * RA.isNaN(Number.NaN); // true
- * RA.isNaN(0 / 0);      // true
- *
- * // e.g. these would have been true with global isNaN().
- * RA.isNaN('NaN');      // false
- * RA.isNaN(undefined);  // false
- * RA.isNaN({});         // false
- * RA.isNaN('blabla');   // false
- *
- * // These all return false.
- * RA.isNaN(true);
- * RA.isNaN(null);
- * RA.isNaN(37);
- * RA.isNaN('37');
- * RA.isNaN('37.37');
- * RA.isNaN('');
- * RA.isNaN(' ');
- */
-
-module.exports = or(Number.isNaN, polyfill);
 
 /***/ }),
 /* 17 */
@@ -692,7 +688,7 @@ module.exports = anyPass([isNil, isEmpty]);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isArray = __webpack_require__(7);
+var isArray = __webpack_require__(8);
 
 /**
  * Checks if input value is complement of `Array`
@@ -792,7 +788,7 @@ module.exports = complement(isAsyncFunction);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isBoolean = __webpack_require__(8);
+var isBoolean = __webpack_require__(9);
 
 /**
  * Checks if input value is complement of `Boolean`
@@ -824,7 +820,7 @@ module.exports = complement(isBoolean);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isDate = __webpack_require__(9);
+var isDate = __webpack_require__(10);
 
 /**
  * Checks if value is complement of `Date` object
@@ -960,6 +956,51 @@ module.exports = complement(isGeneratorFunction);
 
 
 var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isNaN = __webpack_require__(11);
+
+/**
+ * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
+ *
+ * @func isNotNaN
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNaN|isNaN}
+ * @example
+ *
+ * RA.isNotNaN(NaN); // => false
+ * RA.isNotNaN(Number.NaN); // => false
+ * RA.isNotNaN(0 / 0); // => false
+ *
+ * RA.isNotNaN('NaN'); // => true
+ * RA.isNotNaN(undefined); // => true
+ * RA.isNotNaN({}); // => true
+ * RA.isNotNaN('blabla'); // => true
+ *
+ * RA.isNotNaN(true); // => true
+ * RA.isNotNaN(null); // => true
+ * RA.isNotNaN(37); // => true
+ * RA.isNotNaN('37'); // => true
+ * RA.isNotNaN('37.37'); // => true
+ * RA.isNotNaN(''); // => true
+ * RA.isNotNaN(' '); // => true
+ */
+
+module.exports = complement(isNaN);
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
     isNil = _require.isNil,
     complement = _require.complement;
 
@@ -986,7 +1027,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isNil);
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -995,7 +1036,40 @@ module.exports = complement(isNil);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isObject = __webpack_require__(11);
+var isNumber = __webpack_require__(6);
+
+/**
+ * Checks if value is a complement of `Number` primitive or object
+ *
+ * @func isNotNumber
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNumber|isNumber}
+ * @example
+ *
+ * RA.isNotNumber(5); // => false
+ * RA.isNotNumber(Number.MAX_VALUE); // => false
+ * RA.isNotNumber(-Infinity); // => false
+ * RA.isNotNumber('5'); // => true
+ */
+
+module.exports = complement(isNumber);
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isObject = __webpack_require__(12);
 
 /* eslint-disable max-len */
 /**
@@ -1022,7 +1096,7 @@ var isObject = __webpack_require__(11);
 module.exports = complement(isObject);
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1031,7 +1105,7 @@ module.exports = complement(isObject);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isObjectLike = __webpack_require__(6);
+var isObjectLike = __webpack_require__(7);
 
 /* eslint-disable max-len */
 /**
@@ -1058,7 +1132,7 @@ var isObjectLike = __webpack_require__(6);
 module.exports = complement(isObjectLike);
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1067,7 +1141,7 @@ module.exports = complement(isObjectLike);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isPlainObject = __webpack_require__(12);
+var isPlainObject = __webpack_require__(13);
 
 /* eslint-disable max-len */
 /**
@@ -1100,7 +1174,7 @@ var isPlainObject = __webpack_require__(12);
 module.exports = complement(isPlainObject);
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1109,7 +1183,7 @@ module.exports = complement(isPlainObject);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var iString = __webpack_require__(13);
+var iString = __webpack_require__(14);
 
 /**
  * Checks if input value is complement of `String`
@@ -1131,7 +1205,7 @@ var iString = __webpack_require__(13);
 module.exports = complement(iString);
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1140,7 +1214,7 @@ module.exports = complement(iString);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isUndefined = __webpack_require__(14);
+var isUndefined = __webpack_require__(15);
 
 /**
  * Checks if input value is complement `undefined`
@@ -1162,7 +1236,7 @@ var isUndefined = __webpack_require__(14);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1171,12 +1245,12 @@ module.exports = complement(isUndefined);
 var _require = __webpack_require__(0),
     both = _require.both;
 
-var isNumber = __webpack_require__(10);
+var isNumber = __webpack_require__(6);
 
 module.exports = both(isNumber, isNaN);
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports) {
 
 /**
@@ -1199,7 +1273,7 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports) {
 
 module.exports = function _isFunction(x) {
@@ -1208,7 +1282,16 @@ module.exports = function _isFunction(x) {
 
 
 /***/ }),
-/* 35 */
+/* 37 */
+/***/ (function(module, exports) {
+
+module.exports = function _isNumber(x) {
+  return Object.prototype.toString.call(x) === '[object Number]';
+};
+
+
+/***/ }),
+/* 38 */
 /***/ (function(module, exports) {
 
 module.exports = function _isObject(x) {
@@ -1217,7 +1300,7 @@ module.exports = function _isObject(x) {
 
 
 /***/ }),
-/* 36 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = function _isString(x) {
@@ -1226,25 +1309,25 @@ module.exports = function _isString(x) {
 
 
 /***/ }),
-/* 37 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(31);
-var isUndefined = __webpack_require__(14);
+var isNotUndefined = __webpack_require__(33);
+var isUndefined = __webpack_require__(15);
 var isNull = __webpack_require__(5);
 var isNotNull = __webpack_require__(2);
-var isNotNil = __webpack_require__(26);
-var isArray = __webpack_require__(7);
+var isNotNil = __webpack_require__(27);
+var isArray = __webpack_require__(8);
 var isNotArray = __webpack_require__(18);
-var isBoolean = __webpack_require__(8);
+var isBoolean = __webpack_require__(9);
 var isNotBoolean = __webpack_require__(21);
 var isNotEmpty = __webpack_require__(23);
 var isNilOrEmpty = __webpack_require__(17);
-var isString = __webpack_require__(13);
-var isNotString = __webpack_require__(30);
+var isString = __webpack_require__(14);
+var isNotString = __webpack_require__(32);
 var isNotArrayLike = __webpack_require__(19);
 var isGeneratorFunction = __webpack_require__(4);
 var isNotGeneratorFunction = __webpack_require__(25);
@@ -1252,16 +1335,18 @@ var isAsyncFunction = __webpack_require__(3);
 var isNotAsyncFunction = __webpack_require__(20);
 var isFunction = __webpack_require__(1);
 var isNotFunction = __webpack_require__(24);
-var isObject = __webpack_require__(11);
-var isNotObject = __webpack_require__(27);
-var isObjectLike = __webpack_require__(6);
-var isNotObjectLike = __webpack_require__(28);
-var isPlainObject = __webpack_require__(12);
-var isNotPlainObject = __webpack_require__(29);
-var isDate = __webpack_require__(9);
+var isObject = __webpack_require__(12);
+var isNotObject = __webpack_require__(29);
+var isObjectLike = __webpack_require__(7);
+var isNotObjectLike = __webpack_require__(30);
+var isPlainObject = __webpack_require__(13);
+var isNotPlainObject = __webpack_require__(31);
+var isDate = __webpack_require__(10);
 var isNotDate = __webpack_require__(22);
-var isNumber = __webpack_require__(10);
-var isNaN = __webpack_require__(16);
+var isNumber = __webpack_require__(6);
+var isNotNumber = __webpack_require__(28);
+var isNaN = __webpack_require__(11);
+var isNotNaN = __webpack_require__(26);
 
 /**
  * @namespace RA
@@ -1296,7 +1381,9 @@ module.exports = {
   isDate: isDate,
   isNotDate: isNotDate,
   isNumber: isNumber,
-  isNaN: isNaN
+  isNotNumber: isNotNumber,
+  isNaN: isNaN,
+  isNotNaN: isNotNaN
 };
 
 /***/ })
