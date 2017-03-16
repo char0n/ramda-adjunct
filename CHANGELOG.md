@@ -1,3 +1,23 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/char0n/ramda-adjunct/compare/v0.5.1...v0.6.0) (2017-03-16)
+
+
+### Features
+
+* add isDate ([5fbd348](https://github.com/char0n/ramda-adjunct/commit/5fbd348))
+* add isNaN ([3111de3](https://github.com/char0n/ramda-adjunct/commit/3111de3))
+* add isNotDate ([4ffa958](https://github.com/char0n/ramda-adjunct/commit/4ffa958))
+* add isNotNaN ([fdc83c1](https://github.com/char0n/ramda-adjunct/commit/fdc83c1))
+* add isNotNumber ([a3a0758](https://github.com/char0n/ramda-adjunct/commit/a3a0758))
+* as isNumber ([d76d5fd](https://github.com/char0n/ramda-adjunct/commit/d76d5fd))
+
+
+
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/char0n/ramda-adjunct/compare/v0.5.0...v0.5.1) (2017-03-06)
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/char0n/ramda-adjunct/compare/v0.4.0...v0.5.0) (2017-03-06)
 
@@ -17,6 +37,7 @@
 * add isNotAsyncFunction ([8194de9](https://github.com/char0n/ramda-adjunct/commit/8194de9))
 * add isNotFunction ([82b8295](https://github.com/char0n/ramda-adjunct/commit/82b8295)), closes [#31](https://github.com/char0n/ramda-adjunct/issues/31)
 * add isNotObjectLike ([9233e00](https://github.com/char0n/ramda-adjunct/commit/9233e00))
+* add isNotPlainObject ([1d39f44](https://github.com/char0n/ramda-adjunct/commit/1d39f44))
 * add isObject ([9f6e64a](https://github.com/char0n/ramda-adjunct/commit/9f6e64a))
 * add isObjectLike ([52b1917](https://github.com/char0n/ramda-adjunct/commit/52b1917))
 * add isPlainObject ([6e14291](https://github.com/char0n/ramda-adjunct/commit/6e14291))

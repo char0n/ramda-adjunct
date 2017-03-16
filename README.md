@@ -68,6 +68,7 @@ long as they support ES5.
  - [0.3.0](https://char0n.github.io/ramda-adjunct/0.3.0)
  - [0.4.0](https://char0n.github.io/ramda-adjunct/0.4.0)
  - [0.5.1](https://char0n.github.io/ramda-adjunct/0.5.1)
+ - [0.6.0](https://char0n.github.io/ramda-adjunct/0.6.0)
  - Latest: https://char0n.github.io/ramda-adjunct
 
 ## Development
