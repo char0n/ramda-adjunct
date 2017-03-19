@@ -40,6 +40,8 @@ Ramda Adjunct keeps 100% code coverage and mimics the Ramda test patterns.
 You cannot call a library great without a great documentation. Ramda Adjnuct generates
 its documentation directly from its codebase and uses patterns both found in Ramda and Lodash to document its API.
 
+_Do you want to find out more why this library exists ? Read this [**article**](https://www.linkedin.com/pulse/ramda-adjunct-vladim%C3%ADr-gorej)._
+
 ## Requirements
 
  - ramda >= 0.23.0
