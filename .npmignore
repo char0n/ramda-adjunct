@@ -21,6 +21,7 @@
 /jsdoc.json
 /tmp-test-bundle.js
 /testem.json
+/tonicExample.js
 /webpack.config.js
 /webpack.config-test.web.js
 /webpack.config-test.node.js
