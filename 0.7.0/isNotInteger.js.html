@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotAsyncFunction.js - Documentation</title>
+    <title>isNotInteger.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotAsyncFunction.js</h1>
+    <h1 class="page-title">isNotInteger.js</h1>
     
 
     
@@ -43,31 +43,40 @@
 
 const { complement } = require('ramda');
 
-const isAsyncFunction = require('./isAsyncFunction');
+const isInteger = require('./isInterger');
 
 
-/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Async Function`
+ * Checks whether the passed value is complement of an `integer`.
  *
- * @func isNotAsyncFunction
+ *
+ * @func isNotInteger
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isInteger|isInteger}
  * @example
  *
- * RA.isNotAsyncFunction(async function test() { }); //=> false
- * RA.isNotAsyncFunction(null); //=> true
- * RA.isNotAsyncFunction(function test() { }); //=> true
- * RA.isNotAsyncFunction(() => {}); //=> true
+ * RA.isNotInteger(0); //=> false
+ * RA.isNotInteger(1); //=> false
+ * RA.isNotInteger(-100000); //=> false
+ *
+ * RA.isNotInteger(0.1);       //=> true
+ * RA.isNotInteger(Math.PI);   //=> true
+ *
+ * RA.isNotInteger(NaN);       //=> true
+ * RA.isNotInteger(Infinity);  //=> true
+ * RA.isNotInteger(-Infinity); //=> true
+ * RA.isNotInteger('10');      //=> true
+ * RA.isNotInteger(true);      //=> true
+ * RA.isNotInteger(false);     //=> true
+ * RA.isNotInteger([1]);       //=> true
  */
-/* eslint-enable max-len */
 
-module.exports = complement(isAsyncFunction);
+module.exports = complement(isInteger);
 </code></pre>
         </article>
     </section>
