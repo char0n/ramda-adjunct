@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotString.js - Documentation</title>
+    <title>isInterger.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotString.js</h1>
+    <h1 class="page-title">isInterger.js</h1>
     
 
     
@@ -41,28 +41,41 @@
         <article>
             <pre class="prettyprint source linenums"><code>'use strict';
 
-const { complement } = require('ramda');
+const { or } = require('ramda');
 
-const iString = require('./isString');
+const polyfill = require('./internal/polyfills/Number.isInteger');
 
 /**
- * Checks if input value is complement of `String`
+ * Checks whether the passed value is a an `integer`.
  *
- * @func isNotString
+ *
+ * @func isInteger
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isString|isString}
+ * @see {@link RA.isNotInteger|isNotInteger}
  * @example
  *
- * RA.isNotString('abc'); //=> false
- * RA.isNotString(1); //=> true
+ * RA.isInteger(0); //=> true
+ * RA.isInteger(1); //=> true
+ * RA.isInteger(-100000); //=> true
+ *
+ * RA.isInteger(0.1);       //=> false
+ * RA.isInteger(Math.PI);   //=> false
+ *
+ * RA.isInteger(NaN);       //=> false
+ * RA.isInteger(Infinity);  //=> false
+ * RA.isInteger(-Infinity); //=> false
+ * RA.isInteger('10');      //=> false
+ * RA.isInteger(true);      //=> false
+ * RA.isInteger(false);     //=> false
+ * RA.isInteger([1]);       //=> false
  */
 
-module.exports = complement(iString);
+module.exports = or(Number.isInteger, polyfill);
 </code></pre>
         </article>
     </section>
