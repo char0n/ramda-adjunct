@@ -18,15 +18,15 @@ const _isFinite = require('./isFinite');
  * @see {@link RA.isFinite|isFinite}
  * @example
  *
- * Number.isNotFinite(Infinity); //=> true
- * Number.isNotFinite(NaN); //=> true
- * Number.isNotFinite(-Infinity); //=> true
+ * RA.isNotFinite(Infinity); //=> true
+ * RA.isNotFinite(NaN); //=> true
+ * RA.isNotFinite(-Infinity); //=> true
  *
- * Number.isNotFinite(0); // false
- * Number.isNotFinite(2e64); // false
+ * RA.isNotFinite(0); // false
+ * RA.isNotFinite(2e64); // false
  *
- * Number.isNotFinite('0');  // => true
- * Number.isNotFinite(null); // => true
+ * RA.isNotFinite('0');  // => true
+ * RA.isNotFinite(null); // => true
  */
 
 module.exports = complement(_isFinite);

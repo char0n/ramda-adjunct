@@ -18,17 +18,17 @@ const polyfill = require('./internal/polyfills/Number.isFinite');
  * @see {@link RA.isNotFinite|isNotFinite}
  * @example
  *
- * Number.isFinite(Infinity); //=> false
- * Number.isFinite(NaN); //=> false
- * Number.isFinite(-Infinity); //=> false
+ * RA.isFinite(Infinity); //=> false
+ * RA.isFinite(NaN); //=> false
+ * RA.isFinite(-Infinity); //=> false
  *
- * Number.isFinite(0); // true
- * Number.isFinite(2e64); // true
+ * RA.isFinite(0); // true
+ * RA.isFinite(2e64); // true
  *
- * Number.isFinite('0');  // => false
- *                        // would've been true with global isFinite('0')
- * Number.isFinite(null); // => false
- *                        // would've been true with global isFinite(null)
+ * RA.isFinite('0');  // => false
+ *                    // would've been true with global isFinite('0')
+ * RA.isFinite(null); // => false
+ *                    // would've been true with global isFinite(null)
  */
 
 module.exports = or(Number.isFinite, polyfill);
