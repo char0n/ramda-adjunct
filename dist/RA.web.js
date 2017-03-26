@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 45);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -92,7 +92,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 var _require = __webpack_require__(0),
     anyPass = _require.anyPass;
 
-var _isFunction = __webpack_require__(41);
+var _isFunction = __webpack_require__(42);
 
 var isGeneratorFunction = __webpack_require__(6);
 var isAsyncFunction = __webpack_require__(4);
@@ -161,7 +161,7 @@ module.exports = complement(isNull);
 "use strict";
 
 
-var _isNumber = __webpack_require__(42);
+var _isNumber = __webpack_require__(43);
 
 /**
  * Checks if value is a `Number` primitive or object
@@ -226,7 +226,7 @@ module.exports = function (val) {
 var _require = __webpack_require__(0),
     or = _require.or;
 
-var polyfill = __webpack_require__(37);
+var polyfill = __webpack_require__(38);
 
 /**
  * Checks whether the passed value is a finite `Number`.
@@ -345,7 +345,7 @@ var _require = __webpack_require__(0),
     both = _require.both;
 
 var isNotNull = __webpack_require__(2);
-var isOfTypeObject = __webpack_require__(17);
+var isOfTypeObject = __webpack_require__(18);
 
 /* eslint-disable max-len */
 /**
@@ -378,7 +378,7 @@ module.exports = both(isNotNull, isOfTypeObject);
 "use strict";
 
 
-var _isArray = __webpack_require__(40);
+var _isArray = __webpack_require__(41);
 
 /**
  * Checks if input value is `Array`
@@ -472,6 +472,50 @@ var _require = __webpack_require__(0),
 var polyfill = __webpack_require__(39);
 
 /**
+ * Checks whether the passed value is a an `integer`.
+ *
+ *
+ * @func isInteger
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotInteger|isNotInteger}
+ * @example
+ *
+ * RA.isInteger(0); //=> true
+ * RA.isInteger(1); //=> true
+ * RA.isInteger(-100000); //=> true
+ *
+ * RA.isInteger(0.1);       //=> false
+ * RA.isInteger(Math.PI);   //=> false
+ *
+ * RA.isInteger(NaN);       //=> false
+ * RA.isInteger(Infinity);  //=> false
+ * RA.isInteger(-Infinity); //=> false
+ * RA.isInteger('10');      //=> false
+ * RA.isInteger(true);      //=> false
+ * RA.isInteger(false);     //=> false
+ * RA.isInteger([1]);       //=> false
+ */
+
+module.exports = or(Number.isInteger, polyfill);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    or = _require.or;
+
+var polyfill = __webpack_require__(40);
+
+/**
  * Checks whether the passed value is `NaN` and its type is `Number`.
  * It is a more robust version of the original, global isNaN().
  *
@@ -508,7 +552,7 @@ var polyfill = __webpack_require__(39);
 module.exports = or(Number.isNaN, polyfill);
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -520,7 +564,7 @@ var _require = __webpack_require__(0),
 
 var isNotNull = __webpack_require__(2);
 var isFunction = __webpack_require__(1);
-var isOfTypeObject = __webpack_require__(17);
+var isOfTypeObject = __webpack_require__(18);
 
 /* eslint-disable max-len */
 /**
@@ -547,13 +591,13 @@ var isOfTypeObject = __webpack_require__(17);
 module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _isObject = __webpack_require__(43);
+var _isObject = __webpack_require__(44);
 
 var _require = __webpack_require__(0),
     pipe = _require.pipe,
@@ -612,13 +656,13 @@ module.exports = function (val) {
 };
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _isString = __webpack_require__(44);
+var _isString = __webpack_require__(45);
 
 /**
  * Checks if input value is `String`
@@ -640,7 +684,7 @@ var _isString = __webpack_require__(44);
 module.exports = _isString;
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -671,7 +715,7 @@ var _require = __webpack_require__(0),
 module.exports = equals(undefined);
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -682,50 +726,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 module.exports = function (val) {
   return (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object';
 };
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(0),
-    or = _require.or;
-
-var polyfill = __webpack_require__(38);
-
-/**
- * Checks whether the passed value is a an `integer`.
- *
- *
- * @func isInteger
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotInteger|isNotInteger}
- * @example
- *
- * RA.isInteger(0); //=> true
- * RA.isInteger(1); //=> true
- * RA.isInteger(-100000); //=> true
- *
- * RA.isInteger(0.1);       //=> false
- * RA.isInteger(Math.PI);   //=> false
- *
- * RA.isInteger(NaN);       //=> false
- * RA.isInteger(Infinity);  //=> false
- * RA.isInteger(-Infinity); //=> false
- * RA.isInteger('10');      //=> false
- * RA.isInteger(true);      //=> false
- * RA.isInteger(false);     //=> false
- * RA.isInteger([1]);       //=> false
- */
-
-module.exports = or(Number.isInteger, polyfill);
 
 /***/ }),
 /* 19 */
@@ -1082,7 +1082,51 @@ module.exports = complement(isGeneratorFunction);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isNaN = __webpack_require__(12);
+var isInteger = __webpack_require__(12);
+
+/**
+ * Checks whether the passed value is complement of an `integer`.
+ *
+ *
+ * @func isNotInteger
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isInteger|isInteger}
+ * @example
+ *
+ * RA.isNotInteger(0); //=> false
+ * RA.isNotInteger(1); //=> false
+ * RA.isNotInteger(-100000); //=> false
+ *
+ * RA.isNotInteger(0.1);       //=> true
+ * RA.isNotInteger(Math.PI);   //=> true
+ *
+ * RA.isNotInteger(NaN);       //=> true
+ * RA.isNotInteger(Infinity);  //=> true
+ * RA.isNotInteger(-Infinity); //=> true
+ * RA.isNotInteger('10');      //=> true
+ * RA.isNotInteger(true);      //=> true
+ * RA.isNotInteger(false);     //=> true
+ * RA.isNotInteger([1]);       //=> true
+ */
+
+module.exports = complement(isInteger);
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(0),
+    complement = _require.complement;
+
+var isNaN = __webpack_require__(13);
 
 /**
  * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
@@ -1118,7 +1162,7 @@ var isNaN = __webpack_require__(12);
 module.exports = complement(isNaN);
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1151,7 +1195,7 @@ var _require = __webpack_require__(0),
 module.exports = complement(isNil);
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1184,7 +1228,7 @@ var isNumber = __webpack_require__(3);
 module.exports = complement(isNumber);
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1193,7 +1237,7 @@ module.exports = complement(isNumber);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isObject = __webpack_require__(13);
+var isObject = __webpack_require__(14);
 
 /* eslint-disable max-len */
 /**
@@ -1220,7 +1264,7 @@ var isObject = __webpack_require__(13);
 module.exports = complement(isObject);
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1256,7 +1300,7 @@ var isObjectLike = __webpack_require__(8);
 module.exports = complement(isObjectLike);
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1265,7 +1309,7 @@ module.exports = complement(isObjectLike);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isPlainObject = __webpack_require__(14);
+var isPlainObject = __webpack_require__(15);
 
 /* eslint-disable max-len */
 /**
@@ -1298,7 +1342,7 @@ var isPlainObject = __webpack_require__(14);
 module.exports = complement(isPlainObject);
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1307,7 +1351,7 @@ module.exports = complement(isPlainObject);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var iString = __webpack_require__(15);
+var iString = __webpack_require__(16);
 
 /**
  * Checks if input value is complement of `String`
@@ -1329,7 +1373,7 @@ var iString = __webpack_require__(15);
 module.exports = complement(iString);
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1338,7 +1382,7 @@ module.exports = complement(iString);
 var _require = __webpack_require__(0),
     complement = _require.complement;
 
-var isUndefined = __webpack_require__(16);
+var isUndefined = __webpack_require__(17);
 
 /**
  * Checks if input value is complement `undefined`
@@ -1360,7 +1404,7 @@ var isUndefined = __webpack_require__(16);
 module.exports = complement(isUndefined);
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1374,7 +1418,7 @@ var isNumber = __webpack_require__(3);
 module.exports = both(isNumber, isFinite);
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1391,7 +1435,7 @@ var isFinite = __webpack_require__(5);
 module.exports = both(isFinite, converge(equals, [Math.floor, identity]));
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1405,7 +1449,7 @@ var isNumber = __webpack_require__(3);
 module.exports = both(isNumber, isNaN);
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 /**
@@ -1428,7 +1472,7 @@ module.exports = Array.isArray || function _isArray(val) {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = function _isFunction(x) {
@@ -1437,7 +1481,7 @@ module.exports = function _isFunction(x) {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = function _isNumber(x) {
@@ -1446,7 +1490,7 @@ module.exports = function _isNumber(x) {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = function _isObject(x) {
@@ -1455,7 +1499,7 @@ module.exports = function _isObject(x) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 module.exports = function _isString(x) {
@@ -1464,25 +1508,25 @@ module.exports = function _isString(x) {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(36);
-var isUndefined = __webpack_require__(16);
+var isNotUndefined = __webpack_require__(37);
+var isUndefined = __webpack_require__(17);
 var isNull = __webpack_require__(7);
 var isNotNull = __webpack_require__(2);
-var isNotNil = __webpack_require__(30);
+var isNotNil = __webpack_require__(31);
 var isArray = __webpack_require__(9);
 var isNotArray = __webpack_require__(20);
 var isBoolean = __webpack_require__(10);
 var isNotBoolean = __webpack_require__(23);
 var isNotEmpty = __webpack_require__(25);
 var isNilOrEmpty = __webpack_require__(19);
-var isString = __webpack_require__(15);
-var isNotString = __webpack_require__(35);
+var isString = __webpack_require__(16);
+var isNotString = __webpack_require__(36);
 var isNotArrayLike = __webpack_require__(21);
 var isGeneratorFunction = __webpack_require__(6);
 var isNotGeneratorFunction = __webpack_require__(28);
@@ -1490,21 +1534,22 @@ var isAsyncFunction = __webpack_require__(4);
 var isNotAsyncFunction = __webpack_require__(22);
 var isFunction = __webpack_require__(1);
 var isNotFunction = __webpack_require__(27);
-var isObject = __webpack_require__(13);
-var isNotObject = __webpack_require__(32);
+var isObject = __webpack_require__(14);
+var isNotObject = __webpack_require__(33);
 var isObjectLike = __webpack_require__(8);
-var isNotObjectLike = __webpack_require__(33);
-var isPlainObject = __webpack_require__(14);
-var isNotPlainObject = __webpack_require__(34);
+var isNotObjectLike = __webpack_require__(34);
+var isPlainObject = __webpack_require__(15);
+var isNotPlainObject = __webpack_require__(35);
 var isDate = __webpack_require__(11);
 var isNotDate = __webpack_require__(24);
 var isNumber = __webpack_require__(3);
-var isNotNumber = __webpack_require__(31);
-var isNaN = __webpack_require__(12);
-var isNotNaN = __webpack_require__(29);
+var isNotNumber = __webpack_require__(32);
+var isNaN = __webpack_require__(13);
+var isNotNaN = __webpack_require__(30);
 var isFinite = __webpack_require__(5);
 var isNotFinite = __webpack_require__(26);
-var isInteger = __webpack_require__(18);
+var isInteger = __webpack_require__(12);
+var isNotInteger = __webpack_require__(29);
 
 /**
  * @namespace RA
@@ -1544,7 +1589,8 @@ module.exports = {
   isNotNaN: isNotNaN,
   isFinite: isFinite,
   isNotFinite: isNotFinite,
-  isInteger: isInteger
+  isInteger: isInteger,
+  isNotInteger: isNotInteger
 };
 
 /***/ })
