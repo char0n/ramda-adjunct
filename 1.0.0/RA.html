@@ -1,0 +1,6807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>RA - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/ramda.min.js"></script>
+    <script src="scripts/RA.web.min.js"></script>
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Ramda Adjunct 1.0.0</a></h2><h3>Namespaces</h3><ul><li><a href="RA.html">RA</a><ul class='methods'><li data-type='method'><a href="RA.html#.isArray">isArray</a></li><li data-type='method'><a href="RA.html#.isAsyncFunction">isAsyncFunction</a></li><li data-type='method'><a href="RA.html#.isBoolean">isBoolean</a></li><li data-type='method'><a href="RA.html#.isDate">isDate</a></li><li data-type='method'><a href="RA.html#.isFinite">isFinite</a></li><li data-type='method'><a href="RA.html#.isFunction">isFunction</a></li><li data-type='method'><a href="RA.html#.isGeneratorFunction">isGeneratorFunction</a></li><li data-type='method'><a href="RA.html#.isInteger">isInteger</a></li><li data-type='method'><a href="RA.html#.isNaN">isNaN</a></li><li data-type='method'><a href="RA.html#.isNilOrEmpty">isNilOrEmpty</a></li><li data-type='method'><a href="RA.html#.isNotArray">isNotArray</a></li><li data-type='method'><a href="RA.html#.isNotArrayLike">isNotArrayLike</a></li><li data-type='method'><a href="RA.html#.isNotAsyncFunction">isNotAsyncFunction</a></li><li data-type='method'><a href="RA.html#.isNotBoolean">isNotBoolean</a></li><li data-type='method'><a href="RA.html#.isNotDate">isNotDate</a></li><li data-type='method'><a href="RA.html#.isNotEmpty">isNotEmpty</a></li><li data-type='method'><a href="RA.html#.isNotFinite">isNotFinite</a></li><li data-type='method'><a href="RA.html#.isNotFunction">isNotFunction</a></li><li data-type='method'><a href="RA.html#.isNotGeneratorFunction">isNotGeneratorFunction</a></li><li data-type='method'><a href="RA.html#.isNotInteger">isNotInteger</a></li><li data-type='method'><a href="RA.html#.isNotNaN">isNotNaN</a></li><li data-type='method'><a href="RA.html#.isNotNil">isNotNil</a></li><li data-type='method'><a href="RA.html#.isNotNull">isNotNull</a></li><li data-type='method'><a href="RA.html#.isNotNumber">isNotNumber</a></li><li data-type='method'><a href="RA.html#.isNotObject">isNotObject</a></li><li data-type='method'><a href="RA.html#.isNotObjectLike">isNotObjectLike</a></li><li data-type='method'><a href="RA.html#.isNotPlainObject">isNotPlainObject</a></li><li data-type='method'><a href="RA.html#.isNotString">isNotString</a></li><li data-type='method'><a href="RA.html#.isNotUndefined">isNotUndefined</a></li><li data-type='method'><a href="RA.html#.isNull">isNull</a></li><li data-type='method'><a href="RA.html#.isNumber">isNumber</a></li><li data-type='method'><a href="RA.html#.isObject">isObject</a></li><li data-type='method'><a href="RA.html#.isObjectLike">isObjectLike</a></li><li data-type='method'><a href="RA.html#.isPlainObject">isPlainObject</a></li><li data-type='method'><a href="RA.html#.isString">isString</a></li><li data-type='method'><a href="RA.html#.isUndefined">isUndefined</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">RA</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        RA
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isArray"><span class="type-signature">(static) </span>isArray<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isArray.js.html">isArray.js</a>, <a href="isArray.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.3.0">v0.3.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotArray"><code>isNotArray</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is <code>Array</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isArray([]); //=> true
+RA.isArray(null); //=> false
+RA.isArray({}); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isAsyncFunction"><span class="type-signature">(static) </span>isAsyncFunction<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isAsyncFunction.js.html">isAsyncFunction.js</a>, <a href="isAsyncFunction.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isFunction"><code>isFunction</code></a>, <a href="RA.html#.isNotAsyncFunction"><code>isNotAsyncFunction</code></a>, <a href="RA.html#.isGeneratorFunction"><code>isGeneratorFunction</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is <code>Async Function</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isAsyncFunction(async function test() { }); //=> true
+RA.isAsyncFunction(null); //=> false
+RA.isAsyncFunction(function test() { }); //=> false
+RA.isAsyncFunction(() => {}); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isBoolean"><span class="type-signature">(static) </span>isBoolean<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isBoolean.js.html">isBoolean.js</a>, <a href="isBoolean.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.3.0">v0.3.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotBoolean"><code>isNotBoolean</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is <code>Boolean</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isBoolean(false); //=> true
+RA.isBoolean(true); //=> true
+RA.isBoolean(null); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isDate"><span class="type-signature">(static) </span>isDate<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isDate.js.html">isDate.js</a>, <a href="isDate.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.6.0">v0.6.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotDate"><code>isNotDate</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if value is <code>Date</code> object</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isDate(new Date()); //=> true
+RA.isDate('1997-07-16T19:20+01:00'); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isFinite"><span class="type-signature">(static) </span>isFinite<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isFinite.js.html">isFinite.js</a>, <a href="isFinite.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.7.0">v0.7.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotFinite"><code>isNotFinite</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks whether the passed value is a finite <code>Number</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isFinite(Infinity); //=> false
+RA.isFinite(NaN); //=> false
+RA.isFinite(-Infinity); //=> false
+
+RA.isFinite(0); // true
+RA.isFinite(2e64); // true
+
+RA.isFinite('0');  // => false
+                   // would've been true with global isFinite('0')
+RA.isFinite(null); // => false
+                   // would've been true with global isFinite(null)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isFunction"><span class="type-signature">(static) </span>isFunction<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isFunction.js.html">isFunction.js</a>, <a href="isFunction.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotFunction"><code>isNotFunction</code></a>, <a href="RA.html#.isAsyncFunction"><code>isNotAsyncFunction</code></a>, <a href="RA.html#.isGeneratorFunction"><code>isGeneratorFunction</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is <code>Function</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isFunction(function test() { }); //=> true
+RA.isFunction(function* test() { }); //=> true
+RA.isFunction(async function test() { }); //=> true
+RA.isFunction(() => {}); //=> true
+RA.isFunction(null); //=> false
+RA.isFunction('abc'); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isGeneratorFunction"><span class="type-signature">(static) </span>isGeneratorFunction<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isGeneratorFunction.js.html">isGeneratorFunction.js</a>, <a href="isGeneratorFunction.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isFunction"><code>isFunction</code></a>, <a href="RA.html#.isAsyncFunction"><code>isAsyncFunction</code></a>, <a href="RA.html#.isNotGeneratorFunction"><code>isNotGeneratorFunction</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is <code>Generator Function</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isGeneratorFunction(function* test() { }); //=> true
+RA.isGeneratorFunction(null); //=> false
+RA.isGeneratorFunction(function test() { }); //=> false
+RA.isGeneratorFunction(() => {}); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isInteger"><span class="type-signature">(static) </span>isInteger<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isInterger.js.html">isInterger.js</a>, <a href="isInterger.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.7.0">v0.7.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotInteger"><code>isNotInteger</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks whether the passed value is a an <code>integer</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isInteger(0); //=> true
+RA.isInteger(1); //=> true
+RA.isInteger(-100000); //=> true
+
+RA.isInteger(0.1);       //=> false
+RA.isInteger(Math.PI);   //=> false
+
+RA.isInteger(NaN);       //=> false
+RA.isInteger(Infinity);  //=> false
+RA.isInteger(-Infinity); //=> false
+RA.isInteger('10');      //=> false
+RA.isInteger(true);      //=> false
+RA.isInteger(false);     //=> false
+RA.isInteger([1]);       //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNaN"><span class="type-signature">(static) </span>isNaN<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNaN.js.html">isNaN.js</a>, <a href="isNaN.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.6.0">v0.6.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotNaN"><code>isNotNaN</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks whether the passed value is <code>NaN</code> and its type is <code>Number</code>.
+It is a more robust version of the original, global isNaN().</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNaN(NaN); // => true
+RA.isNaN(Number.NaN); // => true
+RA.isNaN(0 / 0); // => true
+
+// e.g. these would have been true with global isNaN().
+RA.isNaN('NaN'); // => false
+RA.isNaN(undefined); // => false
+RA.isNaN({}); // => false
+RA.isNaN('blabla'); // => false
+
+RA.isNaN(true); // => false
+RA.isNaN(null); // => false
+RA.isNaN(37); // => false
+RA.isNaN('37'); // => false
+RA.isNaN('37.37'); // => false
+RA.isNaN(''); // => false
+RA.isNaN(' '); // => false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNilOrEmpty"><span class="type-signature">(static) </span>isNilOrEmpty<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNilOrEmpty.js.html">isNilOrEmpty.js</a>, <a href="isNilOrEmpty.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.4.0">v0.4.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="http://ramdajs.com/docs/#isEmpty">isEmpty</a>, <a href="http://ramdajs.com/docs/#isNil">isNil</a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Returns <code>true</code> if the given value is its type's empty value, <code>null</code> or <code>undefined</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNilOrEmpty([1, 2, 3]); //=> false
+RA.isNilOrEmpty([]); //=> true
+RA.isNilOrEmpty(''); //=> true
+RA.isNilOrEmpty(null); //=> true
+RA.isNilOrEmpty(undefined): //=> true
+RA.isNilOrEmpty({}); //=> true
+RA.isNilOrEmpty({length: 0}); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotArray"><span class="type-signature">(static) </span>isNotArray<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotArray.js.html">isNotArray.js</a>, <a href="isNotArray.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.3.0">v0.3.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isArray"><code>isArray</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of <code>Array</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotArray([]); //=> false
+RA.isNotArray(null); //=> true
+RA.isNotArray({}); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotArrayLike"><span class="type-signature">(static) </span>isNotArrayLike<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotArrayLike.js.html">isNotArrayLike.js</a>, <a href="isNotArrayLike.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="http://ramdajs.com/docs/#isArrayLike">isArrayLike</a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Tests whether or not an object is similar to an array.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotArrayLike([]); //=> false
+RA.isNotArrayLike(true); //=> true
+RA.isNotArrayLike({}); //=> true
+RA.isNotArrayLike({length: 10}); //=> true
+RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotAsyncFunction"><span class="type-signature">(static) </span>isNotAsyncFunction<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotAsyncFunction.js.html">isNotAsyncFunction.js</a>, <a href="isNotAsyncFunction.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isFunction"><code>isFunction</code></a>, <a href="RA.html#.isAsyncFunction"><code>isAsyncFunction</code></a>, <a href="RA.html#.isGeneratorFunction"><code>isGeneratorFunction</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of <code>Async Function</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotAsyncFunction(async function test() { }); //=> false
+RA.isNotAsyncFunction(null); //=> true
+RA.isNotAsyncFunction(function test() { }); //=> true
+RA.isNotAsyncFunction(() => {}); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotBoolean"><span class="type-signature">(static) </span>isNotBoolean<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotBoolean.js.html">isNotBoolean.js</a>, <a href="isNotBoolean.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.3.0">v0.3.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isBoolean"><code>isBoolean</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of <code>Boolean</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotBoolean(false); //=> false
+RA.isNotBoolean(true); //=> false
+RA.isNotBoolean(null); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotDate"><span class="type-signature">(static) </span>isNotDate<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotDate.js.html">isNotDate.js</a>, <a href="isNotDate.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.6.0">v0.6.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isDate"><code>isDate</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if value is complement of <code>Date</code> object</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotDate(new Date()); //=> false
+RA.isNotDate('1997-07-16T19:20+01:00'); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotEmpty"><span class="type-signature">(static) </span>isNotEmpty<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotEmpty.js.html">isNotEmpty.js</a>, <a href="isNotEmpty.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.4.0">v0.4.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="http://ramdajs.com/docs/#isEmpty">isEmpty</a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Returns true if the given value is not its type's empty value; <code>false</code> otherwise.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotEmpty([1, 2, 3]); //=> true
+RA.isNotEmpty([]); //=> false
+RA.isNotEmpty(''); //=> false
+RA.isNotEmpty(null); //=> true
+RA.isNotEmpty(undefined): //=> true
+RA.isNotEmpty({}); //=> false
+RA.isNotEmpty({length: 0}); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotFinite"><span class="type-signature">(static) </span>isNotFinite<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotFinite.js.html">isNotFinite.js</a>, <a href="isNotFinite.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.7.0">v0.7.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isFinite"><code>isFinite</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks whether the passed value is complement of finite <code>Number</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotFinite(Infinity); //=> true
+RA.isNotFinite(NaN); //=> true
+RA.isNotFinite(-Infinity); //=> true
+
+RA.isNotFinite(0); // false
+RA.isNotFinite(2e64); // false
+
+RA.isNotFinite('0');  // => true
+RA.isNotFinite(null); // => true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotFunction"><span class="type-signature">(static) </span>isNotFunction<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotFunction.js.html">isNotFunction.js</a>, <a href="isNotFunction.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isFunction"><code>isFunction</code></a>, <a href="RA.html#.isAsyncFunction"><code>isNotAsyncFunction</code></a>, <a href="RA.html#.isGeneratorFunction"><code>isGeneratorFunction</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of <code>Function</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotFunction(function test() { }); //=> false
+RA.isNotFunction(function* test() { }); //=> false
+RA.isNotFunction(async function test() { }); //=> false
+RA.isNotFunction(() => {}); //=> false
+RA.isNotFunction(null); //=> true
+RA.isNotFunction('abc'); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotGeneratorFunction"><span class="type-signature">(static) </span>isNotGeneratorFunction<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotGeneratorFunction.js.html">isNotGeneratorFunction.js</a>, <a href="isNotGeneratorFunction.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isFunction"><code>isFunction</code></a>, <a href="RA.html#.isAsyncFunction"><code>isAsyncFunction</code></a>, <a href="RA.html#.isGeneratorFunction"><code>isGeneratorFunction</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of <code>Generator Function</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotGeneratorFunction(function* test() { }); //=> false
+RA.isNotGeneratorFunction(null); //=> true
+RA.isNotGeneratorFunction(function test() { }); //=> true
+RA.isNotGeneratorFunction(() => {}); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotInteger"><span class="type-signature">(static) </span>isNotInteger<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotInteger.js.html">isNotInteger.js</a>, <a href="isNotInteger.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.7.0">v0.7.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isInteger"><code>isInteger</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks whether the passed value is complement of an <code>integer</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotInteger(0); //=> false
+RA.isNotInteger(1); //=> false
+RA.isNotInteger(-100000); //=> false
+
+RA.isNotInteger(0.1);       //=> true
+RA.isNotInteger(Math.PI);   //=> true
+
+RA.isNotInteger(NaN);       //=> true
+RA.isNotInteger(Infinity);  //=> true
+RA.isNotInteger(-Infinity); //=> true
+RA.isNotInteger('10');      //=> true
+RA.isNotInteger(true);      //=> true
+RA.isNotInteger(false);     //=> true
+RA.isNotInteger([1]);       //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotNaN"><span class="type-signature">(static) </span>isNotNaN<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotNaN.js.html">isNotNaN.js</a>, <a href="isNotNaN.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.6.0">v0.6.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNaN"><code>isNaN</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks whether the passed value is complement of <code>NaN</code> and its type is not <code>Number</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotNaN(NaN); // => false
+RA.isNotNaN(Number.NaN); // => false
+RA.isNotNaN(0 / 0); // => false
+
+RA.isNotNaN('NaN'); // => true
+RA.isNotNaN(undefined); // => true
+RA.isNotNaN({}); // => true
+RA.isNotNaN('blabla'); // => true
+
+RA.isNotNaN(true); // => true
+RA.isNotNaN(null); // => true
+RA.isNotNaN(37); // => true
+RA.isNotNaN('37'); // => true
+RA.isNotNaN('37.37'); // => true
+RA.isNotNaN(''); // => true
+RA.isNotNaN(' '); // => true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotNil"><span class="type-signature">(static) </span>isNotNil<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotNil.js.html">isNotNil.js</a>, <a href="isNotNil.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.3.0">v0.3.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="http://ramdajs.com/docs/#isNil">isNil</a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of <code>null</code> or <code>undefined</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotNil(null); //=> false
+RA.isNotNil(undefined); //=> false
+RA.isNotNil(0); //=> true
+RA.isNotNil([]); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotNull"><span class="type-signature">(static) </span>isNotNull<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotNull.js.html">isNotNull.js</a>, <a href="isNotNull.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.1.0">v0.1.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNull"><code>isNull</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of <code>null</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotNull(1); //=> true
+RA.isNotNull(undefined); //=> true
+RA.isNotNull(null); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotNumber"><span class="type-signature">(static) </span>isNotNumber<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotNumber.js.html">isNotNumber.js</a>, <a href="isNotNumber.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.6.0">v0.6.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNumber"><code>isNumber</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if value is a complement of <code>Number</code> primitive or object</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotNumber(5); // => false
+RA.isNotNumber(Number.MAX_VALUE); // => false
+RA.isNotNumber(-Infinity); // => false
+RA.isNotNumber('5'); // => true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotObject"><span class="type-signature">(static) </span>isNotObject<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotObject.js.html">isNotObject.js</a>, <a href="isNotObject.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isObject"><code>isObject</code></a>, <a href="RA.html#.isObjectLike"><code>isObjectLike</code></a>, <a href="RA.html#.isPlainObject"><code>isPlainObject</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of language type of <code>Object</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotObject({}); //=> false
+RA.isNotObject([]); //=> false
+RA.isNotObject(() => {}); //=> false
+RA.isNotObject(null); //=> true
+RA.isNotObject(undefined); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotObjectLike"><span class="type-signature">(static) </span>isNotObjectLike<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotObjectLike.js.html">isNotObjectLike.js</a>, <a href="isNotObjectLike.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isObjectLike"><code>isObjectLike</code></a>, <a href="RA.html#.isObject"><code>isObject</code></a>, <a href="RA.html#.isPlainObject"><code>isPlainObject</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of &quot;object&quot;.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotObjectLike({}); //=> false
+RA.isNotObjectLike([]); //=> false
+RA.isNotObjectLike(() => {}); //=> true
+RA.isNotObjectLike(null); //=> true
+RA.isNotObjectLike(undefined); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotPlainObject"><span class="type-signature">(static) </span>isNotPlainObject<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotPlainObject.js.html">isNotPlainObject.js</a>, <a href="isNotPlainObject.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isPlainObject"><code>isPlainObject</code></a>, <a href="RA.html#.isObjectLike"><code>isObjectLike</code></a>, <a href="RA.html#.isObject"><code>isObject</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Check to see if an object is a not plain object (created using <code>{}</code>, <code>new Object()</code> or <code>Object.create(null)</code>)</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>class Bar {
+  constructor() {
+    this.prop = 'value';
+  }
+}
+
+RA.isNotPlainObject(new Bar()); //=> true
+RA.isNotPlainObject({ prop: 'value' }); //=> false
+RA.isNotPlainObject(['a', 'b', 'c']); //=> true
+RA.isNotPlainObject(Object.create(null); //=> false
+RA.isNotPlainObject(new Object()); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotString"><span class="type-signature">(static) </span>isNotString<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotString.js.html">isNotString.js</a>, <a href="isNotString.js.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.4.0">v0.4.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isString"><code>isString</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement of <code>String</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotString('abc'); //=> false
+RA.isNotString(1); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNotUndefined"><span class="type-signature">(static) </span>isNotUndefined<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotUndefined.js.html">isNotUndefined.js</a>, <a href="isNotUndefined.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.0.1">v0.0.1</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isUndefined"><code>isUndefined</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is complement <code>undefined</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotUndefined(1); //=> true
+RA.isNotUndefined(undefined); //=> false
+RA.isNotUndefined(null); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNull"><span class="type-signature">(static) </span>isNull<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNull.js.html">isNull.js</a>, <a href="isNull.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.1.0">v0.1.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotNull"><code>isNotNull</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is <code>null</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNull(1); //=> false
+RA.isNull(undefined); //=> false
+RA.isNull(null); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isNumber"><span class="type-signature">(static) </span>isNumber<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNumber.js.html">isNumber.js</a>, <a href="isNumber.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.6.0">v0.6.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotNumber"><code>isNotNumber</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if value is a <code>Number</code> primitive or object</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNumber(5); // => true
+RA.isNumber(Number.MAX_VALUE); // => true
+RA.isNumber(-Infinity); // => true
+RA.isNumber('5'); // => false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isObject"><span class="type-signature">(static) </span>isObject<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isObject.js.html">isObject.js</a>, <a href="isObject.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotObject"><code>isNotObject</code></a>, <a href="RA.html#.isObjectLike"><code>isObjectLike</code></a>, <a href="RA.html#.isPlainObject"><code>isPlainObject</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is language type of <code>Object</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isObject({}); //=> true
+RA.isObject([]); //=> true
+RA.isObject(() => {}); //=> true
+RA.isObject(null); //=> false
+RA.isObject(undefined); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isObjectLike"><span class="type-signature">(static) </span>isObjectLike<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isObjectLike.js.html">isObjectLike.js</a>, <a href="isObjectLike.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotObjectLike"><code>isNotObjectLike</code></a>, <a href="RA.html#.isObject"><code>isObject</code></a>, <a href="RA.html#.isPlainObject"><code>isPlainObject</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if value is object-like. A value is object-like if it's not null and has a typeof result of &quot;object&quot;.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isObjectLike({}); //=> true
+RA.isObjectLike([]); //=> true
+RA.isObjectLike(() => {}); //=> false
+RA.isObjectLike(null); //=> false
+RA.isObjectLike(undefined); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isPlainObject"><span class="type-signature">(static) </span>isPlainObject<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isPlainObject.js.html">isPlainObject.js</a>, <a href="isPlainObject.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.5.0">v0.5.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotPlainObject"><code>isNotPlainObject</code></a>, <a href="RA.html#.isObjectLike"><code>isObjectLike</code></a>, <a href="RA.html#.isObject"><code>isObject</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Check to see if an object is a plain object (created using <code>{}</code>, <code>new Object()</code> or <code>Object.create(null)</code>)</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>class Bar {
+  constructor() {
+    this.prop = 'value';
+  }
+}
+
+RA.isPlainObject(new Bar()); //=> false
+RA.isPlainObject({ prop: 'value' }); //=> true
+RA.isPlainObject(['a', 'b', 'c']); //=> false
+RA.isPlainObject(Object.create(null); //=> true
+RA.isPlainObject(new Object()); //=> true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isString"><span class="type-signature">(static) </span>isString<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isString.js.html">isString.js</a>, <a href="isString.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.4.0">v0.4.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotString"><code>isNotString</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is <code>String</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isString('abc'); //=> true
+RA.isString(1); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isUndefined"><span class="type-signature">(static) </span>isUndefined<span class="signature">(val)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isUndefined.js.html">isUndefined.js</a>, <a href="isUndefined.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/0.0.1">v0.0.1</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><code>* -> Boolean</code></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="RA.html#.isNotUndefined"><code>isNotUndefined</code></a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if input value is <code>undefined</code></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isUndefined(1); //=> false
+RA.isUndefined(undefined); //=> true
+RA.isUndefined(null); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Mar 26 2017 17:57:41 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
