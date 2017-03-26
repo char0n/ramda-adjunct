@@ -144,6 +144,10 @@ const { isArray } = require('ramda-adjunct');
 isArray([]);
 ``` 
 
+## Assimilated libraries
+
+ - [rcb](https://github.com/enten/rcb) - Ramda Cookbook implementation 
+
 ## Typescript support
 
 Although Ramda Adjunct is written in ES6, we support **Typescript**. When Ramda Adjunct 
