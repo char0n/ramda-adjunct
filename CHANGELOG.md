@@ -1,3 +1,16 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/char0n/ramda-adjunct/compare/v0.6.0...v0.7.0) (2017-03-26)
+
+
+### Features
+
+* add isNotInteger ([494094d](https://github.com/char0n/ramda-adjunct/commit/494094d)), closes [#10](https://github.com/char0n/ramda-adjunct/issues/10)
+* isFinite ([f3ed894](https://github.com/char0n/ramda-adjunct/commit/f3ed894))
+* isInteger ([466db58](https://github.com/char0n/ramda-adjunct/commit/466db58))
+* isNotFinite ([1edbebc](https://github.com/char0n/ramda-adjunct/commit/1edbebc))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/char0n/ramda-adjunct/compare/v0.5.1...v0.6.0) (2017-03-16)
 
