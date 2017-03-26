@@ -25,7 +25,7 @@ const polyfill = require('./internal/polyfills/Number.isFinite');
  * Number.isFinite(0); // true
  * Number.isFinite(2e64); // true
  *
- * Number.isFinite('0');  // => false,
+ * Number.isFinite('0');  // => false
  *                        // would've been true with global isFinite('0')
  * Number.isFinite(null); // => false
  *                        // would've been true with global isFinite(null)
