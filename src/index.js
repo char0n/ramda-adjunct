@@ -32,6 +32,7 @@ const isNumber = require('./isNumber');
 const isNotNumber = require('./isNotNumber');
 const isNaN = require('./isNaN');
 const isNotNaN = require('./isNotNaN');
+const isFinite = require('./isFinite');
 
 /**
  * @namespace RA
@@ -69,4 +70,5 @@ module.exports = {
   isNotNumber,
   isNaN,
   isNotNaN,
+  isFinite,
 };
