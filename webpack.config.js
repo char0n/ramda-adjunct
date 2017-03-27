@@ -38,6 +38,7 @@ const ra = {
       query: {
         presets: [
           ['es2015', { loose: true, modules: false }],
+          ['stage-3'],
         ],
       },
     }],
@@ -64,6 +65,7 @@ const raMin = Object.assign({
       query: {
         presets: [
           ['es2015', { loose: true, modules: false }],
+          ['stage-3'],
         ],
       },
     }],
@@ -90,6 +92,7 @@ const raWeb = {
       query: {
         presets: [
           ['es2015', { loose: true, modules: false }],
+          ['stage-3'],
         ],
       },
     }],
@@ -117,6 +120,7 @@ const raWebMin = Object.assign({
       query: {
         presets: [
           ['es2015', { loose: true, modules: false }],
+          ['stage-3'],
         ],
       },
     }],
@@ -140,6 +144,7 @@ const raWebStandalone = {
       query: {
         presets: [
           ['es2015', { loose: true, modules: false }],
+          ['stage-3'],
         ],
       },
     }],
@@ -163,6 +168,7 @@ const rawWebStandaloneMin = Object.assign({
       query: {
         presets: [
           ['es2015', { loose: true, modules: false }],
+          ['stage-3'],
         ],
       },
     }],

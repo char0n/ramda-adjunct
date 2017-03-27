@@ -1,9 +1,7 @@
-'use strict';
+import assert from 'assert';
+import { toString } from 'ramda';
 
-const assert = require('assert');
-const R = require('ramda');
-
-module.exports = function eq(actual, expected) {
+export default function eq(actual, expected) {
   assert.strictEqual(arguments.length, 2);
-  assert.strictEqual(R.toString(actual), R.toString(expected));
-};
+  assert.strictEqual(toString(actual), toString(expected));
+}

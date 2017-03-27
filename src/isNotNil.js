@@ -1,6 +1,4 @@
-'use strict';
-
-const { isNil, complement } = require('ramda');
+import { isNil, complement } from 'ramda';
 
 /**
  * Checks if input value is complement of `null` or `undefined`
@@ -20,4 +18,4 @@ const { isNil, complement } = require('ramda');
  * RA.isNotNil(0); //=> true
  * RA.isNotNil([]); //=> true
  */
-module.exports = complement(isNil);
+export default complement(isNil);

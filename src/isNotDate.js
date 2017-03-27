@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isDate = require('./isDate');
+import isDate from './isDate';
 
 /**
  * Checks if value is complement of `Date` object
@@ -20,5 +18,4 @@ const isDate = require('./isDate');
  * RA.isNotDate(new Date()); //=> false
  * RA.isNotDate('1997-07-16T19:20+01:00'); //=> true
  */
-
-module.exports = complement(isDate);
+export default complement(isDate);

@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports = (() => {
+export default (() => {
   try {
     return new Function('return function* () { }')();
   } catch (e) {

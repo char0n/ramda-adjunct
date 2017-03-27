@@ -1,6 +1,4 @@
-'use strict';
-
-const { is } = require('ramda');
+import { is } from 'ramda';
 
 /**
  * Checks if value is `Date` object
@@ -18,5 +16,4 @@ const { is } = require('ramda');
  * RA.isDate(new Date()); //=> true
  * RA.isDate('1997-07-16T19:20+01:00'); //=> false
  */
-
-module.exports = is(Date);
+export default is(Date);

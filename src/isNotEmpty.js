@@ -1,6 +1,4 @@
-'use strict';
-
-const { complement, isEmpty } = require('ramda');
+import { complement, isEmpty } from 'ramda';
 
 /**
  * Returns true if the given value is not its type's empty value; `false` otherwise.
@@ -23,5 +21,4 @@ const { complement, isEmpty } = require('ramda');
  * RA.isNotEmpty({}); //=> false
  * RA.isNotEmpty({length: 0}); //=> true
  */
-
-module.exports = complement(isEmpty);
+export default complement(isEmpty);

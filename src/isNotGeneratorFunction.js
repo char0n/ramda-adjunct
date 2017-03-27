@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isGeneratorFunction = require('./isGeneratorFunction');
+import isGeneratorFunction from './isGeneratorFunction';
 
 /* eslint-disable max-len */
 /**
@@ -24,5 +22,4 @@ const isGeneratorFunction = require('./isGeneratorFunction');
  * RA.isNotGeneratorFunction(() => {}); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isGeneratorFunction);
+export default complement(isGeneratorFunction);

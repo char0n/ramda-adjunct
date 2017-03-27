@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isNumber = require('./isNumber');
+import isNumber from './isNumber';
 
 
 /**
@@ -23,5 +21,4 @@ const isNumber = require('./isNumber');
  * RA.isNotNumber(-Infinity); // => false
  * RA.isNotNumber('5'); // => true
  */
-
-module.exports = complement(isNumber);
+export default complement(isNumber);

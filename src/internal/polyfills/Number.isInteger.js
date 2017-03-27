@@ -1,8 +1,6 @@
-'use strict';
+import { both, converge, equals, identity } from 'ramda';
 
-const { both, converge, equals, identity } = require('ramda');
-
-const isFinite = require('../../isFinite');
+import isFinite from '../../isFinite';
 
 
-module.exports = both(isFinite, converge(equals, [Math.floor, identity]));
+export default both(isFinite, converge(equals, [Math.floor, identity]));

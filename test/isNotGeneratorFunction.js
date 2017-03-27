@@ -1,10 +1,8 @@
-'use strict';
-
-const RA = require('../src/index');
-const eq = require('./shared/eq');
-const Symbol = require('./shared/Symbol');
-const args = require('./shared/arguments');
-const genFunc = require('./shared/genFunc');
+import RA from '../src/index';
+import eq from './shared/eq';
+import Symbol from './shared/Symbol';
+import args from './shared/arguments';
+import genFunc from './shared/genFunc';
 
 describe('isNotGeneratorFunction', function() {
   it('tests a value for complement of `Generator Function`', function() {

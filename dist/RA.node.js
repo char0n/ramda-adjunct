@@ -89,13 +89,25 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    anyPass = _require.anyPass;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var _isFunction = __webpack_require__(42);
+var _ramda = __webpack_require__(0);
 
-var isGeneratorFunction = __webpack_require__(6);
-var isAsyncFunction = __webpack_require__(4);
+var _isFunction2 = __webpack_require__(42);
+
+var _isFunction3 = _interopRequireDefault(_isFunction2);
+
+var _isGeneratorFunction = __webpack_require__(6);
+
+var _isGeneratorFunction2 = _interopRequireDefault(_isGeneratorFunction);
+
+var _isAsyncFunction = __webpack_require__(4);
+
+var _isAsyncFunction2 = _interopRequireDefault(_isAsyncFunction);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -119,8 +131,7 @@ var isAsyncFunction = __webpack_require__(4);
  * RA.isFunction('abc'); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = anyPass([_isFunction, isGeneratorFunction, isAsyncFunction]);
+exports.default = (0, _ramda.anyPass)([_isFunction3.default, _isGeneratorFunction2.default, _isAsyncFunction2.default]);
 
 /***/ }),
 /* 2 */
@@ -129,10 +140,17 @@ module.exports = anyPass([_isFunction, isGeneratorFunction, isAsyncFunction]);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isNull = __webpack_require__(7);
+var _ramda = __webpack_require__(0);
+
+var _isNull = __webpack_require__(7);
+
+var _isNull2 = _interopRequireDefault(_isNull);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if input value is complement of `null`
@@ -151,8 +169,7 @@ var isNull = __webpack_require__(7);
  * RA.isNotNull(undefined); //=> true
  * RA.isNotNull(null); //=> false
  */
-
-module.exports = complement(isNull);
+exports.default = (0, _ramda.complement)(_isNull2.default);
 
 /***/ }),
 /* 3 */
@@ -161,7 +178,15 @@ module.exports = complement(isNull);
 "use strict";
 
 
-var _isNumber = __webpack_require__(43);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _isNumber2 = __webpack_require__(43);
+
+var _isNumber3 = _interopRequireDefault(_isNumber2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if value is a `Number` primitive or object
@@ -181,8 +206,7 @@ var _isNumber = __webpack_require__(43);
  * RA.isNumber(-Infinity); // => true
  * RA.isNumber('5'); // => false
  */
-
-module.exports = _isNumber;
+exports.default = _isNumber3.default;
 
 /***/ }),
 /* 4 */
@@ -190,6 +214,10 @@ module.exports = _isNumber;
 
 "use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 /* eslint-disable max-len */
 /**
@@ -212,7 +240,7 @@ module.exports = _isNumber;
  */
 /* eslint-enable max-len */
 
-module.exports = function (val) {
+exports.default = function (val) {
   return Object.prototype.toString.call(val) === '[object AsyncFunction]';
 };
 
@@ -223,10 +251,17 @@ module.exports = function (val) {
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    or = _require.or;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var polyfill = __webpack_require__(38);
+var _ramda = __webpack_require__(0);
+
+var _Number = __webpack_require__(38);
+
+var _Number2 = _interopRequireDefault(_Number);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks whether the passed value is a finite `Number`.
@@ -254,8 +289,7 @@ var polyfill = __webpack_require__(38);
  * RA.isFinite(null); // => false
  *                    // would've been true with global isFinite(null)
  */
-
-module.exports = or(Number.isFinite, polyfill);
+exports.default = (0, _ramda.or)(Number.isFinite, _Number2.default);
 
 /***/ }),
 /* 6 */
@@ -264,10 +298,17 @@ module.exports = or(Number.isFinite, polyfill);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    or = _require.or;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isNotNull = __webpack_require__(2);
+var _ramda = __webpack_require__(0);
+
+var _isNotNull = __webpack_require__(2);
+
+var _isNotNull2 = _interopRequireDefault(_isNotNull);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var GeneratorFunction = null;
 try {
@@ -296,11 +337,11 @@ try {
  */
 /* eslint-enable max-len */
 
-module.exports = function (val) {
+exports.default = function (val) {
   var toStringCheck = Object.prototype.toString.call(val) === '[object AsyncFunction]';
-  var legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
+  var legacyConstructorCheck = (0, _isNotNull2.default)(GeneratorFunction) && val instanceof GeneratorFunction;
 
-  return or(toStringCheck, legacyConstructorCheck);
+  return (0, _ramda.or)(toStringCheck, legacyConstructorCheck);
 };
 
 /***/ }),
@@ -310,8 +351,11 @@ module.exports = function (val) {
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    equals = _require.equals;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ramda = __webpack_require__(0);
 
 /**
  * Checks if input value is `null`
@@ -330,9 +374,7 @@ var _require = __webpack_require__(0),
  * RA.isNull(undefined); //=> false
  * RA.isNull(null); //=> true
  */
-
-
-module.exports = equals(null);
+exports.default = (0, _ramda.equals)(null);
 
 /***/ }),
 /* 8 */
@@ -341,11 +383,21 @@ module.exports = equals(null);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    both = _require.both;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isNotNull = __webpack_require__(2);
-var isOfTypeObject = __webpack_require__(18);
+var _ramda = __webpack_require__(0);
+
+var _isNotNull = __webpack_require__(2);
+
+var _isNotNull2 = _interopRequireDefault(_isNotNull);
+
+var _isOfTypeObject = __webpack_require__(18);
+
+var _isOfTypeObject2 = _interopRequireDefault(_isOfTypeObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -368,8 +420,7 @@ var isOfTypeObject = __webpack_require__(18);
  * RA.isObjectLike(undefined); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = both(isNotNull, isOfTypeObject);
+exports.default = (0, _ramda.both)(_isNotNull2.default, _isOfTypeObject2.default);
 
 /***/ }),
 /* 9 */
@@ -378,7 +429,15 @@ module.exports = both(isNotNull, isOfTypeObject);
 "use strict";
 
 
-var _isArray = __webpack_require__(41);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _isArray2 = __webpack_require__(41);
+
+var _isArray3 = _interopRequireDefault(_isArray2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if input value is `Array`
@@ -397,8 +456,7 @@ var _isArray = __webpack_require__(41);
  * RA.isArray(null); //=> false
  * RA.isArray({}); //=> false
  */
-
-module.exports = _isArray;
+exports.default = _isArray3.default;
 
 /***/ }),
 /* 10 */
@@ -407,8 +465,11 @@ module.exports = _isArray;
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    is = _require.is;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ramda = __webpack_require__(0);
 
 /**
  * Checks if input value is `Boolean`
@@ -427,8 +488,7 @@ var _require = __webpack_require__(0),
  * RA.isBoolean(true); //=> true
  * RA.isBoolean(null); //=> false
  */
-
-module.exports = is(Boolean);
+exports.default = (0, _ramda.is)(Boolean);
 
 /***/ }),
 /* 11 */
@@ -437,8 +497,11 @@ module.exports = is(Boolean);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    is = _require.is;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ramda = __webpack_require__(0);
 
 /**
  * Checks if value is `Date` object
@@ -456,8 +519,7 @@ var _require = __webpack_require__(0),
  * RA.isDate(new Date()); //=> true
  * RA.isDate('1997-07-16T19:20+01:00'); //=> false
  */
-
-module.exports = is(Date);
+exports.default = (0, _ramda.is)(Date);
 
 /***/ }),
 /* 12 */
@@ -466,10 +528,17 @@ module.exports = is(Date);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    or = _require.or;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var polyfill = __webpack_require__(39);
+var _ramda = __webpack_require__(0);
+
+var _Number = __webpack_require__(39);
+
+var _Number2 = _interopRequireDefault(_Number);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks whether the passed value is a an `integer`.
@@ -500,8 +569,7 @@ var polyfill = __webpack_require__(39);
  * RA.isInteger(false);     //=> false
  * RA.isInteger([1]);       //=> false
  */
-
-module.exports = or(Number.isInteger, polyfill);
+exports.default = (0, _ramda.or)(Number.isInteger, _Number2.default);
 
 /***/ }),
 /* 13 */
@@ -510,10 +578,17 @@ module.exports = or(Number.isInteger, polyfill);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    or = _require.or;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var polyfill = __webpack_require__(40);
+var _ramda = __webpack_require__(0);
+
+var _Number = __webpack_require__(40);
+
+var _Number2 = _interopRequireDefault(_Number);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks whether the passed value is `NaN` and its type is `Number`.
@@ -548,8 +623,7 @@ var polyfill = __webpack_require__(40);
  * RA.isNaN(''); // => false
  * RA.isNaN(' '); // => false
  */
-
-module.exports = or(Number.isNaN, polyfill);
+exports.default = (0, _ramda.or)(Number.isNaN, _Number2.default);
 
 /***/ }),
 /* 14 */
@@ -558,13 +632,25 @@ module.exports = or(Number.isNaN, polyfill);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    both = _require.both,
-    anyPass = _require.anyPass;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isNotNull = __webpack_require__(2);
-var isFunction = __webpack_require__(1);
-var isOfTypeObject = __webpack_require__(18);
+var _ramda = __webpack_require__(0);
+
+var _isNotNull = __webpack_require__(2);
+
+var _isNotNull2 = _interopRequireDefault(_isNotNull);
+
+var _isFunction = __webpack_require__(1);
+
+var _isFunction2 = _interopRequireDefault(_isFunction);
+
+var _isOfTypeObject = __webpack_require__(18);
+
+var _isOfTypeObject2 = _interopRequireDefault(_isOfTypeObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -587,8 +673,7 @@ var isOfTypeObject = __webpack_require__(18);
  * RA.isObject(undefined); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
+exports.default = (0, _ramda.both)(_isNotNull2.default, (0, _ramda.anyPass)([_isOfTypeObject2.default, _isFunction2.default]));
 
 /***/ }),
 /* 15 */
@@ -597,21 +682,32 @@ module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
 "use strict";
 
 
-var _isObject = __webpack_require__(44);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var _require = __webpack_require__(0),
-    pipe = _require.pipe,
-    both = _require.both,
-    equals = _require.equals,
-    toString = _require.toString,
-    pathSatisfies = _require.pathSatisfies;
+var _isObject2 = __webpack_require__(44);
 
-var isNull = __webpack_require__(7);
-var isObjectLike = __webpack_require__(8);
-var isFunction = __webpack_require__(1);
+var _isObject3 = _interopRequireDefault(_isObject2);
 
-var isObjectConstructor = pipe(toString, equals(toString(Object)));
-var hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor), ['constructor']);
+var _ramda = __webpack_require__(0);
+
+var _isNull = __webpack_require__(7);
+
+var _isNull2 = _interopRequireDefault(_isNull);
+
+var _isObjectLike = __webpack_require__(8);
+
+var _isObjectLike2 = _interopRequireDefault(_isObjectLike);
+
+var _isFunction = __webpack_require__(1);
+
+var _isFunction2 = _interopRequireDefault(_isFunction);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var isObjectConstructor = (0, _ramda.pipe)(_ramda.toString, (0, _ramda.equals)((0, _ramda.toString)(Object)));
+var hasObjectConstructor = (0, _ramda.pathSatisfies)((0, _ramda.both)(_isFunction2.default, isObjectConstructor), ['constructor']);
 
 /* eslint-disable max-len */
 /**
@@ -641,14 +737,14 @@ var hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor), 
  */
 /* eslint-enable max-len */
 
-module.exports = function (val) {
-  if (!isObjectLike(val) || !_isObject(val)) {
+exports.default = function (val) {
+  if (!(0, _isObjectLike2.default)(val) || !(0, _isObject3.default)(val)) {
     return false;
   }
 
   var proto = Object.getPrototypeOf(val);
 
-  if (isNull(proto)) {
+  if ((0, _isNull2.default)(proto)) {
     return true;
   }
 
@@ -662,7 +758,15 @@ module.exports = function (val) {
 "use strict";
 
 
-var _isString = __webpack_require__(45);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _isString2 = __webpack_require__(45);
+
+var _isString3 = _interopRequireDefault(_isString2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if input value is `String`
@@ -680,8 +784,7 @@ var _isString = __webpack_require__(45);
  * RA.isString('abc'); //=> true
  * RA.isString(1); //=> false
  */
-
-module.exports = _isString;
+exports.default = _isString3.default;
 
 /***/ }),
 /* 17 */
@@ -690,8 +793,11 @@ module.exports = _isString;
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    equals = _require.equals;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ramda = __webpack_require__(0);
 
 /**
  * Checks if input value is `undefined`
@@ -710,9 +816,7 @@ var _require = __webpack_require__(0),
  * RA.isUndefined(undefined); //=> true
  * RA.isUndefined(null); //=> false
  */
-
-
-module.exports = equals(undefined);
+exports.default = (0, _ramda.equals)(undefined);
 
 /***/ }),
 /* 18 */
@@ -721,9 +825,13 @@ module.exports = equals(undefined);
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-module.exports = function (val) {
+exports.default = function (val) {
   return (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object';
 };
 
@@ -734,10 +842,11 @@ module.exports = function (val) {
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    anyPass = _require.anyPass,
-    isEmpty = _require.isEmpty,
-    isNil = _require.isNil;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ramda = __webpack_require__(0);
 
 /**
  * Returns `true` if the given value is its type's empty value, `null` or `undefined`
@@ -760,8 +869,7 @@ var _require = __webpack_require__(0),
  * RA.isNilOrEmpty({}); //=> true
  * RA.isNilOrEmpty({length: 0}); //=> false
  */
-
-module.exports = anyPass([isNil, isEmpty]);
+exports.default = (0, _ramda.anyPass)([_ramda.isNil, _ramda.isEmpty]);
 
 /***/ }),
 /* 20 */
@@ -770,10 +878,17 @@ module.exports = anyPass([isNil, isEmpty]);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isArray = __webpack_require__(9);
+var _ramda = __webpack_require__(0);
+
+var _isArray = __webpack_require__(9);
+
+var _isArray2 = _interopRequireDefault(_isArray);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if input value is complement of `Array`
@@ -792,8 +907,7 @@ var isArray = __webpack_require__(9);
  * RA.isNotArray(null); //=> true
  * RA.isNotArray({}); //=> true
  */
-
-module.exports = complement(isArray);
+exports.default = (0, _ramda.complement)(_isArray2.default);
 
 /***/ }),
 /* 21 */
@@ -802,9 +916,11 @@ module.exports = complement(isArray);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement,
-    isArrayLike = _require.isArrayLike;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ramda = __webpack_require__(0);
 
 /**
  * Tests whether or not an object is similar to an array.
@@ -825,8 +941,7 @@ var _require = __webpack_require__(0),
  * RA.isNotArrayLike({length: 10}); //=> true
  * RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false
  */
-
-module.exports = complement(isArrayLike);
+exports.default = (0, _ramda.complement)(_ramda.isArrayLike);
 
 /***/ }),
 /* 22 */
@@ -835,10 +950,17 @@ module.exports = complement(isArrayLike);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isAsyncFunction = __webpack_require__(4);
+var _ramda = __webpack_require__(0);
+
+var _isAsyncFunction = __webpack_require__(4);
+
+var _isAsyncFunction2 = _interopRequireDefault(_isAsyncFunction);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -860,8 +982,7 @@ var isAsyncFunction = __webpack_require__(4);
  * RA.isNotAsyncFunction(() => {}); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isAsyncFunction);
+exports.default = (0, _ramda.complement)(_isAsyncFunction2.default);
 
 /***/ }),
 /* 23 */
@@ -870,10 +991,17 @@ module.exports = complement(isAsyncFunction);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isBoolean = __webpack_require__(10);
+var _ramda = __webpack_require__(0);
+
+var _isBoolean = __webpack_require__(10);
+
+var _isBoolean2 = _interopRequireDefault(_isBoolean);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if input value is complement of `Boolean`
@@ -892,8 +1020,7 @@ var isBoolean = __webpack_require__(10);
  * RA.isNotBoolean(true); //=> false
  * RA.isNotBoolean(null); //=> true
  */
-
-module.exports = complement(isBoolean);
+exports.default = (0, _ramda.complement)(_isBoolean2.default);
 
 /***/ }),
 /* 24 */
@@ -902,10 +1029,17 @@ module.exports = complement(isBoolean);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isDate = __webpack_require__(11);
+var _ramda = __webpack_require__(0);
+
+var _isDate = __webpack_require__(11);
+
+var _isDate2 = _interopRequireDefault(_isDate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if value is complement of `Date` object
@@ -923,8 +1057,7 @@ var isDate = __webpack_require__(11);
  * RA.isNotDate(new Date()); //=> false
  * RA.isNotDate('1997-07-16T19:20+01:00'); //=> true
  */
-
-module.exports = complement(isDate);
+exports.default = (0, _ramda.complement)(_isDate2.default);
 
 /***/ }),
 /* 25 */
@@ -933,9 +1066,11 @@ module.exports = complement(isDate);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement,
-    isEmpty = _require.isEmpty;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ramda = __webpack_require__(0);
 
 /**
  * Returns true if the given value is not its type's empty value; `false` otherwise.
@@ -958,8 +1093,7 @@ var _require = __webpack_require__(0),
  * RA.isNotEmpty({}); //=> false
  * RA.isNotEmpty({length: 0}); //=> true
  */
-
-module.exports = complement(isEmpty);
+exports.default = (0, _ramda.complement)(_ramda.isEmpty);
 
 /***/ }),
 /* 26 */
@@ -968,10 +1102,17 @@ module.exports = complement(isEmpty);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var _isFinite = __webpack_require__(5);
+var _ramda = __webpack_require__(0);
+
+var _isFinite2 = __webpack_require__(5);
+
+var _isFinite3 = _interopRequireDefault(_isFinite2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks whether the passed value is complement of finite `Number`.
@@ -997,8 +1138,7 @@ var _isFinite = __webpack_require__(5);
  * RA.isNotFinite('0');  // => true
  * RA.isNotFinite(null); // => true
  */
-
-module.exports = complement(_isFinite);
+exports.default = (0, _ramda.complement)(_isFinite3.default);
 
 /***/ }),
 /* 27 */
@@ -1007,10 +1147,17 @@ module.exports = complement(_isFinite);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isFunction = __webpack_require__(1);
+var _ramda = __webpack_require__(0);
+
+var _isFunction = __webpack_require__(1);
+
+var _isFunction2 = _interopRequireDefault(_isFunction);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -1034,8 +1181,7 @@ var isFunction = __webpack_require__(1);
  * RA.isNotFunction('abc'); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isFunction);
+exports.default = (0, _ramda.complement)(_isFunction2.default);
 
 /***/ }),
 /* 28 */
@@ -1044,10 +1190,17 @@ module.exports = complement(isFunction);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isGeneratorFunction = __webpack_require__(6);
+var _ramda = __webpack_require__(0);
+
+var _isGeneratorFunction = __webpack_require__(6);
+
+var _isGeneratorFunction2 = _interopRequireDefault(_isGeneratorFunction);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -1069,8 +1222,7 @@ var isGeneratorFunction = __webpack_require__(6);
  * RA.isNotGeneratorFunction(() => {}); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isGeneratorFunction);
+exports.default = (0, _ramda.complement)(_isGeneratorFunction2.default);
 
 /***/ }),
 /* 29 */
@@ -1079,10 +1231,17 @@ module.exports = complement(isGeneratorFunction);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isInteger = __webpack_require__(12);
+var _ramda = __webpack_require__(0);
+
+var _isInterger = __webpack_require__(12);
+
+var _isInterger2 = _interopRequireDefault(_isInterger);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks whether the passed value is complement of an `integer`.
@@ -1113,8 +1272,7 @@ var isInteger = __webpack_require__(12);
  * RA.isNotInteger(false);     //=> true
  * RA.isNotInteger([1]);       //=> true
  */
-
-module.exports = complement(isInteger);
+exports.default = (0, _ramda.complement)(_isInterger2.default);
 
 /***/ }),
 /* 30 */
@@ -1123,10 +1281,17 @@ module.exports = complement(isInteger);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isNaN = __webpack_require__(13);
+var _ramda = __webpack_require__(0);
+
+var _isNaN = __webpack_require__(13);
+
+var _isNaN2 = _interopRequireDefault(_isNaN);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
@@ -1158,8 +1323,7 @@ var isNaN = __webpack_require__(13);
  * RA.isNotNaN(''); // => true
  * RA.isNotNaN(' '); // => true
  */
-
-module.exports = complement(isNaN);
+exports.default = (0, _ramda.complement)(_isNaN2.default);
 
 /***/ }),
 /* 31 */
@@ -1168,9 +1332,11 @@ module.exports = complement(isNaN);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    isNil = _require.isNil,
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ramda = __webpack_require__(0);
 
 /**
  * Checks if input value is complement of `null` or `undefined`
@@ -1190,9 +1356,7 @@ var _require = __webpack_require__(0),
  * RA.isNotNil(0); //=> true
  * RA.isNotNil([]); //=> true
  */
-
-
-module.exports = complement(isNil);
+exports.default = (0, _ramda.complement)(_ramda.isNil);
 
 /***/ }),
 /* 32 */
@@ -1201,10 +1365,17 @@ module.exports = complement(isNil);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isNumber = __webpack_require__(3);
+var _ramda = __webpack_require__(0);
+
+var _isNumber = __webpack_require__(3);
+
+var _isNumber2 = _interopRequireDefault(_isNumber);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if value is a complement of `Number` primitive or object
@@ -1224,8 +1395,7 @@ var isNumber = __webpack_require__(3);
  * RA.isNotNumber(-Infinity); // => false
  * RA.isNotNumber('5'); // => true
  */
-
-module.exports = complement(isNumber);
+exports.default = (0, _ramda.complement)(_isNumber2.default);
 
 /***/ }),
 /* 33 */
@@ -1234,10 +1404,17 @@ module.exports = complement(isNumber);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isObject = __webpack_require__(14);
+var _ramda = __webpack_require__(0);
+
+var _isObject = __webpack_require__(14);
+
+var _isObject2 = _interopRequireDefault(_isObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -1260,8 +1437,7 @@ var isObject = __webpack_require__(14);
  * RA.isNotObject(undefined); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isObject);
+exports.default = (0, _ramda.complement)(_isObject2.default);
 
 /***/ }),
 /* 34 */
@@ -1270,10 +1446,17 @@ module.exports = complement(isObject);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isObjectLike = __webpack_require__(8);
+var _ramda = __webpack_require__(0);
+
+var _isObjectLike = __webpack_require__(8);
+
+var _isObjectLike2 = _interopRequireDefault(_isObjectLike);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -1296,8 +1479,7 @@ var isObjectLike = __webpack_require__(8);
  * RA.isNotObjectLike(undefined); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isObjectLike);
+exports.default = (0, _ramda.complement)(_isObjectLike2.default);
 
 /***/ }),
 /* 35 */
@@ -1306,10 +1488,17 @@ module.exports = complement(isObjectLike);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isPlainObject = __webpack_require__(15);
+var _ramda = __webpack_require__(0);
+
+var _isPlainObject = __webpack_require__(15);
+
+var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable max-len */
 /**
@@ -1338,8 +1527,7 @@ var isPlainObject = __webpack_require__(15);
  * RA.isNotPlainObject(new Object()); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isPlainObject);
+exports.default = (0, _ramda.complement)(_isPlainObject2.default);
 
 /***/ }),
 /* 36 */
@@ -1348,10 +1536,17 @@ module.exports = complement(isPlainObject);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var iString = __webpack_require__(16);
+var _ramda = __webpack_require__(0);
+
+var _isString = __webpack_require__(16);
+
+var _isString2 = _interopRequireDefault(_isString);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if input value is complement of `String`
@@ -1369,8 +1564,7 @@ var iString = __webpack_require__(16);
  * RA.isNotString('abc'); //=> false
  * RA.isNotString(1); //=> true
  */
-
-module.exports = complement(iString);
+exports.default = (0, _ramda.complement)(_isString2.default);
 
 /***/ }),
 /* 37 */
@@ -1379,10 +1573,17 @@ module.exports = complement(iString);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    complement = _require.complement;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isUndefined = __webpack_require__(17);
+var _ramda = __webpack_require__(0);
+
+var _isUndefined = __webpack_require__(17);
+
+var _isUndefined2 = _interopRequireDefault(_isUndefined);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Checks if input value is complement `undefined`
@@ -1401,7 +1602,7 @@ var isUndefined = __webpack_require__(17);
  * RA.isNotUndefined(undefined); //=> false
  * RA.isNotUndefined(null); //=> true
  */
-module.exports = complement(isUndefined);
+exports.default = (0, _ramda.complement)(_isUndefined2.default);
 
 /***/ }),
 /* 38 */
@@ -1410,12 +1611,19 @@ module.exports = complement(isUndefined);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    both = _require.both;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isNumber = __webpack_require__(3);
+var _ramda = __webpack_require__(0);
 
-module.exports = both(isNumber, isFinite);
+var _isNumber = __webpack_require__(3);
+
+var _isNumber2 = _interopRequireDefault(_isNumber);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _ramda.both)(_isNumber2.default, isFinite);
 
 /***/ }),
 /* 39 */
@@ -1424,15 +1632,19 @@ module.exports = both(isNumber, isFinite);
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    both = _require.both,
-    converge = _require.converge,
-    equals = _require.equals,
-    identity = _require.identity;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isFinite = __webpack_require__(5);
+var _ramda = __webpack_require__(0);
 
-module.exports = both(isFinite, converge(equals, [Math.floor, identity]));
+var _isFinite = __webpack_require__(5);
+
+var _isFinite2 = _interopRequireDefault(_isFinite);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _ramda.both)(_isFinite2.default, (0, _ramda.converge)(_ramda.equals, [Math.floor, _ramda.identity]));
 
 /***/ }),
 /* 40 */
@@ -1441,12 +1653,19 @@ module.exports = both(isFinite, converge(equals, [Math.floor, identity]));
 "use strict";
 
 
-var _require = __webpack_require__(0),
-    both = _require.both;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var isNumber = __webpack_require__(3);
+var _ramda = __webpack_require__(0);
 
-module.exports = both(isNumber, isNaN);
+var _isNumber = __webpack_require__(3);
+
+var _isNumber2 = _interopRequireDefault(_isNumber);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _ramda.both)(_isNumber2.default, isNaN);
 
 /***/ }),
 /* 41 */
@@ -1514,84 +1733,452 @@ module.exports = function _isString(x) {
 "use strict";
 
 
-var isNotUndefined = __webpack_require__(37);
-var isUndefined = __webpack_require__(17);
-var isNull = __webpack_require__(7);
-var isNotNull = __webpack_require__(2);
-var isNotNil = __webpack_require__(31);
-var isArray = __webpack_require__(9);
-var isNotArray = __webpack_require__(20);
-var isBoolean = __webpack_require__(10);
-var isNotBoolean = __webpack_require__(23);
-var isNotEmpty = __webpack_require__(25);
-var isNilOrEmpty = __webpack_require__(19);
-var isString = __webpack_require__(16);
-var isNotString = __webpack_require__(36);
-var isNotArrayLike = __webpack_require__(21);
-var isGeneratorFunction = __webpack_require__(6);
-var isNotGeneratorFunction = __webpack_require__(28);
-var isAsyncFunction = __webpack_require__(4);
-var isNotAsyncFunction = __webpack_require__(22);
-var isFunction = __webpack_require__(1);
-var isNotFunction = __webpack_require__(27);
-var isObject = __webpack_require__(14);
-var isNotObject = __webpack_require__(33);
-var isObjectLike = __webpack_require__(8);
-var isNotObjectLike = __webpack_require__(34);
-var isPlainObject = __webpack_require__(15);
-var isNotPlainObject = __webpack_require__(35);
-var isDate = __webpack_require__(11);
-var isNotDate = __webpack_require__(24);
-var isNumber = __webpack_require__(3);
-var isNotNumber = __webpack_require__(32);
-var isNaN = __webpack_require__(13);
-var isNotNaN = __webpack_require__(30);
-var isFinite = __webpack_require__(5);
-var isNotFinite = __webpack_require__(26);
-var isInteger = __webpack_require__(12);
-var isNotInteger = __webpack_require__(29);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isNotInteger = exports.isInteger = exports.isNotFinite = exports.isFinite = exports.isNotNaN = exports.isNaN = exports.isNotNumber = exports.isNumber = exports.isNotDate = exports.isDate = exports.isNotPlainObject = exports.isPlainObject = exports.isNotObjectLike = exports.isObjectLike = exports.isNotObject = exports.isObject = exports.isNotFunction = exports.isFunction = exports.isNotAsyncFunction = exports.isAsyncFunction = exports.isNotGeneratorFunction = exports.isGeneratorFunction = exports.isNotArrayLike = exports.isNotString = exports.isString = exports.isNilOrEmpty = exports.isNotEmpty = exports.isNotBoolean = exports.isBoolean = exports.isNotArray = exports.isArray = exports.isNotNil = exports.isNotNull = exports.isNull = exports.isUndefined = exports.isNotUndefined = undefined;
+
+var _isNotUndefined = __webpack_require__(37);
+
+Object.defineProperty(exports, 'isNotUndefined', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotUndefined).default;
+  }
+});
+
+var _isUndefined = __webpack_require__(17);
+
+Object.defineProperty(exports, 'isUndefined', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isUndefined).default;
+  }
+});
+
+var _isNull = __webpack_require__(7);
+
+Object.defineProperty(exports, 'isNull', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNull).default;
+  }
+});
+
+var _isNotNull = __webpack_require__(2);
+
+Object.defineProperty(exports, 'isNotNull', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotNull).default;
+  }
+});
+
+var _isNotNil = __webpack_require__(31);
+
+Object.defineProperty(exports, 'isNotNil', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotNil).default;
+  }
+});
+
+var _isArray = __webpack_require__(9);
+
+Object.defineProperty(exports, 'isArray', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isArray).default;
+  }
+});
+
+var _isNotArray = __webpack_require__(20);
+
+Object.defineProperty(exports, 'isNotArray', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotArray).default;
+  }
+});
+
+var _isBoolean = __webpack_require__(10);
+
+Object.defineProperty(exports, 'isBoolean', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isBoolean).default;
+  }
+});
+
+var _isNotBoolean = __webpack_require__(23);
+
+Object.defineProperty(exports, 'isNotBoolean', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotBoolean).default;
+  }
+});
+
+var _isNotEmpty = __webpack_require__(25);
+
+Object.defineProperty(exports, 'isNotEmpty', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotEmpty).default;
+  }
+});
+
+var _isNilOrEmpty = __webpack_require__(19);
+
+Object.defineProperty(exports, 'isNilOrEmpty', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNilOrEmpty).default;
+  }
+});
+
+var _isString = __webpack_require__(16);
+
+Object.defineProperty(exports, 'isString', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isString).default;
+  }
+});
+
+var _isNotString = __webpack_require__(36);
+
+Object.defineProperty(exports, 'isNotString', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotString).default;
+  }
+});
+
+var _isNotArrayLike = __webpack_require__(21);
+
+Object.defineProperty(exports, 'isNotArrayLike', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotArrayLike).default;
+  }
+});
+
+var _isGeneratorFunction = __webpack_require__(6);
+
+Object.defineProperty(exports, 'isGeneratorFunction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isGeneratorFunction).default;
+  }
+});
+
+var _isNotGeneratorFunction = __webpack_require__(28);
+
+Object.defineProperty(exports, 'isNotGeneratorFunction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotGeneratorFunction).default;
+  }
+});
+
+var _isAsyncFunction = __webpack_require__(4);
+
+Object.defineProperty(exports, 'isAsyncFunction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isAsyncFunction).default;
+  }
+});
+
+var _isNotAsyncFunction = __webpack_require__(22);
+
+Object.defineProperty(exports, 'isNotAsyncFunction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotAsyncFunction).default;
+  }
+});
+
+var _isFunction = __webpack_require__(1);
+
+Object.defineProperty(exports, 'isFunction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isFunction).default;
+  }
+});
+
+var _isNotFunction = __webpack_require__(27);
+
+Object.defineProperty(exports, 'isNotFunction', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotFunction).default;
+  }
+});
+
+var _isObject = __webpack_require__(14);
+
+Object.defineProperty(exports, 'isObject', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isObject).default;
+  }
+});
+
+var _isNotObject = __webpack_require__(33);
+
+Object.defineProperty(exports, 'isNotObject', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotObject).default;
+  }
+});
+
+var _isObjectLike = __webpack_require__(8);
+
+Object.defineProperty(exports, 'isObjectLike', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isObjectLike).default;
+  }
+});
+
+var _isNotObjectLike = __webpack_require__(34);
+
+Object.defineProperty(exports, 'isNotObjectLike', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotObjectLike).default;
+  }
+});
+
+var _isPlainObject = __webpack_require__(15);
+
+Object.defineProperty(exports, 'isPlainObject', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isPlainObject).default;
+  }
+});
+
+var _isNotPlainObject = __webpack_require__(35);
+
+Object.defineProperty(exports, 'isNotPlainObject', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotPlainObject).default;
+  }
+});
+
+var _isDate = __webpack_require__(11);
+
+Object.defineProperty(exports, 'isDate', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isDate).default;
+  }
+});
+
+var _isNotDate = __webpack_require__(24);
+
+Object.defineProperty(exports, 'isNotDate', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotDate).default;
+  }
+});
+
+var _isNumber = __webpack_require__(3);
+
+Object.defineProperty(exports, 'isNumber', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNumber).default;
+  }
+});
+
+var _isNotNumber = __webpack_require__(32);
+
+Object.defineProperty(exports, 'isNotNumber', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotNumber).default;
+  }
+});
+
+var _isNaN = __webpack_require__(13);
+
+Object.defineProperty(exports, 'isNaN', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNaN).default;
+  }
+});
+
+var _isNotNaN = __webpack_require__(30);
+
+Object.defineProperty(exports, 'isNotNaN', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotNaN).default;
+  }
+});
+
+var _isFinite = __webpack_require__(5);
+
+Object.defineProperty(exports, 'isFinite', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isFinite).default;
+  }
+});
+
+var _isNotFinite = __webpack_require__(26);
+
+Object.defineProperty(exports, 'isNotFinite', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotFinite).default;
+  }
+});
+
+var _isInterger = __webpack_require__(12);
+
+Object.defineProperty(exports, 'isInteger', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isInterger).default;
+  }
+});
+
+var _isNotInteger = __webpack_require__(29);
+
+Object.defineProperty(exports, 'isNotInteger', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isNotInteger).default;
+  }
+});
+
+var _isNotUndefined2 = _interopRequireDefault(_isNotUndefined);
+
+var _isUndefined2 = _interopRequireDefault(_isUndefined);
+
+var _isNull2 = _interopRequireDefault(_isNull);
+
+var _isNotNull2 = _interopRequireDefault(_isNotNull);
+
+var _isNotNil2 = _interopRequireDefault(_isNotNil);
+
+var _isArray2 = _interopRequireDefault(_isArray);
+
+var _isNotArray2 = _interopRequireDefault(_isNotArray);
+
+var _isBoolean2 = _interopRequireDefault(_isBoolean);
+
+var _isNotBoolean2 = _interopRequireDefault(_isNotBoolean);
+
+var _isNotEmpty2 = _interopRequireDefault(_isNotEmpty);
+
+var _isNilOrEmpty2 = _interopRequireDefault(_isNilOrEmpty);
+
+var _isString2 = _interopRequireDefault(_isString);
+
+var _isNotString2 = _interopRequireDefault(_isNotString);
+
+var _isNotArrayLike2 = _interopRequireDefault(_isNotArrayLike);
+
+var _isGeneratorFunction2 = _interopRequireDefault(_isGeneratorFunction);
+
+var _isNotGeneratorFunction2 = _interopRequireDefault(_isNotGeneratorFunction);
+
+var _isAsyncFunction2 = _interopRequireDefault(_isAsyncFunction);
+
+var _isNotAsyncFunction2 = _interopRequireDefault(_isNotAsyncFunction);
+
+var _isFunction2 = _interopRequireDefault(_isFunction);
+
+var _isNotFunction2 = _interopRequireDefault(_isNotFunction);
+
+var _isObject2 = _interopRequireDefault(_isObject);
+
+var _isNotObject2 = _interopRequireDefault(_isNotObject);
+
+var _isObjectLike2 = _interopRequireDefault(_isObjectLike);
+
+var _isNotObjectLike2 = _interopRequireDefault(_isNotObjectLike);
+
+var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
+
+var _isNotPlainObject2 = _interopRequireDefault(_isNotPlainObject);
+
+var _isDate2 = _interopRequireDefault(_isDate);
+
+var _isNotDate2 = _interopRequireDefault(_isNotDate);
+
+var _isNumber2 = _interopRequireDefault(_isNumber);
+
+var _isNotNumber2 = _interopRequireDefault(_isNotNumber);
+
+var _isNaN2 = _interopRequireDefault(_isNaN);
+
+var _isNotNaN2 = _interopRequireDefault(_isNotNaN);
+
+var _isFinite2 = _interopRequireDefault(_isFinite);
+
+var _isNotFinite2 = _interopRequireDefault(_isNotFinite);
+
+var _isInterger2 = _interopRequireDefault(_isInterger);
+
+var _isNotInteger2 = _interopRequireDefault(_isNotInteger);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * @namespace RA
  */
-module.exports = {
-  isNotUndefined: isNotUndefined,
-  isUndefined: isUndefined,
-  isNull: isNull,
-  isNotNull: isNotNull,
-  isNotNil: isNotNil,
-  isArray: isArray,
-  isNotArray: isNotArray,
-  isBoolean: isBoolean,
-  isNotBoolean: isNotBoolean,
-  isNotEmpty: isNotEmpty,
-  isNilOrEmpty: isNilOrEmpty,
-  isString: isString,
-  isNotString: isNotString,
-  isNotArrayLike: isNotArrayLike,
-  isGeneratorFunction: isGeneratorFunction,
-  isNotGeneratorFunction: isNotGeneratorFunction,
-  isAsyncFunction: isAsyncFunction,
-  isNotAsyncFunction: isNotAsyncFunction,
-  isFunction: isFunction,
-  isNotFunction: isNotFunction,
-  isObject: isObject,
-  isNotObject: isNotObject,
-  isObjectLike: isObjectLike,
-  isNotObjectLike: isNotObjectLike,
-  isPlainObject: isPlainObject,
-  isNotPlainObject: isNotPlainObject,
-  isDate: isDate,
-  isNotDate: isNotDate,
-  isNumber: isNumber,
-  isNotNumber: isNotNumber,
-  isNaN: isNaN,
-  isNotNaN: isNotNaN,
-  isFinite: isFinite,
-  isNotFinite: isNotFinite,
-  isInteger: isInteger,
-  isNotInteger: isNotInteger
+var RA = {
+  isNotUndefined: _isNotUndefined2.default,
+  isUndefined: _isUndefined2.default,
+  isNull: _isNull2.default,
+  isNotNull: _isNotNull2.default,
+  isNotNil: _isNotNil2.default,
+  isArray: _isArray2.default,
+  isNotArray: _isNotArray2.default,
+  isBoolean: _isBoolean2.default,
+  isNotBoolean: _isNotBoolean2.default,
+  isNotEmpty: _isNotEmpty2.default,
+  isNilOrEmpty: _isNilOrEmpty2.default,
+  isString: _isString2.default,
+  isNotString: _isNotString2.default,
+  isNotArrayLike: _isNotArrayLike2.default,
+  isGeneratorFunction: _isGeneratorFunction2.default,
+  isNotGeneratorFunction: _isNotGeneratorFunction2.default,
+  isAsyncFunction: _isAsyncFunction2.default,
+  isNotAsyncFunction: _isNotAsyncFunction2.default,
+  isFunction: _isFunction2.default,
+  isNotFunction: _isNotFunction2.default,
+  isObject: _isObject2.default,
+  isNotObject: _isNotObject2.default,
+  isObjectLike: _isObjectLike2.default,
+  isNotObjectLike: _isNotObjectLike2.default,
+  isPlainObject: _isPlainObject2.default,
+  isNotPlainObject: _isNotPlainObject2.default,
+  isDate: _isDate2.default,
+  isNotDate: _isNotDate2.default,
+  isNumber: _isNumber2.default,
+  isNotNumber: _isNotNumber2.default,
+  isNaN: _isNaN2.default,
+  isNotNaN: _isNotNaN2.default,
+  isFinite: _isFinite2.default,
+  isNotFinite: _isNotFinite2.default,
+  isInteger: _isInterger2.default,
+  isNotInteger: _isNotInteger2.default
 };
+
+exports.default = RA;
 
 /***/ })
 /******/ ]);

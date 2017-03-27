@@ -1,7 +1,4 @@
-'use strict';
-
-const _isNumber = require('ramda/src/internal/_isNumber');
-
+import _isNumber from 'ramda/src/internal/_isNumber';
 
 /**
  * Checks if value is a `Number` primitive or object
@@ -21,5 +18,4 @@ const _isNumber = require('ramda/src/internal/_isNumber');
  * RA.isNumber(-Infinity); // => true
  * RA.isNumber('5'); // => false
  */
-
-module.exports = _isNumber;
+export default _isNumber;

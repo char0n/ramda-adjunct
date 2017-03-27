@@ -1,8 +1,6 @@
-'use strict';
+import { or } from 'ramda';
 
-const { or } = require('ramda');
-
-const isNotNull = require('./isNotNull');
+import isNotNull from './isNotNull';
 
 let GeneratorFunction = null;
 try {
@@ -30,8 +28,7 @@ try {
  * RA.isGeneratorFunction(() => {}); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = (val) => {
+export default (val) => {
   const toStringCheck = Object.prototype.toString.call(val) === '[object AsyncFunction]';
   const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
 

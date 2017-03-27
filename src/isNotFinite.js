@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const _isFinite = require('./isFinite');
+import _isFinite from './isFinite';
 
 /**
  * Checks whether the passed value is complement of finite `Number`.
@@ -28,5 +26,4 @@ const _isFinite = require('./isFinite');
  * RA.isNotFinite('0');  // => true
  * RA.isNotFinite(null); // => true
  */
-
-module.exports = complement(_isFinite);
+export default complement(_isFinite);

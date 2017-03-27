@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports = (() => {
+export default (() => {
   if (typeof document === 'object') {
     return document.createElement('span');
   }

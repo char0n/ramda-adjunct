@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isNaN = require('./isNaN');
+import isNaN from './isNaN';
 
 /**
  * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
@@ -34,5 +32,4 @@ const isNaN = require('./isNaN');
  * RA.isNotNaN(''); // => true
  * RA.isNotNaN(' '); // => true
  */
-
-module.exports = complement(isNaN);
+export default complement(isNaN);

@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isNull = require('./isNull');
+import isNull from './isNull';
 
 /**
  * Checks if input value is complement of `null`
@@ -21,5 +19,4 @@ const isNull = require('./isNull');
  * RA.isNotNull(undefined); //=> true
  * RA.isNotNull(null); //=> false
  */
-
-module.exports = complement(isNull);
+export default complement(isNull);

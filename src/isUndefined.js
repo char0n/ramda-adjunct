@@ -1,6 +1,4 @@
-'use strict';
-
-const { equals } = require('ramda');
+import { equals } from 'ramda';
 
 /**
  * Checks if input value is `undefined`
@@ -19,4 +17,4 @@ const { equals } = require('ramda');
  * RA.isUndefined(undefined); //=> true
  * RA.isUndefined(null); //=> false
  */
-module.exports = equals(undefined);
+export default equals(undefined);

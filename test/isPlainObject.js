@@ -1,10 +1,8 @@
-'use strict';
-
-const RA = require('../src/index');
-const eq = require('./shared/eq');
-const element = require('./shared/element');
-const args = require('./shared/arguments');
-const Symbol = require('./shared/Symbol');
+import RA from '../src/index';
+import eq from './shared/eq';
+import element from './shared/element';
+import args from './shared/arguments';
+import Symbol from './shared/Symbol';
 
 class Bar {
   constructor() {

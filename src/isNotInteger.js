@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isInteger = require('./isInterger');
+import isInteger from './isInterger';
 
 
 /**
@@ -34,5 +32,4 @@ const isInteger = require('./isInterger');
  * RA.isNotInteger(false);     //=> true
  * RA.isNotInteger([1]);       //=> true
  */
-
-module.exports = complement(isInteger);
+export default complement(isInteger);

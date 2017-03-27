@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isBoolean = require('./isBoolean');
+import isBoolean from './isBoolean';
 
 /**
  * Checks if input value is complement of `Boolean`
@@ -21,5 +19,4 @@ const isBoolean = require('./isBoolean');
  * RA.isNotBoolean(true); //=> false
  * RA.isNotBoolean(null); //=> true
  */
-
-module.exports = complement(isBoolean);
+export default complement(isBoolean);

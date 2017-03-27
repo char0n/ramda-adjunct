@@ -1,7 +1,5 @@
-'use strict';
-
-const RA = require('../src/index');
-const eq = require('./shared/eq');
+import RA from '../src/index';
+import eq from './shared/eq';
 
 describe('isArray', function() {
   it('tests a value for `Array`', function() {

@@ -1,5 +1,3 @@
-'use strict';
-
 /* eslint-disable max-len */
 /**
  * Checks if input value is `Async Function`
@@ -21,4 +19,4 @@
  */
 /* eslint-enable max-len */
 
-module.exports = val => Object.prototype.toString.call(val) === '[object AsyncFunction]';
+export default val => Object.prototype.toString.call(val) === '[object AsyncFunction]';

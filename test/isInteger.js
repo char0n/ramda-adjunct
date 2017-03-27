@@ -1,10 +1,8 @@
-'use strict';
-
-const RA = require('../src/index');
-const MAX_SAFE_INTEGER = require('../src/internal/polyfills/Number.MAX_SAFE_INTEGER');
-const MIN_SAFE_INTEGER = require('../src/internal/polyfills/Number.MIN_SAFE_INTEGER');
-const eq = require('./shared/eq');
-const polyfill = require('../src/internal/polyfills/Number.isInteger');
+import RA from '../src/index';
+import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
+import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
+import eq from './shared/eq';
+import polyfill from '../src/internal/polyfills/Number.isInteger';
 
 describe('isInteger', function() {
   it('tests a value for `integer`', function() {

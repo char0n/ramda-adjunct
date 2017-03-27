@@ -1,6 +1,4 @@
-'use strict';
-
-const { anyPass, isEmpty, isNil } = require('ramda');
+import { anyPass, isEmpty, isNil } from 'ramda';
 
 /**
  * Returns `true` if the given value is its type's empty value, `null` or `undefined`
@@ -23,5 +21,4 @@ const { anyPass, isEmpty, isNil } = require('ramda');
  * RA.isNilOrEmpty({}); //=> true
  * RA.isNilOrEmpty({length: 0}); //=> false
  */
-
-module.exports = anyPass([isNil, isEmpty]);
+export default anyPass([isNil, isEmpty]);

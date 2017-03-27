@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isArray = require('./isArray');
+import isArray from './isArray';
 
 /**
  * Checks if input value is complement of `Array`
@@ -21,5 +19,4 @@ const isArray = require('./isArray');
  * RA.isNotArray(null); //=> true
  * RA.isNotArray({}); //=> true
  */
-
-module.exports = complement(isArray);
+export default complement(isArray);

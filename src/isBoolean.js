@@ -1,6 +1,4 @@
-'use strict';
-
-const { is } = require('ramda');
+import { is } from 'ramda';
 
 /**
  * Checks if input value is `Boolean`
@@ -19,5 +17,4 @@ const { is } = require('ramda');
  * RA.isBoolean(true); //=> true
  * RA.isBoolean(null); //=> false
  */
-
-module.exports = is(Boolean);
+export default is(Boolean);

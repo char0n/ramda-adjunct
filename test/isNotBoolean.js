@@ -1,9 +1,7 @@
-'use strict';
-
-const R = require('ramda');
-const RA = require('../src/index');
-const eq = require('./shared/eq');
-const Symbol = require('./shared/Symbol');
+import R from 'ramda';
+import RA from '../src/index';
+import eq from './shared/eq';
+import Symbol from './shared/Symbol';
 
 describe('isNotBoolean', function() {
   it('tests a value for complement of `Boolean`', function() {

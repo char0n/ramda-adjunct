@@ -1,8 +1,6 @@
-'use strict';
-
-const RA = require('../src/index');
-const polyfill = require('../src/internal/polyfills/Number.isFinite');
-const eq = require('./shared/eq');
+import RA from '../src/index';
+import polyfill from '../src/internal/polyfills/Number.isFinite';
+import eq from './shared/eq';
 
 describe('isFinite', function() {
   it('tests a value for finite `Number`', function() {

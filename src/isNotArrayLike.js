@@ -1,6 +1,4 @@
-'use strict';
-
-const { complement, isArrayLike } = require('ramda');
+import { complement, isArrayLike } from 'ramda';
 
 /**
  * Tests whether or not an object is similar to an array.
@@ -21,5 +19,4 @@ const { complement, isArrayLike } = require('ramda');
  * RA.isNotArrayLike({length: 10}); //=> true
  * RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false
  */
-
-module.exports = complement(isArrayLike);
+export default complement(isArrayLike);

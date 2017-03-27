@@ -1,6 +1,4 @@
-'use strict';
-
-const { equals } = require('ramda');
+import { equals } from 'ramda';
 
 /**
  * Checks if input value is `null`
@@ -19,4 +17,4 @@ const { equals } = require('ramda');
  * RA.isNull(undefined); //=> false
  * RA.isNull(null); //=> true
  */
-module.exports = equals(null);
+export default equals(null);

@@ -1,10 +1,8 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const RA = require('../src/index');
-const polyfill = require('../src/internal/polyfills/Number.isNaN');
-const eq = require('./shared/eq');
+import RA from '../src/index';
+import polyfill from '../src/internal/polyfills/Number.isNaN';
+import eq from './shared/eq';
 
 describe('isNotNaN', function() {
   it('tests a value for complement of `NaN`', function() {

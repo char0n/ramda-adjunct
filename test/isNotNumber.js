@@ -1,11 +1,9 @@
-'use strict';
-
-const RA = require('../src/index');
-const MAX_SAFE_INTEGER = require('../src/internal/polyfills/Number.MAX_SAFE_INTEGER');
-const MIN_SAFE_INTEGER = require('../src/internal/polyfills/Number.MIN_SAFE_INTEGER');
-const eq = require('./shared/eq');
-const args = require('./shared/arguments');
-const Symbol = require('./shared/Symbol');
+import RA from '../src/index';
+import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
+import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
+import eq from './shared/eq';
+import args from './shared/arguments';
+import Symbol from './shared/Symbol';
 
 describe('isNotNumber', function() {
   it('tests a value for complement of `Number`', function() {

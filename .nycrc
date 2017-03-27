@@ -1,0 +1,13 @@
+{
+  "reporter": [
+    "lcov",
+    "text-summary"
+  ],
+  "report-dir": "./coverage",
+  "check-coverage": true,
+  "exclude": [
+    "webpack.config-test.node.js",
+    ".tmp/**/*",
+    "test/**/*"
+  ]
+}

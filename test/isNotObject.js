@@ -1,9 +1,7 @@
-'use strict';
-
-const RA = require('../src/index');
-const eq = require('./shared/eq');
-const args = require('./shared/arguments');
-const Symbol = require('./shared/Symbol');
+import RA from '../src/index';
+import eq from './shared/eq';
+import args from './shared/arguments';
+import Symbol from './shared/Symbol';
 
 describe('isNotObject', function() {
   it('tests a value for complement of language type of `Object`', function() {

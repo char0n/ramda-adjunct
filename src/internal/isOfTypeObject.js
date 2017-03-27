@@ -1,3 +1,1 @@
-'use strict';
-
-module.exports = val => typeof val === 'object';
+export default val => typeof val === 'object';

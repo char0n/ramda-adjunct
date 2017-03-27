@@ -1,9 +1,7 @@
-'use strict';
-
-const RA = require('../src/index');
-const eq = require('./shared/eq');
-const Symbol = require('./shared/Symbol');
-const args = require('./shared/arguments');
+import RA from '../src/index';
+import eq from './shared/eq';
+import Symbol from './shared/Symbol';
+import args from './shared/arguments';
 
 describe('isNotString', function() {
   it('tests a value for complement of `String`', function() {

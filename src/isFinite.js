@@ -1,8 +1,6 @@
-'use strict';
+import { or } from 'ramda';
 
-const { or } = require('ramda');
-
-const polyfill = require('./internal/polyfills/Number.isFinite');
+import polyfill from './internal/polyfills/Number.isFinite';
 
 /**
  * Checks whether the passed value is a finite `Number`.
@@ -30,5 +28,4 @@ const polyfill = require('./internal/polyfills/Number.isFinite');
  * RA.isFinite(null); // => false
  *                    // would've been true with global isFinite(null)
  */
-
-module.exports = or(Number.isFinite, polyfill);
+export default or(Number.isFinite, polyfill);

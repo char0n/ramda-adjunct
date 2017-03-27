@@ -1,9 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isUndefined = require('./isUndefined');
-
+import isUndefined from './isUndefined';
 
 /**
  * Checks if input value is complement `undefined`
@@ -22,4 +19,4 @@ const isUndefined = require('./isUndefined');
  * RA.isNotUndefined(undefined); //=> false
  * RA.isNotUndefined(null); //=> true
  */
-module.exports = complement(isUndefined);
+export default complement(isUndefined);

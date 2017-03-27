@@ -1,8 +1,6 @@
-'use strict';
-
-const RA = require('../src/index');
-const polyfill = require('../src/internal/polyfills/Number.isNaN');
-const eq = require('./shared/eq');
+import RA from '../src/index';
+import polyfill from '../src/internal/polyfills/Number.isNaN';
+import eq from './shared/eq';
 
 describe('isNaN', function() {
   it('tests a value for `NaN`', function() {

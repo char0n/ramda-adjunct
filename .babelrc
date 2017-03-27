@@ -5,6 +5,12 @@
         "loose": true,
         "modules": false
       }
-    }]
-  ]
+    }],
+    ["stage-3"]
+  ],
+  "env": {
+    "coverage": {
+      "plugins": [ "istanbul" ]
+    }
+  }
 }

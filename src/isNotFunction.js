@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isFunction = require('./isFunction');
+import isFunction from './isFunction';
 
 /* eslint-disable max-len */
 /**
@@ -26,5 +24,4 @@ const isFunction = require('./isFunction');
  * RA.isNotFunction('abc'); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isFunction);
+export default complement(isFunction);

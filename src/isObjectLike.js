@@ -1,9 +1,7 @@
-'use strict';
+import { both } from 'ramda';
 
-const { both } = require('ramda');
-
-const isNotNull = require('./isNotNull');
-const isOfTypeObject = require('./internal/isOfTypeObject');
+import isNotNull from './isNotNull';
+import isOfTypeObject from './internal/isOfTypeObject';
 
 
 /* eslint-disable max-len */
@@ -27,5 +25,4 @@ const isOfTypeObject = require('./internal/isOfTypeObject');
  * RA.isObjectLike(undefined); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = both(isNotNull, isOfTypeObject);
+export default both(isNotNull, isOfTypeObject);

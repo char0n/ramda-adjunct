@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isObject = require('./isObject');
+import isObject from './isObject';
 
 
 /* eslint-disable max-len */
@@ -26,5 +24,4 @@ const isObject = require('./isObject');
  * RA.isNotObject(undefined); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isObject);
+export default complement(isObject);

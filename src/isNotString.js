@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const iString = require('./isString');
+import isString from './isString';
 
 /**
  * Checks if input value is complement of `String`
@@ -20,5 +18,4 @@ const iString = require('./isString');
  * RA.isNotString('abc'); //=> false
  * RA.isNotString(1); //=> true
  */
-
-module.exports = complement(iString);
+export default complement(isString);

@@ -1,11 +1,9 @@
-'use strict';
-
-const RA = require('../src/index');
-const eq = require('./shared/eq');
-const Symbol = require('./shared/Symbol');
-const args = require('./shared/arguments');
-const genFunc = require('./shared/genFunc');
-const asyncFunc = require('./shared/asyncFunc');
+import RA from '../src/index';
+import eq from './shared/eq';
+import Symbol from './shared/Symbol';
+import args from './shared/arguments';
+import genFunc from './shared/genFunc';
+import asyncFunc from './shared/asyncFunc';
 
 describe('isFunction', function() {
   it('tests a value for `Function`', function() {

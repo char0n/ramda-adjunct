@@ -5,6 +5,9 @@
   "globals": {
     "document": true
   },
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "rules": {
     "no-void": 0,
     "func-names": 0,

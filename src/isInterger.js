@@ -1,8 +1,6 @@
-'use strict';
+import { or } from 'ramda';
 
-const { or } = require('ramda');
-
-const polyfill = require('./internal/polyfills/Number.isInteger');
+import polyfill from './internal/polyfills/Number.isInteger';
 
 /**
  * Checks whether the passed value is a an `integer`.
@@ -33,5 +31,4 @@ const polyfill = require('./internal/polyfills/Number.isInteger');
  * RA.isInteger(false);     //=> false
  * RA.isInteger([1]);       //=> false
  */
-
-module.exports = or(Number.isInteger, polyfill);
+export default or(Number.isInteger, polyfill);

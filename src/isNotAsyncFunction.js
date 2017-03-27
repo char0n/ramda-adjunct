@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isAsyncFunction = require('./isAsyncFunction');
+import isAsyncFunction from './isAsyncFunction';
 
 
 /* eslint-disable max-len */
@@ -25,5 +23,4 @@ const isAsyncFunction = require('./isAsyncFunction');
  * RA.isNotAsyncFunction(() => {}); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isAsyncFunction);
+export default complement(isAsyncFunction);

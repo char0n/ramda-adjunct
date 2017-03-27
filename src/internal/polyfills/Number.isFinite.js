@@ -1,8 +1,6 @@
-'use strict';
+import { both } from 'ramda';
 
-const { both } = require('ramda');
-
-const isNumber = require('../../isNumber');
+import isNumber from '../../isNumber';
 
 
-module.exports = both(isNumber, isFinite);
+export default both(isNumber, isFinite);

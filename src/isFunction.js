@@ -1,10 +1,8 @@
-'use strict';
+import { anyPass } from 'ramda';
+import _isFunction from 'ramda/src/internal/_isFunction';
 
-const { anyPass } = require('ramda');
-const _isFunction = require('ramda/src/internal/_isFunction');
-
-const isGeneratorFunction = require('./isGeneratorFunction');
-const isAsyncFunction = require('./isAsyncFunction');
+import isGeneratorFunction from './isGeneratorFunction';
+import isAsyncFunction from './isAsyncFunction';
 
 /* eslint-disable max-len */
 /**
@@ -28,5 +26,4 @@ const isAsyncFunction = require('./isAsyncFunction');
  * RA.isFunction('abc'); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = anyPass([_isFunction, isGeneratorFunction, isAsyncFunction]);
+export default anyPass([_isFunction, isGeneratorFunction, isAsyncFunction]);

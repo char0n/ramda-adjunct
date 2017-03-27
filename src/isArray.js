@@ -1,6 +1,4 @@
-'use strict';
-
-const _isArray = require('ramda/src/internal/_isArray');
+import _isArray from 'ramda/src/internal/_isArray';
 
 /**
  * Checks if input value is `Array`
@@ -19,5 +17,4 @@ const _isArray = require('ramda/src/internal/_isArray');
  * RA.isArray(null); //=> false
  * RA.isArray({}); //=> false
  */
-
-module.exports = _isArray;
+export default _isArray;

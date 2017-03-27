@@ -1,10 +1,8 @@
-'use strict';
+import { both, anyPass } from 'ramda';
 
-const { both, anyPass } = require('ramda');
-
-const isNotNull = require('./isNotNull');
-const isFunction = require('./isFunction');
-const isOfTypeObject = require('./internal/isOfTypeObject');
+import isNotNull from './isNotNull';
+import isFunction from './isFunction';
+import isOfTypeObject from './internal/isOfTypeObject';
 
 
 /* eslint-disable max-len */
@@ -28,5 +26,4 @@ const isOfTypeObject = require('./internal/isOfTypeObject');
  * RA.isObject(undefined); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
+export default both(isNotNull, anyPass([isOfTypeObject, isFunction]));

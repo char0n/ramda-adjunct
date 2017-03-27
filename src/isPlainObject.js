@@ -1,11 +1,9 @@
-'use strict';
+import _isObject from 'ramda/src/internal/_isObject';
+import { pipe, both, equals, toString, pathSatisfies } from 'ramda';
 
-const _isObject = require('ramda/src/internal/_isObject');
-const { pipe, both, equals, toString, pathSatisfies } = require('ramda');
-
-const isNull = require('./isNull');
-const isObjectLike = require('./isObjectLike');
-const isFunction = require('./isFunction');
+import isNull from './isNull';
+import isObjectLike from './isObjectLike';
+import isFunction from './isFunction';
 
 
 const isObjectConstructor = pipe(toString, equals(toString(Object)));
@@ -38,8 +36,7 @@ const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor)
  * RA.isPlainObject(new Object()); //=> true
  */
 /* eslint-enable max-len */
-
-module.exports = (val) => {
+export default (val) => {
   if (!isObjectLike(val) || !_isObject(val)) { return false }
 
   const proto = Object.getPrototypeOf(val);

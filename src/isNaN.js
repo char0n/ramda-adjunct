@@ -1,8 +1,6 @@
-'use strict';
+import { or } from 'ramda';
 
-const { or } = require('ramda');
-
-const polyfill = require('./internal/polyfills/Number.isNaN');
+import polyfill from './internal/polyfills/Number.isNaN';
 
 /**
  * Checks whether the passed value is `NaN` and its type is `Number`.
@@ -37,5 +35,4 @@ const polyfill = require('./internal/polyfills/Number.isNaN');
  * RA.isNaN(''); // => false
  * RA.isNaN(' '); // => false
  */
-
-module.exports = or(Number.isNaN, polyfill);
+export default or(Number.isNaN, polyfill);

@@ -1,6 +1,4 @@
-'use strict';
-
-const _isString = require('ramda/src/internal/_isString');
+import _isString from 'ramda/src/internal/_isString';
 
 /**
  * Checks if input value is `String`
@@ -18,5 +16,4 @@ const _isString = require('ramda/src/internal/_isString');
  * RA.isString('abc'); //=> true
  * RA.isString(1); //=> false
  */
-
-module.exports = _isString;
+export default _isString;

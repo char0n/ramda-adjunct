@@ -1,8 +1,6 @@
-'use strict';
+import { complement } from 'ramda';
 
-const { complement } = require('ramda');
-
-const isPlainObject = require('./isPlainObject');
+import isPlainObject from './isPlainObject';
 
 /* eslint-disable max-len */
 /**
@@ -31,5 +29,4 @@ const isPlainObject = require('./isPlainObject');
  * RA.isNotPlainObject(new Object()); //=> false
  */
 /* eslint-enable max-len */
-
-module.exports = complement(isPlainObject);
+export default complement(isPlainObject);
