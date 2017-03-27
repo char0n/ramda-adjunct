@@ -35,12 +35,6 @@ const ra = {
       test: /\.(js)$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      query: {
-        presets: [
-          ['es2015', { loose: true, modules: false }],
-          ['stage-3'],
-        ],
-      },
     }],
   },
 };
@@ -62,12 +56,6 @@ const raMin = Object.assign({
       test: /\.(js)$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      query: {
-        presets: [
-          ['es2015', { loose: true, modules: false }],
-          ['stage-3'],
-        ],
-      },
     }],
   },
 }, minimizeTrait);
@@ -89,12 +77,6 @@ const raWeb = {
       test: /\.(js)$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      query: {
-        presets: [
-          ['es2015', { loose: true, modules: false }],
-          ['stage-3'],
-        ],
-      },
     }],
   },
 };
@@ -117,12 +99,6 @@ const raWebMin = Object.assign({
       test: /\.(js)$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      query: {
-        presets: [
-          ['es2015', { loose: true, modules: false }],
-          ['stage-3'],
-        ],
-      },
     }],
   },
 }, minimizeTrait);
@@ -141,12 +117,6 @@ const raWebStandalone = {
       test: /\.(js)$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      query: {
-        presets: [
-          ['es2015', { loose: true, modules: false }],
-          ['stage-3'],
-        ],
-      },
     }],
   },
 };
@@ -165,12 +135,6 @@ const rawWebStandaloneMin = Object.assign({
       test: /\.(js)$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
-      query: {
-        presets: [
-          ['es2015', { loose: true, modules: false }],
-          ['stage-3'],
-        ],
-      },
     }],
   },
 }, minimizeTrait);

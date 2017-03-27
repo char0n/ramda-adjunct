@@ -11,7 +11,11 @@
     "type": "git",
     "url": "git://github.com/char0n/ramda-adjunct.git"
   },
-  "main": "./dist/RA.node.js",
+  "browser": "./dist/RA.web.min.js",
+  "main": "./lib/index.js",
+  "module": "./es/index/js",
+  "jsnext:main": "./es/index.js",
+  "typings": "src/index.d.ts",
   "engines": {
     "node": ">=0.10.3"
   },
@@ -25,8 +29,13 @@
     "test:bundle-create": "better-npm-run test:bundle-create",
     "test:bundle-clean": "better-npm-run test:bundle-clean",
     "coverage": "better-npm-run coverage",
+    "build": "better-npm-run build",
+    "build:es": "better-npm-run build:es",
+    "build:commonjs": "better-npm-run build:commonjs",
+    "build:umd": "better-npm-run build:umd",
     "dist": "better-npm-run dist",
     "nsp:check": "better-npm-run nsp:check",
+    "prepublishOnly": "better-npm-run prepublish",
     "clean": "better-npm-run clean"
   },
   "betterScripts": {
@@ -38,16 +47,21 @@
     "test:web": "testem ci",
     "test:bundle-create": "webpack --config webpack.config-test.web.js",
     "test:bundle-clean": "rimraf tmp-test-bundle.js",
-    "coverage": "cross-env NODE_ENV=coverage nyc npm test",
-    "dist": "rimraf dist && webpack --config webpack.config.js",
+    "coverage": "cross-env BABEL_ENV=coverage nyc npm test",
+    "build": "npm run build:es && npm run build:commonjs && npm run build:umd",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:umd": "webpack --config webpack.config.js",
     "nsp:check": "nsp check",
-    "clean": "rimraf docs && rimraf coverage && rimraf tmp-test-bundle.js"
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "clean": "rimraf .nyc_output && rimraf .tmp && rimraf docs && rimraf coverage && rimraf tmp-test-bundle.js && rimraf dist && rimraf lib && rimraf es"
   },
   "readme": "README.md",
   "peerDependencies": {
     "ramda": "~0.23"
   },
   "devDependencies": {
+    "babel-cli": "=6.24.0",
     "babel-core": "=6.24.0",
     "babel-loader": "=6.4.1",
     "babel-plugin-istanbul": "=4.1.1",
@@ -78,6 +92,5 @@
     "typescript": "=2.2.1",
     "webpack": "=2.2.1"
   },
-  "typings": "src/index.d.ts",
   "tonicExampleFilename": "tonicExample.js"
 }

@@ -99,7 +99,7 @@ guideline.
 ## Builds
 
 ```sh
- $ npm run dist
+ $ npm run build:umd
 ```
 
 The command will create three types of builds.

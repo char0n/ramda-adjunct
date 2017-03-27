@@ -7,6 +7,8 @@ general:
     - "coverage"
     - "test-results.xml"
     - "dist"
+    - "lib"
+    - "es"
 
 machine:
   node:
@@ -35,7 +37,7 @@ deployment:
   staging:
     branch: master
     commands:
-      - npm run dist
+      - npm run build
       - npm run docs
       - chmod -R +x ./scripts
       - ./scripts/deploy-ghpages.sh docs/ramda-adjunct

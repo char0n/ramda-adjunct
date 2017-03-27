@@ -1,5 +1,8 @@
 /.tmp
+/.nyc_output
 /docs
 /coverage
 /dist
+/es
+/lib
 /tonicExample.js
