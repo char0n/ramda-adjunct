@@ -39,49 +39,84 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>'use strict';
+            <pre class="prettyprint source linenums"><code>import isNotUndefined from './isNotUndefined';
+import isUndefined from './isUndefined';
+import isNull from './isNull';
+import isNotNull from './isNotNull';
+import isNotNil from './isNotNil';
+import isArray from './isArray';
+import isNotArray from './isNotArray';
+import isBoolean from './isBoolean';
+import isNotBoolean from './isNotBoolean';
+import isNotEmpty from './isNotEmpty';
+import isNilOrEmpty from './isNilOrEmpty';
+import isString from './isString';
+import isNotString from './isNotString';
+import isNotArrayLike from './isNotArrayLike';
+import isGeneratorFunction from './isGeneratorFunction';
+import isNotGeneratorFunction from './isNotGeneratorFunction';
+import isAsyncFunction from './isAsyncFunction';
+import isNotAsyncFunction from './isNotAsyncFunction';
+import isFunction from './isFunction';
+import isNotFunction from './isNotFunction';
+import isObject from './isObject';
+import isNotObject from './isNotObject';
+import isObjectLike from './isObjectLike';
+import isNotObjectLike from './isNotObjectLike';
+import isPlainObject from './isPlainObject';
+import isNotPlainObject from './isNotPlainObject';
+import isDate from './isDate';
+import isNotDate from './isNotDate';
+import isNumber from './isNumber';
+import isNotNumber from './isNotNumber';
+import isNaN from './isNaN';
+import isNotNaN from './isNotNaN';
+import isFinite from './isFinite';
+import isNotFinite from './isNotFinite';
+import isInteger from './isInterger';
+import isNotInteger from './isNotInteger';
 
-const isNotUndefined = require('./isNotUndefined');
-const isUndefined = require('./isUndefined');
-const isNull = require('./isNull');
-const isNotNull = require('./isNotNull');
-const isNotNil = require('./isNotNil');
-const isArray = require('./isArray');
-const isNotArray = require('./isNotArray');
-const isBoolean = require('./isBoolean');
-const isNotBoolean = require('./isNotBoolean');
-const isNotEmpty = require('./isNotEmpty');
-const isNilOrEmpty = require('./isNilOrEmpty');
-const isString = require('./isString');
-const isNotString = require('./isNotString');
-const isNotArrayLike = require('./isNotArrayLike');
-const isGeneratorFunction = require('./isGeneratorFunction');
-const isNotGeneratorFunction = require('./isNotGeneratorFunction');
-const isAsyncFunction = require('./isAsyncFunction');
-const isNotAsyncFunction = require('./isNotAsyncFunction');
-const isFunction = require('./isFunction');
-const isNotFunction = require('./isNotFunction');
-const isObject = require('./isObject');
-const isNotObject = require('./isNotObject');
-const isObjectLike = require('./isObjectLike');
-const isNotObjectLike = require('./isNotObjectLike');
-const isPlainObject = require('./isPlainObject');
-const isNotPlainObject = require('./isNotPlainObject');
-const isDate = require('./isDate');
-const isNotDate = require('./isNotDate');
-const isNumber = require('./isNumber');
-const isNotNumber = require('./isNotNumber');
-const isNaN = require('./isNaN');
-const isNotNaN = require('./isNotNaN');
-const isFinite = require('./isFinite');
-const isNotFinite = require('./isNotFinite');
-const isInteger = require('./isInterger');
-const isNotInteger = require('./isNotInteger');
+export { default as isNotUndefined } from './isNotUndefined';
+export { default as isUndefined } from './isUndefined';
+export { default as isNull } from './isNull';
+export { default as isNotNull } from './isNotNull';
+export { default as isNotNil } from './isNotNil';
+export { default as isArray } from './isArray';
+export { default as isNotArray } from './isNotArray';
+export { default as isBoolean } from './isBoolean';
+export { default as isNotBoolean } from './isNotBoolean';
+export { default as isNotEmpty } from './isNotEmpty';
+export { default as isNilOrEmpty } from './isNilOrEmpty';
+export { default as isString } from './isString';
+export { default as isNotString } from './isNotString';
+export { default as isNotArrayLike } from './isNotArrayLike';
+export { default as isGeneratorFunction } from './isGeneratorFunction';
+export { default as isNotGeneratorFunction } from './isNotGeneratorFunction';
+export { default as isAsyncFunction } from './isAsyncFunction';
+export { default as isNotAsyncFunction } from './isNotAsyncFunction';
+export { default as isFunction } from './isFunction';
+export { default as isNotFunction } from './isNotFunction';
+export { default as isObject } from './isObject';
+export { default as isNotObject } from './isNotObject';
+export { default as isObjectLike } from './isObjectLike';
+export { default as isNotObjectLike } from './isNotObjectLike';
+export { default as isPlainObject } from './isPlainObject';
+export { default as isNotPlainObject } from './isNotPlainObject';
+export { default as isDate } from './isDate';
+export { default as isNotDate } from './isNotDate';
+export { default as isNumber } from './isNumber';
+export { default as isNotNumber } from './isNotNumber';
+export { default as isNaN } from './isNaN';
+export { default as isNotNaN } from './isNotNaN';
+export { default as isFinite } from './isFinite';
+export { default as isNotFinite } from './isNotFinite';
+export { default as isInteger } from './isInterger';
+export { default as isNotInteger } from './isNotInteger';
 
 /**
  * @namespace RA
  */
-module.exports = {
+const RA = {
   isNotUndefined,
   isUndefined,
   isNull,
@@ -119,6 +154,8 @@ module.exports = {
   isInteger,
   isNotInteger,
 };
+
+export default RA;
 </code></pre>
         </article>
     </section>
@@ -131,7 +168,7 @@ module.exports = {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Mar 26 2017 17:57:41 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 27 2017 16:59:24 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
