@@ -76,7 +76,7 @@ long as they support ES5.
 
 ## Development
 
-If you want to contribute to this project, please consult the [CONTRIBUTING.MD](https://github.com/char0n/ramda-adjunct/blob/master/CONTRIBUTING.md) 
+If you want to contribute to this project, please consult the [CONTRIBUTING.md](https://github.com/char0n/ramda-adjunct/blob/master/CONTRIBUTING.md) 
 guideline.
 
 **Obtaining project copy**
