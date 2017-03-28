@@ -121,13 +121,13 @@ If you use node to import ramda-adjunct.
  $ npm run build:umd
 ```
 
-The command will create three types of builds.
+The command will create three types of bundles.
 
-`dist/RA.node.js` - ES5 compliant build, running on all node versions
+`dist/RA.node.js` - ES5 compliant bundle, running on all node versions
 
-`dist/RA.web.js` - ES5 compliant build, running in browsers. Requires `ramda.js` to be required before 
+`dist/RA.web.js` - ES5 compliant bundle, running in browsers. Requires `ramda.js` to be required before 
 
-`dist/RA.web.standalone.js` - ES5 compliant build, running in browsers. It has `ramda.js` pre-bundled
+`dist/RA.web.standalone.js` - ES5 compliant bundle, running in browsers. It has `ramda.js` pre-bundled
 
 You can always find fresh build files in circle-ci [artifacts](https://circleci.com/gh/char0n/ramda-adjunct).
 
