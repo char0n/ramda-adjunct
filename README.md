@@ -105,7 +105,7 @@ guideline.
 If you use bundler that supports tree shaking and ES2015 imports.
 `package.json` is automatically pre-configured to tell ES2015 `import` to import from this directory.
 
-`es/*` - ES3 compatible code containing ES2015 imports 
+`es/*` - ES5 code containing ES2015 imports 
 
 ```sh
  $ npm run build:commonjs
@@ -114,7 +114,7 @@ If you use bundler that supports tree shaking and ES2015 imports.
 If you use node to import ramda-adjunct.
 `package.json` is automatically pre-configured to tell `require` to import from this directory.
 
-`lib/*` - ES3 compatible code containing `commonjs` imports
+`lib/*` - ES5 code containing `commonjs` imports
 
 
 ```sh
