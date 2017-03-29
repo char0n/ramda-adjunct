@@ -4,7 +4,7 @@ import isFunction from './isFunction';
 
 /* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Function`
+ * Checks if input value is complement of `Function`.
  *
  * @func isNotFunction
  * @memberOf RA

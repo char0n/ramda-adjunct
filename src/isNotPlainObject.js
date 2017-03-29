@@ -4,7 +4,7 @@ import isPlainObject from './isPlainObject';
 
 /* eslint-disable max-len */
 /**
- * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`)
+ * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`).
  *
  * @func isNotPlainObject
  * @memberOf RA

@@ -1,7 +1,7 @@
 import _isString from 'ramda/src/internal/_isString';
 
 /**
- * Checks if input value is `String`
+ * Checks if input value is `String`.
  *
  * @func isString
  * @memberOf RA

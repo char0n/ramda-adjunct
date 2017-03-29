@@ -10,7 +10,7 @@ try {
 
 /* eslint-disable max-len */
 /**
- * Checks if input value is `Generator Function`
+ * Checks if input value is `Generator Function`.
  *
  * @func isGeneratorFunction
  * @memberOf RA

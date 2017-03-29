@@ -1,5 +1,5 @@
 /**
- * A function that performs no operations
+ * A function that performs no operations.
  *
  * @func noop
  * @memberOf RA

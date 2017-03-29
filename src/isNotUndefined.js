@@ -3,7 +3,7 @@ import { complement } from 'ramda';
 import isUndefined from './isUndefined';
 
 /**
- * Checks if input value is complement `undefined`
+ * Checks if input value is complement `undefined`.
  *
  * @func isNotUndefined
  * @memberOf RA

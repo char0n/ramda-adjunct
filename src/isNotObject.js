@@ -5,7 +5,7 @@ import isObject from './isObject';
 
 /* eslint-disable max-len */
 /**
- * Checks if input value is complement of language type of `Object`
+ * Checks if input value is complement of language type of `Object`.
  *
  * @func isNotObject
  * @memberOf RA

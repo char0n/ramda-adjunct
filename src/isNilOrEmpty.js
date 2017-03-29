@@ -1,7 +1,7 @@
 import { anyPass, isEmpty, isNil } from 'ramda';
 
 /**
- * Returns `true` if the given value is its type's empty value, `null` or `undefined`
+ * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
  *
  * @func isNilOrEmpty
  * @memberOf RA

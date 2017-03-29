@@ -1,7 +1,7 @@
 import _isArray from 'ramda/src/internal/_isArray';
 
 /**
- * Checks if input value is `Array`
+ * Checks if input value is `Array`.
  *
  * @func isArray
  * @memberOf RA

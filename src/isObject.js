@@ -7,7 +7,7 @@ import isOfTypeObject from './internal/isOfTypeObject';
 
 /* eslint-disable max-len */
 /**
- * Checks if input value is language type of `Object`
+ * Checks if input value is language type of `Object`.
  *
  * @func isObject
  * @memberOf RA

@@ -1,7 +1,7 @@
 import { isNil, complement } from 'ramda';
 
 /**
- * Checks if input value is complement of `null` or `undefined`
+ * Checks if input value is complement of `null` or `undefined`.
  *
  * @func isNotNil
  * @memberOf RA

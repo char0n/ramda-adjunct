@@ -6,7 +6,7 @@ import isAsyncFunction from './isAsyncFunction';
 
 /* eslint-disable max-len */
 /**
- * Checks if input value is `Function`
+ * Checks if input value is `Function`.
  *
  * @func isFunction
  * @memberOf RA

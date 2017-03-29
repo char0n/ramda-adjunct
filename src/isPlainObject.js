@@ -11,7 +11,7 @@ const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor)
 
 /* eslint-disable max-len */
 /**
- * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
+ * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
  *
  * @func isPlainObject
  * @memberOf RA

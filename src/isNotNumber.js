@@ -4,7 +4,7 @@ import isNumber from './isNumber';
 
 
 /**
- * Checks if value is a complement of `Number` primitive or object
+ * Checks if value is a complement of `Number` primitive or object.
  *
  * @func isNotNumber
  * @memberOf RA

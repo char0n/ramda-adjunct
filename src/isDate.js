@@ -1,7 +1,7 @@
 import { is } from 'ramda';
 
 /**
- * Checks if value is `Date` object
+ * Checks if value is `Date` object.
  *
  * @func isDate
  * @memberOf RA

@@ -1,7 +1,7 @@
 import { equals } from 'ramda';
 
 /**
- * Checks if input value is `null`
+ * Checks if input value is `null`.
  *
  * @func isNull
  * @memberOf RA

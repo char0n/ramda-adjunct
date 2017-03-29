@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /**
- * Checks if input value is `Async Function`
+ * Checks if input value is `Async Function`.
  *
  * @func isAsyncFunction
  * @memberOf RA

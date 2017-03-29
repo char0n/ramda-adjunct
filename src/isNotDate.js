@@ -3,7 +3,7 @@ import { complement } from 'ramda';
 import isDate from './isDate';
 
 /**
- * Checks if value is complement of `Date` object
+ * Checks if value is complement of `Date` object.
  *
  * @func isNotDate
  * @memberOf RA

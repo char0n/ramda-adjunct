@@ -3,7 +3,7 @@ import { complement } from 'ramda';
 import isString from './isString';
 
 /**
- * Checks if input value is complement of `String`
+ * Checks if input value is complement of `String`.
  *
  * @func isNotString
  * @memberOf RA

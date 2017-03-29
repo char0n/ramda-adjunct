@@ -1,7 +1,7 @@
 import { equals } from 'ramda';
 
 /**
- * Checks if input value is `undefined`
+ * Checks if input value is `undefined`.
  *
  * @func isUndefined
  * @memberOf RA

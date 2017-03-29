@@ -3,7 +3,7 @@ import { complement } from 'ramda';
 import isBoolean from './isBoolean';
 
 /**
- * Checks if input value is complement of `Boolean`
+ * Checks if input value is complement of `Boolean`.
  *
  * @func isNotBoolean
  * @memberOf RA

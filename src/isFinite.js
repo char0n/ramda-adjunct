@@ -5,7 +5,6 @@ import polyfill from './internal/polyfills/Number.isFinite';
 /**
  * Checks whether the passed value is a finite `Number`.
  *
- *
  * @func isFinite
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
