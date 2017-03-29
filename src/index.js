@@ -1,3 +1,4 @@
+// Type
 import isNotUndefined from './isNotUndefined';
 import isUndefined from './isUndefined';
 import isNull from './isNull';
@@ -34,7 +35,10 @@ import isFinite from './isFinite';
 import isNotFinite from './isNotFinite';
 import isInteger from './isInterger';
 import isNotInteger from './isNotInteger';
+// Function
+import noop from './noop';
 
+// Type
 export { default as isNotUndefined } from './isNotUndefined';
 export { default as isUndefined } from './isUndefined';
 export { default as isNull } from './isNull';
@@ -71,11 +75,14 @@ export { default as isFinite } from './isFinite';
 export { default as isNotFinite } from './isNotFinite';
 export { default as isInteger } from './isInterger';
 export { default as isNotInteger } from './isNotInteger';
+// Function
+export { default as noop } from './noop';
 
 /**
  * @namespace RA
  */
 const RA = {
+  // Type
   isNotUndefined,
   isUndefined,
   isNull,
@@ -112,6 +119,8 @@ const RA = {
   isNotFinite,
   isInteger,
   isNotInteger,
+  // Function
+  noop,
 };
 
 export default RA;

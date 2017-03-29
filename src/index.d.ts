@@ -183,6 +183,11 @@ declare namespace RamdaAdjunct {
          * Checks whether the passed value is complement of `integer`.
          */
         isNotInteger(val: any): boolean
+
+        /**
+         * A function that performs no operations
+         */
+        noop(): undefined
     }
 
 }
