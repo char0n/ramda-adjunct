@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNaN.js - Documentation</title>
+    <title>noop.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNaN.js</h1>
+    <h1 class="page-title">noop.js</h1>
     
 
     
@@ -39,41 +39,21 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isNaN from './isNaN';
-
-/**
- * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
+            <pre class="prettyprint source linenums"><code>/**
+ * A function that performs no operations
  *
- * @func isNotNaN
+ * @func noop
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNaN|isNaN}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.0.0|v1.0.0}
+ * @category Function
+ * @sig ... -> undefined
+ * @return {undefined}
  * @example
  *
- * RA.isNotNaN(NaN); // => false
- * RA.isNotNaN(Number.NaN); // => false
- * RA.isNotNaN(0 / 0); // => false
- *
- * RA.isNotNaN('NaN'); // => true
- * RA.isNotNaN(undefined); // => true
- * RA.isNotNaN({}); // => true
- * RA.isNotNaN('blabla'); // => true
- *
- * RA.isNotNaN(true); // => true
- * RA.isNotNaN(null); // => true
- * RA.isNotNaN(37); // => true
- * RA.isNotNaN('37'); // => true
- * RA.isNotNaN('37.37'); // => true
- * RA.isNotNaN(''); // => true
- * RA.isNotNaN(' '); // => true
+ * RA.noop(); //=> undefined
+ * RA.noop(1, 2, 3); // undefined
  */
-export default complement(isNaN);
+export default function noop() {}
 </code></pre>
         </article>
     </section>
