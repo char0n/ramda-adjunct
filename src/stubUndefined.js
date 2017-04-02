@@ -12,6 +12,6 @@ import { always } from 'ramda';
  * @example
  *
  * RA.stubUndefined(); //=> undefined
- * RA.stubUndefined(1, 2, 3); // undefined
+ * RA.stubUndefined(1, 2, 3); //=> undefined
  */
 export default always(void 0); // eslint-disable-line no-void

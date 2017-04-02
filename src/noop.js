@@ -14,6 +14,6 @@ import stubUndefined from './stubUndefined';
  * @example
  *
  * RA.noop(); //=> undefined
- * RA.noop(1, 2, 3); // undefined
+ * RA.noop(1, 2, 3); //=> undefined
  */
 export default always(stubUndefined());
