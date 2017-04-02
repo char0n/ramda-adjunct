@@ -1,11 +1,9 @@
 import { always } from 'ramda';
 
-import stubUndefined from './stubUndefined';
-
 /**
- * A function that performs no operations.
+ * A function that returns undefined.
  *
- * @func noop
+ * @func stubUndefined
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.0.0|v1.0.0}
  * @category Function
@@ -13,7 +11,7 @@ import stubUndefined from './stubUndefined';
  * @return {undefined}
  * @example
  *
- * RA.noop(); //=> undefined
- * RA.noop(1, 2, 3); // undefined
+ * RA.stubUndefined(); //=> undefined
+ * RA.stubUndefined(1, 2, 3); // undefined
  */
-export default always(stubUndefined());
+export default always(void 0); // eslint-disable-line no-void

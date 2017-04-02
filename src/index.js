@@ -36,6 +36,7 @@ import isNotFinite from './isNotFinite';
 import isInteger from './isInterger';
 import isNotInteger from './isNotInteger';
 // Function
+import stubUndefined from './stubUndefined';
 import noop from './noop';
 
 // Type
@@ -76,6 +77,7 @@ export { default as isNotFinite } from './isNotFinite';
 export { default as isInteger } from './isInterger';
 export { default as isNotInteger } from './isNotInteger';
 // Function
+export { default as stubUndefined } from './stubUndefined';
 export { default as noop } from './noop';
 
 /**
@@ -120,6 +122,7 @@ const RA = {
   isInteger,
   isNotInteger,
   // Function
+  stubUndefined,
   noop,
 };
 

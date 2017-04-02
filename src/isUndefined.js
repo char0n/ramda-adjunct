@@ -1,5 +1,7 @@
 import { equals } from 'ramda';
 
+import stubUndefined from './stubUndefined';
+
 /**
  * Checks if input value is `undefined`.
  *
@@ -17,4 +19,4 @@ import { equals } from 'ramda';
  * RA.isUndefined(undefined); //=> true
  * RA.isUndefined(null); //=> false
  */
-export default equals(undefined);
+export default equals(stubUndefined());

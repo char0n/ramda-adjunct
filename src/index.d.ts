@@ -126,66 +126,71 @@ declare namespace RamdaAdjunct {
         /**
          * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
          */
-        isPlainObject(val: any): boolean
+        isPlainObject(val: any): boolean;
 
         /**
          * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
          */
-        isNotPlainObject(val: any): boolean
+        isNotPlainObject(val: any): boolean;
 
         /**
          * Checks if value is `Date` object.
          */
-        isDate(val: any): val is Date
+        isDate(val: any): val is Date;
 
         /**
          * Checks if value is complement of `Date` object
          */
-        isNotDate(val: any): boolean
+        isNotDate(val: any): boolean;
 
         /**
          * Checks whether the passed value is `NaN` and its type is `Number`.
          * It is a more robust version of the original, global isNaN().
          */
-        isNaN(val: any): boolean
+        isNaN(val: any): boolean;
 
         /**
          * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
          */
-        isNotNaN(val: any): boolean
+        isNotNaN(val: any): boolean;
 
         /**
          * Checks if value is a `Number` primitive or object
          */
-        isNumber(val: any): val is Number
+        isNumber(val: any): val is Number;
 
         /**
          * Checks if value is a complement of `Number` primitive or object
          */
-        isNotNumber(val: any): boolean
+        isNotNumber(val: any): boolean;
 
         /**
          * Checks whether the passed value is a finite `Number`.
          */
-        isFinite(val: any): boolean
+        isFinite(val: any): boolean;
 
         /**
          * Checks whether the passed value is complement of finite `Number`.
          */
-        isNotFinite(val: any): boolean
+        isNotFinite(val: any): boolean;
 
         /**
          * Checks whether the passed value is a an `integer`.
          */
-        isInteger(val: any): boolean
+        isInteger(val: any): boolean;
 
         /**
          * Checks whether the passed value is complement of `integer`.
          */
-        isNotInteger(val: any): boolean
+        isNotInteger(val: any): boolean;
 
         /**
-         * A function that performs no operations
+         * A function that returns undefined.
+         */
+        stubUndefined(): undefined;
+
+        /**
+         * A function that performs no operations.
          */
         noop(): undefined
     }
