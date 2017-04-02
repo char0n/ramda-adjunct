@@ -1,5 +1,12 @@
 {
   "plugins": [
+    // stage-3
+    "transform-object-rest-spread",
+    "transform-async-generator-functions",
+    "syntax-trailing-function-commas",
+    "transform-async-to-generator",
+    // ES2016
+    "transform-exponentiation-operator",
     // ES2015
     "check-es2015-constants",
     "transform-es2015-arrow-functions",
@@ -20,14 +27,7 @@
     ["transform-es2015-template-literals", { "loose": true }],
     "transform-es2015-typeof-symbol",
     "transform-es2015-unicode-regex",
-    "transform-regenerator",
-    // ES2016
-    "transform-exponentiation-operator",
-    // stage-3
-    "transform-object-rest-spread",
-    "transform-async-generator-functions",
-    "syntax-trailing-function-commas",
-    "transform-async-to-generator"
+    "transform-regenerator"
   ],
   "env": {
     "commonjs": {
