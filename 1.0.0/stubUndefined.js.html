@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotBoolean.js - Documentation</title>
+    <title>stubUndefined.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotBoolean.js</h1>
+    <h1 class="page-title">stubUndefined.js</h1>
     
 
     
@@ -39,28 +39,23 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isBoolean from './isBoolean';
+            <pre class="prettyprint source linenums"><code>import { always } from 'ramda';
 
 /**
- * Checks if input value is complement of `Boolean`.
+ * A function that returns undefined.
  *
- * @func isNotBoolean
+ * @func stubUndefined
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isBoolean|isBoolean}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.0.0|v1.0.0}
+ * @category Function
+ * @sig ... -> undefined
+ * @return {undefined}
  * @example
  *
- * RA.isNotBoolean(false); //=> false
- * RA.isNotBoolean(true); //=> false
- * RA.isNotBoolean(null); //=> true
+ * RA.stubUndefined(); //=> undefined
+ * RA.stubUndefined(1, 2, 3); // undefined
  */
-export default complement(isBoolean);
+export default always(void 0); // eslint-disable-line no-void
 </code></pre>
         </article>
     </section>
