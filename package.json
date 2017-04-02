@@ -13,7 +13,7 @@
   },
   "browser": "./dist/RA.web.min.js",
   "main": "./lib/index.js",
-  "module": "./es/index/js",
+  "module": "./es/index.js",
   "jsnext:main": "./es/index.js",
   "typings": "src/index.d.ts",
   "engines": {

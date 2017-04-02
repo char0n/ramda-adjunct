@@ -1,3 +1,15 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/char0n/ramda-adjunct/compare/v0.7.0...v1.0.0) (2017-04-02)
+
+
+### Features
+
+* add noop ([38877c5](https://github.com/char0n/ramda-adjunct/commit/38877c5)), closes [#36](https://github.com/char0n/ramda-adjunct/issues/36)
+* add stubUndefined ([7e47e45](https://github.com/char0n/ramda-adjunct/commit/7e47e45)), closes [#49](https://github.com/char0n/ramda-adjunct/issues/49)
+* use es2015 imports ([8e86019](https://github.com/char0n/ramda-adjunct/commit/8e86019))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/char0n/ramda-adjunct/compare/v0.6.0...v0.7.0) (2017-03-26)
 
