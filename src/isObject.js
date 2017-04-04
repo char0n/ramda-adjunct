@@ -26,4 +26,6 @@ import isOfTypeObject from './internal/isOfTypeObject';
  * RA.isObject(undefined); //=> false
  */
 /* eslint-enable max-len */
-export default both(isNotNull, anyPass([isOfTypeObject, isFunction]));
+const isObject = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
+
+export default isObject;

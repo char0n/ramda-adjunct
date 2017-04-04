@@ -16,4 +16,6 @@ import _isString from 'ramda/src/internal/_isString';
  * RA.isString('abc'); //=> true
  * RA.isString(1); //=> false
  */
-export default _isString;
+const isString = _isString;
+
+export default isString;

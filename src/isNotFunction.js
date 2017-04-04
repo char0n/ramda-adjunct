@@ -24,4 +24,6 @@ import isFunction from './isFunction';
  * RA.isNotFunction('abc'); //=> true
  */
 /* eslint-enable max-len */
-export default complement(isFunction);
+const isNotFunction = complement(isFunction);
+
+export default isNotFunction;

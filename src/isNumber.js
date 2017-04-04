@@ -18,4 +18,6 @@ import _isNumber from 'ramda/src/internal/_isNumber';
  * RA.isNumber(-Infinity); // => true
  * RA.isNumber('5'); // => false
  */
-export default _isNumber;
+const isNumber = _isNumber;
+
+export default isNumber;

@@ -14,4 +14,6 @@ import { always } from 'ramda';
  * RA.stubUndefined(); //=> undefined
  * RA.stubUndefined(1, 2, 3); //=> undefined
  */
-export default always(void 0); // eslint-disable-line no-void
+const stubUndefined = always(void 0); // eslint-disable-line no-void
+
+export default stubUndefined;

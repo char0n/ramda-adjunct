@@ -26,4 +26,6 @@ import _isFinite from './isFinite';
  * RA.isNotFinite('0');  // => true
  * RA.isNotFinite(null); // => true
  */
-export default complement(_isFinite);
+const isNotFinite = complement(_isFinite);
+
+export default isNotFinite;

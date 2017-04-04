@@ -36,7 +36,7 @@ const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor)
  * RA.isPlainObject(new Object()); //=> true
  */
 /* eslint-enable max-len */
-export default (val) => {
+const isPlainObject = (val) => {
   if (!isObjectLike(val) || !_isObject(val)) { return false }
 
   const proto = Object.getPrototypeOf(val);
@@ -45,3 +45,5 @@ export default (val) => {
 
   return hasObjectConstructor(proto);
 };
+
+export default isPlainObject;

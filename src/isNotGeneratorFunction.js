@@ -22,4 +22,6 @@ import isGeneratorFunction from './isGeneratorFunction';
  * RA.isNotGeneratorFunction(() => {}); //=> true
  */
 /* eslint-enable max-len */
-export default complement(isGeneratorFunction);
+const isNotGeneratorFunction = complement(isGeneratorFunction);
+
+export default isNotGeneratorFunction;

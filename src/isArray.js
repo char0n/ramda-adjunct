@@ -17,4 +17,6 @@ import _isArray from 'ramda/src/internal/_isArray';
  * RA.isArray(null); //=> false
  * RA.isArray({}); //=> false
  */
-export default _isArray;
+const isArray = _isArray;
+
+export default isArray;

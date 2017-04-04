@@ -16,4 +16,6 @@ import { curryN, compose, values, pickAll } from 'ramda';
  *
  * RA.pickIndexes([0, 2], ['a', 'b', 'c']); //=> ['a', 'c']
  */
-export default curryN(2, compose(values, pickAll));
+const pickIndexes = curryN(2, compose(values, pickAll));
+
+export default pickIndexes;

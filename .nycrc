@@ -3,11 +3,13 @@
     "lcov",
     "text-summary"
   ],
+  "include": [
+    "src/**/*.js"
+  ],
   "report-dir": "./coverage",
   "check-coverage": true,
-  "exclude": [
-    "webpack.config-test.node.js",
-    ".tmp/**/*",
-    "test/**/*"
-  ]
+  "all": true,
+  "cache": false,
+  "sourceMap": false,
+  "instrument": false
 }

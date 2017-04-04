@@ -17,4 +17,6 @@ import { equals } from 'ramda';
  * RA.isNull(undefined); //=> false
  * RA.isNull(null); //=> true
  */
-export default equals(null);
+const isNull = equals(null);
+
+export default isNull;

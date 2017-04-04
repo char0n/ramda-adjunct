@@ -25,4 +25,6 @@ import isOfTypeObject from './internal/isOfTypeObject';
  * RA.isObjectLike(undefined); //=> false
  */
 /* eslint-enable max-len */
-export default both(isNotNull, isOfTypeObject);
+const isObjectLike = both(isNotNull, isOfTypeObject);
+
+export default isObjectLike;

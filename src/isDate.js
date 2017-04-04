@@ -16,4 +16,6 @@ import { is } from 'ramda';
  * RA.isDate(new Date()); //=> true
  * RA.isDate('1997-07-16T19:20+01:00'); //=> false
  */
-export default is(Date);
+const isDate = is(Date);
+
+export default isDate;

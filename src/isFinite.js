@@ -27,4 +27,6 @@ import polyfill from './internal/polyfills/Number.isFinite';
  * RA.isFinite(null); // => false
  *                    // would've been true with global isFinite(null)
  */
-export default or(Number.isFinite, polyfill);
+const _isFinite = or(Number.isFinite, polyfill);
+
+export default _isFinite;

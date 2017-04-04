@@ -18,4 +18,6 @@ import isString from './isString';
  * RA.isNotString('abc'); //=> false
  * RA.isNotString(1); //=> true
  */
-export default complement(isString);
+const isNotString = complement(isString);
+
+export default isNotString;

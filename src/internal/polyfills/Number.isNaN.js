@@ -2,5 +2,6 @@ import { both } from 'ramda';
 
 import isNumber from '../../isNumber';
 
+const isNaNPolyfill = both(isNumber, isNaN);
 
-export default both(isNumber, isNaN);
+export default isNaNPolyfill;

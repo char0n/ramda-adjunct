@@ -23,4 +23,6 @@ import isAsyncFunction from './isAsyncFunction';
  * RA.isNotAsyncFunction(() => {}); //=> true
  */
 /* eslint-enable max-len */
-export default complement(isAsyncFunction);
+const isNotAsyncFunction = complement(isAsyncFunction);
+
+export default isNotAsyncFunction;

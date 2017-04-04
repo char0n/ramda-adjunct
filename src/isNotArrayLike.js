@@ -19,4 +19,6 @@ import { complement, isArrayLike } from 'ramda';
  * RA.isNotArrayLike({length: 10}); //=> true
  * RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false
  */
-export default complement(isArrayLike);
+const isNotArrayLike = complement(isArrayLike);
+
+export default isNotArrayLike;

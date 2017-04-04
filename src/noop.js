@@ -16,4 +16,6 @@ import stubUndefined from './stubUndefined';
  * RA.noop(); //=> undefined
  * RA.noop(1, 2, 3); //=> undefined
  */
-export default always(stubUndefined());
+const noop = always(stubUndefined());
+
+export default noop;

@@ -28,9 +28,11 @@ try {
  * RA.isGeneratorFunction(() => {}); //=> false
  */
 /* eslint-enable max-len */
-export default (val) => {
+const isGeneratorFunction = (val) => {
   const toStringCheck = Object.prototype.toString.call(val) === '[object AsyncFunction]';
   const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
 
   return or(toStringCheck, legacyConstructorCheck);
 };
+
+export default isGeneratorFunction;

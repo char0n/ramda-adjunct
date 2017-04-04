@@ -19,4 +19,6 @@ import stubUndefined from './stubUndefined';
  * RA.isUndefined(undefined); //=> true
  * RA.isUndefined(null); //=> false
  */
-export default equals(stubUndefined());
+const isUndefined = equals(stubUndefined());
+
+export default isUndefined;

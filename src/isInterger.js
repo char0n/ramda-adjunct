@@ -30,4 +30,6 @@ import polyfill from './internal/polyfills/Number.isInteger';
  * RA.isInteger(false);     //=> false
  * RA.isInteger([1]);       //=> false
  */
-export default or(Number.isInteger, polyfill);
+const isInteger = or(Number.isInteger, polyfill);
+
+export default isInteger;

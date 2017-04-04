@@ -18,4 +18,6 @@ import isDate from './isDate';
  * RA.isNotDate(new Date()); //=> false
  * RA.isNotDate('1997-07-16T19:20+01:00'); //=> true
  */
-export default complement(isDate);
+const isNotDate = complement(isDate);
+
+export default isNotDate;

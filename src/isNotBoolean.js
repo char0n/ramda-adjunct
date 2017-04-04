@@ -19,4 +19,6 @@ import isBoolean from './isBoolean';
  * RA.isNotBoolean(true); //=> false
  * RA.isNotBoolean(null); //=> true
  */
-export default complement(isBoolean);
+const isNotBoolean = complement(isBoolean);
+
+export default isNotBoolean;

@@ -19,4 +19,6 @@ import isNull from './isNull';
  * RA.isNotNull(undefined); //=> true
  * RA.isNotNull(null); //=> false
  */
-export default complement(isNull);
+const isNotNull = complement(isNull);
+
+export default isNotNull;

@@ -18,5 +18,6 @@
  * RA.isAsyncFunction(() => {}); //=> false
  */
 /* eslint-enable max-len */
+const isAsyncFunction = val => Object.prototype.toString.call(val) === '[object AsyncFunction]';
 
-export default val => Object.prototype.toString.call(val) === '[object AsyncFunction]';
+export default isAsyncFunction;

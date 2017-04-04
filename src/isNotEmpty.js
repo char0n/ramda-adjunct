@@ -21,4 +21,6 @@ import { complement, isEmpty } from 'ramda';
  * RA.isNotEmpty({}); //=> false
  * RA.isNotEmpty({length: 0}); //=> true
  */
-export default complement(isEmpty);
+const isNotEmpty = complement(isEmpty);
+
+export default isNotEmpty;

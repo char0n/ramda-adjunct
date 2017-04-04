@@ -29,4 +29,6 @@ import isPlainObject from './isPlainObject';
  * RA.isNotPlainObject(new Object()); //=> false
  */
 /* eslint-enable max-len */
-export default complement(isPlainObject);
+const isNotPlainObject = complement(isPlainObject);
+
+export default isNotPlainObject;

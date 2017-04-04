@@ -17,4 +17,6 @@ import { is } from 'ramda';
  * RA.isBoolean(true); //=> true
  * RA.isBoolean(null); //=> false
  */
-export default is(Boolean);
+const isBoolean = is(Boolean);
+
+export default isBoolean;

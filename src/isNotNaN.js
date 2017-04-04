@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isNaN from './isNaN';
+import _isNaN from './isNaN';
 
 /**
  * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
@@ -32,4 +32,6 @@ import isNaN from './isNaN';
  * RA.isNotNaN(''); // => true
  * RA.isNotNaN(' '); // => true
  */
-export default complement(isNaN);
+const isNotNaN = complement(_isNaN);
+
+export default isNotNaN;

@@ -19,4 +19,6 @@ import isArray from './isArray';
  * RA.isNotArray(null); //=> true
  * RA.isNotArray({}); //=> true
  */
-export default complement(isArray);
+const isNotArray = complement(isArray);
+
+export default isNotArray;

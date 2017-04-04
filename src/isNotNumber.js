@@ -21,4 +21,6 @@ import isNumber from './isNumber';
  * RA.isNotNumber(-Infinity); // => false
  * RA.isNotNumber('5'); // => true
  */
-export default complement(isNumber);
+const isNotNumber = complement(isNumber);
+
+export default isNotNumber;

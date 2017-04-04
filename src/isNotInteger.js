@@ -32,4 +32,6 @@ import isInteger from './isInterger';
  * RA.isNotInteger(false);     //=> true
  * RA.isNotInteger([1]);       //=> true
  */
-export default complement(isInteger);
+const isNotInteger = complement(isInteger);
+
+export default isNotInteger;

@@ -19,4 +19,6 @@ import isUndefined from './isUndefined';
  * RA.isNotUndefined(undefined); //=> false
  * RA.isNotUndefined(null); //=> true
  */
-export default complement(isUndefined);
+const isNotUndefined = complement(isUndefined);
+
+export default isNotUndefined;

@@ -24,4 +24,6 @@ import isObject from './isObject';
  * RA.isNotObject(undefined); //=> true
  */
 /* eslint-enable max-len */
-export default complement(isObject);
+const isNotObject = complement(isObject);
+
+export default isNotObject;

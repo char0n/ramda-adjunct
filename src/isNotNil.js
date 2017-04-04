@@ -18,4 +18,6 @@ import { isNil, complement } from 'ramda';
  * RA.isNotNil(0); //=> true
  * RA.isNotNil([]); //=> true
  */
-export default complement(isNil);
+const isNotNil = complement(isNil);
+
+export default isNotNil;

@@ -35,4 +35,6 @@ import polyfill from './internal/polyfills/Number.isNaN';
  * RA.isNaN(''); // => false
  * RA.isNaN(' '); // => false
  */
-export default or(Number.isNaN, polyfill);
+const _isNaN = or(Number.isNaN, polyfill);
+
+export default _isNaN;

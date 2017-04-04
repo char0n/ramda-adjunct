@@ -21,4 +21,6 @@ import { anyPass, isEmpty, isNil } from 'ramda';
  * RA.isNilOrEmpty({}); //=> true
  * RA.isNilOrEmpty({length: 0}); //=> false
  */
-export default anyPass([isNil, isEmpty]);
+const isNilOrEmpty = anyPass([isNil, isEmpty]);
+
+export default isNilOrEmpty;

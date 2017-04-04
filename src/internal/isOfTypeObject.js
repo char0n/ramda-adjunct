@@ -1,1 +1,3 @@
-export default val => typeof val === 'object';
+const isOfTypeObject = val => typeof val === 'object';
+
+export default isOfTypeObject;

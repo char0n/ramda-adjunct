@@ -26,4 +26,6 @@ import isAsyncFunction from './isAsyncFunction';
  * RA.isFunction('abc'); //=> false
  */
 /* eslint-enable max-len */
-export default anyPass([_isFunction, isGeneratorFunction, isAsyncFunction]);
+const isFunction = anyPass([_isFunction, isGeneratorFunction, isAsyncFunction]);
+
+export default isFunction;
