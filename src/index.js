@@ -38,6 +38,8 @@ import isNotInteger from './isNotInteger';
 // Function
 import stubUndefined from './stubUndefined';
 import noop from './noop';
+// List
+import pickIndexes from './pickIndexes';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -79,6 +81,8 @@ export { default as isNotInteger } from './isNotInteger';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as noop } from './noop';
+// List
+export { default as pickIndexes } from './pickIndexes';
 
 /**
  * @namespace RA
@@ -124,6 +128,8 @@ const RA = {
   // Function
   stubUndefined,
   noop,
+  // List
+  pickIndexes,
 };
 
 export default RA;
