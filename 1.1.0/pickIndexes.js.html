@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNaN.js - Documentation</title>
+    <title>pickIndexes.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,7 +29,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNaN.js</h1>
+    <h1 class="page-title">pickIndexes.js</h1>
     
 
     
@@ -39,41 +39,25 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isNaN from './isNaN';
+            <pre class="prettyprint source linenums"><code>import { curryN, compose, values, pickAll } from 'ramda';
 
 /**
- * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
+ * Picks values from list by indexes.
  *
- * @func isNotNaN
+ * @func pickIndexes
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNaN|isNaN}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.1.0|v1.1.0}
+ * @category List
+ * @sig  [Number] -> [a] -> [a]
+ * @param {Array} indexes The indexes to pick
+ * @param {Array} list The list to pick values from
+ * @return {Array} New array containing only values at `indexes`
+ * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#pick-values-a-from-list-by-indexes|Ramda Cookbook}
  * @example
  *
- * RA.isNotNaN(NaN); // => false
- * RA.isNotNaN(Number.NaN); // => false
- * RA.isNotNaN(0 / 0); // => false
- *
- * RA.isNotNaN('NaN'); // => true
- * RA.isNotNaN(undefined); // => true
- * RA.isNotNaN({}); // => true
- * RA.isNotNaN('blabla'); // => true
- *
- * RA.isNotNaN(true); // => true
- * RA.isNotNaN(null); // => true
- * RA.isNotNaN(37); // => true
- * RA.isNotNaN('37'); // => true
- * RA.isNotNaN('37.37'); // => true
- * RA.isNotNaN(''); // => true
- * RA.isNotNaN(' '); // => true
+ * RA.pickIndexes([0, 2], ['a', 'b', 'c']); //=> ['a', 'c']
  */
-export default complement(isNaN);
+export default curryN(2, compose(values, pickAll));
 </code></pre>
         </article>
     </section>
