@@ -1,5 +1,7 @@
 {
   "title": "Ramda Adjunct",
+  "github": "https://github.com/char0n/ramda-adjunct",
+  "gitter": "https://gitter.im/ramda-adjunct/Lobby",
   "tags": {
     "allowUnknownTags": true,
     "dictionaries": ["jsdoc","closure"]
