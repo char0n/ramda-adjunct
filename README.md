@@ -171,7 +171,7 @@ isArray([]);
 
 ## Typescript support
 
-Although Ramda Adjunct is written in ES6, we support **Typescript**. When Ramda Adjunct 
+Although Ramda Adjunct is written in ES2016, we support **Typescript**. When Ramda Adjunct 
 gets imported into Typescript project, typings are automatically imported and used.
 
 ## Author
