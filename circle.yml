@@ -28,6 +28,7 @@ test:
         environment:
           MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
     - npm run test:web
+    - npm run test:ramda
 
 notify:
   webhooks:

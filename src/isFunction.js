@@ -1,5 +1,4 @@
 import { anyPass } from 'ramda';
-import _isFunction from 'ramda/src/internal/_isFunction';
 
 import isGeneratorFunction from './isGeneratorFunction';
 import isAsyncFunction from './isAsyncFunction';
@@ -26,6 +25,10 @@ import isAsyncFunction from './isAsyncFunction';
  * RA.isFunction('abc'); //=> false
  */
 /* eslint-enable max-len */
-const isFunction = anyPass([_isFunction, isGeneratorFunction, isAsyncFunction]);
+const isFunction = anyPass([
+  val => Object.prototype.toString.call(val) === '[object Function]',
+  isGeneratorFunction,
+  isAsyncFunction,
+]);
 
 export default isFunction;
