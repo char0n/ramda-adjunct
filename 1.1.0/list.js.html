@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isArray.js - Documentation</title>
+    <title>list.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isArray.js</h1>
+    <h1 class="page-title">list.js</h1>
     
 
     
@@ -43,28 +43,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import _isArray from 'ramda/src/internal/_isArray';
+            <pre class="prettyprint source linenums"><code>import { unapply, identity } from 'ramda';
 
 /**
- * Checks if input value is `Array`.
+ * Creates a list from from arguments.
  *
- * @func isArray
+ * @func list
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotArray|isNotArray}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.1.0|v1.1.0}
+ * @category List
+ * @sig  a... -> [a...]
+ * @param {...*} items The items of the feature list
+ * @return {Array} New list created from items
+ * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#create-a-list-function|Ramda Cookbook}
  * @example
  *
- * RA.isArray([]); //=> true
- * RA.isArray(null); //=> false
- * RA.isArray({}); //=> false
+ * RA.list('a', 'b', 'c'); //=> ['a', 'b', 'c']
  */
-const isArray = _isArray;
+const list = unapply(identity);
 
-export default isArray;
+export default list;
 </code></pre>
         </article>
     </section>
