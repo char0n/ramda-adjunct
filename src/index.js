@@ -40,6 +40,7 @@ import stubUndefined from './stubUndefined';
 import noop from './noop';
 // List
 import pickIndexes from './pickIndexes';
+import list from './list';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -83,6 +84,7 @@ export { default as stubUndefined } from './stubUndefined';
 export { default as noop } from './noop';
 // List
 export { default as pickIndexes } from './pickIndexes';
+export { default as list } from './list';
 
 /**
  * @namespace RA
@@ -130,6 +132,7 @@ const RA = {
   noop,
   // List
   pickIndexes,
+  list,
 };
 
 export default RA;

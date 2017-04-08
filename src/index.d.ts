@@ -192,13 +192,18 @@ declare namespace RamdaAdjunct {
         /**
          * A function that performs no operations.
          */
-        noop(): undefined
+        noop(): undefined;
 
         /**
          * Picks values from list by indexes.
          */
-        pickIndexes<T>(indexes: Array<number>, list: Array<T>): Array<T>
-        pickIndexes(indexes: Array<number>): <T>(list: Array<T>) => Array<T>
+        pickIndexes<T>(indexes: Array<number>, list: Array<T>): Array<T>;
+        pickIndexes(indexes: Array<number>): <T>(list: Array<T>) => Array<T>;
+
+        /**
+         * Creates a list from from arguments.
+         */
+        list(...items: any[]): Array<any>;
     }
 
 }
