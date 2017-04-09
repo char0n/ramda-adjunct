@@ -1,3 +1,14 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/char0n/ramda-adjunct/compare/v1.0.0...v1.1.0) (2017-04-09)
+
+
+### Features
+
+* add list ([30506b1](https://github.com/char0n/ramda-adjunct/commit/30506b1))
+* add pickIndexes ([17cc387](https://github.com/char0n/ramda-adjunct/commit/17cc387))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/char0n/ramda-adjunct/compare/v0.7.0...v1.0.0) (2017-04-02)
 
