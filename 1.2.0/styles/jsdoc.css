@@ -317,6 +317,10 @@ footer {
    margin: 0
 }
 
+.details .tag-sig pre {
+  margin: 0
+}
+
 .details .object-value {
    padding-top: 0
 }
