@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNumber.js - Documentation</title>
+    <title>resetToDefault.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNumber.js</h1>
+    <h1 class="page-title">resetToDefault.js</h1>
     
 
     
@@ -43,32 +43,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isNumber from './isNumber';
-
+            <pre class="prettyprint source linenums"><code>import { merge, flip, curryN } from 'ramda';
 
 /**
- * Checks if value is a complement of `Number` primitive or object.
+ * Reset properties of the object to their default values.
  *
- * @func isNotNumber
+ * @func resetToDefault
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNumber|isNumber}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.2.0|v1.2.0}
+ * @category Object
+ * @sig
+ *
+ * DefaultOptions -> Options -> Defaults
+ *       DefaultOptions = Object
+ *       Options = Object
+ *       Defaults = Object
+ *
+ * @param {Object} defaultOptions The default options
+ * @param {Object} options The options passed
+ * @return {!Object} Merged option object
+ * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#set-properties-only-if-they-dont-exist|Ramda Cookbook}, {@link defaults|defaults}
  * @example
  *
- * RA.isNotNumber(5); // => false
- * RA.isNotNumber(Number.MAX_VALUE); // => false
- * RA.isNotNumber(-Infinity); // => false
- * RA.isNotNumber('5'); // => true
+ * RA.resetToDefault({ 'a': 1 }, { 'a': 2, 'b': 2 }); //=> { 'a': 1, 'b': 2 }
  */
-const isNotNumber = complement(isNumber);
+const resetToDefault = curryN(2, flip(merge));
 
-export default isNotNumber;
+export default resetToDefault;
 </code></pre>
         </article>
     </section>
