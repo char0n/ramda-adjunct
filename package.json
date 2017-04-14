@@ -84,7 +84,7 @@
     "codecov": "=2.1.0",
     "conventional-changelog-cli": "=1.3.1",
     "cross-env": "=3.2.4",
-    "docdash": "git+https://github.com/char0n/docdash.git#4f394fd25bc93282a4d73a5712a9b0197338b5a4",
+    "docdash": "git+https://github.com/char0n/docdash.git#b5c18fb07f07e5600227ef2611b3540866c4ba33",
     "eslint": "=3.18.0",
     "eslint-config-airbnb": "=14.1.0",
     "eslint-plugin-import": "=2.2.0",

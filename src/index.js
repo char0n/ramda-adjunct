@@ -41,6 +41,8 @@ import noop from './noop';
 // List
 import pickIndexes from './pickIndexes';
 import list from './list';
+// Object
+import defaults from './defaults';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -85,6 +87,8 @@ export { default as noop } from './noop';
 // List
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
+// Object
+export { default as defaults } from './defaults';
 
 /**
  * @namespace RA
@@ -133,6 +137,8 @@ const RA = {
   // List
   pickIndexes,
   list,
+  // Object
+  defaults,
 };
 
 export default RA;

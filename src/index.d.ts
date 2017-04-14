@@ -204,7 +204,14 @@ declare namespace RamdaAdjunct {
          * Creates a list from from arguments.
          */
         list(...items: any[]): Array<any>;
-    }
+
+        /**
+         * Set properties only if they don't exist. Useful for passing defaults. Basically this function
+         * is the alias of {@link http://ramdajs.com/docs/#merge|merge}.
+         */
+        defaults(defaultOptions: Object, options: Object): Object
+        defaults(defaultOptions: Object): (options: Object) => Object
+ }
 
 }
 
