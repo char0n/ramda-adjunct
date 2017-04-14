@@ -43,6 +43,7 @@ import pickIndexes from './pickIndexes';
 import list from './list';
 // Object
 import defaults from './defaults';
+import resetToDefault from './resetToDefault';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -89,6 +90,7 @@ export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 // Object
 export { default as defaults } from './defaults';
+export { default as resetToDefault } from './resetToDefault';
 
 /**
  * @namespace RA
@@ -139,6 +141,7 @@ const RA = {
   list,
   // Object
   defaults,
+  resetToDefault,
 };
 
 export default RA;

@@ -211,7 +211,13 @@ declare namespace RamdaAdjunct {
          */
         defaults(defaultOptions: Object, options: Object): Object
         defaults(defaultOptions: Object): (options: Object) => Object
- }
+
+        /**
+         * Reset properties of the object to their default values.
+         */
+        resetToDefault(defaultOptions: Object, options: Object): Object
+        resetToDefault(defaultOptions: Object): (options: Object) => Object
+    }
 
 }
 
