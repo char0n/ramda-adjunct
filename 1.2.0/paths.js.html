@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotFinite.js - Documentation</title>
+    <title>paths.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotFinite.js</h1>
+    <h1 class="page-title">paths.js</h1>
     
 
     
@@ -43,37 +43,32 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import _isFinite from './isFinite';
+            <pre class="prettyprint source linenums"><code>import { curry, ap, path, __ } from 'ramda';
 
 /**
- * Checks whether the passed value is complement of finite `Number`.
+ * Acts as multiple path: arrays of keys in, array of values out. Preserves order.
  *
- *
- * @func isNotFinite
+ * @func paths
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isFinite|isFinite}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.2.0|v1.2.0}
+ * @category List
+ * @sig  [[k]] -> {k: v} - [v]
+ * @param {Array} ps The property paths to fetch
+ * @param {Object} obj The object to query
+ * @return {Array} The corresponding values or partially applied function
+ * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#derivative-of-rprops-for-deep-fields|Ramda Cookbook}, {@link http://ramdajs.com/docs/#props|props}
  * @example
  *
- * RA.isNotFinite(Infinity); //=> true
- * RA.isNotFinite(NaN); //=> true
- * RA.isNotFinite(-Infinity); //=> true
+ * const obj = {
+ *   a: { b: { c: 1 } },
+ *   x: 2,
+ * };
  *
- * RA.isNotFinite(0); // false
- * RA.isNotFinite(2e64); // false
- *
- * RA.isNotFinite('0');  // => true
- * RA.isNotFinite(null); // => true
+ * RA.paths([['a', 'b', 'c'], ['x']], obj); //=> [1, 2]
  */
-const isNotFinite = complement(_isFinite);
+const paths = curry((ps, obj) => ap([path(__, obj)], ps));
 
-export default isNotFinite;
+export default paths;
 </code></pre>
         </article>
     </section>
