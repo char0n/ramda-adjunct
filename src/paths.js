@@ -1,7 +1,7 @@
 import { curry, ap, path, __ } from 'ramda';
 
 /**
- * Acts as multiple path: arrays of keys in, array of values out. Preserves order.
+ * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
  *
  * @func paths
  * @memberOf RA

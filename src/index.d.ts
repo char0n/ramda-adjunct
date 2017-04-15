@@ -219,7 +219,7 @@ declare namespace RamdaAdjunct {
         resetToDefault(defaultOptions: Object): (options: Object) => Object
 
         /**
-         * Acts as multiple path: arrays of keys in, array of values out. Preserves order.
+         * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
          */
         paths(ps: Array<Array<string | number>>, obj: Object): Array<any>
         paths(ps: Array<Array<string | number>>): (obj: Object) => Array<any>
