@@ -1,6 +1,7 @@
 'use strict';
 
 const webpack = require('webpack');
+const path = require('path');
 
 const minimizeTrait = {
   plugins: [
@@ -22,7 +23,7 @@ const ra = {
   entry: './src/index.js',
   target: 'node',
   output: {
-    path: './dist',
+    path: path.resolve('./dist'),
     filename: 'RA.node.js',
     libraryTarget: 'umd',
     library: 'RA',
@@ -43,7 +44,7 @@ const raMin = Object.assign({
   entry: './src/index.js',
   target: 'node',
   output: {
-    path: './dist',
+    path: path.resolve('./dist'),
     filename: 'RA.node.min.js',
     libraryTarget: 'umd',
     library: 'RA',
@@ -64,7 +65,7 @@ const raWeb = {
   entry: './src/index.js',
   target: 'web',
   output: {
-    path: './dist',
+    path: path.resolve('./dist'),
     filename: 'RA.web.js',
     libraryTarget: 'umd',
     library: 'RA',
@@ -86,7 +87,7 @@ const raWebMin = Object.assign({
   entry: './src/index.js',
   target: 'web',
   output: {
-    path: './dist',
+    path: path.resolve('./dist'),
     filename: 'RA.web.min.js',
     libraryTarget: 'umd',
     library: 'RA',
@@ -107,7 +108,7 @@ const raWebStandalone = {
   entry: './src/index.js',
   target: 'web',
   output: {
-    path: './dist',
+    path: path.resolve('./dist'),
     filename: 'RA.web.standalone.js',
     libraryTarget: 'umd',
     library: 'RA',
@@ -125,7 +126,7 @@ const rawWebStandaloneMin = Object.assign({
   entry: './src/index.js',
   target: 'web',
   output: {
-    path: './dist',
+    path: path.resolve('./dist'),
     filename: 'RA.web.standalone.min.js',
     libraryTarget: 'umd',
     library: 'RA',

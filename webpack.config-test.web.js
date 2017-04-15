@@ -1,12 +1,13 @@
 'use strict';
 
 const glob = require('glob'); // eslint-disable-line import/no-extraneous-dependencies
+const path = require('path');
 
 module.exports = {
   target: 'web',
   entry: glob.sync('./test/*.js'),
   output: {
-    path: '.',
+    path: path.resolve('.'),
     filename: 'tmp-test-bundle.js',
   },
   externals: {
