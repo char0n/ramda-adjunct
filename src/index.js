@@ -44,6 +44,7 @@ import list from './list';
 // Object
 import defaults from './defaults';
 import resetToDefault from './resetToDefault';
+import paths from './paths';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -91,6 +92,7 @@ export { default as list } from './list';
 // Object
 export { default as defaults } from './defaults';
 export { default as resetToDefault } from './resetToDefault';
+export { default as paths } from './paths';
 
 /**
  * @namespace RA
@@ -142,6 +144,7 @@ const RA = {
   // Object
   defaults,
   resetToDefault,
+  paths,
 };
 
 export default RA;
