@@ -2,6 +2,14 @@ declare var RA: RamdaAdjunct.Static;
 
 declare namespace RamdaAdjunct {
 
+    interface Apply {
+        app: Function;
+    }
+
+    interface Variadic<T1, T2> {
+        (...args: T1[]): T2;
+    }
+
     export interface Static {
         /**
          * Checks if input value is `Array`
@@ -223,6 +231,18 @@ declare namespace RamdaAdjunct {
          */
         paths(ps: Array<Array<string | number>>, obj: Object): Array<any>
         paths(ps: Array<Array<string | number>>): (obj: Object) => Array<any>
+
+        /**
+         * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
+         * the Apply spec of algebraic structures.
+         */
+        liftFN<T>(arity: number, fn: Variadic<Apply, T>): Apply
+
+        /**
+         * "lifts" a function of arity > 1 so that it may "map over" objects that satisfy
+         * the Apply spec of algebraic structures.
+         */
+        liftF<T>(fn: Variadic<Apply, T>): Apply
     }
 
 }
