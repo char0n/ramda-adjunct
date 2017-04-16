@@ -1,3 +1,17 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/char0n/ramda-adjunct/compare/v1.1.0...v1.2.0) (2017-04-16)
+
+
+### Features
+
+* add defaults alias to merge ([9a3aa17](https://github.com/char0n/ramda-adjunct/commit/9a3aa17))
+* add liftF ([b475d5d](https://github.com/char0n/ramda-adjunct/commit/b475d5d))
+* add liftFN ([f65a52e](https://github.com/char0n/ramda-adjunct/commit/f65a52e))
+* add paths ([c409d6b](https://github.com/char0n/ramda-adjunct/commit/c409d6b)), closes [#54](https://github.com/char0n/ramda-adjunct/issues/54)
+* add resetToDefault ([d5202fb](https://github.com/char0n/ramda-adjunct/commit/d5202fb))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/char0n/ramda-adjunct/compare/v1.0.0...v1.1.0) (2017-04-09)
 
