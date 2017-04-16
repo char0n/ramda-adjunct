@@ -38,6 +38,7 @@ import isNotInteger from './isNotInteger';
 // Function
 import stubUndefined from './stubUndefined';
 import noop from './noop';
+import liftFN from './liftFN';
 // List
 import pickIndexes from './pickIndexes';
 import list from './list';
@@ -86,6 +87,7 @@ export { default as isNotInteger } from './isNotInteger';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as noop } from './noop';
+export { default as liftFN } from './liftFN';
 // List
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
@@ -138,6 +140,7 @@ const RA = {
   // Function
   stubUndefined,
   noop,
+  liftFN,
   // List
   pickIndexes,
   list,
