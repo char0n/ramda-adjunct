@@ -1,13 +1,54 @@
-import { curry, last, slice, reverse, reduce, pipe, ap, curryN, map, flip } from 'ramda';
+import fantasyLand from 'fantasy-land';
+import { curry, head, slice, reduce, ap as apR, curryN, map, add, flip } from 'ramda';
+
+
+const applicativeTrait = {
+  of(value) {
+    return { ...this, value };
+  },
+};
+applicativeTrait[fantasyLand.of] = applicativeTrait.of;
+
+const functorTrait = {
+  map(fn) {
+    return this.of(fn(this.value));
+  },
+};
+functorTrait[fantasyLand.map] = functorTrait.map;
+
+const applyTrait = {
+  ap(monadWithApplyOfAFunction) {
+    return monadWithApplyOfAFunction.map(fn => fn(this.value));
+  },
+};
+applyTrait[fantasyLand.ap] = applyTrait.ap;
+
+const Monad = { ...applicativeTrait, ...functorTrait, ...applyTrait };
+const m1 = Monad.of(1);
+const m2 = Monad.of(2).map(add);
+
+
+export const createAp = (ap1, ap2) => {
+  try {
+    // new version of `ap` starting from ramda version > 0.23.0
+    return ap1.ap(ap2) && apR;
+  } catch (e) {
+    // old version of `ap` till ramda version <= 0.23.0
+    return curryN(2, flip(apR));
+  }
+};
+
+const ap = createAp(m2, m1);
 
 /**
  * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
- * the Apply spec of algebraic structures. This function is not compatible
- * with {@link https://github.com/fantasyland/fantasy-land#apply|FantasyLand Apply spec}.
+ * the fantasy land Apply spec of algebraic structures.
  *
  * Lifting is specific for {@link https://github.com/scalaz/scalaz|scalaz} and {@link http://www.functionaljava.org/|functional java} implementations.
- * One of the mainstream libraries that uses this Apply spec is {@link https://cwmyers.github.io/monet.js/|monet.js}.
- * This function acts as interop for ramda and monet.js.
+ * Old version of fantasy land spec were not compatible with this approach,
+ * but as of fantasy land 1.0.0 Apply spec also adopted this approach.
+ *
+ * This function acts as interop for ramda <= 0.23.0 and {@link https://cwmyers.github.io/monet.js/|monet.js}.
  *
  * More info {@link https://github.com/fantasyland/fantasy-land/issues/50|here}.
  *
@@ -33,9 +74,9 @@ import { curry, last, slice, reverse, reduce, pipe, ap, curryN, map, flip } from
 const liftFN = curry((arity, fn) => {
   const lifted = curryN(arity, fn);
   return curryN(arity, (...args) => {
-    const accumulator = map(lifted, last(args));
-    const apps = pipe(slice(0, arity - 1), reverse)(args);
-    return reduce(flip(ap), accumulator, apps);
+    const accumulator = map(lifted, head(args));
+    const apps = slice(1, Infinity, args);
+    return reduce(ap, accumulator, apps);
   });
 });
 

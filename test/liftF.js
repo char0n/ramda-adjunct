@@ -1,12 +1,11 @@
 import { Maybe } from 'monet';
-import { curry } from 'ramda';
 
 import RA from '../src/index';
 import eq from './shared/eq';
 
-const add3 = curry((a, b, c) => a + b + c);
-const add4 = curry((a, b, c, d) => a + b + c + d);
-const add5 = curry((a, b, c, d, e) => a + b + c + d + e);
+const add3 = (a, b, c) => a + b + c;
+const add4 = (a, b, c, d) => a + b + c + d;
+const add5 = (a, b, c, d, e) => a + b + c + d + e;
 
 describe('liftF', function() {
   const addF3 = RA.liftF(add3);

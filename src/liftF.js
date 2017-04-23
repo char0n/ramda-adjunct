@@ -1,13 +1,14 @@
 import liftFN from './liftFN';
 
 /**
- * "lifts" a function of arity > 1 so that it may "map over" objects that satisfy
- * the Apply spec of algebraic structures. This function is not compatible
- * with {@link https://github.com/fantasyland/fantasy-land#apply|FantasyLand Apply spec}.
+ * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
+ * the fantasy land Apply spec of algebraic structures.
  *
  * Lifting is specific for {@link https://github.com/scalaz/scalaz|scalaz} and {@link http://www.functionaljava.org/|functional java} implementations.
- * One of the mainstream libraries that uses this Apply spec is {@link https://cwmyers.github.io/monet.js/|monet.js}.
- * This function acts as interop for ramda and monet.js.
+ * Old version of fantasy land spec were not compatible with this approach,
+ * but as of fantasy land 1.0.0 Apply spec also adopted this approach.
+ *
+ * This function acts as interop for ramda <= 0.23.0 and {@link https://cwmyers.github.io/monet.js/|monet.js}.
  *
  * More info {@link https://github.com/fantasyland/fantasy-land/issues/50|here}.
  *

@@ -234,13 +234,13 @@ declare namespace RamdaAdjunct {
 
         /**
          * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
-         * the Apply spec of algebraic structures.
+         * the Apply spec of fantasy land.
          */
         liftFN<T>(arity: number, fn: Variadic<Apply, T>): Apply
 
         /**
          * "lifts" a function of arity > 1 so that it may "map over" objects that satisfy
-         * the Apply spec of algebraic structures.
+         * the Apply spec of fantasy land.
          */
         liftF<T>(fn: Variadic<Apply, T>): Apply
     }

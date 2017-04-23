@@ -1,12 +1,13 @@
+import chai from 'chai';
 import { Maybe } from 'monet';
-import { add, reduce, curry } from 'ramda';
+import { add, reduce } from 'ramda';
 
 import RA from '../src/index';
 import eq from './shared/eq';
 
 
 const addN = (...args) => reduce(add, 0, args);
-const add3 = curry((a, b, c) => a + b + c);
+const add3 = (a, b, c) => a + b + c;
 
 describe('liftFN', function() {
   const addN3 = RA.liftFN(3, addN);
@@ -18,7 +19,14 @@ describe('liftFN', function() {
   });
 
   it('limits a variadic function to the specified arity', function() {
-    eq(addN3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)), Maybe.Some(3));
+    eq(addN3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)), Maybe.Some(3));
+  });
+
+  it('throws error on variadic function is more arguments than arity', function() {
+    chai.assert.throws(
+      addN3.bind(null, Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
+      TypeError
+    );
   });
 
   it('can lift functions of any arity', function() {
@@ -28,6 +36,10 @@ describe('liftFN', function() {
       addN5(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
       Maybe.Some(5)
     );
+  });
+
+  it('retain order of arguments', function() {
+    eq(RA.liftFN(3, add3)(Maybe.Some('a'), Maybe.Some('b'), Maybe.Some('c')), Maybe.Some('abc'));
   });
 
   it('is curried', function() {
