@@ -1,3 +1,13 @@
+<a name="1.3.2"></a>
+## [1.3.2](https://github.com/char0n/ramda-adjunct/compare/v1.3.1...v1.3.2) (2017-04-23)
+
+
+### Bug Fixes
+
+* **liftFN:** fix multiple bugs and resolve ramda complatibility issue ([47bc23f](https://github.com/char0n/ramda-adjunct/commit/47bc23f)), closes [#59](https://github.com/char0n/ramda-adjunct/issues/59)
+
+
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/char0n/ramda-adjunct/compare/v1.3.0...v1.3.1) (2017-04-20)
 
