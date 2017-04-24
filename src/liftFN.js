@@ -1,31 +1,9 @@
-import fantasyLand from 'fantasy-land';
 import { curry, head, slice, reduce, ap as apR, curryN, map, add, flip } from 'ramda';
 
+import Identity from './internal/algebraicStructures/Identity';
 
-const applicativeTrait = {
-  of(value) {
-    return { ...this, value };
-  },
-};
-applicativeTrait[fantasyLand.of] = applicativeTrait.of;
-
-const functorTrait = {
-  map(fn) {
-    return this.of(fn(this.value));
-  },
-};
-functorTrait[fantasyLand.map] = functorTrait.map;
-
-const applyTrait = {
-  ap(monadWithApplyOfAFunction) {
-    return monadWithApplyOfAFunction.map(fn => fn(this.value));
-  },
-};
-applyTrait[fantasyLand.ap] = applyTrait.ap;
-
-const Monad = { ...applicativeTrait, ...functorTrait, ...applyTrait };
-const m1 = Monad.of(1);
-const m2 = Monad.of(2).map(add);
+const m1 = Identity.of(1);
+const m2 = Identity.of(2).map(add);
 
 
 export const createAp = (ap1, ap2) => {
