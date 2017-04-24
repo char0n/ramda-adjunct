@@ -30,6 +30,7 @@ const ra = {
   },
   externals: {
     ramda: 'ramda',
+    'fantasy-land': 'fantasy-land',
   },
   module: {
     loaders: [{
@@ -51,6 +52,7 @@ const raMin = Object.assign({
   },
   externals: {
     ramda: 'ramda',
+    'fantasy-land': 'fantasy-land',
   },
   module: {
     loaders: [{
