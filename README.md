@@ -10,6 +10,8 @@
 
 # Ramda Adjunct
 
+[![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This library is a community maintained extension of Ramda.
 
 ## Motivation
