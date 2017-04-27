@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotObjectLike.js - Documentation</title>
+    <title>cata.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotObjectLike.js</h1>
+    <h1 class="page-title">cata.js</h1>
     
 
     
@@ -43,35 +43,32 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
 
-import isObjectLike from './isObjectLike';
-
-
-/* eslint-disable max-len */
 /**
- * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
+ * The catamorphism for either. If the either is right than the right function will be executed with
+ * the right value and the value of the function returned. Otherwise the left function
+ * will be called with the left value.
  *
- * @func isNotObjectLike
+ * @func cata
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.4.0|v1.4.0}
+ * @category Function
+ * @sig (a -> b) -> (a -> c) -> Either a -> b | c
  * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isObjectLike|isObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
+ * @return {*}
+ * @see {@link RA.isNotArray|isNotArray}
  * @example
  *
- * RA.isNotObjectLike({}); //=> false
- * RA.isNotObjectLike([]); //=> false
- * RA.isNotObjectLike(() => {}); //=> true
- * RA.isNotObjectLike(null); //=> true
- * RA.isNotObjectLike(undefined); //=> true
+ * const eitherR = Either.Right(1);
+ * const eitherL = Either.Left(2);
+ *
+ * RA.cata(identity, identity, eitherR); //=> 1
+ * RA.cata(identity, identity, eitherL); //=> 2
  */
-/* eslint-enable max-len */
-const isNotObjectLike = complement(isObjectLike);
+const cata = invoker(2, 'cata');
 
-export default isNotObjectLike;
+export default cata;
 </code></pre>
         </article>
     </section>
