@@ -29,6 +29,17 @@ describe('cata', function() {
     eq(RA.cata(null, identity, eitherR), 1);
   });
 
+  it('test catamorphism on either method', function() {
+    const eitherRWithEither = Either.Right(1);
+    const eitherLWithEither = Either.Left(2);
+
+    eitherRWithEither.either = eitherRWithEither.cata;
+    eitherLWithEither.either = eitherLWithEither.cata;
+
+    eq(RA.cata(identity, identity, eitherRWithEither), 1);
+    eq(RA.cata(identity, identity, eitherLWithEither), 2);
+  });
+
   it('tests on monad without catamorphic behavior', function() {
     chai.assert.throws(RA.cata.bind(null, identity, identity, {}), TypeError);
     chai.assert.throws(RA.cata.bind(null, identity, identity, null), TypeError);
