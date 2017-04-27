@@ -1,6 +1,6 @@
 import { curry, head, slice, reduce, ap as apR, curryN, map, add, flip } from 'ramda';
 
-import Identity from './internal/algebraicStructures/Identity';
+import Identity from './internal/fantasy-land/Identity';
 
 const m1 = Identity.of(1);
 const m2 = Identity.of(2).map(add);
