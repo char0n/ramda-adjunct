@@ -2,8 +2,16 @@ declare var RA: RamdaAdjunct.Static;
 
 declare namespace RamdaAdjunct {
 
-    interface Apply {
-        app: Function;
+    interface Functor<T> {
+        map<U>(fn: (t: T) => U): Functor<U>;
+    }
+
+    interface Apply<T> extends Functor<T> {
+        ap<U>(fn: Apply<(t: T) => U>): Apply<U>;
+    }
+
+    interface Catamorphism<T> {
+        cata<T1>(leftFn: (v: T1) => T, rightFn: (v: T1) => T): T;
     }
 
     interface Variadic<T1, T2> {
@@ -236,13 +244,29 @@ declare namespace RamdaAdjunct {
          * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
          * the Apply spec of fantasy land.
          */
-        liftFN<T>(arity: number, fn: Variadic<Apply, T>): Apply
+        liftFN<T>(arity: number, fn: Variadic<Apply<T>, T>): Apply<T>
 
         /**
          * "lifts" a function of arity > 1 so that it may "map over" objects that satisfy
          * the Apply spec of fantasy land.
          */
-        liftF<T>(fn: Variadic<Apply, T>): Apply
+        liftF<T>(fn: Variadic<Apply<T>, T>): Apply<T>
+
+        /**
+         * The catamorphism for either. If the either is right than the right function will be executed with
+         * the right value and the value of the function returned. Otherwise the left function
+         * will be called with the left value.
+         */
+        cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1, rightFn: (rightValue: V2) => T2, either: Catamorphism<V1|V2>): T1|T2;
+        cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1, rightFn: (rightValue: V2) => T2): {
+            (either: Catamorphism<V1|V2>): T1|T2;
+        };
+        cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1): {
+            (rightFn: (rightValue: V2) => T1, either: Catamorphism<V1|V2>): T1|T2;
+            (rightFn: (rightValue: V2) => T1): {
+                (either: Catamorphism<V1|V2>): T1|T2;
+            }
+        }
     }
 
 }
