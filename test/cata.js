@@ -28,4 +28,10 @@ describe('cata', function() {
     chai.assert.throws(RA.cata.bind(null, identity, null, eitherR), TypeError);
     eq(RA.cata(null, identity, eitherR), 1);
   });
+
+  it('tests on monad without catamorphic behavior', function() {
+    chai.assert.throws(RA.cata.bind(null, identity, identity, {}), TypeError);
+    chai.assert.throws(RA.cata.bind(null, identity, identity, null), TypeError);
+    chai.assert.throws(RA.cata.bind(null, identity, identity, undefined), TypeError);
+  });
 });
