@@ -10,9 +10,11 @@ import { invoker } from 'ramda';
  * @since {@link https://char0n.github.io/ramda-adjunct/1.4.0|v1.4.0}
  * @category Function
  * @sig (a -> b) -> (a -> c) -> Either a -> b | c
- * @param {*} val The value to test
+ * @param {Function} leftFn The left function that consumes the left value
+ * @param {Function} rightFn The right function that consumes the right value
+ * @param {Either} either Either monad with catamorphic capabilities
  * @return {*}
- * @see {@link RA.isNotArray|isNotArray}
+ * @see {@link https://cwmyers.github.io/monet.js/#cata|Either}
  * @example
  *
  * const eitherR = Either.Right(1);
