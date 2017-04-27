@@ -29,7 +29,7 @@ try {
  */
 /* eslint-enable max-len */
 const isGeneratorFunction = (val) => {
-  const toStringCheck = Object.prototype.toString.call(val) === '[object AsyncFunction]';
+  const toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
   const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
 
   return or(toStringCheck, legacyConstructorCheck);
