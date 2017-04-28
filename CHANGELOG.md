@@ -1,3 +1,19 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/char0n/ramda-adjunct/compare/v1.3.2...v1.4.0) (2017-04-28)
+
+
+### Bug Fixes
+
+* **isGeneratorFunction:** check for GeneratorFunction instead of AsyncFunction ([853f934](https://github.com/char0n/ramda-adjunct/commit/853f934))
+
+
+### Features
+
+* add cata ([1c6fdc6](https://github.com/char0n/ramda-adjunct/commit/1c6fdc6)), closes [#58](https://github.com/char0n/ramda-adjunct/issues/58)
+* **Either:** add Either monad with basic capabilities ([ac2c51f](https://github.com/char0n/ramda-adjunct/commit/ac2c51f))
+
+
+
 <a name="1.3.2"></a>
 ## [1.3.2](https://github.com/char0n/ramda-adjunct/compare/v1.3.1...v1.3.2) (2017-04-23)
 
