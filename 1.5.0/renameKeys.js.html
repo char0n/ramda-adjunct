@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>pickIndexes.js - Documentation</title>
+    <title>renameKeys.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">pickIndexes.js</h1>
+    <h1 class="page-title">renameKeys.js</h1>
     
 
     
@@ -43,27 +43,41 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curryN, compose, values, pickAll } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry, reduce, assoc, keys, has } from 'ramda';
 
 /**
- * Picks values from list by indexes.
+ * Creates a new object with the own properties of the provided object, but the
+ * keys renamed according to the keysMap object as `{oldKey: newKey}`.
+ * When some key is not found in the keysMap, then it's passed as-is.
  *
- * @func pickIndexes
+ * Keep in mind that in the case of keys conflict is behaviour undefined and
+ * the result may vary between various JS engines!
+ *
+ * @func renameKeys
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.1.0|v1.1.0}
- * @category List
- * @sig  [Number] -> [a] -> [a]
- * @param {Array} indexes The indexes to pick
- * @param {Array} list The list to pick values from
- * @return {Array} New array containing only values at `indexes`
- * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#pick-values-a-from-list-by-indexes|Ramda Cookbook}, {@link http://ramdajs.com/docs/#props|props}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.5.0|v1.5.0}
+ * @category Object
+ * @sig {a: b} -> {a: *} -> {b: *}
+ * @param {!Object} keysMap
+ * @param {!Object} obj
+ * @return {!Object} New object with renamed keys
+ * @see {@link RA.renameKeysWith|renameKeysWith}
  * @example
  *
- * RA.pickIndexes([0, 2], ['a', 'b', 'c']); //=> ['a', 'c']
+ * const input = { firstName: 'Elisia', age: 22, type: 'human' };
+ *
+ * renameKeys({ firstName: 'name', type: 'kind', foo: 'bar' })(input);
+ * //=> { name: 'Elisia', age: 22, kind: 'human' }
  */
-const pickIndexes = curryN(2, compose(values, pickAll));
+const renameKeys = curry((keysMap, obj) =>
+  reduce((accumulator, key) => {
+    const newKeyName = has(key, keysMap) ? keysMap[key] : key;
 
-export default pickIndexes;
+    return assoc(newKeyName, obj[key], accumulator);
+  }, {}, keys(obj))
+);
+
+export default renameKeys;
 </code></pre>
         </article>
     </section>
