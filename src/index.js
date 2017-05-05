@@ -48,6 +48,7 @@ import list from './list';
 import defaults from './defaults';
 import resetToDefault from './resetToDefault';
 import paths from './paths';
+import renameKeys from './renameKeys';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -99,6 +100,7 @@ export { default as list } from './list';
 export { default as defaults } from './defaults';
 export { default as resetToDefault } from './resetToDefault';
 export { default as paths } from './paths';
+export { default as renameKeys } from './renameKeys';
 
 /**
  * @namespace RA
@@ -154,6 +156,7 @@ const RA = {
   defaults,
   resetToDefault,
   paths,
+  renameKeys,
 };
 
 export default RA;

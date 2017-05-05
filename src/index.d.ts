@@ -267,6 +267,15 @@ declare namespace RamdaAdjunct {
                 (either: Catamorphism<V1|V2>): T1|T2;
             }
         }
+
+        /**
+         * Creates a new object with the own properties of the provided object, but the
+         * keys renamed according to the keysMap object as `{oldKey: newKey}`.
+         * When some key is not found in the keysMap, then it's passed as-is.
+         */
+        renameKeys(keysMap: Object, obj: Object): Object
+        renameKeys(keysMap: Object): (obj: Object) => Object
+
     }
 
 }
