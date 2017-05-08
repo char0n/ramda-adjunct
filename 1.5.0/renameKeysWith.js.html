@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isDate.js - Documentation</title>
+    <title>renameKeysWith.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isDate.js</h1>
+    <h1 class="page-title">renameKeysWith.js</h1>
     
 
     
@@ -43,27 +43,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { is } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry, toPairs, pipe, map, adjust, fromPairs } from 'ramda';
 
 /**
- * Checks if value is `Date` object.
+ * Creates a new object with the own properties of the provided object, but the
+ * keys renamed according to logic of renaming function.
  *
- * @func isDate
+ * Keep in mind that in the case of keys conflict is behaviour undefined and
+ * the result may vary between various JS engines!
+ *
+ * @func renameKeysWith
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotDate|isNotDate}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.5.0|v1.5.0}
+ * @category Object
+ * @sig (a -> b) -> {a: *} -> {b: *}
+ * @param {Function} fn Function that renames the keys
+ * @param {!Object} obj Provided object
+ * @return {!Object} New object with renamed keys
+ * @see {@link RA.renameKeys|renameKeys}
  * @example
  *
- * RA.isDate(new Date()); //=> true
- * RA.isDate('1997-07-16T19:20+01:00'); //=> false
+ * RA.renameKeysWith(R.concat('a'), { A: 1, B: 2, C: 3 }) //=> { aA: 1, aB: 2, aC: 3 }
  */
-const isDate = is(Date);
+const renameKeysWith = curry((fn, obj) => pipe(toPairs, map(adjust(fn, 0)), fromPairs)(obj));
 
-export default isDate;
+export default renameKeysWith;
 </code></pre>
         </article>
     </section>
