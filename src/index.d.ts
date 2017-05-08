@@ -276,6 +276,12 @@ declare namespace RamdaAdjunct {
         renameKeys(keysMap: Object, obj: Object): Object
         renameKeys(keysMap: Object): (obj: Object) => Object
 
+        /**
+         * Creates a new object with the own properties of the provided object, but the
+         * keys renamed according to logic of renaming function.
+         */
+        renameKeysWith(renameFn: (key: any) => any, obj: Object): Object
+        renameKeysWith(renameFn: (key: any) => any): (obj: Object) => Object
     }
 
 }

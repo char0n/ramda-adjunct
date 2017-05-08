@@ -21,7 +21,7 @@ import { curry, reduce, assoc, keys, has } from 'ramda';
  *
  * const input = { firstName: 'Elisia', age: 22, type: 'human' };
  *
- * renameKeys({ firstName: 'name', type: 'kind', foo: 'bar' })(input);
+ * RA.renameKeys({ firstName: 'name', type: 'kind', foo: 'bar' })(input);
  * //=> { name: 'Elisia', age: 22, kind: 'human' }
  */
 const renameKeys = curry((keysMap, obj) =>
