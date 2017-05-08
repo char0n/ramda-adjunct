@@ -1,22 +1,6 @@
-import { curry, head, slice, reduce, ap as apR, curryN, map, add, flip } from 'ramda';
+import { curry, head, slice, reduce, curryN, map } from 'ramda';
 
-import Identity from './internal/fantasy-land/Identity';
-
-const m1 = Identity.of(1);
-const m2 = Identity.of(2).map(add);
-
-
-export const createAp = (ap1, ap2) => {
-  try {
-    // new version of `ap` starting from ramda version > 0.23.0
-    return ap1.ap(ap2) && apR;
-  } catch (e) {
-    // old version of `ap` till ramda version <= 0.23.0
-    return curryN(2, flip(apR));
-  }
-};
-
-const ap = createAp(m2, m1);
+import ap from './internal/ap';
 
 /**
  * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy

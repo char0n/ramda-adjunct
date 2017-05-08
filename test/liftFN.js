@@ -4,7 +4,6 @@ import { add, reduce } from 'ramda';
 
 import RA from '../src/index';
 import eq from './shared/eq';
-import { createAp } from '../src/liftFN';
 import Identity from '../src/internal/fantasy-land/Identity';
 
 
@@ -49,28 +48,5 @@ describe('liftFN', function() {
     const f4 = RA.liftFN(4);
     eq(typeof f4, 'function');
     eq(f4(addN)(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)), Maybe.Some(4));
-  });
-
-  it('test old fantasyland spec compatibility', function() {
-    const m1 = Identity.of(1);
-    const m2 = Identity.of(2).map(add);
-
-    eq(createAp(m1, m2)(m1, m2), Identity.of(3));
-  });
-
-  it('test new fantasyland spec compatibility', function() {
-    const m1 = Identity.of(1);
-    const m2 = Identity.of(2).map(add);
-    const ap = createAp(m1, m2);
-
-    eq(ap(m1, m2), Identity.of(3));
-  });
-
-  it('test old fantasyland spec compatibility', function() {
-    const m1 = Maybe.Some(1);
-    const m2 = Maybe.Some(2).map(add);
-    const ap = createAp(m1, m2);
-
-    eq(ap(m1, m2), Maybe.Some(3));
   });
 });

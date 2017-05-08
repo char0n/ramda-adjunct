@@ -1,4 +1,4 @@
 --reporter mocha-multi-reporters
 --reporter-options configFile=test/mocha-multi.json
 --compilers babel-register
-test/*.js
+test/**/*.js
