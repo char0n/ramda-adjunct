@@ -50,5 +50,13 @@ describe('Identity', function() {
       eq(a.equals(a), true);
       eq(a.equals(b), false);
     });
+
+    it('tests isomorphism', function() {
+      const type = Identity.of(1);
+      const value = type.get();
+
+      eq(type instanceof Identity, true);
+      eq(value, 1);
+    });
   });
 });

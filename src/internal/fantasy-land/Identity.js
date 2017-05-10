@@ -5,24 +5,37 @@ import { applyTrait, functorTrait, setoidTrait } from './traits';
 
 
 class Identity {
-  static of(value) {
-    return new Identity(value);
-  }
-
   static [fl.of](value) {
-    return Identity.of(value);
+    return new Identity(value);
   }
 
   constructor(value) {
     this.value = value;
   }
+
+  get() {
+    return this.value;
+  }
+
+  [fl.ap](...args) {
+    return applyTrait[fl.ap].call(this, ...args);
+  }
+
+  [fl.map](...args) {
+    return functorTrait[fl.map].call(this, ...args);
+  }
+
+  [fl.equals](...args) {
+    return setoidTrait[fl.equals].call(this, ...args);
+  }
 }
 
 Identity.prototype['@@type'] = 'RA/Identity';
-Object.assign(Identity.prototype, applyTrait);
-Object.assign(Identity.prototype, functorTrait);
-Object.assign(Identity.prototype, setoidTrait);
-Object.assign(Identity.prototype, aliases(Identity.prototype));
-
+aliases(Identity).forEach(([alias, fn]) => {
+  Identity[alias] = fn;
+});
+aliases(Identity.prototype).forEach(([alias, fn]) => {
+  Identity.prototype[alias] = fn;
+});
 
 export default Identity;

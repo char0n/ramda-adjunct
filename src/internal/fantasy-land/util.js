@@ -1,11 +1,10 @@
-import { toPairs, fromPairs, over, lensIndex, replace, pipe, map } from 'ramda';
+import { toPairs, over, lensIndex, replace, pipe, map } from 'ramda';
 
 
-// aliases :: Prototype -> NewPrototype
+// aliases :: Prototype -> NewPrototypePairs
 //     Prototype = Object
-//     newPrototype = Object
+//     NewPrototypePairs = Array
 export const aliases = pipe( // eslint-disable-line import/prefer-default-export
   toPairs,
-  map(over(lensIndex(0), replace('fantasy-land/', ''))),
-  fromPairs
+  map(over(lensIndex(0), replace('fantasy-land/', '')))
 );
