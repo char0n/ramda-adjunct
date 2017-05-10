@@ -1,3 +1,15 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/char0n/ramda-adjunct/compare/v1.4.0...v1.5.0) (2017-05-10)
+
+
+### Features
+
+* add renameKeys ([1a2538e](https://github.com/char0n/ramda-adjunct/commit/1a2538e))
+* add renameKeysWith ([fb5059c](https://github.com/char0n/ramda-adjunct/commit/fb5059c))
+* expose ap as internal util ([16e2535](https://github.com/char0n/ramda-adjunct/commit/16e2535)), closes [#64](https://github.com/char0n/ramda-adjunct/issues/64)
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/char0n/ramda-adjunct/compare/v1.3.2...v1.4.0) (2017-04-28)
 

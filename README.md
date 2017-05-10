@@ -65,22 +65,15 @@ long as they support ES5.
 
 ## API Documentation
 
- - [0.0.1](https://char0n.github.io/ramda-adjunct/0.0.1)
- - [0.1.0](https://char0n.github.io/ramda-adjunct/0.1.0)
- - [0.2.0](https://char0n.github.io/ramda-adjunct/0.2.0)
- - [0.3.0](https://char0n.github.io/ramda-adjunct/0.3.0)
- - [0.4.0](https://char0n.github.io/ramda-adjunct/0.4.0)
- - [0.5.1](https://char0n.github.io/ramda-adjunct/0.5.1)
- - [0.6.0](https://char0n.github.io/ramda-adjunct/0.6.0)
- - [0.7.0](https://char0n.github.io/ramda-adjunct/0.7.0)
- - [1.0.0](https://char0n.github.io/ramda-adjunct/1.0.0)
- - [1.1.0](https://char0n.github.io/ramda-adjunct/1.1.0)
- - [1.2.0](https://char0n.github.io/ramda-adjunct/1.2.0)
- - [1.3.0](https://char0n.github.io/ramda-adjunct/1.3.0)
- - [1.3.1](https://char0n.github.io/ramda-adjunct/1.3.1)
- - [1.3.2](https://char0n.github.io/ramda-adjunct/1.3.2)
- - [1.4.0](https://char0n.github.io/ramda-adjunct/1.4.0)
- - [Latest](https://char0n.github.io/ramda-adjunct)
+ [0.0.1](https://char0n.github.io/ramda-adjunct/0.0.1), [0.1.0](https://char0n.github.io/ramda-adjunct/0.1.0), 
+ [0.2.0](https://char0n.github.io/ramda-adjunct/0.2.0), [0.3.0](https://char0n.github.io/ramda-adjunct/0.3.0),
+ [0.4.0](https://char0n.github.io/ramda-adjunct/0.4.0), [0.5.1](https://char0n.github.io/ramda-adjunct/0.5.1),
+ [0.6.0](https://char0n.github.io/ramda-adjunct/0.6.0), [0.7.0](https://char0n.github.io/ramda-adjunct/0.7.0),
+ [1.0.0](https://char0n.github.io/ramda-adjunct/1.0.0), [1.1.0](https://char0n.github.io/ramda-adjunct/1.1.0),
+ [1.2.0](https://char0n.github.io/ramda-adjunct/1.2.0), [1.3.0](https://char0n.github.io/ramda-adjunct/1.3.0),
+ [1.3.1](https://char0n.github.io/ramda-adjunct/1.3.1), [1.3.2](https://char0n.github.io/ramda-adjunct/1.3.2),
+ [1.4.0](https://char0n.github.io/ramda-adjunct/1.4.0), [1.5.0](https://char0n.github.io/ramda-adjunct/1.5.0),
+ [LATEST](https://char0n.github.io/ramda-adjunct)
 
 ## Development
 
