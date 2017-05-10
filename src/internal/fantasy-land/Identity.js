@@ -1,6 +1,7 @@
 import fl from 'fantasy-land';
 
-import { applyTrait, functorTrait } from './traits';
+import { aliases } from './util';
+import { applyTrait, functorTrait, setoidTrait } from './traits';
 
 
 class Identity {
@@ -15,22 +16,13 @@ class Identity {
   constructor(value) {
     this.value = value;
   }
-
-  ap(applyWithFn) {
-    return applyTrait.ap.bind(this)(applyWithFn);
-  }
-
-  [fl.ap](applyWithFn) {
-    return this.ap(applyWithFn);
-  }
-
-  map(fn) {
-    return functorTrait.map.bind(this)(fn);
-  }
-
-  [fl.map](fn) {
-    return this.map(fn);
-  }
 }
+
+Identity.prototype['@@type'] = 'RA/Identity';
+Object.assign(Identity.prototype, applyTrait);
+Object.assign(Identity.prototype, functorTrait);
+Object.assign(Identity.prototype, setoidTrait);
+Object.assign(Identity.prototype, aliases(Identity.prototype));
+
 
 export default Identity;
