@@ -1,3 +1,4 @@
+import chai from 'chai';
 import sinon from 'sinon';
 import { add, identity } from 'ramda';
 
@@ -88,6 +89,13 @@ describe('Identity', function() {
       eq(fn.calledWith(1), true);
     });
 
+    it('tests f for non-function type and unspecified behavior', function() {
+      const fn = null;
+      const a = Identity.of(1);
+
+      chai.assert.throws(a.map.bind(a, fn), TypeError);
+    });
+
     it('tests f for returning any value', function() {
       const stubNull = () => null;
       const stubUndefined = () => undefined;
@@ -103,7 +111,12 @@ describe('Identity', function() {
     });
 
     it("tests for non parts of f's return value should be checked", function() {
+      const result = {};
+      const a = Identity.of(result).map(identity);
 
+      // TODO(vladimir.gorej@gmail.com): could not come up with something better
+      eq(a.get() === result, true);
+      eq(a.get(), result);
     });
 
     it('tets map for returning a value of the same Functor', function() {
