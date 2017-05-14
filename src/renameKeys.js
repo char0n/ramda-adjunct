@@ -16,7 +16,7 @@ import { curry, reduce, assoc, keys, has } from 'ramda';
  * @param {!Object} keysMap
  * @param {!Object} obj
  * @return {!Object} New object with renamed keys
- * @see {@link RA.renameKeysWith|renameKeysWith}
+ * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#pick-values-a-from-list-by-indexes|Ramda Cookbook}, {@link RA.renameKeysWith|renameKeysWith}
  * @example
  *
  * const input = { firstName: 'Elisia', age: 22, type: 'human' };
