@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>paths.js - Documentation</title>
+    <title>stubNull.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">paths.js</h1>
+    <h1 class="page-title">stubNull.js</h1>
     
 
     
@@ -43,32 +43,25 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curry, ap, path, __ } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { always } from 'ramda';
 
 /**
- * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
+ * A function that returns `null`.
  *
- * @func paths
+ * @func stubNull
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.2.0|v1.2.0}
- * @category List
- * @sig  [[k]] -> {k: v} - [v]
- * @param {Array} ps The property paths to fetch
- * @param {Object} obj The object to query
- * @return {Array} The corresponding values or partially applied function
- * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#derivative-of-rprops-for-deep-fields|Ramda Cookbook}, {@link http://ramdajs.com/docs/#props|props}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.6.0|v1.6.0}
+ * @category Function
+ * @sig ... -> null
+ * @return {null}
  * @example
  *
- * const obj = {
- *   a: { b: { c: 1 } },
- *   x: 2,
- * };
- *
- * RA.paths([['a', 'b', 'c'], ['x']], obj); //=> [1, 2]
+ * RA.stubNull(); //=> null
+ * RA.stubNull(1, 2, 3); //=> null
  */
-const paths = curry((ps, obj) => ap([path(__, obj)], ps));
+const stubNull = always(null);
 
-export default paths;
+export default stubNull;
 </code></pre>
         </article>
     </section>
