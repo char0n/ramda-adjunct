@@ -19,12 +19,12 @@ import isAsyncFunction from './isAsyncFunction';
 import isNotAsyncFunction from './isNotAsyncFunction';
 import isFunction from './isFunction';
 import isNotFunction from './isNotFunction';
-import isObject from './isObject';
-import isNotObject from './isNotObject';
-import isObjectLike from './isObjectLike';
-import isNotObjectLike from './isNotObjectLike';
-import isPlainObject from './isPlainObject';
-import isNotPlainObject from './isNotPlainObject';
+import isObj from './isObj';
+import isNotObj from './isNotObj';
+import isObjLike from './isObjLike';
+import isNotObjLike from './isNotObjLike';
+import isPlainObj from './isPlainObj';
+import isNotPlainObj from './isNotPlainObj';
 import isDate from './isDate';
 import isNotDate from './isNotDate';
 import isNumber from './isNumber';
@@ -73,12 +73,18 @@ export { default as isAsyncFunction } from './isAsyncFunction';
 export { default as isNotAsyncFunction } from './isNotAsyncFunction';
 export { default as isFunction } from './isFunction';
 export { default as isNotFunction } from './isNotFunction';
-export { default as isObject } from './isObject';
-export { default as isNotObject } from './isNotObject';
-export { default as isObjectLike } from './isObjectLike';
-export { default as isNotObjectLike } from './isNotObjectLike';
-export { default as isPlainObject } from './isPlainObject';
-export { default as isNotPlainObject } from './isNotPlainObject';
+export { default as isObj } from './isObj';
+export { default as isObject } from './isObj'; // alias of isObject
+export { default as isNotObj } from './isNotObj';
+export { default as isNotObject } from './isNotObj'; // alias of isNotObj
+export { default as isObjLike } from './isObjLike';
+export { default as isObjectLike } from './isObjLike'; // alias of isObjLike
+export { default as isNotObjLike } from './isNotObjLike';
+export { default as isNotObjectLike } from './isNotObjLike'; // alias of isNotObjLike
+export { default as isPlainObj } from './isPlainObj';
+export { default as isPlainObject } from './isPlainObj';
+export { default as isNotPlainObj } from './isNotPlainObj';
+export { default as isNotPlainObject } from './isNotPlainObj'; // alias of isNotPlainObject
 export { default as isDate } from './isDate';
 export { default as isNotDate } from './isNotDate';
 export { default as isNumber } from './isNumber';
@@ -131,12 +137,18 @@ const RA = {
   isNotAsyncFunction,
   isFunction,
   isNotFunction,
-  isObject,
-  isNotObject,
-  isObjectLike,
-  isNotObjectLike,
-  isPlainObject,
-  isNotPlainObject,
+  isObj,
+  isObject: isObj,
+  isNotObj,
+  isNotObject: isNotObj,
+  isObjLike,
+  isObjectLike: isObjLike,
+  isNotObjLike,
+  isNotObjectLike: isNotObjLike,
+  isPlainObj,
+  isPlainObject: isPlainObj,
+  isNotPlainObj,
+  isNotPlainObject: isNotPlainObj,
   isDate,
   isNotDate,
   isNumber,

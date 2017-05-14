@@ -122,32 +122,38 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is language type of `Object`
          */
+        isObj(val: any): val is Object;
         isObject(val: any): val is Object;
 
         /**
          * Checks if input value is complement of language type of `Object`
          */
-        isNotObject(val: any): boolean;
+        isNotObj(val: any): boolean;
+        isNotObject(val: any): boolean; // alias
 
         /**
          * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
          */
-        isObjectLike(val: any): boolean;
+        isObjLike(val: any): boolean;
+        isObjectLike(val: any): boolean; // alias
 
         /**
          * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
          */
-        isNotObjectLike(val: any): boolean;
+        isNotObjLike(val: any): boolean;
+        isNotObjectLike(val: any): boolean; // alias
 
         /**
          * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
          */
-        isPlainObject(val: any): boolean;
+        isPlainObj(val: any): boolean;
+        isPlainObject(val: any): boolean; // alias
 
         /**
          * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
          */
-        isNotPlainObject(val: any): boolean;
+        isNotPlainObj(val: any): boolean;
+        isNotPlainObject(val: any): boolean; // alias
 
         /**
          * Checks if value is `Date` object.

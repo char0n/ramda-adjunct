@@ -8,23 +8,24 @@ import isOfTypeObject from './internal/isOfTypeObject';
 /**
  * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
  *
- * @func isObjectLike
+ * @func isObjLike
+ * @alias isObjectLike
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotObjectLike|isNotObjectLike}, {@link RA.isObject|isObject}, {@link RA.isPlainObject|isPlainObject}
+ * @see {@link RA.isNotObjLike|isNotObjLike}, {@link RA.isObj|isObj}, {@link RA.isPlainObj|isPlainObj}
  * @example
  *
- * RA.isObjectLike({}); //=> true
- * RA.isObjectLike([]); //=> true
- * RA.isObjectLike(() => {}); //=> false
- * RA.isObjectLike(null); //=> false
- * RA.isObjectLike(undefined); //=> false
+ * RA.isObjLike({}); //=> true
+ * RA.isObjLike([]); //=> true
+ * RA.isObjLike(() => {}); //=> false
+ * RA.isObjLike(null); //=> false
+ * RA.isObjLike(undefined); //=> false
  */
 /* eslint-enable max-len */
-const isObjectLike = both(isNotNull, isOfTypeObject);
+const isObjLike = both(isNotNull, isOfTypeObject);
 
-export default isObjectLike;
+export default isObjLike;

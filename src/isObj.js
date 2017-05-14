@@ -9,23 +9,24 @@ import isOfTypeObject from './internal/isOfTypeObject';
 /**
  * Checks if input value is language type of `Object`.
  *
- * @func isObject
+ * @func isObj
+ * @alias isObject
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotObject|isNotObject}, {@link RA.isObjectLike|isObjectLike}, {@link RA.isPlainObject|isPlainObject}
+ * @see {@link RA.isNotObj|isNotObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isPlainObj|isPlainObj}
  * @example
  *
- * RA.isObject({}); //=> true
- * RA.isObject([]); //=> true
- * RA.isObject(() => {}); //=> true
- * RA.isObject(null); //=> false
- * RA.isObject(undefined); //=> false
+ * RA.isObj({}); //=> true
+ * RA.isObj([]); //=> true
+ * RA.isObj(() => {}); //=> true
+ * RA.isObj(null); //=> false
+ * RA.isObj(undefined); //=> false
  */
 /* eslint-enable max-len */
-const isObject = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
+const isObj = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
 
-export default isObject;
+export default isObj;
