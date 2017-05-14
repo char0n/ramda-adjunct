@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isUndefined.js - Documentation</title>
+    <title>isPlainObj.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isUndefined.js</h1>
+    <h1 class="page-title">isPlainObj.js</h1>
     
 
     
@@ -43,30 +43,56 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import _isObject from 'ramda/src/internal/_isObject';
+import { pipe, both, equals, toString, pathSatisfies } from 'ramda';
 
-import stubUndefined from './stubUndefined';
+import isNull from './isNull';
+import isObjLike from './isObjLike';
+import isFunction from './isFunction';
 
+
+const isObjectConstructor = pipe(toString, equals(toString(Object)));
+const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor), ['constructor']);
+
+/* eslint-disable max-len */
 /**
- * Checks if input value is `undefined`.
+ * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
  *
- * @func isUndefined
+ * @func isPlainObj
+ * @alias isPlainObject
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotUndefined|isNotUndefined}
+ * @see {@link RA.isNotPlainObj|isNotPlainObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isObj|isObj}
  * @example
  *
- * RA.isUndefined(1); //=> false
- * RA.isUndefined(undefined); //=> true
- * RA.isUndefined(null); //=> false
+ * class Bar {
+ *   constructor() {
+ *     this.prop = 'value';
+ *   }
+ * }
+ *
+ * RA.isPlainObj(new Bar()); //=> false
+ * RA.isPlainObj({ prop: 'value' }); //=> true
+ * RA.isPlainObj(['a', 'b', 'c']); //=> false
+ * RA.isPlainObj(Object.create(null); //=> true
+ * RA.isPlainObj(new Object()); //=> true
  */
-const isUndefined = equals(stubUndefined());
+/* eslint-enable max-len */
+const isPlainObj = (val) => {
+  if (!isObjLike(val) || !_isObject(val)) { return false }
 
-export default isUndefined;
+  const proto = Object.getPrototypeOf(val);
+
+  if (isNull(proto)) { return true }
+
+  return hasObjectConstructor(proto);
+};
+
+export default isPlainObj;
 </code></pre>
         </article>
     </section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isUndefined.js - Documentation</title>
+    <title>isObj.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isUndefined.js</h1>
+    <h1 class="page-title">isObj.js</h1>
     
 
     
@@ -43,30 +43,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { both, anyPass } from 'ramda';
 
-import stubUndefined from './stubUndefined';
+import isNotNull from './isNotNull';
+import isFunction from './isFunction';
+import isOfTypeObject from './internal/isOfTypeObject';
 
+
+/* eslint-disable max-len */
 /**
- * Checks if input value is `undefined`.
+ * Checks if input value is language type of `Object`.
  *
- * @func isUndefined
+ * @func isObj
+ * @alias isObject
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotUndefined|isNotUndefined}
+ * @see {@link RA.isNotObj|isNotObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isPlainObj|isPlainObj}
  * @example
  *
- * RA.isUndefined(1); //=> false
- * RA.isUndefined(undefined); //=> true
- * RA.isUndefined(null); //=> false
+ * RA.isObj({}); //=> true
+ * RA.isObj([]); //=> true
+ * RA.isObj(() => {}); //=> true
+ * RA.isObj(null); //=> false
+ * RA.isObj(undefined); //=> false
  */
-const isUndefined = equals(stubUndefined());
+/* eslint-enable max-len */
+const isObj = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
 
-export default isUndefined;
+export default isObj;
 </code></pre>
         </article>
     </section>

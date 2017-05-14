@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isUndefined.js - Documentation</title>
+    <title>isNotPlainObj.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isUndefined.js</h1>
+    <h1 class="page-title">isNotPlainObj.js</h1>
     
 
     
@@ -43,30 +43,41 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
 
-import stubUndefined from './stubUndefined';
+import isPlainObj from './isPlainObj';
 
+/* eslint-disable max-len */
 /**
- * Checks if input value is `undefined`.
+ * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`).
  *
- * @func isUndefined
+ * @func isNotPlainObj
+ * @alias isNotPlainObject
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotUndefined|isNotUndefined}
+ * @see {@link RA.isPlainObj|isPlainObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isObj|isObj}
  * @example
  *
- * RA.isUndefined(1); //=> false
- * RA.isUndefined(undefined); //=> true
- * RA.isUndefined(null); //=> false
+ * class Bar {
+ *   constructor() {
+ *     this.prop = 'value';
+ *   }
+ * }
+ *
+ * RA.isNotPlainObj(new Bar()); //=> true
+ * RA.isNotPlainObj({ prop: 'value' }); //=> false
+ * RA.isNotPlainObj(['a', 'b', 'c']); //=> true
+ * RA.isNotPlainObj(Object.create(null); //=> false
+ * RA.isNotPlainObj(new Object()); //=> false
  */
-const isUndefined = equals(stubUndefined());
+/* eslint-enable max-len */
+const isNotPlainObj = complement(isPlainObj);
 
-export default isUndefined;
+export default isNotPlainObj;
 </code></pre>
         </article>
     </section>
