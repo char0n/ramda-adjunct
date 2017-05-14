@@ -201,9 +201,14 @@ declare namespace RamdaAdjunct {
         isNotInteger(val: any): boolean;
 
         /**
-         * A function that returns undefined.
+         * A function that returns `undefined`.
          */
         stubUndefined(): undefined;
+
+        /**
+         * A function that returns `null`.
+         */
+        stubNull():  null;
 
         /**
          * A function that performs no operations.

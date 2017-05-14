@@ -1,7 +1,7 @@
 import { always } from 'ramda';
 
 /**
- * A function that returns undefined.
+ * A function that returns `undefined`.
  *
  * @func stubUndefined
  * @memberOf RA

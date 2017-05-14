@@ -37,6 +37,7 @@ import isInteger from './isInterger';
 import isNotInteger from './isNotInteger';
 // Function
 import stubUndefined from './stubUndefined';
+import stubNull from './stubNull';
 import noop from './noop';
 import liftFN from './liftFN';
 import liftF from './liftF';
@@ -90,6 +91,7 @@ export { default as isInteger } from './isInterger';
 export { default as isNotInteger } from './isNotInteger';
 // Function
 export { default as stubUndefined } from './stubUndefined';
+export { default as stubNull } from './stubNull';
 export { default as noop } from './noop';
 export { default as liftFN } from './liftFN';
 export { default as liftF } from './liftF';
@@ -147,6 +149,7 @@ const RA = {
   isNotInteger,
   // Function
   stubUndefined,
+  stubNull,
   noop,
   liftFN,
   liftF,
