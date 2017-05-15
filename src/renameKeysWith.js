@@ -15,7 +15,7 @@ import { curry, toPairs, pipe, map, adjust, fromPairs } from 'ramda';
  * @param {Function} fn Function that renames the keys
  * @param {!Object} obj Provided object
  * @return {!Object} New object with renamed keys
- * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#pick-values-a-from-list-by-indexes|Ramda Cookbook}, {@link RA.renameKeys|renameKeys}
+ * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#rename-keys-of-an-object-by-a-function|Ramda Cookbook}, {@link RA.renameKeys|renameKeys}
  * @example
  *
  * RA.renameKeysWith(R.concat('a'), { A: 1, B: 2, C: 3 }) //=> { aA: 1, aB: 2, aC: 3 }
