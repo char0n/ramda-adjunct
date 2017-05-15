@@ -5,7 +5,7 @@ import RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe.only('mergeRight', function() {
+describe('mergeRight', function() {
   it('takes two objects, merges their own properties and returns a new object', function() {
     const a = { w: 1, x: 2 };
     const b = { y: 3, z: 4 };
