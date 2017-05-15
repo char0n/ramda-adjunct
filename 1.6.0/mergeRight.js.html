@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotEmpty.js - Documentation</title>
+    <title>mergeRight.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotEmpty.js</h1>
+    <h1 class="page-title">mergeRight.js</h1>
     
 
     
@@ -43,32 +43,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement, isEmpty } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { merge, flip } from 'ramda';
 
 /**
- * Returns true if the given value is not its type's empty value; `false` otherwise.
+ * Create a new object with the own properties of the second object merged with
+ * the own properties of the first object. If a key exists in both objects,
+ * the value from the first object will be used.
  *
- * @func isNotEmpty
+ * @func mergeRight
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.6.0|v1.6.0}
+ * @category Object
+ * @sig {k: v} -> {k: v} -> {k: v}
+ * @param {Object} l Source
+ * @param {Object} r Destination
+ * @return {Object}
+ * @see {@link http://ramdajs.com/docs/#merge|merge}
  * @example
  *
- * RA.isNotEmpty([1, 2, 3]); //=> true
- * RA.isNotEmpty([]); //=> false
- * RA.isNotEmpty(''); //=> false
- * RA.isNotEmpty(null); //=> true
- * RA.isNotEmpty(undefined): //=> true
- * RA.isNotEmpty({}); //=> false
- * RA.isNotEmpty({length: 0}); //=> true
+ * RA.mergeRight({ 'age': 40 }, { 'name': 'fred', 'age': 10 });
+ * //=> { 'name': 'fred', 'age': 40 }
  */
-const isNotEmpty = complement(isEmpty);
+const mergeRight = flip(merge);
 
-export default isNotEmpty;
+export default mergeRight;
 </code></pre>
         </article>
     </section>
