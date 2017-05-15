@@ -236,32 +236,32 @@ declare namespace RamdaAdjunct {
          * Set properties only if they don't exist. Useful for passing defaults. Basically this function
          * is the alias of {@link http://ramdajs.com/docs/#merge|merge}.
          */
-        defaults(defaultOptions: Object, options: Object): Object
-        defaults(defaultOptions: Object): (options: Object) => Object
+        defaults(defaultOptions: Object, options: Object): Object;
+        defaults(defaultOptions: Object): (options: Object) => Object;
 
         /**
          * Reset properties of the object to their default values.
          */
-        resetToDefault(defaultOptions: Object, options: Object): Object
-        resetToDefault(defaultOptions: Object): (options: Object) => Object
+        resetToDefault(defaultOptions: Object, options: Object): Object;
+        resetToDefault(defaultOptions: Object): (options: Object) => Object;
 
         /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
          */
-        paths(ps: Array<Array<string | number>>, obj: Object): Array<any>
-        paths(ps: Array<Array<string | number>>): (obj: Object) => Array<any>
+        paths(ps: Array<Array<string | number>>, obj: Object): Array<any>;
+        paths(ps: Array<Array<string | number>>): (obj: Object) => Array<any>;
 
         /**
          * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
          * the Apply spec of fantasy land.
          */
-        liftFN<T>(arity: number, fn: Variadic<Apply<T>, T>): Apply<T>
+        liftFN<T>(arity: number, fn: Variadic<Apply<T>, T>): Apply<T>;
 
         /**
          * "lifts" a function of arity > 1 so that it may "map over" objects that satisfy
          * the Apply spec of fantasy land.
          */
-        liftF<T>(fn: Variadic<Apply<T>, T>): Apply<T>
+        liftF<T>(fn: Variadic<Apply<T>, T>): Apply<T>;
 
         /**
          * The catamorphism for either. If the either is right than the right function will be executed with
@@ -277,22 +277,30 @@ declare namespace RamdaAdjunct {
             (rightFn: (rightValue: V2) => T1): {
                 (either: Catamorphism<V1|V2>): T1|T2;
             }
-        }
+        };
 
         /**
          * Creates a new object with the own properties of the provided object, but the
          * keys renamed according to the keysMap object as `{oldKey: newKey}`.
          * When some key is not found in the keysMap, then it's passed as-is.
          */
-        renameKeys(keysMap: Object, obj: Object): Object
-        renameKeys(keysMap: Object): (obj: Object) => Object
+        renameKeys(keysMap: Object, obj: Object): Object;
+        renameKeys(keysMap: Object): (obj: Object) => Object;
 
         /**
          * Creates a new object with the own properties of the provided object, but the
          * keys renamed according to logic of renaming function.
          */
-        renameKeysWith(renameFn: (key: any) => any, obj: Object): Object
-        renameKeysWith(renameFn: (key: any) => any): (obj: Object) => Object
+        renameKeysWith(renameFn: (key: any) => any, obj: Object): Object;
+        renameKeysWith(renameFn: (key: any) => any): (obj: Object) => Object;
+
+        /**
+         * Create a new object with the own properties of the second object merged with
+         * the own properties of the first object. If a key exists in both objects,
+         * the value from the first object will be used.
+         */
+        mergeRight(source: Object, destination: Object): Object;
+        mergeRight(source: Object): (destination: Object) => Object;
     }
 
 }

@@ -51,6 +51,7 @@ import resetToDefault from './resetToDefault';
 import paths from './paths';
 import renameKeys from './renameKeys';
 import renameKeysWith from './renameKeysWith';
+import mergeRight from './mergeRight';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -111,6 +112,7 @@ export { default as resetToDefault } from './resetToDefault';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
+export { default as mergeRight } from './mergeRight';
 
 /**
  * @namespace RA
@@ -175,6 +177,7 @@ const RA = {
   paths,
   renameKeys,
   renameKeysWith,
+  mergeRight,
 };
 
 export default RA;
