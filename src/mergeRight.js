@@ -6,6 +6,7 @@ import { merge, flip } from 'ramda';
  * the value from the first object will be used.
  *
  * @func mergeRight
+ * @alias resetToDefault
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.6.0|v1.6.0}
  * @category Object

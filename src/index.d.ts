@@ -240,12 +240,6 @@ declare namespace RamdaAdjunct {
         defaults(defaultOptions: Object): (options: Object) => Object;
 
         /**
-         * Reset properties of the object to their default values.
-         */
-        resetToDefault(defaultOptions: Object, options: Object): Object;
-        resetToDefault(defaultOptions: Object): (options: Object) => Object;
-
-        /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
          */
         paths(ps: Array<Array<string | number>>, obj: Object): Array<any>;
@@ -301,6 +295,12 @@ declare namespace RamdaAdjunct {
          */
         mergeRight(source: Object, destination: Object): Object;
         mergeRight(source: Object): (destination: Object) => Object;
+
+        /**
+         * Reset properties of the object to their default values.
+         */
+        resetToDefault(defaultOptions: Object, options: Object): Object; // alias of mergeRight
+        resetToDefault(defaultOptions: Object): (options: Object) => Object; // alias of mergeRight
     }
 
 }

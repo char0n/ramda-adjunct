@@ -47,7 +47,6 @@ import pickIndexes from './pickIndexes';
 import list from './list';
 // Object
 import defaults from './defaults';
-import resetToDefault from './resetToDefault';
 import paths from './paths';
 import renameKeys from './renameKeys';
 import renameKeysWith from './renameKeysWith';
@@ -108,11 +107,11 @@ export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 // Object
 export { default as defaults } from './defaults';
-export { default as resetToDefault } from './resetToDefault';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as mergeRight } from './mergeRight';
+export { default as resetToDefault } from './mergeRight';
 
 /**
  * @namespace RA
@@ -173,7 +172,7 @@ const RA = {
   list,
   // Object
   defaults,
-  resetToDefault,
+  resetToDefault: mergeRight,
   paths,
   renameKeys,
   renameKeysWith,
