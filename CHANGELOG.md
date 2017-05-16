@@ -1,3 +1,15 @@
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/char0n/ramda-adjunct/compare/v1.5.0...v1.6.0) (2017-05-16)
+
+
+### Features
+
+* **Identity:** add Setoid spec to Identity ([3c62ad6](https://github.com/char0n/ramda-adjunct/commit/3c62ad6))
+* add mergeRight ([25051aa](https://github.com/char0n/ramda-adjunct/commit/25051aa))
+* add stubNull ([7c71292](https://github.com/char0n/ramda-adjunct/commit/7c71292)), closes [#71](https://github.com/char0n/ramda-adjunct/issues/71)
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/char0n/ramda-adjunct/compare/v1.4.0...v1.5.0) (2017-05-10)
 
