@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isBoolean.js - Documentation</title>
+    <title>weave.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isBoolean.js</h1>
+    <h1 class="page-title">weave.js</h1>
     
 
     
@@ -43,28 +43,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { is } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curryN } from 'ramda';
 
 /**
- * Checks if input value is `Boolean`.
+ * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.
  *
- * @func isBoolean
+ * @func weave
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotBoolean|isNotBoolean}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.7.0|v1.7.0}
+ * @category Function
+ * @sig (*... -> *) -> * -> (*... -> *)
+ * @param {Function} fn The function to weave
+ * @param {*} config The configuration to weave into fn
+ * @return {Function}
  * @example
  *
- * RA.isBoolean(false); //=> true
- * RA.isBoolean(true); //=> true
- * RA.isBoolean(null); //=> false
+ * const { Reader: reader } = require('monet');
+ *
+ * const log = value => reader(
+ *   config => config.log(value)
+ * );
+ *
+ * // no weaving
+ * log('test').run(console); //=> prints 'test'
+ *
+ * // weaving
+ * const wlog = RA.weave(log, console);
+ * wlog('test'); //=> prints 'test'
  */
-const isBoolean = is(Boolean);
+const weave = curryN(2, (fn, config) => (...args) => fn(...args).run(config));
 
-export default isBoolean;
+export default weave;
 </code></pre>
         </article>
     </section>
