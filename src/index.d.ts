@@ -301,6 +301,12 @@ declare namespace RamdaAdjunct {
          */
         resetToDefault(defaultOptions: Object, options: Object): Object; // alias of mergeRight
         resetToDefault(defaultOptions: Object): (options: Object) => Object; // alias of mergeRight
+
+        /**
+         * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.
+         */
+        weave(fn: Function, config: any): Function;
+        weave(fn: Function): (config: any) => Function;
     }
 
 }

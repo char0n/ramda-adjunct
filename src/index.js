@@ -42,6 +42,7 @@ import noop from './noop';
 import liftFN from './liftFN';
 import liftF from './liftF';
 import cata from './cata';
+import weave from './weave';
 // List
 import pickIndexes from './pickIndexes';
 import list from './list';
@@ -102,6 +103,7 @@ export { default as noop } from './noop';
 export { default as liftFN } from './liftFN';
 export { default as liftF } from './liftF';
 export { default as cata } from './cata';
+export { default as weave } from './weave';
 // List
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
@@ -167,6 +169,7 @@ const RA = {
   liftFN,
   liftF,
   cata,
+  weave,
   // List
   pickIndexes,
   list,
