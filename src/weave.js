@@ -1,7 +1,9 @@
 import { curryN } from 'ramda';
 
 /**
- * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.
+ * Weaves a configuration into function returning the runnable monad like `Reader` or `Free`.
+ * This allows us to pre-bind the configuration in advance and use the weaved function
+ * without need to explicitly pass the configuration on every call.
  *
  * @func weave
  * @memberOf RA
