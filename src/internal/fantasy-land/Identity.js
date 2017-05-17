@@ -9,6 +9,10 @@ class Identity {
     return new Identity(value);
   }
 
+  static get ['@@type']() {
+    return 'RA/Identity';
+  }
+
   constructor(value) {
     this.value = value;
   }
@@ -30,7 +34,6 @@ class Identity {
   }
 }
 
-Identity.prototype['@@type'] = 'RA/Identity';
 aliases(Identity).forEach(([alias, fn]) => {
   Identity[alias] = fn;
 });

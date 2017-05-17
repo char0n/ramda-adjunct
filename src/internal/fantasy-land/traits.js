@@ -1,5 +1,7 @@
 import fl from 'fantasy-land';
-import { equals, path } from 'ramda';
+import { equals } from 'ramda';
+
+import { isSameType } from './util';
 
 
 export const functorTrait = {
@@ -16,8 +18,6 @@ export const applyTrait = {
 
 export const setoidTrait = {
   [fl.equals](setoid) {
-    if (!equals(path(['@@type'], this), path(['@@type'], setoid))) { return false } // not same type
-
-    return equals(this.value, setoid.value);
+    return isSameType(this, setoid) && equals(this.value, setoid.value);
   },
 };
