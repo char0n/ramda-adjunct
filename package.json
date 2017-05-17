@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git://github.com/char0n/ramda-adjunct.git"
   },
-  "browser": "./dist/RA.web.min.js",
+  "browser": "./es/index.js",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "jsnext:main": "./es/index.js",
