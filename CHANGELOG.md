@@ -1,3 +1,18 @@
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/char0n/ramda-adjunct/compare/v1.6.0...v1.7.0) (2017-05-18)
+
+
+### Bug Fixes
+
+* **package.json:** point browser field to es/index.js ([aaa018e](https://github.com/char0n/ramda-adjunct/commit/aaa018e)), closes [#76](https://github.com/char0n/ramda-adjunct/issues/76)
+
+
+### Features
+
+* add weave ([118daf9](https://github.com/char0n/ramda-adjunct/commit/118daf9)), closes [#65](https://github.com/char0n/ramda-adjunct/issues/65)
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/char0n/ramda-adjunct/compare/v1.5.0...v1.6.0) (2017-05-16)
 
