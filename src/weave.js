@@ -12,7 +12,7 @@ import { curryN } from 'ramda';
  * @sig (*... -> *) -> * -> (*... -> *)
  * @param {Function} fn The function to weave
  * @param {*} config The configuration to weave into fn
- * @return {Function}
+ * @return {Function} Auto-curried weaved function
  * @example
  *
  * const { Reader: reader } = require('monet');
@@ -28,6 +28,6 @@ import { curryN } from 'ramda';
  * const wlog = RA.weave(log, console);
  * wlog('test'); //=> prints 'test'
  */
-const weave = curryN(2, (fn, config) => (...args) => fn(...args).run(config));
+const weave = curryN(2, (fn, config) => curryN(fn.length, (...args) => fn(...args).run(config)));
 
 export default weave;
