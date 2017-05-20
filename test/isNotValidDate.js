@@ -30,7 +30,7 @@ describe('isNotValidDate', function() {
 });
 
 describe('isInvalidDate', function() {
-  it('tests a value for complement of valid `Date`', function() {
+  it('tests an alias', function() {
     eq(RA.isNotValidDate === RA.isInvalidDate, true);
   });
 });

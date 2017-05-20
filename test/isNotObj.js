@@ -25,3 +25,9 @@ describe('isNotObj', function() {
     eq(RA.isNotObj(undefined), true);
   });
 });
+
+describe('isNotObject', function() {
+  it('tests an alias', function() {
+    eq(RA.isNotObj === RA.isNotObject, true);
+  });
+});

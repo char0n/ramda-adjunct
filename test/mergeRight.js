@@ -45,3 +45,10 @@ describe('mergeRight', function() {
     eq(curried({ x: 3, y: 4 }), { w: 1, x: 2, y: 4 });
   });
 });
+
+describe('resetToDefault', function() {
+  it('tests an alias', function() {
+    eq(RA.mergeRight === RA.resetToDefault, true);
+  });
+});
+

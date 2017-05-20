@@ -56,3 +56,10 @@ describe('isPlainObj', function() {
     }
   });
 });
+
+describe('isPlainObject', function() {
+  it('tests an alias', function() {
+    eq(RA.isPlainObj === RA.isPlainObject, true);
+  });
+});
+

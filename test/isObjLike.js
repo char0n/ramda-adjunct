@@ -24,3 +24,10 @@ describe('isObjLike', function() {
     eq(RA.isObjLike(undefined), false);
   });
 });
+
+describe('isObjectLike', function() {
+  it('tests an alias', function() {
+    eq(RA.isObjLike === RA.isObjectLike, true);
+  });
+});
+

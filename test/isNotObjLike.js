@@ -24,3 +24,9 @@ describe('isNotObjLike', function() {
     eq(RA.isNotObjLike(undefined), true);
   });
 });
+
+describe('isNotObjectLike', function() {
+  it('tests an alias', function() {
+    eq(RA.isNotObjLike === RA.isNotObjectLike, true);
+  });
+});
