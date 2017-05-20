@@ -1,7 +1,7 @@
-import { of, ap, map, equals, concat } from 'fantasy-land';
+import { of, ap, map, equals, concat, chain } from 'fantasy-land';
 
 import { aliases } from './util';
-import { applyTrait, functorTrait, setoidTrait, semigroupTrait } from './traits';
+import { applyTrait, functorTrait, setoidTrait, semigroupTrait, chainTrait } from './traits';
 
 
 /**
@@ -19,13 +19,17 @@ import { applyTrait, functorTrait, setoidTrait, semigroupTrait } from './traits'
  * {@link https://github.com/fantasyland/fantasy-land#applicative|Applicative},
  * {@link https://github.com/fantasyland/fantasy-land#apply|Functor},
  * {@link https://github.com/fantasyland/fantasy-land#apply|Setoid},
- * {@link https://github.com/fantasyland/fantasy-land#apply|Semigroup}
+ * {@link https://github.com/fantasyland/fantasy-land#apply|Semigroup},
+ * {@link https://github.com/fantasyland/fantasy-land#chain|Chain},
+ * {@link https://github.com/fantasyland/fantasy-land#monad|Monad}
  * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
  */
 class Identity {
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#applicative|Applicative} specification.
+   *
    * @static
+   * @sig of :: Applicative f => a -> f a
    * @param {*} value
    * @returns {RA.Identity}
    * @example
@@ -68,6 +72,8 @@ class Identity {
 
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#apply|Apply} specification.
+   *
+   * @sig ap :: Apply f => f a ~> f (a -> b) -> f b
    * @param {RA.Identity} applyWithFn
    * @return {RA.Identity}
    * @example
@@ -83,6 +89,8 @@ class Identity {
 
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#functor|Functor} specification.
+   *
+   * @sig map :: Functor f => f a ~> (a -> b) -> f b
    * @param {Function} fn
    * @return {RA.Identity}
    * @example
@@ -96,6 +104,8 @@ class Identity {
 
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#setoid|Setoid} specification.
+   *
+   * @sig equals :: Setoid a => a ~> a -> Boolean
    * @param {RA.Identity} setoid
    * @return {boolean}
    * @example
@@ -113,6 +123,8 @@ class Identity {
 
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#semigroup|Semigroup} specification.
+   *
+   * @sig concat :: Semigroup a => a ~> a -> a
    * @param {RA.Identity} semigroup
    * @return {RA.Identity}
    * @example
@@ -131,6 +143,23 @@ class Identity {
    */
   [concat](semigroup) {
     return semigroupTrait[concat].call(this, semigroup);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#semigroup|Chain} specification.
+   *
+   * @sig chain :: Chain m => m a ~> (a -> m b) -> m b
+   * @param {Function} fn Function returning the value of the same {@link https://github.com/fantasyland/fantasy-land#semigroup|Chain}
+   * @return {RA.Identity}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * const fn = val => Identity.of(val + 1);
+   *
+   * a.chain(fn).chain(fn); //=> Identity(3)
+   */
+  [chain](fn) {
+    return chainTrait[chain].call(this, fn);
   }
 }
 

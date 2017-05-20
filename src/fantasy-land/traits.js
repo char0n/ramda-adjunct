@@ -38,3 +38,11 @@ export const semigroupTrait = {
     return this.constructor[fl.of](concatenatedValue);
   },
 };
+
+export const chainTrait = {
+  [fl.chain](fn) {
+    const newChain = fn(this.value);
+
+    return isSameType(this, newChain) ? newChain : this;
+  },
+};

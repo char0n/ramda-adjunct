@@ -9,6 +9,12 @@ import eq from '../shared/eq';
 
 describe('Identity', function() {
   describe('Setoid', function() {
+    it('tests fantasy land compatibility', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.equals]), true);
+    });
+
     it('tests for reflexivity', function() {
       const a = Identity.of(1);
 
@@ -66,6 +72,12 @@ describe('Identity', function() {
   });
 
   describe('Semigroup', function() {
+    it('tests fantasy land compatibility', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.concat]), true);
+    });
+
     it('tests for associativity', function() {
       const a = Identity.of(1);
       const b = Identity.of(2);
@@ -132,6 +144,12 @@ describe('Identity', function() {
   });
 
   describe('Apply', function() {
+    it('tests fantasy land compatibility', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.ap]), true);
+    });
+
     it('tests for Functor spec', function() {
       const a = Identity.of(1);
 
@@ -183,6 +201,13 @@ describe('Identity', function() {
   });
 
   describe('Applicative', function() {
+    it('tests fantasy land compatibility', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a.constructor[fl.of]), true);
+    });
+
+
     it('tests for an Apply spec', function() {
       const a = Identity.of(1);
 
@@ -230,6 +255,12 @@ describe('Identity', function() {
   });
 
   describe('Functor', function() {
+    it('tests fantasy land compatibility', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.map]), true);
+    });
+
     it('tests for identity', function() {
       const a = Identity.of(1);
       const b = a.map(identity);
@@ -290,6 +321,73 @@ describe('Identity', function() {
 
       eq(a instanceof Identity, true);
       eq(b instanceof Identity, true);
+    });
+  });
+
+  describe('Chain', function() {
+    it('tests fantasy land compatibility', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.chain]), true);
+    });
+
+    it('tests for an Apply spec', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.ap]), true);
+      eq(isFunction(a.constructor[fl.of]), true);
+    });
+
+    it('tests for associativity', function() {
+      const a = Identity.of(1);
+      const f = val => Identity.of(val + 1);
+      const g = val => Identity.of(val + 2);
+
+      eq(a.chain(f).chain(g).get(), a.chain(val => f(val).chain(g)).get());
+    });
+
+    it('tests the only argument to be a function', function() {
+      const a = Identity.of(1);
+      const fn = val => Identity.of(val + 1);
+
+      eq(a.chain(fn).get(), 2);
+    });
+
+    it('tests the only argument to be a non-function', function() {
+      const a = Identity.of(1);
+      const nonFn = null;
+
+      chai.assert.throws(() => a.chain(nonFn), TypeError);
+    });
+
+    it('tests if the only argument is a function returning the value of the same Chain', function() {
+      const a = Identity.of(1);
+      const fn = val => Identity.of(val + 1);
+
+      eq(a.chain(fn) instanceof Identity, true);
+    });
+
+    it('tests if the only argument is a function returning the value of different Chain', function() {
+      const a = Identity.of(1);
+      const fn = val => val + 1;
+
+      eq(a.chain(fn) instanceof Identity, true);
+      eq(a.chain(fn).get(), 1);
+    });
+  });
+
+  describe('Monad', function() {
+    it('test for Applicative spec', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(Identity[fl.of]), true);
+      eq(isFunction(a.constructor[fl.of]), true);
+    });
+
+    it('test for Chain spec', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.chain]), true);
     });
   });
 });
