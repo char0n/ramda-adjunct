@@ -82,7 +82,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line25">line 25</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -107,7 +107,9 @@ transformer when no other behaviour is required.</p></div>
 <a href="https://github.com/fantasyland/fantasy-land#applicative">Applicative</a>,
 <a href="https://github.com/fantasyland/fantasy-land#apply">Functor</a>,
 <a href="https://github.com/fantasyland/fantasy-land#apply">Setoid</a>,
-<a href="https://github.com/fantasyland/fantasy-land#apply">Semigroup</a></li>
+<a href="https://github.com/fantasyland/fantasy-land#apply">Semigroup</a>,
+<a href="https://github.com/fantasyland/fantasy-land#chain">Chain</a>,
+<a href="https://github.com/fantasyland/fantasy-land#monad">Monad</a></li>
         
     </ul></dd>
     
@@ -247,7 +249,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line42">line 42</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -322,7 +324,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line35">line 35</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line39">line 39</a>
     </li></ul></dd>
     
 
@@ -352,6 +354,11 @@ transformer when no other behaviour is required.</p></div>
 
     
 
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><pre><code>of :: Applicative f => a -> f a</code></pre></li></ul>
+    </dd>
     
 
     
@@ -484,7 +491,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line80">line 80</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line86">line 86</a>
     </li></ul></dd>
     
 
@@ -514,6 +521,11 @@ transformer when no other behaviour is required.</p></div>
 
     
 
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><pre><code>ap :: Apply f => f a ~> f (a -> b) -> f b</code></pre></li></ul>
+    </dd>
     
 
     
@@ -636,8 +648,8 @@ a.ap(b); //=> Identity(2)</code></pre>
             
 
     
-    <div id="concat" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>concat<span class="signature">(semigroup)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+    <div id="chain" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>chain<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
     
 
@@ -649,7 +661,7 @@ a.ap(b); //=> Identity(2)</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line132">line 132</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line161">line 161</a>
     </li></ul></dd>
     
 
@@ -679,6 +691,181 @@ a.ap(b); //=> Identity(2)</code></pre>
 
     
 
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><pre><code>chain :: Chain m => m a ~> (a -> m b) -> m b</code></pre></li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#semigroup">Chain</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+const fn = val => Identity.of(val + 1);
+
+a.chain(fn).chain(fn); //=> Identity(3)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Function returning the value of the same <a href="https://github.com/fantasyland/fantasy-land#semigroup">Chain</a></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="concat" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>concat<span class="signature">(semigroup)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><pre><code>concat :: Semigroup a => a ~> a -> a</code></pre></li></ul>
+    </dd>
     
 
     
@@ -821,7 +1008,7 @@ e.concat(f); //=> ['e', 'f']</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line110">line 110</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line120">line 120</a>
     </li></ul></dd>
     
 
@@ -851,6 +1038,11 @@ e.concat(f); //=> ['e', 'f']</code></pre>
 
     
 
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><pre><code>equals :: Setoid a => a ~> a -> Boolean</code></pre></li></ul>
+    </dd>
     
 
     
@@ -988,7 +1180,7 @@ a.equals(c); //=> false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line65">line 65</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -1102,7 +1294,7 @@ a.get(); //=> 1</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line93">line 93</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line101">line 101</a>
     </li></ul></dd>
     
 
@@ -1132,6 +1324,11 @@ a.get(); //=> 1</code></pre>
 
     
 
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><pre><code>map :: Functor f => f a ~> (a -> b) -> f b</code></pre></li></ul>
+    </dd>
     
 
     
@@ -1266,7 +1463,7 @@ a.map(a => a + 1); //=> Identity(2)</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat May 20 2017 13:32:46 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat May 20 2017 14:10:21 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
