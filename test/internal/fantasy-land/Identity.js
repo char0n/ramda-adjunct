@@ -1,6 +1,7 @@
 import chai from 'chai';
 import sinon from 'sinon';
 import { add, identity } from 'ramda';
+import fl from 'fantasy-land';
 
 import eq from '../../shared/eq';
 import Identity from '../../../src/internal/fantasy-land/Identity';
@@ -64,6 +65,72 @@ describe('Identity', function() {
     });
   });
 
+  describe('Semigroup', function() {
+    it('tests for associativity', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(2);
+      const c = Identity.of(3);
+
+      eq(a.concat(b).concat(c).get(), 6);
+      eq(a.concat(b.concat(c)).get(), 6);
+    });
+
+    it('tests for value of different Semigroup', function() {
+      const a = Identity.of({});
+      const b = Identity.of([]);
+
+      chai.assert.throws(a.concat.bind(b), TypeError);
+    });
+
+    it('tests concat for returning a value of the same Setoid', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(2);
+      const c = a.concat(b);
+
+      eq(a instanceof Identity, true);
+      eq(b instanceof Identity, true);
+      eq(c instanceof Identity, true);
+    });
+
+    it('tests concat on number Semigroup', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(2);
+      const c = a.concat(b);
+
+      eq(c.get(), 3);
+    });
+
+    it('tests concat on string Semigroup', function() {
+      const a = Identity.of('a');
+      const b = Identity.of('b');
+      const c = a.concat(b);
+
+      eq(c.get(), 'ab');
+    });
+
+    it('tests concat on array Semigroup', function() {
+      const a = Identity.of([1]);
+      const b = Identity.of([2]);
+      const c = a.concat(b);
+
+      eq(c.get(), [1, 2]);
+    });
+
+    it('test concat of fantas-land compatible Semigroup', function() {
+      const arrayA = [1];
+      const arrayB = [2];
+
+      arrayA[fl.concat] = arrayA.concat;
+      arrayB[fl.concat] = arrayB.concat;
+
+      const a = Identity.of(arrayA);
+      const b = Identity.of(arrayB);
+      const c = a.concat(b);
+
+      eq(c.get(), [1, 2]);
+    });
+  });
+
   describe('Functor', function() {
     it('tests for identity', function() {
       const a = Identity.of(1);
@@ -119,7 +186,7 @@ describe('Identity', function() {
       eq(a.get(), result);
     });
 
-    it('tets map for returning a value of the same Functor', function() {
+    it('tests map for returning a value of the same Functor', function() {
       const a = Identity.of(1);
       const b = a.map(identity);
 

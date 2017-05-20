@@ -1,7 +1,7 @@
 import fl from 'fantasy-land';
 
 import { aliases } from './util';
-import { applyTrait, functorTrait, setoidTrait } from './traits';
+import { applyTrait, functorTrait, setoidTrait, semigroupTrait } from './traits';
 
 
 class Identity {
@@ -31,6 +31,10 @@ class Identity {
 
   [fl.equals](...args) {
     return setoidTrait[fl.equals].call(this, ...args);
+  }
+
+  [fl.concat](...args) {
+    return semigroupTrait[fl.concat].call(this, ...args);
   }
 }
 
