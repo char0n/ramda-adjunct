@@ -132,6 +132,57 @@ describe('Identity', function() {
     });
   });
 
+  describe('Apply', function() {
+    it('tests for Functor spec', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.map]), true);
+    });
+
+    describe('tests for composition', function() {
+      it('v.ap(u).ap(a)', function() {
+        const a = Identity.of(1);
+        const b = Identity.of(2).map(add);
+        const c = Identity.of(3).map(add);
+
+        eq(a.ap(b).ap(c).get(), 6);
+      });
+
+      it('v.ap(u.ap(a.map(f => g => x => f(g(x)))))', function() {
+        const a = Identity.of(1);
+        const b = Identity.of(2).map(add);
+        const c = Identity.of(3).map(add);
+
+        eq(a.ap(b.ap(c.map(f => g => val => f(g(val))))).get(), 6);
+      });
+    });
+
+    it('test ap argument for an apply of a function', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(1).map(add);
+
+      eq(a.ap(b).get(), 2);
+    });
+
+    it('test ap argument for an apply of a non-function', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(1).map(identity);
+
+      chai.assert.throws(() => a.ap(b).get(), TypeError);
+    });
+
+    it('test ap caller for an apply of any value', function() {
+      const a = Identity.of(add);
+      const b = Identity.of(1).map(add);
+
+      eq(a.ap(b).get(), NaN);
+    });
+
+    it('test for non parts or return value being checked', function() {
+      // TODO(vladimir.gorej@gmail.com): how to tests this one ?
+    });
+  });
+
   describe('Applicative', function() {
     it('tests for an Apply spec', function() {
       const a = Identity.of(1);
@@ -139,8 +190,33 @@ describe('Identity', function() {
       eq(isFunction(a[fl.ap]), true);
     });
 
+    it('tests for identity', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(identity);
+
+      eq(a.ap(b).get(), a.get());
+    });
+
+    it('tests for homomorphism', function() {
+      const a = Identity.of(1).ap(Identity.of(identity));
+      const b = Identity.of(identity(1));
+
+      eq(a instanceof Identity, true);
+      eq(b instanceof Identity, true);
+      eq(a.get(), b.get());
+    });
+
+    it('tests for interchange', function() {
+      const val = 1;
+      const a = Identity.of(val);
+      const b = Identity.of(identity);
+
+      eq(a.ap(b).get(), b.ap(Identity.of(f => f(val))).get());
+    });
+
     it('tests for of function on type representative', function() {
       eq(isFunction(Identity[fl.of]), true);
+      eq(Identity.of(1).constructor[fl.of], Identity[fl.of]);
     });
 
     it('tests for of providing value of same Applicative', function() {
