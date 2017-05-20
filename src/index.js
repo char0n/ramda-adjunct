@@ -26,6 +26,7 @@ import isNotObjLike from './isNotObjLike';
 import isPlainObj from './isPlainObj';
 import isNotPlainObj from './isNotPlainObj';
 import isDate from './isDate';
+import isValidDate from './isValidDate';
 import isNotDate from './isNotDate';
 import isNumber from './isNumber';
 import isNotNumber from './isNotNumber';
@@ -89,6 +90,7 @@ export { default as isPlainObject } from './isPlainObj';
 export { default as isNotPlainObj } from './isNotPlainObj';
 export { default as isNotPlainObject } from './isNotPlainObj'; // alias of isNotPlainObject
 export { default as isDate } from './isDate';
+export { default as isValidDate} from './isValidDate';
 export { default as isNotDate } from './isNotDate';
 export { default as isNumber } from './isNumber';
 export { default as isNotNumber } from './isNotNumber';
@@ -157,6 +159,7 @@ const RA = {
   isNotPlainObj,
   isNotPlainObject: isNotPlainObj,
   isDate,
+  isValidDate,
   isNotDate,
   isNumber,
   isNotNumber,
