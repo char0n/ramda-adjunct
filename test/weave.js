@@ -27,40 +27,40 @@ describe('weave', function() {
     eq(wbinaryReader2(2, 3), 6);
   });
 
-  it('tests auto-curring on fixed function signature', function() {
+  it('tests auto-currying on fixed function signature', function() {
     const wbinaryReader = RA.weave(binaryReader, 1);
 
     eq(wbinaryReader(2, 3), 6);
     eq(wbinaryReader(2)(3), 6);
   });
 
-  it('tests auto-curring on curried fixed function signature', function() {
+  it('tests auto-currying on curried fixed function signature', function() {
     const wbinaryReader = RA.weave(curry(binaryReader), 1);
 
     eq(wbinaryReader(2, 3), 6);
     eq(wbinaryReader(2)(3), 6);
   });
 
-  it('tests auto-curring on variadic function signature', function() {
+  it('tests auto-currying on variadic function signature', function() {
     const wvariadicReader = RA.weave(variadicReader, 1);
 
     eq(wvariadicReader(1, 2, 3), 7);
   });
 
-  it('tests auto-curring on curried variadic function signature', function() {
+  it('tests auto-currying on curried variadic function signature', function() {
     const wvariadicReader = RA.weave(curry(variadicReader), 1);
 
     eq(wvariadicReader(1, 2, 3), 7);
   });
 
-  it('tests auto-curring on mixed function signature', function() {
+  it('tests auto-currying on mixed function signature', function() {
     const wmixedReader = RA.weave(mixedReader, 1);
 
     eq(wmixedReader(2, 3, 4), 10);
     eq(wmixedReader(2)(3, 4), 10);
   });
 
-  it('tests auto-curring on curried mixed function signature', function() {
+  it('tests auto-currying on curried mixed function signature', function() {
     const wmixedReader = RA.weave(curry(mixedReader), 1);
 
     eq(wmixedReader(2, 3, 4), 10);
