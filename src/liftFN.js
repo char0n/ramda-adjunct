@@ -10,7 +10,7 @@ import ap from './internal/ap';
  * Old version of fantasy land spec were not compatible with this approach,
  * but as of fantasy land 1.0.0 Apply spec also adopted this approach.
  *
- * This function acts as interop for ramda <= 0.23.0 and {@link https://cwmyers.github.io/monet.js/|monet.js}.
+ * This function acts as interop for ramda <= 0.23.0 and {@link https://monet.github.io/monet.js/|monet.js}.
  *
  * More info {@link https://github.com/fantasyland/fantasy-land/issues/50|here}.
  *

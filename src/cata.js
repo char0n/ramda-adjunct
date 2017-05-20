@@ -29,7 +29,7 @@ import isFunction from './isFunction';
  * @param {Function} rightFn The right function that consumes the right value
  * @param {Cata} catamorphicObj Either, Maybe or any other type with catamorphic capabilities (`cata` or `either` method)
  * @return {*}
- * @see {@link https://cwmyers.github.io/monet.js/#cata|cata explained}
+ * @see {@link https://monet.github.io/monet.js/#cata|cata explained}
  * @example
  *
  * // Either
