@@ -52,6 +52,8 @@ import paths from './paths';
 import renameKeys from './renameKeys';
 import renameKeysWith from './renameKeysWith';
 import mergeRight from './mergeRight';
+// Types
+import Identity from './fantasy-land/Identity';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -114,6 +116,8 @@ export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as mergeRight } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
+// Types
+export { default as Identity } from './fantasy-land/Identity';
 
 /**
  * @namespace RA
@@ -180,6 +184,8 @@ const RA = {
   renameKeys,
   renameKeysWith,
   mergeRight,
+  // Types
+  Identity,
 };
 
 export default RA;

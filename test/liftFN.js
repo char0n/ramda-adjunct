@@ -4,7 +4,7 @@ import { add, reduce } from 'ramda';
 
 import RA from '../src/index';
 import eq from './shared/eq';
-import Identity from '../src/internal/fantasy-land/Identity';
+import Identity from '../src/fantasy-land/Identity';
 
 
 const addN = (...args) => reduce(add, 0, args);

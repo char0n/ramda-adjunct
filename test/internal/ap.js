@@ -2,7 +2,7 @@ import { add, multiply } from 'ramda';
 
 import eq from '../shared/eq';
 import _ap from '../../src/internal/ap';
-import Identity from '../../src/internal/fantasy-land/Identity';
+import Identity from '../../src/fantasy-land/Identity';
 
 
 describe('ap', function() {

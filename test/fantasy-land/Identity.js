@@ -3,9 +3,8 @@ import sinon from 'sinon';
 import { add, identity } from 'ramda';
 import fl from 'fantasy-land';
 
-import { isFunction } from '../../../src';
-import eq from '../../shared/eq';
-import Identity from '../../../src/internal/fantasy-land/Identity';
+import { isFunction, Identity } from '../../src/index';
+import eq from '../shared/eq';
 
 
 describe('Identity', function() {
@@ -172,7 +171,7 @@ describe('Identity', function() {
     });
 
     it('test ap caller for an apply of any value', function() {
-      const a = Identity.of(add);
+      const a = Identity.of(NaN);
       const b = Identity.of(1).map(add);
 
       eq(a.ap(b).get(), NaN);

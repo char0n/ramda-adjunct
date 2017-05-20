@@ -1,7 +1,7 @@
 import fl from 'fantasy-land';
 import { equals, pathSatisfies } from 'ramda';
 
-import { isString, isNumber, isFunction } from '../../';
+import { isString, isNumber, isFunction } from '../index';
 import { isSameType } from './util';
 
 

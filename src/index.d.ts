@@ -307,6 +307,11 @@ declare namespace RamdaAdjunct {
          */
         weave(fn: Function, config: any): Function;
         weave(fn: Function): (config: any) => Function;
+
+        /**
+         * Identity type.
+         */
+        Identity: Function;
     }
 
 }
