@@ -17,9 +17,9 @@ import { applyTrait, functorTrait, setoidTrait, semigroupTrait, chainTrait } fro
  * @implements
  * {@link https://github.com/fantasyland/fantasy-land#apply|Apply},
  * {@link https://github.com/fantasyland/fantasy-land#applicative|Applicative},
- * {@link https://github.com/fantasyland/fantasy-land#apply|Functor},
- * {@link https://github.com/fantasyland/fantasy-land#apply|Setoid},
- * {@link https://github.com/fantasyland/fantasy-land#apply|Semigroup},
+ * {@link https://github.com/fantasyland/fantasy-land#functor|Functor},
+ * {@link https://github.com/fantasyland/fantasy-land#setoid|Setoid},
+ * {@link https://github.com/fantasyland/fantasy-land#semigroup|Semigroup},
  * {@link https://github.com/fantasyland/fantasy-land#chain|Chain},
  * {@link https://github.com/fantasyland/fantasy-land#monad|Monad}
  * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
@@ -146,7 +146,7 @@ class Identity {
   }
 
   /**
-   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#semigroup|Chain} specification.
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#chain|Chain} specification.
    *
    * @sig chain :: Chain m => m a ~> (a -> m b) -> m b
    * @param {Function} fn Function returning the value of the same {@link https://github.com/fantasyland/fantasy-land#semigroup|Chain}
