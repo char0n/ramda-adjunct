@@ -3,6 +3,7 @@ import sinon from 'sinon';
 import { add, identity } from 'ramda';
 import fl from 'fantasy-land';
 
+import { isFunction } from '../../../src';
 import eq from '../../shared/eq';
 import Identity from '../../../src/internal/fantasy-land/Identity';
 
@@ -128,6 +129,28 @@ describe('Identity', function() {
       const c = a.concat(b);
 
       eq(c.get(), [1, 2]);
+    });
+  });
+
+  describe('Applicative', function() {
+    it('tests for an Apply spec', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.ap]), true);
+    });
+
+    it('tests for of function on type representative', function() {
+      eq(isFunction(Identity[fl.of]), true);
+    });
+
+    it('tests for of providing value of same Applicative', function() {
+      const a = Identity.of(1);
+
+      eq(a instanceof Identity, true);
+    });
+
+    it("tests if no parts of of's arguments are being checked", function() {
+      // TODO(vladimir.gorej@gmail.com): how to tests this one ?
     });
   });
 
