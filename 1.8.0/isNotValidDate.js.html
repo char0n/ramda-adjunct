@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotFunction.js - Documentation</title>
+    <title>isNotValidDate.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotFunction.js</h1>
+    <h1 class="page-title">isNotValidDate.js</h1>
     
 
     
@@ -45,33 +45,28 @@
         <article>
             <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
 
-import isFunction from './isFunction';
+import isValidDate from './isValidDate';
 
-/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Function`.
+ * Checks if value is complement of valid `Date` object.
  *
- * @func isNotFunction
+ * @func isNotValidDate
+ * @alias isInvalidDate
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isValidDate|isValidDate}, {@link RA.isDate|isDate}, {@link RA.isNotDate|isNotDate}
  * @example
  *
- * RA.isNotFunction(function test() { }); //=> false
- * RA.isNotFunction(function* test() { }); //=> false
- * RA.isNotFunction(async function test() { }); //=> false
- * RA.isNotFunction(() => {}); //=> false
- * RA.isNotFunction(null); //=> true
- * RA.isNotFunction('abc'); //=> true
+ * RA.isNotValidDate(new Date()); //=> false
+ * RA.isNotValidDate(new Date('a')); //=> true
  */
-/* eslint-enable max-len */
-const isNotFunction = complement(isFunction);
+const isNotValidDate = complement(isValidDate);
 
-export default isNotFunction;
+export default isNotValidDate;
 </code></pre>
         </article>
     </section>

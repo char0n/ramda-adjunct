@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotFunction.js - Documentation</title>
+    <title>isValidDate.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotFunction.js</h1>
+    <h1 class="page-title">isValidDate.js</h1>
     
 
     
@@ -43,35 +43,32 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { invoker, both, pipe } from 'ramda';
 
-import isFunction from './isFunction';
+import isDate from './isDate';
+import isNotNaN from './isNotNaN';
 
 /* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Function`.
+ * Checks if value is valid `Date` object.
  *
- * @func isNotFunction
+ * @func isValidDate
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isDate|isDate}, {@link RA.isNotDate|isNotDate}, {@link RA.isNotValidDate|isNotValidDate}
  * @example
  *
- * RA.isNotFunction(function test() { }); //=> false
- * RA.isNotFunction(function* test() { }); //=> false
- * RA.isNotFunction(async function test() { }); //=> false
- * RA.isNotFunction(() => {}); //=> false
- * RA.isNotFunction(null); //=> true
- * RA.isNotFunction('abc'); //=> true
+ * RA.isValidDate(new Date()); //=> true
+ * RA.isValidDate(new Date('a')); //=> false
  */
 /* eslint-enable max-len */
-const isNotFunction = complement(isFunction);
+const isValidDate = both(isDate, pipe(invoker(0, 'getTime'), isNotNaN));
 
-export default isNotFunction;
+export default isValidDate;
 </code></pre>
         </article>
     </section>
