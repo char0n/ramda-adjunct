@@ -161,14 +161,24 @@ declare namespace RamdaAdjunct {
         isDate(val: any): val is Date;
 
         /**
+         * Checks if value is complement of `Date` object
+         */
+        isNotDate(val: any): boolean;
+
+        /**
          * Checks if value is valid `Date` object.
          */
         isValidDate(val: any): val is Date;
 
         /**
-         * Checks if value is complement of `Date` object
+         * Checks if value is complement of valid `Date` object.
          */
-        isNotDate(val: any): boolean;
+        isNotValidDate(val: any): boolean;
+
+        /**
+         * Checks if value is complement of valid `Date` object.
+         */
+        isInvalidDate(val: any): boolean; // alias of isNotValidDate
 
         /**
          * Checks whether the passed value is `NaN` and its type is `Number`.

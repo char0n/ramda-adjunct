@@ -3,6 +3,7 @@ import { invoker, both, pipe } from 'ramda';
 import isDate from './isDate';
 import isNotNaN from './isNotNaN';
 
+/* eslint-disable max-len */
 /**
  * Checks if value is valid `Date` object.
  *
@@ -13,12 +14,13 @@ import isNotNaN from './isNotNaN';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isDate|isDate}
+ * @see {@link RA.isDate|isDate}, {@link RA.isNotDate|isNotDate}, {@link RA.isNotValidDate|isNotValidDate}
  * @example
  *
  * RA.isValidDate(new Date()); //=> true
  * RA.isValidDate(new Date('a')); //=> false
  */
+/* eslint-enable max-len */
 const isValidDate = both(isDate, pipe(invoker(0, 'getTime'), isNotNaN));
 
 export default isValidDate;

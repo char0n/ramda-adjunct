@@ -26,8 +26,9 @@ import isNotObjLike from './isNotObjLike';
 import isPlainObj from './isPlainObj';
 import isNotPlainObj from './isNotPlainObj';
 import isDate from './isDate';
-import isValidDate from './isValidDate';
 import isNotDate from './isNotDate';
+import isValidDate from './isValidDate';
+import isNotValidDate from './isNotValidDate';
 import isNumber from './isNumber';
 import isNotNumber from './isNotNumber';
 import isNaN from './isNaN';
@@ -90,8 +91,10 @@ export { default as isPlainObject } from './isPlainObj';
 export { default as isNotPlainObj } from './isNotPlainObj';
 export { default as isNotPlainObject } from './isNotPlainObj'; // alias of isNotPlainObject
 export { default as isDate } from './isDate';
-export { default as isValidDate} from './isValidDate';
 export { default as isNotDate } from './isNotDate';
+export { default as isValidDate } from './isValidDate';
+export { default as isNotValidDate } from './isNotValidDate';
+export { default as isInvalidDate } from './isNotValidDate'; // alias of isNotValidDate
 export { default as isNumber } from './isNumber';
 export { default as isNotNumber } from './isNotNumber';
 export { default as isNaN } from './isNaN';
@@ -159,8 +162,10 @@ const RA = {
   isNotPlainObj,
   isNotPlainObject: isNotPlainObj,
   isDate,
-  isValidDate,
   isNotDate,
+  isValidDate,
+  isNotValidDate,
+  isInvalidDate: isNotValidDate,
   isNumber,
   isNotNumber,
   isNaN,

@@ -1,5 +1,6 @@
 import { is } from 'ramda';
 
+/* eslint-disable max-len */
 /**
  * Checks if value is `Date` object.
  *
@@ -10,12 +11,13 @@ import { is } from 'ramda';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotDate|isNotDate}
+ * @see {@link RA.isNotDate|isNotDate}, {@link RA.isValidDate|isValidDate}, {@link RA.isNotValidDate|isNotValidDate}
  * @example
  *
  * RA.isDate(new Date()); //=> true
  * RA.isDate('1997-07-16T19:20+01:00'); //=> false
  */
+/* eslint-enable max-len */
 const isDate = is(Date);
 
 export default isDate;
