@@ -1,7 +1,14 @@
 import chai from 'chai';
 import sinon from 'sinon';
 import { add, identity } from 'ramda';
-import fl from 'fantasy-land';
+import fl from 'fantasy-land/';
+import setoid from 'fantasy-land/laws/setoid';
+import semigroup from 'fantasy-land/laws/semigroup';
+import apply from 'fantasy-land/laws/apply';
+import applicative from 'fantasy-land/laws/applicative';
+import functor from 'fantasy-land/laws/functor';
+import chain from 'fantasy-land/laws/chain';
+import monad from 'fantasy-land/laws/monad';
 
 import { isFunction, Identity } from '../../src/index';
 import eq from '../shared/eq';
@@ -9,33 +16,16 @@ import eq from '../shared/eq';
 
 describe('Identity', function() {
   describe('Setoid', function() {
-    it('tests fantasy land compatibility', function() {
-      const a = Identity.of(1);
-
-      eq(isFunction(a[fl.equals]), true);
-    });
-
     it('tests for reflexivity', function() {
-      const a = Identity.of(1);
-
-      eq(a.equals(a), true);
+      setoid.reflexivity(Identity.of)(eq)(1);
     });
 
     it('tests for symetry', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(1);
-
-      eq(a.equals(b), b.equals(a));
+      setoid.symmetry(Identity.of)(eq)(1);
     });
 
     it('tests for transitivity', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(1);
-      const c = Identity.of(1);
-
-      eq(a.equals(b), true);
-      eq(b.equals(c), true);
-      eq(a.equals(c), true);
+      setoid.transitivity(Identity.of)(eq)(1);
     });
 
     it('tests for value of the same Setoid', function() {
@@ -72,19 +62,8 @@ describe('Identity', function() {
   });
 
   describe('Semigroup', function() {
-    it('tests fantasy land compatibility', function() {
-      const a = Identity.of(1);
-
-      eq(isFunction(a[fl.concat]), true);
-    });
-
     it('tests for associativity', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(2);
-      const c = Identity.of(3);
-
-      eq(a.concat(b).concat(c).get(), 6);
-      eq(a.concat(b.concat(c)).get(), 6);
+      semigroup.associativity(Identity.of)(eq)(1);
     });
 
     it('tests for value of different Semigroup', function() {
@@ -144,34 +123,14 @@ describe('Identity', function() {
   });
 
   describe('Apply', function() {
-    it('tests fantasy land compatibility', function() {
-      const a = Identity.of(1);
-
-      eq(isFunction(a[fl.ap]), true);
-    });
-
     it('tests for Functor spec', function() {
       const a = Identity.of(1);
 
       eq(isFunction(a[fl.map]), true);
     });
 
-    describe('tests for composition', function() {
-      it('v.ap(u).ap(a)', function() {
-        const a = Identity.of(1);
-        const b = Identity.of(2).map(add);
-        const c = Identity.of(3).map(add);
-
-        eq(a.ap(b).ap(c).get(), 6);
-      });
-
-      it('v.ap(u.ap(a.map(f => g => x => f(g(x)))))', function() {
-        const a = Identity.of(1);
-        const b = Identity.of(2).map(add);
-        const c = Identity.of(3).map(add);
-
-        eq(a.ap(b.ap(c.map(f => g => val => f(g(val))))).get(), 6);
-      });
+    it('tests for composition', function() {
+      apply.composition(Identity)(eq)(1);
     });
 
     it('test ap argument for an apply of a function', function() {
@@ -201,13 +160,6 @@ describe('Identity', function() {
   });
 
   describe('Applicative', function() {
-    it('tests fantasy land compatibility', function() {
-      const a = Identity.of(1);
-
-      eq(isFunction(a.constructor[fl.of]), true);
-    });
-
-
     it('tests for an Apply spec', function() {
       const a = Identity.of(1);
 
@@ -215,27 +167,15 @@ describe('Identity', function() {
     });
 
     it('tests for identity', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(identity);
-
-      eq(a.ap(b).get(), a.get());
+      applicative.identity(Identity)(eq)(1);
     });
 
     it('tests for homomorphism', function() {
-      const a = Identity.of(1).ap(Identity.of(identity));
-      const b = Identity.of(identity(1));
-
-      eq(a instanceof Identity, true);
-      eq(b instanceof Identity, true);
-      eq(a.get(), b.get());
+      applicative.homomorphism(Identity)(eq)(1);
     });
 
     it('tests for interchange', function() {
-      const val = 1;
-      const a = Identity.of(val);
-      const b = Identity.of(identity);
-
-      eq(a.ap(b).get(), b.ap(Identity.of(f => f(val))).get());
+      applicative.interchange(Identity)(eq)(1);
     });
 
     it('tests for of function on type representative', function() {
@@ -255,25 +195,12 @@ describe('Identity', function() {
   });
 
   describe('Functor', function() {
-    it('tests fantasy land compatibility', function() {
-      const a = Identity.of(1);
-
-      eq(isFunction(a[fl.map]), true);
-    });
-
     it('tests for identity', function() {
-      const a = Identity.of(1);
-      const b = a.map(identity);
-
-      eq(a.equals(b), true);
+      functor.identity(Identity.of)(eq)(1);
     });
 
     it('tests for composition', function() {
-      const add1 = add(1);
-      const a = Identity.of(1).map(add1).map(add1);
-      const b = Identity.of(1).map(val => add1(add1(val)));
-
-      eq(a.equals(b), true);
+      functor.composition(Identity.of)(eq)(identity)(identity)(1);
     });
 
     it('tests f for a function type', function() {
@@ -325,12 +252,6 @@ describe('Identity', function() {
   });
 
   describe('Chain', function() {
-    it('tests fantasy land compatibility', function() {
-      const a = Identity.of(1);
-
-      eq(isFunction(a[fl.chain]), true);
-    });
-
     it('tests for an Apply spec', function() {
       const a = Identity.of(1);
 
@@ -339,11 +260,7 @@ describe('Identity', function() {
     });
 
     it('tests for associativity', function() {
-      const a = Identity.of(1);
-      const f = val => Identity.of(val + 1);
-      const g = val => Identity.of(val + 2);
-
-      eq(a.chain(f).chain(g).get(), a.chain(val => f(val).chain(g)).get());
+      chain.associativity(Identity)(eq)(1);
     });
 
     it('tests the only argument to be a function', function() {
@@ -388,6 +305,14 @@ describe('Identity', function() {
       const a = Identity.of(1);
 
       eq(isFunction(a[fl.chain]), true);
+    });
+
+    it('tests for leftIdentity', function() {
+      monad.leftIdentity(Identity)(eq)(Identity.of)(1);
+    });
+
+    it('tests for rightIdentity', function() {
+      monad.rightIdentity(Identity)(eq)(1);
     });
   });
 });
