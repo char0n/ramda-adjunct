@@ -1,7 +1,7 @@
-import fl from 'fantasy-land';
 import { ap as apR, curryN, pathSatisfies, both, anyPass } from 'ramda';
 
 import isFunction from '../isFunction';
+import fl from '../fantasy-land/mapping';
 
 
 const isFunctor = anyPass([pathSatisfies(isFunction, ['map']), pathSatisfies(isFunction, [fl.map])]);

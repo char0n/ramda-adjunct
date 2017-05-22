@@ -1,7 +1,10 @@
-import { of, ap, map, equals, concat, chain } from 'fantasy-land';
-
 import { aliases } from './util';
+import fl from './mapping';
 import { applyTrait, functorTrait, setoidTrait, semigroupTrait, chainTrait } from './traits';
+
+
+// we do this here for jsdocs generate properly
+const { of, ap, map, equals, concat, chain } = fl;
 
 
 /**
