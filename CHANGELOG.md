@@ -1,3 +1,16 @@
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/char0n/ramda-adjunct/compare/v1.7.0...v1.8.0) (2017-05-22)
+
+
+### Features
+
+* **Identity:** add Identity monadic type to public API ([5130a73](https://github.com/char0n/ramda-adjunct/commit/5130a73))
+* **weave:** add support for auto-currying returned function ([7fcf7a9](https://github.com/char0n/ramda-adjunct/commit/7fcf7a9)), closes [#78](https://github.com/char0n/ramda-adjunct/issues/78)
+* add isValidDate ([3a2f4ad](https://github.com/char0n/ramda-adjunct/commit/3a2f4ad))
+* isNotValidDate ([10d3780](https://github.com/char0n/ramda-adjunct/commit/10d3780)), closes [#46](https://github.com/char0n/ramda-adjunct/issues/46)
+
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/char0n/ramda-adjunct/compare/v1.6.0...v1.7.0) (2017-05-18)
 
