@@ -1,3 +1,12 @@
+<a name="1.8.1"></a>
+## [1.8.1](https://github.com/char0n/ramda-adjunct/compare/v1.8.0...v1.8.1) (2017-05-23)
+
+
+### Bug Fixes
+
+* Fixes corrupted build on npm
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/char0n/ramda-adjunct/compare/v1.7.0...v1.8.0) (2017-05-22)
 
