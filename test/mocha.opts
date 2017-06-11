@@ -1,5 +1,5 @@
 --reporter mocha-multi-reporters
 --reporter-options configFile=test/mocha-multi.json
---compilers babel-register
+--require test/mocha-bootstrap.js
 --recursive
 test/
