@@ -28,14 +28,17 @@ describe('isArrayLike', function() {
     const obj2 = { 0: 'something', length: 0 };
     const obj3 = { 0: void 0, length: 0 };
     const obj4 = { 0: 'zero', 1: 'one', length: 2 };
-    const obj5 = { 0: 'zero', length: 2 };
-    const obj6 = { 1: 'one', length: 2 };
+    const obj5 = { nodeType: 1, length: 2 };
+    const obj6 = { 0: 'zero', length: 2 };
+    const obj7 = { 1: 'one', length: 2 };
+
     eq(RA.isArrayLike(obj1), true);
     eq(RA.isArrayLike(obj2), true);
     eq(RA.isArrayLike(obj3), true);
     eq(RA.isArrayLike(obj4), true);
-    eq(RA.isArrayLike(obj5), false);
+    eq(RA.isArrayLike(obj5), true);
     eq(RA.isArrayLike(obj6), false);
+    eq(RA.isArrayLike(obj7), false);
   });
 
   it('is false for everything else', function() {

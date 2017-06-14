@@ -30,8 +30,8 @@ import isString from './isString';
 const isArrayLike = (val) => {
   if (isArray(val)) { return true }
   if (!val) { return false }
-  if (typeof val !== 'object') { return false }
   if (isString(val)) { return false }
+  if (typeof val !== 'object') { return false }
   if (val.nodeType === 1) { return !!val.length }
   if (val.length === 0) { return true }
   if (val.length > 0) {
