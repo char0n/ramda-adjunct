@@ -12,6 +12,7 @@ import isNotEmpty from './isNotEmpty';
 import isNilOrEmpty from './isNilOrEmpty';
 import isString from './isString';
 import isNotString from './isNotString';
+import isArrayLike from './isArrayLike';
 import isNotArrayLike from './isNotArrayLike';
 import isGeneratorFunction from './isGeneratorFunction';
 import isNotGeneratorFunction from './isNotGeneratorFunction';
@@ -71,6 +72,7 @@ export { default as isNotEmpty } from './isNotEmpty';
 export { default as isNilOrEmpty } from './isNilOrEmpty';
 export { default as isString } from './isString';
 export { default as isNotString } from './isNotString';
+export { default as isArrayLike } from './isArrayLike';
 export { default as isNotArrayLike } from './isNotArrayLike';
 export { default as isGeneratorFunction } from './isGeneratorFunction';
 export { default as isNotGeneratorFunction } from './isNotGeneratorFunction';
@@ -142,6 +144,7 @@ const RA = {
   isNilOrEmpty,
   isString,
   isNotString,
+  isArrayLike,
   isNotArrayLike,
   isGeneratorFunction,
   isNotGeneratorFunction,

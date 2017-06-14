@@ -20,27 +20,27 @@ declare namespace RamdaAdjunct {
 
     export interface Static {
         /**
-         * Checks if input value is `Array`
+         * Checks if input value is `Array`.
          */
         isArray(val: any): val is Array<any>;
 
         /**
-         * Checks if input value is `Boolean
+         * Checks if input value is `Boolean.
          */
         isBoolean(val: any): val is Boolean;
 
         /**
-         * Returns `true` if the given value is its type's empty value, `null` or `undefined`
+         * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
          */
         isNilOrEmpty(val: any): boolean;
 
         /**
-         * Checks if input value is complement of `Array`
+         * Checks if input value is complement of `Array`.
          */
         isNotArray(val: any): boolean;
 
         /**
-         * Checks if input value is complement of `Boolean`
+         * Checks if input value is complement of `Boolean`.
          */
         isNotBoolean(val: any): boolean;
 
@@ -50,39 +50,45 @@ declare namespace RamdaAdjunct {
         isNotEmpty(val: any): boolean;
 
         /**
-         * Checks if input value is complement of `null` or `undefined`
+         * Checks if input value is complement of `null` or `undefined`.
          */
         isNotNil(val: any): boolean;
 
         /**
-         * Checks if input value is complement of `null`
+         * Checks if input value is complement of `null`.
          */
         isNotNull(val: any): boolean;
 
         /**
-         * Checks if input value is complement of `String`
+         * Checks if input value is complement of `String`.
          */
         isNotString(val: any): boolean;
 
         /**
-         * Checks if input value is complement `undefined`
+         * Checks if input value is complement `undefined`.
          */
         isNotUndefined(val: any): boolean;
 
         /**
-         * Checks if input value is `null`
+         * Checks if input value is `null`.
          */
         isNull(val: any): val is null;
 
         /**
-         * Checks if input value is `String`
+         * Checks if input value is `String`.
          */
         isString(val: any): val is String;
 
         /**
-         * Checks if input value is `undefined`
+         * Checks if input value is `undefined`.
          */
         isUndefined(val: any): val is undefined;
+
+        /**
+         * Tests whether or not an object is similar to an array.
+         */
+        isArrayLike(val: any): boolean
+
 
         /**
          * Tests whether or not an object is similar to an array.
@@ -90,43 +96,43 @@ declare namespace RamdaAdjunct {
         isNotArrayLike(val: any): boolean;
 
         /**
-         * Checks if input value is `Generator Function`
+         * Checks if input value is `Generator Function`.
          */
         isGeneratorFunction(val: any): boolean;
 
         /**
-         * Checks if input value is complement of `Generator Function`
+         * Checks if input value is complement of `Generator Function`.
          */
         isNotGeneratorFunction(val: any): boolean;
 
         /**
-         * Checks if input value is `Async Function`
+         * Checks if input value is `Async Function`.
          */
         isAsyncFunction(val: any): boolean;
 
         /**
-         * Checks if input value is complement of `Async Function`
+         * Checks if input value is complement of `Async Function`.
          */
         isNotAsyncFunction(val: any): boolean;
 
         /**
-         * Checks if input value is `Function`
+         * Checks if input value is `Function`.
          */
         isFunction(val: any): boolean;
 
         /**
-         * Checks if input value is complement of `Function`
+         * Checks if input value is complement of `Function`.
          */
         isNotFunction(val: any): boolean;
 
         /**
-         * Checks if input value is language type of `Object`
+         * Checks if input value is language type of `Object`.
          */
         isObj(val: any): val is Object;
         isObject(val: any): val is Object;
 
         /**
-         * Checks if input value is complement of language type of `Object`
+         * Checks if input value is complement of language type of `Object`.
          */
         isNotObj(val: any): boolean;
         isNotObject(val: any): boolean; // alias
@@ -144,13 +150,13 @@ declare namespace RamdaAdjunct {
         isNotObjectLike(val: any): boolean; // alias
 
         /**
-         * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
+         * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
          */
         isPlainObj(val: any): boolean;
         isPlainObject(val: any): boolean; // alias
 
         /**
-         * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`)
+         * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
          */
         isNotPlainObj(val: any): boolean;
         isNotPlainObject(val: any): boolean; // alias
@@ -161,7 +167,7 @@ declare namespace RamdaAdjunct {
         isDate(val: any): val is Date;
 
         /**
-         * Checks if value is complement of `Date` object
+         * Checks if value is complement of `Date` object.
          */
         isNotDate(val: any): boolean;
 
@@ -192,12 +198,12 @@ declare namespace RamdaAdjunct {
         isNotNaN(val: any): boolean;
 
         /**
-         * Checks if value is a `Number` primitive or object
+         * Checks if value is a `Number` primitive or object.
          */
         isNumber(val: any): val is Number;
 
         /**
-         * Checks if value is a complement of `Number` primitive or object
+         * Checks if value is a complement of `Number` primitive or object.
          */
         isNotNumber(val: any): boolean;
 
