@@ -1,3 +1,13 @@
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/char0n/ramda-adjunct/compare/v1.8.1...v1.9.0) (2017-06-14)
+
+
+### Features
+
+* add support for ramda >= 0.19.0 <= 0.24.1 ([b414d1c](https://github.com/char0n/ramda-adjunct/commit/b414d1c))
+* add isArrayLike ([3062a89](https://github.com/char0n/ramda-adjunct/commit/3062a89))
+
+
 <a name="1.8.1"></a>
 ## [1.8.1](https://github.com/char0n/ramda-adjunct/compare/v1.8.0...v1.8.1) (2017-05-23)
 
