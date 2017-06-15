@@ -13,7 +13,7 @@ import isArrayLike from './isArrayLike';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isArrayLike|isArrayLike}
+ * @see {@link RA.isArrayLike|isArrayLike}
  * @example
  *
  * RA.isNotArrayLike([]); //=> false

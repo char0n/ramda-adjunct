@@ -17,6 +17,7 @@ import isString from './isString';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @returns {Boolean} `true` if `val` has a numeric length property and extreme indices defined; `false` otherwise.
+ * @see {@link RA.isNotArrayLike|isNotArrayLike}
 
  * @example
  *
