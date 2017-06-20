@@ -330,6 +330,12 @@ declare namespace RamdaAdjunct {
         weave(fn: Function): (config: any) => Function;
 
         /**
+         * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.
+         */
+        weaveLazy(fn: Function, configAccessor: Function): Function;
+        weaveLazy(fn: Function): (configAccessor: Function) => Function;
+
+        /**
          * Identity type.
          */
         Identity: Function;
