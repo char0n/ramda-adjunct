@@ -1,3 +1,8 @@
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/char0n/ramda-adjunct/compare/v1.10.0...v1.11.0) (2017-06-20)
+
+* fixes crashed build for 1.10.0
+
 <a name="1.10.0"></a>
 # [1.10.0](https://github.com/char0n/ramda-adjunct/compare/v1.9.0...v1.10.0) (2017-06-20)
 
