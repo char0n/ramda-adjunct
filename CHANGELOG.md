@@ -1,5 +1,5 @@
-<a name="1.11.0"></a>
-# [1.11.0](https://github.com/char0n/ramda-adjunct/compare/v1.10.0...v1.11.0) (2017-06-20)
+<a name="1.10.1"></a>
+# [1.10.1](https://github.com/char0n/ramda-adjunct/compare/v1.10.0...v1.10.1) (2017-06-20)
 
 * fixes crashed build for 1.10.0
 
