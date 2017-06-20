@@ -1,3 +1,13 @@
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/char0n/ramda-adjunct/compare/v1.9.0...v1.10.0) (2017-06-20)
+
+
+### Features
+
+* add weaveLazy ([8b665d3](https://github.com/char0n/ramda-adjunct/commit/8b665d3))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/char0n/ramda-adjunct/compare/v1.8.1...v1.9.0) (2017-06-14)
 
