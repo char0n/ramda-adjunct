@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotArrayLike.js - Documentation</title>
+    <title>weaveLazy.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotArrayLike.js</h1>
+    <h1 class="page-title">weaveLazy.js</h1>
     
 
     
@@ -43,33 +43,43 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isArrayLike from './isArrayLike';
-
+            <pre class="prettyprint source linenums"><code>import { curryN } from 'ramda';
 
 /**
- * Tests whether or not an object is similar to an array.
+ * Weaves a configuration into function returning the runnable monad like `Reader` or `Free`.
+ * This allows us to pre-bind the configuration in advance and use the weaved function
+ * without need to explicitly pass the configuration on every call.
  *
- * @func isNotArrayLike
+ * @func weaveLazy
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isArrayLike|isArrayLike}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.10.0|v1.10.0}
+ * @category Function
+ * @sig (*... -> *) -> (* -> *) -> (*... -> *)
+ * @param {Function} fn The function to weave
+ * @param {Function} configAccessor The function that returns the configuration object
+ * @return {Function} Auto-curried weaved function
  * @example
  *
- * RA.isNotArrayLike([]); //=> false
- * RA.isNotArrayLike(true); //=> true
- * RA.isNotArrayLike({}); //=> true
- * RA.isNotArrayLike({length: 10}); //=> true
- * RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false
+ * const { Reader: reader } = require('monet');
+ *
+ * const log = value => reader(
+ *   config => config.log(value)
+ * );
+ *
+ * const consoleAccessor = R.always(console);
+ *
+ * // no weaving
+ * log('test').run(console); //=> prints 'test'
+ *
+ * // weaving
+ * const wlog = RA.weaveLazy(log, consoleAccessor);
+ * wlog('test'); //=> prints 'test'
  */
-const isNotArrayLike = complement(isArrayLike);
+const weaveLazy = curryN(2, (fn, configAccessor) =>
+  curryN(fn.length, (...args) => fn(...args).run(configAccessor()))
+);
 
-export default isNotArrayLike;
+export default weaveLazy;
 </code></pre>
         </article>
     </section>
