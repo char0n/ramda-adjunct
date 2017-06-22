@@ -27,7 +27,7 @@ import isString from './isString';
  * RA.isArrayLike({length: 10}); //=> false
  * RA.isArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> true
  */
-/* eslint-enable max-lent */
+/* eslint-enable max-len */
 const isArrayLike = (val) => {
   if (isArray(val)) { return true }
   if (!val) { return false }
