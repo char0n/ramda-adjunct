@@ -254,6 +254,11 @@ declare namespace RamdaAdjunct {
         list(...items: any[]): Array<any>;
 
         /**
+         * Returns the result of concatenating the given lists or strings.
+         */
+        concatRight<T extends Array<any>|String>(firstList: T, secondList: T): T;
+
+        /**
          * Set properties only if they don't exist. Useful for passing defaults. Basically this function
          * is the alias of {@link http://ramdajs.com/docs/#merge|merge}.
          */

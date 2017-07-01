@@ -50,6 +50,7 @@ import weaveLazy from './weaveLazy';
 // List
 import pickIndexes from './pickIndexes';
 import list from './list';
+import concatRight from './concatRight';
 // Object
 import defaults from './defaults';
 import paths from './paths';
@@ -118,6 +119,7 @@ export { default as weaveLazy } from './weaveLazy';
 // List
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
+export { default as concatRight } from './concatRight';
 // Object
 export { default as defaults } from './defaults';
 export { default as paths } from './paths';
@@ -191,6 +193,7 @@ const RA = {
   // List
   pickIndexes,
   list,
+  concatRight,
   // Object
   defaults,
   resetToDefault: mergeRight,
