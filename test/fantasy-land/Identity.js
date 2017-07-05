@@ -9,6 +9,7 @@ import applicative from 'fantasy-land/laws/applicative';
 import functor from 'fantasy-land/laws/functor';
 import chain from 'fantasy-land/laws/chain';
 import monad from 'fantasy-land/laws/monad';
+import ord from 'fantasy-land/laws/ord';
 
 import { isFunction, Identity } from '../../src/index';
 import eq from '../shared/eq';
@@ -313,6 +314,50 @@ describe('Identity', function() {
 
     it('tests for rightIdentity', function() {
       monad.rightIdentity(Identity)(eq)(1);
+    });
+  });
+
+  describe('Ord', function() {
+    it('tests for Setoid spec', function() {
+      const a = Identity.of(1);
+
+      eq(isFunction(a[fl.equals]), true);
+    });
+
+    it('tests for totality', function() {
+      ord.totality(eq)(Identity.of(1))(Identity.of(2));
+    });
+
+    it('tests for antisymetry', function() {
+      ord.antisymmetry(eq)(Identity.of(1))(Identity.of(1));
+    });
+
+    it('tests for transitivity', function() {
+      ord.transitivity(eq)(Identity.of(1))(Identity.of(2))(Identity.of(3));
+    });
+
+    it('tests for value of the same Ord', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(2);
+
+      eq(a.lte(b), true);
+    });
+
+    it('tests for value of different Ord', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(2);
+
+      b['@@type'] = 'unknown-type';
+
+      eq(a.lte(b), false);
+    });
+
+    it('tests for returning a boolean', function() {
+      const a = Identity.of(1);
+      const b = Identity.of(2);
+
+      eq(a.lte(b), true);
+      eq(b.lte(a), false);
     });
   });
 });

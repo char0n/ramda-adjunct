@@ -1,10 +1,10 @@
 import { aliases } from './util';
 import fl from './mapping';
-import { applyTrait, functorTrait, setoidTrait, semigroupTrait, chainTrait } from './traits';
+import { applyTrait, functorTrait, setoidTrait, semigroupTrait, chainTrait, ordTrait } from './traits';
 
 
 // we do this here for jsdocs generate properly
-const { of, ap, map, equals, concat, chain } = fl;
+const { of, ap, map, equals, concat, chain, lte } = fl;
 
 
 /**
@@ -24,7 +24,8 @@ const { of, ap, map, equals, concat, chain } = fl;
  * {@link https://github.com/fantasyland/fantasy-land#setoid|Setoid},
  * {@link https://github.com/fantasyland/fantasy-land#semigroup|Semigroup},
  * {@link https://github.com/fantasyland/fantasy-land#chain|Chain},
- * {@link https://github.com/fantasyland/fantasy-land#monad|Monad}
+ * {@link https://github.com/fantasyland/fantasy-land#monad|Monad},
+ * {@link https://github.com/fantasyland/fantasy-land#ord|Ord}
  * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
  */
 class Identity {
@@ -163,6 +164,26 @@ class Identity {
    */
   [chain](fn) {
     return chainTrait[chain].call(this, fn);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#ord|Ord} specification.
+   *
+   * @sig lte :: Ord a => a ~> a -> Boolean   *
+   * @param {RA.Identity} ord
+   * @return {boolean}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * const b = Identity.of(1);
+   * const c = Identity.of(2);
+   *
+   * a.lte(b); //=> true
+   * a.lte(c); //=> true
+   * c.lte(a); //=> false
+   */
+  [lte](ord) {
+    return ordTrait[lte].call(this, ord);
   }
 }
 
