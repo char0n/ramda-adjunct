@@ -82,7 +82,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line30">line 30</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -109,7 +109,8 @@ transformer when no other behaviour is required.</p></div>
 <a href="https://github.com/fantasyland/fantasy-land#setoid">Setoid</a>,
 <a href="https://github.com/fantasyland/fantasy-land#semigroup">Semigroup</a>,
 <a href="https://github.com/fantasyland/fantasy-land#chain">Chain</a>,
-<a href="https://github.com/fantasyland/fantasy-land#monad">Monad</a></li>
+<a href="https://github.com/fantasyland/fantasy-land#monad">Monad</a>,
+<a href="https://github.com/fantasyland/fantasy-land#ord">Ord</a></li>
         
     </ul></dd>
     
@@ -249,7 +250,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line49">line 49</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line50">line 50</a>
     </li></ul></dd>
     
 
@@ -324,7 +325,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line42">line 42</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -491,7 +492,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line89">line 89</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -661,7 +662,7 @@ a.ap(b); //=> Identity(2)</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line164">line 164</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line165">line 165</a>
     </li></ul></dd>
     
 
@@ -831,7 +832,7 @@ a.chain(fn).chain(fn); //=> Identity(3)</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line147">line 147</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line148">line 148</a>
     </li></ul></dd>
     
 
@@ -1008,7 +1009,7 @@ e.concat(f); //=> ['e', 'f']</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line123">line 123</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line124">line 124</a>
     </li></ul></dd>
     
 
@@ -1180,7 +1181,7 @@ a.equals(c); //=> false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line72">line 72</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -1281,6 +1282,179 @@ a.get(); //=> 1</code></pre>
             
 
     
+    <div id="lte" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>lte<span class="signature">(ord)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line185">line 185</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><pre><code>lte :: Ord a => a ~> a -> Boolean   *</code></pre></li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#ord">Ord</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+const b = Identity.of(1);
+const c = Identity.of(2);
+
+a.lte(b); //=> true
+a.lte(c); //=> true
+c.lte(a); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ord</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
     <div id="map" class="section-id"></div>
     <h4 class="name"><span class="type-signature"></span>map<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
@@ -1294,7 +1468,7 @@ a.get(); //=> 1</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line104">line 104</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line105">line 105</a>
     </li></ul></dd>
     
 
@@ -1463,7 +1637,7 @@ a.map(a => a + 1); //=> Identity(2)</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat Jul 01 2017 10:01:35 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Jul 05 2017 11:40:47 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
