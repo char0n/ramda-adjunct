@@ -11,7 +11,7 @@ import chain from 'fantasy-land/laws/chain';
 import monad from 'fantasy-land/laws/monad';
 import ord from 'fantasy-land/laws/ord';
 
-import { isFunction, Identity } from '../../src/index';
+import { isFunction, Identity, isNumber } from '../../src/index';
 import eq from '../shared/eq';
 
 
@@ -358,6 +358,45 @@ describe('Identity', function() {
 
       eq(a.lte(b), true);
       eq(b.lte(a), false);
+    });
+  });
+
+  describe('Monoid*', function() {
+    it('tests for an Semigroup spec', function () {
+      const i = Identity.of('string').empty();
+
+      eq(isFunction(i[fl.concat]), true);
+    });
+
+    it('tests for right identity', function() {
+      const a = Identity.of('string');
+      const i = a.empty();
+
+      eq(a.concat(i), a);
+    });
+
+    it('tests for left identity', function() {
+      const a = Identity.of('string');
+      const i = a.empty();
+
+      eq(i.concat(a), a);
+    });
+
+    it('tests empty for returning a value of the same Monoid', function() {
+      const a = Identity.of('string');
+      const i = a.empty();
+
+      eq(a instanceof Identity, true);
+      eq(i instanceof Identity, true);
+    });
+
+    it("tests delegating to inner's type empty method", function() {
+      const Type = { empty() { return 0 } };
+
+      const a = Identity.of(Type);
+      const i = a.empty();
+
+      eq(i, Identity.of(0));
     });
   });
 });

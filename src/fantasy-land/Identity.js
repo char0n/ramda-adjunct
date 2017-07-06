@@ -1,10 +1,12 @@
+import { empty as emptyR } from 'ramda';
+
 import { aliases } from './util';
 import fl from './mapping';
 import { applyTrait, functorTrait, setoidTrait, semigroupTrait, chainTrait, ordTrait } from './traits';
 
 
 // we do this here for jsdocs generate properly
-const { of, ap, map, equals, concat, chain, lte } = fl;
+const { of, ap, map, equals, concat, chain, lte, empty } = fl;
 
 
 /**
@@ -25,7 +27,8 @@ const { of, ap, map, equals, concat, chain, lte } = fl;
  * {@link https://github.com/fantasyland/fantasy-land#semigroup|Semigroup},
  * {@link https://github.com/fantasyland/fantasy-land#chain|Chain},
  * {@link https://github.com/fantasyland/fantasy-land#monad|Monad},
- * {@link https://github.com/fantasyland/fantasy-land#ord|Ord}
+ * {@link https://github.com/fantasyland/fantasy-land#ord|Ord},
+ * {@link https://github.com/fantasyland/fantasy-land#monoid|Monoid*}
  * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
  */
 class Identity {
@@ -169,7 +172,7 @@ class Identity {
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#ord|Ord} specification.
    *
-   * @sig lte :: Ord a => a ~> a -> Boolean   *
+   * @sig lte :: Ord a => a ~> a -> Boolean
    * @param {RA.Identity} ord
    * @return {boolean}
    * @example
@@ -184,6 +187,26 @@ class Identity {
    */
   [lte](ord) {
     return ordTrait[lte].call(this, ord);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#monoid|Monoid*} specification.
+   * Partial implementation of Monoid specification. `empty` method on instance only, returning
+   * identity value of the wrapped type. Using `R.empty` under the hood.
+   *
+   *
+   * @sig empty :: Monoid m => () -> m
+   * @return {RA.Identity}
+   * @example
+   *
+   * const a = Identity.of('test');
+   * const i = a.empty();
+   *
+   * a.concat(i); //=> Identity('string');
+   * i.concat(a); //=> Identity('string');
+   */
+  [empty]() {
+    return this.constructor.of(emptyR(this.value));
   }
 }
 
