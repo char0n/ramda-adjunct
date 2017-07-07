@@ -11,7 +11,7 @@ import chain from 'fantasy-land/laws/chain';
 import monad from 'fantasy-land/laws/monad';
 import ord from 'fantasy-land/laws/ord';
 
-import { isFunction, Identity, isNumber } from '../../src/index';
+import { isFunction, Identity } from '../../src/index';
 import eq from '../shared/eq';
 
 
