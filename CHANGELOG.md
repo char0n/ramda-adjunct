@@ -1,3 +1,15 @@
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/char0n/ramda-adjunct/compare/v1.10.2...v1.11.0) (2017-07-23)
+
+
+### Features
+
+* add concatRight ([7628612](https://github.com/char0n/ramda-adjunct/commit/7628612)), closes [#93](https://github.com/char0n/ramda-adjunct/issues/93)
+* **Identity:** add Ord fantasy-land spec ([76d94d7](https://github.com/char0n/ramda-adjunct/commit/76d94d7))
+* **Identity:** add partial Monoid* specification ([da1f379](https://github.com/char0n/ramda-adjunct/commit/da1f379))
+
+
+
 <a name="1.10.2"></a>
 ## [1.10.2](https://github.com/char0n/ramda-adjunct/compare/v1.10.0...v1.10.2) (2017-06-20)
 
