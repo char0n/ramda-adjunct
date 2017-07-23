@@ -1,3 +1,8 @@
+dependencies:
+  override:
+    - npm install ramda
+    - npm install
+
 general:
   branches:
     ignore:
