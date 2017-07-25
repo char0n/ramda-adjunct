@@ -3,6 +3,7 @@
 const glob = require('glob'); // eslint-disable-line import/no-extraneous-dependencies
 const path = require('path');
 
+
 module.exports = {
   target: 'web',
   entry: glob.sync('./test/*.js'),

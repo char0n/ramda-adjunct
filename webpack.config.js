@@ -3,6 +3,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
+
 const minimizeTrait = {
   plugins: [
     new webpack.LoaderOptionsPlugin({
@@ -16,8 +17,10 @@ const minimizeTrait = {
         comments: false,
       },
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
 };
+
 
 const ra = {
   entry: './src/index.js',
