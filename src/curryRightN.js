@@ -13,7 +13,7 @@ import { curryN, reverse } from 'ramda';
  *
  * @param {Number} length The arity for the returned function
  * @param {Function} fn The function to curry
- * @return {Function} A new, curried function followed by the elements of `firstList`
+ * @return {Function}  A new, curried function
  * @see {@link http://ramdajs.com/docs/#curryN|curryN}, {@link RA.curryRight|curryRight}
  * @example
  *
