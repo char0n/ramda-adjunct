@@ -47,6 +47,7 @@ import liftF from './liftF';
 import cata from './cata';
 import weave from './weave';
 import weaveLazy from './weaveLazy';
+import curryRightN from './curryRightN';
 // List
 import pickIndexes from './pickIndexes';
 import list from './list';
@@ -116,6 +117,7 @@ export { default as liftF } from './liftF';
 export { default as cata } from './cata';
 export { default as weave } from './weave';
 export { default as weaveLazy } from './weaveLazy';
+export { default as curryRightN } from './curryRightN';
 // List
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
@@ -190,6 +192,7 @@ const RA = {
   cata,
   weave,
   weaveLazy,
+  curryRightN,
   // List
   pickIndexes,
   list,

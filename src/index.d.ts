@@ -341,6 +341,13 @@ declare namespace RamdaAdjunct {
         weaveLazy(fn: Function): (configAccessor: Function) => Function;
 
         /**
+         * Returns a curried equivalent of the provided function, with the specified arity.
+         * This function is like curryN, except that the provided arguments order is reversed.
+         */
+        curryRightN(arity: number, fn: Function): Function
+        curryRightN(arity: number): (fn: Function) => Function
+
+        /**
          * Identity type.
          */
         Identity: Function;
