@@ -348,6 +348,12 @@ declare namespace RamdaAdjunct {
         curryRightN(arity: number): (fn: Function) => Function
 
         /**
+         * Returns a curried equivalent of the provided function.
+         * This function is like curry, except that the provided arguments order is reversed.
+         */
+        curryRight(fn: Function): Function
+
+        /**
          * Identity type.
          */
         Identity: Function;
