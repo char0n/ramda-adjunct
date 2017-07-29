@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotGeneratorFunction.js - Documentation</title>
+    <title>curryRight.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotGeneratorFunction.js</h1>
+    <h1 class="page-title">curryRight.js</h1>
     
 
     
@@ -43,33 +43,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { converge, length, identity } from 'ramda';
 
-import isGeneratorFunction from './isGeneratorFunction';
+import curryRightN from './curryRightN';
 
-/* eslint-disable max-len */
+
 /**
- * Checks if input value is complement of `Generator Function`
+ * Returns a curried equivalent of the provided function.
+ * This function is like curry, except that the provided arguments order is reversed.
  *
- * @func isNotGeneratorFunction
+ * @func curryRight
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.12.0|v1.12.0}
+ * @category List
+ * @sig Number => (* -> a) -> (* -> a)
+ *
+ * @param {Function} fn The function to curry
+ * @return {Function}  A new, curried function
+ * @see {@link http://ramdajs.com/docs/#curry|curry}, {@link RA.curryRightN|curryRightN}
  * @example
  *
- * RA.isNotGeneratorFunction(function* test() { }); //=> false
- * RA.isNotGeneratorFunction(null); //=> true
- * RA.isNotGeneratorFunction(function test() { }); //=> true
- * RA.isNotGeneratorFunction(() => {}); //=> true
+ * const concatStrings = (a, b, c) => a + b + c;
+ * const concatStringsCurried = RA.curryRight(concatStrings);
+ *
+ * concatStringCurried('a')('b')('c'); // => 'cba'
  */
-/* eslint-enable max-len */
-const isNotGeneratorFunction = complement(isGeneratorFunction);
+const curryRight = converge(curryRightN, [length, identity]);
 
-export default isNotGeneratorFunction;
+
+export default curryRight;
+
 </code></pre>
         </article>
     </section>
