@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>fantasy-land/Identity.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/ramda.min.js"></script>
+    <script src="scripts/RA.web.min.js"></script>
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<header>
+    <a href="index.html"><strong>Ramda Adjunct 1.13.0</strong></a><ul><li><a href="https://github.com/char0n/ramda-adjunct">GitHub</a></li><li><a href="https://gitter.im/ramda-adjunct/Lobby">Discuss</a></li></ul>
+</header>
+
+<nav>
+    <h3>Classes</h3><ul><li><a href="RA.Identity.html">Identity</a></li></ul><h3></h3><ul><li><a href="RA.html">RA</a><ul class='methods'><li data-type='method'><a href="RA.html#isNotObj">isNotObj</a></li><li data-type='method'><a href="RA.html#isNotObjLike">isNotObjLike</a></li><li data-type='method'><a href="RA.html#isNotPlainObj">isNotPlainObj</a></li><li data-type='method'><a href="RA.html#isNotValidDate">isNotValidDate</a></li><li data-type='method'><a href="RA.html#isObj">isObj</a></li><li data-type='method'><a href="RA.html#isObjLike">isObjLike</a></li><li data-type='method'><a href="RA.html#isPlainObj">isPlainObj</a></li><li data-type='method'><a href="RA.html#mergeRight">mergeRight</a></li><li data-type='method'><a href="RA.html#.cata">cata</a></li><li data-type='method'><a href="RA.html#.concatRight">concatRight</a></li><li data-type='method'><a href="RA.html#.curryRight">curryRight</a></li><li data-type='method'><a href="RA.html#.curryRightN">curryRightN</a></li><li data-type='method'><a href="RA.html#.defaults">defaults</a></li><li data-type='method'><a href="RA.html#.isArray">isArray</a></li><li data-type='method'><a href="RA.html#.isArrayLike">isArrayLike</a></li><li data-type='method'><a href="RA.html#.isAsyncFunction">isAsyncFunction</a></li><li data-type='method'><a href="RA.html#.isBoolean">isBoolean</a></li><li data-type='method'><a href="RA.html#.isDate">isDate</a></li><li data-type='method'><a href="RA.html#.isFinite">isFinite</a></li><li data-type='method'><a href="RA.html#.isFunction">isFunction</a></li><li data-type='method'><a href="RA.html#.isGeneratorFunction">isGeneratorFunction</a></li><li data-type='method'><a href="RA.html#.isInteger">isInteger</a></li><li data-type='method'><a href="RA.html#.isNaN">isNaN</a></li><li data-type='method'><a href="RA.html#.isNilOrEmpty">isNilOrEmpty</a></li><li data-type='method'><a href="RA.html#.isNotArray">isNotArray</a></li><li data-type='method'><a href="RA.html#.isNotArrayLike">isNotArrayLike</a></li><li data-type='method'><a href="RA.html#.isNotAsyncFunction">isNotAsyncFunction</a></li><li data-type='method'><a href="RA.html#.isNotBoolean">isNotBoolean</a></li><li data-type='method'><a href="RA.html#.isNotDate">isNotDate</a></li><li data-type='method'><a href="RA.html#.isNotEmpty">isNotEmpty</a></li><li data-type='method'><a href="RA.html#.isNotFinite">isNotFinite</a></li><li data-type='method'><a href="RA.html#.isNotFunction">isNotFunction</a></li><li data-type='method'><a href="RA.html#.isNotGeneratorFunction">isNotGeneratorFunction</a></li><li data-type='method'><a href="RA.html#.isNotInteger">isNotInteger</a></li><li data-type='method'><a href="RA.html#.isNotNaN">isNotNaN</a></li><li data-type='method'><a href="RA.html#.isNotNil">isNotNil</a></li><li data-type='method'><a href="RA.html#.isNotNull">isNotNull</a></li><li data-type='method'><a href="RA.html#.isNotNumber">isNotNumber</a></li><li data-type='method'><a href="RA.html#.isNotString">isNotString</a></li><li data-type='method'><a href="RA.html#.isNotUndefined">isNotUndefined</a></li><li data-type='method'><a href="RA.html#.isNull">isNull</a></li><li data-type='method'><a href="RA.html#.isNumber">isNumber</a></li><li data-type='method'><a href="RA.html#.isString">isString</a></li><li data-type='method'><a href="RA.html#.isUndefined">isUndefined</a></li><li data-type='method'><a href="RA.html#.isValidDate">isValidDate</a></li><li data-type='method'><a href="RA.html#.liftF">liftF</a></li><li data-type='method'><a href="RA.html#.liftFN">liftFN</a></li><li data-type='method'><a href="RA.html#.list">list</a></li><li data-type='method'><a href="RA.html#.noop">noop</a></li><li data-type='method'><a href="RA.html#.paths">paths</a></li><li data-type='method'><a href="RA.html#.pickIndexes">pickIndexes</a></li><li data-type='method'><a href="RA.html#.renameKeys">renameKeys</a></li><li data-type='method'><a href="RA.html#.renameKeysWith">renameKeysWith</a></li><li data-type='method'><a href="RA.html#.stubNull">stubNull</a></li><li data-type='method'><a href="RA.html#.stubUndefined">stubUndefined</a></li><li data-type='method'><a href="RA.html#.weave">weave</a></li><li data-type='method'><a href="RA.html#.weaveLazy">weaveLazy</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">fantasy-land/Identity.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { empty as emptyR } from 'ramda';
+
+import { aliases } from './util';
+import fl from './mapping';
+import { applyTrait, functorTrait, setoidTrait, semigroupTrait, chainTrait, ordTrait } from './traits';
+
+
+// we do this here for jsdocs generate properly
+const { of, ap, map, equals, concat, chain, lte, empty } = fl;
+
+
+/**
+ * The simplest {@link https://github.com/fantasyland/fantasy-land|fantasy-land}
+ * compatible monad which attaches no information to values.
+ *
+ * The Identity type is a very simple type that has no interesting side effects and
+ * is effectively just a container of some value. So why does it exist ?
+ * The Identity type is often used as the base monad of a monad
+ * transformer when no other behaviour is required.
+ *
+ * @memberOf RA
+ * @implements
+ * {@link https://github.com/fantasyland/fantasy-land#apply|Apply},
+ * {@link https://github.com/fantasyland/fantasy-land#applicative|Applicative},
+ * {@link https://github.com/fantasyland/fantasy-land#functor|Functor},
+ * {@link https://github.com/fantasyland/fantasy-land#setoid|Setoid},
+ * {@link https://github.com/fantasyland/fantasy-land#semigroup|Semigroup},
+ * {@link https://github.com/fantasyland/fantasy-land#chain|Chain},
+ * {@link https://github.com/fantasyland/fantasy-land#monad|Monad},
+ * {@link https://github.com/fantasyland/fantasy-land#ord|Ord},
+ * {@link https://github.com/fantasyland/fantasy-land#monoid|Monoid*}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
+ */
+class Identity {
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#applicative|Applicative} specification.
+   *
+   * @static
+   * @sig of :: Applicative f => a -> f a
+   * @param {*} value
+   * @returns {RA.Identity}
+   * @example
+   *
+   * const a = Identity.of(1); //=> Identity(1)
+   */
+  static [of](value) {
+    return new Identity(value);
+  }
+
+  /**
+   * @static
+   */
+  static get ['@@type']() {
+    return 'RA/Identity';
+  }
+
+  /**
+   * Private constructor. Use {@link RA.Identity.of|Identity.of} instead.
+   *
+   * @private
+   * @param {*} value
+   * @return {RA.Identity}
+   */
+  constructor(value) {
+    this.value = value;
+  }
+
+  /**
+   * Catamorphism for a value.
+   * @returns {*}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * a.get(); //=> 1
+   */
+  get() {
+    return this.value;
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#apply|Apply} specification.
+   *
+   * @sig ap :: Apply f => f a ~> f (a -> b) -> f b
+   * @param {RA.Identity} applyWithFn
+   * @return {RA.Identity}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * const b = Identity.of(1).map(a => b => a + b);
+   *
+   * a.ap(b); //=> Identity(2)
+   */
+  [ap](applyWithFn) {
+    return applyTrait[ap].call(this, applyWithFn);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#functor|Functor} specification.
+   *
+   * @sig map :: Functor f => f a ~> (a -> b) -> f b
+   * @param {Function} fn
+   * @return {RA.Identity}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * a.map(a => a + 1); //=> Identity(2)
+   */
+  [map](fn) {
+    return functorTrait[map].call(this, fn);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#setoid|Setoid} specification.
+   *
+   * @sig equals :: Setoid a => a ~> a -> Boolean
+   * @param {RA.Identity} setoid
+   * @return {boolean}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * const b = Identity.of(1);
+   * const c = Identity.of(2);
+   *
+   * a.equlas(b); //=> true
+   * a.equals(c); //=> false
+   */
+  [equals](setoid) {
+    return setoidTrait[equals].call(this, setoid);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#semigroup|Semigroup} specification.
+   *
+   * @sig concat :: Semigroup a => a ~> a -> a
+   * @param {RA.Identity} semigroup
+   * @return {RA.Identity}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * const b = Identity.of(1);
+   * a.concat(b); //=> 2
+   *
+   * const c = Identity.of('c');
+   * const d = Identity.of('d');
+   * c.concat(d); //=> 'cd'
+   *
+   * const e = Identity.of(['e']);
+   * const f = Identity.of(['f']);
+   * e.concat(f); //=> ['e', 'f']
+   */
+  [concat](semigroup) {
+    return semigroupTrait[concat].call(this, semigroup);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#chain|Chain} specification.
+   *
+   * @sig chain :: Chain m => m a ~> (a -> m b) -> m b
+   * @param {Function} fn Function returning the value of the same {@link https://github.com/fantasyland/fantasy-land#semigroup|Chain}
+   * @return {RA.Identity}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * const fn = val => Identity.of(val + 1);
+   *
+   * a.chain(fn).chain(fn); //=> Identity(3)
+   */
+  [chain](fn) {
+    return chainTrait[chain].call(this, fn);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#ord|Ord} specification.
+   *
+   * @sig lte :: Ord a => a ~> a -> Boolean
+   * @param {RA.Identity} ord
+   * @return {boolean}
+   * @example
+   *
+   * const a = Identity.of(1);
+   * const b = Identity.of(1);
+   * const c = Identity.of(2);
+   *
+   * a.lte(b); //=> true
+   * a.lte(c); //=> true
+   * c.lte(a); //=> false
+   */
+  [lte](ord) {
+    return ordTrait[lte].call(this, ord);
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#monoid|Monoid*} specification.
+   * Partial implementation of Monoid specification. `empty` method on instance only, returning
+   * identity value of the wrapped type. Using `R.empty` under the hood.
+   *
+   *
+   * @sig empty :: Monoid m => () -> m
+   * @return {RA.Identity}
+   * @example
+   *
+   * const a = Identity.of('test');
+   * const i = a.empty();
+   *
+   * a.concat(i); //=> Identity('string');
+   * i.concat(a); //=> Identity('string');
+   */
+  [empty]() {
+    return this.constructor.of(emptyR(this.value));
+  }
+}
+
+aliases(Identity).forEach(([alias, fn]) => {
+  Identity[alias] = fn;
+});
+aliases(Identity.prototype).forEach(([alias, fn]) => {
+  Identity.prototype[alias] = fn;
+});
+
+export default Identity;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Sun Jul 30 2017 18:47:35 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
