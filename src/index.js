@@ -53,6 +53,7 @@ import curryRight from './curryRight';
 import pickIndexes from './pickIndexes';
 import list from './list';
 import concatRight from './concatRight';
+import reduceP from './reduceP';
 // Object
 import defaults from './defaults';
 import paths from './paths';
@@ -124,6 +125,7 @@ export { default as curryRight } from './curryRight';
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 export { default as concatRight } from './concatRight';
+export { default as reduceP } from './reduceP';
 // Object
 export { default as defaults } from './defaults';
 export { default as paths } from './paths';
@@ -200,6 +202,7 @@ const RA = {
   pickIndexes,
   list,
   concatRight,
+  reduceP,
   // Object
   defaults,
   resetToDefault: mergeRight,

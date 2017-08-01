@@ -354,6 +354,20 @@ declare namespace RamdaAdjunct {
         curryRight(fn: Function): Function
 
         /**
+         *
+         */
+        reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult, list: R): TResult;
+        reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult): {
+            (list: R): TResult
+        };
+        reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult): {
+            (acc: TResult, list: R): TResult;
+            (acc: TResult): {
+                (list: R): TResult
+            }
+        }
+
+        /**
          * Identity type.
          */
         Identity: Function;
