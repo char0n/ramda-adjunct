@@ -2,6 +2,7 @@
   "title": "Ramda Adjunct",
   "github": "https://github.com/char0n/ramda-adjunct",
   "gitter": "https://gitter.im/ramda-adjunct/Lobby",
+  "latest": "https://char0n.github.io/ramda-adjunct/",
   "tags": {
     "allowUnknownTags": true,
     "dictionaries": ["jsdoc","closure"]
