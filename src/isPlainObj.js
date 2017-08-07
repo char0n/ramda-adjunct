@@ -14,7 +14,7 @@ const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor)
  * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
  *
  * @func isPlainObj
- * @alias isPlainObject
+ * @aliases isPlainObject
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type

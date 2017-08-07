@@ -7,7 +7,7 @@ import isPlainObj from './isPlainObj';
  * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`).
  *
  * @func isNotPlainObj
- * @alias isNotPlainObject
+ * @aliases isNotPlainObject
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type

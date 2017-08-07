@@ -8,7 +8,7 @@ import isObjLike from './isObjLike';
  * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
  *
  * @func isNotObjLike
- * @alias isNotObjectLike
+ * @aliases isNotObjectLike
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type

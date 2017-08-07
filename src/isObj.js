@@ -10,7 +10,7 @@ import isOfTypeObject from './internal/isOfTypeObject';
  * Checks if input value is language type of `Object`.
  *
  * @func isObj
- * @alias isObject
+ * @aliases isObject
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
  * @category Type

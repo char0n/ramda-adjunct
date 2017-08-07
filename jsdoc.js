@@ -19,5 +19,14 @@ exports.defineTags = (dictionary) => {
       doclet.category = tag.value;
     },
   });
+
+  dictionary.defineTag('aliases', {
+    mustHaveValue: true,
+    canHaveType: false,
+    canHaveName: false,
+    onTagged(doclet, tag) {
+      doclet.aliases = tag.value;
+    },
+  });
 };
 /* eslint-enable no-param-reassign */

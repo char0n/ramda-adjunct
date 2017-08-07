@@ -6,7 +6,7 @@ import isValidDate from './isValidDate';
  * Checks if value is complement of valid `Date` object.
  *
  * @func isNotValidDate
- * @alias isInvalidDate
+ * @aliases isInvalidDate
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
  * @category Type
