@@ -259,13 +259,6 @@ declare namespace RamdaAdjunct {
         concatRight<T extends Array<any>|String>(firstList: T, secondList: T): T;
 
         /**
-         * Set properties only if they don't exist. Useful for passing defaults. Basically this function
-         * is the alias of {@link http://ramdajs.com/docs/#merge|merge}.
-         */
-        defaults(defaultOptions: Object, options: Object): Object;
-        defaults(defaultOptions: Object): (options: Object) => Object;
-
-        /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
          */
         paths(ps: Array<Array<string | number>>, obj: Object): Array<any>;
@@ -317,16 +310,26 @@ declare namespace RamdaAdjunct {
         /**
          * Create a new object with the own properties of the second object merged with
          * the own properties of the first object. If a key exists in both objects,
-         * the value from the first object will be used.
+         * the value from the first object will be used. *
+         * Putting it simply: it sets properties only if they don't exist.
          */
         mergeRight(source: Object, destination: Object): Object;
         mergeRight(source: Object): (destination: Object) => Object;
 
         /**
          * Reset properties of the object to their default values.
+         * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
          */
         resetToDefault(defaultOptions: Object, options: Object): Object; // alias of mergeRight
         resetToDefault(defaultOptions: Object): (options: Object) => Object; // alias of mergeRight
+
+        /**
+         * Set properties only if they don't exist. Useful for passing defaults.
+         * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
+         */
+        defaults(defaultOptions: Object, options: Object): Object;
+        defaults(defaultOptions: Object): (options: Object) => Object;
+
 
         /**
          * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.

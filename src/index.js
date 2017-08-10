@@ -55,7 +55,6 @@ import list from './list';
 import concatRight from './concatRight';
 import reduceP from './reduceP';
 // Object
-import defaults from './defaults';
 import paths from './paths';
 import renameKeys from './renameKeys';
 import renameKeysWith from './renameKeysWith';
@@ -127,7 +126,6 @@ export { default as list } from './list';
 export { default as concatRight } from './concatRight';
 export { default as reduceP } from './reduceP';
 // Object
-export { default as defaults } from './defaults';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
@@ -204,7 +202,7 @@ const RA = {
   concatRight,
   reduceP,
   // Object
-  defaults,
+  defaults: mergeRight,
   resetToDefault: mergeRight,
   paths,
   renameKeys,
