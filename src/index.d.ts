@@ -393,6 +393,21 @@ declare namespace RamdaAdjunct {
                 (list: R): TResult
             }
         }
+        /**
+         * Applies lens to given data structure and checks whether the result matches
+         * the `value` parameter.
+         */
+        lensEq(lens: Function, value: any, data: any): Boolean
+        lensEq(lens: Function, value: any): (data: any) => Boolean
+        lensEq(lens: Function): (value: any) => (data: any) => Boolean
+
+        /**
+         * Applies lens to given data structure and checks whether the result
+         * is not equal to the `value` parameter.
+         */
+        lensNotEq(lens: Function, value: any, data: any): Boolean
+        lensNotEq(lens: Function, value: any): (data: any) => Boolean
+        lensNotEq(lens: Function): (value: any) => (data: any) => Boolean
 
         /**
          * Identity type.

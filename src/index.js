@@ -62,6 +62,9 @@ import renameKeysWith from './renameKeysWith';
 import mergeRight from './mergeRight';
 // Types
 import Identity from './fantasy-land/Identity';
+// Relation
+import lensEq from './lensEq';
+import lensNotEq from './lensNotEq';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -135,6 +138,9 @@ export { default as mergeRight } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
+// Relation
+export { default as lensEq } from './lensEq';
+export { default as lensNotEq } from './lensNotEq';
 
 /**
  * @namespace RA
@@ -213,6 +219,9 @@ const RA = {
   mergeRight,
   // Types
   Identity,
+  // Relation
+  lensEq,
+  lensNotEq,
 };
 
 export default RA;
