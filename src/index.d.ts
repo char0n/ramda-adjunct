@@ -357,13 +357,37 @@ declare namespace RamdaAdjunct {
         curryRight(fn: Function): Function
 
         /**
-         *
+         * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
+         * which produces promises (or a mix of promises and values),
+         * iterate over all the values in the `Iterable` into an array and
+         * reduce the array to a value using the given iterator function.
          */
         reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult, list: R): TResult;
         reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult): {
             (list: R): TResult
         };
         reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult): {
+            (acc: TResult, list: R): TResult;
+            (acc: TResult): {
+                (list: R): TResult
+            }
+        }
+
+        /**
+         * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
+         * which produces promises (or a mix of promises and values),
+         * iterate over all the values in the `Iterable` into an array and
+         * reduce the array to a value using the given iterator function.
+         *
+         * Similar to {@link RA.reduceP|reduceP} except moves through the input list from the right to the left.
+         * The iterator function receives two values: (value, acc),
+         * while the arguments' order of reduceP's iterator function is (acc, value).
+         */
+        reduceRightP<T, TResult, R extends T[]>(fn: (elem: T, acc: TResult) => TResult, acc: TResult, list: R): TResult;
+        reduceRightP<T, TResult, R extends T[]>(fn: (elem: T, acc: TResult) => TResult, acc: TResult): {
+            (list: R): TResult
+        };
+        reduceRightP<T, TResult, R extends T[]>(fn: (elem: T, acc: TResult) => TResult): {
             (acc: TResult, list: R): TResult;
             (acc: TResult): {
                 (list: R): TResult

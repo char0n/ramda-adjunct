@@ -54,6 +54,7 @@ import pickIndexes from './pickIndexes';
 import list from './list';
 import concatRight from './concatRight';
 import reduceP from './reduceP';
+import reduceRightP from './reduceRightP';
 // Object
 import paths from './paths';
 import renameKeys from './renameKeys';
@@ -125,6 +126,7 @@ export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 export { default as concatRight } from './concatRight';
 export { default as reduceP } from './reduceP';
+export { default as reduceRightP } from './reduceRightP';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
@@ -201,6 +203,7 @@ const RA = {
   list,
   concatRight,
   reduceP,
+  reduceRightP,
   // Object
   defaults: mergeRight,
   resetToDefault: mergeRight,
