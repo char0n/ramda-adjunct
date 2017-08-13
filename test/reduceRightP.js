@@ -5,7 +5,7 @@ import RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe.only('reduceRightP', function() {
+describe('reduceRightP', function() {
   it('folds simple functions over arrays with the supplied accumulator', function() {
     const testAdd = RA.reduceRightP(R.add, 0, [1, 2, 3, 4]).then(actual => eq(actual, 10));
     const testMultiply = RA.reduceRightP(R.multiply, 1, [1, 2, 3, 4])
