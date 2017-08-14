@@ -12,7 +12,7 @@ import lensSatisfies from './lensSatisfies';
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
  * @category Relation
  * @sig  Boolean b => (a -> b) -> Lens s a -> s -> b
-  @see {@link RA.lensSatisfies|lensNotSatisfies}
+ * @see {@link RA.lensSatisfies|lensNotSatisfies}
  * @param {Function} predicate The predicate function
  * @param {Function} lens Van Laarhoven lens
  * @param {*} data The data structure
