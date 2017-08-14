@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotAsyncFunction.js - Documentation</title>
+    <title>lensNotSatisfy.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotAsyncFunction.js</h1>
+    <h1 class="page-title">lensNotSatisfy.js</h1>
     
 
     
@@ -43,34 +43,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curryN, not, pipe } from 'ramda';
 
-import isAsyncFunction from './isAsyncFunction';
+import lensSatisfies from './lensSatisfies';
 
 
-/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Async Function`
+ * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
+ * Note that the predicate is expected to return boolean value.
  *
- * @func isNotAsyncFunction
+ * @func lensNotSatisfy
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
+ * @category Relation
+ * @sig  Boolean b => (a -> b) -> Lens s a -> s -> b
+ * @see {@link RA.lensSatisfies|lensNotSatisfies}
+ * @param {Function} predicate The predicate function
+ * @param {Function} lens Van Laarhoven lens
+ * @param {*} data The data structure
+ * @return {Boolean} `false` if the focused data structure satisfies the predicate, `true` otherwise
+ *
  * @example
  *
- * RA.isNotAsyncFunction(async function test() { }); //=> false
- * RA.isNotAsyncFunction(null); //=> true
- * RA.isNotAsyncFunction(function test() { }); //=> true
- * RA.isNotAsyncFunction(() => {}); //=> true
+ * RA.lensNotSatisfies(R.equals(true), R.lensIndex(0), [false, true, 1]); // => true
+ * RA.lensNotSatisfies(R.equals(true), R.lensIndex(1), [false, true, 1]); // => false
+ * RA.lensNotSatisfies(R.equals(true), R.lensIndex(2), [false, true, 1]); // => true
+ * RA.lensNotSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => true
  */
-/* eslint-enable max-len */
-const isNotAsyncFunction = complement(isAsyncFunction);
+const lensNotSatisfies = curryN(3, pipe(lensSatisfies, not));
 
-export default isNotAsyncFunction;
+
+export default lensNotSatisfies;
 </code></pre>
         </article>
     </section>

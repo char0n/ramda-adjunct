@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotAsyncFunction.js - Documentation</title>
+    <title>viewOr.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotAsyncFunction.js</h1>
+    <h1 class="page-title">viewOr.js</h1>
     
 
     
@@ -43,34 +43,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isAsyncFunction from './isAsyncFunction';
+            <pre class="prettyprint source linenums"><code>import { view, defaultTo, curryN } from 'ramda';
 
 
-/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Async Function`
+ * Returns a "view" of the given data structure, determined by the given lens.
+ * The lens's focus determines which portion of the data structure is visible.
+ * Returns the defaultValue if "view" is null, undefined or NaN; otherwise the "view" is returned.
  *
- * @func isNotAsyncFunction
+ * @func viewOr
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
+ * @category Object
+ * @sig a -> Lens s b → s → b | a
+ * @see {@link http://ramdajs.com/docs/#view|view}
+ * @param {*} defaultValue The default value
+ * @param {Function} lens Van Laarhoven lens
+ * @param {*} data The data structure
+ * @returns {*} "view" or defaultValue
+ *
  * @example
  *
- * RA.isNotAsyncFunction(async function test() { }); //=> false
- * RA.isNotAsyncFunction(null); //=> true
- * RA.isNotAsyncFunction(function test() { }); //=> true
- * RA.isNotAsyncFunction(() => {}); //=> true
+ * RA.viewOr('N/A', R.lensProp('x'), {}); // => 'N/A'
+ * RA.viewOr('N/A', R.lensProp('x'), { x: 1 }); // => 1
+ * RA.viewOr('some', R.lensProp('y'), { y: null }); // => 'some'
+ * RA.viewOr('some', R.lensProp('y'), { y: false }); // => false
  */
-/* eslint-enable max-len */
-const isNotAsyncFunction = complement(isAsyncFunction);
 
-export default isNotAsyncFunction;
+const viewOr = curryN(3,
+  (defaultValue, lens, data) => defaultTo(defaultValue, view(lens, data))
+);
+
+
+export default viewOr;
 </code></pre>
         </article>
     </section>
