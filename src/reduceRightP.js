@@ -1,6 +1,11 @@
-import { curryN, reduceRight, length } from 'ramda';
+import { curryN, pipe, equals, reduceRight, length, concat } from 'ramda';
 
 import isUndefined from './isUndefined';
+
+
+// in older ramda versions the order of the arguments is flipped
+const flipArgs = pipe(reduceRight(concat, ''), equals('ba'))(['a', 'b']);
+
 
 /* eslint-disable max-len */
 /**
@@ -72,8 +77,17 @@ const reduceRightP = curryN(3, (fn, acc, list) => {
   }
 
   return Promise.resolve(list).then((iterable) => {
-    const reducer = reduceRight((currentValueP, accP) =>
-      accP
+    const reducer = reduceRight((arg1, arg2) => {
+      let accP;
+      let currentValueP;
+
+      if (flipArgs) {
+        ([accP, currentValueP] = [arg1, arg2]);
+      } else {
+        ([accP, currentValueP] = [arg2, arg1]);
+      }
+
+      return accP
         .then(previousValue => Promise.all([previousValue, currentValueP]))
         .then(([previousValue, currentValue]) => {
           if (isUndefined(previousValue) && listLength === 1) {
@@ -81,7 +95,8 @@ const reduceRightP = curryN(3, (fn, acc, list) => {
           }
 
           return fn(currentValue, previousValue);
-        })
+        });
+    }
     );
 
     return reducer(originalAccP, iterable);
