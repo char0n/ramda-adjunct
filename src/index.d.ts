@@ -410,6 +410,22 @@ declare namespace RamdaAdjunct {
         lensNotEq(lens: Function): (value: any) => (data: any) => Boolean
 
         /**
+         * Applies lens to given data structure and checks whether the result satisfies
+         * the `predicate`.
+         */
+        lensSatisfies(predicate: Function, lens: Function, data: any): Boolean
+        lensSatisfies(predicate: Function, lens: Function): (data: any) => Boolean
+        lensSatisfies(predicate: Function): (lens: Function) => (data: any) => Boolean
+
+        /**
+         * Applies lens to given data structure and checks whether the result does not satisfy
+         * the `predicate`.
+         */
+        lensNotSatisfies(predicate: Function, lens: Function, data: any): Boolean
+        lensNotSatisfies(predicate: Function, lens: Function): (data: any) => Boolean
+        lensNotSatisfies(predicate: Function): (lens: Function) => (data: any) => Boolean
+
+        /**
          * Identity type.
          */
         Identity: Function;

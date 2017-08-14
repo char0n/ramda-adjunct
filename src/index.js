@@ -65,6 +65,8 @@ import Identity from './fantasy-land/Identity';
 // Relation
 import lensEq from './lensEq';
 import lensNotEq from './lensNotEq';
+import lensSatisfies from './lensSatisfies';
+import lensNotSatisfies from './lensNotSatisfies';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -141,6 +143,8 @@ export { default as Identity } from './fantasy-land/Identity';
 // Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
+export { default as lensSatisfies } from './lensSatisfies';
+export { default as lensNotSatisfies } from './lensNotSatisfies';
 
 /**
  * @namespace RA
@@ -222,6 +226,8 @@ const RA = {
   // Relation
   lensEq,
   lensNotEq,
+  lensSatisfies,
+  lensNotSatisfies,
 };
 
 export default RA;
