@@ -8,7 +8,7 @@ import lensSatisfies from './lensSatisfies';
  * 
  * @func lensNotSatisfies
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|1.14.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
  * @category Relation
  * @sig predicate -> lens -> data -> Boolean
  * @param {Function} predicate The value to compare the lens "view" to

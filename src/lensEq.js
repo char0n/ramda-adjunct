@@ -6,7 +6,7 @@ import { view, curry, equals, pipe } from 'ramda';
  * 
  * @func lensEq
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|1.14.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
  * @category Relation
  * @sig lens -> value -> data -> Boolean
  * @param {function} lens Van Laarhoven lens
