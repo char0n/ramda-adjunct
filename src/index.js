@@ -67,6 +67,8 @@ import lensEq from './lensEq';
 import lensNotEq from './lensNotEq';
 import lensSatisfies from './lensSatisfies';
 import lensNotSatisfies from './lensNotSatisfies';
+// Lens
+import viewOr from './viewOr';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -145,6 +147,8 @@ export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
 export { default as lensSatisfies } from './lensSatisfies';
 export { default as lensNotSatisfies } from './lensNotSatisfies';
+// Lens
+export { default as viewOr } from './viewOr';
 
 /**
  * @namespace RA
@@ -228,6 +232,8 @@ const RA = {
   lensNotEq,
   lensSatisfies,
   lensNotSatisfies,
+  // Lens
+  viewOr,
 };
 
 export default RA;

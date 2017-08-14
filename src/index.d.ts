@@ -426,6 +426,14 @@ declare namespace RamdaAdjunct {
         lensNotSatisfies(predicate: Function): (lens: Function) => (data: any) => Boolean
 
         /**
+         * Applies lens to given data structure and returns view value if present.
+         * Otherwise returns `defaultValue`.
+         */
+        viewOr(defaultValue: any, lens: Function, data: any): any
+        viewOr(defaultValue: any, lens: Function): (data: any) => any
+        viewOr(defaultValue: any): (lens: Function) => (data: any) => any
+
+        /**
          * Identity type.
          */
         Identity: Function;
