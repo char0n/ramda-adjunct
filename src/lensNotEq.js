@@ -4,7 +4,7 @@ import lensEq from './lensEq';
 
 
 /**
- * Returns `true` if data structure focused by by the given lens doesn't equal provided value.
+ * Returns `true` if data structure focused by the given lens doesn't equal provided value.
  *
  * @func lensNotEq
  * @memberOf RA

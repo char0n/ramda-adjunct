@@ -4,7 +4,7 @@ import lensSatisfies from './lensSatisfies';
 
 
 /**
- * Returns `true` if data structure focused by by the given lens doesn't satisfy the predicate.
+ * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
  * Note that the predicate is expected to return boolean value.
  *
  * @func lensNotSatisfy

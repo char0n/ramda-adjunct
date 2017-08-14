@@ -394,21 +394,21 @@ declare namespace RamdaAdjunct {
             }
         }
         /**
-         * Returns `true` if data structure focused by by the given lens equals provided value.
+         * Returns `true` if data structure focused by the given lens equals provided value.
          */
         lensEq(lens: Function, value: any, data: any): Boolean
         lensEq(lens: Function, value: any): (data: any) => Boolean
         lensEq(lens: Function): (value: any) => (data: any) => Boolean
 
         /**
-         * Returns `false` if data structure focused by by the given lens equals provided value.
+         * Returns `false` if data structure focused by the given lens equals provided value.
          */
         lensNotEq(lens: Function, value: any, data: any): Boolean
         lensNotEq(lens: Function, value: any): (data: any) => Boolean
         lensNotEq(lens: Function): (value: any) => (data: any) => Boolean
 
         /**
-         * Returns `true` if data structure focused by by the given lens satisfies the predicate.
+         * Returns `true` if data structure focused by the given lens satisfies the predicate.
          * Note that the predicate is expected to return boolean value and will be evaluated
          * as `false` unless the predicate returns `true`.
          */
@@ -417,7 +417,7 @@ declare namespace RamdaAdjunct {
         lensSatisfies(predicate: Function): (lens: Function) => (data: any) => Boolean
 
         /**
-         * Returns `true` if data structure focused by by the given lens doesn't satisfy the predicate.
+         * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
          * Note that the predicate is expected to return boolean value.
          */
         lensNotSatisfy(predicate: Function, lens: Function, data: any): Boolean

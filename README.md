@@ -191,4 +191,5 @@ gets imported into Typescript project, typings are automatically imported and us
  
 ### Contributors
  
- [Tycho Grouwstra](https://github.com/tycho01)
+ - [Tycho Grouwstra](https://github.com/tycho01)
+ - [Michael Kuk](https://github.com/michaelkuk)
