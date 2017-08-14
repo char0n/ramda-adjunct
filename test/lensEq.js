@@ -1,9 +1,11 @@
 import { lens, lensIndex, lensPath, lensProp, path } from 'ramda';
+
 import RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('lensEq', function() {
-  it('tests value comparison through lenses', function() {
+  it('tests a lens for a value', function() {
     eq(RA.lensEq(lensIndex(1), 1, [0, 1]), true);
     eq(RA.lensEq(lensIndex(0), 1, [0, 1]), false);
     eq(RA.lensEq(lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }), true);
@@ -12,5 +14,11 @@ describe('lensEq', function() {
     eq(RA.lensEq(lens(path(['a']), RA.noop), 'b', { a: 'c' }), false);
     eq(RA.lensEq(lensProp('foo'), 'bar', { foo: 'bar' }), true);
     eq(RA.lensEq(lensProp('foo'), 'bar', { bar: 'foo' }), false);
+  });
+
+  it('tests currying', function() {
+    eq(RA.lensEq(lensIndex(1))(1)([0, 1]), true);
+    eq(RA.lensEq(lensIndex(1), 1)([0, 1]), true);
+    eq(RA.lensEq(lensIndex(1))(1, [0, 1]), true);
   });
 });

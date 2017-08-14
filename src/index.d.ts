@@ -394,40 +394,40 @@ declare namespace RamdaAdjunct {
             }
         }
         /**
-         * Applies lens to given data structure and checks whether the result matches
-         * the `value` parameter.
+         * Returns `true` if data structure focused by by the given lens equals provided value.
          */
         lensEq(lens: Function, value: any, data: any): Boolean
         lensEq(lens: Function, value: any): (data: any) => Boolean
         lensEq(lens: Function): (value: any) => (data: any) => Boolean
 
         /**
-         * Applies lens to given data structure and checks whether the result
-         * is not equal to the `value` parameter.
+         * Returns `false` if data structure focused by by the given lens equals provided value.
          */
         lensNotEq(lens: Function, value: any, data: any): Boolean
         lensNotEq(lens: Function, value: any): (data: any) => Boolean
         lensNotEq(lens: Function): (value: any) => (data: any) => Boolean
 
         /**
-         * Applies lens to given data structure and checks whether the result satisfies
-         * the `predicate`.
+         * Returns `true` if data structure focused by by the given lens satisfies the predicate.
+         * Note that the predicate is expected to return boolean value and will be evaluated
+         * as `false` unless the predicate returns `true`.
          */
         lensSatisfies(predicate: Function, lens: Function, data: any): Boolean
         lensSatisfies(predicate: Function, lens: Function): (data: any) => Boolean
         lensSatisfies(predicate: Function): (lens: Function) => (data: any) => Boolean
 
         /**
-         * Applies lens to given data structure and checks whether the result does not satisfy
-         * the `predicate`.
+         * Returns `true` if data structure focused by by the given lens doesn't satisfy the predicate.
+         * Note that the predicate is expected to return boolean value.
          */
-        lensNotSatisfies(predicate: Function, lens: Function, data: any): Boolean
-        lensNotSatisfies(predicate: Function, lens: Function): (data: any) => Boolean
-        lensNotSatisfies(predicate: Function): (lens: Function) => (data: any) => Boolean
+        lensNotSatisfy(predicate: Function, lens: Function, data: any): Boolean
+        lensNotSatisfy(predicate: Function, lens: Function): (data: any) => Boolean
+        lensNotSatisfy(predicate: Function): (lens: Function) => (data: any) => Boolean
 
         /**
-         * Applies lens to given data structure and returns view value if present.
-         * Otherwise returns `defaultValue`.
+         * Returns a "view" of the given data structure, determined by the given lens
+         * The lens's focus determines which portion of the data structure is visible.
+         * Returns the defaultValue if "view" is null, undefined or NaN; otherwise the "view" is returned.
          */
         viewOr(defaultValue: any, lens: Function, data: any): any
         viewOr(defaultValue: any, lens: Function): (data: any) => any

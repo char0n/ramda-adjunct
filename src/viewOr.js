@@ -1,28 +1,33 @@
-import { view, defaultTo, curry } from 'ramda';
+import { view, defaultTo, curryN } from 'ramda';
+
 
 /**
- * If the data structure "viewed" through `lens` contains value, the value is returned.
- * Otherwise returns the provided `defaultValue`.
- * 
+ * Returns a "view" of the given data structure, determined by the given lens.
+ * The lens's focus determines which portion of the data structure is visible.
+ * Returns the defaultValue if "view" is null, undefined or NaN; otherwise the "view" is returned.
+ *
  * @func viewOr
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
- * @category Lens
- * @sig * -> lens -> data -> *
- * @param {*} defaultValue Defauly value
+ * @category Object
+ * @sig a -> Lens s b → s → b | a
+ * @see {@link http://ramdajs.com/docs/#view|view}
+ * @param {*} defaultValue The default value
  * @param {Function} lens Van Laarhoven lens
- * @param {*} data The data structure to apply the lens to
- * 
+ * @param {*} data The data structure
+ * @returns {*} "view" or defaultValue
+ *
  * @example
- * 
+ *
  * RA.viewOr('N/A', R.lensProp('x'), {}); // => 'N/A'
  * RA.viewOr('N/A', R.lensProp('x'), { x: 1 }); // => 1
  * RA.viewOr('some', R.lensProp('y'), { y: null }); // => 'some'
  * RA.viewOr('some', R.lensProp('y'), { y: false }); // => false
  */
 
-const viewOr = curry(
+const viewOr = curryN(3,
   (defaultValue, lens, data) => defaultTo(defaultValue, view(lens, data))
 );
+
 
 export default viewOr;

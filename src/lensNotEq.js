@@ -1,26 +1,29 @@
-import { pipe, not } from 'ramda';
+import { pipe, not, curryN } from 'ramda';
+
 import lensEq from './lensEq';
 
+
 /**
- * Check if "view" of given data structure, determined by the given lens
- * does not equal provided value.
- * 
+ * Returns `true` if data structure focused by by the given lens doesn't equal provided value.
+ *
  * @func lensNotEq
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
- * @category Relation
- * @sig lens -> value -> data -> Boolean
+ * @category Object
+ * @sig Lens s a -> b -> s -> Boolean
+ * @see {@link RA.lensEq|lensEq}
  * @param {function} lens Van Laarhoven lens
- * @param {*} value The value to compare the lens "view" to
- * @param {*} subject The data structure to apply the lens to
- * @return {Boolean} `false` if the value equals lens "view", `true` otherwise.
- * 
+ * @param {*} value The value to compare the focused data structure with
+ * @param {*} data The data structure
+ * @return {Boolean} `false` if the focused data structure equals value, `true` otherwise
+ *
  * @example
- * 
+ *
  * RA.lensNotEq(R.lensIndex(0), 1, [0, 1, 2]); // => true
  * RA.lensNotEq(R.lensIndex(1), 1, [0, 1, 2]); // => false
  * RA.lensNotEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => false
  */
-const lensNotEq = pipe(lensEq, not);
+const lensNotEq = curryN(3, pipe(lensEq, not));
+
 
 export default lensNotEq;

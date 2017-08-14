@@ -60,15 +60,13 @@ import paths from './paths';
 import renameKeys from './renameKeys';
 import renameKeysWith from './renameKeysWith';
 import mergeRight from './mergeRight';
-// Types
-import Identity from './fantasy-land/Identity';
-// Relation
 import lensEq from './lensEq';
 import lensNotEq from './lensNotEq';
 import lensSatisfies from './lensSatisfies';
-import lensNotSatisfies from './lensNotSatisfies';
-// Lens
+import lensNotSatisfy from './lensNotSatisfy';
 import viewOr from './viewOr';
+// Types
+import Identity from './fantasy-land/Identity';
 
 // Type
 export { default as isNotUndefined } from './isNotUndefined';
@@ -140,15 +138,13 @@ export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as mergeRight } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
-// Types
-export { default as Identity } from './fantasy-land/Identity';
-// Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
 export { default as lensSatisfies } from './lensSatisfies';
-export { default as lensNotSatisfies } from './lensNotSatisfies';
-// Lens
+export { default as lensNotSatisfy } from './lensNotSatisfy';
 export { default as viewOr } from './viewOr';
+// Types
+export { default as Identity } from './fantasy-land/Identity';
 
 /**
  * @namespace RA
@@ -225,15 +221,13 @@ const RA = {
   renameKeys,
   renameKeysWith,
   mergeRight,
-  // Types
-  Identity,
-  // Relation
   lensEq,
   lensNotEq,
   lensSatisfies,
-  lensNotSatisfies,
-  // Lens
+  lensNotSatisfy,
   viewOr,
+  // Types
+  Identity,
 };
 
 export default RA;

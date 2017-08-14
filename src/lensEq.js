@@ -1,25 +1,27 @@
-import { view, curry, equals, pipe } from 'ramda';
+import { view, curryN, equals, pipe } from 'ramda';
+
 
 /**
- * Check if "view" of given data structure, determined by the given lens
- * equals provided value.
- * 
+ * Returns `true` if data structure focused by by the given lens equals provided value.
+ *
  * @func lensEq
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
- * @category Relation
- * @sig lens -> value -> data -> Boolean
+ * @category Object
+ * @sig  Lens s a -> b -> s -> Boolean
+ * @see {@link RA.lensNotEq|lensNotEq}
  * @param {function} lens Van Laarhoven lens
- * @param {*} value The value to compare the lens "view" to
- * @param {*} subject The data structure to apply the lens to
- * @return {Boolean} `true` if the value equals lens "view", `false` otherwise.
- * 
+ * @param {*} value The value to compare the focused data structure with
+ * @param {*} data The data structure
+ * @return {Boolean} `true` if the focused data structure equals value, `false` otherwise
+ *
  * @example
- * 
+ *
  * RA.lensEq(R.lensIndex(0), 1, [0, 1, 2]); // => false
  * RA.lensEq(R.lensIndex(1), 1, [0, 1, 2]); // => true
  * RA.lensEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => true
  */
-const lensEq = curry((lens, val, subject) => pipe(view(lens), equals(val))(subject));
+const lensEq = curryN(3, (lens, val, data) => pipe(view(lens), equals(val))(data));
+
 
 export default lensEq;
