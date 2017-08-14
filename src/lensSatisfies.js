@@ -2,7 +2,7 @@ import { view, curryN, equals, pipe } from 'ramda';
 
 
 /**
- * Returns `true` if data structure focused by by the given lens satisfies the predicate.
+ * Returns `true` if data structure focused by the given lens satisfies the predicate.
  * Note that the predicate is expected to return boolean value and will be evaluated
  * as `false` unless the predicate returns `true`.
  *

@@ -2,7 +2,7 @@ import { view, curryN, equals, pipe } from 'ramda';
 
 
 /**
- * Returns `true` if data structure focused by by the given lens equals provided value.
+ * Returns `true` if data structure focused by the given lens equals provided value.
  *
  * @func lensEq
  * @memberOf RA
