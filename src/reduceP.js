@@ -70,15 +70,13 @@ import isUndefined from './isUndefined';
  *
  */
 /* esline-enable max-len */
-const reduceP = curryN(3, (fn, acc, list) => {
-  const originalAccP = Promise.resolve(acc);
-  const listLength = length(list);
+const reduceP = curryN(3, (fn, acc, list) => Promise
+  .resolve(list)
+  .then((iterable) => {
+    const listLength = length(iterable);
 
-  if (listLength === 0) {
-    return originalAccP;
-  }
+    if (listLength === 0) { return acc }
 
-  return Promise.resolve(list).then((iterable) => {
     const reducer = reduce((accP, currentValueP) =>
       accP
         .then(previousValue => Promise.all([previousValue, currentValueP]))
@@ -91,9 +89,9 @@ const reduceP = curryN(3, (fn, acc, list) => {
         })
     );
 
-    return reducer(originalAccP, iterable);
-  });
-});
+    return reducer(Promise.resolve(acc), iterable);
+  })
+);
 
 
 export default reduceP;
