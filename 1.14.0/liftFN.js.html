@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>liftFN.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/ramda.min.js"></script>
+    <script src="scripts/RA.web.min.js"></script>
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<header>
+    <a href="index.html"><strong>Ramda Adjunct 1.14.0</strong></a><ul><li><a href="https://npm.runkit.com/ramda-adjunct">Try</a></li><li><a href="https://char0n.github.io/ramda-adjunct/">Latest Docs</a></li><li><a href="https://github.com/char0n/ramda-adjunct">GitHub</a></li><li><a href="https://gitter.im/ramda-adjunct/Lobby">Discuss</a></li></ul>
+</header>
+
+<nav>
+    <h3>Classes</h3><ul><li><a href="RA.Identity.html">Identity</a></li></ul><h3></h3><ul><li><a href="RA.html">RA</a><ul class='methods'><li data-type='method'><a href="RA.html#.cata">cata</a></li><li data-type='method'><a href="RA.html#.concatRight">concatRight</a></li><li data-type='method'><a href="RA.html#.curryRight">curryRight</a></li><li data-type='method'><a href="RA.html#.curryRightN">curryRightN</a></li><li data-type='method'><a href="RA.html#.isArray">isArray</a></li><li data-type='method'><a href="RA.html#.isArrayLike">isArrayLike</a></li><li data-type='method'><a href="RA.html#.isAsyncFunction">isAsyncFunction</a></li><li data-type='method'><a href="RA.html#.isBoolean">isBoolean</a></li><li data-type='method'><a href="RA.html#.isDate">isDate</a></li><li data-type='method'><a href="RA.html#.isFinite">isFinite</a></li><li data-type='method'><a href="RA.html#.isFunction">isFunction</a></li><li data-type='method'><a href="RA.html#.isGeneratorFunction">isGeneratorFunction</a></li><li data-type='method'><a href="RA.html#.isInteger">isInteger</a></li><li data-type='method'><a href="RA.html#.isNaN">isNaN</a></li><li data-type='method'><a href="RA.html#.isNilOrEmpty">isNilOrEmpty</a></li><li data-type='method'><a href="RA.html#.isNotArray">isNotArray</a></li><li data-type='method'><a href="RA.html#.isNotArrayLike">isNotArrayLike</a></li><li data-type='method'><a href="RA.html#.isNotAsyncFunction">isNotAsyncFunction</a></li><li data-type='method'><a href="RA.html#.isNotBoolean">isNotBoolean</a></li><li data-type='method'><a href="RA.html#.isNotDate">isNotDate</a></li><li data-type='method'><a href="RA.html#.isNotEmpty">isNotEmpty</a></li><li data-type='method'><a href="RA.html#.isNotFinite">isNotFinite</a></li><li data-type='method'><a href="RA.html#.isNotFunction">isNotFunction</a></li><li data-type='method'><a href="RA.html#.isNotGeneratorFunction">isNotGeneratorFunction</a></li><li data-type='method'><a href="RA.html#.isNotInteger">isNotInteger</a></li><li data-type='method'><a href="RA.html#.isNotNaN">isNotNaN</a></li><li data-type='method'><a href="RA.html#.isNotNil">isNotNil</a></li><li data-type='method'><a href="RA.html#.isNotNull">isNotNull</a></li><li data-type='method'><a href="RA.html#.isNotNumber">isNotNumber</a></li><li data-type='method'><a href="RA.html#.isNotObj">isNotObj</a></li><li data-type='method'><a href="RA.html#.isNotObjLike">isNotObjLike</a></li><li data-type='method'><a href="RA.html#.isNotPlainObj">isNotPlainObj</a></li><li data-type='method'><a href="RA.html#.isNotString">isNotString</a></li><li data-type='method'><a href="RA.html#.isNotUndefined">isNotUndefined</a></li><li data-type='method'><a href="RA.html#.isNotValidDate">isNotValidDate</a></li><li data-type='method'><a href="RA.html#.isNull">isNull</a></li><li data-type='method'><a href="RA.html#.isNumber">isNumber</a></li><li data-type='method'><a href="RA.html#.isObj">isObj</a></li><li data-type='method'><a href="RA.html#.isObjLike">isObjLike</a></li><li data-type='method'><a href="RA.html#.isPlainObj">isPlainObj</a></li><li data-type='method'><a href="RA.html#.isString">isString</a></li><li data-type='method'><a href="RA.html#.isUndefined">isUndefined</a></li><li data-type='method'><a href="RA.html#.isValidDate">isValidDate</a></li><li data-type='method'><a href="RA.html#.lensEq">lensEq</a></li><li data-type='method'><a href="RA.html#.lensNotEq">lensNotEq</a></li><li data-type='method'><a href="RA.html#.lensNotSatisfy">lensNotSatisfy</a></li><li data-type='method'><a href="RA.html#.lensSatisfies">lensSatisfies</a></li><li data-type='method'><a href="RA.html#.liftF">liftF</a></li><li data-type='method'><a href="RA.html#.liftFN">liftFN</a></li><li data-type='method'><a href="RA.html#.list">list</a></li><li data-type='method'><a href="RA.html#.mergeRight">mergeRight</a></li><li data-type='method'><a href="RA.html#.noop">noop</a></li><li data-type='method'><a href="RA.html#.paths">paths</a></li><li data-type='method'><a href="RA.html#.pickIndexes">pickIndexes</a></li><li data-type='method'><a href="RA.html#.reduceP">reduceP</a></li><li data-type='method'><a href="RA.html#.reduceRightP">reduceRightP</a></li><li data-type='method'><a href="RA.html#.renameKeys">renameKeys</a></li><li data-type='method'><a href="RA.html#.renameKeysWith">renameKeysWith</a></li><li data-type='method'><a href="RA.html#.stubNull">stubNull</a></li><li data-type='method'><a href="RA.html#.stubUndefined">stubUndefined</a></li><li data-type='method'><a href="RA.html#.viewOr">viewOr</a></li><li data-type='method'><a href="RA.html#.weave">weave</a></li><li data-type='method'><a href="RA.html#.weaveLazy">weaveLazy</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">liftFN.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { curry, head, slice, reduce, curryN, map } from 'ramda';
+
+import ap from './internal/ap';
+
+/**
+ * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
+ * the fantasy land Apply spec of algebraic structures.
+ *
+ * Lifting is specific for {@link https://github.com/scalaz/scalaz|scalaz} and {@link http://www.functionaljava.org/|functional java} implementations.
+ * Old version of fantasy land spec were not compatible with this approach,
+ * but as of fantasy land 1.0.0 Apply spec also adopted this approach.
+ *
+ * This function acts as interop for ramda &lt;= 0.23.0 and {@link https://monet.github.io/monet.js/|monet.js}.
+ *
+ * More info {@link https://github.com/fantasyland/fantasy-land/issues/50|here}.
+ *
+ * @func liftFN
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.2.0|v1.2.0}
+ * @category Function
+ * @sig Apply a => Number -> (a... -> a) -> (a... -> a)
+ * @param {Number} arity The arity of the lifter function
+ * @param {Function} fn The function to lift into higher context
+ * @return {Function} The lifted function
+ * @see {@link http://ramdajs.com/docs/#lift|lift}, {@link http://ramdajs.com/docs/#ap|ap}
+ * @example
+ *
+ * const { Maybe } = require('monet');
+ *
+ * const add3 = (a, b, c) => a + b + c;
+ * const madd3 = RA.liftFN(3, add3);
+ *
+ * madd3(Maybe.Some(10), Maybe.Some(15), Maybe.Some(17)); //=> Maybe.Some(42)
+ * madd3(Maybe.Some(10), Maybe.Nothing(), Maybe.Some(17)); //=> Maybe.Nothing()
+ */
+const liftFN = curry((arity, fn) => {
+  const lifted = curryN(arity, fn);
+  return curryN(arity, (...args) => {
+    const accumulator = map(lifted, head(args));
+    const apps = slice(1, Infinity, args);
+    return reduce(ap, accumulator, apps);
+  });
+});
+
+export default liftFN;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Tue Aug 15 2017 07:27:15 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
