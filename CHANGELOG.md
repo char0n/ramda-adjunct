@@ -1,3 +1,24 @@
+<a name="1.13.0"></a>
+# [1.13.0](https://github.com/char0n/ramda-adjunct/compare/v1.12.0...v1.13.0) (2017-08-15)
+
+
+### Bug Fixes
+
+* **defaults:** fix wrong logic ([fbc373f](https://github.com/char0n/ramda-adjunct/commit/fbc373f))
+* **docs:** fix version in JSDOC ([4696ae2](https://github.com/char0n/ramda-adjunct/commit/4696ae2))
+* **reduceRightP:** compensate for older versions of ramda ([3e5b327](https://github.com/char0n/ramda-adjunct/commit/3e5b327))
+
+
+### Features
+
+* **reduceP** ([d721126](https://github.com/char0n/ramda-adjunct/commit/d721126))
+* **reduceRightP** ([81d3d09](https://github.com/char0n/ramda-adjunct/commit/81d3d09)), closes [#114](https://github.com/char0n/ramda-adjunct/issues/114)
+* **lenses:** lensSatisfies & lensNotSatisfy ([1c351c2](https://github.com/char0n/ramda-adjunct/commit/1c351c2))
+* **viewOr** ([f494dc1](https://github.com/char0n/ramda-adjunct/commit/f494dc1))
+* **lenses:** lensEq & lensNotEq  ([7dd4b20](https://github.com/char0n/ramda-adjunct/commit/7dd4b20))
+
+
+
 <a name="1.12.0"></a>
 # [1.12.0](https://github.com/char0n/ramda-adjunct/compare/v1.11.0...v1.12.0) (2017-07-30)
 
