@@ -1,4 +1,4 @@
-import { curryN, not, pipe } from 'ramda';
+import { complement } from 'ramda';
 
 import lensSatisfies from './lensSatisfies';
 
@@ -25,7 +25,7 @@ import lensSatisfies from './lensSatisfies';
  * RA.lensNotSatisfies(R.equals(true), R.lensIndex(2), [false, true, 1]); // => true
  * RA.lensNotSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => true
  */
-const lensNotSatisfies = curryN(3, pipe(lensSatisfies, not));
+const lensNotSatisfies = complement(lensSatisfies);
 
 
 export default lensNotSatisfies;

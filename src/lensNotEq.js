@@ -1,4 +1,4 @@
-import { pipe, not, curryN } from 'ramda';
+import { complement } from 'ramda';
 
 import lensEq from './lensEq';
 
@@ -23,7 +23,7 @@ import lensEq from './lensEq';
  * RA.lensNotEq(R.lensIndex(1), 1, [0, 1, 2]); // => false
  * RA.lensNotEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => false
  */
-const lensNotEq = curryN(3, pipe(lensEq, not));
+const lensNotEq = complement(lensEq);
 
 
 export default lensNotEq;

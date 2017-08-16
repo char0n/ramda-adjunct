@@ -101,7 +101,7 @@
     "mocha": "=3.4.2",
     "mocha-junit-reporter": "=1.13.0",
     "mocha-multi-reporters": "=1.1.4",
-    "monet": "=0.8.10",
+    "monet": "=0.9.0-alpha.4",
     "nsp": "=2.6.3",
     "nyc": "=11.0.3",
     "rimraf": "=2.6.1",
