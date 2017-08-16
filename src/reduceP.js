@@ -33,7 +33,7 @@ import isUndefined from './isUndefined';
  * @param {*|Promise.<*>} acc The accumulator value
  * @param {Array.<*>|Promise.<Array<*|Promise.<*>>>} list The list to iterate over
  * @return {Promise} The final, accumulated value
- * @see {@link http://ramdajs.com/docs/#reduce|reduce}, * @see {@link RA.reduceRightP|reduceRightP}, {@link http://bluebirdjs.com/docs/api/promise.reduce.html|bluebird.reduce}
+ * @see {@link http://ramdajs.com/docs/#reduce|reduce}, {@link RA.reduceRightP|reduceRightP}, {@link http://bluebirdjs.com/docs/api/promise.reduce.html|bluebird.reduce}
  * @example
  *
  * RA.reduceP(
