@@ -6,7 +6,7 @@ import { applyTrait, functorTrait, setoidTrait, semigroupTrait, chainTrait, ordT
 
 
 // we do this here for jsdocs generate properly
-const { of, ap, map, equals, concat, chain, lte, empty } = fl;
+const { of, ap, map, equals, concat, chain, lte, empty, contramap } = fl;
 
 
 /**
@@ -28,7 +28,8 @@ const { of, ap, map, equals, concat, chain, lte, empty } = fl;
  * {@link https://github.com/fantasyland/fantasy-land#chain|Chain},
  * {@link https://github.com/fantasyland/fantasy-land#monad|Monad},
  * {@link https://github.com/fantasyland/fantasy-land#ord|Ord},
- * {@link https://github.com/fantasyland/fantasy-land#monoid|Monoid*}
+ * {@link https://github.com/fantasyland/fantasy-land#monoid|Monoid*},
+ * {@link https://github.com/fantasyland/fantasy-land#contravariant|Contravariant}
  * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
  */
 class Identity {
@@ -207,6 +208,26 @@ class Identity {
    */
   [empty]() {
     return this.constructor.of(emptyR(this.value));
+  }
+
+  /**
+   * Fantasy land {@link https://github.com/fantasyland/fantasy-land#contravariant|Contravariant} specification.
+   *
+   * @sig contramap :: Contravariant f => f a ~> (b -> a) -> f b
+   * @param {Function} fn
+   * @return {RA.Identity}
+   * @example
+   *
+   * const identity = a => a;
+   * const add1 = a => a + 1;
+   * const divide2 = a => a / 2;
+   *
+   * Identity.of(divide2).contramap(add1).get()(3); //=> 2
+   * Identity.of(identity).contramap(divide2).contramap(add1).get()(3); //=> 2
+   * Identity.of(identity).contramap(a => divide2(add1(a))).get()(3); //=> 2
+   */
+  [contramap](fn) {
+    return this.constructor.of(value => this.value(fn(value)));
   }
 }
 

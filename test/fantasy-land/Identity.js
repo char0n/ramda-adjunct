@@ -1,6 +1,6 @@
 import chai from 'chai';
 import sinon from 'sinon';
-import { add, identity } from 'ramda';
+import { add, identity, always } from 'ramda';
 import fl from 'fantasy-land/';
 import setoid from 'fantasy-land/laws/setoid';
 import semigroup from 'fantasy-land/laws/semigroup';
@@ -10,6 +10,7 @@ import functor from 'fantasy-land/laws/functor';
 import chain from 'fantasy-land/laws/chain';
 import monad from 'fantasy-land/laws/monad';
 import ord from 'fantasy-land/laws/ord';
+import contravarian from 'fantasy-land/laws/contravariant';
 
 import { isFunction, Identity } from '../../src/index';
 import eq from '../shared/eq';
@@ -246,6 +247,67 @@ describe('Identity', function() {
     it('tests map for returning a value of the same Functor', function() {
       const a = Identity.of(1);
       const b = a.map(identity);
+
+      eq(a instanceof Identity, true);
+      eq(b instanceof Identity, true);
+    });
+  });
+
+  describe('Contravariant', function() {
+    const contramapEq = (a, b) => eq(a.get()(1), b.get()(1));
+
+    it('tests for identity', function () {
+      contravarian.identity(Identity.of)(contramapEq)(identity);
+    });
+
+    it('tests for composition', function () {
+      contravarian.composition(Identity.of)(contramapEq)(always(1));
+    });
+
+    it('tests f for a function type', function() {
+      const fn = sinon.spy();
+      const a = Identity.of(always(1)).contramap(fn);
+
+      a.get()(2);
+
+      eq(a instanceof Identity, true);
+      eq(fn.calledOnce, true);
+      eq(fn.calledWith(2), true);
+    });
+
+    it('tests f for non-function type and unspecified behavior', function() {
+      const fn = null;
+      const a = Identity.of(identity);
+
+      chai.assert.throws(() => a.contramap(fn).get()(), TypeError);
+    });
+
+    it('tests f for returning any value', function() {
+      const stubNull = () => null;
+      const stubUndefined = () => undefined;
+      const stubNumber = () => 1;
+      const stubString = () => 'string';
+
+      const a = Identity.of(identity);
+
+      eq(a.contramap(stubNull).get()(), null);
+      eq(a.contramap(stubUndefined).get()(), undefined);
+      eq(a.contramap(stubNumber).get()(), 1);
+      eq(a.contramap(stubString).get()(), 'string');
+    });
+
+    it("tests for non parts of f's return value should be checked", function() {
+      const result = {};
+      const a = Identity.of(identity).contramap(always(result));
+
+      // TODO(vladimir.gorej@gmail.com): could not come up with something better
+      eq(a.get()() === result, true);
+      eq(a.get()(), result);
+    });
+
+    it('tests contramap for returning a value of the same Functor', function() {
+      const a = Identity.of(identity);
+      const b = a.contramap(identity);
 
       eq(a instanceof Identity, true);
       eq(b instanceof Identity, true);
