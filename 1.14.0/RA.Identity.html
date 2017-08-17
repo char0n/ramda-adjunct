@@ -82,7 +82,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line34">line 34</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -111,7 +111,8 @@ transformer when no other behaviour is required.</p></div>
 <a href="https://github.com/fantasyland/fantasy-land#chain">Chain</a>,
 <a href="https://github.com/fantasyland/fantasy-land#monad">Monad</a>,
 <a href="https://github.com/fantasyland/fantasy-land#ord">Ord</a>,
-<a href="https://github.com/fantasyland/fantasy-land#monoid">Monoid*</a></li>
+<a href="https://github.com/fantasyland/fantasy-land#monoid">Monoid*</a>,
+<a href="https://github.com/fantasyland/fantasy-land#contravariant">Contravariant</a></li>
         
     </ul></dd>
     
@@ -253,7 +254,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line53">line 53</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -330,7 +331,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line46">line 46</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -499,7 +500,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line93">line 93</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -671,7 +672,7 @@ a.ap(b); //=> Identity(2)</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line168">line 168</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line169">line 169</a>
     </li></ul></dd>
     
 
@@ -843,7 +844,7 @@ a.chain(fn).chain(fn); //=> Identity(3)</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line151">line 151</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line152">line 152</a>
     </li></ul></dd>
     
 
@@ -1009,6 +1010,181 @@ e.concat(f); //=> ['e', 'f']</code></pre>
             
 
     
+    <div id="contramap" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>contramap<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line229">line 229</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul><li><pre><code>contramap :: Contravariant f => f a ~> (b -> a) -> f b</code></pre></li></ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#contravariant">Contravariant</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const identity = a => a;
+const add1 = a => a + 1;
+const divide2 = a => a / 2;
+
+Identity.of(divide2).contramap(add1).get()(3); //=> 2
+Identity.of(identity).contramap(divide2).contramap(add1).get()(3); //=> 2
+Identity.of(identity).contramap(a => divide2(add1(a))).get()(3); //=> 2</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
     <div id="empty" class="section-id"></div>
     <h4 class="name"><span class="type-signature"></span>empty<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
@@ -1022,7 +1198,7 @@ e.concat(f); //=> ['e', 'f']</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line208">line 208</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line209">line 209</a>
     </li></ul></dd>
     
 
@@ -1148,7 +1324,7 @@ i.concat(a); //=> Identity('string');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line127">line 127</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line128">line 128</a>
     </li></ul></dd>
     
 
@@ -1322,7 +1498,7 @@ a.equals(c); //=> false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line76">line 76</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line77">line 77</a>
     </li></ul></dd>
     
 
@@ -1438,7 +1614,7 @@ a.get(); //=> 1</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line188">line 188</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line189">line 189</a>
     </li></ul></dd>
     
 
@@ -1613,7 +1789,7 @@ c.lte(a); //=> false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line108">line 108</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line109">line 109</a>
     </li></ul></dd>
     
 
@@ -1784,7 +1960,7 @@ a.map(a => a + 1); //=> Identity(2)</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Wed Aug 16 2017 07:42:04 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.3</a> on Thu Aug 17 2017 21:54:32 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
