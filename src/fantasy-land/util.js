@@ -14,7 +14,7 @@ export const typeEquals = curry((typeIdent, monad) => type(monad) === typeIdent)
 export const isSameType = curryN(2, useWith(equals, [type, type]));
 
 // isNotSameType :: (Monad a, Monad b) => a -> b -> Boolean
-export const isNotSameType = curryN(2, complement(isSameType));
+export const isNotSameType = complement(isSameType);
 
 // aliases :: Prototype -> NewPrototypePairs
 //     Prototype = Object
