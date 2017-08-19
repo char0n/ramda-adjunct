@@ -2,7 +2,7 @@
   "author": "Vladimir Gorej <vladimir.gorej@gmail.com> (linkedin.com/in/vladimirgorej)",
   "contributors": [],
   "name": "ramda-adjunct",
-  "description": "Extensions for Ramda",
+  "description": "Community-maintained extension of Ramda",
   "keywords": "ramda extensions addons cookbook adjunct recipe extras",
   "version": "1.14.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
