@@ -9,7 +9,7 @@ import { view, curryN, equals, pipe } from 'ramda';
  * @func lensSatisfies
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
- * @category Object
+ * @category Relation
  * @sig  Boolean b => (a -> b) -> Lens s a -> s -> b
  * @see {@link RA.lensNotSatisfy|lensNotSatisfy}
  * @param {Function} predicate The predicate function

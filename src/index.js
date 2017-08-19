@@ -60,11 +60,12 @@ import paths from './paths';
 import renameKeys from './renameKeys';
 import renameKeysWith from './renameKeysWith';
 import mergeRight from './mergeRight';
+import viewOr from './viewOr';
+// Relation
 import lensEq from './lensEq';
 import lensNotEq from './lensNotEq';
 import lensSatisfies from './lensSatisfies';
 import lensNotSatisfy from './lensNotSatisfy';
-import viewOr from './viewOr';
 // Types
 import Identity from './fantasy-land/Identity';
 
@@ -138,11 +139,12 @@ export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as mergeRight } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
+export { default as viewOr } from './viewOr';
+// Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
 export { default as lensSatisfies } from './lensSatisfies';
 export { default as lensNotSatisfy } from './lensNotSatisfy';
-export { default as viewOr } from './viewOr';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
 
@@ -221,11 +223,12 @@ const RA = {
   renameKeys,
   renameKeysWith,
   mergeRight,
+  viewOr,
+  // Relation
   lensEq,
   lensNotEq,
   lensSatisfies,
   lensNotSatisfy,
-  viewOr,
   // Types
   Identity,
 };
