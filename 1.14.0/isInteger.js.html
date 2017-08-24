@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotAsyncFunction.js - Documentation</title>
+    <title>isInteger.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotAsyncFunction.js</h1>
+    <h1 class="page-title">isInteger.js</h1>
     
 
     
@@ -43,34 +43,41 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { or } from 'ramda';
 
-import isAsyncFunction from './isAsyncFunction';
+import polyfill from './internal/polyfills/Number.isInteger';
 
-
-/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Async Function`
+ * Checks whether the passed value is an `integer`.
  *
- * @func isNotAsyncFunction
+ * @func isInteger
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isNotInteger|isNotInteger}
  * @example
  *
- * RA.isNotAsyncFunction(async function test() { }); //=> false
- * RA.isNotAsyncFunction(null); //=> true
- * RA.isNotAsyncFunction(function test() { }); //=> true
- * RA.isNotAsyncFunction(() => {}); //=> true
+ * RA.isInteger(0); //=> true
+ * RA.isInteger(1); //=> true
+ * RA.isInteger(-100000); //=> true
+ *
+ * RA.isInteger(0.1);       //=> false
+ * RA.isInteger(Math.PI);   //=> false
+ *
+ * RA.isInteger(NaN);       //=> false
+ * RA.isInteger(Infinity);  //=> false
+ * RA.isInteger(-Infinity); //=> false
+ * RA.isInteger('10');      //=> false
+ * RA.isInteger(true);      //=> false
+ * RA.isInteger(false);     //=> false
+ * RA.isInteger([1]);       //=> false
  */
-/* eslint-enable max-len */
-const isNotAsyncFunction = complement(isAsyncFunction);
+const isInteger = or(Number.isInteger, polyfill);
 
-export default isNotAsyncFunction;
+export default isInteger;
 </code></pre>
         </article>
     </section>
