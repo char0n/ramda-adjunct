@@ -1,8 +1,6 @@
-import { complement, allPass } from 'ramda';
+import { complement, both } from 'ramda';
 
 import isInteger from './isInteger';
-import isNumber from './isNumber';
-import isNotNaN from './isNotNaN';
 import isFinite from './isFinite';
 
 /**
@@ -33,6 +31,6 @@ import isFinite from './isFinite';
  * RA.isFloat(false);     //=> false
  * RA.isFloat([1]);       //=> false
  */
-const isFloat = allPass([isNumber, isNotNaN, isFinite, complement(isInteger)]);
+const isFloat = both(isFinite, complement(isInteger));
 
 export default isFloat;
