@@ -37,8 +37,9 @@ import isNotNaN from './isNotNaN';
 import isFinite from './isFinite';
 import isNotFinite from './isNotFinite';
 import isInteger from './isInteger';
-import isFloat from './isFloat';
 import isNotInteger from './isNotInteger';
+import isFloat from './isFloat';
+import isNotFloat from './isNotFloat';
 // Function
 import stubUndefined from './stubUndefined';
 import stubNull from './stubNull';
@@ -116,8 +117,9 @@ export { default as isNotNaN } from './isNotNaN';
 export { default as isFinite } from './isFinite';
 export { default as isNotFinite } from './isNotFinite';
 export { default as isInteger } from './isInteger';
-export { default as isFloat } from './isFloat';
 export { default as isNotInteger } from './isNotInteger';
+export { default as isFloat } from './isFloat';
+export { default as isNotFloat } from './isNotFloat';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
@@ -200,8 +202,9 @@ const RA = {
   isFinite,
   isNotFinite,
   isInteger,
-  isFloat,
   isNotInteger,
+  isFloat,
+  isNotFloat,
   // Function
   stubUndefined,
   stubNull,
