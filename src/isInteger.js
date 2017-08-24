@@ -3,7 +3,7 @@ import { or } from 'ramda';
 import polyfill from './internal/polyfills/Number.isInteger';
 
 /**
- * Checks whether the passed value is a an `integer`.
+ * Checks whether the passed value is an `integer`.
  *
  * @func isInteger
  * @memberOf RA

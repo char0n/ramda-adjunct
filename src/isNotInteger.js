@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isInteger from './isInterger';
+import isInteger from './isInteger';
 
 
 /**

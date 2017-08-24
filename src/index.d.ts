@@ -218,9 +218,14 @@ declare namespace RamdaAdjunct {
         isNotFinite(val: any): boolean;
 
         /**
-         * Checks whether the passed value is a an `integer`.
+         * Checks whether the passed value is an `integer`.
          */
         isInteger(val: any): boolean;
+
+        /**
+         * Checks whether the passed value is a `float`.
+         */
+        isFloat(val: any): boolean;
 
         /**
          * Checks whether the passed value is complement of `integer`.

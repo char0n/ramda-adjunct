@@ -11,9 +11,11 @@ describe('isInteger', function() {
     eq(RA.isInteger(-100000), true);
     eq(RA.isInteger(MAX_SAFE_INTEGER), true);
     eq(RA.isInteger(MIN_SAFE_INTEGER), true);
+    eq(RA.isInteger(5e+0), true);
 
     eq(RA.isInteger(0.1), false);
     eq(RA.isInteger(Math.PI), false);
+    eq(RA.isInteger(5.56789e+0), false);
 
     eq(RA.isInteger(NaN), false);
     eq(RA.isInteger(Infinity), false);

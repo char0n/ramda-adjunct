@@ -16,7 +16,8 @@ import _isNumber from 'ramda/src/internal/_isNumber';
  * RA.isNumber(5); // => true
  * RA.isNumber(Number.MAX_VALUE); // => true
  * RA.isNumber(-Infinity); // => true
- * RA.isNumber('5'); // => false
+ * RA.isNumber(NaN); // => true
+ * RA.isNumber('5'); // => false *
  */
 const isNumber = _isNumber;
 
