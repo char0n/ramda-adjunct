@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lensNotSatisfy.js - Documentation</title>
+    <title>isNotFloat.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">lensNotSatisfy.js</h1>
+    <h1 class="page-title">isNotFloat.js</h1>
     
 
     
@@ -45,35 +45,39 @@
         <article>
             <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
 
-import lensSatisfies from './lensSatisfies';
-
+import isFloat from './isFloat';
 
 /**
- * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
- * Note that the predicate is expected to return boolean value.
+ * Checks whether the passed value is complement of a `float`.
  *
- * @func lensNotSatisfy
+ * @func isNotFloat
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
- * @category Relation
- * @sig  Boolean b => (a -> b) -> Lens s a -> s -> b
- * @see {@link RA.lensSatisfies|lensNotSatisfies}
- * @param {Function} predicate The predicate function
- * @param {Function} lens Van Laarhoven lens
- * @param {*} data The data structure
- * @return {Boolean} `false` if the focused data structure satisfies the predicate, `true` otherwise
- *
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isFloat|isFloat}
  * @example
  *
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(0), [false, true, 1]); // => true
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(1), [false, true, 1]); // => false
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(2), [false, true, 1]); // => true
- * RA.lensNotSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => true
+ * RA.isNotFloat(0); //=> true
+ * RA.isNotFloat(1); //=> true
+ * RA.isNotFloat(-100000); //=> true
+ *
+ * RA.isNotFloat(0.1);       //=> false
+ * RA.isNotFloat(Math.PI);   //=> false
+ *
+ * RA.isNotFloat(NaN);       //=> true
+ * RA.isNotFloat(Infinity);  //=> true
+ * RA.isNotFloat(-Infinity); //=> true
+ * RA.isNotFloat('10');      //=> true
+ * RA.isNotFloat(true);      //=> true
+ * RA.isNotFloat(false);     //=> true
+ * RA.isNotFloat([1]);       //=> true
  */
-const lensNotSatisfies = complement(lensSatisfies);
+const isNotFloat = complement(isFloat);
 
-
-export default lensNotSatisfies;
+export default isNotFloat;
 </code></pre>
         </article>
     </section>
