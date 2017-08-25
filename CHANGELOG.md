@@ -1,3 +1,21 @@
+<a name="1.14.0"></a>
+# [1.14.0](https://github.com/char0n/ramda-adjunct/compare/v1.13.0...v1.14.0) (2017-08-25)
+
+
+### Bug Fixes
+
+* **reduceP, reduceRightP:** fix logic for empty list ([6538444](https://github.com/char0n/ramda-adjunct/commit/6538444))
+
+
+### Features
+
+* **Identity:** add contravariant fantasy-land specification ([1bd5beb](https://github.com/char0n/ramda-adjunct/commit/1bd5beb))
+* add hasPath ([06c7364](https://github.com/char0n/ramda-adjunct/commit/06c7364)), closes [#125](https://github.com/char0n/ramda-adjunct/issues/125)
+* add isFloat ([40d74e6](https://github.com/char0n/ramda-adjunct/commit/40d74e6))
+* add isNotFloat ([652d317](https://github.com/char0n/ramda-adjunct/commit/652d317))
+
+
+
 <a name="1.13.0"></a>
 # [1.13.0](https://github.com/char0n/ramda-adjunct/compare/v1.12.0...v1.13.0) (2017-08-15)
 
