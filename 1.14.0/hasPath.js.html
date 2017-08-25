@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isDate.js - Documentation</title>
+    <title>hasPath.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isDate.js</h1>
+    <h1 class="page-title">hasPath.js</h1>
     
 
     
@@ -43,29 +43,48 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { is } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { length, has, path, head, tail, curryN } from 'ramda';
 
-/* eslint-disable max-len */
+import isObj from './isObj';
+
 /**
- * Checks if value is `Date` object.
+ * Returns whether or not an object has an own property with the specified name at a given path.
  *
- * @func isDate
+ * @func hasPath
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
+ * @category Object
+ * @sig
+ *
+ *   [Idx] -> {a} -> Boolean
+ *   Idx = String | Int
+ *
+ * @param {Array.&lt;string|number>} path The path of the nested property
+ * @param {Object} obj The object to test
  * @return {Boolean}
- * @see {@link RA.isNotDate|isNotDate}, {@link RA.isValidDate|isValidDate}, {@link RA.isNotValidDate|isNotValidDate}
+ * @see {@link http://ramdajs.com/docs/#has|has}
  * @example
  *
- * RA.isDate(new Date()); //=> true
- * RA.isDate('1997-07-16T19:20+01:00'); //=> false
+ * RA.hasPath(['a', 'b'], { a: { b: 1 } }); //=> true
+ * RA.hasPath(['a', 'b', 'c'], { a: { b: 1 } }); //=> false
+ * RA.hasPath(['a', 'b'], { a: { } }); //=> false
+ * RA.hasPath([0], [1, 2]); //=> true
  */
-/* eslint-enable max-len */
-const isDate = is(Date);
+const hasPath = curryN(2, (objPath, obj) => {
+  const prop = head(objPath);
 
-export default isDate;
+  // termination conditions
+  if (length(objPath) === 0 || !isObj(obj)) {
+    return false;
+  } else if (length(objPath) === 1) {
+    return isObj(obj) ? has(prop, obj) : false;
+  }
+
+  return hasPath(tail(objPath), path([prop], obj)); // base case
+});
+
+
+export default hasPath;
 </code></pre>
         </article>
     </section>
