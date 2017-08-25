@@ -444,6 +444,12 @@ declare namespace RamdaAdjunct {
         viewOr(defaultValue: any): (lens: Function) => (data: any) => any
 
         /**
+         * Returns whether or not an object has an own property with the specified name at a given path.
+         */
+        hasPath(path: Array<String|Number>, obj: any): Boolean
+        hasPath(path: Array<String|Number>): (obj: Object) => Boolean
+
+        /**
          * Identity type.
          */
         Identity: Function;

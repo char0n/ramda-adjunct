@@ -63,6 +63,7 @@ import renameKeys from './renameKeys';
 import renameKeysWith from './renameKeysWith';
 import mergeRight from './mergeRight';
 import viewOr from './viewOr';
+import hasPath from './hasPath';
 // Relation
 import lensEq from './lensEq';
 import lensNotEq from './lensNotEq';
@@ -144,6 +145,7 @@ export { default as renameKeysWith } from './renameKeysWith';
 export { default as mergeRight } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
 export { default as viewOr } from './viewOr';
+export { default as hasPath } from './hasPath';
 // Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
@@ -230,6 +232,7 @@ const RA = {
   renameKeysWith,
   mergeRight,
   viewOr,
+  hasPath,
   // Relation
   lensEq,
   lensNotEq,
