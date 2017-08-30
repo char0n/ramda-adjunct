@@ -15,6 +15,13 @@
 
 This library is a community maintained extension of Ramda.
 
+## Support us
+
+Although we love working on ramda-adjunct, we must invest our free time to make this library great.
+Support this project's evolution via [gratipay](https://gratipay.com/ramda-adjunct/).
+
+[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/ramda-adjunct/)
+
 ## Motivation
 
 It seems to be very common for people to create their own utils and recipes composing
