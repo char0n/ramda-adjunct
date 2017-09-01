@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isArray.js - Documentation</title>
+    <title>isPositive.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isArray.js</h1>
+    <h1 class="page-title">isPositive.js</h1>
     
 
     
@@ -43,28 +43,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import _isArray from 'ramda/src/internal/_isArray';
+            <pre class="prettyprint source linenums"><code>import { both, lt } from 'ramda';
+
+import isNumber from './isNumber';
+
 
 /**
- * Checks if input value is `Array`.
+ * Checks if value is a positive `Number` primitive or object.
  *
- * @func isArray
+ * @func isPositive
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.15.0|v1.15.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotArray|isNotArray}
+ * @see {@link RA.isNotPositive|isNotPositive}
  * @example
  *
- * RA.isArray([]); //=> true
- * RA.isArray(null); //=> false
- * RA.isArray({}); //=> false
+ * RA.isPositive(1); // => true
+ * RA.isPositive(Number.MAX_VALUE); // => true
+ * RA.isPositive(-Infinity); // => false
+ * RA.isPositive(NaN); // => false
+ * RA.isPositive('5'); // => false
  */
-const isArray = _isArray;
+const isPositive = both(isNumber, lt(0));
 
-export default isArray;
+export default isPositive;
 </code></pre>
         </article>
     </section>
