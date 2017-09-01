@@ -1,7 +1,7 @@
 import _isNumber from 'ramda/src/internal/_isNumber';
 
 /**
- * Checks if value is a `Number` primitive or object
+ * Checks if value is a `Number` primitive or object.
  *
  * @func isNumber
  * @memberOf RA
@@ -17,7 +17,7 @@ import _isNumber from 'ramda/src/internal/_isNumber';
  * RA.isNumber(Number.MAX_VALUE); // => true
  * RA.isNumber(-Infinity); // => true
  * RA.isNumber(NaN); // => true
- * RA.isNumber('5'); // => false *
+ * RA.isNumber('5'); // => false
  */
 const isNumber = _isNumber;
 
