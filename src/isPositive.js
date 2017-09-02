@@ -13,7 +13,7 @@ import isNumber from './isNumber';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNotPositive|isNotPositive}
+ * @see {@link RA.isNegative|isNegative}
  * @example
  *
  * RA.isPositive(1); // => true
