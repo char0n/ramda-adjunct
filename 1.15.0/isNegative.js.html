@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotGeneratorFunction.js - Documentation</title>
+    <title>isNegative.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotGeneratorFunction.js</h1>
+    <h1 class="page-title">isNegative.js</h1>
     
 
     
@@ -43,33 +43,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { both, gt } from 'ramda';
 
-import isGeneratorFunction from './isGeneratorFunction';
+import isNumber from './isNumber';
 
-/* eslint-disable max-len */
+
 /**
- * Checks if input value is complement of `Generator Function`
+ * Checks if value is a negative `Number` primitive or object.
  *
- * @func isNotGeneratorFunction
+ * @func isNegative
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.15.0|v1.15.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isPositive|isPositive}
  * @example
  *
- * RA.isNotGeneratorFunction(function* test() { }); //=> false
- * RA.isNotGeneratorFunction(null); //=> true
- * RA.isNotGeneratorFunction(function test() { }); //=> true
- * RA.isNotGeneratorFunction(() => {}); //=> true
+ * RA.isNegative(-1); // => true
+ * RA.isNegative(Number.MIN_VALUE); // => false
+ * RA.isNegative(+Infinity); // => false
+ * RA.isNegative(NaN); // => false
+ * RA.isNegative('5'); // => false
  */
-/* eslint-enable max-len */
-const isNotGeneratorFunction = complement(isGeneratorFunction);
+const isNegative = both(isNumber, gt(0));
 
-export default isNotGeneratorFunction;
+export default isNegative;
 </code></pre>
         </article>
     </section>
