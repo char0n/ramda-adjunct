@@ -213,6 +213,11 @@ declare namespace RamdaAdjunct {
         isPositive(val: any): boolean
 
         /**
+         * Checks if value is a negative `Number` primitive or object.
+         */
+        isNegative(val: any): boolean
+
+        /**
          * Checks whether the passed value is a finite `Number`.
          */
         isFinite(val: any): boolean;
