@@ -11,7 +11,6 @@
 /.babelrc
 /.editorconfig
 /.eslintignore
-/.eslintrc
 /.gitattributes
 /.gitignore
 /.npmignore
@@ -28,3 +27,4 @@
 /webpack.config-test.node.js
 /test-results.xml
 /tsconfig.json
+.eslintrc
