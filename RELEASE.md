@@ -61,7 +61,8 @@ Bump the `package.json` version by incrementing **PATCH** part of the semver ver
 
 Go to [ramda-adjunct github repo](https://github.com/char0n/ramda-adjunct) and switch to 
 **gh-pages** branch. Find `index.html` and edit it. Replace all references of previous version
-of ramda-adjunct with the currently released one.
+of ramda-adjunct with the currently released one. In commit message use suffix `[ci skip]`
+for `circleci` to skip the build triggered by this change.
 
 
 **Note**
