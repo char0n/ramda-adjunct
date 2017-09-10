@@ -1,3 +1,14 @@
+<a name="1.15.0"></a>
+# [1.15.0](https://github.com/char0n/ramda-adjunct/compare/v1.14.0...v1.15.0) (2017-09-10)
+
+
+### Features
+
+* add isNegative ([e593104](https://github.com/char0n/ramda-adjunct/commit/e593104))
+* add isPositive ([040d335](https://github.com/char0n/ramda-adjunct/commit/040d335))
+
+
+
 <a name="1.14.0"></a>
 # [1.14.0](https://github.com/char0n/ramda-adjunct/compare/v1.13.0...v1.14.0) (2017-08-25)
 
