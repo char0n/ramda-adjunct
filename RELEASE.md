@@ -9,7 +9,8 @@ Generate new version `CHANGELOG.md` file by running
 ```
 
 After changelog is generated, please review it and make sure it contains only
-relevant information.
+relevant information. Adhere to semver and bump the `package.json` accordingly
+to semver rules.
 
 ## Edit README.md
 
