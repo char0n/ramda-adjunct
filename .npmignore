@@ -27,4 +27,5 @@
 /webpack.config-test.node.js
 /test-results.xml
 /tsconfig.json
+/ramda-adjunct-*.*.*.tgz
 .eslintrc
