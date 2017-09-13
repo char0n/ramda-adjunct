@@ -27,7 +27,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `Boolean.
          */
-        isBoolean(val: any): val is Boolean;
+        isBoolean(val: any): val is boolean;
 
         /**
          * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
@@ -416,33 +416,33 @@ declare namespace RamdaAdjunct {
         /**
          * Returns `true` if data structure focused by the given lens equals provided value.
          */
-        lensEq(lens: Function, value: any, data: any): Boolean
-        lensEq(lens: Function, value: any): (data: any) => Boolean
-        lensEq(lens: Function): (value: any) => (data: any) => Boolean
+        lensEq(lens: Function, value: any, data: any): boolean
+        lensEq(lens: Function, value: any): (data: any) => boolean
+        lensEq(lens: Function): (value: any) => (data: any) => boolean
 
         /**
          * Returns `false` if data structure focused by the given lens equals provided value.
          */
-        lensNotEq(lens: Function, value: any, data: any): Boolean
-        lensNotEq(lens: Function, value: any): (data: any) => Boolean
-        lensNotEq(lens: Function): (value: any) => (data: any) => Boolean
+        lensNotEq(lens: Function, value: any, data: any): boolean
+        lensNotEq(lens: Function, value: any): (data: any) => boolean
+        lensNotEq(lens: Function): (value: any) => (data: any) => boolean
 
         /**
          * Returns `true` if data structure focused by the given lens satisfies the predicate.
          * Note that the predicate is expected to return boolean value and will be evaluated
          * as `false` unless the predicate returns `true`.
          */
-        lensSatisfies(predicate: Function, lens: Function, data: any): Boolean
-        lensSatisfies(predicate: Function, lens: Function): (data: any) => Boolean
-        lensSatisfies(predicate: Function): (lens: Function) => (data: any) => Boolean
+        lensSatisfies(predicate: Function, lens: Function, data: any): boolean
+        lensSatisfies(predicate: Function, lens: Function): (data: any) => boolean
+        lensSatisfies(predicate: Function): (lens: Function) => (data: any) => boolean
 
         /**
          * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
          * Note that the predicate is expected to return boolean value.
          */
-        lensNotSatisfy(predicate: Function, lens: Function, data: any): Boolean
-        lensNotSatisfy(predicate: Function, lens: Function): (data: any) => Boolean
-        lensNotSatisfy(predicate: Function): (lens: Function) => (data: any) => Boolean
+        lensNotSatisfy(predicate: Function, lens: Function, data: any): boolean
+        lensNotSatisfy(predicate: Function, lens: Function): (data: any) => boolean
+        lensNotSatisfy(predicate: Function): (lens: Function) => (data: any) => boolean
 
         /**
          * Returns a "view" of the given data structure, determined by the given lens
@@ -456,8 +456,8 @@ declare namespace RamdaAdjunct {
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
-        hasPath(path: Array<String|Number>, obj: any): Boolean
-        hasPath(path: Array<String|Number>): (obj: Object) => Boolean
+        hasPath(path: Array<String|Number>, obj: any): boolean
+        hasPath(path: Array<String|Number>): (obj: Object) => boolean
 
         /**
          * Identity type.
