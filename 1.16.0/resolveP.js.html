@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotPlainObj.js - Documentation</title>
+    <title>resolveP.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotPlainObj.js</h1>
+    <h1 class="page-title">resolveP.js</h1>
     
 
     
@@ -43,41 +43,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isPlainObj from './isPlainObj';
+            <pre class="prettyprint source linenums"><code>import { bind } from 'ramda';
 
 /* eslint-disable max-len */
 /**
- * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`).
+ * Composable shortcut for `Promise.resolve`.
  *
- * @func isNotPlainObj
- * @aliases isNotPlainObject
+ * Returns a Promise object that is resolved with the given value.
+ * If the value is a thenable (i.e. has a "then" method), the returned promise will
+ * "follow" that thenable, adopting its eventual state.
+ *
+ * @func resolveP
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isPlainObj|isPlainObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isObj|isObj}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.16.0|v1.16.0}
+ * @category Function
+ * @sig a -> Promise a
+ * @param {*} [value=undefined] Argument to be resolved by this Promise. Can also be a Promise or a thenable to resolve
+ * @return {Promise}
  * @example
  *
- * class Bar {
- *   constructor() {
- *     this.prop = 'value';
- *   }
- * }
- *
- * RA.isNotPlainObj(new Bar()); //=> true
- * RA.isNotPlainObj({ prop: 'value' }); //=> false
- * RA.isNotPlainObj(['a', 'b', 'c']); //=> true
- * RA.isNotPlainObj(Object.create(null); //=> false
- * RA.isNotPlainObj(new Object()); //=> false
+ * RA.resolveP(); //=> undefined
+ * RA.resolveP('a'); //=> 'a'
+ * RA.resolveP([1, 2, 3]); => [1, 2, 3]
  */
 /* eslint-enable max-len */
-const isNotPlainObj = complement(isPlainObj);
+const resolveP = bind(Promise.resolve, Promise);
 
-export default isNotPlainObj;
+export default resolveP;
 </code></pre>
         </article>
     </section>
