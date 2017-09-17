@@ -54,6 +54,7 @@ import weaveLazy from './weaveLazy';
 import curryRightN from './curryRightN';
 import curryRight from './curryRight';
 import resolveP from './resolveP';
+import rejectP from './rejectP';
 // List
 import pickIndexes from './pickIndexes';
 import list from './list';
@@ -138,6 +139,7 @@ export { default as weaveLazy } from './weaveLazy';
 export { default as curryRightN } from './curryRightN';
 export { default as curryRight } from './curryRight';
 export { default as resolveP } from './resolveP';
+export { default as rejectP } from './rejectP';
 // List
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
@@ -227,6 +229,7 @@ const RA = {
   curryRightN,
   curryRight,
   resolveP,
+  rejectP,
   // List
   pickIndexes,
   list,

@@ -469,6 +469,13 @@ declare namespace RamdaAdjunct {
         resolveP<T>(value?: T): Promise<T>
 
         /**
+         * Composable shortcut for `Promise.reject`.
+         *
+         * Returns a Promise object that is rejected with the given reason.
+         */
+        rejectP<T>(value?: T): Promise<T>
+
+        /**
          * Identity type.
          */
         Identity: Function;

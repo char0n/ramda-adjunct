@@ -14,12 +14,13 @@ import { bind } from 'ramda';
  * @category Function
  * @sig a -> Promise a
  * @param {*} [value=undefined] Argument to be resolved by this Promise. Can also be a Promise or a thenable to resolve
- * @return {Promise}
+ * @return {Promise} A Promise that is resolved with the given value, or the promise passed as value, if the value was a promise object
+ * @see {@link RA.rejectP|rejectP}
  * @example
  *
- * RA.resolveP(); //=> undefined
- * RA.resolveP('a'); //=> 'a'
- * RA.resolveP([1, 2, 3]); => [1, 2, 3]
+ * RA.resolveP(); //=> Promise(undefined)
+ * RA.resolveP('a'); //=> Promise('a')
+ * RA.resolveP([1, 2, 3]); //=> Promise([1, 2, 3])
  */
 /* eslint-enable max-len */
 const resolveP = bind(Promise.resolve, Promise);

@@ -24,7 +24,7 @@ import { concat, flip } from 'ramda';
  * @see {@link http://ramdajs.com/docs/#concat|concat}
  * @example
  *
- * RA.concatRight('ABC', 'DEF'); // 'DEFABC'
+ * RA.concatRight('ABC', 'DEF'); //=> 'DEFABC'
  * RA.concatRight([4, 5, 6], [1, 2, 3]); //=> [1, 2, 3, 4, 5, 6]
  * RA.concatRight([], []); //=> []
  */
