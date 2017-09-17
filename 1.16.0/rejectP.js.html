@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotDate.js - Documentation</title>
+    <title>rejectP.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotDate.js</h1>
+    <h1 class="page-title">rejectP.js</h1>
     
 
     
@@ -43,29 +43,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isDate from './isDate';
+            <pre class="prettyprint source linenums"><code>import { bind } from 'ramda';
 
 /**
- * Checks if value is complement of `Date` object.
+ * Composable shortcut for `Promise.reject`.
  *
- * @func isNotDate
+ * Returns a Promise object that is rejected with the given reason.
+ *
+ * @func rejectP
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isDate|isDate}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.16.0|v1.16.0}
+ * @category Function
+ * @sig a -> Promise a
+ * @param {*} [reason=undefined] Reason why this Promise rejected.
+ * @return {Promise} A Promise that is rejected with the given reason
+ * @see {@link RA.resolveP|resolveP}
  * @example
  *
- * RA.isNotDate(new Date()); //=> false
- * RA.isNotDate('1997-07-16T19:20+01:00'); //=> true
+ * RA.rejectP(); //=> Promise(undefined)
+ * RA.rejectP('a'); //=> Promise('a')
+ * RA.rejectP([1, 2, 3]); //=> Promise([1, 2, 3])
  */
-const isNotDate = complement(isDate);
+const rejectP = bind(Promise.reject, Promise);
 
-export default isNotDate;
+export default rejectP;
 </code></pre>
         </article>
     </section>
