@@ -1,6 +1,7 @@
 import { curryN, reduce, length } from 'ramda';
 
 import isUndefined from './isUndefined';
+import resolveP from './resolveP';
 
 /* eslint-disable max-len */
 /**
@@ -70,8 +71,7 @@ import isUndefined from './isUndefined';
  *
  */
 /* esline-enable max-len */
-const reduceP = curryN(3, (fn, acc, list) => Promise
-  .resolve(list)
+const reduceP = curryN(3, (fn, acc, list) => resolveP(list)
   .then((iterable) => {
     const listLength = length(iterable);
 
@@ -89,7 +89,7 @@ const reduceP = curryN(3, (fn, acc, list) => Promise
         })
     );
 
-    return reducer(Promise.resolve(acc), iterable);
+    return reducer(resolveP(acc), iterable);
   })
 );
 
