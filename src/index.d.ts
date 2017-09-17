@@ -460,6 +460,15 @@ declare namespace RamdaAdjunct {
         hasPath(path: Array<String|Number>): (obj: Object) => boolean
 
         /**
+         * Composable shortcut for `Promise.resolve`.
+         *
+         * Returns a Promise object that is resolved with the given value.
+         * If the value is a thenable (i.e. has a "then" method), the returned promise will
+         * "follow" that thenable, adopting its eventual state.
+         */
+        resolveP<T>(value?: T): Promise<T>
+
+        /**
          * Identity type.
          */
         Identity: Function;
