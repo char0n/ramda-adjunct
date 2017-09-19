@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isString.js - Documentation</title>
+    <title>sliceTo.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isString.js</h1>
+    <h1 class="page-title">sliceTo.js</h1>
     
 
     
@@ -43,27 +43,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import _isString from 'ramda/src/internal/_isString';
+            <pre class="prettyprint source linenums"><code>import { slice } from 'ramda';
 
 /**
- * Checks if input value is `String`.
+ * Returns the elements of the given list or string (or object with a slice method)
+ * to toIndex (exclusive).
+ * Dispatches to the slice method of the second argument, if present.
  *
- * @func isString
+ * @func sliceTo
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotString|isNotString}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.16.0|v1.16.0}
+ * @category List
+ * @sig  Number -> [a] -> [a]
+ * @param {number} toIndex The end index (exclusive)
+ * @param {Array|string} list The list or string to slice
+ * @return {Array|string} The sliced list or string
+ * @see {@link http://ramdajs.com/docs/#slice|slice}, {@link RA.sliceFrom|sliceFrom}
  * @example
  *
- * RA.isString('abc'); //=> true
- * RA.isString(1); //=> false
+ * RA.sliceTo(2, [1, 2, 3]); //=> [1, 2]
  */
-const isString = _isString;
+const sliceTo = slice(0);
 
-export default isString;
+export default sliceTo;
 </code></pre>
         </article>
     </section>
