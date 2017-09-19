@@ -62,6 +62,7 @@ import concatRight from './concatRight';
 import reduceP from './reduceP';
 import reduceRightP from './reduceRightP';
 import sliceFrom from './sliceFrom';
+import sliceTo from './sliceTo';
 // Object
 import paths from './paths';
 import renameKeys from './renameKeys';
@@ -148,6 +149,7 @@ export { default as concatRight } from './concatRight';
 export { default as reduceP } from './reduceP';
 export { default as reduceRightP } from './reduceRightP';
 export { default as sliceFrom } from './sliceFrom';
+export { default as sliceTo } from './sliceTo';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
@@ -239,6 +241,7 @@ const RA = {
   reduceP,
   reduceRightP,
   sliceFrom,
+  sliceTo,
   // Object
   defaults: mergeRight,
   resetToDefault: mergeRight,

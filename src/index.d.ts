@@ -483,6 +483,13 @@ declare namespace RamdaAdjunct {
         sliceFrom<T>(fromIndex: number, list: String|Array<T>): String|Array<T>;
 
         /**
+         * Returns the elements of the given list or string (or object with a slice method)
+         * to toIndex (exclusive).
+         * Dispatches to the slice method of the second argument, if present.
+         */
+        sliceTo<T>(toIndex: number, list: String|Array<T>): String|Array<T>;
+
+         /**
          * Identity type.
          */
         Identity: Function;

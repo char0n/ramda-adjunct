@@ -1,23 +1,23 @@
-import { __, slice } from 'ramda';
+import { slice } from 'ramda';
 
 /**
  * Returns the elements of the given list or string (or object with a slice method)
- * from fromIndex (inclusive).
+ * to toIndex (exclusive).
  * Dispatches to the slice method of the second argument, if present.
  *
- * @func sliceFrom
+ * @func sliceTo
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.16.0|v1.16.0}
  * @category List
  * @sig  Number -> [a] -> [a]
- * @param {number} fromIndex The start index (inclusive)
+ * @param {number} toIndex The end index (exclusive)
  * @param {Array|string} list The list or string to slice
  * @return {Array|string} The sliced list or string
- * @see {@link http://ramdajs.com/docs/#slice|slice}, {@link RA.sliceTo|sliceTo}
+ * @see {@link http://ramdajs.com/docs/#slice|slice}, {@link RA.sliceFrom|sliceFrom}
  * @example
  *
- * RA.sliceFrom(1, [1, 2, 3]); //=> [2, 3]
+ * RA.sliceTo(2, [1, 2, 3]); //=> [1, 2]
  */
-const sliceFrom = slice(__, Infinity);
+const sliceTo = slice(0);
 
-export default sliceFrom;
+export default sliceTo;
