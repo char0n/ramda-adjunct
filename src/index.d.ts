@@ -391,7 +391,7 @@ declare namespace RamdaAdjunct {
             (acc: TResult): {
                 (list: R): TResult
             }
-        }
+        };
 
         /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
@@ -412,52 +412,52 @@ declare namespace RamdaAdjunct {
             (acc: TResult): {
                 (list: R): TResult
             }
-        }
+        };
         /**
          * Returns `true` if data structure focused by the given lens equals provided value.
          */
-        lensEq(lens: Function, value: any, data: any): boolean
-        lensEq(lens: Function, value: any): (data: any) => boolean
-        lensEq(lens: Function): (value: any) => (data: any) => boolean
+        lensEq(lens: Function, value: any, data: any): boolean;
+        lensEq(lens: Function, value: any): (data: any) => boolean;
+        lensEq(lens: Function): (value: any) => (data: any) => boolean;
 
         /**
          * Returns `false` if data structure focused by the given lens equals provided value.
          */
-        lensNotEq(lens: Function, value: any, data: any): boolean
-        lensNotEq(lens: Function, value: any): (data: any) => boolean
-        lensNotEq(lens: Function): (value: any) => (data: any) => boolean
+        lensNotEq(lens: Function, value: any, data: any): boolean;
+        lensNotEq(lens: Function, value: any): (data: any) => boolean;
+        lensNotEq(lens: Function): (value: any) => (data: any) => boolean;
 
         /**
          * Returns `true` if data structure focused by the given lens satisfies the predicate.
          * Note that the predicate is expected to return boolean value and will be evaluated
          * as `false` unless the predicate returns `true`.
          */
-        lensSatisfies(predicate: Function, lens: Function, data: any): boolean
-        lensSatisfies(predicate: Function, lens: Function): (data: any) => boolean
-        lensSatisfies(predicate: Function): (lens: Function) => (data: any) => boolean
+        lensSatisfies(predicate: Function, lens: Function, data: any): boolean;
+        lensSatisfies(predicate: Function, lens: Function): (data: any) => boolean;
+        lensSatisfies(predicate: Function): (lens: Function) => (data: any) => boolean;
 
         /**
          * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
          * Note that the predicate is expected to return boolean value.
          */
-        lensNotSatisfy(predicate: Function, lens: Function, data: any): boolean
-        lensNotSatisfy(predicate: Function, lens: Function): (data: any) => boolean
-        lensNotSatisfy(predicate: Function): (lens: Function) => (data: any) => boolean
+        lensNotSatisfy(predicate: Function, lens: Function, data: any): boolean;
+        lensNotSatisfy(predicate: Function, lens: Function): (data: any) => boolean;
+        lensNotSatisfy(predicate: Function): (lens: Function) => (data: any) => boolean;
 
         /**
          * Returns a "view" of the given data structure, determined by the given lens
          * The lens's focus determines which portion of the data structure is visible.
          * Returns the defaultValue if "view" is null, undefined or NaN; otherwise the "view" is returned.
          */
-        viewOr(defaultValue: any, lens: Function, data: any): any
-        viewOr(defaultValue: any, lens: Function): (data: any) => any
-        viewOr(defaultValue: any): (lens: Function) => (data: any) => any
+        viewOr(defaultValue: any, lens: Function, data: any): any;
+        viewOr(defaultValue: any, lens: Function): (data: any) => any;
+        viewOr(defaultValue: any): (lens: Function) => (data: any) => any;
 
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
-        hasPath(path: Array<String|Number>, obj: any): boolean
-        hasPath(path: Array<String|Number>): (obj: Object) => boolean
+        hasPath(path: Array<String|number>, obj: any): boolean;
+        hasPath(path: Array<String|number>): (obj: Object) => boolean;
 
         /**
          * Composable shortcut for `Promise.resolve`.
@@ -466,14 +466,21 @@ declare namespace RamdaAdjunct {
          * If the value is a thenable (i.e. has a "then" method), the returned promise will
          * "follow" that thenable, adopting its eventual state.
          */
-        resolveP<T>(value?: T): Promise<T>
+        resolveP<T>(value?: T): Promise<T>;
 
         /**
          * Composable shortcut for `Promise.reject`.
          *
          * Returns a Promise object that is rejected with the given reason.
          */
-        rejectP<T>(value?: T): Promise<T>
+        rejectP<T>(value?: T): Promise<T>;
+
+        /**
+         * Returns the elements of the given list or string (or object with a slice method)
+         * from fromIndex (inclusive).
+         * Dispatches to the slice method of the third argument, if present.
+         */
+        sliceFrom<T>(fromIndex: number, list: String|Array<T>): String|Array<T>;
 
         /**
          * Identity type.
