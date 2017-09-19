@@ -1,3 +1,16 @@
+<a name="1.16.0"></a>
+# [1.16.0](https://github.com/char0n/ramda-adjunct/compare/v1.15.0...v1.16.0) (2017-09-19)
+
+
+### Features
+
+* add rejectP ([02451f3](https://github.com/char0n/ramda-adjunct/commit/02451f3))
+* add resolveP ([9d057b1](https://github.com/char0n/ramda-adjunct/commit/9d057b1))
+* add sliceFrom ([db3a1d2](https://github.com/char0n/ramda-adjunct/commit/db3a1d2))
+* add sliceTo ([4408418](https://github.com/char0n/ramda-adjunct/commit/4408418))
+
+
+
 <a name="1.15.0"></a>
 # [1.15.0](https://github.com/char0n/ramda-adjunct/compare/v1.14.0...v1.15.0) (2017-09-10)
 

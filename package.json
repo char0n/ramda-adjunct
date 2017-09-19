@@ -35,7 +35,7 @@
     "build:commonjs": "better-npm-run build:commonjs",
     "build:umd": "better-npm-run build:umd",
     "nsp:check": "better-npm-run nsp:check",
-    "prepare": "better-npm-run prepare",
+    "prepublishOnly": "better-npm-run prepublishOnly",
     "clean": "better-npm-run clean"
   },
   "betterScripts": {
@@ -64,7 +64,7 @@
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:umd": "webpack --config webpack.config.js",
     "nsp:check": "nsp check",
-    "prepare": "npm run clean && npm run lint && npm run test && npm run build",
+    "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run build",
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
   "readme": "README.md",
