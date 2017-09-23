@@ -350,6 +350,12 @@ declare namespace RamdaAdjunct {
         mergeProps(ps: Array<string>): (obj: Object) => Object;
 
         /**
+         * Merge objects under corresponting paths.
+         */
+        mergePaths(ps: Array<Array<string>>, obj: Object): Object;
+        mergePaths(ps: Array<Array<string>>): (obj: Object) => Object;
+
+        /**
          * Set properties only if they don't exist. Useful for passing defaults.
          * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
          */
