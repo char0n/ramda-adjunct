@@ -20,7 +20,7 @@ import { curry, mergeAll, props } from 'ramda';
  * };
  *
  * const withSpread = { ...obj.foo, ...obj.bar }; //=> { fooInner: 1, barInner: 2 }
- * const withFunc = R.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
+ * const withFunc = RA.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
  */
 const mergeProps = curry((ps, obj) => mergeAll(props(ps, obj)));
 
