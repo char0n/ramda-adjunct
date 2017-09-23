@@ -68,7 +68,7 @@ import paths from './paths';
 import renameKeys from './renameKeys';
 import renameKeysWith from './renameKeysWith';
 import mergeRight from './mergeRight';
-import mergeAllProps from './mergeAllProps';
+import mergeProps from './mergeProps';
 import viewOr from './viewOr';
 import hasPath from './hasPath';
 // Relation
@@ -157,7 +157,7 @@ export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as mergeRight } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
-export { default as mergeAllProps } from './mergeAllProps';
+export { default as mergeProps } from './mergeProps';
 export { default as viewOr } from './viewOr';
 export { default as hasPath } from './hasPath';
 // Relation
@@ -251,7 +251,7 @@ const RA = {
   renameKeys,
   renameKeysWith,
   mergeRight,
-  mergeAllProps,
+  mergeProps,
   viewOr,
   hasPath,
   // Relation

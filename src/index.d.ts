@@ -346,8 +346,8 @@ declare namespace RamdaAdjunct {
         /**
          * Functional equivalent of merging object properties with object spread.
          */
-        mergeAllProps(ps: string[], obj: Object): Object; // alias of mergeRight
-        mergeAllProps(ps: string[]): (obj: Object) => Object; // alias of mergeRight
+        mergeProps(ps: string[], obj: Object): Object;
+        mergeProps(ps: string[]): (obj: Object) => Object;
 
         /**
          * Set properties only if they don't exist. Useful for passing defaults.

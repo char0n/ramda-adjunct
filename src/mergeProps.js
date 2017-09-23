@@ -5,12 +5,12 @@ import { curry, mergeAll, props } from 'ramda';
  *
  * @func
  * @memberOf RA
- * @since {@link TODO}
+ * @since {@link 1.16.0}
  * @category Object
  * @sig [k] -> {k: {a}} -> {a}
  * @param {!Array} ps The property names to fetch
  * @param {!Object} obj The object to query
- * @return {!Object} A merged properties of object.
+ * @return {!Object} A merged properties of object
  * @see {@link http://ramdajs.com/docs/#mergeAll|mergeAll} {@link http://ramdajs.com/docs/#props|props}
  * @example
  *
@@ -21,8 +21,8 @@ import { curry, mergeAll, props } from 'ramda';
  * // this statements are equal
  * const expected   = { fooinner: 1, barinner: 2 };
  * const withSpread = { ...obj.foo, ...obj.bar }
- * const withFunc   = R.mergeAllProps(['foo', 'bar'], obj)
+ * const withFunc   = R.mergeProps(['foo', 'bar'], obj)
  */
-const mergeAllProps = curry((ps, object) => mergeAll(props(ps, object)));
+const mergeProps = curry((ps, object) => mergeAll(props(ps, object)));
 
-export default mergeAllProps;
+export default mergeProps;

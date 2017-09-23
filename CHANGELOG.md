@@ -1,3 +1,7 @@
+### Features
+
+* add mergeProps ([TODO](TODO))
+
 <a name="1.16.0"></a>
 # [1.16.0](https://github.com/char0n/ramda-adjunct/compare/v1.15.0...v1.16.0) (2017-09-19)
 
