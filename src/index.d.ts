@@ -18,6 +18,8 @@ declare namespace RamdaAdjunct {
         (...args: T1[]): T2;
     }
 
+    type Dictionary<T> = { [key: string]: T }
+
     export interface Static {
         /**
          * Checks if input value is `Array`.
@@ -281,8 +283,8 @@ declare namespace RamdaAdjunct {
         /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
          */
-        paths(ps: Array<Array<string | number>>, obj: Object): Array<any>;
-        paths(ps: Array<Array<string | number>>): (obj: Object) => Array<any>;
+        paths(ps: Array<Array<string | number>>, obj: object): Array<any>;
+        paths(ps: Array<Array<string | number>>): (obj: object) => Array<any>;
 
         /**
          * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
@@ -317,15 +319,15 @@ declare namespace RamdaAdjunct {
          * keys renamed according to the keysMap object as `{oldKey: newKey}`.
          * When some key is not found in the keysMap, then it's passed as-is.
          */
-        renameKeys(keysMap: Object, obj: Object): Object;
-        renameKeys(keysMap: Object): (obj: Object) => Object;
+        renameKeys(keysMap: Dictionary<string>, obj: object): object;
+        renameKeys(keysMap: Dictionary<string>): (obj: object) => object;
 
         /**
          * Creates a new object with the own properties of the provided object, but the
          * keys renamed according to logic of renaming function.
          */
-        renameKeysWith(renameFn: (key: any) => any, obj: Object): Object;
-        renameKeysWith(renameFn: (key: any) => any): (obj: Object) => Object;
+        renameKeysWith(renameFn: (key: string) => string, obj: object): object;
+        renameKeysWith(renameFn: (key: string) => string): (obj: object) => object;
 
         /**
          * Create a new object with the own properties of the second object merged with
@@ -333,34 +335,34 @@ declare namespace RamdaAdjunct {
          * the value from the first object will be used. *
          * Putting it simply: it sets properties only if they don't exist.
          */
-        mergeRight(source: Object, destination: Object): Object;
-        mergeRight(source: Object): (destination: Object) => Object;
+        mergeRight(source: object, destination: object): object;
+        mergeRight(source: object): (destination: object) => object;
 
         /**
          * Reset properties of the object to their default values.
          * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
          */
-        resetToDefault(defaultOptions: Object, options: Object): Object; // alias of mergeRight
-        resetToDefault(defaultOptions: Object): (options: Object) => Object; // alias of mergeRight
+        resetToDefault(defaultOptions: object, options: object): object; // alias of mergeRight
+        resetToDefault(defaultOptions: object): (options: object) => object; // alias of mergeRight
 
         /**
          * Functional equivalent of merging object properties with object spread.
          */
-        mergeProps(ps: Array<string>, obj: Object): Object;
-        mergeProps(ps: Array<string>): (obj: Object) => Object;
+        mergeProps(ps: Array<string>, obj: object): object;
+        mergeProps(ps: Array<string>): (obj: object) => object;
 
         /**
          * Merge objects under corresponding paths.
          */
-        mergePaths(ps: Array<Array<string | number>>, obj: Object): Object;
-        mergePaths(ps: Array<Array<string | number>>): (obj: Object) => Object;
+        mergePaths(ps: Array<Array<string | number>>, obj: object): object;
+        mergePaths(ps: Array<Array<string | number>>): (obj: object) => object;
 
         /**
          * Set properties only if they don't exist. Useful for passing defaults.
          * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
          */
-        defaults(defaultOptions: Object, options: Object): Object;
-        defaults(defaultOptions: Object): (options: Object) => Object;
+        defaults(defaultOptions: object, options: object): object;
+        defaults(defaultOptions: object): (options: object) => object;
 
 
         /**
@@ -468,8 +470,8 @@ declare namespace RamdaAdjunct {
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
-        hasPath(path: Array<String|number>, obj: any): boolean;
-        hasPath(path: Array<String|number>): (obj: Object) => boolean;
+        hasPath(path: Array<String|number>, obj: object): boolean;
+        hasPath(path: Array<String|number>): (obj: object) => boolean;
 
         /**
          * Composable shortcut for `Promise.resolve`.
