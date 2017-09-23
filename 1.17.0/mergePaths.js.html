@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNilOrEmpty.js - Documentation</title>
+    <title>mergePaths.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNilOrEmpty.js</h1>
+    <h1 class="page-title">mergePaths.js</h1>
     
 
     
@@ -43,32 +43,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { anyPass, isEmpty, isNil } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry, mergeAll } from 'ramda';
+
+import paths from './paths';
 
 /**
- * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
+ * Merge objects under corresponding paths.
  *
- * @func isNilOrEmpty
+ * @func mergePaths
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}, {@link http://ramdajs.com/docs/#isNil|isNil}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.17.0|v1.17.0}
+ * @category Object
+ * @sig [[k]] -> {k: {a}} -> {a}
+ * @see {@link RA.mergeProps|mergeProps}
+ * @param {!Array} ps The property paths to merge
+ * @param {!Object} obj The object to query
+ * @return {!Object} The object composed of merged property paths of obj
  * @example
  *
- * RA.isNilOrEmpty([1, 2, 3]); //=> false
- * RA.isNilOrEmpty([]); //=> true
- * RA.isNilOrEmpty(''); //=> true
- * RA.isNilOrEmpty(null); //=> true
- * RA.isNilOrEmpty(undefined): //=> true
- * RA.isNilOrEmpty({}); //=> true
- * RA.isNilOrEmpty({length: 0}); //=> false
+ * const obj = {
+ *   foo: { fooInner: { fooInner2: 1 } },
+ *   bar: { barInner: 2 }
+ * };
+ *
+ * RA.mergePaths([['foo', 'fooInner'], ['bar']], obj); //=> { fooInner2: 1, barInner: 2 }
  */
-const isNilOrEmpty = anyPass([isNil, isEmpty]);
+const mergePaths = curry((ps, obj) => mergeAll(paths(ps, obj)));
 
-export default isNilOrEmpty;
+export default mergePaths;
 </code></pre>
         </article>
     </section>
