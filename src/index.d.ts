@@ -98,7 +98,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `Generator Function`.
          */
-        isGeneratorFunction(val: any): boolean;
+        isGeneratorFunction(val: any): val is Function;
 
         /**
          * Checks if input value is complement of `Generator Function`.
@@ -108,7 +108,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `Async Function`.
          */
-        isAsyncFunction(val: any): boolean;
+        isAsyncFunction(val: any): val is Function;
 
         /**
          * Checks if input value is complement of `Async Function`.
@@ -118,7 +118,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `Function`.
          */
-        isFunction(val: any): boolean;
+        isFunction(val: any): val is Function;
 
         /**
          * Checks if input value is complement of `Function`.
@@ -140,8 +140,8 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
          */
-        isObjLike(val: any): boolean;
-        isObjectLike(val: any): boolean; // alias
+        isObjLike(val: any): val is object;
+        isObjectLike(val: any): val is object; // alias
 
         /**
          * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
@@ -152,8 +152,8 @@ declare namespace RamdaAdjunct {
         /**
          * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
          */
-        isPlainObj(val: any): boolean;
-        isPlainObject(val: any): boolean; // alias
+        isPlainObj(val: any): val is object | Object;
+        isPlainObject(val: any): val is object | Object; // alias
 
         /**
          * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
@@ -190,7 +190,7 @@ declare namespace RamdaAdjunct {
          * Checks whether the passed value is `NaN` and its type is `Number`.
          * It is a more robust version of the original, global isNaN().
          */
-        isNaN(val: any): boolean;
+        isNaN(val: any): val is typeof NaN;
 
         /**
          * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
@@ -210,12 +210,12 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is a positive `Number` primitive or object.
          */
-        isPositive(val: any): boolean
+        isPositive(val: any): val is number
 
         /**
          * Checks if value is a negative `Number` primitive or object.
          */
-        isNegative(val: any): boolean
+        isNegative(val: any): val is number
 
         /**
          * Checks whether the passed value is a finite `Number`.
@@ -230,7 +230,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks whether the passed value is an `integer`.
          */
-        isInteger(val: any): boolean;
+        isInteger(val: any): val is number;
 
         /**
          * Checks whether the passed value is complement of `integer`.
@@ -240,7 +240,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks whether the passed value is a `float`.
          */
-        isFloat(val: any): boolean;
+        isFloat(val: any): val is number;
 
         /**
          * Checks whether the passed value is complement of a `float`.
