@@ -202,3 +202,4 @@ gets imported into Typescript project, typings are automatically imported and us
  
  - [Tycho Grouwstra](https://github.com/tycho01)
  - [Michael Kuk](https://github.com/michaelkuk)
+ - [Bjorn Melgaard](https://github.com/BjornMelgaard)
