@@ -130,8 +130,8 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is language type of `Object`.
          */
-        isObj(val: any): val is Object;
-        isObject(val: any): val is Object;
+        isObj(val: any): val is Object | Function;
+        isObject(val: any): val is Object | Function;
 
         /**
          * Checks if input value is complement of language type of `Object`.
@@ -142,8 +142,8 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
          */
-        isObjLike(val: any): val is object;
-        isObjectLike(val: any): val is object; // alias
+        isObjLike(val: any): val is Object;
+        isObjectLike(val: any): val is Object; // alias
 
         /**
          * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
@@ -154,8 +154,8 @@ declare namespace RamdaAdjunct {
         /**
          * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
          */
-        isPlainObj(val: any): val is object | Object;
-        isPlainObject(val: any): val is object | Object; // alias
+        isPlainObj(val: any): val is object;
+        isPlainObject(val: any): val is object; // alias
 
         /**
          * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
