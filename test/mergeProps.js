@@ -23,9 +23,13 @@ describe('mergeProps', function() {
     eq(RA.mergeProps(['foo', 'bar'], obj), expected);
   });
 
-  it('tests merging the props containing non-objects', function () {
+  it('tests merging the props containing non-objects', function() {
     eq(RA.mergeProps(['foo', 'bar'], { foo: 1, bar: 2 }), {});
     eq(RA.mergeProps(['foo', 'bar'], { foo: 'a', bar: 'b' }), { 0: 'b' });
     eq(RA.mergeProps(['foo', 'bar'], { foo: null, bar: undefined }), {});
+  });
+
+  it('tests if no props requested', function() {
+    eq(RA.mergeProps([], { foo: 1, bar: 2 }), {});
   });
 });
