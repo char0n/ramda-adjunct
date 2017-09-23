@@ -3,7 +3,7 @@ import { curry, mergeAll } from 'ramda';
 import paths from './paths';
 
 /**
- * Merge objects under corresponting paths.
+ * Merge objects under corresponding paths.
  *
  * @func mergePaths
  * @memberOf RA

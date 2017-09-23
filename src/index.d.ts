@@ -350,7 +350,7 @@ declare namespace RamdaAdjunct {
         mergeProps(ps: Array<string>): (obj: Object) => Object;
 
         /**
-         * Merge objects under corresponting paths.
+         * Merge objects under corresponding paths.
          */
         mergePaths(ps: Array<Array<string | number>>, obj: Object): Object;
         mergePaths(ps: Array<Array<string | number>>): (obj: Object) => Object;
