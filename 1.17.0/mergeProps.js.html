@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lensNotSatisfy.js - Documentation</title>
+    <title>mergeProps.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">lensNotSatisfy.js</h1>
+    <h1 class="page-title">mergeProps.js</h1>
     
 
     
@@ -43,37 +43,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import lensSatisfies from './lensSatisfies';
-
+            <pre class="prettyprint source linenums"><code>import { curry, mergeAll, props } from 'ramda';
 
 /**
- * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
- * Note that the predicate is expected to return boolean value.
+ * Functional equivalent of merging object properties with object spread operator.
  *
- * @func lensNotSatisfy
+ * @func mergeProps
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
- * @category Relation
- * @sig  Boolean b => (a -> b) -> Lens s a -> s -> b
- * @see {@link RA.lensSatisfies|lensNotSatisfies}
- * @param {Function} predicate The predicate function
- * @param {Function} lens Van Laarhoven lens
- * @param {*} data The data structure
- * @return {Boolean} `false` if the focused data structure satisfies the predicate, `true` otherwise
- *
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.17.0|v1.17.0}
+ * @category Object
+ * @sig [k] -> {k: {a}} -> {a}
+ * @see {@link RA.mergePaths|mergePaths}
+ * @param {!Array} ps The property names to merge
+ * @param {!Object} obj The object to query
+ * @return {!Object} The object composed of merged properties of obj
  * @example
  *
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(0), [false, true, 1]); // => true
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(1), [false, true, 1]); // => false
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(2), [false, true, 1]); // => true
- * RA.lensNotSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => true
+ * const obj = {
+ *   foo: { fooInner: 1 },
+ *   bar: { barInner: 2 }
+ * };
+ *
+ * const withSpread = { ...obj.foo, ...obj.bar }; //=> { fooInner: 1, barInner: 2 }
+ * const withFunc = R.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
  */
-const lensNotSatisfies = complement(lensSatisfies);
+const mergeProps = curry((ps, obj) => mergeAll(props(ps, obj)));
 
-
-export default lensNotSatisfies;
+export default mergeProps;
 </code></pre>
         </article>
     </section>
