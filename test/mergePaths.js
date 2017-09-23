@@ -19,11 +19,11 @@ describe('mergePaths', function() {
     eq(RA.mergePaths([['foo', 'fooinner'], ['bar']])(obj), expected);
   });
 
-  it('tests merging the props containing objects', function() {
+  it('tests merging the property paths containing object', function() {
     eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], obj), expected);
   });
 
-  it('tests merging the props containing non-objects', function () {
+  it('tests merging the property paths containing non-objects', function () {
     eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], { foo: { fooinner: 1 }, bar: 2 }), {});
     eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], { foo: { fooinner: 'a' }, bar: 'b' }), { 0: 'b' });
     eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], { foo: { fooinner: null }, bar: undefined }), {});

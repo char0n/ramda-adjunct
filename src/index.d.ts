@@ -352,8 +352,8 @@ declare namespace RamdaAdjunct {
         /**
          * Merge objects under corresponting paths.
          */
-        mergePaths(ps: Array<Array<string>>, obj: Object): Object;
-        mergePaths(ps: Array<Array<string>>): (obj: Object) => Object;
+        mergePaths(ps: Array<Array<string | number>>, obj: Object): Object;
+        mergePaths(ps: Array<Array<string | number>>): (obj: Object) => Object;
 
         /**
          * Set properties only if they don't exist. Useful for passing defaults.

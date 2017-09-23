@@ -13,7 +13,7 @@ import paths from './paths';
  * @see {@link RA.mergeProps|mergeProps}
  * @param {!Array} ps The property paths to merge
  * @param {!Object} obj The object to query
- * @return {!Object} The object composed of merged properties of obj
+ * @return {!Object} The object composed of merged property paths of obj
  * @example
  *
  * const obj = {
@@ -21,10 +21,7 @@ import paths from './paths';
  *   bar: { barInner: 2 }
  * };
  *
- * R.mergePaths(
- *   [['foo', 'fooInner'], ['bar']],
- *   obj
- * ); //=> { fooInner2: 1, barInner: 2 }
+ * RA.mergePaths([['foo', 'fooInner'], ['bar']], obj); //=> { fooInner2: 1, barInner: 2 }
  */
 const mergePaths = curry((ps, obj) => mergeAll(paths(ps, obj)));
 
