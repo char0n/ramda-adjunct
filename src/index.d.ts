@@ -344,6 +344,12 @@ declare namespace RamdaAdjunct {
         resetToDefault(defaultOptions: Object): (options: Object) => Object; // alias of mergeRight
 
         /**
+         * Functional equivalent of merging object properties with object spread.
+         */
+        mergeAllProps(ps: string[], obj: Object): Object; // alias of mergeRight
+        mergeAllProps(ps: string[]): (obj: Object) => Object; // alias of mergeRight
+
+        /**
          * Set properties only if they don't exist. Useful for passing defaults.
          * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
          */
