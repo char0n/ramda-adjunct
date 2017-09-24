@@ -18,6 +18,8 @@ declare namespace RamdaAdjunct {
         (...args: T1[]): T2;
     }
 
+    type Dictionary<T> = { [key: string]: T }
+
     export interface Static {
         /**
          * Checks if input value is `Array`.
@@ -77,7 +79,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `String`.
          */
-        isString(val: any): val is String;
+        isString(val: any): val is string;
 
         /**
          * Checks if input value is `undefined`.
@@ -98,7 +100,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `Generator Function`.
          */
-        isGeneratorFunction(val: any): boolean;
+        isGeneratorFunction(val: any): val is Function;
 
         /**
          * Checks if input value is complement of `Generator Function`.
@@ -108,7 +110,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `Async Function`.
          */
-        isAsyncFunction(val: any): boolean;
+        isAsyncFunction(val: any): val is Function;
 
         /**
          * Checks if input value is complement of `Async Function`.
@@ -118,7 +120,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `Function`.
          */
-        isFunction(val: any): boolean;
+        isFunction(val: any): val is Function;
 
         /**
          * Checks if input value is complement of `Function`.
@@ -128,8 +130,8 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is language type of `Object`.
          */
-        isObj(val: any): val is Object;
-        isObject(val: any): val is Object;
+        isObj(val: any): val is Object | Function;
+        isObject(val: any): val is Object | Function;
 
         /**
          * Checks if input value is complement of language type of `Object`.
@@ -140,8 +142,8 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
          */
-        isObjLike(val: any): boolean;
-        isObjectLike(val: any): boolean; // alias
+        isObjLike(val: any): val is Object;
+        isObjectLike(val: any): val is Object; // alias
 
         /**
          * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
@@ -152,8 +154,8 @@ declare namespace RamdaAdjunct {
         /**
          * Check to see if an object is a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
          */
-        isPlainObj(val: any): boolean;
-        isPlainObject(val: any): boolean; // alias
+        isPlainObj(val: any): val is object;
+        isPlainObject(val: any): val is object; // alias
 
         /**
          * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
@@ -190,7 +192,7 @@ declare namespace RamdaAdjunct {
          * Checks whether the passed value is `NaN` and its type is `Number`.
          * It is a more robust version of the original, global isNaN().
          */
-        isNaN(val: any): boolean;
+        isNaN(val: any): val is typeof NaN;
 
         /**
          * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
@@ -210,12 +212,12 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is a positive `Number` primitive or object.
          */
-        isPositive(val: any): boolean
+        isPositive(val: any): val is number
 
         /**
          * Checks if value is a negative `Number` primitive or object.
          */
-        isNegative(val: any): boolean
+        isNegative(val: any): val is number
 
         /**
          * Checks whether the passed value is a finite `Number`.
@@ -230,7 +232,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks whether the passed value is an `integer`.
          */
-        isInteger(val: any): boolean;
+        isInteger(val: any): val is number;
 
         /**
          * Checks whether the passed value is complement of `integer`.
@@ -240,7 +242,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks whether the passed value is a `float`.
          */
-        isFloat(val: any): boolean;
+        isFloat(val: any): val is number;
 
         /**
          * Checks whether the passed value is complement of a `float`.
@@ -276,13 +278,13 @@ declare namespace RamdaAdjunct {
         /**
          * Returns the result of concatenating the given lists or strings.
          */
-        concatRight<T extends Array<any>|String>(firstList: T, secondList: T): T;
+        concatRight<T extends Array<any>|string>(firstList: T, secondList: T): T;
 
         /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
          */
-        paths(ps: Array<Array<string | number>>, obj: Object): Array<any>;
-        paths(ps: Array<Array<string | number>>): (obj: Object) => Array<any>;
+        paths(ps: Array<Array<string | number>>, obj: object): Array<any>;
+        paths(ps: Array<Array<string | number>>): (obj: object) => Array<any>;
 
         /**
          * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
@@ -317,15 +319,15 @@ declare namespace RamdaAdjunct {
          * keys renamed according to the keysMap object as `{oldKey: newKey}`.
          * When some key is not found in the keysMap, then it's passed as-is.
          */
-        renameKeys(keysMap: Object, obj: Object): Object;
-        renameKeys(keysMap: Object): (obj: Object) => Object;
+        renameKeys(keysMap: Dictionary<string>, obj: object): object;
+        renameKeys(keysMap: Dictionary<string>): (obj: object) => object;
 
         /**
          * Creates a new object with the own properties of the provided object, but the
          * keys renamed according to logic of renaming function.
          */
-        renameKeysWith(renameFn: (key: any) => any, obj: Object): Object;
-        renameKeysWith(renameFn: (key: any) => any): (obj: Object) => Object;
+        renameKeysWith(renameFn: (key: string) => string, obj: object): object;
+        renameKeysWith(renameFn: (key: string) => string): (obj: object) => object;
 
         /**
          * Create a new object with the own properties of the second object merged with
@@ -333,35 +335,34 @@ declare namespace RamdaAdjunct {
          * the value from the first object will be used. *
          * Putting it simply: it sets properties only if they don't exist.
          */
-        mergeRight(source: Object, destination: Object): Object;
-        mergeRight(source: Object): (destination: Object) => Object;
+        mergeRight(source: object, destination: object): object;
+        mergeRight(source: object): (destination: object) => object;
 
         /**
          * Reset properties of the object to their default values.
          * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
          */
-        resetToDefault(defaultOptions: Object, options: Object): Object; // alias of mergeRight
-        resetToDefault(defaultOptions: Object): (options: Object) => Object; // alias of mergeRight
-
-        /**
-         * Functional equivalent of merging object properties with object spread.
-         */
-        mergeProps(ps: Array<string>, obj: Object): Object;
-        mergeProps(ps: Array<string>): (obj: Object) => Object;
-
-        /**
-         * Merge objects under corresponding paths.
-         */
-        mergePaths(ps: Array<Array<string | number>>, obj: Object): Object;
-        mergePaths(ps: Array<Array<string | number>>): (obj: Object) => Object;
+        resetToDefault(defaultOptions: object, options: object): object; // alias of mergeRight
+        resetToDefault(defaultOptions: object): (options: object) => object; // alias of mergeRight
 
         /**
          * Set properties only if they don't exist. Useful for passing defaults.
          * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
          */
-        defaults(defaultOptions: Object, options: Object): Object;
-        defaults(defaultOptions: Object): (options: Object) => Object;
+        defaults(defaultOptions: object, options: object): object; // alias of mergeRight
+        defaults(defaultOptions: object): (options: object) => object; // alias of mergeRight
 
+        /**
+         * Functional equivalent of merging object properties with object spread.
+         */
+        mergeProps(ps: Array<string>, obj: object): object;
+        mergeProps(ps: Array<string>): (obj: object) => object;
+
+        /**
+         * Merge objects under corresponding paths.
+         */
+        mergePaths(ps: Array<Array<string | number>>, obj: object): object;
+        mergePaths(ps: Array<Array<string | number>>): (obj: object) => object;
 
         /**
          * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.
@@ -468,8 +469,8 @@ declare namespace RamdaAdjunct {
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
-        hasPath(path: Array<String|number>, obj: any): boolean;
-        hasPath(path: Array<String|number>): (obj: Object) => boolean;
+        hasPath(path: Array<string|number>, obj: object): boolean;
+        hasPath(path: Array<string|number>): (obj: object) => boolean;
 
         /**
          * Composable shortcut for `Promise.resolve`.
@@ -492,14 +493,14 @@ declare namespace RamdaAdjunct {
          * from fromIndex (inclusive).
          * Dispatches to the slice method of the third argument, if present.
          */
-        sliceFrom<T>(fromIndex: number, list: String|Array<T>): String|Array<T>;
+        sliceFrom<T>(fromIndex: number, list: string|Array<T>): string|Array<T>;
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
          * to toIndex (exclusive).
          * Dispatches to the slice method of the second argument, if present.
          */
-        sliceTo<T>(toIndex: number, list: String|Array<T>): String|Array<T>;
+        sliceTo<T>(toIndex: number, list: string|Array<T>): string|Array<T>;
 
          /**
          * Identity type.
