@@ -1,3 +1,14 @@
+<a name="1.17.0"></a>
+# [1.17.0](https://github.com/char0n/ramda-adjunct/compare/v1.16.0...v1.17.0) (2017-09-24)
+
+
+### Features
+
+* add mergePaths ([dd8b681](https://github.com/char0n/ramda-adjunct/commit/dd8b681)), closes [#136](https://github.com/char0n/ramda-adjunct/issues/136)
+* add mergeProps ([4c68054](https://github.com/char0n/ramda-adjunct/commit/4c68054))
+
+
+
 <a name="1.16.0"></a>
 # [1.16.0](https://github.com/char0n/ramda-adjunct/compare/v1.15.0...v1.16.0) (2017-09-19)
 
