@@ -79,7 +79,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is `String`.
          */
-        isString(val: any): val is String;
+        isString(val: any): val is string;
 
         /**
          * Checks if input value is `undefined`.
@@ -278,7 +278,7 @@ declare namespace RamdaAdjunct {
         /**
          * Returns the result of concatenating the given lists or strings.
          */
-        concatRight<T extends Array<any>|String>(firstList: T, secondList: T): T;
+        concatRight<T extends Array<any>|string>(firstList: T, secondList: T): T;
 
         /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
@@ -469,8 +469,8 @@ declare namespace RamdaAdjunct {
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
-        hasPath(path: Array<String|number>, obj: object): boolean;
-        hasPath(path: Array<String|number>): (obj: object) => boolean;
+        hasPath(path: Array<string|number>, obj: object): boolean;
+        hasPath(path: Array<string|number>): (obj: object) => boolean;
 
         /**
          * Composable shortcut for `Promise.resolve`.
@@ -493,14 +493,14 @@ declare namespace RamdaAdjunct {
          * from fromIndex (inclusive).
          * Dispatches to the slice method of the third argument, if present.
          */
-        sliceFrom<T>(fromIndex: number, list: String|Array<T>): String|Array<T>;
+        sliceFrom<T>(fromIndex: number, list: string|Array<T>): string|Array<T>;
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
          * to toIndex (exclusive).
          * Dispatches to the slice method of the second argument, if present.
          */
-        sliceTo<T>(toIndex: number, list: String|Array<T>): String|Array<T>;
+        sliceTo<T>(toIndex: number, list: string|Array<T>): string|Array<T>;
 
          /**
          * Identity type.
