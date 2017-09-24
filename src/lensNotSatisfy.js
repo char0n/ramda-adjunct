@@ -12,7 +12,7 @@ import lensSatisfies from './lensSatisfies';
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
  * @category Relation
  * @sig  Boolean b => (a -> b) -> Lens s a -> s -> b
- * @see {@link RA.lensSatisfies|lensNotSatisfies}
+ * @see {@link RA.lensSatisfies|lensSatisfies}
  * @param {Function} predicate The predicate function
  * @param {Function} lens Van Laarhoven lens
  * @param {*} data The data structure
@@ -20,12 +20,12 @@ import lensSatisfies from './lensSatisfies';
  *
  * @example
  *
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(0), [false, true, 1]); // => true
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(1), [false, true, 1]); // => false
- * RA.lensNotSatisfies(R.equals(true), R.lensIndex(2), [false, true, 1]); // => true
- * RA.lensNotSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => true
+ * RA.lensNotSatisfy(R.equals(true), R.lensIndex(0), [false, true, 1]); // => true
+ * RA.lensNotSatisfy(R.equals(true), R.lensIndex(1), [false, true, 1]); // => false
+ * RA.lensNotSatisfy(R.equals(true), R.lensIndex(2), [false, true, 1]); // => true
+ * RA.lensNotSatisfy(R.identity, R.lensProp('x'), { x: 1 }); // => true
  */
-const lensNotSatisfies = complement(lensSatisfies);
+const lensNotSatisfy = complement(lensSatisfies);
 
 
-export default lensNotSatisfies;
+export default lensNotSatisfy;

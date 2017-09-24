@@ -4,7 +4,7 @@ import RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('lensNotSatisfies', function () {
+describe('lensNotSatisfy', function () {
   it('tests a lens not satisfying the predicate', function () {
     eq(RA.lensNotSatisfy(equals('bar'), lensProp('foo'), { foo: 'bar' }), false);
     eq(RA.lensNotSatisfy(equals('foo'), lensProp('bar'), { foo: 'bar' }), true);
