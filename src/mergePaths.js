@@ -1,4 +1,4 @@
-import { curry, mergeAll } from 'ramda';
+import { curryN, pipe, mergeAll } from 'ramda';
 
 import paths from './paths';
 
@@ -23,6 +23,6 @@ import paths from './paths';
  *
  * RA.mergePaths([['foo', 'fooInner'], ['bar']], obj); //=> { fooInner2: 1, barInner: 2 }
  */
-const mergePaths = curry((ps, obj) => mergeAll(paths(ps, obj)));
+const mergePaths = curryN(2, pipe(paths, mergeAll));
 
 export default mergePaths;
