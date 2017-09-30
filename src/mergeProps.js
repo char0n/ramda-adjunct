@@ -1,4 +1,4 @@
-import { curry, mergeAll, props } from 'ramda';
+import { curryN, pipe, mergeAll, props } from 'ramda';
 
 /**
  * Functional equivalent of merging object properties with object spread operator.
@@ -22,6 +22,6 @@ import { curry, mergeAll, props } from 'ramda';
  * const withSpread = { ...obj.foo, ...obj.bar }; //=> { fooInner: 1, barInner: 2 }
  * const withFunc = RA.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
  */
-const mergeProps = curry((ps, obj) => mergeAll(props(ps, obj)));
+const mergeProps = curryN(2, pipe(props, mergeAll));
 
 export default mergeProps;
