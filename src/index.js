@@ -55,6 +55,7 @@ import curryRightN from './curryRightN';
 import curryRight from './curryRight';
 import resolveP from './resolveP';
 import rejectP from './rejectP';
+import trace from './trace';
 // List
 import pickIndexes from './pickIndexes';
 import list from './list';
@@ -238,6 +239,7 @@ const RA = {
   curryRight,
   resolveP,
   rejectP,
+  trace,
   // List
   pickIndexes,
   list,
