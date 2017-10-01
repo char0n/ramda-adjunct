@@ -489,6 +489,12 @@ declare namespace RamdaAdjunct {
         rejectP<T>(value?: T): Promise<T>;
 
         /**
+         * Prints message with subject to console and returns subject
+         */
+        trace<T>(message: string, subj: T): T;
+        trace(message: string): <T>(subj: T) => T;
+
+        /**
          * Returns the elements of the given list or string (or object with a slice method)
          * from fromIndex (inclusive).
          * Dispatches to the slice method of the third argument, if present.
@@ -502,7 +508,7 @@ declare namespace RamdaAdjunct {
          */
         sliceTo<T>(toIndex: number, list: string|Array<T>): string|Array<T>;
 
-         /**
+        /**
          * Identity type.
          */
         Identity: Function;
