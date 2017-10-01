@@ -13,6 +13,8 @@
 
 # Ramda Adjunct
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/char0n/ramda-adjunct.svg)](https://greenkeeper.io/)
+
 This library is a community maintained extension of Ramda.
 
 ## Support us
