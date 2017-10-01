@@ -1,0 +1,28 @@
+---
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  eslint:
+    enabled: true
+    checks:
+          import/extensions:
+            enabled: false
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.js"
+exclude_paths:
+- .idea/
+- docs/
+- dist/
+- node_modules/
+- lib/
+- es/
+- test/
+- webpack.config.js
+- webpack.config-test.web.js
+- jsdoc.js
