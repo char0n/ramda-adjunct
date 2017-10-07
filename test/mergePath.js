@@ -28,26 +28,17 @@ describe('mergePath', function() {
     eq(RA.mergePath(path, subj, obj), expected);
   });
 
-  it('throws error if path is null', function() {
-    chai.assert.throws(() => {
-      RA.mergePath(null, subj, obj);
-    });
-  });
-
-  it('returns unmodified object when subj empty or null', function () {
-    eq(RA.mergePath(path, null, obj), obj);
+  it('returns unmodified object when subj empty', function () {
     eq(RA.mergePath(path, {}, obj), obj);
   });
 
   it('creates object with subject under path when obj empty', function () {
     expected = { a: { b: { c2: 22, c3: 33 } } };
-    eq(RA.mergePath(path, subj, null), expected);
     eq(RA.mergePath(path, subj, {}), expected);
   });
 
   it('creates object with subject under path when target is not object', function () {
     expected = { a: { b: { c2: 22, c3: 33 } } };
-    eq(RA.mergePath(path, subj, { a: { b: null } }), expected);
     eq(RA.mergePath(path, subj, { a: { b: 1 } }), expected);
   });
 });
