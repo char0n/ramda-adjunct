@@ -10,7 +10,7 @@
     }
   },
   "extends": [
-    "airbnb"
+    "airbnb-base"
   ],
   "rules": {
     "strict": [2, "global"],
