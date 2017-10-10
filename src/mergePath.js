@@ -1,8 +1,10 @@
-import { curry, over, lensPath, merge, __ } from 'ramda';
+import { curry, over, lensPath } from 'ramda';
+import mergeRight from './mergeRight';
 
 /**
- * Merges user provided data (subject) with some object (target)
- * inside other object under corresponding path.
+ * Create a new object with the own properties of the object under the `path`
+ * merged with the own properties of the provided `source`.
+ * If a key exists in both objects, the value from the `source` object will be used.
  *
  * @func mergePath
  * @memberOf RA
@@ -10,18 +12,18 @@ import { curry, over, lensPath, merge, __ } from 'ramda';
  * @category Object
  * @sig [k] -> {a} -> {k: {a}} -> {k: {a}}
  * @see {@link RA.mergeProp|mergeProp}
- * @param {!Array} path The path to object to merge with
- * @param {!Object} subj The object which will be merged with object in path
- * @param {!Object} obj The object which has target object under corresponding path
+ * @param {!Array} path The property path of the destination object
+ * @param {!Object} source The source object
+ * @param {!Object} obj The object that has destination object under corresponding property path
  * @return {!Object} The new version of object
  * @example
  *
  * RA.mergePath(
- *  ['a', 'b'],
- *  {c2: 22, c3: 33},
- *  {a: {b: {c1: 1, c2: 2}}}
- * ); //=> {a: {b: {c1:1, c2: 22, c3: 33}}}
+ *  ['outer', 'inner'],
+ *  { foo: 3, bar: 4 },
+ *  { outer: { inner: { foo: 2 } } }
+ * ); //=> { outer: { inner: { foo: 3, bar: 4 } }
  */
-const mergePath = curry((path, subj, obj) => over(lensPath(path), merge(__, subj), obj));
+const mergePath = curry((path, source, obj) => over(lensPath(path), mergeRight(source), obj));
 
 export default mergePath;
