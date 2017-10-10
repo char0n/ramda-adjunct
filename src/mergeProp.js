@@ -1,4 +1,5 @@
 import { curry, of } from 'ramda';
+
 import mergePath from './mergePath';
 
 /**

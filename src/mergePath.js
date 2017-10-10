@@ -1,4 +1,5 @@
 import { curry, over, lensPath } from 'ramda';
+
 import mergeRight from './mergeRight';
 
 /**
