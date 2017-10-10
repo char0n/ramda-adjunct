@@ -11,7 +11,7 @@ import paths from './paths';
  * @category Object
  * @sig [[k]] -> {k: {a}} -> {a}
  * @see {@link RA.mergeProps|mergeProps}
- * @param {!Array} ps The property paths to merge
+ * @param {!Array} paths The property paths to merge
  * @param {!Object} obj The object to query
  * @return {!Object} The object composed of merged property paths of obj
  * @example

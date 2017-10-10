@@ -361,8 +361,32 @@ declare namespace RamdaAdjunct {
         /**
          * Merge objects under corresponding paths.
          */
-        mergePaths(ps: Array<Array<string | number>>, obj: object): object;
-        mergePaths(ps: Array<Array<string | number>>): (obj: object) => object;
+        mergePaths(paths: Array<Array<string | number>>, obj: object): object;
+        mergePaths(paths: Array<Array<string | number>>): (obj: object) => object;
+
+        /**
+         * Create a new object with the own properties of the object under the `p`
+         * merged with the own properties of the provided `source`.
+         * If a key exists in both objects, the value from the `source` object will be used.
+         */
+        mergeProp(p: string, source: object, obj: object): object;
+        mergeProp(p: string, source: object): (obj: object) => object;
+        mergeProp(p: string): {
+            (source: object, obj: object): object;
+            (source: object): (obj: object) => object;
+        }
+
+        /**
+         * Create a new object with the own properties of the object under the `path`
+         * merged with the own properties of the provided `source`.
+         * If a key exists in both objects, the value from the `source` object will be used.
+         */
+        mergePath(path: Array<Array<string | number>>, source: object, obj: object): object;
+        mergePath(path: Array<Array<string | number>>, source: object): (obj: object) => object;
+        mergePath(path: Array<Array<string | number>>): {
+            (source: object, obj: object): object;
+            (source: object): (obj: object) => object;
+        }
 
         /**
          * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.
