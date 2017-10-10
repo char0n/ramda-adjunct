@@ -1,4 +1,4 @@
-import R from 'ramda';
+import * as R from 'ramda';
 import jsv from 'jsverify';
 
 import eq from './shared/eq';

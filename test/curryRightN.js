@@ -1,4 +1,4 @@
-import R from 'ramda';
+import * as R from 'ramda';
 
 import eq from './shared/eq';
 import RA from '../src/index';

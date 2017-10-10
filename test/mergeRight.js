@@ -1,5 +1,5 @@
 import assert from 'assert';
-import R from 'ramda';
+import * as R from 'ramda';
 
 import RA from '../src/index';
 import eq from './shared/eq';
