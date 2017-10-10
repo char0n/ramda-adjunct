@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNull.js - Documentation</title>
+    <title>mergeProp.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNull.js</h1>
+    <h1 class="page-title">mergeProp.js</h1>
     
 
     
@@ -43,28 +43,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry, of } from 'ramda';
+
+import mergePath from './mergePath';
 
 /**
- * Checks if input value is `null`.
+ * Create a new object with the own properties of the object under the `p`
+ * merged with the own properties of the provided `source`.
+ * If a key exists in both objects, the value from the `source` object will be used.
  *
- * @func isNull
+ * @func mergeProp
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.1.0|v0.1.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotNull|isNotNull}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.18.0|v1.18.0}
+ * @category Object
+ * @sig [k] -> {a} -> {k: {a}} -> {k: {a}}
+ * @see {@link RA.mergePath|mergePath}
+ * @param {!Array} p The property of the destination object
+ * @param {!Object} source The source object
+ * @param {!Object} obj The object that has destination object under corresponding property
+ * @return {!Object} The new version of object
  * @example
  *
- * RA.isNull(1); //=> false
- * RA.isNull(undefined); //=> false
- * RA.isNull(null); //=> true
+ * RA.mergePath(
+ *  'outer',
+ *  { foo: 3, bar: 4 },
+ *  { outer: { foo: 2 } }
+ * ); //=> { outer: { foo: 3, bar: 4 }
  */
-const isNull = equals(null);
+const mergeProp = curry((p, subj, obj) => mergePath(of(p), subj, obj));
 
-export default isNull;
+export default mergeProp;
 </code></pre>
         </article>
     </section>
