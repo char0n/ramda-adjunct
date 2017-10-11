@@ -108,7 +108,7 @@
     "testem": "=1.18.4",
     "typescript": "=2.5.3",
     "typescript-definition-tester": "=0.0.5",
-    "webpack": "3.7.0"
+    "webpack": "3.7.1"
   },
   "tonicExampleFilename": "tonicExample.js",
   "dependencies": {}
