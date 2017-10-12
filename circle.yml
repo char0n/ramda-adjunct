@@ -28,7 +28,7 @@ test:
     - nvm use 4 && npm run test
     - nvm use 5 && npm run test
     - case $CIRCLE_NODE_INDEX in 1) nvm use 6 && npm run test:ramda ;; 2) nvm use 7 && npm run test:ramda ;; 3) nvm install 8 && nvm use 8 && npm run test:ramda ;; esac:
-      parallel: true
+        parallel: true
     - npm run coverage:
         environment:
           MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
