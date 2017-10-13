@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>mergeRight.js - Documentation</title>
+    <title>isOdd.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">mergeRight.js</h1>
+    <h1 class="page-title">isOdd.js</h1>
     
 
     
@@ -43,32 +43,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { merge, flip } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { both, pipe, modulo, flip, equals, complement } from 'ramda';
+
+import isInteger from './isInteger';
+
 
 /**
- * Create a new object with the own properties of the second object merged with
- * the own properties of the first object. If a key exists in both objects,
- * the value from the first object will be used. *
- * Putting it simply: it sets properties only if they don't exist.
+ * Checks if value is odd integer number.
+ * An odd number is an integer which is not a multiple DIVISIBLE of two.
  *
- * @func mergeRight
- * @aliases resetToDefault, defaults
+ * @func isOdd
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.6.0|v1.6.0}
- * @category Object
- * @sig {k: v} -> {k: v} -> {k: v}
- * @param {Object} r Destination
- * @param {Object} l Source
- * @return {Object}
- * @see {@link http://ramdajs.com/docs/#merge|merge}, {@link https://github.com/ramda/ramda/wiki/Cookbook#set-properties-only-if-they-dont-exist|Ramda Cookbook}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.18.0|v1.18.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isEven|isEven}
  * @example
  *
- * RA.mergeRight({ 'age': 40 }, { 'name': 'fred', 'age': 10 });
- * //=> { 'name': 'fred', 'age': 40 }
+ * RA.isOdd(1); // => true
+ * RA.isOdd(-Infinity); // => false
+ * RA.isOdd(4); // => false
+ * RA.isOdd(3); // => true
  */
-const mergeRight = flip(merge);
+const isOdd = both(isInteger, pipe(flip(modulo)(2), complement(equals)(0)));
 
-export default mergeRight;
+export default isOdd;
 </code></pre>
         </article>
     </section>
