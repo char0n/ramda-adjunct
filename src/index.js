@@ -42,6 +42,7 @@ import isInteger from './isInteger';
 import isNotInteger from './isNotInteger';
 import isFloat from './isFloat';
 import isNotFloat from './isNotFloat';
+import isOdd from './isOdd';
 // Function
 import stubUndefined from './stubUndefined';
 import stubNull from './stubNull';
@@ -133,6 +134,7 @@ export { default as isInteger } from './isInteger';
 export { default as isNotInteger } from './isNotInteger';
 export { default as isFloat } from './isFloat';
 export { default as isNotFloat } from './isNotFloat';
+export { default as isOdd} from './isOdd';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
@@ -229,6 +231,7 @@ const RA = {
   isNotInteger,
   isFloat,
   isNotFloat,
+  isOdd,
   // Function
   stubUndefined,
   stubNull,

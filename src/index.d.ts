@@ -250,6 +250,12 @@ declare namespace RamdaAdjunct {
         isNotFloat(val: any): boolean;
 
         /**
+         * Checks if value is odd integer number.
+         * An odd number is an integer which is not a multiple DIVISIBLE of two.
+         */
+        isOdd(val: any): number
+
+        /**
          * A function that returns `undefined`.
          */
         stubUndefined(): undefined;
