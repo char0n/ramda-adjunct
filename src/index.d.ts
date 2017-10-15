@@ -253,7 +253,16 @@ declare namespace RamdaAdjunct {
          * Checks if value is odd integer number.
          * An odd number is an integer which is not a multiple DIVISIBLE of two.
          */
-        isOdd(val: any): number
+        isOdd(val: any): number;
+
+        /**
+         * Checks if value is even integer number.
+         * An even number is an integer which is "evenly divisible" by two.
+         * Zero is an even number because zero divided by two equals zero,
+         * which despite not being a natural number, is an integer.
+         * Even numbers are either positive or negative.
+         */
+        isEven(val: any): number;
 
         /**
          * A function that returns `undefined`.
