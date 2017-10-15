@@ -1,3 +1,15 @@
+<a name="1.18.0"></a>
+# [1.18.0](https://github.com/char0n/ramda-adjunct/compare/v1.17.0...v1.18.0) (2017-10-15)
+
+
+### Features
+
+* add isEven ([aff8308](https://github.com/char0n/ramda-adjunct/commit/aff8308)), closes [#98](https://github.com/char0n/ramda-adjunct/issues/98)
+* add isOdd ([7d7cfcd](https://github.com/char0n/ramda-adjunct/commit/7d7cfcd))
+* add mergePath, mergeProp ([2725289](https://github.com/char0n/ramda-adjunct/commit/2725289)), closes [#147](https://github.com/char0n/ramda-adjunct/issues/147)
+
+
+
 <a name="1.17.0"></a>
 # [1.17.0](https://github.com/char0n/ramda-adjunct/compare/v1.16.0...v1.17.0) (2017-09-24)
 
