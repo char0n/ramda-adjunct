@@ -1,4 +1,14 @@
-import { curry, reduce, assoc, keys, has } from 'ramda';
+import { curry, has } from 'ramda';
+
+import renameKeysWith from './renameKeysWith';
+
+
+const valueOrKey = keysMap => (key) => {
+  if (has(key, keysMap)) {
+    return keysMap[key];
+  }
+  return key;
+};
 
 /**
  * Creates a new object with the own properties of the provided object, but the
@@ -24,12 +34,6 @@ import { curry, reduce, assoc, keys, has } from 'ramda';
  * RA.renameKeys({ firstName: 'name', type: 'kind', foo: 'bar' })(input);
  * //=> { name: 'Elisia', age: 22, kind: 'human' }
  */
-const renameKeys = curry((keysMap, obj) =>
-  reduce((accumulator, key) => {
-    const newKeyName = has(key, keysMap) ? keysMap[key] : key;
-
-    return assoc(newKeyName, obj[key], accumulator);
-  }, {}, keys(obj))
-);
+const renameKeys = curry((keysMap, obj) => renameKeysWith(valueOrKey(keysMap), obj));
 
 export default renameKeys;
