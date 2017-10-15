@@ -22,13 +22,15 @@ import { curryN, reverse } from 'ramda';
  *
  * concatStringCurried('a')('b')('c'); // => 'cba'
  */
-const curryRightN = curryN(2, (arity, fn) =>
-  curryN(
-    arity,
-    function wrapper(...args) {
-      return fn.apply(this, reverse(args));
-    }
-  )
+const curryRightN = curryN(
+  2,
+  (arity, fn) =>
+    curryN(
+      arity,
+      function wrapper(...args) {
+        return fn.apply(this, reverse(args));
+      }
+    )
 );
 
 

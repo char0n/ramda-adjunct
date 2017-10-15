@@ -97,8 +97,7 @@ const reduceRightP = curryN(3, (fn, acc, list) => resolveP(list)
     });
 
     return reducer(resolveP(acc), iterable);
-  })
-);
+  }));
 
 
 export default reduceRightP;

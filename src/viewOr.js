@@ -25,7 +25,8 @@ import { view, defaultTo, curryN } from 'ramda';
  * RA.viewOr('some', R.lensProp('y'), { y: false }); // => false
  */
 
-const viewOr = curryN(3,
+const viewOr = curryN(
+  3,
   (defaultValue, lens, data) => defaultTo(defaultValue, view(lens, data))
 );
 

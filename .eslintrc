@@ -22,6 +22,7 @@
       "exports": "always-multiline",
       "functions": "never"
     }],
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "object-curly-newline": 0
   }
 }

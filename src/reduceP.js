@@ -77,21 +77,18 @@ const reduceP = curryN(3, (fn, acc, list) => resolveP(list)
 
     if (listLength === 0) { return acc }
 
-    const reducer = reduce((accP, currentValueP) =>
-      accP
-        .then(previousValue => Promise.all([previousValue, currentValueP]))
-        .then(([previousValue, currentValue]) => {
-          if (isUndefined(previousValue) && listLength === 1) {
-            return currentValue;
-          }
+    const reducer = reduce((accP, currentValueP) => accP
+      .then(previousValue => Promise.all([previousValue, currentValueP]))
+      .then(([previousValue, currentValue]) => {
+        if (isUndefined(previousValue) && listLength === 1) {
+          return currentValue;
+        }
 
-          return fn(previousValue, currentValue);
-        })
-    );
+        return fn(previousValue, currentValue);
+      }));
 
     return reducer(resolveP(acc), iterable);
-  })
-);
+  }));
 
 
 export default reduceP;

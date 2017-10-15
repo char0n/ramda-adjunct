@@ -30,8 +30,9 @@ import { curryN } from 'ramda';
  * const wlog = RA.weaveLazy(log, consoleAccessor);
  * wlog('test'); //=> prints 'test'
  */
-const weaveLazy = curryN(2, (fn, configAccessor) =>
-  curryN(fn.length, (...args) => fn(...args).run(configAccessor()))
+const weaveLazy = curryN(
+  2,
+  (fn, configAccessor) => curryN(fn.length, (...args) => fn(...args).run(configAccessor()))
 );
 
 export default weaveLazy;
