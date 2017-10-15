@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>hasPath.js - Documentation</title>
+    <title>isEven.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">hasPath.js</h1>
+    <h1 class="page-title">isEven.js</h1>
     
 
     
@@ -43,48 +43,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { length, has, path, head, tail, curryN } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { both, complement } from 'ramda';
 
-import isObj from './isObj';
+import isInteger from './isInteger';
+import isOdd from './isOdd';
+
 
 /**
- * Returns whether or not an object has an own property with the specified name at a given path.
+ * Checks if value is even integer number.
+ * An even number is an integer which is "evenly divisible" by two.
+ * Zero is an even number because zero divided by two equals zero,
+ * which despite not being a natural number, is an integer.
+ * Even numbers are either positive or negative.
  *
- * @func hasPath
+ * @func isEven
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
- * @category Object
- * @sig
- *
- *   [Idx] -> {a} -> Boolean
- *   Idx = String | Int
- *
- * @param {Array.&lt;string|number>} path The path of the nested property
- * @param {Object} obj The object to test
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.18.0|v1.18.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#has|has}
+ * @see {@link RA.isOdd|isOdd}
  * @example
  *
- * RA.hasPath(['a', 'b'], { a: { b: 1 } }); //=> true
- * RA.hasPath(['a', 'b', 'c'], { a: { b: 1 } }); //=> false
- * RA.hasPath(['a', 'b'], { a: { } }); //=> false
- * RA.hasPath([0], [1, 2]); //=> true
+ * RA.isEven(0); // => true
+ * RA.isEven(1); // => false
+ * RA.isEven(-Infinity); // => false
+ * RA.isEven(4); // => true
+ * RA.isEven(3); // => false
  */
-const hasPath = curryN(2, (objPath, obj) => {
-  const prop = head(objPath);
+const isEven = both(isInteger, complement(isOdd));
 
-  // termination conditions
-  if (length(objPath) === 0 || !isObj(obj)) {
-    return false;
-  } else if (length(objPath) === 1) {
-    return has(prop, obj);
-  }
-
-  return hasPath(tail(objPath), path([prop], obj)); // base case
-});
-
-
-export default hasPath;
+export default isEven;
 </code></pre>
         </article>
     </section>
