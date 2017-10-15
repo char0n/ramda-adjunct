@@ -19,7 +19,7 @@ import mergePath from './mergePath';
  * @return {!Object} The new version of object
  * @example
  *
- * RA.mergePath(
+ * RA.mergeProp(
  *  'outer',
  *  { foo: 3, bar: 4 },
  *  { outer: { foo: 2 } }
