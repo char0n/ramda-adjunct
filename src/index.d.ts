@@ -520,6 +520,13 @@ declare namespace RamdaAdjunct {
         viewOr(defaultValue: any): (lens: Function) => (data: any) => any;
 
         /**
+         * Defines an isomorphism that will work like a lens. It takes two functions.
+         * The function that converts and the function that recovers.
+         */
+        lensIso(to: Function, from: Function): Function
+        lensIso(to: Function): (from: Function) => Function
+
+        /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
         hasPath(path: Array<string|number>, obj: object): boolean;

@@ -86,6 +86,7 @@ import lensEq from './lensEq';
 import lensNotEq from './lensNotEq';
 import lensSatisfies from './lensSatisfies';
 import lensNotSatisfy from './lensNotSatisfy';
+import lensIso from './lensIso';
 // Types
 import Identity from './fantasy-land/Identity';
 
@@ -185,6 +186,7 @@ export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
 export { default as lensSatisfies } from './lensSatisfies';
 export { default as lensNotSatisfy } from './lensNotSatisfy';
+export { default as lensIso } from './lensIso';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
 
@@ -289,6 +291,7 @@ const RA = {
   lensNotEq,
   lensSatisfies,
   lensNotSatisfy,
+  lensIso,
   // Types
   Identity,
 };
