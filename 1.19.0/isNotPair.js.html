@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotValidDate.js - Documentation</title>
+    <title>isNotPair.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotValidDate.js</h1>
+    <h1 class="page-title">isNotPair.js</h1>
     
 
     
@@ -45,28 +45,32 @@
         <article>
             <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
 
-import isValidDate from './isValidDate';
+import isPair from './isPair';
+
 
 /**
- * Checks if value is complement of valid `Date` object.
+ * Checks if input value is complement of a pair.
  *
- * @func isNotValidDate
- * @aliases isInvalidDate
+ * @func isNotPair
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.8.0|v1.8.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|v1.19.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isValidDate|isValidDate}, {@link RA.isDate|isDate}, {@link RA.isNotDate|isNotDate}
+ * @see {@link http://ramdajs.com/docs/#pair|pair}, {@link RA.isPair|isPair}
  * @example
  *
- * RA.isNotValidDate(new Date()); //=> false
- * RA.isNotValidDate(new Date('a')); //=> true
+ * RA.isNotPair([]); // => true
+ * RA.isNotPair([0]); // => true
+ * RA.isNotPair([0, 1]); // => false
+ * RA.isNotPair([0, 1, 2]); // => true
+ * RA.isNotPair({0: 0, 1: 1}); // => true
+ * RA.isNotPair({foo: 0, bar: 0}); // => true
  */
-const isNotValidDate = complement(isValidDate);
+const isNotPair = complement(isPair);
 
-export default isNotValidDate;
+export default isNotPair;
 </code></pre>
         </article>
     </section>
