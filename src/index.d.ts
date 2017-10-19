@@ -265,6 +265,16 @@ declare namespace RamdaAdjunct {
         isEven(val: any): number;
 
         /**
+         * Checks if input value is a pair.
+         */
+        isPair(val: any): boolean;
+
+        /**
+         * Checks if input value is complement of a pair.
+         */
+        isNotPair(val: any): boolean;
+
+        /**
          * A function that returns `undefined`.
          */
         stubUndefined(): undefined;
