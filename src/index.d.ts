@@ -267,7 +267,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is a pair.
          */
-        isPair(val: any): boolean;
+        isPair(val: any): val is Array<any>;
 
         /**
          * Checks if input value is complement of a pair.
