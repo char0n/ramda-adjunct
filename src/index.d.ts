@@ -557,6 +557,12 @@ declare namespace RamdaAdjunct {
         sliceTo<T>(toIndex: number, list: string|Array<T>): string|Array<T>;
         sliceTo(toIndex: number): <T>(list: string|Array<T>) => string|Array<T>;
 
+        /**
+         * Returns a partial copy of an array omitting the indexes specified.
+         */
+        omitIndexes<T>(indexes: number[], list: Array<T>): Array<T>;
+        omitIndexes(indexes: number[]): <T>(list: Array<T>) => Array<T>;
+
          /**
          * Identity type.
          */
