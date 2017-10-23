@@ -555,7 +555,7 @@ declare namespace RamdaAdjunct {
          * Returns a partial copy of an array omitting the indexes specified.
          */
         omitIndexes<T>(indexes: number[], list: Array<T>): Array<T>;
-        omitIndexes(indexes: number): <T>(list: Array<T>) => Array<T>;
+        omitIndexes(indexes: number[]): <T>(list: Array<T>) => Array<T>;
 
          /**
          * Identity type.

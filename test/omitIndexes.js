@@ -19,4 +19,28 @@ describe('omitIndexes', function() {
 
     eq(RA.omitIndexes(indexes, arr), expected);
   });
+
+  it('tests when empty indexes', function() {
+    const indexes = [];
+    const arr = ['a', 'b', 'c', 'd'];
+    const expected = arr;
+
+    eq(RA.omitIndexes(indexes, arr), expected);
+  });
+
+  it('tests when empty list', function() {
+    const indexes = [1, 3];
+    const arr = [];
+    const expected = arr;
+
+    eq(RA.omitIndexes(indexes, arr), expected);
+  });
+
+  it('tests when empty indexes and list', function() {
+    const indexes = [];
+    const arr = [];
+    const expected = arr;
+
+    eq(RA.omitIndexes(indexes, arr), expected);
+  });
 });
