@@ -303,8 +303,10 @@ declare namespace RamdaAdjunct {
         /**
          * Returns the result of concatenating the given lists or strings.
          */
-        concatRight<T extends Array<any>|string>(firstList: T, secondList: T): T;
-        concatRight<T extends Array<any>|string>(firstList: T): (secondList: T) => T;
+        concatRight<T extends Array<any>>(firstList: T, secondList: T): T;
+        concatRight<T extends Array<any>>(firstList: T): (secondList: T) => T;
+        concatRight(firstList: string, secondList: string): string;
+        concatRight(firstList: string): (secondList: string) => string;
 
         /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
