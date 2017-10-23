@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>hasPath.js - Documentation</title>
+    <title>omitIndexes.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">hasPath.js</h1>
+    <h1 class="page-title">omitIndexes.js</h1>
     
 
     
@@ -43,48 +43,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { length, has, path, head, tail, curryN } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { contains, curry, addIndex, reject } from 'ramda';
 
-import isObj from './isObj';
+// helpers
+const rejectIndexed = addIndex(reject);
+const containsIndex = curry((indexes, val, index) => contains(index, indexes));
 
 /**
- * Returns whether or not an object has an own property with the specified name at a given path.
+ * Returns a partial copy of an array omitting the indexes specified.
  *
- * @func hasPath
+ * @func omitIndexes
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
- * @category Object
- * @sig
- *
- *   [Idx] -> {a} -> Boolean
- *   Idx = String | Int
- *
- * @param {Array.&lt;string|number>} path The path of the nested property
- * @param {Object} obj The object to test
- * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#has|has}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|v1.19.0}
+ * @category List
+ * @sig [i] -> [a] -> [a]
+ * @see {@link http://ramdajs.com/docs/#omit|omit}
+ * @param {!Array} indexes The array of indexes to omit from the new array
+ * @param {!Array} list The array to copy from
+ * @return {!Array} The new array with indexes not on it
  * @example
  *
- * RA.hasPath(['a', 'b'], { a: { b: 1 } }); //=> true
- * RA.hasPath(['a', 'b', 'c'], { a: { b: 1 } }); //=> false
- * RA.hasPath(['a', 'b'], { a: { } }); //=> false
- * RA.hasPath([0], [1, 2]); //=> true
+ * RA.omitIndexes([-1, 1, 3], ['a', 'b', 'c', 'd']); //=> ['a', 'c']
  */
-const hasPath = curryN(2, (objPath, obj) => {
-  const prop = head(objPath);
+const omitIndexes = curry((indexes, list) => rejectIndexed(containsIndex(indexes), list));
 
-  // termination conditions
-  if (length(objPath) === 0 || !isObj(obj)) {
-    return false;
-  } else if (length(objPath) === 1) {
-    return has(prop, obj);
-  }
-
-  return hasPath(tail(objPath), path([prop], obj)); // base case
-});
-
-
-export default hasPath;
+export default omitIndexes;
 </code></pre>
         </article>
     </section>
