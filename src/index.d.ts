@@ -303,7 +303,10 @@ declare namespace RamdaAdjunct {
         /**
          * Returns the result of concatenating the given lists or strings.
          */
-        concatRight<T extends Array<any>|string>(firstList: T, secondList: T): T;
+        concatRight<T extends Array<any>>(firstList: T, secondList: T): T;
+        concatRight<T extends Array<any>>(firstList: T): (secondList: T) => T;
+        concatRight(firstList: string, secondList: string): string;
+        concatRight(firstList: string): (secondList: string) => string;
 
         /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
@@ -316,6 +319,7 @@ declare namespace RamdaAdjunct {
          * the Apply spec of fantasy land.
          */
         liftFN<T>(arity: number, fn: Variadic<Apply<T>, T>): Apply<T>;
+        liftFN(arity: number): <T>(fn: Variadic<Apply<T>, T>) => Apply<T>;
 
         /**
          * "lifts" a function of arity > 1 so that it may "map over" objects that satisfy
@@ -543,6 +547,7 @@ declare namespace RamdaAdjunct {
          * Dispatches to the slice method of the third argument, if present.
          */
         sliceFrom<T>(fromIndex: number, list: string|Array<T>): string|Array<T>;
+        sliceFrom(fromIndex: number): <T>(list: string|Array<T>) => string|Array<T>;
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
@@ -550,6 +555,7 @@ declare namespace RamdaAdjunct {
          * Dispatches to the slice method of the second argument, if present.
          */
         sliceTo<T>(toIndex: number, list: string|Array<T>): string|Array<T>;
+        sliceTo(toIndex: number): <T>(list: string|Array<T>) => string|Array<T>;
 
          /**
          * Identity type.
