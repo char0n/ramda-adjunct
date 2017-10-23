@@ -78,6 +78,8 @@ import mergeProp from './mergeProp';
 import mergePath from './mergePath';
 import viewOr from './viewOr';
 import hasPath from './hasPath';
+import spreadProp from './spreadProp';
+import spreadPath from './spreadPath';
 // Relation
 import lensEq from './lensEq';
 import lensNotEq from './lensNotEq';
@@ -174,6 +176,8 @@ export { default as mergeProp } from './mergeProp';
 export { default as mergePath } from './mergePath';
 export { default as viewOr } from './viewOr';
 export { default as hasPath } from './hasPath';
+export { default as spreadProp } from './spreadProp';
+export { default as spreadPath } from './spreadPath';
 // Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
@@ -275,6 +279,8 @@ const RA = {
   mergePath,
   viewOr,
   hasPath,
+  spreadProp,
+  spreadPath,
   // Relation
   lensEq,
   lensNotEq,
