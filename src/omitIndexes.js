@@ -15,7 +15,7 @@ const containsIndex = curry((indexes, val, index) => contains(index, indexes));
  * @see {@link http://ramdajs.com/docs/#omit|omit}
  * @param {!Array} indexes The array of indexes to omit from the new array
  * @param {!Array} list The array to copy from
- * @return {!Array} The new array with indexes not on it
+ * @return {!Array} The new array with omitted indexes
  * @example
  *
  * RA.omitIndexes([-1, 1, 3], ['a', 'b', 'c', 'd']); //=> ['a', 'c']
