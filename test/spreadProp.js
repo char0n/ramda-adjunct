@@ -31,6 +31,7 @@ describe('spreadProp', function() {
         a: 1,
         b: 999,
       };
+
       eq(RA.spreadProp(prop, obj), { a: 1 });
     });
   });
@@ -47,18 +48,18 @@ describe('spreadProp', function() {
         d: 4,
         b: 999,
       };
+
       eq(RA.spreadProp(prop, obj), expected);
     });
   });
 
-  context('when standard usecase', function () {
-    specify('should return object with spreaded prop', function () {
-      const expected = {
-        a: 1,
-        c: 3,
-        d: 4,
-      };
-      eq(RA.spreadProp(prop, obj), expected);
-    });
+  it('should return object with spreaded prop', function () {
+    const expected = {
+      a: 1,
+      c: 3,
+      d: 4,
+    };
+
+    eq(RA.spreadProp(prop, obj), expected);
   });
 });

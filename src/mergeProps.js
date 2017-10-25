@@ -19,8 +19,8 @@ import { curryN, pipe, mergeAll, props } from 'ramda';
  *   bar: { barInner: 2 }
  * };
  *
- * const withSpread = { ...obj.foo, ...obj.bar }; //=> { fooInner: 1, barInner: 2 }
- * const withFunc = RA.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
+ * { ...obj.foo, ...obj.bar }; //=> { fooInner: 1, barInner: 2 }
+ * RA.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
  */
 const mergeProps = curryN(2, pipe(props, mergeAll));
 

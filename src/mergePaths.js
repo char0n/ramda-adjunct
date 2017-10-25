@@ -21,6 +21,7 @@ import paths from './paths';
  *   bar: { barInner: 2 }
  * };
  *
+ * { ...obj.foo.fooInner, ...obj.bar }; //=>  { fooInner2: 1, barInner: 2 }
  * RA.mergePaths([['foo', 'fooInner'], ['bar']], obj); //=> { fooInner2: 1, barInner: 2 }
  */
 const mergePaths = curryN(2, pipe(paths, mergeAll));
