@@ -104,7 +104,7 @@
     "nyc": "=11.2.1",
     "phantomjs": "=2.1.7",
     "rimraf": "=2.6.2",
-    "sinon": "=4.0.0",
+    "sinon": "4.0.2",
     "testem": "=1.18.4",
     "typescript": "=2.5.3",
     "typescript-definition-tester": "=0.0.5",
