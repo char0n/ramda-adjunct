@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>viewOr.js - Documentation</title>
+    <title>spreadPath.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">viewOr.js</h1>
+    <h1 class="page-title">spreadPath.js</h1>
     
 
     
@@ -43,40 +43,32 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { view, defaultTo, curryN } from 'ramda';
-
+            <pre class="prettyprint source linenums"><code>import { curryN, converge, merge, dissocPath, pathOr } from 'ramda';
 
 /**
- * Returns a "view" of the given data structure, determined by the given lens.
- * The lens's focus determines which portion of the data structure is visible.
- * Returns the defaultValue if "view" is null, undefined or NaN; otherwise the "view" is returned.
+ * Spreads object under property path onto provided object.
  *
- * @func viewOr
+ * @func spreadPath
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|v1.19.0}
  * @category Object
- * @sig a -> Lens s b → s → b | a
- * @see {@link http://ramdajs.com/docs/#view|view}
- * @param {*} defaultValue The default value
- * @param {Function} lens Van Laarhoven lens
- * @param {*} data The data structure
- * @returns {*} "view" or defaultValue
- *
+ * @sig
+ *   [Idx] -> {k: v} -> {k: v}
+ *   Idx = String | Int
+ * @param {!Array.&lt;string|number>} path The property path to spread
+ * @param {!Object} obj The provided object
+ * @return {!Object} The result of the spread
+ * @see {@link RA.spreadProp|spreadProp}
  * @example
  *
- * RA.viewOr('N/A', R.lensProp('x'), {}); // => 'N/A'
- * RA.viewOr('N/A', R.lensProp('x'), { x: 1 }); // => 1
- * RA.viewOr('some', R.lensProp('y'), { y: null }); // => 'some'
- * RA.viewOr('some', R.lensProp('y'), { y: false }); // => false
+ * R.spreadPath(
+ *   ['b1', 'b2'],
+ *   { a: 1, b1: { b2: { c: 3, d: 4 } } }
+ * ); // => { a: 1, c: 3, d: 4, b1 {} };
  */
+const spreadPath = curryN(2, converge(merge, [dissocPath, pathOr({})]));
 
-const viewOr = curryN(
-  3,
-  (defaultValue, lens, data) => defaultTo(defaultValue, view(lens, data))
-);
-
-
-export default viewOr;
+export default spreadPath;
 </code></pre>
         </article>
     </section>
