@@ -1,29 +1,26 @@
-import { curry, pathOr, merge, dissoc } from 'ramda';
+import { curryN, converge, merge, dissocPath, pathOr } from 'ramda';
 
 /**
- * Merges object under path with root object, removing path to object.
+ * Spreads object under property path onto provided object.
  *
  * @func spreadPath
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|v1.19.0}
  * @category Object
- * @sig [k] -> {a: *} -> {b: *}
- * @param {!Object} path The path to object to merge with
- * @param {!Object} obj The root object
- * @return {!Object} Result of merging root object with object under path
+ * @sig
+ *   [Idx] -> {k: v} -> {k: v}
+ *   Idx = String | Int
+ * @param {!Array.<string|number>} path The property path to spread
+ * @param {!Object} obj The provided object
+ * @return {!Object} The result of the spread
  * @see {@link RA.spreadProp|spreadProp}
  * @example
  *
  * R.spreadPath(
- *   ["b1", "b2"],
+ *   ['b1', 'b2'],
  *   { a: 1, b1: { b2: { c: 3, d: 4 } } }
- * ); // => { a: 1, c: 3, d: 4 }
+ * ); // => { a: 1, c: 3, d: 4, b1 {} };
  */
-
-const spreadPath = curry((path, object) => {
-  const targ = pathOr({}, path, object);
-  const withoutPath = dissoc(path[0], object);
-  return merge(withoutPath, targ);
-});
+const spreadPath = curryN(2, converge(merge, [dissocPath, pathOr({})]));
 
 export default spreadPath;
