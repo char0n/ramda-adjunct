@@ -81,6 +81,8 @@ import viewOr from './viewOr';
 import hasPath from './hasPath';
 import spreadProp from './spreadProp';
 import spreadPath from './spreadPath';
+import flattenProp from './flattenProp';
+import flattenPath from './flattenPath';
 // Relation
 import lensEq from './lensEq';
 import lensNotEq from './lensNotEq';
@@ -180,6 +182,8 @@ export { default as viewOr } from './viewOr';
 export { default as hasPath } from './hasPath';
 export { default as spreadProp } from './spreadProp';
 export { default as spreadPath } from './spreadPath';
+export { default as flattenProp } from './flattenProp';
+export { default as flattenPath } from './flattenPath';
 // Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
@@ -284,6 +288,8 @@ const RA = {
   hasPath,
   spreadProp,
   spreadPath,
+  flattenProp,
+  flattenPath,
   // Relation
   lensEq,
   lensNotEq,
