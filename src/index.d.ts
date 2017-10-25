@@ -526,6 +526,18 @@ declare namespace RamdaAdjunct {
         hasPath(path: Array<string|number>): (obj: object) => boolean;
 
         /**
+        * Spreads object under property path onto provided object.
+        */
+        spreadPath(path: Array<string|number>, obj: object): object;
+        spreadPath(path: Array<string|number>): (obj: object) => object;
+
+        /**
+        * Spreads object under property onto provided object.
+        */
+        spreadProp(prop: string|number, obj: object): object;
+        spreadProp(prop: string|number): (obj: object) => object;
+
+        /**
          * Composable shortcut for `Promise.resolve`.
          *
          * Returns a Promise object that is resolved with the given value.

@@ -1,0 +1,25 @@
+import { of, curry } from 'ramda';
+
+import spreadPath from './spreadPath';
+
+/**
+ * Spreads object under property onto provided object.
+ *
+ * @func spreadProp
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|v1.19.0}
+ * @category Object
+ * @sig
+ *   Idx -> {k: v} -> {k: v}
+ *   Idx = String | Int
+ * @param {!string|number} prop The property to spread
+ * @param {!Object} obj The provided object
+ * @return {!Object} The result of the spread
+ * @see {@link RA.spreadPath|spreadPath}
+ * @example
+ *
+ * R.spreadProp('b', { a: 1, b: { c: 3, d: 4 } }); // => { a: 1, c: 3, d: 4 };
+ */
+const spreadProp = curry((prop, obj) => spreadPath(of(prop), obj));
+
+export default spreadProp;
