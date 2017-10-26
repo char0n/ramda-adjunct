@@ -538,13 +538,13 @@ declare namespace RamdaAdjunct {
         spreadProp(prop: string|number): (obj: object) => object;
 
         /**
-         * Merges object under property path onto provided object.
+         * Flattens a property path so that its fields are spread out into the provided object.
          */
         flattenPath(path: Array<string|number>, obj: object): object;
         flattenPath(path: Array<string|number>): (obj: object) => object;
 
         /**
-         * Merges object under property onto provided object.
+         * Flattens a property so that its fields are spread out into the provided object.
          */
         flattenProp(prop: string|number, obj: object): object;
         flattenProp(prop: string|number): (obj: object) => object;

@@ -1,7 +1,8 @@
 import { pathOr, curry, merge } from 'ramda';
 
 /**
- * Merges object under property path onto provided object.
+ * Flattens a property path so that its fields are spread out into the provided object.
+ *
  *
  * @func flattenPath
  * @memberOf RA
@@ -10,17 +11,17 @@ import { pathOr, curry, merge } from 'ramda';
  * @sig
  *   [Idx] -> {k: v} -> {k: v}
  *   Idx = String | Int
- * @param {!Array.<string|number>} path The property path to spread
+ * @param {!Array.<string|number>} path The property path to flatten
  * @param {!Object} obj The provided object
- * @return {!Object} The result of the merge
+ * @return {!Object} The flattened object
  * @see {@link RA.flattenProp|flattenProp}
  * @example
  *
  * R.flattenPath(
- *   ["b1", "b2"],
+ *   ['b1', 'b2'],
  *   { a: 1, b1: { b2: { c: 3, d: 4 } } }
  * ); // => { a: 1, c: 3, d: 4, b1: { b2: { c: 3, d: 4 } } };
  */
-const flattenPath = curry((pth, obj) => merge(obj, pathOr({}, pth, obj)));
+const flattenPath = curry((path, obj) => merge(obj, pathOr({}, path, obj)));
 
 export default flattenPath;

@@ -3,7 +3,7 @@ import { of, curry } from 'ramda';
 import flattenPath from './flattenPath';
 
 /**
- * Merges object under property onto provided object.
+ * Flattens a property so that its fields are spread out into the provided object.
  *
  * @func flattenProp
  * @memberOf RA
@@ -12,14 +12,14 @@ import flattenPath from './flattenPath';
  * @sig
  *   [Idx] -> {k: v} -> {k: v}
  *   Idx = String | Int
- * @param {!string|number} prop The property to spread
+ * @param {!string|number} prop The property to flatten
  * @param {!Object} obj The provided object
- * @return {!Object} The result of the merge
+ * @return {!Object} The flattened object
  * @see {@link RA.flattenPath|flattenPath}
  * @example
  *
  * R.flattenProp(
- *   "b",
+ *   'b',
  *   { a: 1, b: { c: 3, d: 4 } }
  * ); // => { a: 1, c: 3, d: 4, b: { c: 3, d: 4 } };
  */

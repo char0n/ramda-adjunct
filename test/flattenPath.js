@@ -15,15 +15,8 @@ describe('flattenPath', function() {
   });
 
   it('tests currying', function () {
-    const expected = {
-      a: 1,
-      c: 3,
-      d: 4,
-      b1: { b2: { c: 3, d: 4 } },
-    };
-
-    eq(RA.flattenPath(path, obj), expected);
-    eq(RA.flattenPath(path)(obj), expected);
+    eq(RA.flattenPath([], {}), {});
+    eq(RA.flattenPath([])({}), {});
   });
 
   context('when path leads to non object', function () {

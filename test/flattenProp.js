@@ -47,19 +47,19 @@ describe('flattenProp', function() {
         d: 4,
         b: 999,
       };
+
       eq(RA.flattenProp(prop, obj), expected);
     });
   });
 
-  context('when standard usecase', function () {
-    specify('should return object with flattened prop', function () {
-      const expected = {
-        a: 1,
-        c: 3,
-        d: 4,
-        b: { c: 3, d: 4 },
-      };
-      eq(RA.flattenProp(prop, obj), expected);
-    });
+  it('should return object with flattened prop', function () {
+    const expected = {
+      a: 1,
+      c: 3,
+      d: 4,
+      b: { c: 3, d: 4 },
+    };
+
+    eq(RA.flattenProp(prop, obj), expected);
   });
 });
