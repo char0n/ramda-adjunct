@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotArray.js - Documentation</title>
+    <title>flattenProp.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotArray.js</h1>
+    <h1 class="page-title">flattenProp.js</h1>
     
 
     
@@ -43,30 +43,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { of, curry } from 'ramda';
 
-import isArray from './isArray';
+import flattenPath from './flattenPath';
 
 /**
- * Checks if input value is complement of `Array`
+ * Flattens a property so that its fields are spread out into the provided object.
  *
- * @func isNotArray
+ * @func flattenProp
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isArray|isArray}
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|v1.19.0}
+ * @category Object
+ * @sig
+ *   [Idx] -> {k: v} -> {k: v}
+ *   Idx = String | Int
+ * @param {!string|number} prop The property to flatten
+ * @param {!Object} obj The provided object
+ * @return {!Object} The flattened object
+ * @see {@link RA.flattenPath|flattenPath}
  * @example
  *
- * RA.isNotArray([]); //=> false
- * RA.isNotArray(null); //=> true
- * RA.isNotArray({}); //=> true
+ * R.flattenProp(
+ *   'b',
+ *   { a: 1, b: { c: 3, d: 4 } }
+ * ); // => { a: 1, c: 3, d: 4, b: { c: 3, d: 4 } };
  */
-const isNotArray = complement(isArray);
+const flattenProp = curry((prop, obj) => flattenPath(of(prop), obj));
 
-export default isNotArray;
+export default flattenProp;
 </code></pre>
         </article>
     </section>
