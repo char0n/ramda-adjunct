@@ -538,6 +538,18 @@ declare namespace RamdaAdjunct {
         spreadProp(prop: string|number): (obj: object) => object;
 
         /**
+         * Flattens a property path so that its fields are spread out into the provided object.
+         */
+        flattenPath(path: Array<string|number>, obj: object): object;
+        flattenPath(path: Array<string|number>): (obj: object) => object;
+
+        /**
+         * Flattens a property so that its fields are spread out into the provided object.
+         */
+        flattenProp(prop: string|number, obj: object): object;
+        flattenProp(prop: string|number): (obj: object) => object;
+
+        /**
          * Composable shortcut for `Promise.resolve`.
          *
          * Returns a Promise object that is resolved with the given value.
