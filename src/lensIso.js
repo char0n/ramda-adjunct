@@ -42,6 +42,7 @@ const from = curry((isomorphism, x) => isomorphism.from(x));
  * @param {!function} to The function that converts
  * @param {!function} from The function that recovers
  * @return {!function} The isomorphic lens
+ * @see {@link http://ramdajs.com/docs/#lens|lens}
  *
  * @example
  *
