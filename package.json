@@ -85,7 +85,7 @@
     "chai": "=4.1.2",
     "codecov": "3.0.0",
     "conventional-changelog-cli": "=1.3.4",
-    "cross-env": "5.1.0",
+    "cross-env": "5.1.1",
     "docdash": "git+https://github.com/char0n/docdash.git#16d3b4e677ec7286bbf07badfc9ee37c93101d39",
     "es6-promise": "=4.1.1",
     "eslint": "4.9.0",
