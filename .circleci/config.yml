@@ -1,0 +1,112 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run lint
+      - run: npm run nsp:check
+      - run: npm run build
+      - store_artifacts:
+          path: ./dist
+      - store_artifacts:
+          path: ./lib
+      - store_artifacts:
+          path: ./es
+
+  test_node_6:
+    docker:
+      - image: circleci/node:6
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:ramda
+
+  test_node_7:
+    docker:
+      - image: circleci/node:7
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:ramda
+
+  test_node_8:
+    docker:
+      - image: circleci/node:8
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:ramda
+      - run:
+          name: Code coverage
+          command: npm run coverage
+          environment:
+            MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+      - run: ./node_modules/.bin/codecov
+      - store_artifacts:
+          path: ./coverage
+      - store_artifacts:
+          path: ./test-results.xml
+
+  docs:
+    docker:
+      - image: circleci/node:8
+    environment:
+      GH_NAME: char0n
+      GH_EMAIL: vladimir.gorej@gmail.com
+    filters:
+      branches:
+        only: master
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build:umd
+      - run: npm run docs
+      - run: chmod -R +x ./scripts
+      - run: ./scripts/deploy-ghpages.sh docs/ramda-adjunct
+      - store_artifacts:
+          path: ./docs
+
+
+workflows:
+  version: 2
+  build_test_docs:
+    jobs:
+      - build
+      - test_node_6:
+          requires:
+            - build
+      - test_node_7:
+          requires:
+            - build
+      - test_node_8:
+          requires:
+            - build
+      - docs:
+          requires:
+            - build
+            - test_node_6
+            - test_node_7
+            - test_node_8
+
+notify:
+  webhooks:
+   - url: https://webhooks.gitter.im/e/4ab4df02852bdd010b3c

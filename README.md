@@ -103,7 +103,6 @@ guideline.
 ```sh
  $ git clone https://github.com/char0n/ramda-adjunct
  $ npm i
- $ npm i ramda
 ```
 
 **Running tests**
