@@ -1,5 +1,9 @@
 {
-  "author": "Vladimir Gorej <vladimir.gorej@gmail.com> (linkedin.com/in/vladimirgorej)",
+  "author": {
+    "name": "Vladimir Gorej",
+    "email": "vladimir.gorej@gmail.com",
+    "url": "https://www.linkedin.com/in/vladimirgorej/"
+  },
   "contributors": [],
   "name": "ramda-adjunct",
   "description": "Community-maintained extension of Ramda",
