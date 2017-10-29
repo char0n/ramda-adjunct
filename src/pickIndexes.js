@@ -1,4 +1,10 @@
-import { curryN, compose, values, pickAll } from 'ramda';
+import { filter, addIndex, curry, contains } from 'ramda';
+
+
+// helpers
+const filterIndexed = addIndex(filter);
+const containsIndex = curry((indexes, val, index) => contains(index, indexes));
+
 
 /**
  * Picks values from list by indexes.
@@ -16,6 +22,6 @@ import { curryN, compose, values, pickAll } from 'ramda';
  *
  * RA.pickIndexes([0, 2], ['a', 'b', 'c']); //=> ['a', 'c']
  */
-const pickIndexes = curryN(2, compose(values, pickAll));
+const pickIndexes = curry((indexes, list) => filterIndexed(containsIndex(indexes), list));
 
 export default pickIndexes;
