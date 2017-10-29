@@ -14,7 +14,7 @@ describe('mergeProps', function() {
     expected = { fooinner: 1, barinner: 2 };
   });
 
-  it('tests currying', function () {
+  it('tests currying', function() {
     eq(RA.mergeProps(['foo', 'bar'], obj), expected);
     eq(RA.mergeProps(['foo', 'bar'])(obj), expected);
   });

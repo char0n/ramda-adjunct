@@ -256,11 +256,11 @@ describe('Identity', function() {
   describe('Contravariant', function() {
     const contramapEq = (a, b) => eq(a.get()(1), b.get()(1));
 
-    it('tests for identity', function () {
+    it('tests for identity', function() {
       contravarian.identity(Identity.of)(contramapEq)(identity);
     });
 
-    it('tests for composition', function () {
+    it('tests for composition', function() {
       contravarian.composition(Identity.of)(contramapEq)(always(1));
     });
 
@@ -424,7 +424,7 @@ describe('Identity', function() {
   });
 
   describe('Monoid*', function() {
-    it('tests for an Semigroup spec', function () {
+    it('tests for an Semigroup spec', function() {
       const i = Identity.of('string').empty();
 
       eq(isFunction(i[fl.concat]), true);

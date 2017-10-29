@@ -6,8 +6,8 @@ import RA from '../src/index';
 
 
 describe('curryRight', function() {
-  it('curries a single value', function () {
-    const f = RA.curryRight(function (a, b, c, d) {
+  it('curries a single value', function() {
+    const f = RA.curryRight(function(a, b, c, d) {
       return (a + (b * c)) / d;
     }); // f(2, 6, 3, 10) == 2
     const g = f(10);

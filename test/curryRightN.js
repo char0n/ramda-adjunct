@@ -10,7 +10,7 @@ describe('curryRightN', function() {
     return a * b * c;
   };
 
-  it('accepts an arity', function () {
+  it('accepts an arity', function() {
     const curried = RA.curryRightN(3, source);
     eq(curried(1)(2)(3), 6);
     eq(curried(1, 2)(3), 6);

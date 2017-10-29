@@ -6,7 +6,7 @@ describe('flattenProp', function() {
   let prop;
   let obj;
 
-  beforeEach(function () {
+  beforeEach(function() {
     prop = 'b';
     obj = {
       a: 1,
@@ -14,19 +14,19 @@ describe('flattenProp', function() {
     };
   });
 
-  it('tests currying', function () {
+  it('tests currying', function() {
     eq(RA.flattenProp('prop', {}), {});
     eq(RA.flattenProp('prop')({}), {});
   });
 
-  context("when prop doesn't exist", function () {
-    specify('should return object with identical structure as provided object', function () {
+  context("when prop doesn't exist", function() {
+    specify('should return object with identical structure as provided object', function() {
       eq(RA.flattenProp('not_exist', obj), obj);
     });
   });
 
-  context('when prop leads to non object', function () {
-    specify('should return object with identical structure as provided object', function () {
+  context('when prop leads to non object', function() {
+    specify('should return object with identical structure as provided object', function() {
       obj = {
         a: 1,
         b: 999,
@@ -35,8 +35,8 @@ describe('flattenProp', function() {
     });
   });
 
-  context('when prop leads to object with same prop name', function () {
-    specify('should override existing props on provided object', function () {
+  context('when prop leads to object with same prop name', function() {
+    specify('should override existing props on provided object', function() {
       obj = {
         a: 1,
         b: { b: 999, c: 3, d: 4 },
@@ -52,7 +52,7 @@ describe('flattenProp', function() {
     });
   });
 
-  it('should return object with flattened prop', function () {
+  it('should return object with flattened prop', function() {
     const expected = {
       a: 1,
       c: 3,

@@ -29,7 +29,7 @@ describe('lensIso', function() {
     eq(set(lensJSON, { b: 2 }, '{"a": 1}'), '{"b":2}');
   });
 
-  it('tests applying a function over lens', function () {
+  it('tests applying a function over lens', function() {
     eq(over(lensJSON, assoc('b', 2), '{"a":1}'), '{"a":1,"b":2}');
   });
 

@@ -3,7 +3,7 @@ import eq from './shared/eq';
 
 
 describe('omitIndexes', function() {
-  it('tests currying', function () {
+  it('tests currying', function() {
     const indexes = [1, 3];
     const arr = ['a', 'b', 'c', 'd'];
     const expected = ['a', 'c'];

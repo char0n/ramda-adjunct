@@ -15,7 +15,7 @@ describe('mergePath', function() {
     expected = { a: { b: { c1: 1, c2: 22, c3: 33 } } };
   });
 
-  it('tests currying', function () {
+  it('tests currying', function() {
     eq(RA.mergePath(path, source, obj), expected);
     eq(RA.mergePath(path)(source, obj), expected);
     eq(RA.mergePath(path, source)(obj), expected);
@@ -26,16 +26,16 @@ describe('mergePath', function() {
     eq(RA.mergePath(path, source, obj), expected);
   });
 
-  it('returns unmodified object when source empty', function () {
+  it('returns unmodified object when source empty', function() {
     eq(RA.mergePath(path, {}, obj), obj);
   });
 
-  it('creates object with subject under path when obj empty', function () {
+  it('creates object with subject under path when obj empty', function() {
     expected = { a: { b: { c2: 22, c3: 33 } } };
     eq(RA.mergePath(path, source, {}), expected);
   });
 
-  it('creates object with subject under path when target is not object', function () {
+  it('creates object with subject under path when target is not object', function() {
     expected = { a: { b: { c2: 22, c3: 33 } } };
     eq(RA.mergePath(path, source, { a: { b: 1 } }), expected);
   });

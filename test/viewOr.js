@@ -4,8 +4,8 @@ import RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('viewOr', function () {
-  it('tests "view"', function () {
+describe('viewOr', function() {
+  it('tests "view"', function() {
     eq(RA.viewOr('foo', lensProp('bar'), { bar: 'foobar' }), 'foobar');
     eq(RA.viewOr('foo', lensProp('bar'), { bar: false }), false);
     eq(RA.viewOr('foo', lensProp('bar'), { bar: 1 }), 1);
