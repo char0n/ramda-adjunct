@@ -1,46 +1,57 @@
 import RA from '../src/index';
 import eq from './shared/eq';
+import chai from 'chai';
 
 
 describe('omitIndexes', function() {
+  let list;
+
+  beforeEach(function() {
+    list = ['a', 'b', 'c', 'd'];
+  });
+
   it('tests currying', function() {
-    const indexes = [1, 3];
-    const arr = ['a', 'b', 'c', 'd'];
-    const expected = ['a', 'c'];
-
-    eq(RA.omitIndexes(indexes, arr), expected);
-    eq(RA.omitIndexes(indexes)(arr), expected);
+    eq(RA.omitIndexes([], []), []);
+    eq(RA.omitIndexes([])([]), []);
   });
 
-  it('tests non existing indexes are omitted', function() {
-    const indexes = [-1, 1, 3];
-    const arr = ['a', 'b', 'c', 'd'];
-    const expected = ['a', 'c'];
-
-    eq(RA.omitIndexes(indexes, arr), expected);
+  it('tests omitting values from list by indexes', function() {
+    eq(RA.omitIndexes([0, 2], list), ['b', 'd']);
   });
 
-  it('tests when empty indexes', function() {
-    const indexes = [];
-    const arr = ['a', 'b', 'c', 'd'];
-    const expected = arr;
-
-    eq(RA.omitIndexes(indexes, arr), expected);
+  context("when indexes doesn't exist", function() {
+    specify('should skip these indexes', function() {
+      eq(RA.omitIndexes([-1, 0, 2, 5], list), ['b', 'd']);
+    });
   });
 
-  it('tests when empty list', function() {
-    const indexes = [1, 3];
-    const arr = [];
-    const expected = arr;
-
-    eq(RA.omitIndexes(indexes, arr), expected);
+  context('when indexes is a non-array', function() {
+    specify('should produce TypeError', function() {
+      chai.assert.throws(RA.omitIndexes.bind(null, undefined, list), TypeError);
+    });
   });
 
-  it('tests when empty indexes and list', function() {
-    const indexes = [];
-    const arr = [];
-    const expected = arr;
+  context('when list is a non-array', function() {
+    specify('should product TypeError', function() {
+      chai.assert.throws(RA.omitIndexes.bind(null, [0, 2], undefined), TypeError);
+    });
+  });
 
-    eq(RA.omitIndexes(indexes, arr), expected);
+  context('when empty indexes', function() {
+    specify('should return original array', function() {
+      eq(RA.omitIndexes([], list), list);
+    });
+  });
+
+  context('when empty list', function() {
+    specify('should return empty array', function() {
+      eq(RA.omitIndexes([0, 1, 2], []), []);
+    });
+  });
+
+  context('when empty indexes and list', function() {
+    specify('should return empty array', function() {
+      eq(RA.omitIndexes([], []), []);
+    });
   });
 });

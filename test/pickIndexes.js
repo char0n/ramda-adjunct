@@ -11,15 +11,14 @@ describe('pickIndexes', function() {
     list = ['a', 'b', 'c'];
   });
 
-  it('tests picking values from list by indexes', function() {
-    eq(RA.pickIndexes([0, 2], list), ['a', 'c']);
-  });
-
   it('tests currying', function() {
     eq(RA.pickIndexes([], []), []);
     eq(RA.pickIndexes([])([]), []);
   });
 
+  it('tests picking values from list by indexes', function() {
+    eq(RA.pickIndexes([0, 2], list), ['a', 'c']);
+  });
 
   context("when indexes doesn't exist", function() {
     specify('should skip these indexes', function() {
@@ -27,17 +26,34 @@ describe('pickIndexes', function() {
     });
   });
 
-  // todo fix function parens inconsistencies
   context('when indexes is a non-array', function() {
-    it('should produce TypeError', function() {
+    specify('should produce TypeError', function() {
       chai.assert.throws(RA.pickIndexes.bind(null, undefined, list), TypeError);
     });
   });
 
 
   context('when list is a non-array', function() {
-    it('should product TypeError', function() {
+    specify('should product TypeError', function() {
       chai.assert.throws(RA.pickIndexes.bind(null, [0, 2], undefined), TypeError);
+    });
+  });
+
+  context('when empty indexes', function() {
+    specify('should return empty array', function() {
+      eq(RA.pickIndexes([], list), []);
+    });
+  });
+
+  context('when empty list', function() {
+    specify('should return empty array', function() {
+      eq(RA.pickIndexes([0, 1, 2], []), []);
+    });
+  });
+
+  context('when empty indexes and list', function() {
+    specify('should return empty array', function() {
+      eq(RA.pickIndexes([], []), []);
     });
   });
 });
