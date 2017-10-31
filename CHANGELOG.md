@@ -1,3 +1,23 @@
+<a name="1.19.0"></a>
+# [1.19.0](https://github.com/char0n/ramda-adjunct/compare/v1.18.0...v1.19.0) (2017-10-31)
+
+
+### Bug Fixes
+
+* **pickIndexes:** omits values for non existing indexes ([cb82b9e](https://github.com/char0n/ramda-adjunct/commit/cb82b9e)), closes [#181](https://github.com/char0n/ramda-adjunct/issues/181)
+* **typings:** add missed types to concatRight, sliceFrom, sliceTo, liftFN ([96a31cb](https://github.com/char0n/ramda-adjunct/commit/96a31cb)), closes [#176](https://github.com/char0n/ramda-adjunct/issues/176)
+
+
+### Features
+
+* add isPair, isNotPair ([#168](https://github.com/char0n/ramda-adjunct/issues/168)) ([6e6e6e5](https://github.com/char0n/ramda-adjunct/commit/6e6e6e5)), closes [#90](https://github.com/char0n/ramda-adjunct/issues/90)
+* add lensIso ([#165](https://github.com/char0n/ramda-adjunct/issues/165)) ([0421890](https://github.com/char0n/ramda-adjunct/commit/0421890)), closes [#178](https://github.com/char0n/ramda-adjunct/issues/178)
+* add flattenProp & flattenPath ([#182](https://github.com/char0n/ramda-adjunct/issues/182)) ([046cd02](https://github.com/char0n/ramda-adjunct/commit/046cd02))
+* add spreadProp & spreadPath ([#183](https://github.com/char0n/ramda-adjunct/issues/183)) ([3e8db40](https://github.com/char0n/ramda-adjunct/commit/3e8db40))
+* add omitIndexes ([#180](https://github.com/char0n/ramda-adjunct/issues/180)) ([d65a42d](https://github.com/char0n/ramda-adjunct/commit/d65a42d))
+
+
+
 <a name="1.18.0"></a>
 # [1.18.0](https://github.com/char0n/ramda-adjunct/compare/v1.17.0...v1.18.0) (2017-10-15)
 
