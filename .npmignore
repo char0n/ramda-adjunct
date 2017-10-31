@@ -16,6 +16,8 @@
 /.npmignore
 /.npmrc
 /.nycrc
+/.circleci
+/.codeclimate.yml
 /codecov.yml
 /circle.yml
 /jsdoc.js
