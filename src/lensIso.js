@@ -1,11 +1,10 @@
 import { curry, map } from 'ramda';
 
-/**
- * This implementation was highly inspired by the implementations
- * in ramda-lens library.
- *
- * https://github.com/ramda/ramda-lens
- */
+
+// This implementation was highly inspired by the implementations
+// in ramda-lens library.
+//
+// https://github.com/ramda/ramda-lens
 
 
 // isomorphic :: ((a -> b), (b -> a)) -> Isomorphism
