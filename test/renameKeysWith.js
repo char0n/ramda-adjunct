@@ -1,6 +1,6 @@
 import { concat } from 'ramda';
 
-import RA from '../src/index';
+import * as RA from '../src/index';
 import eq from './shared/eq';
 
 

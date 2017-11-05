@@ -8,7 +8,7 @@
   "name": "ramda-adjunct",
   "description": "Community-maintained extension of Ramda",
   "keywords": "ramda extensions addons cookbook adjunct recipe extras",
-  "version": "1.20.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
@@ -90,7 +90,7 @@
     "codecov": "3.0.0",
     "conventional-changelog-cli": "=1.3.4",
     "cross-env": "=5.1.1",
-    "docdash": "git+https://github.com/char0n/docdash.git#16d3b4e677ec7286bbf07badfc9ee37c93101d39",
+    "docdash": "git+https://github.com/char0n/docdash.git#383025edc8e57de72dc660c50f90b33f475ade13",
     "es6-promise": "=4.1.1",
     "eslint": "4.10.0",
     "eslint-config-airbnb-base": "12.1.0",

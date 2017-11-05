@@ -1,6 +1,6 @@
 import chai from 'chai';
 
-import RA from '../src/index';
+import * as RA from '../src/index';
 import eq from './shared/eq';
 
 

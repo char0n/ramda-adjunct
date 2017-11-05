@@ -1,6 +1,6 @@
 import { view, set, over, assoc, replace } from 'ramda';
 
-import RA from '../src/index';
+import * as RA from '../src/index';
 import eq from './shared/eq';
 
 

@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import jsv from 'jsverify';
 
 import eq from './shared/eq';
-import RA from '../src/index';
+import * as RA from '../src/index';
 
 
 describe('curryRight', function() {

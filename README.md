@@ -183,6 +183,28 @@ const { isArray } = require('ramda-adjunct');
 isArray([]);
 ```
 
+## Tree shaking support
+
+Tree shaking is a term commonly used in the JavaScript context for dead-code elimination.
+It relies on the static structure of ES2015 module syntax, i.e. import and export.
+Ramda Adjunct natively supports tree shaking thanks to the way the code is organized and
+the fact that it is using ES2015 imports. 
+
+```javascript
+  import * as RA from 'ramda-adjunct';
+
+  RA.isArray([]); //=> true
+```
+```javascript
+  import { isArray } from 'ramda-adjunct';
+
+  isArray([]); //=> true
+```
+
+These two statements are equivalent and only `isArray` util should be incorporated into
+your bundle, not entire Ramda Adjunct.
+
+
 ## Assimilated libraries
 
  - [rcb](https://github.com/enten/rcb) - Ramda Cookbook implementation

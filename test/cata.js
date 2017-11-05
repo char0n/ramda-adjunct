@@ -2,7 +2,7 @@ import { Either } from 'monet';
 import { identity } from 'ramda';
 import chai from 'chai';
 
-import RA from '../src/index';
+import * as RA from '../src/index';
 import eq from './shared/eq';
 
 describe('cata', function() {
