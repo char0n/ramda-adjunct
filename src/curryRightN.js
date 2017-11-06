@@ -8,7 +8,7 @@ import { curryN, reverse } from 'ramda';
  * @func curryRightN
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.12.0|v1.12.0}
- * @category List
+ * @category Function
  * @sig Number => (* -> a) -> (* -> a)
  *
  * @param {Number} length The arity for the returned function
