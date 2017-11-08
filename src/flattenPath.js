@@ -2,7 +2,7 @@ import { pathOr, curry, merge } from 'ramda';
 
 /**
  * Flattens a property path so that its fields are spread out into the provided object.
- *
+ * It's like {@link RA.spreadPath|spreadPath}, but preserves object under property path
  *
  * @func flattenPath
  * @memberOf RA
@@ -14,7 +14,7 @@ import { pathOr, curry, merge } from 'ramda';
  * @param {!Array.<string|number>} path The property path to flatten
  * @param {!Object} obj The provided object
  * @return {!Object} The flattened object
- * @see {@link RA.flattenProp|flattenProp}
+ * @see {@link RA.flattenProp|flattenProp} {@link RA.spreadPath|spreadPath}
  * @example
  *
  * R.flattenPath(
