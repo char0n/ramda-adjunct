@@ -19,7 +19,7 @@ import { curryN, converge, merge, dissocPath, pathOr } from 'ramda';
  * R.spreadPath(
  *   ['b1', 'b2'],
  *   { a: 1, b1: { b2: { c: 3, d: 4 } } }
- * ); // => { a: 1, c: 3, d: 4, b1 {} };
+ * ); // => { a: 1, c: 3, d: 4, b1: {} };
  */
 const spreadPath = curryN(2, converge(merge, [dissocPath, pathOr({})]));
 
