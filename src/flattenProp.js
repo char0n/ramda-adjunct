@@ -4,7 +4,7 @@ import flattenPath from './flattenPath';
 
 /**
  * Flattens a property so that its fields are spread out into the provided object.
- * It's like {@link RA.spreadProp|spreadProp}, but preserves object under property path
+ * It's like {@link RA.spreadProp|spreadProp}, but preserves object under the property path.
  *
  * @func flattenProp
  * @memberOf RA
@@ -16,7 +16,7 @@ import flattenPath from './flattenPath';
  * @param {!string|number} prop The property to flatten
  * @param {!Object} obj The provided object
  * @return {!Object} The flattened object
- * @see {@link RA.flattenPath|flattenPath} {@link RA.spreadProp|spreadProp}
+ * @see {@link RA.flattenPath|flattenPath}, {@link RA.spreadProp|spreadProp}
  * @example
  *
  * R.flattenProp(
