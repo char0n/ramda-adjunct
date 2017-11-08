@@ -23,7 +23,7 @@ import mergePath from './mergePath';
  *  'outer',
  *  { foo: 3, bar: 4 },
  *  { outer: { foo: 2 } }
- * ); //=> { outer: { foo: 3, bar: 4 }
+ * ); //=> { outer: { foo: 3, bar: 4 } };
  */
 const mergeProp = curry((p, subj, obj) => mergePath(of(p), subj, obj));
 
