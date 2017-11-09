@@ -44,18 +44,17 @@ jobs:
       - run: npm run test
       - run: npm run test:ramda
 
-   test_node_8:
-      docker:
-        - image: circleci/node:8
-      filters:
-        branches:
-          ignore: gh-pages
-      steps:
-        - checkout
-        - run: npm install
-        - run: npm run test
-        - run: npm run test:ramda
-
+  test_node_8:
+    docker:
+      - image: circleci/node:8
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:ramda
 
   test_node_9:
     docker:
