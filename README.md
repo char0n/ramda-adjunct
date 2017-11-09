@@ -58,7 +58,7 @@ _Do you want to find out more why this library exists ? Read this [**article**](
  - ramda >= 0.19.0
  - node >= 0.10.48
 
-Ramda Adjunct is being automatically tested against node version >=4 <=8.
+Ramda Adjunct is being automatically tested against node version >=6 <=9.
 
 ### Legacy builds
 

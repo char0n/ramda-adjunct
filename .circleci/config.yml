@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:9
     filters:
       branches:
         ignore: gh-pages
@@ -55,6 +55,28 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
+
+  test_node_9:
+    docker:
+      - image: circleci/node:9
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:ramda
+
+  code_coverage:
+    docker:
+      - image: circleci/node:9
+    filters:
+      branches:
+        only: master
+    steps:
+      - checkout
+      - run: npm install
       - run:
           name: Code coverage
           command: npm run coverage
@@ -68,7 +90,7 @@ jobs:
 
   docs:
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:9
     environment:
       GH_NAME: char0n
       GH_EMAIL: vladimir.gorej@gmail.com
@@ -100,12 +122,24 @@ workflows:
       - test_node_8:
           requires:
             - build
-      - docs:
+      - test_node_9:
           requires:
             - build
+      - code_coverage:
+          requires:
             - test_node_6
             - test_node_7
             - test_node_8
+            - test_node_9
+          filters:
+            branches:
+              only: master
+      - docs:
+          requires:
+            - code_coverage
+          filters:
+            branches:
+              only: master
 
 notify:
   webhooks:

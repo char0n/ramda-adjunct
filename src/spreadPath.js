@@ -2,6 +2,7 @@ import { curryN, converge, merge, dissocPath, pathOr } from 'ramda';
 
 /**
  * Spreads object under property path onto provided object.
+ * It's like {@link RA.flattenPath|flattenPath}, but removes object under the property path.
  *
  * @func spreadPath
  * @memberOf RA
@@ -13,13 +14,13 @@ import { curryN, converge, merge, dissocPath, pathOr } from 'ramda';
  * @param {!Array.<string|number>} path The property path to spread
  * @param {!Object} obj The provided object
  * @return {!Object} The result of the spread
- * @see {@link RA.spreadProp|spreadProp}
+ * @see {@link RA.spreadProp|spreadProp}, {@link RA.flattenPath|flattenPath}
  * @example
  *
  * R.spreadPath(
  *   ['b1', 'b2'],
  *   { a: 1, b1: { b2: { c: 3, d: 4 } } }
- * ); // => { a: 1, c: 3, d: 4, b1 {} };
+ * ); // => { a: 1, c: 3, d: 4, b1: {} };
  */
 const spreadPath = curryN(2, converge(merge, [dissocPath, pathOr({})]));
 
