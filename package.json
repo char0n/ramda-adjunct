@@ -4,7 +4,12 @@
     "email": "vladimir.gorej@gmail.com",
     "url": "https://www.linkedin.com/in/vladimirgorej/"
   },
-  "contributors": [],
+  "contributors": [
+    {
+      "name": "Sergey Homa",
+      "url": "https://vk.com/nulll_nulll"
+    }
+  ],
   "name": "ramda-adjunct",
   "description": "Community-maintained extension of Ramda",
   "keywords": "ramda extensions addons cookbook adjunct recipe extras",
