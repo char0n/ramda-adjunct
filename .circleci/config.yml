@@ -67,6 +67,16 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
+
+  code_coverage:
+    docker:
+      - image: circleci/node:9
+    filters:
+      branches:
+        only: master
+    steps:
+      - checkout
+      - run: npm install
       - run:
           name: Code coverage
           command: npm run coverage
@@ -115,13 +125,18 @@ workflows:
       - test_node_9:
           requires:
             - build
-      - docs:
+      - code_coverage:
           requires:
-            - build
             - test_node_6
             - test_node_7
             - test_node_8
             - test_node_9
+          filters:
+            branches:
+              only: master
+      - docs:
+          requires:
+            - code_coverage
           filters:
             branches:
               only: master
