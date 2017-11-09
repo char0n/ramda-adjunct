@@ -106,6 +106,9 @@ workflows:
             - test_node_6
             - test_node_7
             - test_node_8
+          filters:
+            branches:
+              only: master
 
 notify:
   webhooks:
