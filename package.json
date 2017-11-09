@@ -104,7 +104,7 @@
     "mocha-junit-reporter": "=1.14.0",
     "mocha-multi-reporters": "=1.1.6",
     "monet": "=0.9.0-alpha.4",
-    "nsp": "3.0.0",
+    "nsp": "3.1.0",
     "nyc": "11.3.0",
     "phantomjs": "=2.1.7",
     "ramda": "=0.25.0",
