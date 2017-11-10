@@ -97,7 +97,7 @@
     "cross-env": "=5.1.1",
     "docdash": "git+https://github.com/char0n/docdash.git#b1813adcda0adc20de6be06c984aa46aaa1da162",
     "es6-promise": "=4.1.1",
-    "eslint": "4.10.0",
+    "eslint": "4.11.0",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.8.0",
     "fantasy-land": "3.4.0",
