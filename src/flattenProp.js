@@ -19,7 +19,7 @@ import flattenPath from './flattenPath';
  * @see {@link RA.flattenPath|flattenPath}, {@link RA.spreadProp|spreadProp}
  * @example
  *
- * R.flattenProp(
+ * RA.flattenProp(
  *   'b',
  *   { a: 1, b: { c: 3, d: 4 } }
  * ); // => { a: 1, c: 3, d: 4, b: { c: 3, d: 4 } };

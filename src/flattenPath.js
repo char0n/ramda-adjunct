@@ -17,7 +17,7 @@ import { pathOr, curry, merge } from 'ramda';
  * @see {@link RA.flattenProp|flattenProp}, {@link RA.spreadPath|spreadPath}
  * @example
  *
- * R.flattenPath(
+ * RA.flattenPath(
  *   ['b1', 'b2'],
  *   { a: 1, b1: { b2: { c: 3, d: 4 } } }
  * ); // => { a: 1, c: 3, d: 4, b1: { b2: { c: 3, d: 4 } } };
