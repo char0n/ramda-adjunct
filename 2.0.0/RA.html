@@ -198,8 +198,13 @@
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>(a -> b) -> (a -> c) -> Cata a -> b | c</code></pre></li></ul>
+        <ul>
+            
+              <li><code>(a -> b) -> (a -> c) -> Cata a -> b | c</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -447,9 +452,15 @@ RA.cata(identity, identity, maybeNothing); //=> undefined</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[a] → [a] → [a]
-  String → String → String</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[a] -> [a] -> [a]</code></li>
+            
+              <li><code>String -> String -> String</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -675,8 +686,13 @@ followed by the elements of <code>firstList</code>.</p>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Number => (* -> a) -> (* -> a)</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Number -> (* -> a) -> (* -> a)</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -867,8 +883,13 @@ concatStringCurried('a')('b')('c'); // => 'cba'</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Number => (* -> a) -> (* -> a)</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Number -> (* -> a) -> (* -> a)</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -1082,9 +1103,22 @@ concatStringCurried('a')('b')('c'); // => 'cba'</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[Idx] -> {k: v} -> {k: v}
-  Idx = String | Int</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[Idx] -> {k: v} -> {k: v}</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Idx = String | Int</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -1298,9 +1332,22 @@ It's like <a href="RA.html#.spreadPath"><code>spreadPath</code></a>, but preserv
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[Idx] -> {k: v} -> {k: v}
-  Idx = String | Int</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[Idx] -> {k: v} -> {k: v}</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Idx = String | Int</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -1517,9 +1564,22 @@ It's like <a href="RA.html#.spreadProp"><code>spreadProp</code></a>, but preserv
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[Idx] -> {a} -> Boolean
-  Idx = String | Int</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[Idx] -> {a} -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Idx = String | Int</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -1728,8 +1788,13 @@ RA.hasPath([0], [1, 2]); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -1914,8 +1979,13 @@ RA.isArray({}); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -2106,8 +2176,13 @@ RA.isArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -2293,8 +2368,13 @@ RA.isAsyncFunction(() => {}); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -2479,8 +2559,13 @@ RA.isBoolean(null); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -2664,8 +2749,13 @@ RA.isDate('1997-07-16T19:20+01:00'); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -2856,8 +2946,13 @@ RA.isEven(3); // => false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -3050,8 +3145,13 @@ RA.isFinite(null); // => false
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -3247,8 +3347,13 @@ RA.isFloat([1]);       //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -3436,8 +3541,13 @@ RA.isFunction('abc'); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -3623,8 +3733,13 @@ RA.isGeneratorFunction(() => {}); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -3820,8 +3935,13 @@ RA.isInteger([1]);       //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -4021,8 +4141,13 @@ RA.isNaN(' '); // => false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -4209,8 +4334,13 @@ RA.isNegative('5'); // => false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -4399,8 +4529,13 @@ RA.isNilOrEmpty({length: 0}); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -4585,8 +4720,13 @@ RA.isNotArray({}); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -4773,8 +4913,13 @@ RA.isNotArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -4960,8 +5105,13 @@ RA.isNotAsyncFunction(() => {}); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -5146,8 +5296,13 @@ RA.isNotBoolean(null); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -5331,8 +5486,13 @@ RA.isNotDate('1997-07-16T19:20+01:00'); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -5521,8 +5681,13 @@ RA.isNotEmpty({length: 0}); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -5713,8 +5878,13 @@ RA.isNotFinite(null); // => true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -5910,8 +6080,13 @@ RA.isNotFloat([1]);       //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -6099,8 +6274,13 @@ RA.isNotFunction('abc'); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -6286,8 +6466,13 @@ RA.isNotGeneratorFunction(() => {}); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -6483,8 +6668,13 @@ RA.isNotInteger([1]);       //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -6682,8 +6872,13 @@ RA.isNotNaN(' '); // => true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -6869,8 +7064,13 @@ RA.isNotNil([]); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -7055,8 +7255,13 @@ RA.isNotNull(null); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -7242,8 +7447,13 @@ RA.isNotNumber('5'); // => true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -7435,8 +7645,13 @@ RA.isNotObj(undefined); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -7628,8 +7843,13 @@ RA.isNotObjLike(undefined); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -7817,8 +8037,13 @@ RA.isNotPair({foo: 0, bar: 0}); // => true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -8016,8 +8241,13 @@ RA.isNotPlainObj(new Object()); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -8201,8 +8431,13 @@ RA.isNotString(1); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -8387,8 +8622,13 @@ RA.isNotUndefined(null); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -8577,8 +8817,13 @@ RA.isNotValidDate(new Date('a')); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -8763,8 +9008,13 @@ RA.isNull(null); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -8951,8 +9201,13 @@ RA.isNumber('5'); // => false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -9144,8 +9399,13 @@ RA.isObj(undefined); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -9337,8 +9597,13 @@ RA.isObjLike(undefined); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -9525,8 +9790,13 @@ RA.isOdd(3); // => true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -9714,8 +9984,13 @@ RA.isPair({foo: 0, bar: 0}); // => false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -9913,8 +10188,13 @@ RA.isPlainObj(new Object()); //=> true</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -10101,8 +10381,13 @@ RA.isPositive('5'); // => false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -10286,8 +10571,13 @@ RA.isString(1); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -10472,8 +10762,13 @@ RA.isUndefined(null); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>* -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -10657,8 +10952,22 @@ RA.isValidDate(new Date('a')); //=> false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Lens s a -> b -> s -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Lens s a -> b -> s -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Lens s a = Functor f => (a -> f a) -> s -> f s</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -10893,9 +11202,22 @@ RA.lensEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => true</code><
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>(s -> a) -> (a -> s) -> Lens s a
-  Lens s a = Functor f => (a -> f a) -> s -> f s</code></pre></li></ul>
+        <ul>
+            
+              <li><code>(s -> a) -> (a -> s) -> Lens s a</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Lens s a = Functor f => (a -> f a) -> s -> f s</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -11109,8 +11431,22 @@ R.over(RA.lensIso.from(lensJSON), R.replace('}', ',"b":2}'), { a: 1 }); // => { 
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Lens s a -> b -> s -> Boolean</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Lens s a -> b -> s -> Boolean</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Lens s a = Functor f => (a -> f a) -> s -> f s</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -11345,8 +11681,22 @@ RA.lensNotEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => false</co
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Boolean b => (a -> b) -> Lens s a -> s -> b</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Boolean b => (a -> b) -> Lens s a -> s -> b</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Lens s a = Functor f => (a -> f a) -> s -> f s</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -11583,8 +11933,22 @@ RA.lensNotSatisfy(R.identity, R.lensProp('x'), { x: 1 }); // => true</code></pre
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Boolean b => (a -> b) -> Lens s a -> s -> b</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Boolean b => (a -> b) -> Lens s a -> s -> b</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Lens s a = Functor f => (a -> f a) -> s -> f s</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -11822,8 +12186,13 @@ RA.lensSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => false</code></pre
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Apply a => (a... -> a) -> (a... -> a)</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Apply a => (a... -> a) -> (a... -> a)</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -12022,8 +12391,13 @@ madd3(Maybe.Some(10), Maybe.Nothing(), Maybe.Some(17)); //=> Maybe.Nothing()</co
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Apply a => Number -> (a... -> a) -> (a... -> a)</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Apply a => Number -> (a... -> a) -> (a... -> a)</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -12245,8 +12619,13 @@ madd3(Maybe.Some(10), Maybe.Nothing(), Maybe.Some(17)); //=> Maybe.Nothing()</co
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>a... -> [a...]</code></pre></li></ul>
+        <ul>
+            
+              <li><code>a... -> [a...]</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -12445,8 +12824,13 @@ madd3(Maybe.Some(10), Maybe.Nothing(), Maybe.Some(17)); //=> Maybe.Nothing()</co
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[k] -> {a} -> {k: {a}} -> {k: {a}}</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[k] -> {a} -> {k: {a}} -> {k: {a}}</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -12685,8 +13069,13 @@ If a key exists in both objects, the value from the <code>source</code> object w
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[[k]] -> {k: {a}} -> {a}</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[[k]] -> {k: {a}} -> {a}</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -12902,8 +13291,13 @@ RA.mergePaths([['foo', 'fooInner'], ['bar']], obj); //=> { fooInner2: 1, barInne
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[k] -> {a} -> {k: {a}} -> {k: {a}}</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[k] -> {a} -> {k: {a}} -> {k: {a}}</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -13142,8 +13536,13 @@ If a key exists in both objects, the value from the <code>source</code> object w
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[k] -> {k: {a}} -> {a}</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[k] -> {k: {a}} -> {a}</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -13359,8 +13758,13 @@ RA.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }</code></pr
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>{k: v} -> {k: v} -> {k: v}</code></pre></li></ul>
+        <ul>
+            
+              <li><code>{k: v} -> {k: v} -> {k: v}</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -13575,8 +13979,13 @@ Putting it simply: it sets properties only if they don't exist.</p>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>... -> undefined</code></pre></li></ul>
+        <ul>
+            
+              <li><code>... -> undefined</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -13704,8 +14113,13 @@ RA.noop(1, 2, 3); //=> undefined</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[Int] -> [a] -> [a]</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[Int] -> [a] -> [a]</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -13915,8 +14329,13 @@ RA.noop(1, 2, 3); //=> undefined</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[[k]] -> {k: v} - [v]</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[[k]] -> {k: v} - [v]</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -14131,8 +14550,13 @@ RA.paths([['a', 'b', 'c'], ['x']], obj); //=> [1, 2]</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[Number] -> [a] -> [a]</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[Number] -> [a] -> [a]</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -14342,9 +14766,22 @@ RA.paths([['a', 'b', 'c'], ['x']], obj); //=> [1, 2]</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>((Promise a, MaybePromise b) => Promise a) => MaybePromise a => MaybePromise [MaybePromise b] => Promise a
-       MaybePromise = Promise.<*> | *</code></pre></li></ul>
+        <ul>
+            
+              <li><code>((Promise a, MaybePromise b) -> Promise a) -> MaybePromise a -> MaybePromise [MaybePromise b] -> Promise a</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>MaybePromise = Promise.<*> | *</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -14624,9 +15061,22 @@ RA.reduceP(
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>((MaybePromise b, Promise a) -> Promise a) -> MaybePromise a -> MaybePromise [MaybePromise b] -> Promise a
-       MaybePromise = Promise.<*> | *</code></pre></li></ul>
+        <ul>
+            
+              <li><code>((MaybePromise b, Promise a) -> Promise a) -> MaybePromise a -> MaybePromise [MaybePromise b] -> Promise a</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>MaybePromise = Promise.<*> | *</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -14901,8 +15351,13 @@ RA.reduceRightP(
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>a -> Promise a</code></pre></li></ul>
+        <ul>
+            
+              <li><code>a -> Promise a</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -15104,8 +15559,13 @@ RA.rejectP([1, 2, 3]); //=> Promise([1, 2, 3])</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>{a: b} -> {a: *} -> {b: *}</code></pre></li></ul>
+        <ul>
+            
+              <li><code>{a: b} -> {a: *} -> {b: *}</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -15322,8 +15782,13 @@ RA.renameKeys({ firstName: 'name', type: 'kind', foo: 'bar' })(input);
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>(a -> b) -> {a: *} -> {b: *}</code></pre></li></ul>
+        <ul>
+            
+              <li><code>(a -> b) -> {a: *} -> {b: *}</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -15536,8 +16001,13 @@ the result may vary between various JS engines!</p>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>a -> Promise a</code></pre></li></ul>
+        <ul>
+            
+              <li><code>a -> Promise a</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -15741,8 +16211,13 @@ RA.resolveP([1, 2, 3]); //=> Promise([1, 2, 3])</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Number -> [a] -> [a]</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Number -> [a] -> [a]</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -15960,8 +16435,13 @@ Dispatches to the slice method of the second argument, if present.</p>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Number -> [a] -> [a]</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Number -> [a] -> [a]</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -16179,9 +16659,22 @@ Dispatches to the slice method of the second argument, if present.</p>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>[Idx] -> {k: v} -> {k: v}
-  Idx = String | Int</code></pre></li></ul>
+        <ul>
+            
+              <li><code>[Idx] -> {k: v} -> {k: v}</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Idx = String | Int</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -16395,9 +16888,22 @@ It's like <a href="RA.html#.flattenPath"><code>flattenPath</code></a>, but remov
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>Idx -> {k: v} -> {k: v}
-  Idx = String | Int</code></pre></li></ul>
+        <ul>
+            
+              <li><code>Idx -> {k: v} -> {k: v}</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Idx = String | Int</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -16611,8 +17117,13 @@ It's like <a href="RA.html#.flattenProp"><code>flattenProp</code></a>, but remov
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>... -> null</code></pre></li></ul>
+        <ul>
+            
+              <li><code>... -> null</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -16740,8 +17251,13 @@ RA.stubNull(1, 2, 3); //=> null</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>... -> undefined</code></pre></li></ul>
+        <ul>
+            
+              <li><code>... -> undefined</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -16869,8 +17385,22 @@ RA.stubUndefined(1, 2, 3); //=> undefined</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>a -> Lens s b → s → b | a</code></pre></li></ul>
+        <ul>
+            
+              <li><code>a -> Lens s b -> s -> b | a</code></li>
+            
+        </ul>
     </dd>
+    
+        <dt class="tag-sig hidden">Signature:</dt>
+        <dd class="tag-sig">
+            <ul>
+                
+                  <li><code>Lens s b = Functor f => (b -> f b) -> s -> f s</code></li>
+                
+            </ul>
+        </dd>
+    
     
 
     
@@ -17108,8 +17638,13 @@ RA.viewOr('some', R.lensProp('y'), { y: false }); // => false</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>(*... -> *) -> * -> (*... -> *)</code></pre></li></ul>
+        <ul>
+            
+              <li><code>(*... -> *) -> * -> (*... -> *)</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -17325,8 +17860,13 @@ wlog('test'); //=> prints 'test'</code></pre>
     
     <dt class="tag-sig">Signature:</dt>
     <dd class="tag-sig">
-        <ul><li><pre><code>(*... -> *) -> (* -> *) -> (*... -> *)</code></pre></li></ul>
+        <ul>
+            
+              <li><code>(*... -> *) -> (* -> *) -> (*... -> *)</code></li>
+            
+        </ul>
     </dd>
+    
     
 
     
@@ -17509,7 +18049,7 @@ wlog('test'); //=> prints 'test'</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Nov 11 2017 09:10:12 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Nov 12 2017 12:56:51 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
