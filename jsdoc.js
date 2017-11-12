@@ -7,7 +7,22 @@ exports.defineTags = (dictionary) => {
     canHaveType: false,
     canHaveName: false,
     onTagged(doclet, tag) {
-      doclet.sig = tag.value;
+      if (!Array.isArray(doclet.sig)) {
+        doclet.sig = [];
+      }
+      doclet.sig.push(tag.value);
+    },
+  });
+
+  dictionary.defineTag('typedef', {
+    mustHaveValue: true,
+    canHaveType: false,
+    canHaveName: false,
+    onTagged(doclet, tag) {
+      if (!Array.isArray(doclet.typedef)) {
+        doclet.typedef = [];
+      }
+      doclet.typedef.push(tag.value);
     },
   });
 

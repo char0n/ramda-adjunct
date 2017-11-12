@@ -25,11 +25,8 @@ import resolveP from './resolveP';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|v1.13.0}
  * @category List
- * @sig
- *
- *   ((Promise a, MaybePromise b) => Promise a) => MaybePromise a => MaybePromise [MaybePromise b] => Promise a
- *        MaybePromise = Promise.<*> | *
- *
+ * @typedef MaybePromise = Promise.<*> | *
+ * @sig ((Promise a, MaybePromise b) -> Promise a) -> MaybePromise a -> MaybePromise [MaybePromise b] -> Promise a
  * @param {Function} fn The iterator function. Receives two values, the accumulator and the current element from the list
  * @param {*|Promise.<*>} acc The accumulator value
  * @param {Array.<*>|Promise.<Array<*|Promise.<*>>>} list The list to iterate over

@@ -10,7 +10,8 @@ import { view, defaultTo, curryN } from 'ramda';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
  * @category Object
- * @sig a -> Lens s b → s → b | a
+ * @typedef Lens s b = Functor f => (b -> f b) -> s -> f s
+ * @sig a -> Lens s b -> s -> b | a
  * @see {@link http://ramdajs.com/docs/#view|view}
  * @param {*} defaultValue The default value
  * @param {Function} lens Van Laarhoven lens

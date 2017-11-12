@@ -10,6 +10,7 @@ import lensEq from './lensEq';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
  * @category Relation
+ * @typedef Lens s a = Functor f => (a -> f a) -> s -> f s
  * @sig Lens s a -> b -> s -> Boolean
  * @see {@link RA.lensEq|lensEq}
  * @param {function} lens Van Laarhoven lens

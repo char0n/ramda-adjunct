@@ -10,9 +10,8 @@ import spreadPath from './spreadPath';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|v1.19.0}
  * @category Object
- * @sig
- *   Idx -> {k: v} -> {k: v}
- *   Idx = String | Int
+ * @typedef Idx = String | Int
+ * @sig Idx -> {k: v} -> {k: v}
  * @param {!string|number} prop The property to spread
  * @param {!Object} obj The provided object
  * @return {!Object} The result of the spread

@@ -9,11 +9,8 @@ import isObj from './isObj';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
  * @category Object
- * @sig
- *
- *   [Idx] -> {a} -> Boolean
- *   Idx = String | Int
- *
+ * @typedef Idx = String | Int
+ * @sig [Idx] -> {a} -> Boolean
  * @param {Array.<string|number>} path The path of the nested property
  * @param {Object} obj The object to test
  * @return {Boolean}

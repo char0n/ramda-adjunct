@@ -12,11 +12,8 @@ import { concat, flip } from 'ramda';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.11.0|v1.11.0}
  * @category List
- * @sig
- *
- *   [a] → [a] → [a]
- *   String → String → String
- *
+ * @sig [a] -> [a] -> [a]
+ * @sig String -> String -> String
  * @param {Array|String} firstList The first list
  * @param {Array|String} secondList The second list
  * @return {Array|String} A list consisting of the elements of `secondList`

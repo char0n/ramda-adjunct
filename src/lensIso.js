@@ -35,9 +35,8 @@ const from = curry((isomorphism, x) => isomorphism.from(x));
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|1.19.0}
  * @category Relation
- * @sig
- *   (s -> a) -> (a -> s) -> Lens s a
- *   Lens s a = Functor f => (a -> f a) -> s -> f s
+ * @typedef Lens s a = Functor f => (a -> f a) -> s -> f s
+ * @sig (s -> a) -> (a -> s) -> Lens s a
  * @param {!function} to The function that converts
  * @param {!function} from The function that recovers
  * @return {!function} The isomorphic lens
