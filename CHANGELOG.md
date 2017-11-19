@@ -1,3 +1,27 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/char0n/ramda-adjunct/compare/v1.19.0...v2.0.0) (2017-11-19)
+
+
+### Features
+
+* add support for tree shaking ([baa62ea](https://github.com/char0n/ramda-adjunct/commit/baa62ea)), closes [#75](https://github.com/char0n/ramda-adjunct/issues/75)
+* add search to documentation & improve the UI ([2ae5850](https://github.com/char0n/ramda-adjunct/commit/2ae5850)), closes [#24](https://github.com/char0n/ramda-adjunct/issues/24)
+
+
+### BREAKING CHANGES
+
+* Tree shaking support and imports
+
+Before:
+
+import RA from 'ramda-adjunct'
+
+After:
+
+import * RA from 'ramda-adjunct'
+
+
+
 <a name="1.19.0"></a>
 # [1.19.0](https://github.com/char0n/ramda-adjunct/compare/v1.18.0...v1.19.0) (2017-10-31)
 
