@@ -10,8 +10,8 @@
 [![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](https://www.linkedin.com/pulse/ramda-adjunct-vladim%C3%ADr-gorej)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/char0n/ramda-adjunct/issues)
 [![try on RunKit](https://img.shields.io/badge/try%20on-RunKit-brightgreen.svg?style=flat)](https://npm.runkit.com/ramda-adjunct)
-[![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct?ref=badge_shield)
+[![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Ramda Adjunct
 
@@ -232,5 +232,5 @@ gets imported into Typescript project, typings are automatically imported and us
  - [Lorenzo Giuliani](https://github.com/aliem)
 
 
-## License
+### License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct?ref=badge_large)
