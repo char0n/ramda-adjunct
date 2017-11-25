@@ -1,7 +1,7 @@
 import { always } from 'ramda';
 
 /**
- * A function that returns new empty string.
+ * A function that returns empty string.
  *
  * @func stubString
  * @memberOf RA

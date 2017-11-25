@@ -285,7 +285,7 @@ declare namespace RamdaAdjunct {
         stubNull():  null;
 
         /**
-         * A function that returns new empty string.
+         * A function that returns empty string.
          */
         stubString(): '';
 

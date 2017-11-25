@@ -8,4 +8,12 @@ describe('stubString', function() {
     eq(RA.stubString(new Array()), '');
     eq(RA.stubString(1, 2, 3), '');
   });
+
+  context('when called', function() {
+    specify('should always return empty string', function() {
+      const ret1 = RA.stubString();
+      const ret2 = RA.stubString();
+      eq(ret1, ret2);
+    });
+  });
 });
