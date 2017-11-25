@@ -285,6 +285,11 @@ declare namespace RamdaAdjunct {
         stubNull():  null;
 
         /**
+         * A function that returns new empty object; different reference for every call.
+         */
+        stubObj():  {};
+
+        /**
          * A function that performs no operations.
          */
         noop(): undefined;
