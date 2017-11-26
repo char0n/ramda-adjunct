@@ -290,6 +290,11 @@ declare namespace RamdaAdjunct {
         stubObj():  {};
 
         /**
+         * A function that returns empty string.
+         */
+        stubString(): '';
+
+        /**
          * A function that performs no operations.
          */
         noop(): undefined;
