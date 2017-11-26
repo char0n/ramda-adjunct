@@ -12,7 +12,7 @@ describe('stubArray', function() {
   });
 
   context('when called', function() {
-    specify('should always return new empty object', function() {
+    specify('should always return new empty array', function() {
       const ret1 = RA.stubArray();
       const ret2 = RA.stubArray();
       assert.notStrictEqual(ret1, ret2);
