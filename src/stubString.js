@@ -7,8 +7,8 @@ import { always } from 'ramda';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.1.0|v2.1.0}
  * @category Function
- * @sig ... -> ''
- * @return {''}
+ * @sig ... -> String
+ * @return {string} The empty string
  * @example
  *
  * RA.stubString(); //=> ''
