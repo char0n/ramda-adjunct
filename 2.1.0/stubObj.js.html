@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotFloat.js - Documentation</title>
+    <title>stubObj.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotFloat.js</h1>
+    <h1 class="page-title">stubObj.js</h1>
     
 
     
@@ -52,41 +52,25 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isFloat from './isFloat';
-
-/**
- * Checks whether the passed value is complement of a `float`.
+            <pre class="prettyprint source linenums"><code>/**
+ * This function returns a new empty object.
  *
- * @func isNotFloat
+ * @func stubObj
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isFloat|isFloat}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.1.0|v2.1.0}
+ * @category Function
+ * @sig ... -> Object
+ * @aliases stubObject
+ * @return {Object} Returns the new empty object.
  * @example
  *
- * RA.isNotFloat(0); //=> true
- * RA.isNotFloat(1); //=> true
- * RA.isNotFloat(-100000); //=> true
- *
- * RA.isNotFloat(0.1);       //=> false
- * RA.isNotFloat(Math.PI);   //=> false
- *
- * RA.isNotFloat(NaN);       //=> true
- * RA.isNotFloat(Infinity);  //=> true
- * RA.isNotFloat(-Infinity); //=> true
- * RA.isNotFloat('10');      //=> true
- * RA.isNotFloat(true);      //=> true
- * RA.isNotFloat(false);     //=> true
- * RA.isNotFloat([1]);       //=> true
+ * RA.stubObj(); //=> {}
+ * RA.stubObj(1, 2, 3); //=> {}
  */
-const isNotFloat = complement(isFloat);
 
-export default isNotFloat;
+const stubObj = () => ({});
+
+export default stubObj;
 </code></pre>
         </article>
     </section>
