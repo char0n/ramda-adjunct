@@ -18,7 +18,7 @@ import RA from 'ramda-adjunct'
 
 After:
 
-import * RA from 'ramda-adjunct'
+import * as RA from 'ramda-adjunct'
 
 
 

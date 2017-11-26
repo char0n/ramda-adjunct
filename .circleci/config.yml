@@ -12,6 +12,12 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run nsp:check
+      - run:
+          command: |
+            ./node_modules/.bin/license-cli auth ccf8289006445461c967cb7874f84a8a
+#            ./node_modules/.bin/license-cli scan -r $CIRCLE_SHA1
+          no_output_timeout: '45m'
+          name: 'Check FOSSA Build/Scan'
       - run: npm run build
       - store_artifacts:
           path: ./dist
