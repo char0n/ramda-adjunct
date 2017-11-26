@@ -60,6 +60,8 @@ export { default as isNotPair } from './isNotPair';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
+export { default as stubObj } from './stubObj';
+export { default as stubObject } from './stubObj';
 export { default as stubString } from './stubString';
 export { default as noop } from './noop';
 export { default as liftFN } from './liftFN';
