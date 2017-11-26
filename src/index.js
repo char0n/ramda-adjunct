@@ -61,6 +61,7 @@ export { default as isNotPair } from './isNotPair';
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
 export { default as stubObj } from './stubObj';
+export { default as stubObject } from './stubObj';
 export { default as noop } from './noop';
 export { default as liftFN } from './liftFN';
 export { default as liftF } from './liftF';

@@ -1,6 +1,7 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('stubNull', function() {
   it('tests `function` that returns `null`', function() {
     eq(RA.stubNull(), null);
