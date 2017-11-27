@@ -287,7 +287,7 @@ declare namespace RamdaAdjunct {
         /**
          * A function that returns new empty array on every call.
          */
-        stubArray():  {};
+        stubArray():  [];
 
         /**
          * This function returns a new empty object.
