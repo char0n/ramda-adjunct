@@ -15,7 +15,7 @@ jobs:
       - run:
           command: |
             ./node_modules/.bin/license-cli auth ccf8289006445461c967cb7874f84a8a
-#            ./node_modules/.bin/license-cli scan -r $CIRCLE_SHA1
+            ./node_modules/.bin/license-cli scan -r $CIRCLE_SHA1
           no_output_timeout: '45m'
           name: 'Check FOSSA Build/Scan'
       - run: npm run build
