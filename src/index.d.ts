@@ -131,7 +131,7 @@ declare namespace RamdaAdjunct {
          * Checks if input value is language type of `Object`.
          */
         isObj(val: any): val is Object | Function;
-        isObject(val: any): val is Object | Function;
+        isObject(val: any): val is Object | Function; // alias
 
         /**
          * Checks if input value is complement of language type of `Object`.
@@ -293,6 +293,7 @@ declare namespace RamdaAdjunct {
          * This function returns a new empty object.
          */
         stubObj():  {};
+        stubObject(): {}; // alias
 
         /**
          * A function that returns empty string.
