@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotPlainObj.js - Documentation</title>
+    <title>isThenable.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotPlainObj.js</h1>
+    <h1 class="page-title">isThenable.js</h1>
     
 
     
@@ -52,41 +52,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { pathSatisfies } from 'ramda';
 
-import isPlainObj from './isPlainObj';
+import isFunction from './isFunction';
 
-/* eslint-disable max-len */
+
 /**
- * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`).
+ * Checks if input value is a `thenable`.
+ * `thenable` is an object or function that defines a `then` method.
  *
- * @func isNotPlainObj
- * @aliases isNotPlainObject
+ * @func isThenable
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.1.0|v2.1.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isPlainObj|isPlainObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isObj|isObj}
  * @example
  *
- * class Bar {
- *   constructor() {
- *     this.prop = 'value';
- *   }
- * }
- *
- * RA.isNotPlainObj(new Bar()); //=> true
- * RA.isNotPlainObj({ prop: 'value' }); //=> false
- * RA.isNotPlainObj(['a', 'b', 'c']); //=> true
- * RA.isNotPlainObj(Object.create(null); //=> false
- * RA.isNotPlainObj(new Object()); //=> false
+ * RA.isThenable(null); // => false
+ * RA.isThenable(undefined); // => false
+ * RA.isThenable([]); // => false
+ * RA.isThenable(Promise.resolve()); // => true
+ * RA.isThenable(Promise.reject()); // => true
+ * RA.isThenable({ then: () => 1 }); // => true
  */
-/* eslint-enable max-len */
-const isNotPlainObj = complement(isPlainObj);
+const isThenable = pathSatisfies(isFunction, ['then']);
 
-export default isNotPlainObj;
+export default isThenable;
 </code></pre>
         </article>
     </section>
