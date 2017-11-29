@@ -613,6 +613,12 @@ declare namespace RamdaAdjunct {
         omitIndexes<T>(indexes: number[], list: Array<T>): Array<T>;
         omitIndexes(indexes: number[]): <T>(list: Array<T>) => Array<T>;
 
+        /**
+         * Checks if input value is a `thenable`.
+         * `thenable` is an object or function that defines a `then` method.
+         */
+        isThenable(val: any): boolean;
+
          /**
          * Identity type.
          */

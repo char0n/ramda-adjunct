@@ -20,8 +20,8 @@ import isArray from './isArray';
  * RA.isPair([0]); // => false
  * RA.isPair([0, 1]); // => true
  * RA.isPair([0, 1, 2]); // => false
- * RA.isPair({0: 0, 1: 1}); // => false
- * RA.isPair({foo: 0, bar: 0}); // => false
+ * RA.isPair({ 0: 0, 1: 1 }); // => false
+ * RA.isPair({ foo: 0, bar: 0 }); // => false
  */
 const isPair = both(isArray, pipe(length, equals(2)));
 
