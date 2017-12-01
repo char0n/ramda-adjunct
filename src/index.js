@@ -58,6 +58,7 @@ export { default as isEven } from './isEven';
 export { default as isPair } from './isPair';
 export { default as isNotPair } from './isNotPair';
 export { default as isThenable } from './isThenable';
+export { default as isPromise } from './isPromise';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
