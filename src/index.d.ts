@@ -619,6 +619,13 @@ declare namespace RamdaAdjunct {
          */
         isThenable(val: any): boolean;
 
+        /**
+         * Checks if input value is a native `Promise`.
+         * The Promise object represents the eventual completion (or failure)
+         * of an asynchronous operation, and its resulting value.
+         */
+        isPromise(val: any): val is Promise<any>;
+
          /**
          * Identity type.
          */
