@@ -14,7 +14,7 @@ import isFunction from './isFunction';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {RA.isPromise|isPromise}
+ * @see {@link RA.isPromise|isPromise}
  * @example
  *
  * RA.isThenable(null); // => false
