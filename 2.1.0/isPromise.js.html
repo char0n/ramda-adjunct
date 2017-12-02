@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotInteger.js - Documentation</title>
+    <title>isPromise.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotInteger.js</h1>
+    <h1 class="page-title">isPromise.js</h1>
     
 
     
@@ -52,43 +52,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { both, pipe, toString, equals } from 'ramda';
 
-import isInteger from './isInteger';
+import isObj from './isObj';
 
 
 /**
- * Checks whether the passed value is complement of an `integer`.
+ * Checks if input value is a native `Promise`.
+ * The Promise object represents the eventual completion (or failure)
+ * of an asynchronous operation, and its resulting value.
  *
- *
- * @func isNotInteger
+ * @func isPromise
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.1.0|v2.1.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isInteger|isInteger}
+ * @see {@link https://promisesaplus.com/|Promises/A+}, {@link RA.isThenable|isThenable}
  * @example
  *
- * RA.isNotInteger(0); //=> false
- * RA.isNotInteger(1); //=> false
- * RA.isNotInteger(-100000); //=> false
- *
- * RA.isNotInteger(0.1);       //=> true
- * RA.isNotInteger(Math.PI);   //=> true
- *
- * RA.isNotInteger(NaN);       //=> true
- * RA.isNotInteger(Infinity);  //=> true
- * RA.isNotInteger(-Infinity); //=> true
- * RA.isNotInteger('10');      //=> true
- * RA.isNotInteger(true);      //=> true
- * RA.isNotInteger(false);     //=> true
- * RA.isNotInteger([1]);       //=> true
+ * RA.isPromise(null); // => false
+ * RA.isPromise(undefined); // => false
+ * RA.isPromise([]); // => false
+ * RA.isPromise(Promise.resolve()); // => true
+ * RA.isPromise(Promise.reject()); // => true
+ * RA.isPromise({ then: () => 1 }); // => false
  */
-const isNotInteger = complement(isInteger);
+const isPromise = both(isObj, pipe(toString, equals('[object Promise]')));
 
-export default isNotInteger;
+export default isPromise;
 </code></pre>
         </article>
     </section>
