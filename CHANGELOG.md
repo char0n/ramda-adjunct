@@ -1,3 +1,17 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/char0n/ramda-adjunct/compare/v2.0.0...v2.1.0) (2017-12-04)
+
+
+### Features
+
+* add stubArray ([44e9760](https://github.com/char0n/ramda-adjunct/commit/44e9760))
+* add stubObj ([2fce473](https://github.com/char0n/ramda-adjunct/commit/2fce473))
+* add stubString ([7dc4f39](https://github.com/char0n/ramda-adjunct/commit/7dc4f39))
+* add isThenable ([b9f6e0d](https://github.com/char0n/ramda-adjunct/commit/b9f6e0d))
+* add isPromise ([f00e93f](https://github.com/char0n/ramda-adjunct/commit/f00e93f))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/char0n/ramda-adjunct/compare/v1.19.0...v2.0.0) (2017-11-19)
 
