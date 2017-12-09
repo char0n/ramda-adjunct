@@ -626,6 +626,13 @@ declare namespace RamdaAdjunct {
          */
         isPromise(val: any): val is Promise<any>;
 
+        /**
+         * In JavaScript, a `truthy` value is a value that is considered true
+         * when evaluated in a Boolean context. All values are truthy unless
+         * they are defined as falsy (i.e., except for `false`, `0`, `""`, `null`, `undefined`, and `NaN`).
+         */
+        isTruthy(val: any): boolean;
+
          /**
          * Identity type.
          */

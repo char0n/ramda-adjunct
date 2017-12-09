@@ -1,2 +1,2 @@
-export default typeof Symbol === 'function' ? Symbol : undefined;
+export default (typeof Symbol === 'function') ? Symbol : undefined;
 
