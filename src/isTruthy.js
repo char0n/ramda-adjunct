@@ -13,7 +13,7 @@ import { pipe, equals } from 'ramda';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFalsy|isFalsy}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Glossary/Truthy|truthy}, {@link RA.isFalsy|isFalsy}
  * @example
  *
  * RA.isTruthy({}); // => true
