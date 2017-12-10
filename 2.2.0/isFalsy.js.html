@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lensNotEq.js - Documentation</title>
+    <title>isFalsy.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">lensNotEq.js</h1>
+    <h1 class="page-title">isFalsy.js</h1>
     
 
     
@@ -54,34 +54,33 @@
         <article>
             <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
 
-import lensEq from './lensEq';
+import isTruthy from './isTruthy';
 
 
 /**
- * Returns `true` if data structure focused by the given lens doesn't equal provided value.
+ * A falsy value is a value that translates to false when evaluated in a Boolean context.
+ * Falsy values are `false`, `0`, `""`, `null`, `undefined`, and `NaN`.
  *
- * @func lensNotEq
+ * @func isFalsy
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
- * @category Relation
- * @typedef Lens s a = Functor f => (a -> f a) -> s -> f s
- * @sig Lens s a -> b -> s -> Boolean
- * @see {@link RA.lensEq|lensEq}
- * @param {function} lens Van Laarhoven lens
- * @param {*} value The value to compare the focused data structure with
- * @param {*} data The data structure
- * @return {Boolean} `false` if the focused data structure equals value, `true` otherwise
- *
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2..0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Glossary/Falsy|falsy}, {@link RA.isTruthy|isTruthy}
  * @example
  *
- * RA.lensNotEq(R.lensIndex(0), 1, [0, 1, 2]); // => true
- * RA.lensNotEq(R.lensIndex(1), 1, [0, 1, 2]); // => false
- * RA.lensNotEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => false
+ * RA.isFalsy(false); // => true
+ * RA.isFalsy(0); // => true
+ * RA.isFalsy(''); // => true
+ * RA.isFalsy(null); // => true
+ * RA.isFalsy(undefined); // => true
+ * RA.isFalsy(NaN); // => true
  */
-const lensNotEq = complement(lensEq);
+const isFalsy = complement(isTruthy);
 
-
-export default lensNotEq;
+export default isFalsy;
 </code></pre>
         </article>
     </section>
