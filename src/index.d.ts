@@ -639,6 +639,14 @@ declare namespace RamdaAdjunct {
          */
         isFalsy(val: any): boolean;
 
+        /**
+         * Returns the second argument if predicate function returns `true`,
+         * otherwise the third argument is returned.
+         */
+        defaultWhen<DefVal, Val>(predicate: Function, defaultVal: DefVal, val: Val): DefVal | Val;
+        defaultWhen<DefVal, Val>(predicate: Function, defaultVal: DefVal): (val: Val) => DefVal | Val;
+        defaultWhen(predicate: Function): <DefVal, Val>(defaultVal: DefVal) => (val: Val) => DefVal | Val;
+
          /**
          * Identity type.
          */
