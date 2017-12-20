@@ -4,7 +4,7 @@ import isValidNumber from './isValidNumber';
 /* eslint-disable max-len */
 /**
  * Checks if value is not a valid `Number` object or is `NaN`,
- * `Number.POSITIVE_INFINITY` or `Number.NEGATIVE_INFINITY`.
+ * `POSITIVE_INFINITY` or `NEGATIVE_INFINITY`.
  *
  * @func isNotValidNumber
  * @memberOf RA

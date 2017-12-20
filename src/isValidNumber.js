@@ -6,7 +6,7 @@ import isInteger from './isInteger';
 /* eslint-disable max-len */
 /**
  * Checks if value is valid `Number` object and not `NaN`,
- * `Number.POSITIVE_INFINITY` or `Number.NEGATIVE_INFINITY`.
+ * `INFINITY` or `-INFINITY`.
  *
  * @func isValidNumber
  * @memberOf RA
