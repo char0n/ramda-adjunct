@@ -11,6 +11,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/char0n/ramda-adjunct/issues)
 [![try on RunKit](https://img.shields.io/badge/try%20on-RunKit-brightgreen.svg?style=flat)](https://npm.runkit.com/ramda-adjunct)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct?ref=badge_shield)
+[![Open Collective](https://opencollective.com/ramda-adjunct/tiers/backer/badge.svg?label=backer&color=brightgreen)](https://opencollective.com/ramda-adjunct)
 [![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Ramda Adjunct
@@ -20,9 +21,9 @@ This library is a community maintained extension of Ramda.
 ## Support us
 
 Although we love working on ramda-adjunct, we must invest our free time to make this library great.
-Support this project's evolution via [gratipay](https://gratipay.com/ramda-adjunct/).
+Support this project's evolution via [Open Collective](https://opencollective.com/ramda-adjunct).
 
-[![Support via Gratipay](https://cdn.rawgit.com/gratipay/gratipay-badge/2.3.0/dist/gratipay.png)](https://gratipay.com/ramda-adjunct/)
+[![Support via Open Collective](https://opencollective.com/ramda-adjunct/tiers/backer.svg?avatarHeight=36)](https://opencollective.com/ramda-adjunct/donate)
 
 ## Motivation
 
