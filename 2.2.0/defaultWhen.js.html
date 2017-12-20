@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNaN.js - Documentation</title>
+    <title>defaultWhen.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNaN.js</h1>
+    <h1 class="page-title">defaultWhen.js</h1>
     
 
     
@@ -52,43 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry } from 'ramda';
 
-import _isNaN from './isNaN';
 
 /**
- * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
+ * Returns the second argument if predicate function returns `true`,
+ * otherwise the third argument is returned.
  *
- * @func isNotNaN
+ * @func defaultWhen
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNaN|isNaN}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2.0}
+ * @category Logic
+ * @sig  (a -> Boolean) -> b -> a -> a | b
+ * @param {!function} predicate The predicate function
+ * @param {*} defaultVal The default value
+ * @param {*} val `val` will be returned instead of `defaultVal` if predicate returns false
+ * @return {*} The `val` if predicate returns `false`, otherwise the default value
+ * @see {@link http://ramdajs.com/docs/#defaultTo|defaultTo}
  * @example
  *
- * RA.isNotNaN(NaN); // => false
- * RA.isNotNaN(Number.NaN); // => false
- * RA.isNotNaN(0 / 0); // => false
- *
- * RA.isNotNaN('NaN'); // => true
- * RA.isNotNaN(undefined); // => true
- * RA.isNotNaN({}); // => true
- * RA.isNotNaN('blabla'); // => true
- *
- * RA.isNotNaN(true); // => true
- * RA.isNotNaN(null); // => true
- * RA.isNotNaN(37); // => true
- * RA.isNotNaN('37'); // => true
- * RA.isNotNaN('37.37'); // => true
- * RA.isNotNaN(''); // => true
- * RA.isNotNaN(' '); // => true
+ * RA.defaultWhen(RA.isNull, 1, null); // => 1
+ * RA.defaultWhen(RA.isNull, 1, 2); // => 2
  */
-const isNotNaN = complement(_isNaN);
+const defaultWhen = curry((predicate, defaultVal, val) => (predicate(val) ? defaultVal : val));
 
-export default isNotNaN;
+export default defaultWhen;
 </code></pre>
         </article>
     </section>
