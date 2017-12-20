@@ -1,12 +1,12 @@
-import * as RA from "../src/index";
-import MAX_SAFE_INTEGER from "../src/internal/polyfills/Number.MAX_SAFE_INTEGER";
-import MIN_SAFE_INTEGER from "../src/internal/polyfills/Number.MIN_SAFE_INTEGER";
-import eq from "./shared/eq";
-import args from "./shared/arguments";
-import Symbol from "./shared/Symbol";
+import * as RA from '../src/index';
+import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
+import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
+import eq from './shared/eq';
+import args from './shared/arguments';
+import Symbol from './shared/Symbol';
 
-describe("isNotValidNumber", function() {
-  it("tests a value for complement of valid `Number`", function() {
+describe('isNotValidNumber', function() {
+  it('tests a value for complement of valid `Number`', function() {
     eq(RA.isNotValidNumber(0), false);
     eq(RA.isNotValidNumber(0.1), false);
     eq(RA.isNotValidNumber(-0.1), false);
@@ -29,13 +29,19 @@ describe("isNotValidNumber", function() {
     eq(RA.isNotValidNumber(Array.prototype.slice), true);
     eq(RA.isNotValidNumber({ a: 1 }), true);
     eq(RA.isNotValidNumber(/x/), true);
-    eq(RA.isNotValidNumber(Object("a")), true);
+    eq(RA.isNotValidNumber(Object('a')), true);
 
-    if (Symbol !== "undefined") {
+    if (Symbol !== 'undefined') {
       eq(RA.isNotValidNumber(Symbol), true);
     }
 
     eq(RA.isNotValidNumber(null), true);
     eq(RA.isNotValidNumber(undefined), true);
+  });
+});
+
+describe('isInvalidNumber', function() {
+  it('tests an alias', function() {
+    eq(RA.isNotValidNumber === RA.isInvalidNumber, true);
   });
 });
