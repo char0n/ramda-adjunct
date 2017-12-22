@@ -250,6 +250,18 @@ declare namespace RamdaAdjunct {
         isNotFloat(val: any): boolean;
 
         /**
+        * Checks if value is a valid `Number`. A valid `Number` is a number that is not `NaN`,
+        * `Infinity` or `-Infinity`.
+        */
+        isValidNumber(val: any): boolean;
+
+        /**
+        * Checks if value is not a valid `Number`. A valid `Number` is a number that is not `NaN`,
+        * `Infinity` or `-Infinity`.
+        */
+        isNotValidNumber(val: any): boolean;
+
+        /**
          * Checks if value is odd integer number.
          * An odd number is an integer which is not a multiple DIVISIBLE of two.
          */
