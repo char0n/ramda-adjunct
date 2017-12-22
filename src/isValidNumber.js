@@ -3,24 +3,26 @@ import { either } from 'ramda';
 import isFloat from './isFloat';
 import isInteger from './isInteger';
 
-/* eslint-disable max-len */
 /**
- * Checks if value is valid `Number` object and not `NaN`,
- * `INFINITY` or `-INFINITY`.
+ * Checks if value is a valid `Number`. A valid `Number` is a number that is not `NaN`, `Infinity`
+ * or `-Infinity`.
  *
  * @func isValidNumber
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/X.X.X|vX.X.X}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
+ * @see {@link RA.isNotValidNumber|isNotValidNumber}
  * @example
  *
  * RA.isValidNumber(1); //=> true
  * RA.isValidNumber(''); //=> false
+ * RA.isValidNumber(NaN); //=> false
+ * RA.isValidNumber(Infinity); //=> false
+ * RA.isValidNumber(-Infinity); //=> false
  */
-/* eslint-enable max-len */
 const isValidNumber = either(isInteger, isFloat);
 
 export default isValidNumber;

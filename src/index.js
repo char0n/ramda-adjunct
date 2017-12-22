@@ -55,7 +55,6 @@ export { default as isFloat } from './isFloat';
 export { default as isNotFloat } from './isNotFloat';
 export { default as isValidNumber } from './isValidNumber';
 export { default as isNotValidNumber } from './isNotValidNumber';
-export { default as isInvalidNumber } from './isNotValidNumber'; // alias of isNotValidNumber
 export { default as isOdd } from './isOdd';
 export { default as isEven } from './isEven';
 export { default as isPair } from './isPair';

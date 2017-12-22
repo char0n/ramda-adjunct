@@ -39,9 +39,3 @@ describe('isNotValidNumber', function() {
     eq(RA.isNotValidNumber(undefined), true);
   });
 });
-
-describe('isInvalidNumber', function() {
-  it('tests an alias', function() {
-    eq(RA.isNotValidNumber === RA.isInvalidNumber, true);
-  });
-});

@@ -1,24 +1,27 @@
 import { complement } from 'ramda';
+
 import isValidNumber from './isValidNumber';
 
-/* eslint-disable max-len */
 /**
- * Checks if value is not a valid `Number` object or is `NaN`,
- * `POSITIVE_INFINITY` or `NEGATIVE_INFINITY`.
+ * Checks if value is not a valid `Number`. A valid `Number` is a number that is not `NaN`,
+ * `Infinity` or `-Infinity`.
  *
  * @func isNotValidNumber
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/X.X.X|vX.X.X}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
+ * @see {@link RA.isValidNumber|isValidNumber}
  * @example
  *
  * RA.isNotValidNumber(1); //=> false
  * RA.isNotValidNumber(''); //=> true
+ * RA.isNotValidNumber(NaN); //=> true
+ * RA.isNotValidNumber(Infinity); //=> true
+ * RA.isNotValidNumber(-Infinity); //=> true
  */
-/* eslint-enable max-len */
 const isNotValidNumber = complement(isValidNumber);
 
 export default isNotValidNumber;
