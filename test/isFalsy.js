@@ -8,6 +8,7 @@ describe('isFalsy', function() {
   it('tests a value for `falsy`', function() {
     eq(RA.isFalsy(false), true);
     eq(RA.isFalsy(0), true);
+    eq(RA.isFalsy(-0), true);
     eq(RA.isFalsy(''), true);
     eq(RA.isFalsy(null), true);
     eq(RA.isFalsy(undefined), true);

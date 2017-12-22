@@ -24,6 +24,7 @@ describe('isTruthy', function() {
 
     eq(RA.isTruthy(false), false);
     eq(RA.isTruthy(0), false);
+    eq(RA.isTruthy(-0), false);
     eq(RA.isTruthy(''), false);
     eq(RA.isTruthy(null), false);
     eq(RA.isTruthy(undefined), false);
