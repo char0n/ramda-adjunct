@@ -9,7 +9,7 @@ jobs:
         ignore: gh-pages
     steps:
       - checkout
-      - run: npm install -g greenkeeper-lockfile
+      - run: sudo npm install -g greenkeeper-lockfile
       - run: greenkeeper-lockfile-update
       - run: npm install
       - run: npm run lint
@@ -60,7 +60,7 @@ jobs:
         ignore: gh-pages
     steps:
       - checkout
-      - run: npm install -g greenkeeper-lockfile
+      - run: sudo npm install -g greenkeeper-lockfile
       - run: greenkeeper-lockfile-update
       - run: npm install
       - run: npm run test
@@ -74,7 +74,7 @@ jobs:
         ignore: gh-pages
     steps:
       - checkout
-      - run: npm install -g greenkeeper-lockfile
+      - run: sudo npm install -g greenkeeper-lockfile
       - run: greenkeeper-lockfile-update
       - run: npm install
       - run: npm run test
@@ -89,7 +89,7 @@ jobs:
         only: master
     steps:
       - checkout
-      - run: npm install -g greenkeeper-lockfile
+      - run: sudo npm install -g greenkeeper-lockfile
       - run: greenkeeper-lockfile-update
       - run: npm install
       - run:
@@ -114,7 +114,7 @@ jobs:
         only: master
     steps:
       - checkout
-      - run: npm install -g greenkeeper-lockfile
+      - run: sudo npm install -g greenkeeper-lockfile
       - run: greenkeeper-lockfile-update
       - run: npm install
       - run: npm run build:umd
