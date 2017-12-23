@@ -58,6 +58,8 @@ jobs:
         ignore: gh-pages
     steps:
       - checkout
+      - run: npm install -g greenkeeper-lockfile
+      - run: greenkeeper-lockfile-update
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
@@ -70,9 +72,12 @@ jobs:
         ignore: gh-pages
     steps:
       - checkout
+      - run: npm install -g greenkeeper-lockfile
+      - run: greenkeeper-lockfile-update
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
+      - run: greenkeeper-lockfile-upload
 
   code_coverage:
     docker:
