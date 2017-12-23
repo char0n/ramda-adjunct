@@ -9,6 +9,8 @@ jobs:
         ignore: gh-pages
     steps:
       - checkout
+      - run: npm install -g greenkeeper-lockfile
+      - run: greenkeeper-lockfile-update
       - run: npm install
       - run: npm run lint
       - run: npm run nsp:check
@@ -87,6 +89,8 @@ jobs:
         only: master
     steps:
       - checkout
+      - run: npm install -g greenkeeper-lockfile
+      - run: greenkeeper-lockfile-update
       - run: npm install
       - run:
           name: Code coverage
@@ -110,6 +114,8 @@ jobs:
         only: master
     steps:
       - checkout
+      - run: npm install -g greenkeeper-lockfile
+      - run: greenkeeper-lockfile-update
       - run: npm install
       - run: npm run build:umd
       - run: npm run docs
