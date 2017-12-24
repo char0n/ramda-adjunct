@@ -131,9 +131,9 @@ workflows:
   version: 2
   build_test_docs:
     jobs:
-      - build
-        - requires:
-          - lockfile
+      - build:
+          requires:
+            - lockfile
       - test_node_6:
           requires:
             - build
