@@ -1,3 +1,16 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/char0n/ramda-adjunct/compare/v2.1.0...v2.2.0) (2017-12-24)
+
+
+### Features
+
+* add defaultWhen ([#245](https://github.com/char0n/ramda-adjunct/issues/245)) ([3606048](https://github.com/char0n/ramda-adjunct/commit/3606048)), closes [#216](https://github.com/char0n/ramda-adjunct/issues/216)
+* add isFalsy ([1612941](https://github.com/char0n/ramda-adjunct/commit/1612941)), closes [#66](https://github.com/char0n/ramda-adjunct/issues/66)
+* add isTruthy ([f09f72e](https://github.com/char0n/ramda-adjunct/commit/f09f72e)), closes [#66](https://github.com/char0n/ramda-adjunct/issues/66)
+* add isValidNumber, isNotValidNumber ([#247](https://github.com/char0n/ramda-adjunct/issues/247)) ([d94c1b5](https://github.com/char0n/ramda-adjunct/commit/d94c1b5)), closes [#235](https://github.com/char0n/ramda-adjunct/issues/235)
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/char0n/ramda-adjunct/compare/v2.0.0...v2.1.0) (2017-12-04)
 
