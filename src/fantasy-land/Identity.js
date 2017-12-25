@@ -122,7 +122,7 @@ class Identity {
    * const b = Identity.of(1);
    * const c = Identity.of(2);
    *
-   * a.equlas(b); //=> true
+   * a.equals(b); //=> true
    * a.equals(c); //=> false
    */
   [equals](setoid) {
