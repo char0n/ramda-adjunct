@@ -11,7 +11,6 @@ jobs:
       - checkout
       - run: npm install greenkeeper-lockfile
       - run: ./node_modules/.bin/greenkeeper-lockfile-update
-      - run: npm install
       - run: ./node_modules/.bin/greenkeeper-lockfile-upload
 
   build:
