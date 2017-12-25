@@ -9,10 +9,10 @@ jobs:
         ignore: gh-pages
     steps:
       - checkout
-      - run: sudo npm install -g greenkeeper-lockfile
-      - run: greenkeeper-lockfile-update
+      - run: npm install greenkeeper-lockfile
+      - run: ./node_modules/.bin/greenkeeper-lockfile-update
       - run: npm install
-      - run: greenkeeper-lockfile-upload
+      - run: ./node_modules/.bin/greenkeeper-lockfile-upload
 
   build:
     docker:
