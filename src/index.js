@@ -80,6 +80,7 @@ export { default as curryRightN } from './curryRightN';
 export { default as curryRight } from './curryRight';
 export { default as resolveP } from './resolveP';
 export { default as rejectP } from './rejectP';
+export { default as sequencing } from './sequencing';
 // List
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';

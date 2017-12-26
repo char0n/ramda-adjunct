@@ -604,6 +604,16 @@ declare namespace RamdaAdjunct {
         rejectP<T>(value?: T): Promise<T>;
 
         /**
+         * Accepts a list of side-effecting functions and returns a new function. When
+         * invoked, this new function is applied to some arguments, each side-effecting
+         * function is applied to those same arguments in the order in which they were
+         * declared. Due to their side-effecting nature, the return of each
+         * side-effecting function is discarded and the new function will always return
+         * `undefined`.
+         */
+        sequencing(fns: Array<Function>): Function;
+
+        /**
          * Returns the elements of the given list or string (or object with a slice method)
          * from fromIndex (inclusive).
          * Dispatches to the slice method of the third argument, if present.
