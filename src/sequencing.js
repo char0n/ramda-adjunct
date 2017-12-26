@@ -5,9 +5,8 @@ import { always, converge } from 'ramda';
  * Accepts a list of side-effecting functions and returns a new function. When
  * invoked, this new function is applied to some arguments, each side-effecting
  * function is applied to those same arguments in the order in which they were
- * declared. Due to their side-effecting nature, the return of each
- * side-effecting function is discarded and the new function will always return
- * `undefined`.
+ * declared. The return of each side-effecting function is discarded and the
+ * new function will always return `undefined`.
  *
  * @func sequencing
  * @memberOf RA
