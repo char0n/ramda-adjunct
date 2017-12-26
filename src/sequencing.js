@@ -24,6 +24,7 @@ import { always, converge } from 'ramda';
  *
  * RA.sequencing([info, log])('foo'); //=> prints 'foo' via info then log
  */
+/* eslint-enable max-len */
 const sequencing = converge(always(undefined));
 
 export default sequencing;
