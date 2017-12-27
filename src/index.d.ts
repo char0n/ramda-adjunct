@@ -659,6 +659,15 @@ declare namespace RamdaAdjunct {
         defaultWhen<DefVal, Val>(predicate: Function, defaultVal: DefVal): (val: Val) => DefVal | Val;
         defaultWhen(predicate: Function): <DefVal, Val>(defaultVal: DefVal) => (val: Val) => DefVal | Val;
 
+        /**
+         * Y-combinator
+         *
+         * The Y combinator is an interesting function which only works with functional languages,
+         * showing how recursion can still be done even without any variable or function declarations,
+         * only functions and parameters
+         */
+        Y(le: Function): Function;
+
          /**
          * Identity type.
          */
