@@ -113,5 +113,6 @@ export { default as lensNotSatisfy } from './lensNotSatisfy';
 export { default as lensIso } from './lensIso';
 // Logic
 export { default as defaultWhen } from './defaultWhen';
+export { default as notBoth } from './notBoth';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
