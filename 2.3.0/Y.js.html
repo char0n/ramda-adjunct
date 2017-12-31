@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>renameKeys.js - Documentation</title>
+    <title>Y.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">renameKeys.js</h1>
+    <h1 class="page-title">Y.js</h1>
     
 
     
@@ -52,45 +52,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curry, has } from 'ramda';
-
-import renameKeysWith from './renameKeysWith';
-
-
-const valueOrKey = keysMap => (key) => {
-  if (has(key, keysMap)) {
-    return keysMap[key];
-  }
-  return key;
-};
-
-/**
- * Creates a new object with the own properties of the provided object, but the
- * keys renamed according to the keysMap object as `{oldKey: newKey}`.
- * When some key is not found in the keysMap, then it's passed as-is.
+            <pre class="prettyprint source linenums"><code>/**
+ * Y-combinator
  *
- * Keep in mind that in the case of keys conflict is behaviour undefined and
- * the result may vary between various JS engines!
+ * The Y combinator is an interesting function which only works with functional languages,
+ * showing how recursion can still be done even without any variable or function declarations,
+ * only functions and parameters
  *
- * @func renameKeys
+ * @func Y
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.5.0|v1.5.0}
- * @category Object
- * @sig {a: b} -> {a: *} -> {b: *}
- * @param {!Object} keysMap
- * @param {!Object} obj
- * @return {!Object} New object with renamed keys
- * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#rename-keys-of-an-object|Ramda Cookbook}, {@link RA.renameKeysWith|renameKeysWith}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
+ * @category Function
+ * @sig (a, ... -> b -> b) -> (a, ... -> b)
+ * @param {Function} le Recursive function maker
+ * @return {Function}
+ * @see {@link http://kestas.kuliukas.com/YCombinatorExplained/|Y combinator explained}
  * @example
  *
- * const input = { firstName: 'Elisia', age: 22, type: 'human' };
+ * const makeFact = givenFact => (n) => {
+ *   if (n &lt; 2) { return 1 }
+ *   return n * givenFact(n - 1);
+ * };
  *
- * RA.renameKeys({ firstName: 'name', type: 'kind', foo: 'bar' })(input);
- * //=> { name: 'Elisia', age: 22, kind: 'human' }
+ * const factorial = RA.Y(makeFact);
+ *
+ * factorial(5); //=> 120
  */
-const renameKeys = curry((keysMap, obj) => renameKeysWith(valueOrKey(keysMap), obj));
 
-export default renameKeys;
+const Y = le => (f => f(f))(g => le(x => (g(g))(x)));
+
+export default Y;
 </code></pre>
         </article>
     </section>
