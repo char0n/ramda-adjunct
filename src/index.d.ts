@@ -604,13 +604,13 @@ declare namespace RamdaAdjunct {
         rejectP<T>(value?: T): Promise<T>;
 
         /**
-         * Accepts a list of side-effecting functions and returns a new function. When
-         * invoked, this new function is applied to some arguments, each side-effecting
-         * function is applied to those same arguments in the order in which they were
-         * declared. The return of each side-effecting function is discarded and the
-         * new function will always return `undefined`.
+         * Runs the given list of functions in order with the supplied object, then returns the object.
+         * Also known as the normal order sequencing combinator.
+         *
+         * Acts as a transducer if a transformer is given as second parameter.
          */
-        sequencing(fns: Array<Function>): Function;
+        seq<T>(fns: Array<Function>, x: T): T;
+        sequencing<T>(fns: Array<Function>, x: T): T; // alias
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
@@ -667,6 +667,15 @@ declare namespace RamdaAdjunct {
         defaultWhen<DefVal, Val>(predicate: Function, defaultVal: DefVal, val: Val): DefVal | Val;
         defaultWhen<DefVal, Val>(predicate: Function, defaultVal: DefVal): (val: Val) => DefVal | Val;
         defaultWhen(predicate: Function): <DefVal, Val>(defaultVal: DefVal) => (val: Val) => DefVal | Val;
+
+        /**
+         * Y-combinator
+         *
+         * The Y combinator is an interesting function which only works with functional languages,
+         * showing how recursion can still be done even without any variable or function declarations,
+         * only functions and parameters
+         */
+        Y(le: Function): Function;
 
          /**
          * Identity type.

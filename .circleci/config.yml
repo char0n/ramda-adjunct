@@ -1,18 +1,6 @@
 version: 2
 
 jobs:
-  lockfile:
-    docker:
-      - image: circleci/node:9
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - run: npm install greenkeeper-lockfile
-      - run: ./node_modules/.bin/greenkeeper-lockfile-update
-      - run: ./node_modules/.bin/greenkeeper-lockfile-upload
-
   build:
     docker:
       - image: circleci/node:9
@@ -130,10 +118,7 @@ workflows:
   version: 2
   build_test_docs:
     jobs:
-      - lockfile
-      - build:
-          requires:
-            - lockfile
+      - build
       - test_node_6:
           requires:
             - build
