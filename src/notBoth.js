@@ -1,5 +1,7 @@
 import { compose, complement, both } from 'ramda';
 
+
+/* eslint-disable max-len */
 /**
  * A function which calls the two provided functions and returns the complement of `&&`ing the
  * results.
@@ -14,22 +16,23 @@ import { compose, complement, both } from 'ramda';
  * @func notBoth
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
- * @category Type
+ * @category Logic
  * @sig (*... -> Boolean) -> (*... -> Boolean) -> (*... -> Boolean)
  * @param {Function} f A predicate
  * @param {Function} g Another predicate
- * @return {Function} a function that applies its arguments to `f` and `g` and returns the
- * complement of `&&`ing their outputs together.
+ * @return {Function} Returns a function that applies its arguments to `f` and `g` and returns the complement of `&&`ing their outputs together.
  * @example
  *
  * const gt10 = R.gt(R.__, 10)
  * const even = (x) => x % 2 === 0;
  * const f = RA.notBoth(gt10, even);
+ *
  * f(12); //=> false
  * f(8); //=> true
  * f(11); //=> true
  * f(9); //=> true
  */
-const _notBoth = compose(complement, both);
+/* eslint-enable max-len */
+const notBoth = compose(complement, both);
 
-export default _notBoth;
+export default notBoth;

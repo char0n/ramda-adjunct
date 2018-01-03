@@ -663,11 +663,15 @@ declare namespace RamdaAdjunct {
           * A function which calls the two provided functions and returns the complement of `&&`ing
           * the results. It returns true if the first function is false-y and the complement of the
           * second function otherwise. Note that this is short-circuited, meaning that the second
-          * function will not be invoked if the first returns a false-y value.
-         */
+          * function will not be invoked if the first returns a false-y value. In short it will
+          * return true unless both predicates return true.
+          *
+          * In addition to functions, `RA.notBoth` also accepts any fantasy-land compatible
+          * applicative functor.
+          */
         notBoth(firstPredicate: Function, secondPredicate: Function): Function;
 
-         /**
+        /**
          * Identity type.
          */
         Identity: Function;
