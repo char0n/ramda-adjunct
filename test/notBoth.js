@@ -5,7 +5,20 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 
+const supportsFantasyLand = () => {
+  let result;
+  // Earlier versions of Ramda will throw.
+  try {
+    result = RA.notBoth(Just(true), Just(true));
+  } catch (e) {
+    return false;
+  }
+  return Just(false).equals(result);
+};
+
 describe('notBoth', function() {
+  const isFantasyLandSupported = supportsFantasyLand();
+
   it('combines two boolean-returning functions into one', function() {
     const even = x => x % 2 === 0;
     const gt10 = x => x > 10;
@@ -36,15 +49,17 @@ describe('notBoth', function() {
     eq(z.notCalled, true);
   });
 
-  it('accepts fantasy-land applicative functors', function() {
-    eq(RA.notBoth(Just(true), Just(true)), Just(false));
-    eq(RA.notBoth(Just(true), Just(false)), Just(true));
-    eq(RA.notBoth(Just(false), Just(true)), Just(true));
-    eq(RA.notBoth(Just(false), Just(false)), Just(true));
-    eq(RA.notBoth(Just(true), Nothing()), Nothing());
-    eq(RA.notBoth(Nothing(), Just(true)), Nothing());
-    eq(RA.notBoth(Nothing(), Just(false)), Nothing());
-    eq(RA.notBoth(Just(false), Nothing()), Nothing());
-    eq(RA.notBoth(Nothing(), Nothing()), Nothing());
-  });
+  if (isFantasyLandSupported) {
+    it('accepts fantasy-land applicative functors', function() {
+      eq(RA.notBoth(Just(true), Just(true)), Just(false));
+      eq(RA.notBoth(Just(true), Just(false)), Just(true));
+      eq(RA.notBoth(Just(false), Just(true)), Just(true));
+      eq(RA.notBoth(Just(false), Just(false)), Just(true));
+      eq(RA.notBoth(Just(true), Nothing()), Nothing());
+      eq(RA.notBoth(Nothing(), Just(true)), Nothing());
+      eq(RA.notBoth(Nothing(), Just(false)), Nothing());
+      eq(RA.notBoth(Just(false), Nothing()), Nothing());
+      eq(RA.notBoth(Nothing(), Nothing()), Nothing());
+    });
+  }
 });
