@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>sliceFrom.js - Documentation</title>
+    <title>notBoth.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">sliceFrom.js</h1>
+    <h1 class="page-title">notBoth.js</h1>
     
 
     
@@ -52,29 +52,45 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { __, slice } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { compose, complement, both } from 'ramda';
 
+
+/* eslint-disable max-len */
 /**
- * Returns the elements of the given list or string (or object with a slice method)
- * from fromIndex (inclusive).
- * Dispatches to the slice method of the second argument, if present.
+ * A function which calls the two provided functions and returns the complement of `&amp;&amp;`ing the
+ * results.
+ * It returns true if the first function is false-y and the complement of the second function
+ * otherwise. Note that this is short-circuited, meaning that the second function will not be
+ * invoked if the first returns a false-y value. In short it will return true unless both predicates
+ * return true.
  *
- * @func sliceFrom
+ * In addition to functions, `RA.notBoth` also accepts any fantasy-land compatible
+ * applicative functor.
+ *
+ * @func notBoth
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.16.0|v1.16.0}
- * @category List
- * @sig  Number -> [a] -> [a]
- * @param {number} fromIndex The start index (inclusive)
- * @param {Array|string} list The list or string to slice
- * @return {Array|string} The sliced list or string
- * @see {@link http://ramdajs.com/docs/#slice|slice}, {@link RA.sliceTo|sliceTo}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
+ * @category Logic
+ * @sig (*... -> Boolean) -> (*... -> Boolean) -> (*... -> Boolean)
+ * @param {Function} f A predicate
+ * @param {Function} g Another predicate
+ * @return {Function} Returns a function that applies its arguments to `f` and `g` and returns the complement of `&amp;&amp;`ing their outputs together.
+ * @see {@link http://ramdajs.com/docs/#both|both}
  * @example
  *
- * RA.sliceFrom(1, [1, 2, 3]); //=> [2, 3]
+ * const gt10 = R.gt(R.__, 10)
+ * const even = (x) => x % 2 === 0;
+ * const f = RA.notBoth(gt10, even);
+ *
+ * f(12); //=> false
+ * f(8); //=> true
+ * f(11); //=> true
+ * f(9); //=> true
  */
-const sliceFrom = slice(__, Infinity);
+/* eslint-enable max-len */
+const notBoth = compose(complement, both);
 
-export default sliceFrom;
+export default notBoth;
 </code></pre>
         </article>
     </section>
