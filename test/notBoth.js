@@ -6,18 +6,18 @@ import eq from './shared/eq';
 
 
 const supportsFantasyLand = () => {
-  let result;
-  // Earlier versions of Ramda will throw.
   try {
-    result = RA.notBoth(Just(true), Just(true));
+    return RA.notBoth(Just(true), Just(true)).equals(Just(false));
   } catch (e) {
     return false;
   }
-  return Just(false).equals(result);
 };
 
 describe('notBoth', function() {
-  const isFantasyLandSupported = supportsFantasyLand();
+  let isFantasyLandSupported;
+  before(function() {
+    isFantasyLandSupported = supportsFantasyLand();
+  });
 
   it('combines two boolean-returning functions into one', function() {
     const even = x => x % 2 === 0;
