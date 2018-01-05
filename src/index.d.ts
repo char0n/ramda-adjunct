@@ -604,6 +604,15 @@ declare namespace RamdaAdjunct {
         rejectP<T>(value?: T): Promise<T>;
 
         /**
+         * Runs the given list of functions in order with the supplied object, then returns the object.
+         * Also known as the normal order sequencing combinator.
+         *
+         * Acts as a transducer if a transformer is given as second parameter.
+         */
+        seq<T>(fns: Array<Function>, x: T): T;
+        sequencing<T>(fns: Array<Function>, x: T): T; // alias
+
+        /**
          * Returns the elements of the given list or string (or object with a slice method)
          * from fromIndex (inclusive).
          * Dispatches to the slice method of the third argument, if present.
