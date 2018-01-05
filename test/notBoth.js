@@ -13,11 +13,8 @@ const supportsFantasyLand = () => {
   }
 };
 
-describe('notBoth', function() {
-  let isFantasyLandSupported;
-  before(function() {
-    isFantasyLandSupported = supportsFantasyLand();
-  });
+describe.only('notBoth', function() {
+  const isFantasyLandSupported = supportsFantasyLand();
 
   it('combines two boolean-returning functions into one', function() {
     const even = x => x % 2 === 0;
