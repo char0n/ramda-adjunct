@@ -13,7 +13,7 @@ const supportsFantasyLand = () => {
   }
 };
 
-describe.only('notBoth', function() {
+describe('notBoth', function() {
   const isFantasyLandSupported = supportsFantasyLand();
 
   it('combines two boolean-returning functions into one', function() {
