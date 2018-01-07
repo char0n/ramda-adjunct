@@ -10,7 +10,7 @@ import { bind } from 'ramda';
  * @since {@link https://char0n.github.io/ramda-adjunct/1.16.0|v1.16.0}
  * @category Function
  * @sig a -> Promise a
- * @param {*} [reason=undefined] Reason why this Promise rejected.
+ * @param {*} [reason=undefined] Reason why this Promise rejected
  * @return {Promise} A Promise that is rejected with the given reason
  * @see {@link RA.resolveP|resolveP}
  * @example
