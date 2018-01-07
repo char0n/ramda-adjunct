@@ -2,6 +2,7 @@ import { curryN, pipe, equals, reduceRight, length, concat } from 'ramda';
 
 import isUndefined from './isUndefined';
 import resolveP from './resolveP';
+import allP from './allP';
 
 
 // in older ramda versions the order of the arguments is flipped
@@ -83,7 +84,7 @@ const reduceRightP = curryN(3, (fn, acc, list) => resolveP(list)
       }
 
       return accP
-        .then(previousValue => Promise.all([previousValue, currentValueP]))
+        .then(previousValue => allP([previousValue, currentValueP]))
         .then(([previousValue, currentValue]) => {
           if (isUndefined(previousValue) && listLength === 1) {
             return currentValue;
