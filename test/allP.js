@@ -6,7 +6,7 @@ import * as RA from '../src/index';
 describe('allP', function() {
   context('when no arguments', function() {
     specify('throws TypeError', function(done) {
-      assert.isRejected(RA.allP(), TypeError).notify(done);
+      assert.isRejected(RA.allP(), Error).notify(done);
     });
   });
 
