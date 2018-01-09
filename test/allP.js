@@ -31,7 +31,8 @@ describe('allP', function() {
     assert.isRejected(RA.allP([p1, p2]), 2).notify(done);
   });
 
-  it('tests fail-fash behavior', function(done) {
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#Promise.all_fail-fast_behaviour
+  it('tests fail-fast behavior', function(done) {
     const p1 = new Promise((resolve) => {
       setTimeout(resolve, 10, 'one');
     });
@@ -49,5 +50,15 @@ describe('allP', function() {
     });
 
     assert.isRejected(RA.allP([p1, p2, p3, p4, p5]), Error).notify(done);
+  });
+
+  context('when there are two rejections', function() {
+    specify('should reject with the first one', function(done) {
+      const p1 = RA.resolveP(1);
+      const p2 = RA.rejectP(1);
+      const p3 = RA.rejectP(2);
+
+      assert.isRejected(RA.allP([p1, p2, p3]), 1).notify(done);
+    });
   });
 });
