@@ -2,6 +2,7 @@ import { curryN, reduce, length } from 'ramda';
 
 import isUndefined from './isUndefined';
 import resolveP from './resolveP';
+import allP from './allP';
 
 /* eslint-disable max-len */
 /**
@@ -75,7 +76,7 @@ const reduceP = curryN(3, (fn, acc, list) => resolveP(list)
     if (listLength === 0) { return acc }
 
     const reducer = reduce((accP, currentValueP) => accP
-      .then(previousValue => Promise.all([previousValue, currentValueP]))
+      .then(previousValue => allP([previousValue, currentValueP]))
       .then(([previousValue, currentValue]) => {
         if (isUndefined(previousValue) && listLength === 1) {
           return currentValue;

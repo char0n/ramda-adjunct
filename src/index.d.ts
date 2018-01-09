@@ -18,6 +18,18 @@ declare namespace RamdaAdjunct {
         (...args: T1[]): T2;
     }
 
+    interface IteratorResult<T> {
+        done: boolean;
+        value: T;
+    }
+
+    interface Iterator<T> {
+        next(value?: any): IteratorResult<T>;
+        return?(value?: any): IteratorResult<T>;
+        throw?(e?: any): IteratorResult<T>;
+    }
+
+
     type Dictionary<T> = { [key: string]: T }
 
     export interface Static {
@@ -586,6 +598,15 @@ declare namespace RamdaAdjunct {
          */
         flattenProp(prop: string|number, obj: object): object;
         flattenProp(prop: string|number): (obj: object) => object;
+
+        /**
+         * Composable shortcut for `Promise.all`.
+         *
+         * The `allP` method returns a single Promise that resolves when all of the promises
+         * in the iterable argument have resolved or when the iterable argument contains no promises.
+         * It rejects with the reason of the first promise that rejects.
+         */
+        allP<T>(iterator: Iterator<T>): Promise<Array<T>>;
 
         /**
          * Composable shortcut for `Promise.resolve`.

@@ -14,6 +14,13 @@
     "prefer-arrow-callback": 0,
     "no-array-constructor": 0,
     "prefer-rest-params": 0,
-    "no-new-wrappers": 0
+    "no-new-wrappers": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+  },
+  "overrides": {
+    "files": ["mocha-bootstrap.js"],
+    "parserOptions": {
+      "sourceType": "script"
+    }
   }
 }
