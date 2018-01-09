@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotString.js - Documentation</title>
+    <title>allP.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotString.js</h1>
+    <h1 class="page-title">allP.js</h1>
     
 
     
@@ -52,29 +52,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { bind } from 'ramda';
 
-import isString from './isString';
 
+/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `String`.
+ * Composable shortcut for `Promise.all`.
  *
- * @func isNotString
+ * The `allP` method returns a single Promise that resolves when all of the promises
+ * in the iterable argument have resolved or when the iterable argument contains no promises.
+ * It rejects with the reason of the first promise that rejects.
+ *
+ * @func allP
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isString|isString}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
+ * @category Function
+ * @sig [Promise a] -> [a]
+ * @param {Iterable.&lt;*>} iterable An iterable object such as an Array or String
+ * @return {Promise} An already resolved Promise if the iterable passed is empty. An asynchronously resolved Promise if the iterable passed contains no promises. Note, Google Chrome 58 returns an already resolved promise in this case. A pending Promise in all other cases. This returned promise is then resolved/rejected asynchronously (as soon as the stack is empty) when all the promises in the given iterable have resolved, or if any of the promises reject. See the example about "Asynchronicity or synchronicity of allP" below.
+
+ * @see {@link RA.resolveP|resolveP}, {@link RA.rejectP|rejectP}
  * @example
  *
- * RA.isNotString('abc'); //=> false
- * RA.isNotString(1); //=> true
+ * RA.allP([1, 2]); //=> Promise([1, 2])
+ * RA.allP([1, Promise.resolve(2)]); //=> Promise([1, 2])
+ * RA.allP([Promise.resolve(1), Promise.resolve(2)]); //=> Promise([1, 2])
+ * RA.allP([1, Promise.reject(2)]); //=> Promise(2)
  */
-const isNotString = complement(isString);
+/* eslint-enable */
+const allP = bind(Promise.all, Promise);
 
-export default isNotString;
+export default allP;
 </code></pre>
         </article>
     </section>
