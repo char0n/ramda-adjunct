@@ -710,6 +710,18 @@ declare namespace RamdaAdjunct {
           */
         notBoth(firstPredicate: Function, secondPredicate: Function): Function;
 
+         /**
+          * A function which calls the two provided functions and returns the complement of `||`ing
+          * the results. It returns false if the first function is truth-y and the complement of the
+          * second function otherwise. Note that this is short-circuited, meaning that the second
+          * function will not be invoked if the first returns a truth-y value. In short it will
+          * return true if neither predicate returns true.
+          *
+          * In addition to functions, `RA.neither` also accepts any fantasy-land compatible
+          * applicative functor.
+          */
+          neither(firstPredicate: Function, secondPredicate: Function): Function;
+
         /**
          * Identity type.
          */
