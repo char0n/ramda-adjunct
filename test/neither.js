@@ -38,12 +38,14 @@ describe('neither', function() {
     eq(f(12, 2, 7), true);
   });
 
-  it('does not evaluate the second expression if the first one is true', function() {
-    const f = () => true;
-    const z = sinon.spy();
+  context('when the result of first function is true', function() {
+    specify('should not evaluate the second expression', function() {
+      const f = () => true;
+      const z = sinon.spy();
 
-    RA.neither(f, z)();
-    eq(z.notCalled, true);
+      RA.neither(f, z)();
+      eq(z.notCalled, true);
+    });
   });
 
   if (isFantasyLandSupported) {

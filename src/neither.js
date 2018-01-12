@@ -3,7 +3,7 @@ import { compose, complement, either } from 'ramda';
 
 /* eslint-disable max-len */
 /**
- * A function which calls the two provided functions and returns the complement of `|`ing the
+ * A function which calls the two provided functions and returns the complement of `||`ing the
  * results.
  * It returns false if the first function is truth-y and the complement of the second function
  * otherwise. Note that this is short-circuited, meaning that the second function will not be
@@ -21,7 +21,7 @@ import { compose, complement, either } from 'ramda';
  * @param {Function} f A predicate
  * @param {Function} g Another predicate
  * @return {Function} Returns a function that applies its arguments to `f` and `g` and returns the complement of `|`ing their outputs together.
- * @see {@link http://ramdajs.com/docs/#either|either}
+ * @see {@link http://ramdajs.com/docs/#either|either}, {@link http://ramdajs.com/docs/#or|or}
  * @example
  *
  * const gt10 = R.gt(R.__, 10)
