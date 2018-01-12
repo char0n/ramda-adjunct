@@ -38,12 +38,14 @@ describe('notBoth', function() {
     eq(f(5, 6, 15), true);
   });
 
-  it('does not evaluate the second expression if the first one is false', function() {
-    const f = () => false;
-    const z = sinon.spy();
+  context('when the first function returns false', function() {
+    specify('should not evaluate the second function', function() {
+      const f = () => false;
+      const z = sinon.spy();
 
-    RA.notBoth(f, z)();
-    eq(z.notCalled, true);
+      RA.notBoth(f, z)();
+      eq(z.notCalled, true);
+    });
   });
 
   if (isFantasyLandSupported) {
