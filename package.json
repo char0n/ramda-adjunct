@@ -14,7 +14,7 @@
   "description": "Community-maintained extension of Ramda",
   "keywords": "ramda extensions addons cookbook adjunct recipe extras",
   "sideEffects": false,
-  "version": "2.3.0",
+  "version": "2.4.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
