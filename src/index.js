@@ -115,6 +115,7 @@ export { default as lensNotEq } from './lensNotEq';
 export { default as lensSatisfies } from './lensSatisfies';
 export { default as lensNotSatisfy } from './lensNotSatisfy';
 export { default as lensIso } from './lensIso';
+export { default as propNotEq } from './propNotEq';
 // Logic
 export { default as defaultWhen } from './defaultWhen';
 export { default as notBoth } from './notBoth';

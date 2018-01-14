@@ -570,6 +570,17 @@ declare namespace RamdaAdjunct {
         }
 
         /**
+         * Returns true if the specified object property is not equal,
+         * in R.equals terms, to the given value; false otherwise.
+         */
+        propNotEq(prop: string|number, value: any, obj: object): boolean;
+        propNotEq(prop: string|number, value: any): (obj: object) => boolean;
+        propNotEq(prop: string|number): {
+            (value: any, obj: object): boolean;
+            (value: any): (obj: object) => boolean;
+        }
+
+        /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
         hasPath(path: Array<string|number>, obj: object): boolean;
