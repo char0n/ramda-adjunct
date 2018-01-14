@@ -1,4 +1,5 @@
-import { propEq, complement, curryN } from 'ramda';
+import { propEq, complement } from 'ramda';
+
 
 /**
  * Returns true if the specified object property is not equal,
@@ -6,18 +7,25 @@ import { propEq, complement, curryN } from 'ramda';
  *
  * @func propNotEq
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.1.0|v1.1.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
  * @category Relation
- * @sig  String → a → Object → Boolean
- * @param {String} prop The prop to pick
- * @param {a} value The value to compare to
- * @param {Object} object The object, that presumably contains value under the prop
+ * @sig  String -> a -> Object -> Boolean
+ * @param {String} name The property to pick
+ * @param {a} val The value to compare to
+ * @param {Object} object The object, that presumably contains value under the property
  * @return {Boolean} Comparison result
  * @see {@link http://ramdajs.com/docs/#propEq|propEq}
  * @example
  *
- * RA.propNotEq('Not you!', 'a', { a: 'foo', b: 'bar' }); //=> true
+ * const abby = { name: 'Abby', age: 7, hair: 'blond' };
+ * const fred = { name: 'Fred', age: 12, hair: 'brown' };
+ * const rusty = { name: 'Rusty', age: 10, hair: 'brown' };
+ * const alois = { name: 'Alois', age: 15, disposition: 'surly' };
+ * const kids = [abby, fred, rusty, alois];
+ * const hasNotBrownHair = RA.propNotEq('hair', 'brown');
+ *
+ * R.filter(hasNotBrownHair, kids); //=> [abby, alois]
  */
-const propNotEq = curryN(3, complement(propEq));
+const propNotEq = complement(propEq);
 
 export default propNotEq;
