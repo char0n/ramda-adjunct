@@ -1,3 +1,18 @@
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/char0n/ramda-adjunct/compare/v2.2.0...v2.3.0) (2018-01-14)
+
+
+### Features
+
+* add notBoth ([#260](https://github.com/char0n/ramda-adjunct/issues/260)) ([a214f75](https://github.com/char0n/ramda-adjunct/commit/a214f75)), closes [#234](https://github.com/char0n/ramda-adjunct/issues/234)
+* add allP ([#269](https://github.com/char0n/ramda-adjunct/issues/269)) ([c430af6](https://github.com/char0n/ramda-adjunct/commit/c430af6)), closes [#35](https://github.com/char0n/ramda-adjunct/issues/35)
+* add neither ([#273](https://github.com/char0n/ramda-adjunct/issues/273)) ([5294011](https://github.com/char0n/ramda-adjunct/commit/5294011)), closes [#234](https://github.com/char0n/ramda-adjunct/issues/234)
+* add propNotEq ([#275](https://github.com/char0n/ramda-adjunct/issues/275)) ([82da044](https://github.com/char0n/ramda-adjunct/commit/82da044)), closes [#238](https://github.com/char0n/ramda-adjunct/issues/238)
+* add sequencing combinator ([#257](https://github.com/char0n/ramda-adjunct/issues/257)) ([04ffd3d](https://github.com/char0n/ramda-adjunct/commit/04ffd3d)), closes [#173](https://github.com/char0n/ramda-adjunct/issues/173)
+* add Y combinator ([dbdf6af](https://github.com/char0n/ramda-adjunct/commit/dbdf6af)), closes [#130](https://github.com/char0n/ramda-adjunct/issues/130)
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/char0n/ramda-adjunct/compare/v2.1.0...v2.2.0) (2017-12-24)
 
