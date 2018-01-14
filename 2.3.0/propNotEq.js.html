@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>stubObj.js - Documentation</title>
+    <title>propNotEq.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">stubObj.js</h1>
+    <h1 class="page-title">propNotEq.js</h1>
     
 
     
@@ -52,25 +52,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * This function returns a new empty object.
+            <pre class="prettyprint source linenums"><code>import { propEq, complement, curryN } from 'ramda';
+
+/**
+ * Returns true if the specified object property is not equal,
+ * in R.equals terms, to the given value; false otherwise.
  *
- * @func stubObj
+ * @func propNotEq
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.1.0|v2.1.0}
- * @category Function
- * @sig ... -> Object
- * @aliases stubObject
- * @return {Object} Returns the new empty object.
+ * @since {@link https://char0n.github.io/ramda-adjunct/1.1.0|v1.1.0}
+ * @category Relation
+ * @sig  String → a → Object → Boolean
+ * @param {String} prop The prop to pick
+ * @param {a} value The value to compare to
+ * @param {Object} object The object, that presumably contains value under the prop
+ * @return {Boolean} Comparison result
+ * @see {@link http://ramdajs.com/docs/#propEq|propEq}
  * @example
  *
- * RA.stubObj(); //=> {}
- * RA.stubObj(1, 2, 3); //=> {}
+ * RA.propNotEq('Not you!', 'a', { a: 'foo', b: 'bar' }); //=> true
  */
+const propNotEq = curryN(3, complement(propEq));
 
-const stubObj = () => ({});
-
-export default stubObj;
+export default propNotEq;
 </code></pre>
         </article>
     </section>
