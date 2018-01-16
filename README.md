@@ -232,6 +232,7 @@ gets imported into Typescript project, typings are automatically imported and us
  - [Michael Kuk](https://github.com/michaelkuk)
  - [Sergey Homa](https://github.com/BjornMelgaard)
  - [Rocky Madden](https://github.com/rockymadden)
+ - [Pedr Browne](https://github.com/Undistraction)
  - [Lorenzo Giuliani](https://github.com/aliem)
 
 
