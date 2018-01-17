@@ -20,6 +20,16 @@ import { curry, map, tap } from 'ramda';
  * @example
  *
  * RA.seq([console.info, console.log])('foo'); //=> prints 'foo' via info then log
+ *
+ * // usage in composition
+ * R.pipe(
+ *   R.concat('prefix '),
+ *   RA.seq([
+ *     console.info, //=> prints 'prefix test'
+ *     console.log //=> prints 'prefix test'
+ *   ]),
+ *   R.toUpper
+ * )('test'); //=> 'PREFIX TEST'
  */
 /* eslint-enable max-len */
 
