@@ -39,6 +39,11 @@ declare namespace RamdaAdjunct {
         isArray(val: any): val is Array<any>;
 
         /**
+         * Checks if input value is an empty `Array`.
+         */
+        isEmptyArray(val: any): val is Array<any>;
+
+        /**
          * Checks if input value is `Boolean`.
          */
         isBoolean(val: any): val is boolean;

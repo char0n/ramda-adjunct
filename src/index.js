@@ -9,6 +9,7 @@ export { default as isNull } from './isNull';
 export { default as isNotNull } from './isNotNull';
 export { default as isNotNil } from './isNotNil';
 export { default as isArray } from './isArray';
+export { default as isEmptyArray } from './isEmptyArray';
 export { default as isNotArray } from './isNotArray';
 export { default as isBoolean } from './isBoolean';
 export { default as isNotBoolean } from './isNotBoolean';
