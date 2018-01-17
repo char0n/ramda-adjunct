@@ -5,8 +5,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isNumber', function() {
-  it('tests a value for `Number`', function() {
+describe('isNumber', function () {
+  it('tests a value for `Number`', function () {
     eq(RA.isNumber(0), true);
     eq(RA.isNumber(0.1), true);
     eq(RA.isNumber(Object(0)), true);

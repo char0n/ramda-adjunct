@@ -4,8 +4,8 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 
-describe('isFalsy', function() {
-  it('tests a value for `falsy`', function() {
+describe('isFalsy', function () {
+  it('tests a value for `falsy`', function () {
     eq(RA.isFalsy(false), true);
     eq(RA.isFalsy(0), true);
     eq(RA.isFalsy(-0), true);

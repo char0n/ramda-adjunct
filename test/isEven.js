@@ -6,8 +6,8 @@ import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 
-describe('isEven', function() {
-  it('tests a value for even integer `Number`', function() {
+describe('isEven', function () {
+  it('tests a value for even integer `Number`', function () {
     eq(RA.isEven(0), true);
     eq(RA.isEven(4), true);
     eq(RA.isEven(Object(4)), false);

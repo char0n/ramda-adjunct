@@ -2,11 +2,11 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('flattenPath', function() {
+describe('flattenPath', function () {
   let path;
   let obj;
 
-  beforeEach(function() {
+  beforeEach(function () {
     path = ['b1', 'b2'];
     obj = {
       a: 1,
@@ -14,13 +14,13 @@ describe('flattenPath', function() {
     };
   });
 
-  it('tests currying', function() {
+  it('tests currying', function () {
     eq(RA.flattenPath([], {}), {});
     eq(RA.flattenPath([])({}), {});
   });
 
-  context('when path leads to non object', function() {
-    specify('should return object with identical structure as provided object', function() {
+  context('when path leads to non object', function () {
+    specify('should return object with identical structure as provided object', function () {
       obj = {
         a: 1,
         b1: { b2: 999 },
@@ -29,8 +29,8 @@ describe('flattenPath', function() {
     });
   });
 
-  context("when path doesn't exist", function() {
-    specify('should return object with identical structure as provided object', function() {
+  context("when path doesn't exist", function () {
+    specify('should return object with identical structure as provided object', function () {
       eq(RA.flattenPath(['does', 'not', 'exist'], obj), obj);
     });
   });

@@ -2,8 +2,8 @@ import * as RA from '../src/index';
 import polyfill from '../src/internal/polyfills/Number.isNaN';
 import eq from './shared/eq';
 
-describe('isNaN', function() {
-  it('tests a value for `NaN`', function() {
+describe('isNaN', function () {
+  it('tests a value for `NaN`', function () {
     eq(RA.isNaN(NaN), true);
     eq(RA.isNaN(Number.NaN), true);
     eq(RA.isNaN(0 / 0), true);
@@ -24,7 +24,7 @@ describe('isNaN', function() {
     eq(RA.isNaN(' '), false);
   });
 
-  it('tests polyfill for `NaN', function() {
+  it('tests polyfill for `NaN', function () {
     eq(polyfill(NaN), true);
     eq(polyfill(Number.NaN), true);
     eq(polyfill(0 / 0), true);

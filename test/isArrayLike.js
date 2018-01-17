@@ -2,14 +2,14 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('isArrayLike', function() {
-  it('is true for Arrays', function() {
+describe('isArrayLike', function () {
+  it('is true for Arrays', function () {
     eq(RA.isArrayLike([]), true);
     eq(RA.isArrayLike([1, 2, 3, 4]), true);
     eq(RA.isArrayLike([null]), true);
   });
 
-  it('is true for arguments', function() {
+  it('is true for arguments', function () {
     function test() {
       return RA.isArrayLike(arguments);
     }
@@ -18,12 +18,12 @@ describe('isArrayLike', function() {
     eq(test(null), true);
   });
 
-  it('is false for Strings', function() {
+  it('is false for Strings', function () {
     eq(RA.isArrayLike(''), false);
     eq(RA.isArrayLike('abcdefg'), false);
   });
 
-  it('is true for arbitrary objects with numeric length, if extreme indices are defined', function() {
+  it('is true for arbitrary objects with numeric length, if extreme indices are defined', function () {
     const obj1 = { length: 0 };
     const obj2 = { 0: 'something', length: 0 };
     const obj3 = { 0: void 0, length: 0 };
@@ -41,12 +41,12 @@ describe('isArrayLike', function() {
     eq(RA.isArrayLike(obj7), false);
   });
 
-  it('is false for everything else', function() {
+  it('is false for everything else', function () {
     eq(RA.isArrayLike(undefined), false);
     eq(RA.isArrayLike(1), false);
     eq(RA.isArrayLike({}), false);
     eq(RA.isArrayLike(false), false);
-    eq(RA.isArrayLike(function() {}), false);
+    eq(RA.isArrayLike(function () {}), false);
   });
 });
 

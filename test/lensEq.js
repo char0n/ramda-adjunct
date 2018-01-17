@@ -4,8 +4,8 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('lensEq', function() {
-  it('tests a lens for a value', function() {
+describe('lensEq', function () {
+  it('tests a lens for a value', function () {
     eq(RA.lensEq(lensIndex(1), 1, [0, 1]), true);
     eq(RA.lensEq(lensIndex(0), 1, [0, 1]), false);
     eq(RA.lensEq(lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }), true);
@@ -16,7 +16,7 @@ describe('lensEq', function() {
     eq(RA.lensEq(lensProp('foo'), 'bar', { bar: 'foo' }), false);
   });
 
-  it('tests currying', function() {
+  it('tests currying', function () {
     eq(RA.lensEq(lensIndex(1))(1)([0, 1]), true);
     eq(RA.lensEq(lensIndex(1), 1)([0, 1]), true);
     eq(RA.lensEq(lensIndex(1))(1, [0, 1]), true);

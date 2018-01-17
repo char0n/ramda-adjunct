@@ -3,8 +3,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isNotObj', function() {
-  it('tests a value for complement of language type of `Object`', function() {
+describe('isNotObj', function () {
+  it('tests a value for complement of language type of `Object`', function () {
     eq(RA.isNotObj({}), false);
     eq(RA.isNotObj(Object(false)), false);
     eq(RA.isNotObj(Object.create(null)), false);
@@ -26,8 +26,8 @@ describe('isNotObj', function() {
   });
 });
 
-describe('isNotObject', function() {
-  it('tests an alias', function() {
+describe('isNotObject', function () {
+  it('tests an alias', function () {
     eq(RA.isNotObj === RA.isNotObject, true);
   });
 });

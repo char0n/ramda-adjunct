@@ -3,8 +3,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isObj', function() {
-  it('tests a value for language type of `Object`', function() {
+describe('isObj', function () {
+  it('tests a value for language type of `Object`', function () {
     eq(RA.isObj({}), true);
     eq(RA.isObj(Object(true)), true);
     eq(RA.isObj(Object.create(null)), true);
@@ -26,8 +26,8 @@ describe('isObj', function() {
   });
 });
 
-describe('isObject', function() {
-  it('tests an alias', function() {
+describe('isObject', function () {
+  it('tests an alias', function () {
     eq(RA.isObj === RA.isObject, true);
   });
 });

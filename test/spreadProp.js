@@ -2,11 +2,11 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('spreadProp', function() {
+describe('spreadProp', function () {
   let prop;
   let obj;
 
-  beforeEach(function() {
+  beforeEach(function () {
     prop = 'b';
     obj = {
       a: 1,
@@ -14,19 +14,19 @@ describe('spreadProp', function() {
     };
   });
 
-  it('tests currying', function() {
+  it('tests currying', function () {
     eq(RA.spreadProp('prop', {}), {});
     eq(RA.spreadProp('prop')({}), {});
   });
 
-  context("when prop doesn't exist", function() {
-    specify('should return object with identical structure as provided object', function() {
+  context("when prop doesn't exist", function () {
+    specify('should return object with identical structure as provided object', function () {
       eq(RA.spreadProp('not_exist', obj), obj);
     });
   });
 
-  context('when prop leads to non object', function() {
-    specify('should return object without prop', function() {
+  context('when prop leads to non object', function () {
+    specify('should return object without prop', function () {
       obj = {
         a: 1,
         b: 999,
@@ -36,8 +36,8 @@ describe('spreadProp', function() {
     });
   });
 
-  context('when prop leads to object with same prop name', function() {
-    specify('should override existing props on provided object', function() {
+  context('when prop leads to object with same prop name', function () {
+    specify('should override existing props on provided object', function () {
       obj = {
         a: 1,
         b: { b: 999, c: 3, d: 4 },
@@ -53,7 +53,7 @@ describe('spreadProp', function() {
     });
   });
 
-  it('should return object with spreaded prop', function() {
+  it('should return object with spreaded prop', function () {
     const expected = {
       a: 1,
       c: 3,

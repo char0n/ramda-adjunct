@@ -23,7 +23,6 @@
       "functions": "never"
     }],
     "no-underscore-dangle": 0,
-    "object-curly-newline": 0,
-    "space-before-function-paren": ["error", "never"]
+    "object-curly-newline": 0
   }
 }

@@ -4,8 +4,8 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('lensSatisfies', function() {
-  it('tests a lens satisfying the predicate', function() {
+describe('lensSatisfies', function () {
+  it('tests a lens satisfying the predicate', function () {
     eq(RA.lensSatisfies(equals('bar'), lensProp('foo'), { foo: 'bar' }), true);
     eq(RA.lensSatisfies(equals('foo'), lensProp('bar'), { foo: 'bar' }), false);
 
@@ -17,7 +17,7 @@ describe('lensSatisfies', function() {
     }), true);
   });
 
-  it('tests currying', function() {
+  it('tests currying', function () {
     eq(RA.lensSatisfies(equals('bar'))(lensProp('foo'))({ foo: 'bar' }), true);
     eq(RA.lensSatisfies(equals('bar'), lensProp('foo'))({ foo: 'bar' }), true);
     eq(RA.lensSatisfies(equals('bar'))(lensProp('foo'))({ foo: 'bar' }), true);

@@ -4,8 +4,8 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import eq from './shared/eq';
 
 
-describe('isFloat', function() {
-  it('tests a value for `float`', function() {
+describe('isFloat', function () {
+  it('tests a value for `float`', function () {
     eq(RA.isFloat(0), false);
     eq(RA.isFloat(1), false);
     eq(RA.isFloat(-100000), false);

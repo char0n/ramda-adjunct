@@ -2,8 +2,8 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('isPair', function() {
-  it('tests a value for pair', function() {
+describe('isPair', function () {
+  it('tests a value for pair', function () {
     eq(RA.isPair([]), false);
     eq(RA.isPair([0]), false);
     eq(RA.isPair([0, 1]), true);

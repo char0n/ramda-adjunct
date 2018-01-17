@@ -4,8 +4,8 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 
-describe('isGeneratorFunction', function() {
-  it('tests a value for `Generator Function`', function() {
+describe('isGeneratorFunction', function () {
+  it('tests a value for `Generator Function`', function () {
     eq(RA.isGeneratorFunction(genFunc), typeof genFunc === 'function');
     eq(RA.isGeneratorFunction(args), false);
     eq(RA.isGeneratorFunction([1, 2, 3]), false);

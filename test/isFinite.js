@@ -2,8 +2,8 @@ import * as RA from '../src/index';
 import polyfill from '../src/internal/polyfills/Number.isFinite';
 import eq from './shared/eq';
 
-describe('isFinite', function() {
-  it('tests a value for finite `Number`', function() {
+describe('isFinite', function () {
+  it('tests a value for finite `Number`', function () {
     eq(RA.isFinite(Infinity), false);
     eq(RA.isFinite(NaN), false);
     eq(RA.isFinite(-Infinity), false);
@@ -21,7 +21,7 @@ describe('isFinite', function() {
     eq(RA.isFinite(null), false);
   });
 
-  it('tests polyfill for finite `Number', function() {
+  it('tests polyfill for finite `Number', function () {
     eq(polyfill(Infinity), false);
     eq(polyfill(NaN), false);
     eq(polyfill(-Infinity), false);

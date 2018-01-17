@@ -13,10 +13,10 @@ const supportsFantasyLand = () => {
   }
 };
 
-describe('neither', function() {
+describe('neither', function () {
   const isFantasyLandSupported = supportsFantasyLand();
 
-  it('combines two boolean-returning functions into one', function() {
+  it('combines two boolean-returning functions into one', function () {
     const even = x => x % 2 === 0;
     const gt10 = x => x > 10;
     const f = RA.neither(even, gt10);
@@ -27,7 +27,7 @@ describe('neither', function() {
     eq(f(9), true);
   });
 
-  it('accepts functions that take multiple parameters', function() {
+  it('accepts functions that take multiple parameters', function () {
     const between = (a, b, c) => a < b && b < c;
     const total20 = (a, b, c) => a + b + c === 20;
     const f = RA.neither(between, total20);
@@ -38,8 +38,8 @@ describe('neither', function() {
     eq(f(12, 2, 7), true);
   });
 
-  context('when the result of first function is true', function() {
-    specify('should not evaluate the second expression', function() {
+  context('when the result of first function is true', function () {
+    specify('should not evaluate the second expression', function () {
       const f = () => true;
       const z = sinon.spy();
 
@@ -49,7 +49,7 @@ describe('neither', function() {
   });
 
   if (isFantasyLandSupported) {
-    it('accepts fantasy-land applicative functors', function() {
+    it('accepts fantasy-land applicative functors', function () {
       eq(RA.neither(Just(true), Just(true)), Just(false));
       eq(RA.neither(Just(true), Just(false)), Just(false));
       eq(RA.neither(Just(false), Just(true)), Just(false));
