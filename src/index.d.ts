@@ -39,7 +39,7 @@ declare namespace RamdaAdjunct {
         isArray(val: any): val is Array<any>;
 
         /**
-         * Checks if input value is `Boolean.
+         * Checks if input value is `Boolean`.
          */
         isBoolean(val: any): val is boolean;
 
