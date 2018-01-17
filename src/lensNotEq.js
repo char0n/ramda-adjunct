@@ -16,7 +16,7 @@ import lensEq from './lensEq';
  * @param {function} lens Van Laarhoven lens
  * @param {*} value The value to compare the focused data structure with
  * @param {*} data The data structure
- * @return {Boolean} `false` if the focused data structure equals value, `true` otherwise
+ * @return {boolean} `false` if the focused data structure equals value, `true` otherwise
  *
  * @example
  *

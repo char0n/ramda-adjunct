@@ -12,7 +12,7 @@ import isValidNumber from './isValidNumber';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isValidNumber|isValidNumber}
  * @example
  *

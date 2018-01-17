@@ -9,7 +9,7 @@ import { is } from 'ramda';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isNotBoolean|isNotBoolean}
  * @example
  *

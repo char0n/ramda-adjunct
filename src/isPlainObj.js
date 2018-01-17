@@ -20,7 +20,7 @@ const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor)
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isNotPlainObj|isNotPlainObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isObj|isObj}
  * @example
  *
