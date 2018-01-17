@@ -54,6 +54,11 @@ declare namespace RamdaAdjunct {
         isNotArray(val: any): boolean;
 
         /**
+         * Checks if input value is a non empty `Array`.
+         */
+        isNonEmptyArray(val: any): val is Array<any>;
+
+        /**
          * Checks if input value is complement of `Boolean`.
          */
         isNotBoolean(val: any): boolean;
