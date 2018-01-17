@@ -3,6 +3,7 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 
+
 describe('isBoolean', function () {
   it('tests a value for `Boolean`', function () {
     eq(RA.isBoolean(true), true);

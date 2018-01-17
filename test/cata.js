@@ -5,6 +5,7 @@ import chai from 'chai';
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('cata', function () {
   const eitherR = Either.Right(1);
   const eitherL = Either.Left(2);

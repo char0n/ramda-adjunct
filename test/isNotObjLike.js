@@ -3,6 +3,7 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
+
 describe('isNotObjLike', function () {
   it('tests a value for non object-like interface', function () {
     eq(RA.isNotObjLike({}), false);

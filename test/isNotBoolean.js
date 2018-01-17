@@ -3,6 +3,7 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 
+
 describe('isNotBoolean', function () {
   it('tests a value for complement of `Boolean`', function () {
     eq(RA.isNotBoolean(true), false);

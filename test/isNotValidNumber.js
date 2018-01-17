@@ -5,6 +5,7 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
+
 describe('isNotValidNumber', function () {
   it('tests a value for complement of valid `Number`', function () {
     eq(RA.isNotValidNumber(0), false);

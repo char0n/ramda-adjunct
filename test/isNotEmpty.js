@@ -1,6 +1,7 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('isNotEmpty', function () {
   it('returns true for null', function () {
     eq(RA.isNotEmpty(null), true);

@@ -4,6 +4,7 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 
+
 describe('isGeneratorFunction', function () {
   it('tests a value for `Generator Function`', function () {
     eq(RA.isGeneratorFunction(genFunc), typeof genFunc === 'function');

@@ -4,6 +4,7 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import asyncFunc from './shared/asyncFunc';
 
+
 describe('isAsyncFunction', function () {
   it('tests a value for `Async Function`', function () {
     eq(RA.isAsyncFunction(asyncFunc), typeof asyncFunc === 'function');

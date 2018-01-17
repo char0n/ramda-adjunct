@@ -1,6 +1,7 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('isNilOrEmpty', function () {
   it('tests a value for `null` or `undefined`', function () {
     eq(RA.isNilOrEmpty(void 0), true);

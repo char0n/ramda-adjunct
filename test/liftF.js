@@ -3,6 +3,7 @@ import { Maybe } from 'monet';
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 const add3 = (a, b, c) => a + b + c;
 const add4 = (a, b, c, d) => a + b + c + d;
 const add5 = (a, b, c, d, e) => a + b + c + d + e;

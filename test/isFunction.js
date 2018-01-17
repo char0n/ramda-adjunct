@@ -5,6 +5,7 @@ import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 import asyncFunc from './shared/asyncFunc';
 
+
 describe('isFunction', function () {
   it('tests a value for `Function`', function () {
     eq(RA.isFunction(genFunc), typeof genFunc === 'function');

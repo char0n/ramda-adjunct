@@ -1,6 +1,7 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('paths', function () {
   const obj = { a: { b: { c: 1 } }, d: 4, e: 5, f: 6 };
 

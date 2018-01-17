@@ -1,6 +1,7 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('isArray', function () {
   it('tests a value for `Array`', function () {
     eq(RA.isArray([]), true);

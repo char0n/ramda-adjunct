@@ -3,6 +3,7 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
+
 describe('isNotValidDate', function () {
   it('tests a value for complement of valid `Date`', function () {
     eq(RA.isNotValidDate(new Date()), false);

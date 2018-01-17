@@ -1,6 +1,7 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('isArrayLike', function () {
   it('is false for Arrays', function () {
     eq(RA.isNotArrayLike([]), false);

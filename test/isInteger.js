@@ -4,6 +4,7 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import eq from './shared/eq';
 import polyfill from '../src/internal/polyfills/Number.isInteger';
 
+
 describe('isInteger', function () {
   it('tests a value for `integer`', function () {
     eq(RA.isInteger(0), true);

@@ -5,6 +5,7 @@ import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 import asyncFunc from './shared/asyncFunc';
 
+
 describe('isNotFunction', function () {
   it('tests a value for complement of `Function`', function () {
     eq(RA.isNotFunction(genFunc), typeof genFunc !== 'function');

@@ -3,6 +3,7 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
+
 describe('isDate', function () {
   it('tests a value for `Date`', function () {
     eq(RA.isDate(new Date()), true);

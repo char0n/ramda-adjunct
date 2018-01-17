@@ -2,6 +2,7 @@ import { or } from 'ramda';
 
 import isNotNull from './isNotNull';
 
+
 let GeneratorFunction = null;
 try {
   GeneratorFunction = new Function('return function* () {}')().constructor; // eslint-disable-line no-new-func

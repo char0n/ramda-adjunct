@@ -1,6 +1,7 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
+
 describe('isUndefined', function () {
   it('tests a value for `undefined`', function () {
     eq(RA.isUndefined(void 0), true);

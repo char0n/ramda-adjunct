@@ -4,6 +4,7 @@ import * as RA from '../src/index';
 import polyfill from '../src/internal/polyfills/Number.isFinite';
 import eq from './shared/eq';
 
+
 describe('isNotFinite', function () {
   it('tests a value for complement of finite `Number`', function () {
     eq(RA.isNotFinite(Infinity), true);

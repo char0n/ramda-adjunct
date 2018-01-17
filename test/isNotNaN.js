@@ -4,6 +4,7 @@ import * as RA from '../src/index';
 import polyfill from '../src/internal/polyfills/Number.isNaN';
 import eq from './shared/eq';
 
+
 describe('isNotNaN', function () {
   it('tests a value for complement of `NaN`', function () {
     eq(RA.isNotNaN(NaN), false);

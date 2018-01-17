@@ -4,6 +4,7 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 
+
 describe('isNotGeneratorFunction', function () {
   it('tests a value for complement of `Generator Function`', function () {
     eq(RA.isNotGeneratorFunction(genFunc), typeof genFunc !== 'function');

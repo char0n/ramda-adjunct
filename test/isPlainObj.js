@@ -4,6 +4,7 @@ import element from './shared/element';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
+
 class Bar {
   constructor() {
     this.prop = 'value';

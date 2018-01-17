@@ -3,6 +3,7 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
+
 describe('isObj', function () {
   it('tests a value for language type of `Object`', function () {
     eq(RA.isObj({}), true);
