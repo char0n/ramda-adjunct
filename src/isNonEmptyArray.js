@@ -24,6 +24,6 @@ import isArray from './isArray';
  * RA.isNonEmptyArray(42); // => false
  * RA.isNonEmptyArray('42'); // => false
  */
-const isNonEmptyArray = both(isNotEmpty, isArray);
+const isNonEmptyArray = both(isArray, isNotEmpty);
 
 export default isNonEmptyArray;
