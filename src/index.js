@@ -12,7 +12,6 @@ export { default as isArray } from './isArray';
 export { default as isNotArray } from './isNotArray';
 export { default as isBoolean } from './isBoolean';
 export { default as isNotBoolean } from './isNotBoolean';
-export { default as isNotEmpty } from './isNotEmpty';
 export { default as isNilOrEmpty } from './isNilOrEmpty';
 export { default as isString } from './isString';
 export { default as isNotString } from './isNotString';
@@ -117,6 +116,7 @@ export { default as lensNotSatisfy } from './lensNotSatisfy';
 export { default as lensIso } from './lensIso';
 export { default as propNotEq } from './propNotEq';
 // Logic
+export { default as isNotEmpty } from './isNotEmpty';
 export { default as defaultWhen } from './defaultWhen';
 export { default as notBoth } from './notBoth';
 export { default as neither } from './neither';
