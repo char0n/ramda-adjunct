@@ -11,6 +11,7 @@ export { default as isNotNil } from './isNotNil';
 export { default as isArray } from './isArray';
 export { default as isEmptyArray } from './isEmptyArray';
 export { default as isNotArray } from './isNotArray';
+export { default as isNonEmptyArray } from './isNonEmptyArray';
 export { default as isBoolean } from './isBoolean';
 export { default as isNotBoolean } from './isNotBoolean';
 export { default as isNilOrEmpty } from './isNilOrEmpty';
