@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lensNotEq.js - Documentation</title>
+    <title>isEmptyArray.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">lensNotEq.js</h1>
+    <h1 class="page-title">isEmptyArray.js</h1>
     
 
     
@@ -52,36 +52,35 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { both, isEmpty } from 'ramda';
 
-import lensEq from './lensEq';
+import isArray from './isArray';
 
 
 /**
- * Returns `true` if data structure focused by the given lens doesn't equal provided value.
+ * Checks if input value is an empty `Array`.
  *
- * @func lensNotEq
+ * @func isEmptyArray
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|1.13.0}
- * @category Relation
- * @typedef Lens s a = Functor f => (a -> f a) -> s -> f s
- * @sig Lens s a -> b -> s -> Boolean
- * @see {@link RA.lensEq|lensEq}
- * @param {function} lens Van Laarhoven lens
- * @param {*} value The value to compare the focused data structure with
- * @param {*} data The data structure
- * @return {boolean} `false` if the focused data structure equals value, `true` otherwise
- *
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.4.0|v2.4.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotEmptyArray|isNotEmptyArray}
  * @example
  *
- * RA.lensNotEq(R.lensIndex(0), 1, [0, 1, 2]); // => true
- * RA.lensNotEq(R.lensIndex(1), 1, [0, 1, 2]); // => false
- * RA.lensNotEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => false
+ * RA.isEmptyArray([]); // => true
+ * RA.isEmptyArray([42]); // => false
+ * RA.isEmptyArray({}); // => false
+ * RA.isEmptyArray(null); // => false
+ * RA.isEmptyArray(undefined); // => false
+ * RA.isEmptyArray(42); // => false
+ * RA.isEmptyArray('42'); // => false
  */
-const lensNotEq = complement(lensEq);
+const isEmptyArray = both(isArray, isEmpty);
 
-
-export default lensNotEq;
+export default isEmptyArray;
 </code></pre>
         </article>
     </section>
