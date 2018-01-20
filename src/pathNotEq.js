@@ -1,19 +1,21 @@
 import { pathEq, complement } from 'ramda';
 
 
+/* eslint-disable max-len */
 /**
- * Determines whether a nested path on an object has not a specific value,
+ * Determines whether a nested path on an object doesn't have a specific value,
  * in R.equals terms. Most likely used to filter a list.
  *
  * @func pathNotEq
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.4.0|v2.4.0}
  * @category Relation
- * @sig  [k] → a → {a} → Boolean
- * @param {Array} path The property paths to fetch
- * @param {a} val The value to compare to
- * @param {Object} object The object, that presumably contains value under the path
- * @return {Boolean} Comparison result
+ * @sig [Idx] => a => {a} => Boolean
+ * @sig Idx = String | Int
+ * @param {Array} path The path of the nested property to use
+ * @param {a} val The value to compare the nested property with
+ * @param {Object} object The object to check the nested property in
+ * @return {Boolean} Returns Boolean `false` if the value equals the nested object property, `true` otherwise
  * @see {@link http://ramdajs.com/docs/#pathEq|pathEq}
  * @example
  *
@@ -24,6 +26,7 @@ import { pathEq, complement } from 'ramda';
  * const isFamous = R.pathNotEq(['address', 'zipCode'], 90210);
  * R.filter(isFamous, users); //=> [ user2, user3 ]
  */
+/* eslint-enable max-len */
 const pathNotEq = complement(pathEq);
 
 export default pathNotEq;
