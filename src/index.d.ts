@@ -89,6 +89,11 @@ declare namespace RamdaAdjunct {
         isNotString(val: any): boolean;
 
         /**
+         * Checks if input value is a non empty `String`.
+         */
+        isNonEmptyString(val: any): boolean;
+
+        /**
          * Checks if input value is complement `undefined`.
          */
         isNotUndefined(val: any): boolean;

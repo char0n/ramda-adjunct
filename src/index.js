@@ -17,6 +17,7 @@ export { default as isNotBoolean } from './isNotBoolean';
 export { default as isNilOrEmpty } from './isNilOrEmpty';
 export { default as isString } from './isString';
 export { default as isNotString } from './isNotString';
+export { default as isNonEmptyString } from './isNonEmptyString';
 export { default as isArrayLike } from './isArrayLike';
 export { default as isNotArrayLike } from './isNotArrayLike';
 export { default as isGeneratorFunction } from './isGeneratorFunction';
