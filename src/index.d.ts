@@ -104,6 +104,11 @@ declare namespace RamdaAdjunct {
         isString(val: any): val is string;
 
         /**
+         * Checks if input value is an empty `String`.
+         */
+        isEmptyString(val: any): val is string;
+
+        /**
          * Checks if input value is `undefined`.
          */
         isUndefined(val: any): val is undefined;
