@@ -38,7 +38,7 @@ describe('propNotEq', function () {
     eq(RA.propNotEq('value', new Just([42]), { value: new Just([42]) }), false);
   });
 
-  context('when there is prop bar', function () {
+  context('when there is no prop bar', function () {
     specify('should return true', function () {
       eq(RA.propNotEq('bar', 'foo', obj), true);
     });

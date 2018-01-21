@@ -591,6 +591,17 @@ declare namespace RamdaAdjunct {
         }
 
         /**
+         * Determines whether a nested path on an object doesn't have a specific value,
+         * in R.equals terms. Most likely used to filter a list.
+         */
+        pathNotEq(path: Array<string|number>, value: any, obj: object): boolean;
+        pathNotEq(path: Array<string|number>, value: any): (obj: object) => boolean;
+        pathNotEq(path: Array<string|number>): {
+            (value: any, obj: object): boolean;
+            (value: any): (obj: object) => boolean;
+        }
+
+        /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
         hasPath(path: Array<string|number>, obj: object): boolean;
