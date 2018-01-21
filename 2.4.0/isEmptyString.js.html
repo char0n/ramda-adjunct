@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>mergeRight.js - Documentation</title>
+    <title>isEmptyString.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">mergeRight.js</h1>
+    <h1 class="page-title">isEmptyString.js</h1>
     
 
     
@@ -52,32 +52,35 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { merge, flip } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
+
 
 /**
- * Create a new object with the own properties of the second object merged with
- * the own properties of the first object. If a key exists in both objects,
- * the value from the first object will be used. *
- * Putting it simply: it sets properties only if they don't exist.
+ * Checks if input value is an empty `String`.
  *
- * @func mergeRight
- * @aliases resetToDefault, defaults
+ * @func isEmptyString
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.6.0|v1.6.0}
- * @category Object
- * @sig {k: v} -> {k: v} -> {k: v}
- * @param {Object} r Destination
- * @param {Object} l Source
- * @return {Object}
- * @see {@link http://ramdajs.com/docs/#merge|merge}, {@link https://github.com/ramda/ramda/wiki/Cookbook#set-properties-only-if-they-dont-exist|Ramda Cookbook}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.4.0|v2.4.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {Boolean}
+ * @see {@link RA.isNotEmptyString|isNotEmptyString}
  * @example
  *
- * RA.mergeRight({ 'age': 40 }, { 'name': 'fred', 'age': 10 });
- * //=> { 'name': 'fred', 'age': 40 }
+ * RA.isEmptyString(''); // => true
+ * RA.isEmptyString('42'); // => false
+ * RA.isEmptyString(new String('42')); // => false
+ * RA.isEmptyString(new String('')); // => false
+ * RA.isEmptyString([42]); // => false
+ * RA.isEmptyString({}); // => false
+ * RA.isEmptyString(null); // => false
+ * RA.isEmptyString(undefined); // => false
+ * RA.isEmptyString(42); // => false
  */
-const mergeRight = flip(merge);
+const isEmptyString = equals('');
 
-export default mergeRight;
+export default isEmptyString;
 </code></pre>
         </article>
     </section>
