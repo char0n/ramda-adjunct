@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isPositive.js - Documentation</title>
+    <title>isNonEmptyString.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isPositive.js</h1>
+    <h1 class="page-title">isNonEmptyString.js</h1>
     
 
     
@@ -52,33 +52,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both, lt } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { allPass } from 'ramda';
 
-import isNumber from './isNumber';
+import isString from './isString';
+import isNotObj from './isNotObj';
+import isNotEmpty from './isNotEmpty';
 
 
 /**
- * Checks if value is a positive `Number` primitive or object.
+ * Checks if input value is not an empty `String`.
  *
- * @func isPositive
+ * @func isNonEmptyString
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.15.0|v1.15.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.4.0|v2.4.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNegative|isNegative}
+ * @see {@link RA.isEmptyString|isEmptyString}
  * @example
  *
- * RA.isPositive(1); // => true
- * RA.isPositive(Number.MAX_VALUE); // => true
- * RA.isPositive(-Infinity); // => false
- * RA.isPositive(NaN); // => false
- * RA.isPositive('5'); // => false
+ * RA.isNonEmptyString('42'); // => true
+ * RA.isNonEmptyString(''); // => false
+ * RA.isNonEmptyString(new String('42')); // => false
+ * RA.isNonEmptyString(new String('')); // => false
+ * RA.isNonEmptyString([42]); // => false
+ * RA.isNonEmptyString({}); // => false
+ * RA.isNonEmptyString(null); // => false
+ * RA.isNonEmptyString(undefined); // => false
+ * RA.isNonEmptyString(42); // => false
  */
-const isPositive = both(isNumber, lt(0));
+const isNonEmptyString = allPass([isString, isNotObj, isNotEmpty]);
 
-export default isPositive;
+export default isNonEmptyString;
 </code></pre>
         </article>
     </section>
