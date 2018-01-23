@@ -46,7 +46,10 @@ describe('propNotEq', function () {
 
   context('when data is array and property name is integer', function () {
     context('and array contains provided index', function () {
-      obj = ['a', 'b', 'c'];
+      // eslint-disable-next-line mocha/no-hooks-for-single-case
+      beforeEach(function () {
+        obj = ['a', 'b', 'c'];
+      });
 
       specify('should return false', function () {
         eq(RA.propNotEq(0, 'a', obj), false);
@@ -54,7 +57,10 @@ describe('propNotEq', function () {
     });
 
     context('and array does not contains provided index', function () {
-      obj = ['a', 'b', 'c'];
+      // eslint-disable-next-line mocha/no-hooks-for-single-case
+      beforeEach(function () {
+        obj = ['a', 'b', 'c'];
+      });
 
       specify('should return true', function () {
         eq(RA.propNotEq(0, 'x', obj), true);
