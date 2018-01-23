@@ -1,4 +1,4 @@
-import { curry, curryN, reduce, pluck, max } from 'ramda';
+import { complement, compose, allPass } from 'ramda';
 
 
 /**
@@ -28,16 +28,6 @@ import { curry, curryN, reduce, pluck, max } from 'ramda';
  * f(11); //=> true
  * f(9); //=> true
  */
-const notAllPass = curry(preds => curryN(reduce(max, 0, pluck('length', preds)), function testPredicates(...args) {
-  let idx = 0;
-  const len = preds.length;
-  while (idx < len) {
-    if (!preds[idx].apply(this, args)) {
-      return true;
-    }
-    idx += 1;
-  }
-  return false;
-}));
+const notAllPass = compose(complement, allPass);
 
 export default notAllPass;
