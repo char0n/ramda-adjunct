@@ -125,5 +125,6 @@ export { default as isNotEmpty } from './isNotEmpty';
 export { default as defaultWhen } from './defaultWhen';
 export { default as notBoth } from './notBoth';
 export { default as neither } from './neither';
+export { default as notAllPass } from './notAllPass';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
