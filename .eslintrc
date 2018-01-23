@@ -10,8 +10,10 @@
     }
   },
   "extends": [
-    "airbnb-base"
+    "airbnb-base",
+    "plugin:ramda/recommended"
   ],
+  "plugins": ["eslint-plugin-ramda"],
   "rules": {
     "strict": [2, "global"],
     "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
