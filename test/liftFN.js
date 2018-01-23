@@ -1,13 +1,13 @@
+import { sum } from 'ramda';
 import chai from 'chai';
 import { Maybe } from 'monet';
-import { add, reduce } from 'ramda';
 
 import * as RA from '../src/index';
 import eq from './shared/eq';
 import Identity from '../src/fantasy-land/Identity';
 
 
-const addN = (...args) => reduce(add, 0, args);
+const addN = (...args) => sum(args);
 const add3 = (a, b, c) => a + b + c;
 
 describe('liftFN', function () {

@@ -1,5 +1,3 @@
-import { or } from 'ramda';
-
 import polyfill from './internal/polyfills/Number.isFinite';
 
 /**
@@ -27,6 +25,6 @@ import polyfill from './internal/polyfills/Number.isFinite';
  * RA.isFinite(null); // => false
  *                    // would've been true with global isFinite(null)
  */
-const _isFinite = or(Number.isFinite, polyfill);
+const _isFinite = Number.isFinite || polyfill;
 
 export default _isFinite;

@@ -1,5 +1,3 @@
-import { or } from 'ramda';
-
 import isNotNull from './isNotNull';
 
 
@@ -33,7 +31,7 @@ const isGeneratorFunction = (val) => {
   const toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
   const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
 
-  return or(toStringCheck, legacyConstructorCheck);
+  return toStringCheck || legacyConstructorCheck;
 };
 
 export default isGeneratorFunction;

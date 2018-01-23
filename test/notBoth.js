@@ -1,3 +1,4 @@
+import { F } from 'ramda';
 import { Just, Nothing } from 'monet';
 import sinon from 'sinon';
 
@@ -40,10 +41,9 @@ describe('notBoth', function () {
 
   context('when the first function returns false', function () {
     specify('should not evaluate the second function', function () {
-      const f = () => false;
       const z = sinon.spy();
 
-      RA.notBoth(f, z)();
+      RA.notBoth(F, z)();
       eq(z.notCalled, true);
     });
   });
