@@ -40,7 +40,7 @@ describe('mergeRight', function () {
     eq(curried(b), { w: 1, x: 2, y: 3, z: 4 });
   });
 
-  it('is curried', function () {
+  it('is curried with placeholder', function () {
     const curried = RA.mergeRight({ w: 1, x: 2 }, R.__);
     eq(curried({ x: 3, y: 4 }), { w: 1, x: 2, y: 4 });
   });

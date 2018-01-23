@@ -10,12 +10,12 @@ describe('isArrayLike', function () {
   });
 
   it('is false for arguments', function () {
-    function test() {
+    function testingFn() {
       return RA.isNotArrayLike(arguments);
     }
-    eq(test(), false);
-    eq(test(1, 2, 3), false);
-    eq(test(null), false);
+    eq(testingFn(), false);
+    eq(testingFn(1, 2, 3), false);
+    eq(testingFn(null), false);
   });
 
   it('is true for Strings', function () {

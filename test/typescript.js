@@ -1,4 +1,4 @@
-import { test } from 'ramda';
+import * as R from 'ramda';
 import path from 'path';
 import * as tt from 'typescript-definition-tester';
 
@@ -8,7 +8,7 @@ describe('Typescript definitions', function () {
     this.timeout(15000); // give typescript compiler enough time to complete
     tt.compileDirectory(
       path.join(__dirname, '..', 'src'),
-      test(/index.d.ts$/),
+      R.test(/index.d.ts$/),
       () => done()
     );
   });

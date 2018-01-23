@@ -46,9 +46,7 @@ describe('pathNotEq', function () {
 
   context('when data is array and path consists integers', function () {
     context('and array contains provided path', function () {
-      beforeEach(function () {
-        obj = [['a', 'b', 'c'], ['d', 'f']];
-      });
+      obj = [['a', 'b', 'c'], ['d', 'f']];
 
       specify('should return false', function () {
         eq(RA.pathNotEq([0, 1], 'b', obj), false);
@@ -56,9 +54,7 @@ describe('pathNotEq', function () {
     });
 
     context('and array does not contains provided path', function () {
-      beforeEach(function () {
-        obj = [['a', 'b', 'c'], ['d', 'f']];
-      });
+      obj = [['a', 'b', 'c'], ['d', 'f']];
 
       specify('should return true', function () {
         eq(RA.pathNotEq([999, 999], 'x', obj), true);
