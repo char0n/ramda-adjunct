@@ -764,6 +764,16 @@ declare namespace RamdaAdjunct {
           */
           neither(firstPredicate: Function, secondPredicate: Function): Function;
 
+         /**
+          * Takes a list of predicates and returns a predicate that returns true for a given list of
+          * arguments if one or more of the provided predicates is not satisfied by those arguments.
+          * It is the complement of Ramda's allPass.
+          * 
+          * The function returned is a curried function whose arity matches that of the
+          * highest-arity predicate.
+          */
+        notAllPass(predicates: Array<Function>): Function;
+
         /**
          * Identity type.
          */
