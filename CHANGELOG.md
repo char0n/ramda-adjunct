@@ -1,3 +1,18 @@
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/char0n/ramda-adjunct/compare/v2.3.0...v2.4.0) (2018-01-24)
+
+
+### Features
+
+* add isEmptyArray ([#288](https://github.com/char0n/ramda-adjunct/issues/288)) ([961692e](https://github.com/char0n/ramda-adjunct/commit/961692e)), closes [#279](https://github.com/char0n/ramda-adjunct/issues/279)
+* add isEmptyString ([08d80e9](https://github.com/char0n/ramda-adjunct/commit/08d80e9)), closes [#40](https://github.com/char0n/ramda-adjunct/issues/40)
+* add isNonEmptyArray ([#289](https://github.com/char0n/ramda-adjunct/issues/289)) ([464060e](https://github.com/char0n/ramda-adjunct/commit/464060e)), closes [#279](https://github.com/char0n/ramda-adjunct/issues/279)
+* add isNonEmptyString ([#299](https://github.com/char0n/ramda-adjunct/issues/299)) ([cd94a5f](https://github.com/char0n/ramda-adjunct/commit/cd94a5f)), closes [#40](https://github.com/char0n/ramda-adjunct/issues/40)
+* add notAllPass ([#308](https://github.com/char0n/ramda-adjunct/issues/308)) ([2aa3d2f](https://github.com/char0n/ramda-adjunct/commit/2aa3d2f)), closes [#234](https://github.com/char0n/ramda-adjunct/issues/234)
+* add pathNotEq ([#297](https://github.com/char0n/ramda-adjunct/issues/297)) ([fc0716f](https://github.com/char0n/ramda-adjunct/commit/fc0716f)), closes [#217](https://github.com/char0n/ramda-adjunct/issues/217)
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/char0n/ramda-adjunct/compare/v2.2.0...v2.3.0) (2018-01-14)
 
