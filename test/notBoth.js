@@ -1,4 +1,4 @@
-import { F } from 'ramda';
+import * as R from 'ramda';
 import { Just, Nothing } from 'monet';
 import sinon from 'sinon';
 
@@ -43,7 +43,7 @@ describe('notBoth', function () {
     specify('should not evaluate the second function', function () {
       const z = sinon.spy();
 
-      RA.notBoth(F, z)();
+      RA.notBoth(R.F, z)();
       eq(z.notCalled, true);
     });
   });

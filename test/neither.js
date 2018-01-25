@@ -1,4 +1,4 @@
-import { T } from 'ramda';
+import * as R from 'ramda';
 import { Just, Nothing } from 'monet';
 import sinon from 'sinon';
 
@@ -43,7 +43,7 @@ describe('neither', function () {
     specify('should not evaluate the second expression', function () {
       const z = sinon.spy();
 
-      RA.neither(T, z)();
+      RA.neither(R.T, z)();
       eq(z.notCalled, true);
     });
   });
