@@ -1,3 +1,9 @@
+<a name="2.4.1"></a>
+## [2.4.1](https://github.com/char0n/ramda-adjunct/compare/v2.4.0...v2.4.1) (2018-01-25)
+
+* fix failed build for 2.4.0 release
+
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/char0n/ramda-adjunct/compare/v2.3.0...v2.4.0) (2018-01-24)
 
