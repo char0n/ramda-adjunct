@@ -26,6 +26,10 @@
     }],
     "no-underscore-dangle": 0,
     "object-curly-newline": 0,
-    "import/newline-after-import": ["error", { "count": 2 }]
+    "import/newline-after-import": ["error", { "count": 2 }],
+    "ramda/always-simplification": ["error"],
+    "ramda/compose-simplification": ["error"],
+    "ramda/eq-by-simplification": ["error"],
+    "ramda/prefer-complement": ["error"]
   }
 }
