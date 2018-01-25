@@ -46,6 +46,7 @@ describe('pathNotEq', function () {
 
   context('when data is array and path consists integers', function () {
     context('and array contains provided path', function () {
+      // eslint-disable-next-line mocha/no-hooks-for-single-case
       beforeEach(function () {
         obj = [['a', 'b', 'c'], ['d', 'f']];
       });
@@ -56,6 +57,7 @@ describe('pathNotEq', function () {
     });
 
     context('and array does not contains provided path', function () {
+      // eslint-disable-next-line mocha/no-hooks-for-single-case
       beforeEach(function () {
         obj = [['a', 'b', 'c'], ['d', 'f']];
       });

@@ -6,11 +6,6 @@ import * as RA from '../src/index';
 
 
 describe('concatRight', function () {
-  it('adds combines the elements of the two lists', function () {
-    eq(RA.concatRight(['a', 'b'], ['c', 'd']), ['c', 'd', 'a', 'b']);
-    eq(RA.concatRight([], ['c', 'd']), ['c', 'd']);
-  });
-
   const z1 = {
     x: 'z1',
     concat(that) { return this.x + ' ' + that.x }, // eslint-disable-line prefer-template

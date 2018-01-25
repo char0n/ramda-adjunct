@@ -37,11 +37,7 @@ describe('isPromise', function () {
   });
 
   context('when value is an instance of native Promise', function () {
-    let hasNativePromise;
-
-    beforeEach(function () {
-      hasNativePromise = typeof Promise !== 'undefined' && contains('[native code]', Promise.toString());
-    });
+    const hasNativePromise = typeof Promise !== 'undefined' && contains('[native code]', Promise.toString());
 
     specify('should return true', function () {
       eq(RA.isPromise(Promise.resolve()), hasNativePromise);
