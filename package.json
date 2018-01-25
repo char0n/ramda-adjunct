@@ -110,7 +110,6 @@
     "eslint": "4.16.0",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-ramda": "=2.4.0",
     "eslint-plugin-mocha": "=4.11.0",
     "eslint-plugin-ramda": "=2.4.0",
     "fantasy-land": "3.5.0",
