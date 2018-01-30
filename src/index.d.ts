@@ -740,38 +740,38 @@ declare namespace RamdaAdjunct {
          */
         Y(le: Function): Function;
 
-         /**
-          * A function which calls the two provided functions and returns the complement of `&&`ing
-          * the results. It returns true if the first function is false-y and the complement of the
-          * second function otherwise. Note that this is short-circuited, meaning that the second
-          * function will not be invoked if the first returns a false-y value. In short it will
-          * return true unless both predicates return true.
-          *
-          * In addition to functions, `RA.notBoth` also accepts any fantasy-land compatible
-          * applicative functor.
-          */
+        /**
+         * A function which calls the two provided functions and returns the complement of `&&`ing
+         * the results. It returns true if the first function is false-y and the complement of the
+         * second function otherwise. Note that this is short-circuited, meaning that the second
+         * function will not be invoked if the first returns a false-y value. In short it will
+         * return true unless both predicates return true.
+         *
+         * In addition to functions, `RA.notBoth` also accepts any fantasy-land compatible
+         * applicative functor.
+         */
         notBoth(firstPredicate: Function, secondPredicate: Function): Function;
 
-         /**
-          * A function which calls the two provided functions and returns the complement of `||`ing
-          * the results. It returns false if the first function is truth-y and the complement of the
-          * second function otherwise. Note that this is short-circuited, meaning that the second
-          * function will not be invoked if the first returns a truth-y value. In short it will
-          * return true if neither predicate returns true.
-          *
-          * In addition to functions, `RA.neither` also accepts any fantasy-land compatible
-          * applicative functor.
-          */
-          neither(firstPredicate: Function, secondPredicate: Function): Function;
+        /**
+         * A function which calls the two provided functions and returns the complement of `||`ing
+         * the results. It returns false if the first function is truth-y and the complement of the
+         * second function otherwise. Note that this is short-circuited, meaning that the second
+         * function will not be invoked if the first returns a truth-y value. In short it will
+         * return true if neither predicate returns true.
+         *
+         * In addition to functions, `RA.neither` also accepts any fantasy-land compatible
+         * applicative functor.
+         */
+        neither(firstPredicate: Function, secondPredicate: Function): Function;
 
-         /**
-          * Takes a list of predicates and returns a predicate that returns true for a given list of
-          * arguments if one or more of the provided predicates is not satisfied by those arguments.
-          * It is the complement of Ramda's allPass.
-          * 
-          * The function returned is a curried function whose arity matches that of the
-          * highest-arity predicate.
-          */
+        /**
+         * Takes a list of predicates and returns a predicate that returns true for a given list of
+         * arguments if one or more of the provided predicates is not satisfied by those arguments.
+         * It is the complement of Ramda's allPass.
+         * 
+         * The function returned is a curried function whose arity matches that of the
+         * highest-arity predicate.
+         */
         notAllPass(predicates: Array<Function>): Function;
 
         /**
