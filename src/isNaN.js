@@ -1,5 +1,3 @@
-import { or } from 'ramda';
-
 import polyfill from './internal/polyfills/Number.isNaN';
 
 /**
@@ -35,6 +33,6 @@ import polyfill from './internal/polyfills/Number.isNaN';
  * RA.isNaN(''); // => false
  * RA.isNaN(' '); // => false
  */
-const _isNaN = or(Number.isNaN, polyfill);
+const _isNaN = Number.isNaN || polyfill;
 
 export default _isNaN;
