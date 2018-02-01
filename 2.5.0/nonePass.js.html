@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotFloat.js - Documentation</title>
+    <title>nonePass.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotFloat.js</h1>
+    <h1 class="page-title">nonePass.js</h1>
     
 
     
@@ -52,41 +52,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { complement, compose, anyPass } from 'ramda';
 
-import isFloat from './isFloat';
 
 /**
- * Checks whether the passed value is complement of a `float`.
+ * Takes a list of predicates and returns a predicate that returns true for a given list of
+ * arguments if none of the provided predicates are satisfied by those arguments. It is the
+ * complement of Ramda's anyPass.
  *
- * @func isNotFloat
+ * The function returned is a curried function whose arity matches that of the
+ * highest-arity predicate.
+ *
+ * @func nonePass
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isFloat|isFloat}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
+ * @category Logic
+ * @sig [(*... -> Boolean)] -> (*... -> Boolean)
+ * @param {Array} predicates An array of predicates to check
+ * @return {Function} The combined predicate
+ * @see {@link http://ramdajs.com/docs/#anyPass|anyPass}
  * @example
  *
- * RA.isNotFloat(0); //=> true
- * RA.isNotFloat(1); //=> true
- * RA.isNotFloat(-100000); //=> true
+ * const gt10 = R.gt(R.__, 10)
+ * const even = (x) => x % 2 === 0;
+ * const f = RA.nonePass([gt10, even]);
  *
- * RA.isNotFloat(0.1);       //=> false
- * RA.isNotFloat(Math.PI);   //=> false
- *
- * RA.isNotFloat(NaN);       //=> true
- * RA.isNotFloat(Infinity);  //=> true
- * RA.isNotFloat(-Infinity); //=> true
- * RA.isNotFloat('10');      //=> true
- * RA.isNotFloat(true);      //=> true
- * RA.isNotFloat(false);     //=> true
- * RA.isNotFloat([1]);       //=> true
+ * f(12); //=> false
+ * f(8); //=> false
+ * f(11); //=> false
+ * f(9); //=> true
  */
-const isNotFloat = complement(isFloat);
+const nonePass = compose(complement, anyPass);
 
-export default isNotFloat;
+export default nonePass;
 </code></pre>
         </article>
     </section>
