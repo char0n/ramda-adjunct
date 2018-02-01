@@ -768,7 +768,7 @@ declare namespace RamdaAdjunct {
          * Takes a list of predicates and returns a predicate that returns true for a given list of
          * arguments if one or more of the provided predicates is not satisfied by those arguments.
          * It is the complement of Ramda's allPass.
-         * 
+         *
          * The function returned is a curried function whose arity matches that of the
          * highest-arity predicate.
          */
@@ -783,6 +783,12 @@ declare namespace RamdaAdjunct {
         * highest-arity predicate.
         */
         nonePass(predicates: Array<Function>): Function;
+
+        /**
+         * Creates an array with all falsy values removed.
+         * The values false, null, 0, "", undefined, and NaN are falsy.
+         */
+        compact<T>(list: Array<T>): Array<T>;
 
         /**
          * Identity type.
