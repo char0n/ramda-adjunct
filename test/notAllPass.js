@@ -2,7 +2,7 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 
-describe('allPass', function () {
+describe('notAllPass', function () {
   const odd = n => n % 2 !== 0;
   const lt20 = n => n < 20;
   const gt5 = n => n > 5;
