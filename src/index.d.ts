@@ -788,7 +788,7 @@ declare namespace RamdaAdjunct {
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
-        compact<T>(list: Array<T>): Array<T>;
+        compact(list: Array<any>): Array<any>;
 
         /**
          * Identity type.
