@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isFunction.js - Documentation</title>
+    <title>compact.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isFunction.js</h1>
+    <h1 class="page-title">compact.js</h1>
     
 
     
@@ -52,40 +52,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { anyPass } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { reject } from 'ramda';
 
-import isGeneratorFunction from './isGeneratorFunction';
-import isAsyncFunction from './isAsyncFunction';
+import isFalsy from './isFalsy';
 
-/* eslint-disable max-len */
+
 /**
- * Checks if input value is `Function`.
+ * Creates an array with all falsy values removed.
+ * The values false, null, 0, "", undefined, and NaN are falsy.
  *
- * @func isFunction
+ * @func compact
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotFunction|isNotFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
+ * @category List
+ * @sig Filterable f => f a -> f a
+ * @param {Array} list The array to compact
+ * @return {Array} Returns the new array of filtered values
+ * @see {@link RA.isFalsy|isFalsy}
  * @example
  *
- * RA.isFunction(function test() { }); //=> true
- * RA.isFunction(function* test() { }); //=> true
- * RA.isFunction(async function test() { }); //=> true
- * RA.isFunction(() => {}); //=> true
- * RA.isFunction(null); //=> false
- * RA.isFunction('abc'); //=> false
+ * RA.compact([0, 1, false, 2, '', 3]); //=> [1, 2, 3]
  */
-/* eslint-enable max-len */
-const isFunction = anyPass([
-  val => Object.prototype.toString.call(val) === '[object Function]',
-  isGeneratorFunction,
-  isAsyncFunction,
-]);
+const compact = reject(isFalsy);
 
-export default isFunction;
+export default compact;
 </code></pre>
         </article>
     </section>
