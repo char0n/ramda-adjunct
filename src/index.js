@@ -96,6 +96,7 @@ export { default as reduceRightP } from './reduceRightP';
 export { default as sliceFrom } from './sliceFrom';
 export { default as sliceTo } from './sliceTo';
 export { default as omitIndexes } from './omitIndexes';
+export { default as compact } from './compact';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
@@ -126,5 +127,6 @@ export { default as defaultWhen } from './defaultWhen';
 export { default as notBoth } from './notBoth';
 export { default as neither } from './neither';
 export { default as notAllPass } from './notAllPass';
+export { default as nonePass } from './nonePass';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
