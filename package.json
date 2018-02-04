@@ -53,7 +53,8 @@
     "build:umd": "better-npm-run build:umd",
     "nsp:check": "better-npm-run nsp:check",
     "prepublishOnly": "better-npm-run prepublishOnly",
-    "clean": "better-npm-run clean"
+    "clean": "better-npm-run clean",
+    "postinstall": "opencollective postinstall"
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.js",
@@ -107,16 +108,17 @@
     "cross-env": "=5.1.3",
     "docdash": "git+https://github.com/char0n/docdash.git#bf4b4eebfdaf042c0ea9038419bc26813f243c94",
     "es6-promise": "4.2.4",
-    "eslint": "4.16.0",
+    "eslint": "4.17.0",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-mocha": "=4.11.0",
+    "eslint-plugin-ramda": "=2.4.0",
     "fantasy-land": "3.5.0",
     "glob": "=7.1.2",
     "istanbul": "=0.4.5",
     "jsdoc": "=3.5.5",
     "jsverify": "=0.8.3",
-    "license-cli": "1.1.5",
+    "license-cli": "1.1.6",
     "mocha": "5.0.0",
     "mocha-junit-reporter": "1.17.0",
     "mocha-multi-reporters": "1.1.7",
@@ -133,5 +135,11 @@
     "webpack": "3.10.0"
   },
   "tonicExampleFilename": "tonicExample.js",
-  "dependencies": {}
+  "dependencies": {
+    "opencollective": "=1.0.3"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/ramda-adjunct"
+  }
 }

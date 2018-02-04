@@ -180,3 +180,32 @@ A detailed explanation can be found in this [document][commit-message-format].
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
 [js-style-guide]: https://github.com/airbnb/javascript
 [git-rebase-workflow]: https://randyfay.com/content/rebase-workflow-git 
+
+
+## Financial contributions
+
+We also welcome financial contributions in full transparency on our [open collective](https://opencollective.com/ramda-adjunct).
+Anyone can file an expense. If the expense makes sense for the development of the community, it will be "merged" in the ledger of our open collective by the core contributors and the person who filed the expense will be reimbursed.
+
+
+## Credits
+
+
+### Contributors
+
+Thank you to all the people who have already contributed to ramda-adjunct!
+<a href="graphs/contributors"><img src="https://opencollective.com/ramda-adjunct/contributors.svg?width=890" /></a>
+
+
+### Backers
+
+Thank you to all our backers! [[Become a backer](https://opencollective.com/ramda-adjunct#backer)]
+
+<a href="https://opencollective.com/ramda-adjunct#backers" target="_blank"><img src="https://opencollective.com/ramda-adjunct/backers.svg?width=890"></a>
+
+
+### Sponsors
+
+Thank you to all our sponsors! (please ask your company to also support this open source project by [becoming a sponsor](https://opencollective.com/ramda-adjunct#sponsor))
+
+<a href="https://opencollective.com/ramda-adjunct/sponsor/0/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/0/avatar.svg"></a>
