@@ -11,7 +11,8 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/char0n/ramda-adjunct/issues)
 [![try on RunKit](https://img.shields.io/badge/try%20on-RunKit-brightgreen.svg?style=flat)](https://npm.runkit.com/ramda-adjunct)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct?ref=badge_shield)
-[![Backers on Open Collective](https://opencollective.com/ramda-adjunct/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/ramda-adjunct/sponsors/badge.svg)](#sponsors)
+[![Backers on Open Collective](https://opencollective.com/ramda-adjunct/backers/badge.svg)](#backers) 
+[![Sponsors on Open Collective](https://opencollective.com/ramda-adjunct/sponsors/badge.svg)](#sponsors)
 [![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Ramda Adjunct
@@ -229,14 +230,6 @@ gets imported into Typescript project, typings are automatically imported and us
 
 ### Contributors
 
- - [Tycho Grouwstra](https://github.com/tycho01)
- - [Michael Kuk](https://github.com/michaelkuk)
- - [Sergey Homa](https://github.com/BjornMelgaard)
- - [Rocky Madden](https://github.com/rockymadden)
- - [Pedr Browne](https://github.com/Undistraction)
- - [Lorenzo Giuliani](https://github.com/aliem)
-
-
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
 <a href="graphs/contributors"><img src="https://opencollective.com/ramda-adjunct/contributors.svg?width=890" /></a>
 
@@ -253,16 +246,6 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/ramda-adjunct#sponsor)]
 
 <a href="https://opencollective.com/ramda-adjunct/sponsor/0/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/1/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/2/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/3/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/4/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/5/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/6/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/7/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/8/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/ramda-adjunct/sponsor/9/website" target="_blank"><img src="https://opencollective.com/ramda-adjunct/sponsor/9/avatar.svg"></a>
-
 
 
 ### License
