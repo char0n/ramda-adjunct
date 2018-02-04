@@ -1,5 +1,4 @@
 import _isArray from 'ramda/src/internal/_isArray';
-import { or } from 'ramda';
 
 
 /**
@@ -19,6 +18,6 @@ import { or } from 'ramda';
  * RA.isArray(null); //=> false
  * RA.isArray({}); //=> false
  */
-const isArray = or(Array.isArray, _isArray);
+const isArray = Array.isArray || _isArray;
 
 export default isArray;

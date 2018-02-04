@@ -1,5 +1,3 @@
-import { or } from 'ramda';
-
 import polyfill from './internal/polyfills/Number.isInteger';
 
 /**
@@ -30,6 +28,6 @@ import polyfill from './internal/polyfills/Number.isInteger';
  * RA.isInteger(false);     //=> false
  * RA.isInteger([1]);       //=> false
  */
-const isInteger = or(Number.isInteger, polyfill);
+const isInteger = Number.isInteger || polyfill;
 
 export default isInteger;
