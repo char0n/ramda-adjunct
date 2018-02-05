@@ -229,7 +229,7 @@ Although Ramda Adjunct is written in ES2016, we also support **Typescript**. Whe
 ### Contributors
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="graphs/contributors"><img src="https://opencollective.com/ramda-adjunct/contributors.svg?width=890" /></a>
+<a href="https://github.com/char0n/ramda-adjunct/graphs/contributors"><img src="https://opencollective.com/ramda-adjunct/contributors.svg?width=890" /></a>
 
 
 ## Backers
