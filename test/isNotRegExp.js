@@ -6,7 +6,6 @@ import Symbol from './shared/Symbol';
 
 describe('isNotRegExp', function () {
   it('tests a value for complement of `RegExp`', function () {
-
     eq(RA.isNotRegExp('a'), true);
     eq(RA.isNotRegExp(1), true);
     eq(RA.isNotRegExp([]), true);
@@ -27,7 +26,6 @@ describe('isNotRegExp', function () {
 
     eq(RA.isNotRegExp(null), true);
     eq(RA.isNotRegExp(undefined), true);
-
 
     eq(RA.isNotRegExp(new RegExp()), false);
     eq(RA.isNotRegExp(/x/), false);
