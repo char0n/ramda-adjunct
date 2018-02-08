@@ -19,6 +19,7 @@ describe('isNotRegExp', function () {
     eq(RA.isNotRegExp(function () {}), true);
     eq(RA.isNotRegExp(Object(0)), true);
     eq(RA.isNotRegExp(Object('a')), true);
+    eq(RA.isNotRegExp(args), true);
 
     if (Symbol !== 'undefined') {
       eq(RA.isNotRegExp(Symbol), true);
