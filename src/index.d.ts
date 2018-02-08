@@ -791,6 +791,12 @@ declare namespace RamdaAdjunct {
         compact(list: Array<any>): Array<any>;
 
         /**
+         * Returns a new list containing the contents of the given list, followed by the given
+         * element. Ramda's `append`, but with argument order reversed: list then value.
+         */
+        appendFlipped(list: Array<any>, val: any): Array<any>;
+
+        /**
          * Identity type.
          */
         Identity: Function;
