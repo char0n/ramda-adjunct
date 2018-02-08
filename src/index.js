@@ -90,6 +90,7 @@ export { default as Y } from './Y';
 export { default as seq } from './seq';
 export { default as sequencing } from './seq';
 // List
+export { default as mapIndexed } from './mapIndexed';
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 export { default as concatRight } from './concatRight';

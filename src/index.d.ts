@@ -507,6 +507,20 @@ declare namespace RamdaAdjunct {
          */
         curryRight(fn: Function): Function;
 
+
+        /**
+         * Like {@link http://ramdajs.com/docs/#map|R.map} but with iterator function that take the current element,
+         * the element's key, and the list itself.
+         */
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: T[]) => U, list: T[]): U[];
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: T[]) => U): (list: T[]) => U[];
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: Dictionary<T>) => U, list: Dictionary<T>): Dictionary<U>;
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: Dictionary<T>) => U): (list: Dictionary<T>) => Dictionary<U>;
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: Functor<T>) => U, list: Functor<T>): Functor<U>;
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: Functor<T>) => U): (list: Functor<T>) => Functor<U>;
+        mapIndexed(iterator: (char: string, key: number, str: string) => string, str: string): string[];
+        mapIndexed(iterator: (char: string, key: number, str: string) => string): (str: string) => string[];
+
         /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
          * which produces promises (or a mix of promises and values),
@@ -582,6 +596,7 @@ declare namespace RamdaAdjunct {
         viewOr(defaultValue: any, lens: Function, data: any): any;
         viewOr(defaultValue: any, lens: Function): (data: any) => any;
         viewOr(defaultValue: any): (lens: Function) => (data: any) => any;
+
 
         /**
          * Defines an isomorphism that will work like a lens. It takes two functions.
