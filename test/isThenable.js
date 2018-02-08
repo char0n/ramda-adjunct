@@ -36,8 +36,13 @@ describe('isThenable', function () {
 
   context('when value is an instance of native Promise', function () {
     specify('should return true', function () {
-      eq(RA.isThenable(Promise.resolve()), true);
-      eq(RA.isThenable(Promise.reject()), true);
+      const resolvedP = Promise.resolve();
+      const rejectedP = Promise.reject();
+
+      eq(RA.isThenable(resolvedP), true);
+      eq(RA.isThenable(rejectedP), true);
+
+      rejectedP.catch(RA.noop);
     });
   });
 

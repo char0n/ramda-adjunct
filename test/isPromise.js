@@ -40,8 +40,13 @@ describe('isPromise', function () {
     const hasNativePromise = typeof Promise !== 'undefined' && contains('[native code]', Promise.toString());
 
     specify('should return true', function () {
-      eq(RA.isPromise(Promise.resolve()), hasNativePromise);
-      eq(RA.isPromise(Promise.reject()), hasNativePromise);
+      const resolvedP = Promise.resolve();
+      const rejectedP = Promise.reject();
+
+      eq(RA.isPromise(resolvedP), hasNativePromise);
+      eq(RA.isPromise(rejectedP), hasNativePromise);
+
+      rejectedP.catch(RA.noop);
     });
   });
 
