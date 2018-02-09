@@ -8,6 +8,7 @@ describe('isRegExp', function () {
   it('tests a value for `RegExp`', function () {
     eq(RA.isRegExp(new RegExp()), true);
     eq(RA.isRegExp(/x/), true);
+    eq(RA.isRegExp(/(?:)/), true);
 
     eq(RA.isRegExp('a'), false);
     eq(RA.isRegExp(1), false);
