@@ -17,19 +17,8 @@ import { addIndex, map } from 'ramda';
  * @param {Array} list The list to be iterated over.
  * @return {Array} The new list.
  * @see {@link http://ramdajs.com/docs/#addIndex|R.addIndex}, {@link http://ramdajs.com/docs/#map|R.map}.
- * @example const joinArgs = separator => R.compose(R.join(separator), RA.list);
- *
- * RA.mapIndexed(joinArgs(''), ['a', 'b', 'c']);
- * //=> ["a0a,b,c", "b1a,b,c", "c2a,b,c"]
- *
- * RA.mapIndexed(joinArgs(''), { a: 'a', b: 'b', c: 'c' });
- * //=> {a: "a0[object Object]", b: "b1[object Object]", c: "c2[object Object]"}
- *
- * RA.mapIndexed(joinArgs(''), RA.identity.of('a'));
- * //=> Identity { value: "a0[object Object]" }
- *
- * RA.mapIndexed(joinArgs(''), 'abc');
- * //=> ["a0abc", "b1abc", "c2abc"]
+ * @example R.mapIndexed((val, idx, list) => idx + '-' + val, ['f', 'o', 'o', 'b', 'a', 'r']);
+ * //=> ['0-f', '1-o', '2-o', '3-b', '4-a', '5-r']
  */
 const mapIndexed = addIndex(map);
 
