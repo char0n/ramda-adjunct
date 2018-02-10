@@ -319,6 +319,16 @@ declare namespace RamdaAdjunct {
         isNotPair(val: any): boolean;
 
         /**
+         * Checks if value is `RegExp` object.
+         */
+        isRegExp(val: any): boolean;
+
+        /**
+         * Checks if value is complement of `RegExp` object.
+         */
+        isNotRegExp(val: any): boolean;
+
+        /**
          * A function that returns `undefined`.
          */
         stubUndefined(): undefined;

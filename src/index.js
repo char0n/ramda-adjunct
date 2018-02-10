@@ -66,6 +66,8 @@ export { default as isThenable } from './isThenable';
 export { default as isPromise } from './isPromise';
 export { default as isTruthy } from './isTruthy';
 export { default as isFalsy } from './isFalsy';
+export { default as isRegExp } from './isRegExp';
+export { default as isNotRegExp } from './isNotRegExp';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
