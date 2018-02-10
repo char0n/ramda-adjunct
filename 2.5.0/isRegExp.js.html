@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isAsyncFunction.js - Documentation</title>
+    <title>isRegExp.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isAsyncFunction.js</h1>
+    <h1 class="page-title">isRegExp.js</h1>
     
 
     
@@ -52,29 +52,28 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/* eslint-disable max-len */
+            <pre class="prettyprint source linenums"><code>import { is } from 'ramda';
+
 /**
- * Checks if input value is `Async Function`.
+ * Checks if value is `RegExp` object.
  *
- * @func isAsyncFunction
+ * @func isRegExp
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isNotAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @see {@link RA.isNotRegExp|isNotRegExp}
  * @example
  *
- * RA.isAsyncFunction(async function test() { }); //=> true
- * RA.isAsyncFunction(null); //=> false
- * RA.isAsyncFunction(function test() { }); //=> false
- * RA.isAsyncFunction(() => {}); //=> false
+ * RA.isRegExp(new RegExp()); //=> true
+ * RA.isRegExp(/(?:)/); //=> true
+ * RA.isRegExp(1); //=> false
  */
-/* eslint-enable max-len */
-const isAsyncFunction = val => Object.prototype.toString.call(val) === '[object AsyncFunction]';
+const isRegExp = is(RegExp);
 
-export default isAsyncFunction;
+export default isRegExp;
 </code></pre>
         </article>
     </section>
