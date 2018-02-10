@@ -128,7 +128,7 @@
     "phantomjs": "=2.1.7",
     "ramda": "=0.25.0",
     "rimraf": "=2.6.2",
-    "sinon": "4.2.2",
+    "sinon": "4.2.3",
     "testem": "2.0.0",
     "tslint": "=5.9.1",
     "typescript": "2.6.2",
