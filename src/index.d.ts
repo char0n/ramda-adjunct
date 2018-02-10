@@ -14,9 +14,7 @@ declare namespace RamdaAdjunct {
         cata<T1>(leftFn: (v: T1) => T, rightFn: (v: T1) => T): T;
     }
 
-    interface Variadic<T1, T2> {
-        (...args: T1[]): T2;
-    }
+    type Variadic<T1, T2> = (...args: T1[]) => T2;
 
     interface IteratorResult<T> {
         done: boolean;
@@ -29,19 +27,18 @@ declare namespace RamdaAdjunct {
         throw?(e?: any): IteratorResult<T>;
     }
 
-
-    type Dictionary<T> = { [key: string]: T }
+    interface Dictionary<T> { [key: string]: T; }
 
     export interface Static {
         /**
          * Checks if input value is `Array`.
          */
-        isArray(val: any): val is Array<any>;
+        isArray(val: any): val is any[];
 
         /**
          * Checks if input value is an empty `Array`.
          */
-        isEmptyArray(val: any): val is Array<any>;
+        isEmptyArray(val: any): val is any[];
 
         /**
          * Checks if input value is `Boolean`.
@@ -61,7 +58,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is a non empty `Array`.
          */
-        isNonEmptyArray(val: any): val is Array<any>;
+        isNonEmptyArray(val: any): val is any[];
 
         /**
          * Checks if input value is complement of `Boolean`.
@@ -121,8 +118,7 @@ declare namespace RamdaAdjunct {
         /**
          * Tests whether or not an object is similar to an array.
          */
-        isArrayLike(val: any): boolean
-
+        isArrayLike(val: any): boolean;
 
         /**
          * Tests whether or not an object is similar to an array.
@@ -162,8 +158,8 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is language type of `Object`.
          */
-        isObj(val: any): val is Object | Function;
-        isObject(val: any): val is Object | Function; // alias
+        isObj(val: any): val is {} | Function;
+        isObject(val: any): val is {} | Function; // alias
 
         /**
          * Checks if input value is complement of language type of `Object`.
@@ -174,11 +170,12 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
          */
-        isObjLike(val: any): val is Object;
-        isObjectLike(val: any): val is Object; // alias
+        isObjLike(val: any): val is object;
+        isObjectLike(val: any): val is object; // alias
 
         /**
-         * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
+         * Checks if value is not object-like.
+         * A value is object-like if it's not null and has a typeof result of "object".
          */
         isNotObjLike(val: any): boolean;
         isNotObjectLike(val: any): boolean; // alias
@@ -190,7 +187,8 @@ declare namespace RamdaAdjunct {
         isPlainObject(val: any): val is object; // alias
 
         /**
-         * Check to see if an object is not a plain object (created using `{}`, `new Object()` or `Object.create(null)`).
+         * Check to see if an object is not a plain object
+         * (created using `{}`, `new Object()` or `Object.create(null)`).
          */
         isNotPlainObj(val: any): boolean;
         isNotPlainObject(val: any): boolean; // alias
@@ -234,7 +232,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is a `Number` primitive or object.
          */
-        isNumber(val: any): val is Number;
+        isNumber(val: any): val is number;
 
         /**
          * Checks if value is a complement of `Number` primitive or object.
@@ -244,12 +242,12 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is a positive `Number` primitive or object.
          */
-        isPositive(val: any): val is number
+        isPositive(val: any): val is number;
 
         /**
          * Checks if value is a negative `Number` primitive or object.
          */
-        isNegative(val: any): val is number
+        isNegative(val: any): val is number;
 
         /**
          * Checks whether the passed value is a finite `Number`.
@@ -282,15 +280,15 @@ declare namespace RamdaAdjunct {
         isNotFloat(val: any): boolean;
 
         /**
-        * Checks if value is a valid `Number`. A valid `Number` is a number that is not `NaN`,
-        * `Infinity` or `-Infinity`.
-        */
+         * Checks if value is a valid `Number`. A valid `Number` is a number that is not `NaN`,
+         * `Infinity` or `-Infinity`.
+         */
         isValidNumber(val: any): boolean;
 
         /**
-        * Checks if value is not a valid `Number`. A valid `Number` is a number that is not `NaN`,
-        * `Infinity` or `-Infinity`.
-        */
+         * Checks if value is not a valid `Number`. A valid `Number` is a number that is not `NaN`,
+         * `Infinity` or `-Infinity`.
+         */
         isNotValidNumber(val: any): boolean;
 
         /**
@@ -311,7 +309,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is a pair.
          */
-        isPair(val: any): val is Array<any>;
+        isPair(val: any): val is any[];
 
         /**
          * Checks if input value is complement of a pair.
@@ -336,23 +334,23 @@ declare namespace RamdaAdjunct {
         /**
          * A function that returns `null`.
          */
-        stubNull():  null;
+        stubNull(): null;
 
         /**
          * A function that returns new empty array on every call.
          */
-        stubArray():  Array<any>;
+        stubArray(): any[];
 
         /**
          * This function returns a new empty object.
          */
-        stubObj():  {};
+        stubObj(): {};
         stubObject(): {}; // alias
 
         /**
          * A function that returns empty string.
          */
-        stubString(): '';
+        stubString(): "";
 
         /**
          * A function that performs no operations.
@@ -362,27 +360,27 @@ declare namespace RamdaAdjunct {
         /**
          * Picks values from list by indexes.
          */
-        pickIndexes<T>(indexes: Array<number>, list: Array<T>): Array<T>;
-        pickIndexes(indexes: Array<number>): <T>(list: Array<T>) => Array<T>;
+        pickIndexes<T>(indexes: number[], list: T[]): T[];
+        pickIndexes(indexes: number[]): <T>(list: T[]) => T[];
 
         /**
          * Creates a list from from arguments.
          */
-        list(...items: any[]): Array<any>;
+        list(...items: any[]): any[];
 
         /**
          * Returns the result of concatenating the given lists or strings.
          */
-        concatRight<T extends Array<any>>(firstList: T, secondList: T): T;
-        concatRight<T extends Array<any>>(firstList: T): (secondList: T) => T;
+        concatRight<T extends any[]>(firstList: T, secondList: T): T;
+        concatRight<T extends any[]>(firstList: T): (secondList: T) => T;
         concatRight(firstList: string, secondList: string): string;
         concatRight(firstList: string): (secondList: string) => string;
 
         /**
          * Acts as multiple path: arrays of paths in, array of values out. Preserves order.
          */
-        paths(ps: Array<Array<string | number>>, obj: object): Array<any>;
-        paths(ps: Array<Array<string | number>>): (obj: object) => Array<any>;
+        paths(ps: Array<Array<string | number>>, obj: object): any[];
+        paths(ps: Array<Array<string | number>>): (obj: object) => any[];
 
         /**
          * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
@@ -402,15 +400,19 @@ declare namespace RamdaAdjunct {
          * the right value and the value of the function returned. Otherwise the left function
          * will be called with the left value.
          */
-        cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1, rightFn: (rightValue: V2) => T2, either: Catamorphism<V1|V2>): T1|T2;
-        cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1, rightFn: (rightValue: V2) => T2): {
-            (either: Catamorphism<V1|V2>): T1|T2;
-        };
+        cata<V1, V2, T1, T2>(
+          leftFn: (leftValue: V1) => T1,
+          rightFn: (rightValue: V2) => T2,
+          either: Catamorphism<V1|V2>,
+        ): T1|T2;
+        cata<V1, V2, T1, T2>(
+          leftFn: (leftValue: V1) => T1,
+          rightFn: (rightValue: V2) => T2):
+          (either: Catamorphism<V1|V2>,
+        ) => T1|T2;
         cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1): {
             (rightFn: (rightValue: V2) => T1, either: Catamorphism<V1|V2>): T1|T2;
-            (rightFn: (rightValue: V2) => T1): {
-                (either: Catamorphism<V1|V2>): T1|T2;
-            }
+            (rightFn: (rightValue: V2) => T1): (either: Catamorphism<V1|V2>) => T1|T2
         };
 
         /**
@@ -447,8 +449,8 @@ declare namespace RamdaAdjunct {
         /**
          * Functional equivalent of merging object properties with object spread.
          */
-        mergeProps(ps: Array<string>, obj: object): object;
-        mergeProps(ps: Array<string>): (obj: object) => object;
+        mergeProps(ps: string[], obj: object): object;
+        mergeProps(ps: string[]): (obj: object) => object;
 
         /**
          * Merge objects under corresponding paths.
@@ -466,7 +468,7 @@ declare namespace RamdaAdjunct {
         mergeProp(p: string): {
             (source: object, obj: object): object;
             (source: object): (obj: object) => object;
-        }
+        };
 
         /**
          * Create a new object with the own properties of the object under the `path`
@@ -478,7 +480,7 @@ declare namespace RamdaAdjunct {
         mergePath(path: Array<Array<string | number>>): {
             (source: object, obj: object): object;
             (source: object): (obj: object) => object;
-        }
+        };
 
         /**
          * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.
@@ -496,14 +498,14 @@ declare namespace RamdaAdjunct {
          * Returns a curried equivalent of the provided function, with the specified arity.
          * This function is like curryN, except that the provided arguments order is reversed.
          */
-        curryRightN(arity: number, fn: Function): Function
-        curryRightN(arity: number): (fn: Function) => Function
+        curryRightN(arity: number, fn: Function): Function;
+        curryRightN(arity: number): (fn: Function) => Function;
 
         /**
          * Returns a curried equivalent of the provided function.
          * This function is like curry, except that the provided arguments order is reversed.
          */
-        curryRight(fn: Function): Function
+        curryRight(fn: Function): Function;
 
         /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
@@ -512,14 +514,10 @@ declare namespace RamdaAdjunct {
          * reduce the array to a value using the given iterator function.
          */
         reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult, list: R): TResult;
-        reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult): {
-            (list: R): TResult
-        };
+        reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult): (list: R) => TResult;
         reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult): {
             (acc: TResult, list: R): TResult;
-            (acc: TResult): {
-                (list: R): TResult
-            }
+            (acc: TResult): (list: R) => TResult
         };
 
         /**
@@ -532,15 +530,18 @@ declare namespace RamdaAdjunct {
          * The iterator function receives two values: (value, acc),
          * while the arguments' order of reduceP's iterator function is (acc, value).
          */
-        reduceRightP<T, TResult, R extends T[]>(fn: (elem: T, acc: TResult) => TResult, acc: TResult, list: R): TResult;
-        reduceRightP<T, TResult, R extends T[]>(fn: (elem: T, acc: TResult) => TResult, acc: TResult): {
-            (list: R): TResult
-        };
+        reduceRightP<T, TResult, R extends T[]>(
+            fn: (elem: T, acc: TResult) => TResult,
+            acc: TResult,
+            list: R,
+        ): TResult;
+        reduceRightP<T, TResult, R extends T[]>(
+            fn: (elem: T, acc: TResult) => TResult,
+            acc: TResult,
+        ): (list: R) => TResult;
         reduceRightP<T, TResult, R extends T[]>(fn: (elem: T, acc: TResult) => TResult): {
             (acc: TResult, list: R): TResult;
-            (acc: TResult): {
-                (list: R): TResult
-            }
+            (acc: TResult): (list: R) => TResult
         };
         /**
          * Returns `true` if data structure focused by the given lens equals provided value.
@@ -589,8 +590,8 @@ declare namespace RamdaAdjunct {
         lensIso: {
             (to: Function, from: Function): Function
             (to: Function): (from: Function) => Function
-            from(lens: Function): Function
-        }
+            from(lens: Function): Function,
+        };
 
         /**
          * Returns true if the specified object property is not equal,
@@ -601,7 +602,7 @@ declare namespace RamdaAdjunct {
         propNotEq(prop: string|number): {
             (value: any, obj: object): boolean;
             (value: any): (obj: object) => boolean;
-        }
+        };
 
         /**
          * Determines whether a nested path on an object doesn't have a specific value,
@@ -612,7 +613,7 @@ declare namespace RamdaAdjunct {
         pathNotEq(path: Array<string|number>): {
             (value: any, obj: object): boolean;
             (value: any): (obj: object) => boolean;
-        }
+        };
 
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
@@ -621,14 +622,14 @@ declare namespace RamdaAdjunct {
         hasPath(path: Array<string|number>): (obj: object) => boolean;
 
         /**
-        * Spreads object under property path onto provided object.
-        */
+         * Spreads object under property path onto provided object.
+         */
         spreadPath(path: Array<string|number>, obj: object): object;
         spreadPath(path: Array<string|number>): (obj: object) => object;
 
         /**
-        * Spreads object under property onto provided object.
-        */
+         * Spreads object under property onto provided object.
+         */
         spreadProp(prop: string|number, obj: object): object;
         spreadProp(prop: string|number): (obj: object) => object;
 
@@ -651,7 +652,7 @@ declare namespace RamdaAdjunct {
          * in the iterable argument have resolved or when the iterable argument contains no promises.
          * It rejects with the reason of the first promise that rejects.
          */
-        allP<T>(iterator: Iterator<T>): Promise<Array<T>>;
+        allP<T>(iterator: Iterator<T>): Promise<T[]>;
 
         /**
          * Composable shortcut for `Promise.resolve`.
@@ -675,30 +676,30 @@ declare namespace RamdaAdjunct {
          *
          * Acts as a transducer if a transformer is given as second parameter.
          */
-        seq<T>(fns: Array<Function>, x: T): T;
-        sequencing<T>(fns: Array<Function>, x: T): T; // alias
+        seq<T>(fns: Function[], x: T): T;
+        sequencing<T>(fns: Function[], x: T): T; // alias
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
          * from fromIndex (inclusive).
          * Dispatches to the slice method of the third argument, if present.
          */
-        sliceFrom<T>(fromIndex: number, list: string|Array<T>): string|Array<T>;
-        sliceFrom(fromIndex: number): <T>(list: string|Array<T>) => string|Array<T>;
+        sliceFrom<T>(fromIndex: number, list: string|T[]): string|T[];
+        sliceFrom(fromIndex: number): <T>(list: string|T[]) => string|T[];
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
          * to toIndex (exclusive).
          * Dispatches to the slice method of the second argument, if present.
          */
-        sliceTo<T>(toIndex: number, list: string|Array<T>): string|Array<T>;
-        sliceTo(toIndex: number): <T>(list: string|Array<T>) => string|Array<T>;
+        sliceTo<T>(toIndex: number, list: string|T[]): string|T[];
+        sliceTo(toIndex: number): <T>(list: string|T[]) => string|T[];
 
         /**
          * Returns a partial copy of an array omitting the indexes specified.
          */
-        omitIndexes<T>(indexes: number[], list: Array<T>): Array<T>;
-        omitIndexes(indexes: number[]): <T>(list: Array<T>) => Array<T>;
+        omitIndexes<T>(indexes: number[], list: T[]): T[];
+        omitIndexes(indexes: number[]): <T>(list: T[]) => T[];
 
         /**
          * Checks if input value is a `thenable`.
@@ -775,23 +776,23 @@ declare namespace RamdaAdjunct {
          * The function returned is a curried function whose arity matches that of the
          * highest-arity predicate.
          */
-        notAllPass(predicates: Array<Function>): Function;
+        notAllPass(predicates: Function[]): Function;
 
         /**
-        * Takes a list of predicates and returns a predicate that returns true for a given list of
-        * arguments if none of the provided predicates are satisfied by those arguments. It is the
-        * complement of Ramda's anyPass.
-        *
-        * The function returned is a curried function whose arity matches that of the
-        * highest-arity predicate.
-        */
-        nonePass(predicates: Array<Function>): Function;
+         * Takes a list of predicates and returns a predicate that returns true for a given list of
+         * arguments if none of the provided predicates are satisfied by those arguments. It is the
+         * complement of Ramda's anyPass.
+         *
+         * The function returned is a curried function whose arity matches that of the
+         * highest-arity predicate.
+         */
+        nonePass(predicates: Function[]): Function;
 
         /**
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
-        compact(list: Array<any>): Array<any>;
+        compact(list: any[]): any[];
 
         /**
          * Identity type.
