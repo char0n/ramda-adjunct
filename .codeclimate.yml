@@ -1,4 +1,7 @@
 ---
+checks:
+  file-lines:
+    enabled: false
 engines:
   duplication:
     enabled: true
