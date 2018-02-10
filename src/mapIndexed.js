@@ -2,10 +2,8 @@ import { addIndex, map } from 'ramda';
 
 
 /**
- * Like {@link http://ramdajs.com/docs/#map|R.map} but with iterator function that take the current element,
- * the element's key, and the list itself.
- *
- * This function is like {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map|Array.prototype.map}
+ * {@link http://ramdajs.com/docs/#map|R.map} function that more closely resembles Array.prototype.map.
+ * It takes two new parameters to its callback function: the current index, and the entire list.
  *
  * `mapIndexed` implementation is simple : `
  * const mapIndexed = R.addIndex(R.map);
@@ -15,8 +13,7 @@ import { addIndex, map } from 'ramda';
  * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
  * @category List
  * @sig Functor f => ((a, Number, f a) => b) => f a -> f b
- * @param {Function} fn The iterator function.
- * Receives tree values, the current element, the element's key and the list itself
+ * @param {Function} fn The function to be called on every element of the input `list`
  * @param {Array} list The list to be iterated over.
  * @return {Array} The new list.
  * @see {@link http://ramdajs.com/docs/#addIndex|R.addIndex}, {@link http://ramdajs.com/docs/#map|R.map}.

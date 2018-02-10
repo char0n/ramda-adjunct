@@ -508,8 +508,8 @@ declare namespace RamdaAdjunct {
         curryRight(fn: Function): Function;
 
         /**
-         * Like {@link http://ramdajs.com/docs/#map|R.map} but with iterator function that take the current element,
-         * the element's key, and the list itself.
+         * {@link http://ramdajs.com/docs/#map|R.map} function that more closely resembles Array.prototype.map.
+         * It takes two new parameters to its callback function: the current index, and the entire list.
          */
         mapIndexed<T, U>(iterator: (elem: T, key: number, list: T[]) => U, list: T[]): U[];
         mapIndexed<T, U>(iterator: (elem: T, key: number, list: T[]) => U): (list: T[]) => U[];
