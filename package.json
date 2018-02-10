@@ -58,8 +58,8 @@
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.js",
-    "lint": "eslint ./",
-    "lint:fix": "eslint ./ --fix",
+    "lint": "eslint ./ && tslint -c tslint.json src/index.d.ts",
+    "lint:fix": "eslint ./ --fix && tslint --fix -c tslint.json src/index.d.ts",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
     "test": "cross-env BABEL_ENV=commonjs mocha",
     "test:web": "testem ci",
@@ -130,6 +130,7 @@
     "rimraf": "=2.6.2",
     "sinon": "4.2.2",
     "testem": "2.0.0",
+    "tslint": "=5.9.1",
     "typescript": "2.6.2",
     "typescript-definition-tester": "=0.0.5",
     "webpack": "3.10.0"
