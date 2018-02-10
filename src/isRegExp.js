@@ -14,6 +14,7 @@ import { is } from 'ramda';
  * @example
  *
  * RA.isRegExp(new RegExp()); //=> true
+ * RA.isRegExp(/(?:)/); //=> true
  * RA.isRegExp(1); //=> false
  */
 const isRegExp = is(RegExp);

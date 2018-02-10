@@ -16,6 +16,7 @@ import isRegExp from './isRegExp';
  * @example
  *
  * RA.isNotRegExp(1); //=> true
+ * RA.isNotRegExp(/(?:)/); //=> false
  * RA.isNotRegExp(new RegExp()); //=> false
  */
 const isNotRegExp = complement(isRegExp);

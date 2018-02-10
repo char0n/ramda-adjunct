@@ -28,7 +28,6 @@ describe('isNotRegExp', function () {
     eq(RA.isNotRegExp(undefined), true);
 
     eq(RA.isNotRegExp(new RegExp()), false);
-    eq(RA.isNotRegExp(/x/), false);
     eq(RA.isNotRegExp(/(?:)/), false);
   });
 });
