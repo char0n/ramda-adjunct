@@ -89,7 +89,7 @@ describe('mapIndexed', function () {
 
   context('third argument', function () {
     const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
-    specify('third argument list should be strictly equal to original list', function () {
+    specify('should be the same reference that original list', function () {
       RA.mapIndexed((val, idx, list) => {
         chai.assert.strictEqual(list, initialList);
         return val;
