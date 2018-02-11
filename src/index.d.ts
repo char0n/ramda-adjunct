@@ -813,6 +813,13 @@ declare namespace RamdaAdjunct {
         compact(list: any[]): any[];
 
         /**
+         * Returns a new list containing the contents of the given list, followed by the given
+         * element. Like {@link http://ramdajs.com/docs/#append|R.append} but with argument order
+         * reversed.
+         */
+        appendFlipped<T>(list: T[], val: any): T[];
+
+        /**
          * Identity type.
          */
         Identity: Function;
