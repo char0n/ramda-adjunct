@@ -1,9 +1,8 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
-
-describe('isNotPair', function () {
-  it('tests a value for complement of pair', function () {
+describe('isNotPair', function() {
+  it('tests a value for complement of pair', function() {
     eq(RA.isNotPair([]), true);
     eq(RA.isNotPair([0]), true);
     eq(RA.isNotPair([0, 1]), false);

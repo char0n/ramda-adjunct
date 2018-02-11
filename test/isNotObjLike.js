@@ -3,9 +3,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-
-describe('isNotObjLike', function () {
-  it('tests a value for non object-like interface', function () {
+describe('isNotObjLike', function() {
+  it('tests a value for non object-like interface', function() {
     eq(RA.isNotObjLike({}), false);
     eq(RA.isNotObjLike(Object(false)), false);
     eq(RA.isNotObjLike(args), false);
@@ -26,8 +25,8 @@ describe('isNotObjLike', function () {
   });
 });
 
-describe('isNotObjectLike', function () {
-  it('tests an alias', function () {
+describe('isNotObjectLike', function() {
+  it('tests an alias', function() {
     eq(RA.isNotObjLike === RA.isNotObjectLike, true);
   });
 });

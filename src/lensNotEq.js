@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import lensEq from './lensEq';
 
-
 /**
  * Returns `true` if data structure focused by the given lens doesn't equal provided value.
  *
@@ -25,6 +24,5 @@ import lensEq from './lensEq';
  * RA.lensNotEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => false
  */
 const lensNotEq = complement(lensEq);
-
 
 export default lensNotEq;

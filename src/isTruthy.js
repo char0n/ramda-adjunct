@@ -1,6 +1,5 @@
 import { pipe, equals } from 'ramda';
 
-
 /**
  * In JavaScript, a `truthy` value is a value that is considered true
  * when evaluated in a Boolean context. All values are truthy unless

@@ -1,10 +1,8 @@
 import { filter, addIndex, curry, contains } from 'ramda';
 
-
 // helpers
 const filterIndexed = addIndex(filter);
 const containsIndex = curry((indexes, val, index) => contains(index, indexes));
-
 
 /**
  * Picks values from list by indexes.

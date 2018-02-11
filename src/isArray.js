@@ -1,6 +1,5 @@
 import _isArray from 'ramda/src/internal/_isArray';
 
-
 /**
  * Checks if input value is `Array`.
  *

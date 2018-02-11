@@ -1,6 +1,5 @@
 import { equals } from 'ramda';
 
-
 /**
  * Checks if input value is an empty `String`.
  *

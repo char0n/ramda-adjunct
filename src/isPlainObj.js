@@ -5,7 +5,6 @@ import isNull from './isNull';
 import isObjLike from './isObjLike';
 import isFunction from './isFunction';
 
-
 const isObjectConstructor = pipe(toString, equals(toString(Object)));
 const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor), ['constructor']);
 
@@ -37,12 +36,16 @@ const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor)
  * RA.isPlainObj(new Object()); //=> true
  */
 /* eslint-enable max-len */
-const isPlainObj = (val) => {
-  if (!isObjLike(val) || !_isObject(val)) { return false }
+const isPlainObj = val => {
+  if (!isObjLike(val) || !_isObject(val)) {
+    return false;
+  }
 
   const proto = Object.getPrototypeOf(val);
 
-  if (isNull(proto)) { return true }
+  if (isNull(proto)) {
+    return true;
+  }
 
   return hasObjectConstructor(proto);
 };

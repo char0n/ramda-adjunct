@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import lensSatisfies from './lensSatisfies';
 
-
 /**
  * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
  * Note that the predicate is expected to return boolean value.
@@ -27,6 +26,5 @@ import lensSatisfies from './lensSatisfies';
  * RA.lensNotSatisfy(R.identity, R.lensProp('x'), { x: 1 }); // => true
  */
 const lensNotSatisfy = complement(lensSatisfies);
-
 
 export default lensNotSatisfy;

@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isAsyncFunction from './isAsyncFunction';
 
-
 /* eslint-disable max-len */
 /**
  * Checks if input value is complement of `Async Function`

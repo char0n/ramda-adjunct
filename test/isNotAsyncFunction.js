@@ -4,9 +4,8 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import asyncFunc from './shared/asyncFunc';
 
-
-describe('isNotAsyncFunction', function () {
-  it('tests a value for complement of `Async Function`', function () {
+describe('isNotAsyncFunction', function() {
+  it('tests a value for complement of `Async Function`', function() {
     eq(RA.isNotAsyncFunction(asyncFunc), typeof asyncFunc !== 'function');
     eq(RA.isNotAsyncFunction(args), true);
     eq(RA.isNotAsyncFunction([1, 2, 3]), true);

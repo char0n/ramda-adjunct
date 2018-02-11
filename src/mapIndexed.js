@@ -1,6 +1,5 @@
 import { addIndex, map } from 'ramda';
 
-
 /**
  * {@link http://ramdajs.com/docs/#map|R.map} function that more closely resembles Array.prototype.map.
  * It takes two new parameters to its callback function: the current index, and the entire list.

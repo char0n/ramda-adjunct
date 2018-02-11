@@ -1,6 +1,5 @@
 import { curry } from 'ramda';
 
-
 /**
  * Returns the second argument if predicate function returns `true`,
  * otherwise the third argument is returned.

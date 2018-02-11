@@ -3,9 +3,8 @@ import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-
-describe('isTruthy', function () {
-  it('tests a value for `truthy`', function () {
+describe('isTruthy', function() {
+  it('tests a value for `truthy`', function() {
     eq(RA.isTruthy('abc'), true);
     eq(RA.isTruthy(Object('abc')), true);
     eq(RA.isTruthy(args), true);

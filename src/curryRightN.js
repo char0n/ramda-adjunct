@@ -1,6 +1,5 @@
 import { curryN, reverse } from 'ramda';
 
-
 /**
  * Returns a curried equivalent of the provided function, with the specified arity.
  * This function is like curryN, except that the provided arguments order is reversed.
@@ -21,16 +20,10 @@ import { curryN, reverse } from 'ramda';
  *
  * concatStringCurried('a')('b')('c'); // => 'cba'
  */
-const curryRightN = curryN(
-  2,
-  (arity, fn) =>
-    curryN(
-      arity,
-      function wrapper(...args) {
-        return fn.apply(this, reverse(args));
-      }
-    )
+const curryRightN = curryN(2, (arity, fn) =>
+  curryN(arity, function wrapper(...args) {
+    return fn.apply(this, reverse(args));
+  })
 );
-
 
 export default curryRightN;

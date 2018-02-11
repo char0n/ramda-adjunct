@@ -3,9 +3,8 @@ import { lens, lensIndex, lensPath, lensProp, path } from 'ramda';
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
-
-describe('lensNotEq', function () {
-  it('tests a lens for a value', function () {
+describe('lensNotEq', function() {
+  it('tests a lens for a value', function() {
     eq(RA.lensNotEq(lensIndex(1), 1, [0, 1]), false);
     eq(RA.lensNotEq(lensIndex(0), 1, [0, 1]), true);
     eq(RA.lensNotEq(lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }), false);
@@ -16,7 +15,7 @@ describe('lensNotEq', function () {
     eq(RA.lensNotEq(lensProp('foo'), 'bar', { bar: 'foo' }), true);
   });
 
-  it('tests currying', function () {
+  it('tests currying', function() {
     eq(RA.lensNotEq(lensIndex(1))(1)([0, 1]), false);
     eq(RA.lensNotEq(lensIndex(1), 1)([0, 1]), false);
     eq(RA.lensNotEq(lensIndex(1))(1, [0, 1]), false);

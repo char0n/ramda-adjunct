@@ -3,9 +3,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-
-describe('isNotValidDate', function () {
-  it('tests a value for complement of valid `Date`', function () {
+describe('isNotValidDate', function() {
+  it('tests a value for complement of valid `Date`', function() {
     eq(RA.isNotValidDate(new Date()), false);
 
     eq(RA.isNotValidDate(new Date('a')), true);
@@ -30,8 +29,8 @@ describe('isNotValidDate', function () {
   });
 });
 
-describe('isInvalidDate', function () {
-  it('tests an alias', function () {
+describe('isInvalidDate', function() {
+  it('tests an alias', function() {
     eq(RA.isNotValidDate === RA.isInvalidDate, true);
   });
 });

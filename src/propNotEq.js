@@ -1,6 +1,5 @@
 import { propEq, complement } from 'ramda';
 
-
 /**
  * Returns true if the specified object property is not equal,
  * in R.equals terms, to the given value; false otherwise.

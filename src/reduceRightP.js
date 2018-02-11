@@ -4,10 +4,8 @@ import isUndefined from './isUndefined';
 import resolveP from './resolveP';
 import allP from './allP';
 
-
 // in older ramda versions the order of the arguments is flipped
 const flipArgs = pipe(reduceRight(concat, ''), equals('ba'))(['a', 'b']);
-
 
 /* eslint-disable max-len */
 /**
@@ -67,35 +65,35 @@ const flipArgs = pipe(reduceRight(concat, ''), equals('ba'))(['a', 'b']);
  *
  */
 /* esline-enable max-len */
-const reduceRightP = curryN(3, (fn, acc, list) => resolveP(list)
-  .then((iterable) => {
+const reduceRightP = curryN(3, (fn, acc, list) =>
+  resolveP(list).then(iterable => {
     const listLength = length(iterable);
 
-    if (listLength === 0) { return acc }
+    if (listLength === 0) {
+      return acc;
+    }
 
     const reducer = reduceRight((arg1, arg2) => {
       let accP;
       let currentValueP;
 
       if (flipArgs) {
-        ([accP, currentValueP] = [arg1, arg2]);
+        [accP, currentValueP] = [arg1, arg2];
       } else {
-        ([accP, currentValueP] = [arg2, arg1]);
+        [accP, currentValueP] = [arg2, arg1];
       }
 
-      return accP
-        .then(previousValue => allP([previousValue, currentValueP]))
-        .then(([previousValue, currentValue]) => {
-          if (isUndefined(previousValue) && listLength === 1) {
-            return currentValue;
-          }
+      return accP.then(previousValue => allP([previousValue, currentValueP])).then(([previousValue, currentValue]) => {
+        if (isUndefined(previousValue) && listLength === 1) {
+          return currentValue;
+        }
 
-          return fn(currentValue, previousValue);
-        });
+        return fn(currentValue, previousValue);
+      });
     });
 
     return reducer(resolveP(acc), iterable);
-  }));
-
+  })
+);
 
 export default reduceRightP;

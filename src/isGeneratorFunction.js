@@ -1,11 +1,9 @@
 import isNotNull from './isNotNull';
 
-
 let GeneratorFunction = null;
 try {
   GeneratorFunction = new Function('return function* () {}')().constructor; // eslint-disable-line no-new-func
-} catch (e) { } // eslint-disable-line no-empty
-
+} catch (e) {} // eslint-disable-line no-empty
 
 /* eslint-disable max-len */
 /**
@@ -27,7 +25,7 @@ try {
  * RA.isGeneratorFunction(() => {}); //=> false
  */
 /* eslint-enable max-len */
-const isGeneratorFunction = (val) => {
+const isGeneratorFunction = val => {
   const toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
   const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
 

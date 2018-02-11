@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isNumber from './isNumber';
 
-
 /**
  * Checks if value is a complement of `Number` primitive or object.
  *

@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isPair from './isPair';
 
-
 /**
  * Checks if input value is complement of a pair.
  *

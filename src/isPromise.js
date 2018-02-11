@@ -2,7 +2,6 @@ import { both, pipe, toString, equals } from 'ramda';
 
 import isObj from './isObj';
 
-
 /**
  * Checks if input value is a native `Promise`.
  * The Promise object represents the eventual completion (or failure)

@@ -5,9 +5,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-
-describe('isValidNumber', function () {
-  it('tests a value for a valid `Number`', function () {
+describe('isValidNumber', function() {
+  it('tests a value for a valid `Number`', function() {
     eq(RA.isValidNumber(0), true);
     eq(RA.isValidNumber(0.1), true);
     eq(RA.isValidNumber(-0.1), true);

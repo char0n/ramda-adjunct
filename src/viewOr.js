@@ -1,6 +1,5 @@
 import { view, defaultTo, curryN } from 'ramda';
 
-
 /**
  * Returns a "view" of the given data structure, determined by the given lens.
  * The lens's focus determines which portion of the data structure is visible.
@@ -26,10 +25,6 @@ import { view, defaultTo, curryN } from 'ramda';
  * RA.viewOr('some', R.lensProp('y'), { y: false }); // => false
  */
 
-const viewOr = curryN(
-  3,
-  (defaultValue, lens, data) => defaultTo(defaultValue, view(lens, data))
-);
-
+const viewOr = curryN(3, (defaultValue, lens, data) => defaultTo(defaultValue, view(lens, data)));
 
 export default viewOr;

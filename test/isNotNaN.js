@@ -4,9 +4,8 @@ import * as RA from '../src/index';
 import polyfill from '../src/internal/polyfills/Number.isNaN';
 import eq from './shared/eq';
 
-
-describe('isNotNaN', function () {
-  it('tests a value for complement of `NaN`', function () {
+describe('isNotNaN', function() {
+  it('tests a value for complement of `NaN`', function() {
     eq(RA.isNotNaN(NaN), false);
     eq(RA.isNotNaN(Number.NaN), false);
     eq(RA.isNotNaN(0 / 0), false);
@@ -25,7 +24,7 @@ describe('isNotNaN', function () {
     eq(RA.isNotNaN(' '), true);
   });
 
-  it('tests polyfill for complement of `NaN', function () {
+  it('tests polyfill for complement of `NaN', function() {
     const polyfillC = complement(polyfill);
 
     eq(polyfillC(NaN), false);

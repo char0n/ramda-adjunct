@@ -4,7 +4,6 @@ import isString from './isString';
 import isNotObj from './isNotObj';
 import isNotEmpty from './isNotEmpty';
 
-
 /**
  * Checks if input value is not an empty `String`.
  *

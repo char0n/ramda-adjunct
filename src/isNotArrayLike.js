@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isArrayLike from './isArrayLike';
 
-
 /**
  * Tests whether or not an object is similar to an array.
  *

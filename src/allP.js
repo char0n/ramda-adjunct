@@ -1,6 +1,5 @@
 import { bind } from 'ramda';
 
-
 /* eslint-disable max-len */
 /**
  * Composable shortcut for `Promise.all`.

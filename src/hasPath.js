@@ -35,5 +35,4 @@ const hasPath = curryN(2, (objPath, obj) => {
   return hasPath(tail(objPath), path([prop], obj)); // base case
 });
 
-
 export default hasPath;

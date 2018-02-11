@@ -4,9 +4,8 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import asyncFunc from './shared/asyncFunc';
 
-
-describe('isAsyncFunction', function () {
-  it('tests a value for `Async Function`', function () {
+describe('isAsyncFunction', function() {
+  it('tests a value for `Async Function`', function() {
     eq(RA.isAsyncFunction(asyncFunc), typeof asyncFunc === 'function');
     eq(RA.isAsyncFunction(args), false);
     eq(RA.isAsyncFunction([1, 2, 3]), false);

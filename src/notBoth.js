@@ -1,6 +1,5 @@
 import { compose, complement, both } from 'ramda';
 
-
 /* eslint-disable max-len */
 /**
  * A function which calls the two provided functions and returns the complement of `&&`ing the

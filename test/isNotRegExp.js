@@ -3,9 +3,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-
-describe('isNotRegExp', function () {
-  it('tests a value for complement of `RegExp`', function () {
+describe('isNotRegExp', function() {
+  it('tests a value for complement of `RegExp`', function() {
     eq(RA.isNotRegExp('a'), true);
     eq(RA.isNotRegExp(1), true);
     eq(RA.isNotRegExp([]), true);
@@ -15,7 +14,7 @@ describe('isNotRegExp', function () {
     eq(RA.isNotRegExp(new Error()), true);
     eq(RA.isNotRegExp(new Date()), true);
     eq(RA.isNotRegExp(RA), true);
-    eq(RA.isNotRegExp(function () {}), true);
+    eq(RA.isNotRegExp(function() {}), true);
     eq(RA.isNotRegExp(Object(0)), true);
     eq(RA.isNotRegExp(Object('a')), true);
     eq(RA.isNotRegExp(args), true);
