@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>notBoth.js - Documentation</title>
+    <title>appendFlipped.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">notBoth.js</h1>
+    <h1 class="page-title">appendFlipped.js</h1>
     
 
     
@@ -52,45 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { compose, complement, both } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { append, flip } from 'ramda';
 
 
-/* eslint-disable max-len */
 /**
- * A function which calls the two provided functions and returns the complement of `&amp;&amp;`ing the
- * results.
- * It returns true if the first function is false-y and the complement of the second function
- * otherwise. Note that this is short-circuited, meaning that the second function will not be
- * invoked if the first returns a false-y value. In short it will return true unless both predicates
- * return true.
+ * Returns a new list containing the contents of the given list, followed by the given element.
+ * Like {@link http://ramdajs.com/docs/#append|R.append} but with argument order reversed.
  *
- * In addition to functions, `RA.notBoth` also accepts any fantasy-land compatible
- * applicative functor.
- *
- * @func notBoth
+ * @func appendFlipped
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
- * @category Logic
- * @sig (*... -> Boolean) -> (*... -> Boolean) -> (*... -> Boolean)
- * @param {Function} f A predicate
- * @param {Function} g Another predicate
- * @return {Function} Returns a function that applies its arguments to `f` and `g` and returns the complement of `&amp;&amp;`ing their outputs together.
- * @see {@link http://ramdajs.com/docs/#both|both}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
+ * @category List
+ * @sig [a] -> a -> [a]
+ * @param {Array} list The list of elements to add a new item to
+ * @param {*} el The element to add to the end of the new list
+ * @return {Array} A new list containing the elements of the old list followed by `el`
+ * @see {@link http://ramdajs.com/docs/#append|append}
  * @example
  *
- * const gt10 = R.gt(R.__, 10)
- * const even = (x) => x % 2 === 0;
- * const f = RA.notBoth(gt10, even);
- *
- * f(12); //=> false
- * f(8); //=> true
- * f(11); //=> true
- * f(9); //=> true
+ * RA.appendFlipped(['write', 'more'], 'tests'); //=> ['write', 'more', 'tests']
+ * RA.appendFlipped([], 'tests'); //=> ['tests']
+ * RA.appendFlipped(['write', 'more'], ['tests']); //=> ['write', 'more', ['tests']]
  */
-/* eslint-enable max-len */
-const notBoth = compose(complement, both);
+const appendFlipped = flip(append);
 
-export default notBoth;
+export default appendFlipped;
 </code></pre>
         </article>
     </section>
