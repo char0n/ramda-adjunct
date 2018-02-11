@@ -13,7 +13,8 @@
     "airbnb-base",
     "plugin:ramda/recommended"
   ],
-  "plugins": ["eslint-plugin-ramda"],
+  "plugins": ["eslint-plugin-ramda", 
+    "prettier"],
   "rules": {
     "strict": [2, "global"],
     "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
