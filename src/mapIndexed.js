@@ -12,6 +12,7 @@ import { addIndex, map } from 'ramda';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
  * @category List
+ * @typedef Idx = Number
  * @sig Functor f => ((a, Idx, f a) => b) => f a -> f b
  * @param {Function} fn The function to be called on every element of the input `list`
  * @param {Array} list The list to be iterated over
