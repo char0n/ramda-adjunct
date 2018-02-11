@@ -540,7 +540,10 @@ declare namespace RamdaAdjunct {
         ): (list: R) => TResult;
         reduceIndexed<T, TResult, R extends T[]>(
             iterator: (acc: TResult, elem: T, key: number, list: R) => TResult,
-        ): (acc: TResult) => (list: R) => TResult;
+        ): {
+                (acc: TResult): (list: R) => TResult;
+                (acc: TResult, list: R): TResult
+        };
 
         /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
