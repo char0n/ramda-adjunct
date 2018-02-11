@@ -1,0 +1,14 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+      "interface-name": [true, "never-prefix"],
+      "ban-types": [true, ["Object", "Use {} instead."], ["String"], ["Number"]],
+      "member-ordering": false,
+      "no-namespace": false
+    },
+    "rulesDirectory": []
+}

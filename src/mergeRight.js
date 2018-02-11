@@ -7,7 +7,7 @@ import { merge, flip } from 'ramda';
  * Putting it simply: it sets properties only if they don't exist.
  *
  * @func mergeRight
- * @aliases resetToDefault, defaults
+ * @aliases resetToDefault
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.6.0|v1.6.0}
  * @category Object
