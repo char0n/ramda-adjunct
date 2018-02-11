@@ -508,6 +508,24 @@ declare namespace RamdaAdjunct {
         curryRight(fn: Function): Function;
 
         /**
+         * {@link http://ramdajs.com/docs/#map|R.map} function that more closely resembles Array.prototype.map.
+         * It takes two new parameters to its callback function: the current index, and the entire list.
+         */
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: T[]) => U, list: T[]): U[];
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: T[]) => U): (list: T[]) => U[];
+        mapIndexed<T, U>(
+            iterator: (elem: T, key: number, list: Dictionary<T>) => U,
+            list: Dictionary<T>,
+        ): Dictionary<U>;
+        mapIndexed<T, U>(
+            iterator: (elem: T, key: number, list: Dictionary<T>) => U,
+        ): (list: Dictionary<T>) => Dictionary<U>;
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: Functor<T>) => U, list: Functor<T>): Functor<U>;
+        mapIndexed<T, U>(iterator: (elem: T, key: number, list: Functor<T>) => U): (list: Functor<T>) => Functor<U>;
+        mapIndexed(iterator: (char: string, key: number, str: string) => string, str: string): string[];
+        mapIndexed(iterator: (char: string, key: number, str: string) => string): (str: string) => string[];
+
+        /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
          * which produces promises (or a mix of promises and values),
          * iterate over all the values in the `Iterable` into an array and
