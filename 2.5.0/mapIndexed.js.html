@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isFinite.js - Documentation</title>
+    <title>mapIndexed.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isFinite.js</h1>
+    <h1 class="page-title">mapIndexed.js</h1>
     
 
     
@@ -52,36 +52,32 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import polyfill from './internal/polyfills/Number.isFinite';
+            <pre class="prettyprint source linenums"><code>import { addIndex, map } from 'ramda';
+
 
 /**
- * Checks whether the passed value is a finite `Number`.
+ * {@link http://ramdajs.com/docs/#map|R.map} function that more closely resembles Array.prototype.map.
+ * It takes two new parameters to its callback function: the current index, and the entire list.
  *
- * @func isFinite
+ * `mapIndexed` implementation is simple : `
+ * const mapIndexed = R.addIndex(R.map);
+ * `
+ * @func mapIndexed
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotFinite|isNotFinite}
- * @example
- *
- * RA.isFinite(Infinity); //=> false
- * RA.isFinite(NaN); //=> false
- * RA.isFinite(-Infinity); //=> false
- *
- * RA.isFinite(0); // true
- * RA.isFinite(2e64); // true
- *
- * RA.isFinite('0');  // => false
- *                    // would've been true with global isFinite('0')
- * RA.isFinite(null); // => false
- *                    // would've been true with global isFinite(null)
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
+ * @category List
+ * @typedef Idx = Number
+ * @sig Functor f => ((a, Idx, f a) => b) => f a -> f b
+ * @param {Function} fn The function to be called on every element of the input `list`
+ * @param {Array} list The list to be iterated over
+ * @return {Array} The new list
+ * @see {@link http://ramdajs.com/docs/#addIndex|R.addIndex}, {@link http://ramdajs.com/docs/#map|R.map}
+ * @example RA.mapIndexed((val, idx, list) => idx + '-' + val, ['f', 'o', 'o', 'b', 'a', 'r']);
+ * //=> ['0-f', '1-o', '2-o', '3-b', '4-a', '5-r']
  */
-const _isFinite = Number.isFinite || polyfill;
+const mapIndexed = addIndex(map);
 
-export default _isFinite;
+export default mapIndexed;
 </code></pre>
         </article>
     </section>
