@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isFunction.js - Documentation</title>
+    <title>reduceIndexed.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isFunction.js</h1>
+    <h1 class="page-title">reduceIndexed.js</h1>
     
 
     
@@ -52,40 +52,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { anyPass } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { addIndex, reduce } from 'ramda';
 
-import isGeneratorFunction from './isGeneratorFunction';
-import isAsyncFunction from './isAsyncFunction';
 
-/* eslint-disable max-len */
 /**
- * Checks if input value is `Function`.
+ * {@link http://ramdajs.com/docs/#reduce|R.reduce} function that more closely resembles Array.prototype.reduce.
+ * It takes two new parameters to its callback function: the current index, and the entire list.
  *
- * @func isFunction
+ * `reduceIndexed` implementation is simple : `
+ * const reduceIndexed = R.addIndex(R.reduce);
+ * `
+ * @func reduceIndexed
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotFunction|isNotFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
+ * @category List
+ * @typedef Idx = Number
+ * @sig ((a, b, Idx, [b]) => a) -> a -> [b] -> a
+ * @param {Function} fn The iterator function. Receives four values,
+ * the accumulator, the current element from the array, index and the entire list
+ * @param {*} acc The accumulator value
+ * @param {Array} list The list to iterate over
+ * @return {*} The final, accumulated value
+ * @see {@link http://ramdajs.com/docs/#addIndex|R.addIndex}, {@link http://ramdajs.com/docs/#reduce|R.reduce}
  * @example
  *
- * RA.isFunction(function test() { }); //=> true
- * RA.isFunction(function* test() { }); //=> true
- * RA.isFunction(async function test() { }); //=> true
- * RA.isFunction(() => {}); //=> true
- * RA.isFunction(null); //=> false
- * RA.isFunction('abc'); //=> false
+ * const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
+ *
+ * reduceIndexed((acc, val, idx, list) => acc + '-' + val + idx, '', initialList);
+ * //=> "-f0-o1-o2-b3-a4-r5"
  */
-/* eslint-enable max-len */
-const isFunction = anyPass([
-  val => Object.prototype.toString.call(val) === '[object Function]',
-  isGeneratorFunction,
-  isAsyncFunction,
-]);
+const reduceIndexed = addIndex(reduce);
 
-export default isFunction;
+export default reduceIndexed;
 </code></pre>
         </article>
     </section>
