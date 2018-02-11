@@ -526,6 +526,23 @@ declare namespace RamdaAdjunct {
         mapIndexed(iterator: (char: string, key: number, str: string) => string): (str: string) => string[];
 
         /**
+         * {@link http://ramdajs.com/docs/#reduce|R.reduce} function that more closely resembles Array.prototype.reduce.
+         * It takes two new parameters to its callback function: the current index, and the entire list.
+         */
+        reduceIndexed<T, TResult, R extends T[]>(
+            iterator: (acc: TResult, elem: T, key: number, list: R) => TResult,
+            acc: TResult,
+            list: R,
+        ): TResult;
+        reduceIndexed<T, TResult, R extends T[]>(
+            iterator: (acc: TResult, elem: T, key: number, list: R) => TResult,
+            acc: TResult,
+        ): (list: R) => TResult;
+        reduceIndexed<T, TResult, R extends T[]>(
+            iterator: (acc: TResult, elem: T, key: number, list: R) => TResult,
+        ): (acc: TResult) => (list: R) => TResult;
+
+        /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
          * which produces promises (or a mix of promises and values),
          * iterate over all the values in the `Iterable` into an array and
