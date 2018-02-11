@@ -18,7 +18,7 @@ import { addIndex, map } from 'ramda';
  * @param {Array} list The list to be iterated over
  * @return {Array} The new list
  * @see {@link http://ramdajs.com/docs/#addIndex|R.addIndex}, {@link http://ramdajs.com/docs/#map|R.map}
- * @example R.mapIndexed((val, idx, list) => idx + '-' + val, ['f', 'o', 'o', 'b', 'a', 'r']);
+ * @example RA.mapIndexed((val, idx, list) => idx + '-' + val, ['f', 'o', 'o', 'b', 'a', 'r']);
  * //=> ['0-f', '1-o', '2-o', '3-b', '4-a', '5-r']
  */
 const mapIndexed = addIndex(map);
