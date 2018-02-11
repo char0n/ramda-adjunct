@@ -814,9 +814,10 @@ declare namespace RamdaAdjunct {
 
         /**
          * Returns a new list containing the contents of the given list, followed by the given
-         * element. Ramda's `append`, but with argument order reversed: list then value.
+         * element. Like {@link http://ramdajs.com/docs/#append|R.append} but with argument order
+         * reversed.
          */
-        appendFlipped(list: Array<any>, val: any): Array<any>;
+        appendFlipped<T>(list: T[], val: any): T[];
 
         /**
          * Identity type.
