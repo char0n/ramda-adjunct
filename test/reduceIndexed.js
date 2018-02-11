@@ -17,6 +17,7 @@ describe('reduceIndexed', function () {
 
     it('dispatches to objects that implement `reduce`', function () {
       const obj = { x: [1, 2, 3], reduce: function fun() { return 'override' } };
+
       eq(R.reduce(addition, 0, obj), 'override');
       eq(R.reduce(addition, 10, obj), 'override');
     });
@@ -70,12 +71,14 @@ describe('reduceIndexed', function () {
     specify('should join idx and value with a "-"', function () {
       const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
       const resultAcc = '-f0-o1-o2-b3-a4-r5';
+
       eq(RA.reduceIndexed((acc, val, idx) => `${acc}-${val}${idx}`, '', initialList), resultAcc);
     });
   });
 
   context('fourth argument', function () {
     const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
+
     specify('should be the same reference that original list', function () {
       RA.reduceIndexed((acc, val, idx, list) => {
         chai.assert.strictEqual(list, initialList);
