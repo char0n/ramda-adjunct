@@ -27,26 +27,17 @@ describe('reduceIndexed', function () {
       eq(R.reduce(R.concat, [], []), []);
     });
 
-    it('Prefers the use of the iterator of an object over reduce (and handles short-circuits)', function () {
+    it('uses the iterator of an object (and handles short-circuits)', function () {
       const symIterator = (typeof Symbol !== 'undefined') ? Symbol.iterator : '@@iterator';
 
       function Reducible(arr) {
         this.arr = arr;
       }
 
-      Reducible.prototype.reduce = function (f, init) {
-        let acc = init;
-        for (let i = 0; i < this.arr.length; i += 1) {
-          acc = f(acc, this.arr[i]);
-        }
-        return acc;
-      };
-
       Reducible.prototype[symIterator] = function () {
         const a = this.arr;
         return {
           _pos: 0,
-
           next: function fn() {
             if (this._pos < a.length) {
               const v = a[this._pos];
