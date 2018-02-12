@@ -10,24 +10,20 @@
     }
   },
   "extends": [
-    "airbnb-base",
-    "plugin:ramda/recommended"
+    "eslint-config-airbnb-base",
+    "plugin:ramda/recommended",
+    "prettier"
   ],
   "plugins": ["eslint-plugin-ramda", 
     "prettier"],
   "rules": {
     "strict": [2, "global"],
     "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
-    "comma-dangle": ["error", {
-      "arrays": "always-multiline",
-      "objects": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-      "functions": "never"
-    }],
+    "space-before-function-paren": "off",
+    "comma-dangle": ["error", "always-multiline"],
     "no-underscore-dangle": 0,
-    "object-curly-newline": 0,
-    "import/newline-after-import": ["error", { "count": 2 }],
+    "no-confusing-arrow": "off",
+    "object-curly-newline": "off",
     "ramda/always-simplification": ["error"],
     "ramda/compose-simplification": ["error"],
     "ramda/eq-by-simplification": ["error"],

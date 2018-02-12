@@ -1,5 +1,5 @@
 {
-  "printWidth": 120,
+  "printWidth": 80,
   "tabWidth": 2,
   "semi": true,
   "singleQuote": true,
@@ -11,6 +11,14 @@
     },
     {
       "files": ".babelrc",
+      "options": { "parser": "json" }
+    },
+    {
+      "files": ".eslintrc",
+      "options": { "parser": "json" }
+    },
+    {
+      "files": ".nycrc",
       "options": { "parser": "json" }
     }
   ]
