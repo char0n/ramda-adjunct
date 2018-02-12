@@ -33,6 +33,8 @@ const valueOrKey = keysMap => key => {
  * RA.renameKeys({ firstName: 'name', type: 'kind', foo: 'bar' })(input);
  * //=> { name: 'Elisia', age: 22, kind: 'human' }
  */
-const renameKeys = curry((keysMap, obj) => renameKeysWith(valueOrKey(keysMap), obj));
+const renameKeys = curry((keysMap, obj) =>
+  renameKeysWith(valueOrKey(keysMap), obj)
+);
 
 export default renameKeys;

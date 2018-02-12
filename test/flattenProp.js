@@ -19,19 +19,25 @@ describe('flattenProp', function() {
   });
 
   context("when prop doesn't exist", function() {
-    specify('should return object with identical structure as provided object', function() {
-      eq(RA.flattenProp('not_exist', obj), obj);
-    });
+    specify(
+      'should return object with identical structure as provided object',
+      function() {
+        eq(RA.flattenProp('not_exist', obj), obj);
+      }
+    );
   });
 
   context('when prop leads to non object', function() {
-    specify('should return object with identical structure as provided object', function() {
-      obj = {
-        a: 1,
-        b: 999,
-      };
-      eq(RA.flattenProp(prop, obj), obj);
-    });
+    specify(
+      'should return object with identical structure as provided object',
+      function() {
+        obj = {
+          a: 1,
+          b: 999,
+        };
+        eq(RA.flattenProp(prop, obj), obj);
+      }
+    );
   });
 
   context('when prop leads to object with same prop name', function() {

@@ -19,6 +19,8 @@ import { curry } from 'ramda';
  * RA.defaultWhen(RA.isNull, 1, null); // => 1
  * RA.defaultWhen(RA.isNull, 1, 2); // => 2
  */
-const defaultWhen = curry((predicate, defaultVal, val) => (predicate(val) ? defaultVal : val));
+const defaultWhen = curry(
+  (predicate, defaultVal, val) => (predicate(val) ? defaultVal : val)
+);
 
 export default defaultWhen;

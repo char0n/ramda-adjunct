@@ -78,13 +78,15 @@ const reduceP = curryN(3, (fn, acc, list) =>
     }
 
     const reducer = reduce((accP, currentValueP) =>
-      accP.then(previousValue => allP([previousValue, currentValueP])).then(([previousValue, currentValue]) => {
-        if (isUndefined(previousValue) && listLength === 1) {
-          return currentValue;
-        }
+      accP
+        .then(previousValue => allP([previousValue, currentValueP]))
+        .then(([previousValue, currentValue]) => {
+          if (isUndefined(previousValue) && listLength === 1) {
+            return currentValue;
+          }
 
-        return fn(previousValue, currentValue);
-      })
+          return fn(previousValue, currentValue);
+        })
     );
 
     return reducer(resolveP(acc), iterable);

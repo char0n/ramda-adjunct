@@ -414,7 +414,9 @@ declare namespace RamdaAdjunct {
       leftFn: (leftValue: V1) => T1
     ): {
       (rightFn: (rightValue: V2) => T1, either: Catamorphism<V1 | V2>): T1 | T2;
-      (rightFn: (rightValue: V2) => T1): (either: Catamorphism<V1 | V2>) => T1 | T2;
+      (rightFn: (rightValue: V2) => T1): (
+        either: Catamorphism<V1 | V2>
+      ) => T1 | T2;
     };
 
     /**
@@ -479,8 +481,15 @@ declare namespace RamdaAdjunct {
      * merged with the own properties of the provided `source`.
      * If a key exists in both objects, the value from the `source` object will be used.
      */
-    mergePath(path: Array<Array<string | number>>, source: object, obj: object): object;
-    mergePath(path: Array<Array<string | number>>, source: object): (obj: object) => object;
+    mergePath(
+      path: Array<Array<string | number>>,
+      source: object,
+      obj: object
+    ): object;
+    mergePath(
+      path: Array<Array<string | number>>,
+      source: object
+    ): (obj: object) => object;
     mergePath(
       path: Array<Array<string | number>>
     ): {
@@ -517,16 +526,34 @@ declare namespace RamdaAdjunct {
      * {@link http://ramdajs.com/docs/#map|R.map} function that more closely resembles Array.prototype.map.
      * It takes two new parameters to its callback function: the current index, and the entire list.
      */
-    mapIndexed<T, U>(iterator: (elem: T, key: number, list: T[]) => U, list: T[]): U[];
-    mapIndexed<T, U>(iterator: (elem: T, key: number, list: T[]) => U): (list: T[]) => U[];
-    mapIndexed<T, U>(iterator: (elem: T, key: number, list: Dictionary<T>) => U, list: Dictionary<T>): Dictionary<U>;
+    mapIndexed<T, U>(
+      iterator: (elem: T, key: number, list: T[]) => U,
+      list: T[]
+    ): U[];
+    mapIndexed<T, U>(
+      iterator: (elem: T, key: number, list: T[]) => U
+    ): (list: T[]) => U[];
+    mapIndexed<T, U>(
+      iterator: (elem: T, key: number, list: Dictionary<T>) => U,
+      list: Dictionary<T>
+    ): Dictionary<U>;
     mapIndexed<T, U>(
       iterator: (elem: T, key: number, list: Dictionary<T>) => U
     ): (list: Dictionary<T>) => Dictionary<U>;
-    mapIndexed<T, U>(iterator: (elem: T, key: number, list: Functor<T>) => U, list: Functor<T>): Functor<U>;
-    mapIndexed<T, U>(iterator: (elem: T, key: number, list: Functor<T>) => U): (list: Functor<T>) => Functor<U>;
-    mapIndexed(iterator: (char: string, key: number, str: string) => string, str: string): string[];
-    mapIndexed(iterator: (char: string, key: number, str: string) => string): (str: string) => string[];
+    mapIndexed<T, U>(
+      iterator: (elem: T, key: number, list: Functor<T>) => U,
+      list: Functor<T>
+    ): Functor<U>;
+    mapIndexed<T, U>(
+      iterator: (elem: T, key: number, list: Functor<T>) => U
+    ): (list: Functor<T>) => Functor<U>;
+    mapIndexed(
+      iterator: (char: string, key: number, str: string) => string,
+      str: string
+    ): string[];
+    mapIndexed(
+      iterator: (char: string, key: number, str: string) => string
+    ): (str: string) => string[];
 
     /**
      * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
@@ -534,8 +561,15 @@ declare namespace RamdaAdjunct {
      * iterate over all the values in the `Iterable` into an array and
      * reduce the array to a value using the given iterator function.
      */
-    reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult, list: R): TResult;
-    reduceP<T, TResult, R extends T[]>(fn: (acc: TResult, elem: T) => TResult, acc: TResult): (list: R) => TResult;
+    reduceP<T, TResult, R extends T[]>(
+      fn: (acc: TResult, elem: T) => TResult,
+      acc: TResult,
+      list: R
+    ): TResult;
+    reduceP<T, TResult, R extends T[]>(
+      fn: (acc: TResult, elem: T) => TResult,
+      acc: TResult
+    ): (list: R) => TResult;
     reduceP<T, TResult, R extends T[]>(
       fn: (acc: TResult, elem: T) => TResult
     ): {
@@ -553,8 +587,15 @@ declare namespace RamdaAdjunct {
      * The iterator function receives two values: (value, acc),
      * while the arguments' order of reduceP's iterator function is (acc, value).
      */
-    reduceRightP<T, TResult, R extends T[]>(fn: (elem: T, acc: TResult) => TResult, acc: TResult, list: R): TResult;
-    reduceRightP<T, TResult, R extends T[]>(fn: (elem: T, acc: TResult) => TResult, acc: TResult): (list: R) => TResult;
+    reduceRightP<T, TResult, R extends T[]>(
+      fn: (elem: T, acc: TResult) => TResult,
+      acc: TResult,
+      list: R
+    ): TResult;
+    reduceRightP<T, TResult, R extends T[]>(
+      fn: (elem: T, acc: TResult) => TResult,
+      acc: TResult
+    ): (list: R) => TResult;
     reduceRightP<T, TResult, R extends T[]>(
       fn: (elem: T, acc: TResult) => TResult
     ): {
@@ -582,7 +623,9 @@ declare namespace RamdaAdjunct {
      */
     lensSatisfies(predicate: Function, lens: Function, data: any): boolean;
     lensSatisfies(predicate: Function, lens: Function): (data: any) => boolean;
-    lensSatisfies(predicate: Function): (lens: Function) => (data: any) => boolean;
+    lensSatisfies(
+      predicate: Function
+    ): (lens: Function) => (data: any) => boolean;
 
     /**
      * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.
@@ -590,7 +633,9 @@ declare namespace RamdaAdjunct {
      */
     lensNotSatisfy(predicate: Function, lens: Function, data: any): boolean;
     lensNotSatisfy(predicate: Function, lens: Function): (data: any) => boolean;
-    lensNotSatisfy(predicate: Function): (lens: Function) => (data: any) => boolean;
+    lensNotSatisfy(
+      predicate: Function
+    ): (lens: Function) => (data: any) => boolean;
 
     /**
      * Returns a "view" of the given data structure, determined by the given lens
@@ -629,7 +674,10 @@ declare namespace RamdaAdjunct {
      * in R.equals terms. Most likely used to filter a list.
      */
     pathNotEq(path: Array<string | number>, value: any, obj: object): boolean;
-    pathNotEq(path: Array<string | number>, value: any): (obj: object) => boolean;
+    pathNotEq(
+      path: Array<string | number>,
+      value: any
+    ): (obj: object) => boolean;
     pathNotEq(
       path: Array<string | number>
     ): {
@@ -753,9 +801,18 @@ declare namespace RamdaAdjunct {
      * Returns the second argument if predicate function returns `true`,
      * otherwise the third argument is returned.
      */
-    defaultWhen<DefVal, Val>(predicate: Function, defaultVal: DefVal, val: Val): DefVal | Val;
-    defaultWhen<DefVal, Val>(predicate: Function, defaultVal: DefVal): (val: Val) => DefVal | Val;
-    defaultWhen(predicate: Function): <DefVal, Val>(defaultVal: DefVal) => (val: Val) => DefVal | Val;
+    defaultWhen<DefVal, Val>(
+      predicate: Function,
+      defaultVal: DefVal,
+      val: Val
+    ): DefVal | Val;
+    defaultWhen<DefVal, Val>(
+      predicate: Function,
+      defaultVal: DefVal
+    ): (val: Val) => DefVal | Val;
+    defaultWhen(
+      predicate: Function
+    ): <DefVal, Val>(defaultVal: DefVal) => (val: Val) => DefVal | Val;
 
     /**
      * Y-combinator

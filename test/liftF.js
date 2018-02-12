@@ -18,7 +18,19 @@ describe('liftF', function() {
 
   it('can lift functions of any arity', function() {
     eq(addF3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)), Maybe.Some(3));
-    eq(addF4(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)), Maybe.Some(4));
-    eq(addF5(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)), Maybe.Some(5));
+    eq(
+      addF4(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
+      Maybe.Some(4)
+    );
+    eq(
+      addF5(
+        Maybe.Some(1),
+        Maybe.Some(1),
+        Maybe.Some(1),
+        Maybe.Some(1),
+        Maybe.Some(1)
+      ),
+      Maybe.Some(5)
+    );
   });
 });

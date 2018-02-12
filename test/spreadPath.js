@@ -31,8 +31,11 @@ describe('spreadPath', function() {
   });
 
   context("when path doesn't exist", function() {
-    specify('should return object with identical structure as provided object', function() {
-      eq(RA.spreadPath(['does', 'not', 'exist'], obj), obj);
-    });
+    specify(
+      'should return object with identical structure as provided object',
+      function() {
+        eq(RA.spreadPath(['does', 'not', 'exist'], obj), obj);
+      }
+    );
   });
 });

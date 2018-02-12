@@ -19,18 +19,24 @@ describe('flattenPath', function() {
   });
 
   context('when path leads to non object', function() {
-    specify('should return object with identical structure as provided object', function() {
-      obj = {
-        a: 1,
-        b1: { b2: 999 },
-      };
-      eq(RA.flattenPath(path, obj), obj);
-    });
+    specify(
+      'should return object with identical structure as provided object',
+      function() {
+        obj = {
+          a: 1,
+          b1: { b2: 999 },
+        };
+        eq(RA.flattenPath(path, obj), obj);
+      }
+    );
   });
 
   context("when path doesn't exist", function() {
-    specify('should return object with identical structure as provided object', function() {
-      eq(RA.flattenPath(['does', 'not', 'exist'], obj), obj);
-    });
+    specify(
+      'should return object with identical structure as provided object',
+      function() {
+        eq(RA.flattenPath(['does', 'not', 'exist'], obj), obj);
+      }
+    );
   });
 });

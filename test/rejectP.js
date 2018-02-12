@@ -2,7 +2,8 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 describe('rejectP', function() {
-  const rejectWithError = () => Promise.reject(new Error('Expected method to reject.'));
+  const rejectWithError = () =>
+    Promise.reject(new Error('Expected method to reject.'));
 
   it('tests rejecting with no arguments', function() {
     return RA.rejectP()

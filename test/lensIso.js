@@ -44,7 +44,10 @@ describe('lensIso', function() {
     });
 
     specify('tests applying a function over lens', function() {
-      eq(over(lensJSONReversed, replace('}', ',"b":2}'), { a: 1 }), { a: 1, b: 2 });
+      eq(over(lensJSONReversed, replace('}', ',"b":2}'), { a: 1 }), {
+        a: 1,
+        b: 2,
+      });
     });
   });
 });

@@ -6,8 +6,12 @@ import eq from './shared/eq';
 
 describe('reduceP', function() {
   it('folds simple functions over arrays with the supplied accumulator', function() {
-    const testAdd = RA.reduceP(R.add, 0, [1, 2, 3, 4]).then(actual => eq(actual, 10));
-    const testMultiply = RA.reduceP(R.multiply, 1, [1, 2, 3, 4]).then(actual => eq(actual, 24));
+    const testAdd = RA.reduceP(R.add, 0, [1, 2, 3, 4]).then(actual =>
+      eq(actual, 10)
+    );
+    const testMultiply = RA.reduceP(R.multiply, 1, [1, 2, 3, 4]).then(actual =>
+      eq(actual, 24)
+    );
 
     return Promise.all([testAdd, testMultiply]);
   });
@@ -19,16 +23,24 @@ describe('reduceP', function() {
         return 'override';
       },
     };
-    const test1 = RA.reduceP(R.add, 0, obj).then(actual => eq(actual, 'override'));
-    const test2 = RA.reduceP(R.add, 10, obj).then(actual => eq(actual, 'override'));
+    const test1 = RA.reduceP(R.add, 0, obj).then(actual =>
+      eq(actual, 'override')
+    );
+    const test2 = RA.reduceP(R.add, 10, obj).then(actual =>
+      eq(actual, 'override')
+    );
 
     return Promise.all([test1, test2]);
   });
 
   it('returns the accumulator for an empty array', function() {
     const testAdd = RA.reduceP(R.add, 0, []).then(actual => eq(actual, 0));
-    const testMultiply = RA.reduceP(R.multiply, 1, []).then(actual => eq(actual, 1));
-    const testConcat = RA.reduceP(R.concat, [], []).then(actual => eq(actual, []));
+    const testMultiply = RA.reduceP(R.multiply, 1, []).then(actual =>
+      eq(actual, 1)
+    );
+    const testConcat = RA.reduceP(R.concat, [], []).then(actual =>
+      eq(actual, [])
+    );
 
     return Promise.all([testAdd, testMultiply, testConcat]);
   });
@@ -38,7 +50,9 @@ describe('reduceP', function() {
     const cat = RA.reduceP(R.concat)('');
 
     const testSum = sum([1, 2, 3, 4]).then(actual => eq(actual, 10));
-    const testConcat = cat(['1', '2', '3', '4']).then(actual => eq(actual, '1234'));
+    const testConcat = cat(['1', '2', '3', '4']).then(actual =>
+      eq(actual, '1234')
+    );
 
     return Promise.all([testSum, testConcat]);
   });
@@ -49,8 +63,15 @@ describe('reduceP', function() {
   });
 
   it('tests initial value for promise', function() {
-    const testAdd = RA.reduceP(R.add, Promise.resolve(0), [1, 2, 3, 4]).then(actual => eq(actual, 10));
-    const testMultiply = RA.reduceP(R.multiply, Promise.resolve(1), [1, 2, 3, 4]).then(actual => eq(actual, 24));
+    const testAdd = RA.reduceP(R.add, Promise.resolve(0), [1, 2, 3, 4]).then(
+      actual => eq(actual, 10)
+    );
+    const testMultiply = RA.reduceP(R.multiply, Promise.resolve(1), [
+      1,
+      2,
+      3,
+      4,
+    ]).then(actual => eq(actual, 24));
 
     return Promise.all([testAdd, testMultiply]);
   });
@@ -88,15 +109,23 @@ describe('reduceP', function() {
   });
 
   it('tests iterator wrapped in the promise', function() {
-    return RA.reduceP(R.add, 0, Promise.resolve([1, 2, 3])).then(actual => eq(actual, 6));
+    return RA.reduceP(R.add, 0, Promise.resolve([1, 2, 3])).then(actual =>
+      eq(actual, 6)
+    );
   });
 
   it('tests iterator containing values and promises', function() {
-    return RA.reduceP(R.add, 0, [1, Promise.resolve(2), 3]).then(actual => eq(actual, 6));
+    return RA.reduceP(R.add, 0, [1, Promise.resolve(2), 3]).then(actual =>
+      eq(actual, 6)
+    );
   });
 
   it('tests iterator wrapped in promise containing values and promises', function() {
-    return RA.reduceP(R.add, 0, Promise.resolve([1, Promise.resolve(2), 3])).then(actual => eq(actual, 6));
+    return RA.reduceP(
+      R.add,
+      0,
+      Promise.resolve([1, Promise.resolve(2), 3])
+    ).then(actual => eq(actual, 6));
   });
 
   it('tests iterator function returning promises', function() {

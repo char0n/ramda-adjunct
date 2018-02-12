@@ -19,9 +19,12 @@ describe('spreadProp', function() {
   });
 
   context("when prop doesn't exist", function() {
-    specify('should return object with identical structure as provided object', function() {
-      eq(RA.spreadProp('not_exist', obj), obj);
-    });
+    specify(
+      'should return object with identical structure as provided object',
+      function() {
+        eq(RA.spreadProp('not_exist', obj), obj);
+      }
+    );
   });
 
   context('when prop leads to non object', function() {

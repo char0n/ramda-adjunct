@@ -23,11 +23,29 @@ describe('mergePaths', function() {
   });
 
   it('tests merging the property paths containing non-objects', function() {
-    eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], { foo: { fooinner: 1 }, bar: 2 }), {});
-    eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], { foo: { fooinner: 'a' }, bar: 'b' }), {
-      0: 'b',
-    });
-    eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], { foo: { fooinner: null }, bar: undefined }), {});
+    eq(
+      RA.mergePaths([['foo', 'fooinner'], ['bar']], {
+        foo: { fooinner: 1 },
+        bar: 2,
+      }),
+      {}
+    );
+    eq(
+      RA.mergePaths([['foo', 'fooinner'], ['bar']], {
+        foo: { fooinner: 'a' },
+        bar: 'b',
+      }),
+      {
+        0: 'b',
+      }
+    );
+    eq(
+      RA.mergePaths([['foo', 'fooinner'], ['bar']], {
+        foo: { fooinner: null },
+        bar: undefined,
+      }),
+      {}
+    );
   });
 
   it('tests if no paths requested', function() {

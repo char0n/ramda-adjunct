@@ -5,7 +5,10 @@ import eq from './shared/eq';
 
 describe('lensNotSatisfy', function() {
   it('tests a lens not satisfying the predicate', function() {
-    eq(RA.lensNotSatisfy(equals('bar'), lensProp('foo'), { foo: 'bar' }), false);
+    eq(
+      RA.lensNotSatisfy(equals('bar'), lensProp('foo'), { foo: 'bar' }),
+      false
+    );
     eq(RA.lensNotSatisfy(equals('foo'), lensProp('bar'), { foo: 'bar' }), true);
 
     eq(RA.lensNotSatisfy(x => x > 0, lensIndex(1), [0, 1, 2]), false);
@@ -20,8 +23,17 @@ describe('lensNotSatisfy', function() {
   });
 
   it('tests currying', function() {
-    eq(RA.lensNotSatisfy(equals('bar'))(lensProp('foo'))({ foo: 'bar' }), false);
-    eq(RA.lensNotSatisfy(equals('bar'), lensProp('foo'))({ foo: 'bar' }), false);
-    eq(RA.lensNotSatisfy(equals('bar'))(lensProp('foo'))({ foo: 'bar' }), false);
+    eq(
+      RA.lensNotSatisfy(equals('bar'))(lensProp('foo'))({ foo: 'bar' }),
+      false
+    );
+    eq(
+      RA.lensNotSatisfy(equals('bar'), lensProp('foo'))({ foo: 'bar' }),
+      false
+    );
+    eq(
+      RA.lensNotSatisfy(equals('bar'))(lensProp('foo'))({ foo: 'bar' }),
+      false
+    );
   });
 });

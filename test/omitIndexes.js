@@ -33,7 +33,10 @@ describe('omitIndexes', function() {
 
   context('when list is a non-array', function() {
     specify('should product TypeError', function() {
-      chai.assert.throws(RA.omitIndexes.bind(null, [0, 2], undefined), TypeError);
+      chai.assert.throws(
+        RA.omitIndexes.bind(null, [0, 2], undefined),
+        TypeError
+      );
     });
   });
 

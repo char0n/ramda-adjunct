@@ -20,6 +20,8 @@ const containsIndex = curry((indexes, val, index) => contains(index, indexes));
  *
  * RA.pickIndexes([0, 2], ['a', 'b', 'c']); //=> ['a', 'c']
  */
-const pickIndexes = curry((indexes, list) => filterIndexed(containsIndex(indexes), list));
+const pickIndexes = curry((indexes, list) =>
+  filterIndexed(containsIndex(indexes), list)
+);
 
 export default pickIndexes;

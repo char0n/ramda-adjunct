@@ -8,7 +8,8 @@ describe('weaveLazy', function() {
   const unaryReader = a => reader(config => config + a);
   const binaryReader = (a, b) => reader(config => config + a + b);
   const variadicReader = (...args) => reader(config => sum(args) + config);
-  const mixedReader = (a, b, ...args) => reader(config => sum(args.concat(a, b, config)));
+  const mixedReader = (a, b, ...args) =>
+    reader(config => sum(args.concat(a, b, config)));
 
   it('tests weaving', function() {
     const wunaryReader = RA.weaveLazy(unaryReader, always(1));

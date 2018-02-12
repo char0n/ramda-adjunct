@@ -36,7 +36,10 @@ describe('pathNotEq', function() {
     eq(RA.pathNotEq(['a', 'b'], 0, { a: { b: -0 } }), true);
     eq(RA.pathNotEq(['a', 'b'], -0, { a: { b: 0 } }), true);
     eq(RA.pathNotEq(['a', 'b'], NaN, { a: { b: NaN } }), false);
-    eq(RA.pathNotEq(['a', 'b'], new Just([42]), { a: { b: new Just([42]) } }), false);
+    eq(
+      RA.pathNotEq(['a', 'b'], new Just([42]), { a: { b: new Just([42]) } }),
+      false
+    );
   });
 
   context('when there is no path', function() {

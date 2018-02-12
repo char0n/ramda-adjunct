@@ -48,6 +48,8 @@ export const chainTrait = {
 
 export const ordTrait = {
   [fl.lte](ord) {
-    return isSameType(this, ord) && (this.value < ord.value || this[fl.equals](ord));
+    return (
+      isSameType(this, ord) && (this.value < ord.value || this[fl.equals](ord))
+    );
   },
 };

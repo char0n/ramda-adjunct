@@ -6,7 +6,10 @@ import isObjLike from './isObjLike';
 import isFunction from './isFunction';
 
 const isObjectConstructor = pipe(toString, equals(toString(Object)));
-const hasObjectConstructor = pathSatisfies(both(isFunction, isObjectConstructor), ['constructor']);
+const hasObjectConstructor = pathSatisfies(
+  both(isFunction, isObjectConstructor),
+  ['constructor']
+);
 
 /* eslint-disable max-len */
 /**

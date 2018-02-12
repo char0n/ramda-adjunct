@@ -26,8 +26,10 @@ try {
  */
 /* eslint-enable max-len */
 const isGeneratorFunction = val => {
-  const toStringCheck = Object.prototype.toString.call(val) === '[object GeneratorFunction]';
-  const legacyConstructorCheck = isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
+  const toStringCheck =
+    Object.prototype.toString.call(val) === '[object GeneratorFunction]';
+  const legacyConstructorCheck =
+    isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
 
   return toStringCheck || legacyConstructorCheck;
 };

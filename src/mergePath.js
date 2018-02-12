@@ -25,6 +25,8 @@ import mergeRight from './mergeRight';
  *  { outer: { inner: { foo: 2 } } }
  * ); //=> { outer: { inner: { foo: 3, bar: 4 } }
  */
-const mergePath = curry((path, source, obj) => over(lensPath(path), mergeRight(source), obj));
+const mergePath = curry((path, source, obj) =>
+  over(lensPath(path), mergeRight(source), obj)
+);
 
 export default mergePath;

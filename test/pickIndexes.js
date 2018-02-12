@@ -33,7 +33,10 @@ describe('pickIndexes', function() {
 
   context('when list is a non-array', function() {
     specify('should product TypeError', function() {
-      chai.assert.throws(RA.pickIndexes.bind(null, [0, 2], undefined), TypeError);
+      chai.assert.throws(
+        RA.pickIndexes.bind(null, [0, 2], undefined),
+        TypeError
+      );
     });
   });
 

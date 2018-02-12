@@ -140,25 +140,43 @@ describe('curryRight', function() {
 
 /* eslint-disable max-len */
 describe('curryRight properties', function() {
-  jsv.property('curries multiple values', jsv.integer, jsv.integer, jsv.integer, (a, b, c) => {
-    const f = (_a, _b, _c) => _a + _b + _c;
-    const g = RA.curryRight(f);
+  jsv.property(
+    'curries multiple values',
+    jsv.integer,
+    jsv.integer,
+    jsv.integer,
+    (a, b, c) => {
+      const f = (_a, _b, _c) => _a + _b + _c;
+      const g = RA.curryRight(f);
 
-    return R.all(R.equals(f(a, b, c)), [g(a, b, c), g(a)(b)(c), g(a)(b, c), g(a, b)(c), g(a, b, c)]);
-  });
+      return R.all(R.equals(f(a, b, c)), [
+        g(a, b, c),
+        g(a)(b)(c),
+        g(a)(b, c),
+        g(a, b)(c),
+        g(a, b, c),
+      ]);
+    }
+  );
 
-  jsv.property('curries with placeholder', jsv.integer, jsv.integer, jsv.integer, (a, b, c) => {
-    const _ = { '@@functional/placeholder': true, x: Math.random() };
-    const f = (_a, _b, _c) => _a + _b + _c;
-    const g = RA.curryRight(f);
+  jsv.property(
+    'curries with placeholder',
+    jsv.integer,
+    jsv.integer,
+    jsv.integer,
+    (a, b, c) => {
+      const _ = { '@@functional/placeholder': true, x: Math.random() };
+      const f = (_a, _b, _c) => _a + _b + _c;
+      const g = RA.curryRight(f);
 
-    return R.all(R.equals(f(a, b, c)), [
-      g(_, _, c)(a, b),
-      g(a, _, c)(b),
-      g(_, b, c)(a),
-      g(a, _, _)(_, c)(b),
-      g(a, b, _)(c),
-    ]);
-  });
+      return R.all(R.equals(f(a, b, c)), [
+        g(_, _, c)(a, b),
+        g(a, _, c)(b),
+        g(_, b, c)(a),
+        g(a, _, _)(_, c)(b),
+        g(a, b, _)(c),
+      ]);
+    }
+  );
 });
 /* eslint-enable */
