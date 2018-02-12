@@ -34,12 +34,16 @@ describe('mapIndexed', function() {
       const g = b => b * 2;
       const h = RA.mapIndexed(f, g);
 
-
-      eq(h(10), (10 * 2) - 1);
+      eq(h(10), 10 * 2 - 1);
     });
 
-    it('dispatches to objects that implement `map`', function () {
-      const obj = { x: 100, map: function fn(f) { return f(this.x) } };
+    it('dispatches to objects that implement `map`', function() {
+      const obj = {
+        x: 100,
+        map: function fn(f) {
+          return f(this.x);
+        },
+      };
 
       eq(RA.mapIndexed(add1, obj), 101);
     });

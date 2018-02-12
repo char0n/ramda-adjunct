@@ -1,6 +1,5 @@
 import { append, flip } from 'ramda';
 
-
 /**
  * Returns a new list containing the contents of the given list, followed by the given element.
  * Like {@link http://ramdajs.com/docs/#append|R.append} but with argument order reversed.

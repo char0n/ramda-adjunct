@@ -1,6 +1,5 @@
 import { addIndex, reduce } from 'ramda';
 
-
 /**
  * {@link http://ramdajs.com/docs/#reduce|R.reduce} function that more closely resembles Array.prototype.reduce.
  * It takes two new parameters to its callback function: the current index, and the entire list.
