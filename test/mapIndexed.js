@@ -33,21 +33,20 @@ describe('mapIndexed', function() {
       const f = a => a - 1;
       const g = b => b * 2;
       const h = RA.mapIndexed(f, g);
-      eq(h(10), 10 * 2 - 1);
+
+
+      eq(h(10), (10 * 2) - 1);
     });
 
-    it('dispatches to objects that implement `map`', function() {
-      const obj = {
-        x: 100,
-        map: function fn(f) {
-          return f(this.x);
-        },
-      };
+    it('dispatches to objects that implement `map`', function () {
+      const obj = { x: 100, map: function fn(f) { return f(this.x) } };
+
       eq(RA.mapIndexed(add1, obj), 101);
     });
 
     it('dispatches to transformer objects', function() {
       const result = RA.mapIndexed(add1, listXf);
+
       eq(result.xf, listXf);
       eq(result.f(41), 42);
     });
@@ -64,6 +63,7 @@ describe('mapIndexed', function() {
     it('composes', function() {
       const mdouble = RA.mapIndexed(times2);
       const mdec = RA.mapIndexed(dec);
+
       eq(mdec(mdouble([10, 20, 30])), [19, 39, 59]);
     });
 
@@ -91,6 +91,7 @@ describe('mapIndexed', function() {
     specify('should join idx and value with a "-"', function() {
       const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
       const resultList = ['0-f', '1-o', '2-o', '3-b', '4-a', '5-r'];
+
       eq(RA.mapIndexed((val, idx) => `${idx}-${val}`, initialList), resultList);
     });
   });

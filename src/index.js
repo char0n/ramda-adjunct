@@ -91,6 +91,7 @@ export { default as seq } from './seq';
 export { default as sequencing } from './seq';
 // List
 export { default as mapIndexed } from './mapIndexed';
+export { default as reduceIndexed } from './reduceIndexed';
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 export { default as concatRight } from './concatRight';
@@ -100,6 +101,7 @@ export { default as sliceFrom } from './sliceFrom';
 export { default as sliceTo } from './sliceTo';
 export { default as omitIndexes } from './omitIndexes';
 export { default as compact } from './compact';
+export { default as appendFlipped } from './appendFlipped';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
