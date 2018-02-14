@@ -52,7 +52,8 @@ github release, please refer to this [page](https://help.github.com/articles/cre
 Bump the `package.json` version by incrementing **PATCH** part of the semver version.
 
 ```sh
- $ npm version patch --message "chore: bump version to v%s"
+ $ git add package.json
+ $ git commit -m "chore: bump version to vX.Y.Z"
  $ git push origim master
 ```
 
