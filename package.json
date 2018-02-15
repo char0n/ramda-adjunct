@@ -16,13 +16,18 @@
     {
       "name": "Rocky Madden",
       "url": "https://github.com/rockymadden"
+    },
+    {
+      "name": "Guillaume ARM",
+      "email": " trapcodien@gmail.com",
+      "url": "https://github.com/guillaumearm"
     }
   ],
   "name": "ramda-adjunct",
   "description": "Community-maintained extension of Ramda",
   "keywords": "ramda extensions addons cookbook adjunct recipe extras",
   "sideEffects": false,
-  "version": "2.5.0",
+  "version": "2.6.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
@@ -102,7 +107,7 @@
     "chai": "=4.1.2",
     "chai-as-promised": "=7.1.1",
     "codecov": "3.0.0",
-    "conventional-changelog-cli": "1.3.9",
+    "conventional-changelog-cli": "1.3.10",
     "cross-env": "=5.1.3",
     "docdash": "git+https://github.com/char0n/docdash.git#bf4b4eebfdaf042c0ea9038419bc26813f243c94",
     "es6-promise": "4.2.4",
@@ -119,7 +124,7 @@
     "jsdoc": "=3.5.5",
     "jsverify": "=0.8.3",
     "license-cli": "1.1.6",
-    "mocha": "5.0.0",
+    "mocha": "5.0.1",
     "mocha-junit-reporter": "1.17.0",
     "mocha-multi-reporters": "1.1.7",
     "monet": "=0.9.0-alpha.4",

@@ -1,3 +1,25 @@
+<a name="2.5.0"></a>
+# [2.5.0](https://github.com/char0n/ramda-adjunct/compare/v2.4.1...v2.5.0) (2018-02-14)
+
+
+### Bug Fixes
+
+* remove defaults from mergeRight aliases ([#344](https://github.com/char0n/ramda-adjunct/issues/344)) ([6e13e7c](https://github.com/char0n/ramda-adjunct/commit/6e13e7c)), closes [#338](https://github.com/char0n/ramda-adjunct/issues/338)
+
+
+### Features
+
+* **nonePass:** Add complement of Ramda’s anyPass ([#327](https://github.com/char0n/ramda-adjunct/issues/327)) ([6b875ea](https://github.com/char0n/ramda-adjunct/commit/6b875ea)), closes [#234](https://github.com/char0n/ramda-adjunct/issues/234)
+* add appendFlipped ([#347](https://github.com/char0n/ramda-adjunct/issues/347)) ([9a30238](https://github.com/char0n/ramda-adjunct/commit/9a30238)), closes [#333](https://github.com/char0n/ramda-adjunct/issues/333)
+* add compact ([#331](https://github.com/char0n/ramda-adjunct/issues/331)) ([865a2ce](https://github.com/char0n/ramda-adjunct/commit/865a2ce)), closes [#127](https://github.com/char0n/ramda-adjunct/issues/127)
+* add mapIndexed ([#345](https://github.com/char0n/ramda-adjunct/issues/345)) ([3fcd0c2](https://github.com/char0n/ramda-adjunct/commit/3fcd0c2)), closes [#282](https://github.com/char0n/ramda-adjunct/issues/282)
+* add reduceIndexed ([#357](https://github.com/char0n/ramda-adjunct/issues/357)) ([ea6fd59](https://github.com/char0n/ramda-adjunct/commit/ea6fd59)), closes [#281](https://github.com/char0n/ramda-adjunct/issues/281)
+* add isRegExp ([#346](https://github.com/char0n/ramda-adjunct/issues/325)) ([3ad18cd](https://github.com/char0n/ramda-adjunct/commit/3ad18cd)), closes [#325](https://github.com/char0n/ramda-adjunct/issues/325)
+* add isNotRegExp ([#346](https://github.com/char0n/ramda-adjunct/issues/325)) ([3ad18cd](https://github.com/char0n/ramda-adjunct/commit/3ad18cd)), closes [#325](https://github.com/char0n/ramda-adjunct/issues/325)
+
+
+
+
 <a name="2.4.1"></a>
 ## [2.4.1](https://github.com/char0n/ramda-adjunct/compare/v2.4.0...v2.4.1) (2018-01-25)
 
