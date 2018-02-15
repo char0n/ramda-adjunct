@@ -16,6 +16,11 @@
     {
       "name": "Rocky Madden",
       "url": "https://github.com/rockymadden"
+    },
+    {
+      "name": "Guillaume ARM",
+      "email": " trapcodien@gmail.com",
+      "url": "https://github.com/guillaumearm"
     }
   ],
   "name": "ramda-adjunct",
