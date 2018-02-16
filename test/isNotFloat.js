@@ -15,7 +15,8 @@ describe('isNotFloat', function() {
 
     eq(RA.isNotFloat(0.1), false);
     eq(RA.isNotFloat(Math.PI), false);
-    eq(RA.isNotFloat(5.56789), false);
+    // prettier-ignore
+    eq(RA.isNotFloat(5.56789+0), false);
 
     eq(RA.isNotFloat(NaN), true);
     eq(RA.isNotFloat(Infinity), true);

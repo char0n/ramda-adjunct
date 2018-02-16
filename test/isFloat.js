@@ -10,11 +10,13 @@ describe('isFloat', function() {
     eq(RA.isFloat(-100000), false);
     eq(RA.isFloat(MAX_SAFE_INTEGER), false);
     eq(RA.isFloat(MIN_SAFE_INTEGER), false);
-    eq(RA.isFloat(5), false);
+    // prettier-ignore
+    eq(RA.isFloat(5e+0), false);
 
     eq(RA.isFloat(0.1), true);
     eq(RA.isFloat(Math.PI), true);
-    eq(RA.isFloat(5.56789), true);
+    // prettier-ignore
+    eq(RA.isFloat(5.56789+0), true);
 
     eq(RA.isFloat(NaN), false);
     eq(RA.isFloat(Infinity), false);
