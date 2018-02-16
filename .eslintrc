@@ -14,8 +14,7 @@
     "plugin:ramda/recommended",
     "prettier"
   ],
-  "plugins": ["eslint-plugin-ramda", 
-    "prettier"],
+  "plugins": ["eslint-plugin-ramda", "prettier"],
   "rules": {
     "strict": [2, "global"],
     "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
