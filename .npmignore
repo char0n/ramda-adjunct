@@ -1,6 +1,7 @@
 /.idea
 /.tmp
 /.nyc_output
+/.github
 /coverage
 /docs
 /node_modules
