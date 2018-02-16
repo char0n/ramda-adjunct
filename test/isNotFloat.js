@@ -10,7 +10,8 @@ describe('isNotFloat', function() {
     eq(RA.isNotFloat(-100000), true);
     eq(RA.isNotFloat(MAX_SAFE_INTEGER), true);
     eq(RA.isNotFloat(MIN_SAFE_INTEGER), true);
-    eq(RA.isNotFloat(5), true);
+    // prettier-ignore
+    eq(RA.isNotFloat(5e+0), true);
 
     eq(RA.isNotFloat(0.1), false);
     eq(RA.isNotFloat(Math.PI), false);
