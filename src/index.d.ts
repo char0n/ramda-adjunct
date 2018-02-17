@@ -369,6 +369,11 @@ declare namespace RamdaAdjunct {
         list(...items: any[]): any[];
 
         /**
+         * Returns an array, even if not, wrap it in a singleton one.
+         */
+        ensureArray<T>(value: T | T[]): T[];
+
+        /**
          * Returns the result of concatenating the given lists or strings.
          */
         concatRight<T extends any[]>(firstList: T, secondList: T): T;
