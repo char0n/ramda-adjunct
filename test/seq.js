@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+
 import * as RA from '../src/index';
 import eq from './shared/eq';
 

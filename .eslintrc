@@ -23,6 +23,13 @@
     "no-underscore-dangle": 0,
     "no-confusing-arrow": "off",
     "object-curly-newline": "off",
+    "import/order": ["error", {
+      "groups": [
+        ["builtin", "external", "internal"],
+        ["parent", "sibling", "index"]
+      ],
+      "newlines-between": "always"
+    }],
     "ramda/always-simplification": ["error"],
     "ramda/compose-simplification": ["error"],
     "ramda/eq-by-simplification": ["error"],
