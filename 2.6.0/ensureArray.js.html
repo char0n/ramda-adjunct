@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isObjLike.js - Documentation</title>
+    <title>ensureArray.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isObjLike.js</h1>
+    <h1 class="page-title">ensureArray.js</h1>
     
 
     
@@ -52,36 +52,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { when, of } from 'ramda';
 
-import isNotNull from './isNotNull';
-import isOfTypeObject from './internal/isOfTypeObject';
+import { isNotArray } from './index';
 
-/* eslint-disable max-len */
 /**
- * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
+ * Returns a singleton array containing the value provided.
+ * If value is already an array, it is returned as is.
  *
- * @func isObjLike
- * @aliases isObjectLike
+ * @func ensureArray
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotObjLike|isNotObjLike}, {@link RA.isObj|isObj}, {@link RA.isPlainObj|isPlainObj}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.6.0|v2.6.0}
+ * @category List
+ * @sig a | [a] -> [a]
+ * @param {*|Array} val the value ensure as Array
+ * @return {Array}
+ * @see {@link http://ramdajs.com/docs/#of|R.of}
  * @example
  *
- * RA.isObjLike({}); //=> true
- * RA.isObjLike([]); //=> true
- * RA.isObjLike(() => {}); //=> false
- * RA.isObjLike(null); //=> false
- * RA.isObjLike(undefined); //=> false
+ * RA.ensureArray(42); //=> [42]
+ * RA.ensureArray([42]); //=> [42]
  */
-/* eslint-enable max-len */
-const isObjLike = both(isNotNull, isOfTypeObject);
+const ensureArray = when(isNotArray, of);
 
-export default isObjLike;
+export default ensureArray;
 </code></pre>
         </article>
     </section>
