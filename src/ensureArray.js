@@ -1,7 +1,6 @@
 import { when, of } from 'ramda';
 import { isNotArray } from './index';
 
-
 /**
  * If the argument is already an Array, return it,
  * otherwise return a new Array with the argument as its only element.
