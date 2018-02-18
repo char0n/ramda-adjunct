@@ -29,6 +29,8 @@ declare namespace RamdaAdjunct {
 
     interface Dictionary<T> { [key: string]: T; }
 
+    type DictPred<T> = (value: T, key: string) => boolean;
+
     export interface Static {
         /**
          * Checks if input value is `Array`.
@@ -487,6 +489,13 @@ declare namespace RamdaAdjunct {
             (source: object, obj: object): object;
             (source: object): (obj: object) => object;
         };
+
+        /**
+         * Returns a partial copy of an object containing only the keys
+         * that don't satisfy the supplied predicate.
+         */
+        omitBy<T, U extends Dictionary<T>>(pred: DictPred<T>, obj: U): U;
+        omitBy<T, U extends Dictionary<T>>(pred: DictPred<T>): (obj: U) => U;
 
         /**
          * Weave a configuration into function returning the runnable monad like `Reader` or `Free`.
