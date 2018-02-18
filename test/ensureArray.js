@@ -45,7 +45,7 @@ describe('ensureArray', function() {
       filledArray = [42];
     });
 
-    specify('should return array og length 1', function() {
+    specify('should return array of length 1', function() {
       assert.lengthOf(RA.ensureArray(filledArray), 1);
     });
 
