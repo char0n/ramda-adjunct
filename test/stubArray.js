@@ -1,4 +1,5 @@
 import assert from 'assert';
+
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
