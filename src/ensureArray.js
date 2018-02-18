@@ -2,8 +2,8 @@ import { when, of } from 'ramda';
 import { isNotArray } from './index';
 
 /**
- * If the argument is already an Array, return it,
- * otherwise return a new Array with the argument as its only element.
+ * Returns a singleton array containing the value provided.
+ * If value is already an array, it is returned as is.
  *
  * @func ensureArray
  * @memberOf RA

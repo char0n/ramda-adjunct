@@ -369,8 +369,8 @@ declare namespace RamdaAdjunct {
         list(...items: any[]): any[];
 
         /**
-         * If the argument is already an Array, return it,
-         * otherwise return a new Array with the argument as its only element.
+         * Returns a singleton array containing the value provided.
+         * If value is already an array, it is returned as is.
          */
         ensureArray<T>(value: T | T[]): T[];
 
