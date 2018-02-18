@@ -2,7 +2,6 @@ import { converge, length, identity } from 'ramda';
 
 import curryRightN from './curryRightN';
 
-
 /**
  * Returns a curried equivalent of the provided function.
  * This function is like curry, except that the provided arguments order is reversed.
@@ -24,6 +23,4 @@ import curryRightN from './curryRightN';
  */
 const curryRight = converge(curryRightN, [length, identity]);
 
-
 export default curryRight;
-

@@ -2,7 +2,6 @@ import { both, gt } from 'ramda';
 
 import isNumber from './isNumber';
 
-
 /**
  * Checks if value is a negative `Number` primitive or object.
  *

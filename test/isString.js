@@ -3,9 +3,8 @@ import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-
-describe('isString', function () {
-  it('tests a value for `String`', function () {
+describe('isString', function() {
+  it('tests a value for `String`', function() {
     eq(RA.isString('abc'), true);
     eq(RA.isString(Object('abc')), true);
 

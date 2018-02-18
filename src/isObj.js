@@ -4,7 +4,6 @@ import isNotNull from './isNotNull';
 import isFunction from './isFunction';
 import isOfTypeObject from './internal/isOfTypeObject';
 
-
 /* eslint-disable max-len */
 /**
  * Checks if input value is language type of `Object`.

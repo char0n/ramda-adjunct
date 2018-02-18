@@ -4,7 +4,6 @@ import { isString, isNumber, isFunction } from '../index';
 import { isSameType } from './util';
 import fl from './mapping';
 
-
 export const functorTrait = {
   [fl.map](fn) {
     return this.constructor[fl.of](fn(this.value));
@@ -49,6 +48,8 @@ export const chainTrait = {
 
 export const ordTrait = {
   [fl.lte](ord) {
-    return isSameType(this, ord) && (this.value < ord.value || this[fl.equals](ord));
+    return (
+      isSameType(this, ord) && (this.value < ord.value || this[fl.equals](ord))
+    );
   },
 };

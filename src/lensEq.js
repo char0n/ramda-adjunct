@@ -1,6 +1,5 @@
 import { view, curryN, equals, pipe } from 'ramda';
 
-
 /**
  * Returns `true` if data structure focused by the given lens equals provided value.
  *
@@ -22,7 +21,8 @@ import { view, curryN, equals, pipe } from 'ramda';
  * RA.lensEq(R.lensIndex(1), 1, [0, 1, 2]); // => true
  * RA.lensEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => true
  */
-const lensEq = curryN(3, (lens, val, data) => pipe(view(lens), equals(val))(data));
-
+const lensEq = curryN(3, (lens, val, data) =>
+  pipe(view(lens), equals(val))(data)
+);
 
 export default lensEq;

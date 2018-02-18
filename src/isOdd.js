@@ -2,7 +2,6 @@ import { both, pipe, modulo, flip, equals, complement } from 'ramda';
 
 import isInteger from './isInteger';
 
-
 /**
  * Checks if value is odd integer number.
  * An odd number is an integer which is not a multiple DIVISIBLE of two.

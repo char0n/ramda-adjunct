@@ -1,9 +1,8 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
-
-describe('isEmptyArray', function () {
-  it('tests a value to be an empty `Array`', function () {
+describe('isEmptyArray', function() {
+  it('tests a value to be an empty `Array`', function() {
     eq(RA.isEmptyArray([]), true);
     eq(RA.isEmptyArray(new Array()), true);
     eq(RA.isEmptyArray(Array.prototype), true);

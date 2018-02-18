@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isInteger from './isInteger';
 
-
 /**
  * Checks whether the passed value is complement of an `integer`.
  *

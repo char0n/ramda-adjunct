@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isObjLike from './isObjLike';
 
-
 /* eslint-disable max-len */
 /**
  * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".

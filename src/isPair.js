@@ -2,7 +2,6 @@ import { both, equals, length, pipe } from 'ramda';
 
 import isArray from './isArray';
 
-
 /**
  * Checks if input value is a pair.
  *

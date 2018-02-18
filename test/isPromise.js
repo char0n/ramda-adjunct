@@ -5,10 +5,9 @@ import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-
-describe('isPromise', function () {
-  context('when value is not a Promise', function () {
-    specify('should return false', function () {
+describe('isPromise', function() {
+  context('when value is not a Promise', function() {
+    specify('should return false', function() {
       eq(RA.isPromise(args), false);
       eq(RA.isPromise([1, 2, 3]), false);
       eq(RA.isPromise(true), false);
@@ -22,24 +21,26 @@ describe('isPromise', function () {
     });
   });
 
-  context('when value is thenable object', function () {
-    specify('should return false', function () {
+  context('when value is thenable object', function() {
+    specify('should return false', function() {
       eq(RA.isPromise({ then: () => {} }), false);
     });
   });
 
-  context("when value contains then method on it's prototype", function () {
-    specify('should return false', function () {
+  context("when value contains then method on it's prototype", function() {
+    specify('should return false', function() {
       const objWithPrototype = Object.create({ then: () => {} });
 
       eq(RA.isPromise(objWithPrototype), false);
     });
   });
 
-  context('when value is an instance of native Promise', function () {
-    const hasNativePromise = typeof Promise !== 'undefined' && contains('[native code]', Promise.toString());
+  context('when value is an instance of native Promise', function() {
+    const hasNativePromise =
+      typeof Promise !== 'undefined' &&
+      contains('[native code]', Promise.toString());
 
-    specify('should return true', function () {
+    specify('should return true', function() {
       const resolvedP = Promise.resolve();
       const rejectedP = Promise.reject();
 
@@ -50,8 +51,8 @@ describe('isPromise', function () {
     });
   });
 
-  context('when value is a thenable function', function () {
-    specify('should return false', function () {
+  context('when value is a thenable function', function() {
+    specify('should return false', function() {
       const func = () => {};
       func.then = () => {};
 

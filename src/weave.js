@@ -28,6 +28,8 @@ import { curryN } from 'ramda';
  * const wlog = RA.weave(log, console);
  * wlog('test'); //=> prints 'test'
  */
-const weave = curryN(2, (fn, config) => curryN(fn.length, (...args) => fn(...args).run(config)));
+const weave = curryN(2, (fn, config) =>
+  curryN(fn.length, (...args) => fn(...args).run(config))
+);
 
 export default weave;

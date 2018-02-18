@@ -1,6 +1,5 @@
 import { complement, compose, anyPass } from 'ramda';
 
-
 /**
  * Takes a list of predicates and returns a predicate that returns true for a given list of
  * arguments if none of the provided predicates are satisfied by those arguments. It is the

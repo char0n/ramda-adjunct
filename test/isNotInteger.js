@@ -6,9 +6,8 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import eq from './shared/eq';
 import polyfill from '../src/internal/polyfills/Number.isInteger';
 
-
-describe('isNotInteger', function () {
-  it('tests a value for complement of `integer`', function () {
+describe('isNotInteger', function() {
+  it('tests a value for complement of `integer`', function() {
     eq(RA.isNotInteger(0), false);
     eq(RA.isNotInteger(1), false);
     eq(RA.isNotInteger(-100000), false);
@@ -27,7 +26,7 @@ describe('isNotInteger', function () {
     eq(RA.isNotInteger([1]), true);
   });
 
-  it('tests polyfill for complement of `integer', function () {
+  it('tests polyfill for complement of `integer', function() {
     const polyfillC = complement(polyfill);
 
     eq(polyfillC(0), false);

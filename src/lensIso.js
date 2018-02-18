@@ -1,11 +1,9 @@
 import { curry, map } from 'ramda';
 
-
 // This implementation was highly inspired by the implementations
 // in ramda-lens library.
 //
 // https://github.com/ramda/ramda-lens
-
 
 // isomorphic :: ((a -> b), (b -> a)) -> Isomorphism
 //     Isomorphism = x -> y
@@ -15,17 +13,15 @@ const isomorphic = (to, from) => {
   return isomorphism;
 };
 
-
 // isomorphisms :: ((a -> b), (b -> a)) -> (a -> b)
-const isomorphisms = (to, from) => isomorphic(
-  curry((toFunctorFn, target) => map(from, toFunctorFn(to(target)))),
-  curry((toFunctorFn, target) => map(to, toFunctorFn(from(target))))
-);
-
+const isomorphisms = (to, from) =>
+  isomorphic(
+    curry((toFunctorFn, target) => map(from, toFunctorFn(to(target)))),
+    curry((toFunctorFn, target) => map(to, toFunctorFn(from(target))))
+  );
 
 // from :: Isomorphism -> a -> b
 const from = curry((isomorphism, x) => isomorphism.from(x));
-
 
 /**
  * Defines an isomorphism that will work like a lens. It takes two functions.
@@ -51,6 +47,5 @@ const from = curry((isomorphism, x) => isomorphism.from(x));
  */
 const lensIso = curry(isomorphisms);
 lensIso.from = from;
-
 
 export default lensIso;

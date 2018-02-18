@@ -2,7 +2,6 @@ import { both, isEmpty } from 'ramda';
 
 import isArray from './isArray';
 
-
 /**
  * Checks if input value is an empty `Array`.
  *

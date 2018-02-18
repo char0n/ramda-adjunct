@@ -5,9 +5,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-
-describe('isOdd', function () {
-  it('tests a value for odd integer `Number`', function () {
+describe('isOdd', function() {
+  it('tests a value for odd integer `Number`', function() {
     eq(RA.isOdd(0), false);
     eq(RA.isOdd(4), false);
     eq(RA.isOdd(Object(0)), false);

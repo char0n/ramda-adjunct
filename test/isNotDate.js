@@ -3,9 +3,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-
-describe('isNotDate', function () {
-  it('tests a value for complement of `Date`', function () {
+describe('isNotDate', function() {
+  it('tests a value for complement of `Date`', function() {
     eq(RA.isNotDate(new Date()), false);
 
     eq(RA.isNotDate(Date.now()), true);

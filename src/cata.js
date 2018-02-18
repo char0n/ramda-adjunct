@@ -2,7 +2,6 @@ import { curry } from 'ramda';
 
 import isFunction from './isFunction';
 
-
 /* eslint-disable max-len */
 /**
  * The catamorphism is a way of folding a type into a value.

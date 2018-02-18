@@ -3,7 +3,6 @@ import { has } from 'ramda';
 import isArray from './isArray';
 import isString from './isString';
 
-
 /* eslint-disable max-len */
 /**
  * Tests whether or not an object is similar to an array.
@@ -28,13 +27,25 @@ import isString from './isString';
  * RA.isArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> true
  */
 /* eslint-enable max-len */
-const isArrayLike = (val) => {
-  if (isArray(val)) { return true }
-  if (!val) { return false }
-  if (isString(val)) { return false }
-  if (typeof val !== 'object') { return false }
-  if (val.nodeType === 1) { return !!val.length }
-  if (val.length === 0) { return true }
+const isArrayLike = val => {
+  if (isArray(val)) {
+    return true;
+  }
+  if (!val) {
+    return false;
+  }
+  if (isString(val)) {
+    return false;
+  }
+  if (typeof val !== 'object') {
+    return false;
+  }
+  if (val.nodeType === 1) {
+    return !!val.length;
+  }
+  if (val.length === 0) {
+    return true;
+  }
   if (val.length > 0) {
     return has(0, val) && has(val.length - 1, val);
   }

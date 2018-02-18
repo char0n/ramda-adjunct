@@ -1,6 +1,5 @@
 import { pathEq, complement } from 'ramda';
 
-
 /* eslint-disable max-len */
 /**
  * Determines whether a nested path on an object doesn't have a specific value,

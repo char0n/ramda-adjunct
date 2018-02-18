@@ -5,9 +5,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-
-describe('isNotNumber', function () {
-  it('tests a value for complement of `Number`', function () {
+describe('isNotNumber', function() {
+  it('tests a value for complement of `Number`', function() {
     eq(RA.isNotNumber(0), false);
     eq(RA.isNotNumber(0.1), false);
     eq(RA.isNotNumber(Object(0)), false);

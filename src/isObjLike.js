@@ -3,7 +3,6 @@ import { both } from 'ramda';
 import isNotNull from './isNotNull';
 import isOfTypeObject from './internal/isOfTypeObject';
 
-
 /* eslint-disable max-len */
 /**
  * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".

@@ -4,9 +4,8 @@ import * as RA from '../src/index';
 import polyfill from '../src/internal/polyfills/Number.isFinite';
 import eq from './shared/eq';
 
-
-describe('isNotFinite', function () {
-  it('tests a value for complement of finite `Number`', function () {
+describe('isNotFinite', function() {
+  it('tests a value for complement of finite `Number`', function() {
     eq(RA.isNotFinite(Infinity), true);
     eq(RA.isNotFinite(NaN), true);
     eq(RA.isNotFinite(-Infinity), true);
@@ -21,7 +20,7 @@ describe('isNotFinite', function () {
     eq(RA.isNotFinite(null), true);
   });
 
-  it('tests polyfill for complement of finite `Number', function () {
+  it('tests polyfill for complement of finite `Number', function() {
     const polyfillC = complement(polyfill);
 
     eq(polyfillC(Infinity), true);

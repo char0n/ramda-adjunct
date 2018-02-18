@@ -1,9 +1,8 @@
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
-
-describe('isEmptyString', function () {
-  it('tests a value to be an empty `String`', function () {
+describe('isEmptyString', function() {
+  it('tests a value to be an empty `String`', function() {
     eq(RA.isEmptyString(''), true);
 
     eq(RA.isEmptyString('42'), false);

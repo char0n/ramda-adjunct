@@ -3,9 +3,8 @@ import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-
-describe('isNotString', function () {
-  it('tests a value for complement of `String`', function () {
+describe('isNotString', function() {
+  it('tests a value for complement of `String`', function() {
     eq(RA.isNotString('abc'), false);
     eq(RA.isNotString(Object('abc')), false);
 

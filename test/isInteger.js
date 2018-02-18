@@ -4,19 +4,18 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import eq from './shared/eq';
 import polyfill from '../src/internal/polyfills/Number.isInteger';
 
-
-describe('isInteger', function () {
-  it('tests a value for `integer`', function () {
+describe('isInteger', function() {
+  it('tests a value for `integer`', function() {
     eq(RA.isInteger(0), true);
     eq(RA.isInteger(1), true);
     eq(RA.isInteger(-100000), true);
     eq(RA.isInteger(MAX_SAFE_INTEGER), true);
     eq(RA.isInteger(MIN_SAFE_INTEGER), true);
-    eq(RA.isInteger(5e+0), true);
+    eq(RA.isInteger(5), true);
 
     eq(RA.isInteger(0.1), false);
     eq(RA.isInteger(Math.PI), false);
-    eq(RA.isInteger(5.56789e+0), false);
+    eq(RA.isInteger(5.56789), false);
 
     eq(RA.isInteger(NaN), false);
     eq(RA.isInteger(Infinity), false);
@@ -27,7 +26,7 @@ describe('isInteger', function () {
     eq(RA.isInteger([1]), false);
   });
 
-  it('tests polyfill for `integer', function () {
+  it('tests polyfill for `integer', function() {
     eq(polyfill(0), true);
     eq(polyfill(1), true);
     eq(polyfill(-100000), true);

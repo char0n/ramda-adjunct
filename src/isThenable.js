@@ -2,7 +2,6 @@ import { pathSatisfies } from 'ramda';
 
 import isFunction from './isFunction';
 
-
 /**
  * Checks if input value is a `thenable`.
  * `thenable` is an object or function that defines a `then` method.

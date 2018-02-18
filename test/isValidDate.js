@@ -3,9 +3,8 @@ import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-
-describe('isValidDate', function () {
-  it('tests a value for a valid `Date`', function () {
+describe('isValidDate', function() {
+  it('tests a value for a valid `Date`', function() {
     eq(RA.isValidDate(new Date()), true);
 
     eq(RA.isValidDate(new Date('a')), false);

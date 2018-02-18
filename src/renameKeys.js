@@ -2,8 +2,7 @@ import { curry, has } from 'ramda';
 
 import renameKeysWith from './renameKeysWith';
 
-
-const valueOrKey = keysMap => (key) => {
+const valueOrKey = keysMap => key => {
   if (has(key, keysMap)) {
     return keysMap[key];
   }
@@ -34,6 +33,8 @@ const valueOrKey = keysMap => (key) => {
  * RA.renameKeys({ firstName: 'name', type: 'kind', foo: 'bar' })(input);
  * //=> { name: 'Elisia', age: 22, kind: 'human' }
  */
-const renameKeys = curry((keysMap, obj) => renameKeysWith(valueOrKey(keysMap), obj));
+const renameKeys = curry((keysMap, obj) =>
+  renameKeysWith(valueOrKey(keysMap), obj)
+);
 
 export default renameKeys;

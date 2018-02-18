@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isObj from './isObj';
 
-
 /* eslint-disable max-len */
 /**
  * Checks if input value is complement of language type of `Object`.

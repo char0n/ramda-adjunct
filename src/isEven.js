@@ -3,7 +3,6 @@ import { both, complement } from 'ramda';
 import isInteger from './isInteger';
 import isOdd from './isOdd';
 
-
 /**
  * Checks if value is even integer number.
  * An even number is an integer which is "evenly divisible" by two.
