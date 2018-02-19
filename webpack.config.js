@@ -3,7 +3,6 @@
 const webpack = require('webpack');
 const path = require('path');
 
-
 const minimizeTrait = {
   plugins: [
     new webpack.LoaderOptionsPlugin({
@@ -21,7 +20,6 @@ const minimizeTrait = {
   ],
 };
 
-
 const ra = {
   entry: './src/index.js',
   target: 'node',
@@ -36,35 +34,42 @@ const ra = {
     'fantasy-land': 'fantasy-land',
   },
   module: {
-    loaders: [{
-      test: /\.(js)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }],
+    loaders: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
   },
 };
 
-const raMin = Object.assign({
-  entry: './src/index.js',
-  target: 'node',
-  output: {
-    path: path.resolve('./dist'),
-    filename: 'RA.node.min.js',
-    libraryTarget: 'umd',
-    library: 'RA',
+const raMin = Object.assign(
+  {
+    entry: './src/index.js',
+    target: 'node',
+    output: {
+      path: path.resolve('./dist'),
+      filename: 'RA.node.min.js',
+      libraryTarget: 'umd',
+      library: 'RA',
+    },
+    externals: {
+      ramda: 'ramda',
+      'fantasy-land': 'fantasy-land',
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.(js)$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
+      ],
+    },
   },
-  externals: {
-    ramda: 'ramda',
-    'fantasy-land': 'fantasy-land',
-  },
-  module: {
-    loaders: [{
-      test: /\.(js)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }],
-  },
-}, minimizeTrait);
+  minimizeTrait
+);
 
 const raWeb = {
   entry: './src/index.js',
@@ -79,35 +84,41 @@ const raWeb = {
     ramda: 'R',
   },
   module: {
-    loaders: [{
-      test: /\.(js)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }],
+    loaders: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
   },
 };
 
-
-const raWebMin = Object.assign({
-  entry: './src/index.js',
-  target: 'web',
-  output: {
-    path: path.resolve('./dist'),
-    filename: 'RA.web.min.js',
-    libraryTarget: 'umd',
-    library: 'RA',
+const raWebMin = Object.assign(
+  {
+    entry: './src/index.js',
+    target: 'web',
+    output: {
+      path: path.resolve('./dist'),
+      filename: 'RA.web.min.js',
+      libraryTarget: 'umd',
+      library: 'RA',
+    },
+    externals: {
+      ramda: 'R',
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.(js)$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
+      ],
+    },
   },
-  externals: {
-    ramda: 'R',
-  },
-  module: {
-    loaders: [{
-      test: /\.(js)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }],
-  },
-}, minimizeTrait);
+  minimizeTrait
+);
 
 const raWebStandalone = {
   entry: './src/index.js',
@@ -119,34 +130,44 @@ const raWebStandalone = {
     library: 'RA',
   },
   module: {
-    loaders: [{
-      test: /\.(js)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }],
+    loaders: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
   },
 };
 
-const rawWebStandaloneMin = Object.assign({
-  entry: './src/index.js',
-  target: 'web',
-  output: {
-    path: path.resolve('./dist'),
-    filename: 'RA.web.standalone.min.js',
-    libraryTarget: 'umd',
-    library: 'RA',
+const rawWebStandaloneMin = Object.assign(
+  {
+    entry: './src/index.js',
+    target: 'web',
+    output: {
+      path: path.resolve('./dist'),
+      filename: 'RA.web.standalone.min.js',
+      libraryTarget: 'umd',
+      library: 'RA',
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.(js)$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+        },
+      ],
+    },
   },
-  module: {
-    loaders: [{
-      test: /\.(js)$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    }],
-  },
-}, minimizeTrait);
-
+  minimizeTrait
+);
 
 module.exports = [
-  ra, raMin, raWeb, raWebMin, raWebStandalone, rawWebStandaloneMin,
+  ra,
+  raMin,
+  raWeb,
+  raWebMin,
+  raWebStandalone,
+  rawWebStandaloneMin,
 ];
-

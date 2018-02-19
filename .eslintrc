@@ -12,7 +12,7 @@
   "extends": [
     "eslint-config-airbnb-base",
     "plugin:ramda/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "plugins": ["eslint-plugin-ramda", "prettier"],
   "rules": {
