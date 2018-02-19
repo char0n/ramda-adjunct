@@ -84,7 +84,7 @@
     "build": "npm run build:es && npm run build:commonjs && npm run build:umd",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
-    "build:umd": "webpack --config webpack.config.js",
+    "build:umd": "webpack --config webpack.config.js --progress",
     "nsp:check": "nsp check",
     "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run test:web && npm run build && npm run docs",
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
