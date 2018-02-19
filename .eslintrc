@@ -12,9 +12,9 @@
   "extends": [
     "eslint-config-airbnb-base",
     "plugin:ramda/recommended",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
-  "plugins": ["eslint-plugin-ramda", "prettier"],
+  "plugins": ["eslint-plugin-ramda", "eslint-plugin-prettier", "prettier"],
   "rules": {
     "strict": [2, "global"],
     "space-before-function-paren": "off",
@@ -31,6 +31,7 @@
     "ramda/always-simplification": ["error"],
     "ramda/compose-simplification": ["error"],
     "ramda/eq-by-simplification": ["error"],
-    "ramda/prefer-complement": ["error"]
+    "ramda/prefer-complement": ["error"],
+    "prettier/prettier": "error"
   }
 }
