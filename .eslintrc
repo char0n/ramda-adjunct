@@ -17,9 +17,7 @@
   "plugins": ["eslint-plugin-ramda", "prettier"],
   "rules": {
     "strict": [2, "global"],
-    "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
     "space-before-function-paren": "off",
-    "comma-dangle": ["error", "always-multiline"],
     "no-underscore-dangle": 0,
     "no-confusing-arrow": "off",
     "object-curly-newline": "off",
