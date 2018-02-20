@@ -1,5 +1,3 @@
-import { pipe, equals } from 'ramda';
-
 /**
  * In JavaScript, a `truthy` value is a value that is considered true
  * when evaluated in a Boolean context. All values are truthy unless
@@ -7,7 +5,7 @@ import { pipe, equals } from 'ramda';
  *
  * @func isTruthy
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2..0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
@@ -23,6 +21,6 @@ import { pipe, equals } from 'ramda';
  * RA.isTruthy(new Date()); // => true
  * RA.isTruthy(Infinity); // => true
  */
-const isTruthy = pipe(Boolean, equals(true));
+const isTruthy = Boolean;
 
 export default isTruthy;
