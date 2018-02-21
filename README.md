@@ -13,6 +13,7 @@
 [![Backers on Open Collective](https://opencollective.com/ramda-adjunct/backers/badge.svg)](#backers) 
 [![Sponsors on Open Collective](https://opencollective.com/ramda-adjunct/sponsors/badge.svg)](#sponsors)
 [![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Open Source Helpers](https://www.codetriage.com/char0n/ramda-adjunct/badges/users.svg)](https://www.codetriage.com/char0n/ramda-adjunct)
 
 # Ramda Adjunct
 
