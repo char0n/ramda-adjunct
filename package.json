@@ -42,6 +42,7 @@
     "node": ">=0.10.3"
   },
   "scripts": {
+    "prepush": "bnr lint && bnr test && bnr build && bnr docs",
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
     "lint:fix": "better-npm-run lint:fix",
