@@ -42,6 +42,7 @@
     "node": ">=0.10.3"
   },
   "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "bash scripts/pre-commit.sh",
     "prepush": "bnr lint && bnr test && bnr build && bnr docs",
     "docs": "better-npm-run docs",
@@ -97,6 +98,8 @@
     "ramda": ">= 0.19.0 <= 0.25.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "=6.1.0",
+    "@commitlint/config-conventional": "=6.1.0",
     "babel-cli": "=6.26.0",
     "babel-core": "=6.26.0",
     "babel-loader": "=7.1.2",
