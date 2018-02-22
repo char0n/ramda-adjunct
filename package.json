@@ -121,6 +121,7 @@
     "eslint-plugin-ramda": "=2.4.0",
     "fantasy-land": "3.5.0",
     "glob": "=7.1.2",
+    "husky": "=0.14.3",
     "istanbul": "=0.4.5",
     "jsdoc": "=3.5.5",
     "jsverify": "=0.8.3",
