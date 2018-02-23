@@ -17,8 +17,8 @@ describe('concatAll', function() {
     eq(concatAll([NEL(1), NEL(2)]), NEL(1, NEL(2, Nil)));
   });
 
-  it('should returns null if empty foldable was passed', function() {
-    eq(concatAll([]), null);
+  it('should returns undefined if empty foldable was passed', function() {
+    eq(concatAll([]), undefined);
   });
 
   it('should throw if non-foldable is passed', function() {
