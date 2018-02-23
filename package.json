@@ -135,7 +135,7 @@
     "prettier": "=1.10.2",
     "ramda": "=0.25.0",
     "rimraf": "=2.6.2",
-    "sinon": "4.3.0",
+    "sinon": "4.4.0",
     "testem": "2.0.0",
     "tslint": "=5.9.1",
     "tslint-config-prettier": "=1.7.0",
