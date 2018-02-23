@@ -12,6 +12,8 @@ const nullSemigroup = { concat: identity };
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.6.0|v2.6.0}
  * @category List
+ * @sig [[a]] -> ([a] | undefined)
+ * @sig [String] -> (String | undefined)
  * @sig Semigroup s => Foldable s f => f -> (s | undefined)
  * @param {Foldable<Semigroup>} foldable foldable with semigroups to concatenate
  * @return {Semigroup|null} concatenated semigroups, or undefined, if empty foldable was passed
