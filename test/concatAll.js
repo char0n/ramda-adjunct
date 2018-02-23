@@ -4,27 +4,27 @@ import { concatAll } from '../src';
 import eq from './shared/eq';
 
 describe('concatAll', function() {
-  it('concatenates arrays', function() {
+  it('should concatenate arrays', function() {
     eq(concatAll([[1], [2], [3]]), [1, 2, 3]);
   });
 
-  it('concatenates strings', function() {
+  it('should concatenate strings', function() {
     eq(concatAll(['1', '2', '3']), '123');
   });
 
-  it('returns null if empty foldable was passed', function() {
+  it('should returns null if empty foldable was passed', function() {
     eq(concatAll([]), null);
   });
 
-  it('throws if non-foldable is passed', function() {
+  it('should throw if non-foldable is passed', function() {
     assert.throws(() => concatAll(null), TypeError);
   });
 
-  it('throws if foldable contains non-semigroups', function() {
+  it('should throw if foldable contains non-semigroups', function() {
     assert.throws(() => concatAll([1, 2, null, true]), TypeError);
   });
 
-  it('throws if foldable contains non-compatible semigroups', function() {
+  it('should throw if foldable contains non-compatible semigroups', function() {
     assert.throws(() => concatAll(['1', [1]]), TypeError);
   });
 });
