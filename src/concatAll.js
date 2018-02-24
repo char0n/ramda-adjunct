@@ -2,7 +2,7 @@ import { concat, identical, identity, pipe, when, reduce } from 'ramda';
 
 import stubUndefined from './stubUndefined';
 
-const nullSemigroup = { concat: identity };
+const leftIdentitySemigroup = { concat: identity };
 
 /**
  * Returns the result of concatenating all semigroups (such as arrays or strings) in passed foldable (such as an array).
@@ -28,8 +28,8 @@ const nullSemigroup = { concat: identity };
  * concatAll([]); //=> undefined;
  */
 const concatAll = pipe(
-  reduce(concat, nullSemigroup),
-  when(identical(nullSemigroup), stubUndefined)
+  reduce(concat, leftIdentitySemigroup),
+  when(identical(leftIdentitySemigroup), stubUndefined)
 );
 
 export default concatAll;
