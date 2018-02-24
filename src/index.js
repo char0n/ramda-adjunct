@@ -95,6 +95,7 @@ export { default as reduceIndexed } from './reduceIndexed';
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 export { default as ensureArray } from './ensureArray';
+export { default as concatAll } from './concatAll';
 export { default as concatRight } from './concatRight';
 export { default as reduceP } from './reduceP';
 export { default as reduceRightP } from './reduceRightP';

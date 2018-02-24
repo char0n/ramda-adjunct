@@ -10,6 +10,15 @@ declare namespace RamdaAdjunct {
         ap<U>(fn: Apply<(t: T) => U>): Apply<U>;
     }
 
+    interface Foldable<T> {
+        reduce<Acc>(fn: (acc: Acc, val: T) => Acc, initAcc: Acc): Acc;
+    }
+
+    interface Semigroup {
+        // https://www.typescriptlang.org/docs/handbook/advanced-types.html#polymorphic-this-types
+        concat(other: this): this;
+    }
+
     interface Catamorphism<T> {
         cata<T1>(leftFn: (v: T1) => T, rightFn: (v: T1) => T): T;
     }
@@ -375,6 +384,14 @@ declare namespace RamdaAdjunct {
          * If value is already an array, it is returned as is.
          */
         ensureArray<T>(value: T | T[]): T[];
+
+        /**
+         * Returns the result of concatenating the given lists or strings.
+         * Note: RA.concatAll expects all elements to be of the same type. It will throw an error if you concat an Array with a non-Array value.
+         * Dispatches to the concat method of the preceding element, if present. Can also concatenate multiple elements of a [fantasy-land compatible semigroup](https://github.com/fantasyland/fantasy-land#semigroup).
+         * Returns undefined if empty array was passed.
+         */
+        concatAll<S extends Semigroup>(foldable: Foldable<S>): S | undefined;
 
         /**
          * Returns the result of concatenating the given lists or strings.
