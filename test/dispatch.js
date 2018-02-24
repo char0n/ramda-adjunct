@@ -6,19 +6,12 @@ import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('dispatch', function() {
-  let zeroStub;
-  let nullStub;
-  let undefinedStub;
-  let positiveNumberStub;
+  it('should return first truthy value', function() {
+    const zeroStub = sinon.stub().returns(0);
+    const nullStub = sinon.stub().returns(null);
+    const undefinedStub = sinon.stub().returns(undefined);
+    const positiveNumberStub = sinon.stub().returns(1);
 
-  beforeEach(function() {
-    zeroStub = sinon.stub().returns(0);
-    nullStub = sinon.stub().returns(null);
-    undefinedStub = sinon.stub().returns(undefined);
-    positiveNumberStub = sinon.stub().returns(1);
-  });
-
-  it('should return on first truthy value', function() {
     const actual = RA.dispatch([
       zeroStub,
       nullStub,

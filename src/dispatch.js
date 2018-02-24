@@ -9,36 +9,35 @@ import {
   reduce,
   reduced,
   tryCatch,
+  curry,
+  ifElse,
   F as stubFalse,
 } from 'ramda';
 
 import isTruthy from './isTruthy';
-import isEmptyArray from './isEmptyArray';
+import isNonEmptyArray from './isNonEmptyArray';
+import stubUndefined from './stubUndefined';
+
+const byArity = descend(prop('length'));
+
+const getMaxArity = pipe(
+  sort(byArity),
+  head,
+  defaultTo({ length: 1 }),
+  prop('length'),
+  defaultTo(1)
+);
+
+const iteratorFn = curry((args, accumulator, fn) => {
+  const result = tryCatch(fn, stubFalse)(...args);
+
+  return isTruthy(result) ? reduced(result) : accumulator.concat(result);
+});
 
 const dispatch = functions => {
-  if (isEmptyArray(functions)) {
-    return undefined;
-  }
+  const arity = getMaxArity(functions);
 
-  const byArity = descend(prop('length'));
-  const arity = pipe(
-    sort(byArity),
-    head,
-    defaultTo({ length: 1 }),
-    prop('length')
-  )(functions);
-
-  return curryN(arity, (...args) =>
-    reduce(
-      (accumulator, fn) => {
-        const result = tryCatch(fn, stubFalse)(...args);
-
-        return isTruthy(result) ? reduced(result) : accumulator.concat(result);
-      },
-      [],
-      functions
-    )
-  );
+  return curryN(arity, (...args) => reduce(iteratorFn(args), [], functions));
 };
 
-export default dispatch;
+export default ifElse(isNonEmptyArray, dispatch, stubUndefined);
