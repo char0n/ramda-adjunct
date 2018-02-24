@@ -7,10 +7,7 @@ describe('updateSlice', function() {
   });
 
   it('should work on arrays', function() {
-    eq(
-      RA.updateSlice(1, 3, Array.from('DDDD'), Array.from('ABBCCC')),
-      Array.from('ADDDDCCC')
-    );
+    eq(RA.updateSlice(1, 3, [4, 4, 4, 4], [1, 2, 2, 3]), [1, 4, 4, 4, 4, 3]);
   });
 
   it('should support negative indexes', function() {
