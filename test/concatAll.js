@@ -30,6 +30,6 @@ describe('concatAll', function() {
   });
 
   it('should throw if foldable contains non-compatible semigroups', function() {
-    assert.throws(() => concatAll(['1', [1]]), TypeError);
+    assert.throws(() => concatAll([[1], '1']), TypeError);
   });
 });
