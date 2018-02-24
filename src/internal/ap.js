@@ -1,18 +1,15 @@
-import { ap as apR, curryN, pathSatisfies, both, anyPass } from 'ramda';
+import { ap as apR, curryN, pathSatisfies, both, either } from 'ramda';
 
 import isFunction from '../isFunction';
 import fl from '../fantasy-land/mapping';
 
-const isFunctor = anyPass([
+const isFunctor = either(
   pathSatisfies(isFunction, ['map']),
-  pathSatisfies(isFunction, [fl.map]),
-]);
+  pathSatisfies(isFunction, [fl.map])
+);
 const isApply = both(
   isFunctor,
-  anyPass([
-    pathSatisfies(isFunction, ['ap']),
-    pathSatisfies(isFunction, [fl.ap]),
-  ])
+  either(pathSatisfies(isFunction, ['ap']), pathSatisfies(isFunction, [fl.ap]))
 );
 
 const ap = curryN(2, (applyF, applyX) => {

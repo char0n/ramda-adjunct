@@ -1,4 +1,4 @@
-import { anyPass, isEmpty, isNil } from 'ramda';
+import { either, isEmpty, isNil } from 'ramda';
 
 /**
  * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
@@ -21,6 +21,6 @@ import { anyPass, isEmpty, isNil } from 'ramda';
  * RA.isNilOrEmpty({}); //=> true
  * RA.isNilOrEmpty({length: 0}); //=> false
  */
-const isNilOrEmpty = anyPass([isNil, isEmpty]);
+const isNilOrEmpty = either(isNil, isEmpty);
 
 export default isNilOrEmpty;
