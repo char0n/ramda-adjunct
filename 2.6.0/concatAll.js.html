@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isFalsy.js - Documentation</title>
+    <title>concatAll.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isFalsy.js</h1>
+    <h1 class="page-title">concatAll.js</h1>
     
 
     
@@ -52,34 +52,43 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { concat, identical, identity, pipe, when, reduce } from 'ramda';
 
-import isTruthy from './isTruthy';
+import stubUndefined from './stubUndefined';
+
+const leftIdentitySemigroup = { concat: identity };
 
 /**
- * A falsy value is a value that translates to false when evaluated in a Boolean context.
- * Falsy values are `false`, `0`, `""`, `null`, `undefined`, and `NaN`.
+ * Returns the result of concatenating the given lists or strings.
+ * Note: RA.concatAll expects all elements to be of the same type. It will throw an error if you concat an Array with a non-Array value.
+ * Dispatches to the concat method of the preceding element, if present. Can also concatenate multiple elements of a [fantasy-land compatible semigroup](https://github.com/fantasyland/fantasy-land#semigroup).
+ * Returns undefined if empty array was passed.
  *
- * @func isFalsy
+ * @func concatAll
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2..0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link https://developer.mozilla.org/en-US/docs/Glossary/Falsy|falsy}, {@link RA.isTruthy|isTruthy}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.6.0|v2.6.0}
+ * @category List
+ * @sig [[a]] -> [a] | Undefined
+ * @sig [String] -> String | Undefined
+ * @sig Semigroup s => Foldable s f => f -> s | Undefined
+ * @param {Array.&lt;Array|string>} list List containing elements that will be concatenated
+ * @return {Array|string|undefined} Concatenated elements
+ * @see {@link http://ramdajs.com/docs/#concat|concat}
+ * @see {@link RA.concatRight|concatRight}
+ * @see {@link http://ramdajs.com/docs/#unnest|unnest}
+ * @see {@link http://ramdajs.com/docs/#join|join}
  * @example
  *
- * RA.isFalsy(false); // => true
- * RA.isFalsy(0); // => true
- * RA.isFalsy(''); // => true
- * RA.isFalsy(null); // => true
- * RA.isFalsy(undefined); // => true
- * RA.isFalsy(NaN); // => true
+ * concatAll([[1], [2], [3]]); //=> [1, 2, 3]
+ * concatAll(['1', '2', '3']); //=> '123'
+ * concatAll([]); //=> undefined;
  */
-const isFalsy = complement(isTruthy);
+const concatAll = pipe(
+  reduce(concat, leftIdentitySemigroup),
+  when(identical(leftIdentitySemigroup), stubUndefined)
+);
 
-export default isFalsy;
+export default concatAll;
 </code></pre>
         </article>
     </section>
