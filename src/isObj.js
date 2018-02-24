@@ -1,4 +1,4 @@
-import { both, anyPass } from 'ramda';
+import { both, either } from 'ramda';
 
 import isNotNull from './isNotNull';
 import isFunction from './isFunction';
@@ -26,6 +26,6 @@ import isOfTypeObject from './internal/isOfTypeObject';
  * RA.isObj(undefined); //=> false
  */
 /* eslint-enable max-len */
-const isObj = both(isNotNull, anyPass([isOfTypeObject, isFunction]));
+const isObj = both(isNotNull, either(isOfTypeObject, isFunction));
 
 export default isObj;
