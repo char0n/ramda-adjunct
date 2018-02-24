@@ -5,20 +5,22 @@ import stubUndefined from './stubUndefined';
 const leftIdentitySemigroup = { concat: identity };
 
 /**
- * Returns the result of concatenating all semigroups (such as arrays or strings) in passed foldable (such as an array).
- * Returns undefined if empty foldable was passed.
+ * Returns the result of concatenating the given lists or strings.
+ * Note: RA.concatAll expects all elements to be of the same type. It will throw an error if you concat an Array with a non-Array value.
+ * Dispatches to the concat method of the preceding element, if present. Can also concatenate multiple elements of a [fantasy-land compatible semigroup](https://github.com/fantasyland/fantasy-land#semigroup).
+ * Returns undefined if empty array was passed.
  *
  * @func concatAll
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.6.0|v2.6.0}
  * @category List
- * @sig [[a]] -> ([a] | undefined)
- * @sig [String] -> (String | undefined)
- * @sig Semigroup s => Foldable s f => f -> (s | undefined)
- * @param {Foldable<Semigroup>} foldable foldable with semigroups to concatenate
- * @return {Semigroup|null} concatenated semigroups, or undefined, if empty foldable was passed
- * @see {@link http://ramdajs.com/docs/#defaultTo|defaultTo}
+ * @sig [[a]] -> [a] | Undefined
+ * @sig [String] -> String | Undefined
+ * @sig Semigroup s => Foldable s f => f -> s | Undefined
+ * @param {Array.<Array|string>} list List containing elements that will be concatenated
+ * @return {Array|string|undefined} Concatenated elements
  * @see {@link http://ramdajs.com/docs/#concat|concat}
+ * @see {@link RA.concatRight|concatRight}
  * @see {@link http://ramdajs.com/docs/#unnest|unnest}
  * @see {@link http://ramdajs.com/docs/#join|join}
  * @example
