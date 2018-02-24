@@ -1,35 +1,43 @@
 import { assert } from 'chai';
 import { NEL, Nil } from 'monet';
 
-import { concatAll } from '../src';
+import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('concatAll', function() {
   it('should concatenate arrays', function() {
-    eq(concatAll([[1], [2], [3]]), [1, 2, 3]);
+    eq(RA.concatAll([[1], [2], [3]]), [1, 2, 3]);
   });
 
   it('should concatenate strings', function() {
-    eq(concatAll(['1', '2', '3']), '123');
+    eq(RA.concatAll(['1', '2', '3']), '123');
   });
 
   it('should concatenate semigroups', function() {
-    eq(concatAll([NEL(1), NEL(2)]), NEL(1, NEL(2, Nil)));
+    eq(RA.concatAll([NEL(1), NEL(2)]), NEL(1, NEL(2, Nil)));
   });
 
-  it('should returns undefined if empty foldable was passed', function() {
-    eq(concatAll([]), undefined);
+  context('when foldable is empty', function() {
+    specify('should returns undefined', function() {
+      eq(RA.concatAll([]), undefined);
+    });
   });
 
-  it('should throw if non-foldable is passed', function() {
-    assert.throws(() => concatAll(null), TypeError);
+  context('when foldable contains non-semigroups', function() {
+    specify('should throw', function() {
+      assert.throws(() => RA.concatAll([1, 2, null, true]), TypeError);
+    });
   });
 
-  it('should throw if foldable contains non-semigroups', function() {
-    assert.throws(() => concatAll([1, 2, null, true]), TypeError);
+  context('when foldable contains non-compatible semigroups', function() {
+    specify('should throw', function() {
+      assert.throws(() => RA.concatAll([[1], '1']), TypeError);
+    });
   });
 
-  it('should throw if foldable contains non-compatible semigroups', function() {
-    assert.throws(() => concatAll([[1], '1']), TypeError);
+  context('when passed non-foldable', function() {
+    specify('should throw', function() {
+      assert.throws(() => RA.concatAll(null), TypeError);
+    });
   });
 });
