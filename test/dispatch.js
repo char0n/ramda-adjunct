@@ -33,13 +33,13 @@ describe('dispatch', function() {
     assert.isTrue(undefinedStub.notCalled);
   });
 
-  it('returns curried function with max arity', function() {
+  it('should return curried function with max arity', function() {
     const fn = RA.dispatch([R.divide, R.identity]);
 
     eq(fn.length, 2);
   });
 
-  it('acts as switch', function() {
+  it('should act as switch', function() {
     const isString = sinon.stub().returns(false);
     const stringDispatch = sinon.stub().returns(undefined);
     const isNumber = sinon.stub().returns(true);
@@ -62,7 +62,7 @@ describe('dispatch', function() {
     assert.isTrue(dateDispatch.notCalled);
   });
 
-  it('is side effect free', function() {
+  it('should be side effect free', function() {
     const configuredDispatch = RA.dispatch([
       () => {
         throw Error;
