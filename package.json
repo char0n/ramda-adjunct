@@ -42,6 +42,8 @@
     "node": ">=0.10.3"
   },
   "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "precommit": "bash scripts/pre-commit.sh",
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
     "lint:fix": "better-npm-run lint:fix",
@@ -95,6 +97,8 @@
     "ramda": ">= 0.19.0 <= 0.25.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "=6.1.0",
+    "@commitlint/config-conventional": "=6.1.0",
     "babel-cli": "=6.26.0",
     "babel-core": "=6.26.0",
     "babel-loader": "=7.1.2",
@@ -121,6 +125,7 @@
     "eslint-plugin-ramda": "=2.4.0",
     "fantasy-land": "3.5.0",
     "glob": "=7.1.2",
+    "husky": "=0.14.3",
     "istanbul": "=0.4.5",
     "jsdoc": "=3.5.5",
     "jsverify": "=0.8.3",
