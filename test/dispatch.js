@@ -5,7 +5,7 @@ import sinon from 'sinon';
 import * as RA from '../src';
 import eq from './shared/eq';
 
-describe.only('dispatch', function() {
+describe('dispatch', function() {
   let zeroStub;
   let nullStub;
   let undefinedStub;
