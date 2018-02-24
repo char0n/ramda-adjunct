@@ -65,4 +65,10 @@ describe('dispatch', function() {
 
     eq(configuredDispatch('anything'), 1);
   });
+
+  context('when empty array provided as input', function() {
+    specify('should return undefined', function() {
+      eq(RA.dispatch([]), undefined);
+    });
+  });
 });
