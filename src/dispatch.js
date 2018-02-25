@@ -5,7 +5,6 @@ import {
   pipe,
   head,
   curryN,
-  defaultTo,
   reduce,
   reduced,
   curry,
@@ -18,13 +17,7 @@ import stubUndefined from './stubUndefined';
 
 const byArity = comparator((a, b) => a.length > b.length);
 
-const getMaxArity = pipe(
-  sort(byArity),
-  head,
-  defaultTo({ length: 1 }),
-  prop('length'),
-  defaultTo(1)
-);
+const getMaxArity = pipe(sort(byArity), head, prop('length'));
 
 const iteratorFn = curry((args, accumulator, fn) => {
   const result = fn(...args);
