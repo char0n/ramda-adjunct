@@ -55,15 +55,19 @@ describe('dispatch', function() {
     assert.isTrue(dateDispatch.notCalled);
   });
 
-  it('should be side effect free', function() {
-    const configuredDispatch = RA.dispatch([
-      () => {
-        throw new Error();
-      },
-      R.always(1),
-    ]);
+  context('when dispatched function throws', function() {
+    context('the error', function() {
+      specify('should bubble up', function() {
+        const configuredDispatch = RA.dispatch([
+          () => {
+            throw new Error();
+          },
+          R.always(1),
+        ]);
 
-    eq(configuredDispatch('anything'), 1);
+        assert.throws(() => configuredDispatch('test'));
+      });
+    });
   });
 
   context('when empty array provided as input', function() {

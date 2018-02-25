@@ -8,7 +8,6 @@ import {
   defaultTo,
   reduce,
   reduced,
-  tryCatch,
   curry,
   ifElse,
 } from 'ramda';
@@ -28,7 +27,7 @@ const getMaxArity = pipe(
 );
 
 const iteratorFn = curry((args, accumulator, fn) => {
-  const result = tryCatch(fn, stubUndefined)(...args);
+  const result = fn(...args);
 
   return isNotNil(result) ? reduced(result) : accumulator;
 });
