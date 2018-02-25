@@ -6,24 +6,24 @@ import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('dispatch', function() {
-  it('should return first truthy value', function() {
-    const zeroStub = sinon.stub().returns(0);
+  it('should return first non-nil value', function() {
     const nullStub = sinon.stub().returns(null);
     const undefinedStub = sinon.stub().returns(undefined);
+    const zeroStub = sinon.stub().returns(0);
     const positiveNumberStub = sinon.stub().returns(1);
 
     const actual = RA.dispatch([
-      zeroStub,
       nullStub,
-      positiveNumberStub,
       undefinedStub,
+      zeroStub,
+      positiveNumberStub,
     ])('test');
 
-    assert.strictEqual(actual, 1);
-    assert.isTrue(zeroStub.calledOnceWithExactly('test'));
+    assert.strictEqual(actual, 0);
     assert.isTrue(nullStub.calledOnceWithExactly('test'));
-    assert.isTrue(positiveNumberStub.calledOnceWithExactly('test'));
-    assert.isTrue(undefinedStub.notCalled);
+    assert.isTrue(undefinedStub.calledOnceWithExactly('test'));
+    assert.isTrue(zeroStub.calledOnceWithExactly('test'));
+    assert.isTrue(positiveNumberStub.notCalled);
   });
 
   it('should return curried function with max arity', function() {
@@ -41,7 +41,7 @@ describe('dispatch', function() {
     const dateDispatch = sinon.stub().returns(false);
 
     const fnSwitch = RA.dispatch([
-      R.ifElse(isString, stringDispatch, R.F),
+      R.ifElse(isString, stringDispatch, RA.stubUndefined),
       R.ifElse(isNumber, numberDispatch, R.F),
       R.ifElse(isDate, dateDispatch, R.F),
     ]);
@@ -58,7 +58,7 @@ describe('dispatch', function() {
   it('should be side effect free', function() {
     const configuredDispatch = RA.dispatch([
       () => {
-        throw Error;
+        throw new Error();
       },
       R.always(1),
     ]);
@@ -72,9 +72,9 @@ describe('dispatch', function() {
     });
   });
 
-  context('when all dispatched functions returns falsy', function() {
+  context('when all dispatched functions returns nil', function() {
     specify('should return undefined', function() {
-      const configuredDispatch = RA.dispatch([R.F, R.always(0), RA.stubNull]);
+      const configuredDispatch = RA.dispatch([RA.stubUndefined, RA.stubNull]);
 
       eq(configuredDispatch(), undefined);
     });

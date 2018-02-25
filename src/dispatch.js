@@ -1,6 +1,6 @@
 import {
   sort,
-  descend,
+  comparator,
   prop,
   pipe,
   head,
@@ -11,14 +11,13 @@ import {
   tryCatch,
   curry,
   ifElse,
-  F as stubFalse,
 } from 'ramda';
 
-import isTruthy from './isTruthy';
+import isNotNil from './isNotNil';
 import isNonEmptyArray from './isNonEmptyArray';
 import stubUndefined from './stubUndefined';
 
-const byArity = descend(prop('length'));
+const byArity = comparator((a, b) => a.length > b.length);
 
 const getMaxArity = pipe(
   sort(byArity),
@@ -29,9 +28,9 @@ const getMaxArity = pipe(
 );
 
 const iteratorFn = curry((args, accumulator, fn) => {
-  const result = tryCatch(fn, stubFalse)(...args);
+  const result = tryCatch(fn, stubUndefined)(...args);
 
-  return isTruthy(result) ? reduced(result) : accumulator;
+  return isNotNil(result) ? reduced(result) : accumulator;
 });
 
 const dispatch = functions => {
