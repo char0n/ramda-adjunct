@@ -31,13 +31,15 @@ const getMaxArity = pipe(
 const iteratorFn = curry((args, accumulator, fn) => {
   const result = tryCatch(fn, stubFalse)(...args);
 
-  return isTruthy(result) ? reduced(result) : accumulator.concat(result);
+  return isTruthy(result) ? reduced(result) : accumulator;
 });
 
 const dispatch = functions => {
   const arity = getMaxArity(functions);
 
-  return curryN(arity, (...args) => reduce(iteratorFn(args), [], functions));
+  return curryN(arity, (...args) =>
+    reduce(iteratorFn(args), undefined, functions)
+  );
 };
 
 export default ifElse(isNonEmptyArray, dispatch, stubUndefined);
