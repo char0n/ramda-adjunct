@@ -71,4 +71,12 @@ describe('dispatch', function() {
       eq(RA.dispatch([]), undefined);
     });
   });
+
+  context('when all dispatched functions returns falsy', function() {
+    specify('should return undefined', function() {
+      const configuredDispatch = RA.dispatch([R.F, R.always(0), RA.stubNull]);
+
+      eq(configuredDispatch(), undefined);
+    });
+  });
 });
