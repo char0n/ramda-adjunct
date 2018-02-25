@@ -89,6 +89,9 @@ export { default as rejectP } from './rejectP';
 export { default as Y } from './Y';
 export { default as seq } from './seq';
 export { default as sequencing } from './seq';
+// String
+export { default as padStart } from './padStart';
+export { default as padEnd } from './padEnd';
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';

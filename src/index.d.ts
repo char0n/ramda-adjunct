@@ -540,6 +540,44 @@ declare namespace RamdaAdjunct {
         curryRight(fn: Function): Function;
 
         /**
+         * Returns passed string or array with enough padding prepended to reach targetLength.
+         * Dispatches to padStart method of the third argument, if present.
+         */
+        padStart: {
+            (padding: string, targetLength: number, toPad: string): string;
+            (padding: string, targetLength: number): (toPad: string) => string;
+            (padding: string): {
+                (targetLength: number): (toPad: string) => string;
+                (targetLength: number, toPad: string): string;
+            }
+            <T>(padding: T[], targetLength: number, toPad: T[]): T[];
+            <T>(padding: T[], targetLength: number): (toPad: T[]) => T[];
+            <T>(padding: T[]): {
+                (targetLength: number): (toPad: T[]) => T[];
+                (targetLength: number, toPad: T[]): T[];
+            }
+        };
+
+        /**
+         * Returns passed string or array  with enough padding appended to reach targetLength.
+         * Dispatches to padEnd method of the third argument, if present.
+         */
+        padEnd: {
+            (padding: string, targetLength: number, toPad: string): string;
+            (padding: string, targetLength: number): (toPad: string) => string;
+            (padding: string): {
+                (targetLength: number): (toPad: string) => string;
+                (targetLength: number, toPad: string): string;
+            }
+            <T>(padding: T[], targetLength: number, toPad: T[]): T[];
+            <T>(padding: T[], targetLength: number): (toPad: T[]) => T[];
+            <T>(padding: T[]): {
+                (targetLength: number): (toPad: T[]) => T[];
+                (targetLength: number, toPad: T[]): T[];
+            }
+        };
+
+        /**
          * {@link http://ramdajs.com/docs/#map|R.map} function that more closely resembles Array.prototype.map.
          * It takes two new parameters to its callback function: the current index, and the entire list.
          */
