@@ -42,8 +42,8 @@ describe('dispatch', function() {
 
     const fnSwitch = RA.dispatch([
       R.ifElse(isString, stringDispatch, RA.stubUndefined),
-      R.ifElse(isNumber, numberDispatch, R.F),
-      R.ifElse(isDate, dateDispatch, R.F),
+      R.ifElse(isNumber, numberDispatch, RA.stubUndefined),
+      R.ifElse(isDate, dateDispatch, RA.stubUndefined),
     ]);
     fnSwitch(1);
 

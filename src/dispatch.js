@@ -42,8 +42,8 @@ import {
  * // acts as a switch
  * const fnSwitch = RA.dispatch([
  *   R.ifElse(RA.isString, s => `${s}-join`, RA.stubUndefined),
- *   R.ifElse(RA.isNumber, n => n + 1, R.F),
- *   R.ifElse(RA.isDate, R.T, R.F),
+ *   R.ifElse(RA.isNumber, n => n + 1, RA.stubUndefined),
+ *   R.ifElse(RA.isDate, R.T, RA.stubUndefined),
  * ]);
  * fnSwitch(1); //=> 2
  */
