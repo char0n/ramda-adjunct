@@ -872,6 +872,18 @@ declare namespace RamdaAdjunct {
         appendFlipped<T>(list: T[], val: any): T[];
 
         /**
+         * Can be used as a way to compose multiple invokers together to form polymorphic functions,
+         * or functions that exhibit different behaviors based on their argument(s).
+         * Consumes dispatching functions and keep trying to invoke each in turn, until a non-nil value is returned.
+         *
+         * Accepts a list of dispatching functions and returns a new function.
+         * When invoked, this new function is applied to some arguments,
+         * each dispatching function is applied to those same arguments until one of the
+         * dispatching functions returns a non-nil value.
+         */
+        dispatch(functions: Function[]): Function;
+
+        /**
          * Identity type.
          */
         Identity: Function;
