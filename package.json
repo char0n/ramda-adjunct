@@ -122,7 +122,7 @@
     "eslint-plugin-import": "2.9.0",
     "eslint-plugin-mocha": "=4.11.0",
     "eslint-plugin-prettier": "=2.6.0",
-    "eslint-plugin-ramda": "=2.4.0",
+    "eslint-plugin-ramda": "2.5.0",
     "fantasy-land": "3.5.0",
     "glob": "=7.1.2",
     "husky": "=0.14.3",
