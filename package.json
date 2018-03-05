@@ -29,7 +29,7 @@
   "sideEffects": false,
   "version": "2.6.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git://github.com/char0n/ramda-adjunct.git"
