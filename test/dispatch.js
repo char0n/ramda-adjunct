@@ -83,4 +83,15 @@ describe('dispatch', function() {
       eq(configuredDispatch(), undefined);
     });
   });
+
+  context(
+    'when all dispatched functions have implicit return statement',
+    function() {
+      specify('should return undefined', function() {
+        const configuredDispatch = RA.dispatch([() => {}, () => {}]);
+
+        eq(configuredDispatch(), undefined);
+      });
+    }
+  );
 });

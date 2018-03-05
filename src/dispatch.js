@@ -27,7 +27,7 @@ import {
  * @category Function
  * @sig [((a, b, ...) -> x1), ((a, b, ...) -> x2), ...] -> x1 | x2 | ...
  * @param {!Array} functions A list of functions
- * @return {*|undefined} Returns the first not-nil value or undefined if empty list provided
+ * @return {*|undefined} Returns the first not-nil value, or undefined if either an empty list is provided or none of the dispatching functions returns a non-nil value
  * @see {@link RA.isNotNil}
  * @example
  *
