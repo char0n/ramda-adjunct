@@ -790,7 +790,7 @@ declare namespace RamdaAdjunct {
          */
         isTrue(val: any): boolean;
 
-         /**
+        /**
          * Checks if input value is the Boolean primative `false`. Will return false for all values
          * created using the `Boolean` function as a constructor.
          */
