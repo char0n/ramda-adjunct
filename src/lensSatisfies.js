@@ -1,4 +1,6 @@
-import { view, curryN, equals, pipe } from 'ramda';
+import { view, curryN, pipe } from 'ramda';
+
+import isTrue from './isTrue';
 
 /**
  * Returns `true` if data structure focused by the given lens satisfies the predicate.
@@ -19,13 +21,13 @@ import { view, curryN, equals, pipe } from 'ramda';
  *
  * @example
  *
- * RA.lensSatisfies(R.equals(true), R.lensIndex(0), [false, true, 1]); // => false
- * RA.lensSatisfies(R.equals(true), R.lensIndex(1), [false, true, 1]); // => true
- * RA.lensSatisfies(R.equals(true), R.lensIndex(2), [false, true, 1]); // => false
- * RA.lensSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => false
+ * RA.lensSatisfies(RA.isTrue, R.lensIndex(0), [false, true, 1]); // => false
+ * RA.lensSatisfies(RA.isTrue, R.lensIndex(1), [false, true, 1]); // => true
+ * RA.lensSatisfies(RA.isTrue, R.lensIndex(2), [false, true, 1]); // => false
+ * RA.lensSatisfies(RA.identity, R.lensProp('x'), { x: 1 }); // => false
  */
 const lensSatisfies = curryN(3, (predicate, lens, data) =>
-  pipe(view(lens), predicate, equals(true))(data)
+  pipe(view(lens), predicate, isTrue)(data)
 );
 
 export default lensSatisfies;
