@@ -685,6 +685,11 @@ declare namespace RamdaAdjunct {
             (value: any): (obj: object) => boolean;
         };
 
+        /** 
+         * Checks if input value falls within the supplied inclusive range.
+         */
+        inRange(low: number, high: number, value: number): boolean;
+
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
