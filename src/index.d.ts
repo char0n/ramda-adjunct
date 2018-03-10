@@ -251,14 +251,14 @@ declare namespace RamdaAdjunct {
         isNotNumber(val: any): boolean;
 
         /**
-         * Checks if value is a positive `Number` primitive or object. Zero is not considered
-         * negative.
+         * Checks if value is a positive `Number` primitive or object. Zero is considered neither
+         * positive or negative.
          */
         isPositive(val: any): val is number;
 
         /**
-         * Checks if value is a negative `Number` primitive or object. Zero is not considered
-         * negative.
+         * Checks if value is a negative `Number` primitive or object. Zero is considered neither
+         * positive or negative.
          */
         isNegative(val: any): val is number;
 
@@ -269,7 +269,7 @@ declare namespace RamdaAdjunct {
         isNonPositive(val: any): val is number;
 
         /**  
-         * Checks if value is a non-positive `Number` primitive or object. This includes all
+         * Checks if value is a non-negative `Number` primitive or object. This includes all
          * positive numbers and zero.
          */
         isNonNegative(val: any): val is number;

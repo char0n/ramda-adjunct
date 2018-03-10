@@ -6,7 +6,7 @@ import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isNonPositive', function() {
-  it('tests a value for positive `Number`', function() {
+  it('tests a value for non-positive `Number`', function() {
     eq(RA.isNonPositive(0), true);
     eq(RA.isNonPositive(-0.1), true);
     eq(RA.isNonPositive(0.1), false);

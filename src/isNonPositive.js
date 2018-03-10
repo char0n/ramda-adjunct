@@ -8,12 +8,12 @@ import isNumber from './isNumber';
  *
  * @func isNonPositive
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.15.0|v1.15.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.6.0|v2.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link RA.isNegative|isNegative}
+ * @see {@link RA.isNegative|isNegative}, {@link RA.isNonNegative|isNonNegative}
  * @example
  *
  * RA.isNonPositive(0); // => true

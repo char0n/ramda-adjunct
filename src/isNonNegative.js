@@ -3,17 +3,17 @@ import { both, gte, flip } from 'ramda';
 import isNumber from './isNumber';
 
 /**
- * Checks if value is a non-positive `Number` primitive or object. This includes all positive
+ * Checks if value is a non-negative `Number` primitive or object. This includes all positive
  * numbers and zero.
  *
  * @func isNonNegative
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.15.0|v1.15.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.6.0|v2.6.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isPositive|isPositive}
+ * @see {@link RA.isPositive|isPositive}, {@link RA.isNonPositive|isNonPositive}
  * @example
  *
  * RA.isNonNegative(0); // => true
