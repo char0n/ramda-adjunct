@@ -686,7 +686,8 @@ declare namespace RamdaAdjunct {
         };
 
         /** 
-         * Checks if input value falls within the supplied inclusive range.
+         * Checks if input value falls within the supplied range. The bottom of the range is
+         * inclusive, the top of the range is exclusive.
          */
         inRange(low: number, high: number, value: number): boolean;
 

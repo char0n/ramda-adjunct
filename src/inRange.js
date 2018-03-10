@@ -1,21 +1,12 @@
-import {
-  applyTo,
-  gt,
-  ifElse,
-  curry,
-  useWith,
-  flip,
-  both,
-  gte,
-  lte,
-} from 'ramda';
+import { applyTo, ifElse, curry, useWith, flip, both, gte, lt } from 'ramda';
 
 import throwError from './internal/throwError';
 
 const errorMessage = `low must not be greater than high in inRange(low, high, value)`;
 
 /**
- * Checks if input value falls within the supplied inclusive range.
+ * Checks if input value falls within the supplied range. The bottom of the range is inclusive, the
+ * top of the range is exclusive.
  *
  * @func inRange
  * @memberOf RA
@@ -26,19 +17,19 @@ const errorMessage = `low must not be greater than high in inRange(low, high, va
  * @param {Number} high The highest value within the range
  * @param {Number} value The value to test
  * @return {Boolean}
- * @throws {Error} When `low` is greater than `high`
+ * @throws {Error} When `low` is greater than or equal to `high`
  * @example
  *
  * RA.inRange(0, 5, 3); //=> true
  * RA.inRange(0, 5, 0); //=> true
- * RA.inRange(0, 5, 5); //=> true
+ * RA.inRange(0, 5, 4); //=> true
+ * RA.inRange(0, 5, 5); //=> false
  * RA.inRange(0, 5, -1); //=> false
- * RA.inRange(0, 5, 6); //=> false
  */
 export default curry((low, high, value) =>
   ifElse(
-    gt,
+    gte,
     () => applyTo(errorMessage, throwError),
-    useWith(both, [flip(gte), flip(lte)])
+    useWith(both, [flip(gte), flip(lt)])
   )(low, high)(value)
 );
