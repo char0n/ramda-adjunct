@@ -24,7 +24,7 @@ import isTrue from './isTrue';
  * RA.lensSatisfies(RA.isTrue, R.lensIndex(0), [false, true, 1]); // => false
  * RA.lensSatisfies(RA.isTrue, R.lensIndex(1), [false, true, 1]); // => true
  * RA.lensSatisfies(RA.isTrue, R.lensIndex(2), [false, true, 1]); // => false
- * RA.lensSatisfies(RA.identity, R.lensProp('x'), { x: 1 }); // => false
+ * RA.lensSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => false
  */
 const lensSatisfies = curryN(3, (predicate, lens, data) =>
   pipe(view(lens), predicate, isTrue)(data)
