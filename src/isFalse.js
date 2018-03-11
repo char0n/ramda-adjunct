@@ -1,7 +1,7 @@
 import { equals } from 'ramda';
 
 /**
- * Checks if input value is the Boolean primative `false`. Will return false for all values created
+ * Checks if input value is the Boolean primitive `false`. Will return false for all values created
  * using the `Boolean` function as a constructor.
  *
  * @func isFalse
@@ -11,7 +11,7 @@ import { equals } from 'ramda';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link https://developer.mozilla.org/en-US/docs/Glossary/Truthy|truthy}, {@link RA.isTrue|isTrue}, {@link RA.isTruthy|isTruthy}, {@link RA.isFalsy|isFalsy}
+ * @see {@link RA.isTrue|isTrue}, {@link RA.isTruthy|isTruthy}, {@link RA.isFalsy|isFalsy}
  * @example
  *
  * RA.isFalse(false); // => true

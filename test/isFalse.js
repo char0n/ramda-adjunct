@@ -4,7 +4,7 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isFalse', function() {
-  it("tests whether a value is 'true'", function() {
+  it("tests whether a value is 'false' primative", function() {
     eq(RA.isFalse(false), true);
     eq(RA.isFalse(Boolean(false)), true);
 
