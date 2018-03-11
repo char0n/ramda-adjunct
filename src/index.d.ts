@@ -770,6 +770,7 @@ declare namespace RamdaAdjunct {
          */
         sliceFrom<T>(fromIndex: number, list: string | T[]): string | T[];
         sliceFrom(fromIndex: number): <T>(list: string | T[]) => string | T[];
+        sliceFrom<T>(fromIndex: number, list: string | T[]): string | T[];
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
