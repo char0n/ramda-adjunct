@@ -17,7 +17,7 @@
 
 # Ramda Adjunct
 
-This library is a community maintained extension of Ramda offering a large variety of commonly used functions built from Ramda. For a full list of functions see the docs for the latest release 
+This library is a community maintained extension of Ramda offering a wide variety of useful and commonly used functions built from Ramda. For a full list of functions see the docs for the latest release 
  [here](https://char0n.github.io/ramda-adjunct)
 
 ## Installation
@@ -79,19 +79,17 @@ RA.isArray([]);
 
  ## Motivation
 
-It's very common for people to create their own utils and recipes composing Ramda's functions and creating more complex aggregate functions. Ramda Adjunct eliminates this repetitive wheel of reinvention and centralizes commonly used and useful utils.
+It's very common for people to create their own utils and recipes by composing Ramda's functions and creating more complex aggregate functions. Ramda Adjunct eliminates this repetitive wheel of reinvention and centralizes commonly used and useful utils.
 
 ## Benefits
 
-As maintainers, we see three main benefits in Ramda Adjunct.
-
 ### 1. Centralization
 
-All Ramda recipes and aggregate utils not present in Ramda are centralized here. There is no more need for everybody to create their own utils in their own codebases.
+All Ramda recipes and aggregate utils not present in Ramda are centralized here. There is no more need for everybody to create their own utils in their own libraries or in each codebases.
 
 ### 2. Tests
 
-Creating custom aggregate utils or implementing recipes from the Ramda wiki opens the doors to potential problems because of the absence or insufficiency of tests. Ramda Adjunct maintains 100% code coverage and mimics Ramda's test patterns. You can trust our functions.
+Ramda Adjunct maintains maximal code coverage and mimics Ramda's test patterns. You can trust our functions.
 
 ### 3. Impeccable documentation
 
@@ -109,7 +107,6 @@ Ramda Adjunct is being automatically tested against node version >=6 <=9.
 ### Legacy builds
 
 We are building our npm distributions using Webpack to support legacy versions of node starting from 0.10.48. Although all tests are run against node version >=4 <=8, we rely on Webpack to transpile ramda-adjunct into legacy ES5. It is also possible that our ES5 distributions run on node versions older than 0.10.48 as long as they support ES5.
-
 
 ## API Documentation
 
