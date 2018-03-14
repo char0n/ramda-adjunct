@@ -800,7 +800,7 @@ declare namespace RamdaAdjunct {
         isPromise(val: any): val is Promise<any>;
 
         /**
-         * Checks if input value is the Boolean primitive `true`.Will return false for Boolean
+         * Checks if input value is the Boolean primitive `true`. Will return false for Boolean
          * objects created using the `Boolean` function as a constructor.
          */
         isTrue(val: any): boolean;
