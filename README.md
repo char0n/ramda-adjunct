@@ -17,32 +17,83 @@
 
 # Ramda Adjunct
 
-This library is a community maintained extension of Ramda.
+This library is a community maintained extension of Ramda offering a large variety of commonly used functions built from Ramda. For a full list of functions see the docs for the latest release 
+ [here](https://char0n.github.io/ramda-adjunct)
 
-## Support us
+## Installation
 
-Although we love working on ramda-adjunct, we must invest our free time to make this library great. Support this project's evolution via [Open Collective](https://opencollective.com/ramda-adjunct).
+```sh
+npm i ramda-adjunct
+```
+or
+```sh
+yarn add ramda-adjunct
+```
 
-[![Support via Open Collective](https://opencollective.com/ramda-adjunct/tiers/backer.svg?avatarHeight=36)](https://opencollective.com/ramda-adjunct/donate)
+## Usage
 
-## Motivation
+### ES6
 
-It seems to be very common for people to create their own utils and recipes composing the Ramda functions and creating more complex aggregate functions. Ramda Adjunct tries to eliminate this
-repetitive wheel of reinvention and centralize commonly used and useful aggregate utils in its codebase.
+```javascript
+import RA from 'ramda-adjunct'
+
+RA.isArray([]);
+```
+or
+```javascript
+import { isArray } = from 'ramda-adjunct';
+
+isArray([]);
+```
+
+### Node
+
+```javascript
+const RA = require('ramda-adjunct');
+
+RA.isArray([]);
+```
+or
+```javascript
+const { isArray } = require('ramda-adjunct');
+
+isArray([]);
+```
+
+### Web browser
+
+```html
+<script src="ramda.js"></script>
+<script src="RA.web.js"></script>
+```
+or
+```html
+<script src="RA.web.standalone.js"></script>
+```
+
+Including Ramda Adjunct into HTML document exposes global variable **RA** on `window` object.
+
+```javascript
+RA.isArray([]);
+```
+
+ ## Motivation
+
+It's very common for people to create their own utils and recipes composing Ramda's functions and creating more complex aggregate functions. Ramda Adjunct eliminates this repetitive wheel of reinvention and centralizes commonly used and useful utils.
 
 ## Benefits
 
 As maintainers, we see three main benefits in Ramda Adjunct.
 
-### Centralization
+### 1. Centralization
 
 All Ramda recipes and aggregate utils not present in Ramda are centralized here. There is no more need for everybody to create their own utils in their own codebases.
 
-### Tests
+### 2. Tests
 
 Creating custom aggregate utils or implementing recipes from the Ramda wiki opens the doors to potential problems because of the absence or insufficiency of tests. Ramda Adjunct maintains 100% code coverage and mimics Ramda's test patterns. You can trust our functions.
 
-### Impeccable documentation
+### 3. Impeccable documentation
 
 You cannot call a library great if it lacks great documentation. Ramda Adjunct generates its documentation directly from its codebase and uses patterns found in both Ramda and Lodash to document its API.
 
@@ -59,11 +110,6 @@ Ramda Adjunct is being automatically tested against node version >=6 <=9.
 
 We are building our npm distributions using Webpack to support legacy versions of node starting from 0.10.48. Although all tests are run against node version >=4 <=8, we rely on Webpack to transpile ramda-adjunct into legacy ES5. It is also possible that our ES5 distributions run on node versions older than 0.10.48 as long as they support ES5.
 
-## Installation
-
-```sh
- $ npm i ramda-adjunct
-```
 
 ## API Documentation
 
@@ -161,38 +207,6 @@ The command will create three types of bundles.
 
 You can always find fresh build files in circle-ci [artifacts](https://circleci.com/gh/char0n/ramda-adjunct).
 
-## Usage
-
-### Web browser
-
-```html
-<script src="ramda.js"></script>
-<script src="RA.web.js"></script>
-```
-or
-```html
-<script src="RA.web.standalone.js"></script>
-```
-
-Including Ramda Adjunct into HTML document exposes global variable **RA** on `window` object.
-
-```javascript
-RA.isArray([]);
-```
-
-### Node
-
-```javascript
-const RA = require('ramda-adjunct');
-
-RA.isArray([]);
-```
-or
-```javascript
-const { isArray } = require('ramda-adjunct');
-
-isArray([]);
-```
 
 ## Tree shaking support
 
@@ -232,6 +246,12 @@ Although Ramda Adjunct is written in ES2016, we also support **Typescript**. Whe
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
 <a href="https://github.com/char0n/ramda-adjunct/graphs/contributors"><img src="https://opencollective.com/ramda-adjunct/contributors.svg?width=890" /></a>
+
+## Support us
+
+Although we love working on ramda-adjunct, we must invest our free time to make this library great. Support this project's evolution via [Open Collective](https://opencollective.com/ramda-adjunct).
+
+[![Support via Open Collective](https://opencollective.com/ramda-adjunct/tiers/backer.svg?avatarHeight=36)](https://opencollective.com/ramda-adjunct/donate)
 
 
 ## Backers
