@@ -800,6 +800,17 @@ declare namespace RamdaAdjunct {
         isPromise(val: any): val is Promise<any>;
 
         /**
+         * Checks if input value is the Boolean primitive `true`. Will return false for Boolean
+         * objects created using the `Boolean` function as a constructor.
+         */
+        isTrue(val: any): boolean;
+
+        /**
+         * Checks if input value is the Boolean primitive `false`. Will return false for Boolean objects created using the `Boolean` function as a constructor.
+         */
+        isFalse(val: any): boolean;
+
+        /**
          * In JavaScript, a `truthy` value is a value that is considered true
          * when evaluated in a Boolean context. All values are truthy unless
          * they are defined as falsy (i.e., except for `false`, `0`, `""`, `null`, `undefined`, and `NaN`).

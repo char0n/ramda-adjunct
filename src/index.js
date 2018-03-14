@@ -66,6 +66,8 @@ export { default as isPair } from './isPair';
 export { default as isNotPair } from './isNotPair';
 export { default as isThenable } from './isThenable';
 export { default as isPromise } from './isPromise';
+export { default as isTrue } from './isTrue';
+export { default as isFalse } from './isFalse';
 export { default as isTruthy } from './isTruthy';
 export { default as isFalsy } from './isFalsy';
 export { default as isRegExp } from './isRegExp';

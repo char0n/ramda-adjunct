@@ -20,9 +20,9 @@ import lensSatisfies from './lensSatisfies';
  *
  * @example
  *
- * RA.lensNotSatisfy(R.equals(true), R.lensIndex(0), [false, true, 1]); // => true
- * RA.lensNotSatisfy(R.equals(true), R.lensIndex(1), [false, true, 1]); // => false
- * RA.lensNotSatisfy(R.equals(true), R.lensIndex(2), [false, true, 1]); // => true
+ * RA.lensNotSatisfy(RA.isTrue, R.lensIndex(0), [false, true, 1]); // => true
+ * RA.lensNotSatisfy(RA.isTrue, R.lensIndex(1), [false, true, 1]); // => false
+ * RA.lensNotSatisfy(RA.isTrue, R.lensIndex(2), [false, true, 1]); // => true
  * RA.lensNotSatisfy(R.identity, R.lensProp('x'), { x: 1 }); // => true
  */
 const lensNotSatisfy = complement(lensSatisfies);
