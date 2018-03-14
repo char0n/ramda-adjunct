@@ -79,15 +79,26 @@
 <a href="#sponsors"><img src="https://opencollective.com/ramda-adjunct/sponsors/badge.svg" alt="Sponsors on Open Collective"></a>
 <a href="https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/ramda-adjunct/Lobby.svg" alt="Join the chat at https://gitter.im/ramda-adjunct/Lobby"></a>
 <a href="https://www.codetriage.com/char0n/ramda-adjunct"><img src="https://www.codetriage.com/char0n/ramda-adjunct/badges/users.svg" alt="Open Source Helpers"></a></p>
-<h1>Ramda Adjunct</h1><p>This library is a community maintained extension of Ramda.</p>
-<h2>Support us</h2><p>Although we love working on ramda-adjunct, we must invest our free time to make this library great. Support this project's evolution via <a href="https://opencollective.com/ramda-adjunct">Open Collective</a>.</p>
-<p><a href="https://opencollective.com/ramda-adjunct/donate"><img src="https://opencollective.com/ramda-adjunct/tiers/backer.svg?avatarHeight=36" alt="Support via Open Collective"></a></p>
-<h2>Motivation</h2><p>It seems to be very common for people to create their own utils and recipes composing the Ramda functions and creating more complex aggregate functions. Ramda Adjunct tries to eliminate this
-repetitive wheel of reinvention and centralize commonly used and useful aggregate utils in its codebase.</p>
-<h2>Benefits</h2><p>As maintainers, we see three main benefits in Ramda Adjunct.</p>
-<h3>Centralization</h3><p>All Ramda recipes and aggregate utils not present in Ramda are centralized here. There is no more need for everybody to create their own utils in their own codebases.</p>
-<h3>Tests</h3><p>Creating custom aggregate utils or implementing recipes from the Ramda wiki opens the doors to potential problems because of the absence or insufficiency of tests. Ramda Adjunct maintains 100% code coverage and mimics Ramda's test patterns. You can trust our functions.</p>
-<h3>Impeccable documentation</h3><p>You cannot call a library great if it lacks great documentation. Ramda Adjunct generates its documentation directly from its codebase and uses patterns found in both Ramda and Lodash to document its API.</p>
+<h1>Ramda Adjunct</h1><p>This library is a community maintained extension of Ramda offering a wide variety of useful and commonly used functions built from Ramda. For a full list of functions see the docs for the latest release 
+ <a href="https://char0n.github.io/ramda-adjunct">here</a></p>
+<h2>Installation</h2><pre class="prettyprint source lang-sh"><code>npm i ramda-adjunct</code></pre><p>or</p>
+<pre class="prettyprint source lang-sh"><code>yarn add ramda-adjunct</code></pre><h2>Usage</h2><h3>ES6</h3><pre class="prettyprint source lang-javascript"><code>import RA from 'ramda-adjunct'
+
+RA.isArray([]);</code></pre><p>or</p>
+<pre class="prettyprint source lang-javascript"><code>import { isArray } = from 'ramda-adjunct';
+
+isArray([]);</code></pre><h3>Node</h3><pre class="prettyprint source lang-javascript"><code>const RA = require('ramda-adjunct');
+
+RA.isArray([]);</code></pre><p>or</p>
+<pre class="prettyprint source lang-javascript"><code>const { isArray } = require('ramda-adjunct');
+
+isArray([]);</code></pre><h3>Web browser</h3><pre class="prettyprint source lang-html"><code>&lt;script src=&quot;ramda.js&quot;>&lt;/script>
+&lt;script src=&quot;RA.web.js&quot;>&lt;/script></code></pre><p>or</p>
+<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;RA.web.standalone.js&quot;>&lt;/script></code></pre><p>Including Ramda Adjunct into HTML document exposes global variable <strong>RA</strong> on <code>window</code> object.</p>
+<pre class="prettyprint source lang-javascript"><code>RA.isArray([]);</code></pre><h2>Motivation</h2><p>It's very common for people to create their own utils and recipes by composing Ramda's functions and creating more complex aggregate functions. Ramda Adjunct eliminates this repetitive wheel of reinvention and centralizes commonly used and useful utils.</p>
+<h2>Benefits</h2><h3>1. Centralization</h3><p>All Ramda recipes and aggregate utils not present in Ramda are centralized here. There is no more need for everybody to create their own utils in their own libraries or in each codebases.</p>
+<h3>2. Tests</h3><p>Ramda Adjunct maintains maximal code coverage and mimics Ramda's test patterns. You can trust our functions.</p>
+<h3>3. Impeccable documentation</h3><p>You cannot call a library great if it lacks great documentation. Ramda Adjunct generates its documentation directly from its codebase and uses patterns found in both Ramda and Lodash to document its API.</p>
 <p><em>Do you want to find out more about why this library exists ? Read this <a href="https://www.linkedin.com/pulse/ramda-adjunct-vladim%C3%ADr-gorej"><strong>article</strong></a>.</em></p>
 <h2>Requirements</h2><ul>
 <li>ramda &gt;= 0.19.0</li>
@@ -95,7 +106,7 @@ repetitive wheel of reinvention and centralize commonly used and useful aggregat
 </ul>
 <p>Ramda Adjunct is being automatically tested against node version &gt;=6 &lt;=9.</p>
 <h3>Legacy builds</h3><p>We are building our npm distributions using Webpack to support legacy versions of node starting from 0.10.48. Although all tests are run against node version &gt;=4 &lt;=8, we rely on Webpack to transpile ramda-adjunct into legacy ES5. It is also possible that our ES5 distributions run on node versions older than 0.10.48 as long as they support ES5.</p>
-<h2>Installation</h2><pre class="prettyprint source lang-sh"><code> $ npm i ramda-adjunct</code></pre><h2>API Documentation</h2><p> <a href="https://char0n.github.io/ramda-adjunct/0.0.1">0.0.1</a>,
+<h2>API Documentation</h2><p> <a href="https://char0n.github.io/ramda-adjunct/0.0.1">0.0.1</a>,
  <a href="https://char0n.github.io/ramda-adjunct/0.1.0">0.1.0</a>,
  <a href="https://char0n.github.io/ramda-adjunct/0.2.0">0.2.0</a>,
  <a href="https://char0n.github.io/ramda-adjunct/0.3.0">0.3.0</a>,
@@ -149,15 +160,7 @@ repetitive wheel of reinvention and centralize commonly used and useful aggregat
 <p><code>dist/RA.web.js</code> - ES5 compliant bundle, running in browsers. Requires <code>ramda.js</code> to be required before.</p>
 <p><code>dist/RA.web.standalone.js</code> - ES5 compliant bundle, running in browsers. It has <code>ramda.js</code> pre-bundled.</p>
 <p>You can always find fresh build files in circle-ci <a href="https://circleci.com/gh/char0n/ramda-adjunct">artifacts</a>.</p>
-<h2>Usage</h2><h3>Web browser</h3><pre class="prettyprint source lang-html"><code>&lt;script src=&quot;ramda.js&quot;>&lt;/script>
-&lt;script src=&quot;RA.web.js&quot;>&lt;/script></code></pre><p>or</p>
-<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;RA.web.standalone.js&quot;>&lt;/script></code></pre><p>Including Ramda Adjunct into HTML document exposes global variable <strong>RA</strong> on <code>window</code> object.</p>
-<pre class="prettyprint source lang-javascript"><code>RA.isArray([]);</code></pre><h3>Node</h3><pre class="prettyprint source lang-javascript"><code>const RA = require('ramda-adjunct');
-
-RA.isArray([]);</code></pre><p>or</p>
-<pre class="prettyprint source lang-javascript"><code>const { isArray } = require('ramda-adjunct');
-
-isArray([]);</code></pre><h2>Tree shaking support</h2><p>Tree shaking is a term commonly used in a JavaScript context for dead-code elimination. It relies on the static structure of ES2015's module syntax, i.e. <code>import</code> and <code>export</code>. Ramda Adjunct natively supports tree shaking thanks to the way the code is organized and its use of ES2015 imports. </p>
+<h2>Tree shaking support</h2><p>Tree shaking is a term commonly used in a JavaScript context for dead-code elimination. It relies on the static structure of ES2015's module syntax, i.e. <code>import</code> and <code>export</code>. Ramda Adjunct natively supports tree shaking thanks to the way the code is organized and its use of ES2015 imports. </p>
 <pre class="prettyprint source lang-javascript"><code>  import * as RA from 'ramda-adjunct';
 
   RA.isArray([]); //=> true</code></pre><pre class="prettyprint source lang-javascript"><code>  import { isArray } from 'ramda-adjunct';
@@ -172,6 +175,8 @@ isArray([]);</code></pre><h2>Tree shaking support</h2><p>Tree shaking is a term 
 <p> https://<a href="http://www.linkedin.com/in/vladimirgorej/">www.linkedin.com/in/vladimirgorej/</a></p>
 <h3>Contributors</h3><p>This project exists thanks to all the people who contribute. [<a href="CONTRIBUTING.md">Contribute</a>].
 <a href="https://github.com/char0n/ramda-adjunct/graphs/contributors"><img src="https://opencollective.com/ramda-adjunct/contributors.svg?width=890" /></a></p>
+<h2>Support us</h2><p>Although we love working on ramda-adjunct, we must invest our free time to make this library great. Support this project's evolution via <a href="https://opencollective.com/ramda-adjunct">Open Collective</a>.</p>
+<p><a href="https://opencollective.com/ramda-adjunct/donate"><img src="https://opencollective.com/ramda-adjunct/tiers/backer.svg?avatarHeight=36" alt="Support via Open Collective"></a></p>
 <h2>Backers</h2><p>Thank you to all our backers! 🙏 [<a href="https://opencollective.com/ramda-adjunct#backer">Become a backer</a>]</p>
 <p><a href="https://opencollective.com/ramda-adjunct#backers" target="_blank"><img src="https://opencollective.com/ramda-adjunct/backers.svg?width=890"></a></p>
 <h2>Sponsors</h2><p>Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [<a href="https://opencollective.com/ramda-adjunct#sponsor">Become a sponsor</a>]</p>
@@ -189,7 +194,7 @@ isArray([]);</code></pre><h2>Tree shaking support</h2><p>Tree shaking is a term 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Mar 14 2018 10:44:38 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Mar 14 2018 11:36:19 GMT+0000 (UTC) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
