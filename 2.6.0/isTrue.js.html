@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>mergeProp.js - Documentation</title>
+    <title>isTrue.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">mergeProp.js</h1>
+    <h1 class="page-title">isTrue.js</h1>
     
 
     
@@ -52,36 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curry, of } from 'ramda';
-
-import mergePath from './mergePath';
+            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
 
 /**
- * Create a new object with the own properties of the object under the `p`
- * merged with the own properties of the provided `source`.
- * If a key exists in both objects, the value from the `source` object will be used.
+ * Checks if input value is the Boolean primitive `true`. Will return false for Boolean objects
+ * created using the `Boolean` function as a constructor.
  *
- * @func mergeProp
+ * @func isTrue
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.18.0|v1.18.0}
- * @category Object
- * @sig [k] -> {a} -> {k: {a}} -> {k: {a}}
- * @see {@link RA.mergePath|mergePath}
- * @param {!Array} p The property of the destination object
- * @param {!Object} source The source object
- * @param {!Object} obj The object that has destination object under corresponding property
- * @return {!Object} The new version of object
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.6.0|v2.6.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {boolean}
+ * @see {@link RA.isFalse|isFalse}, {@link RA.isTruthy|isTruthy}, {@link RA.isFalsy|isFalsy}
  * @example
  *
- * RA.mergeProp(
- *  'outer',
- *  { foo: 3, bar: 4 },
- *  { outer: { foo: 2 } }
- * ); //=> { outer: { foo: 3, bar: 4 } };
+ * RA.isTrue(true); // => true
+ * RA.isTrue(Boolean(true)); // => true
+ * RA.isTrue(false); // => false
+ * RA.isTrue(1); // => false
+ * RA.isTrue('true'); // => false
+ * RA.isTrue(new Boolean(true)); // => false
  */
-const mergeProp = curry((p, subj, obj) => mergePath(of(p), subj, obj));
 
-export default mergeProp;
+export default equals(true);
 </code></pre>
         </article>
     </section>
