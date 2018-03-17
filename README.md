@@ -17,8 +17,9 @@
 
 # Ramda Adjunct
 
-This library is a community maintained extension of Ramda offering a wide variety of useful and commonly used functions built from Ramda. For a full list of functions see the docs for the latest release 
- [here](https://char0n.github.io/ramda-adjunct)
+This library is a community maintained extension of Ramda offering a wide variety of useful and commonly used functions built from Ramda. 
+
+For a full list of functions see the [**Documentation For The Latest Release**](https://char0n.github.io/ramda-adjunct).
 
 ## Installation
 
@@ -207,7 +208,7 @@ You can always find fresh build files in circle-ci [artifacts](https://circleci.
 
 ## Tree shaking support
 
-Tree shaking is a term commonly used in a JavaScript context for dead-code elimination. It relies on the static structure of ES2015's module syntax, i.e. `import` and `export`. Ramda Adjunct natively supports tree shaking thanks to the way the code is organized and its use of ES2015 imports. 
+Tree shaking is a term com`monly used in a JavaScript context for dead-code elimination. It relies on the static structure of ES2015's module syntax, i.e. `import` and `export`. Ramda Adjunct natively supports tree shaking thanks to the way the code is organized and its use of ES2015 imports. 
 
 ```javascript
   import * as RA from 'ramda-adjunct';
