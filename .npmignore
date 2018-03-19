@@ -20,6 +20,8 @@
 /.circleci
 /.codeclimate.yml
 /.commitlintrc.json
+/.prettierignore
+/.prettierrc
 /codecov.yml
 /circle.yml
 /jsdoc.js
