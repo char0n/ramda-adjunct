@@ -22,6 +22,7 @@
 /.commitlintrc.json
 /.prettierignore
 /.prettierrc
+/tslint.json
 /codecov.yml
 /circle.yml
 /jsdoc.js
