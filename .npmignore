@@ -19,6 +19,7 @@
 /.nycrc
 /.circleci
 /.codeclimate.yml
+/.commitlintrc.json
 /codecov.yml
 /circle.yml
 /jsdoc.js
