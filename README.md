@@ -78,7 +78,7 @@ Including Ramda Adjunct into HTML document exposes global variable **RA** on `wi
 RA.isArray([]);
 ```
 
- ## Motivation
+## Motivation
 
 It's very common for people to create their own utils and recipes by composing Ramda's functions and creating more complex aggregate functions. Ramda Adjunct eliminates this repetitive wheel of reinvention and centralizes commonly used and useful utils.
 
