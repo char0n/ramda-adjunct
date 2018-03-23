@@ -9,7 +9,7 @@ engines:
       languages:
       - javascript
   eslint:
-    enabled: true
+    enabled: false
     channel: "eslint-4"
     checks:
           import/extensions:
