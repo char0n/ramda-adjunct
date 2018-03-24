@@ -14,7 +14,7 @@ import isObj from './isObj';
  * @param {Array.<string|number>} path The path of the nested property
  * @param {Object} obj The object to test
  * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#has|has}
+ * @see {@link http://ramdajs.com/docs/#has|R.has}
  * @example
  *
  * RA.hasPath(['a', 'b'], { a: { b: 1 } }); //=> true

@@ -15,7 +15,7 @@ import { pathEq, complement } from 'ramda';
  * @param {a} val The value to compare the nested property with
  * @param {Object} object The object to check the nested property in
  * @return {Boolean} Returns Boolean `false` if the value equals the nested object property, `true` otherwise
- * @see {@link http://ramdajs.com/docs/#pathEq|pathEq}
+ * @see {@link http://ramdajs.com/docs/#pathEq|R.pathEq}
  * @example
  *
  * const user1 = { address: { zipCode: 90210 } };

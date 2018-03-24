@@ -18,7 +18,7 @@ import { concat, flip } from 'ramda';
  * @param {Array|String} secondList The second list
  * @return {Array|String} A list consisting of the elements of `secondList`
  * followed by the elements of `firstList`.
- * @see {@link http://ramdajs.com/docs/#concat|concat}
+ * @see {@link http://ramdajs.com/docs/#concat|R.concat}
  * @example
  *
  * RA.concatRight('ABC', 'DEF'); //=> 'DEFABC'

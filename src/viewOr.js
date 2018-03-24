@@ -11,7 +11,7 @@ import { view, defaultTo, curryN } from 'ramda';
  * @category Object
  * @typedef Lens s b = Functor f => (b -> f b) -> s -> f s
  * @sig a -> Lens s b -> s -> b | a
- * @see {@link http://ramdajs.com/docs/#view|view}
+ * @see {@link http://ramdajs.com/docs/#view|R.view}
  * @param {*} defaultValue The default value
  * @param {Function} lens Van Laarhoven lens
  * @param {*} data The data structure

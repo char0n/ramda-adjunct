@@ -15,7 +15,7 @@ const containsIndex = curry((indexes, val, index) => contains(index, indexes));
  * @param {Array} indexes The indexes to pick
  * @param {Array} list The list to pick values from
  * @return {Array} New array containing only values at `indexes`
- * @see {@link http://ramdajs.com/docs/#pick|pick}, {@link RA.omitIndexes|omitIndexes}
+ * @see {@link http://ramdajs.com/docs/#pick|R.pick}, {@link RA.omitIndexes|omitIndexes}
  * @example
  *
  * RA.pickIndexes([0, 2], ['a', 'b', 'c']); //=> ['a', 'c']
