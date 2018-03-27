@@ -268,7 +268,7 @@ declare namespace RamdaAdjunct {
          */
         isNonPositive(val: any): val is number;
 
-        /**  
+        /**
          * Checks if value is a non-negative `Number` primitive or object. This includes all
          * positive numbers and zero.
          */
@@ -480,7 +480,7 @@ declare namespace RamdaAdjunct {
 
         /**
          * Reset properties of the object to their default values.
-         * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
+         * Alias of {@link http://ramdajs.com/docs/#merge|R.mergeRight}.
          */
         resetToDefault(defaultOptions: object, options: object): object; // alias of mergeRight
         resetToDefault(defaultOptions: object): (options: object) => object; // alias of mergeRight

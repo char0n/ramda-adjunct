@@ -22,7 +22,7 @@ import ap from './internal/ap';
  * @param {Number} arity The arity of the lifter function
  * @param {Function} fn The function to lift into higher context
  * @return {Function} The lifted function
- * @see {@link http://ramdajs.com/docs/#lift|lift}, {@link http://ramdajs.com/docs/#ap|ap}
+ * @see {@link http://ramdajs.com/docs/#lift|R.lift}, {@link http://ramdajs.com/docs/#ap|R.ap}
  * @example
  *
  * const { Maybe } = require('monet');

@@ -15,7 +15,7 @@ import { merge, flip } from 'ramda';
  * @param {Object} r Destination
  * @param {Object} l Source
  * @return {Object}
- * @see {@link http://ramdajs.com/docs/#merge|merge}, {@link https://github.com/ramda/ramda/wiki/Cookbook#set-properties-only-if-they-dont-exist|Ramda Cookbook}
+ * @see {@link http://ramdajs.com/docs/#merge|R.merge}, {@link https://github.com/ramda/ramda/wiki/Cookbook#set-properties-only-if-they-dont-exist|Ramda Cookbook}
  * @example
  *
  * RA.mergeRight({ 'age': 40 }, { 'name': 'fred', 'age': 10 });
