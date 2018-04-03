@@ -1,5 +1,5 @@
 import { stub } from 'sinon';
-import { all, any } from 'ramda';
+import { all, any, none } from 'ramda';
 import { assert } from 'chai';
 
 import { argsPass } from '../src/index';
@@ -148,6 +148,29 @@ describe('argsPass', function() {
     context('with no predicate passing', function() {
       specify('returns true', function() {
         const f = argsPass(any, [p1False, p2False, p3False]);
+        assert.isFalse(f(1, 2, 3));
+      });
+    });
+  });
+
+  context('with `none` as the combinator', function() {
+    context('with all predicates passing', function() {
+      specify('returns true', function() {
+        const f = argsPass(none, [p1False, p2False, p3False]);
+        assert.isTrue(f(1, 2, 3));
+      });
+    });
+
+    context('with all predicates failing', function() {
+      specify('returns true', function() {
+        const f = argsPass(none, [p1False, p2False, p3False]);
+        assert.isTrue(f(1, 2, 3));
+      });
+    });
+
+    context('with one predicate passing', function() {
+      specify('returns true', function() {
+        const f = argsPass(none, [p1False, p2False, p3True]);
         assert.isFalse(f(1, 2, 3));
       });
     });
