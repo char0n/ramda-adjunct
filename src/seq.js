@@ -16,7 +16,7 @@ import { curry, map, tap } from 'ramda';
  * @param {Array} fns The list of functions to call in order with `x` whose return values will be thrown away
  * @param {*} x
  * @return {*} `x`
- * @see {@link http://ramdajs.com/docs/#tap|tap}, {@link http://www.cs.rpi.edu/academics/courses/spring11/proglang/handouts/lambda-calculus-chapter.pdf|sequencing combinator explained}
+ * @see {@link http://ramdajs.com/docs/#tap|R.tap}, {@link http://www.cs.rpi.edu/academics/courses/spring11/proglang/handouts/lambda-calculus-chapter.pdf|sequencing combinator explained}
  * @example
  *
  * RA.seq([console.info, console.log])('foo'); //=> prints 'foo' via info then log

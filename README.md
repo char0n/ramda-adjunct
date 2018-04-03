@@ -17,32 +17,82 @@
 
 # Ramda Adjunct
 
-This library is a community maintained extension of Ramda.
+This library is a community maintained extension of Ramda offering a wide variety of useful and commonly used functions built from Ramda. 
 
-## Support us
+For a full list of functions see the [**Documentation For The Latest Release**](https://char0n.github.io/ramda-adjunct).
 
-Although we love working on ramda-adjunct, we must invest our free time to make this library great. Support this project's evolution via [Open Collective](https://opencollective.com/ramda-adjunct).
+## Installation
 
-[![Support via Open Collective](https://opencollective.com/ramda-adjunct/tiers/backer.svg?avatarHeight=36)](https://opencollective.com/ramda-adjunct/donate)
+```sh
+npm i ramda-adjunct
+```
+or
+```sh
+yarn add ramda-adjunct
+```
+
+## Usage
+
+### ES6
+
+```javascript
+import RA from 'ramda-adjunct'
+
+RA.isArray([]);
+```
+or
+```javascript
+import { isArray } from 'ramda-adjunct';
+
+isArray([]);
+```
+
+### Node
+
+```javascript
+const RA = require('ramda-adjunct');
+
+RA.isArray([]);
+```
+or
+```javascript
+const { isArray } = require('ramda-adjunct');
+
+isArray([]);
+```
+
+### Web browser
+
+```html
+<script src="ramda.js"></script>
+<script src="RA.web.js"></script>
+```
+or
+```html
+<script src="RA.web.standalone.js"></script>
+```
+
+Including Ramda Adjunct into HTML document exposes global variable **RA** on `window` object.
+
+```javascript
+RA.isArray([]);
+```
 
 ## Motivation
 
-It seems to be very common for people to create their own utils and recipes composing the Ramda functions and creating more complex aggregate functions. Ramda Adjunct tries to eliminate this
-repetitive wheel of reinvention and centralize commonly used and useful aggregate utils in its codebase.
+It's very common for people to create their own utils and recipes by composing Ramda's functions and creating more complex aggregate functions. Ramda Adjunct eliminates this repetitive wheel of reinvention and centralizes commonly used and useful utils.
 
 ## Benefits
 
-As maintainers, we see three main benefits in Ramda Adjunct.
+### 1. Centralization
 
-### Centralization
+All Ramda recipes and aggregate utils not present in Ramda are centralized here. There is no more need for everybody to create their own utils in their own libraries or in each codebases.
 
-All Ramda recipes and aggregate utils not present in Ramda are centralized here. There is no more need for everybody to create their own utils in their own codebases.
+### 2. Tests
 
-### Tests
+Ramda Adjunct maintains maximal code coverage and mimics Ramda's test patterns. You can trust our functions.
 
-Creating custom aggregate utils or implementing recipes from the Ramda wiki opens the doors to potential problems because of the absence or insufficiency of tests. Ramda Adjunct maintains 100% code coverage and mimics Ramda's test patterns. You can trust our functions.
-
-### Impeccable documentation
+### 3. Impeccable documentation
 
 You cannot call a library great if it lacks great documentation. Ramda Adjunct generates its documentation directly from its codebase and uses patterns found in both Ramda and Lodash to document its API.
 
@@ -59,54 +109,49 @@ Ramda Adjunct is being automatically tested against node version >=6 <=9.
 
 We are building our npm distributions using Webpack to support legacy versions of node starting from 0.10.48. Although all tests are run against node version >=4 <=8, we rely on Webpack to transpile ramda-adjunct into legacy ES5. It is also possible that our ES5 distributions run on node versions older than 0.10.48 as long as they support ES5.
 
-## Installation
-
-```sh
- $ npm i ramda-adjunct
-```
-
 ## API Documentation
 
- [0.0.1](https://char0n.github.io/ramda-adjunct/0.0.1),
- [0.1.0](https://char0n.github.io/ramda-adjunct/0.1.0),
- [0.2.0](https://char0n.github.io/ramda-adjunct/0.2.0),
- [0.3.0](https://char0n.github.io/ramda-adjunct/0.3.0),
- [0.4.0](https://char0n.github.io/ramda-adjunct/0.4.0),
- [0.5.1](https://char0n.github.io/ramda-adjunct/0.5.1),
- [0.6.0](https://char0n.github.io/ramda-adjunct/0.6.0),
- [0.7.0](https://char0n.github.io/ramda-adjunct/0.7.0),
- [1.0.0](https://char0n.github.io/ramda-adjunct/1.0.0),
- [1.1.0](https://char0n.github.io/ramda-adjunct/1.1.0),
- [1.2.0](https://char0n.github.io/ramda-adjunct/1.2.0),
- [1.3.0](https://char0n.github.io/ramda-adjunct/1.3.0),
- [1.3.1](https://char0n.github.io/ramda-adjunct/1.3.1),
- [1.3.2](https://char0n.github.io/ramda-adjunct/1.3.2),
- [1.4.0](https://char0n.github.io/ramda-adjunct/1.4.0),
- [1.5.0](https://char0n.github.io/ramda-adjunct/1.5.0),
- [1.6.0](https://char0n.github.io/ramda-adjunct/1.6.0),
- [1.7.0](https://char0n.github.io/ramda-adjunct/1.7.0),
- [1.8.0](https://char0n.github.io/ramda-adjunct/1.8.0),
- [1.8.1](https://char0n.github.io/ramda-adjunct/1.8.1),
- [1.9.0](https://char0n.github.io/ramda-adjunct/1.9.0),
- [1.10.0](https://char0n.github.io/ramda-adjunct/1.10.0),
- [1.10.1](https://char0n.github.io/ramda-adjunct/1.10.1),
- [1.10.2](https://char0n.github.io/ramda-adjunct/1.10.2),
- [1.11.0](https://char0n.github.io/ramda-adjunct/1.11.0),
- [1.12.0](https://char0n.github.io/ramda-adjunct/1.12.0),
- [1.13.0](https://char0n.github.io/ramda-adjunct/1.13.0),
- [1.14.0](https://char0n.github.io/ramda-adjunct/1.14.0),
- [1.15.0](https://char0n.github.io/ramda-adjunct/1.15.0),
- [1.16.0](https://char0n.github.io/ramda-adjunct/1.16.0),
- [1.17.0](https://char0n.github.io/ramda-adjunct/1.17.0),
- [1.18.0](https://char0n.github.io/ramda-adjunct/1.18.0),
- [1.19.0](https://char0n.github.io/ramda-adjunct/1.19.0),
- [2.0.0](https://char0n.github.io/ramda-adjunct/2.0.0),
- [2.1.0](https://char0n.github.io/ramda-adjunct/2.1.0),
- [2.2.0](https://char0n.github.io/ramda-adjunct/2.2.0),
- [2.3.0](https://char0n.github.io/ramda-adjunct/2.3.0),
- [2.4.0](https://char0n.github.io/ramda-adjunct/2.4.0),
+ [LATEST](https://char0n.github.io/ramda-adjunct),
+ [2.5.0](https://char0n.github.io/ramda-adjunct/2.5.0),
  [2.4.1](https://char0n.github.io/ramda-adjunct/2.4.1),
- [LATEST](https://char0n.github.io/ramda-adjunct)
+ [2.4.0](https://char0n.github.io/ramda-adjunct/2.4.0),
+ [2.3.0](https://char0n.github.io/ramda-adjunct/2.3.0),
+ [2.2.0](https://char0n.github.io/ramda-adjunct/2.2.0),
+ [2.1.0](https://char0n.github.io/ramda-adjunct/2.1.0),
+ [2.0.0](https://char0n.github.io/ramda-adjunct/2.0.0),
+ [1.19.0](https://char0n.github.io/ramda-adjunct/1.19.0),
+ [1.18.0](https://char0n.github.io/ramda-adjunct/1.18.0),
+ [1.17.0](https://char0n.github.io/ramda-adjunct/1.17.0),
+ [1.16.0](https://char0n.github.io/ramda-adjunct/1.16.0),
+ [1.15.0](https://char0n.github.io/ramda-adjunct/1.15.0),
+ [1.14.0](https://char0n.github.io/ramda-adjunct/1.14.0),
+ [1.13.0](https://char0n.github.io/ramda-adjunct/1.13.0),
+ [1.12.0](https://char0n.github.io/ramda-adjunct/1.12.0),
+ [1.11.0](https://char0n.github.io/ramda-adjunct/1.11.0),
+ [1.10.2](https://char0n.github.io/ramda-adjunct/1.10.2),
+ [1.10.1](https://char0n.github.io/ramda-adjunct/1.10.1),
+ [1.10.0](https://char0n.github.io/ramda-adjunct/1.10.0),
+ [1.9.0](https://char0n.github.io/ramda-adjunct/1.9.0),
+ [1.8.1](https://char0n.github.io/ramda-adjunct/1.8.1),
+ [1.8.0](https://char0n.github.io/ramda-adjunct/1.8.0),
+ [1.7.0](https://char0n.github.io/ramda-adjunct/1.7.0),
+ [1.6.0](https://char0n.github.io/ramda-adjunct/1.6.0),
+ [1.5.0](https://char0n.github.io/ramda-adjunct/1.5.0),
+ [1.4.0](https://char0n.github.io/ramda-adjunct/1.4.0),
+ [1.3.2](https://char0n.github.io/ramda-adjunct/1.3.2),
+ [1.3.1](https://char0n.github.io/ramda-adjunct/1.3.1),
+ [1.3.0](https://char0n.github.io/ramda-adjunct/1.3.0),
+ [1.2.0](https://char0n.github.io/ramda-adjunct/1.2.0),
+ [1.1.0](https://char0n.github.io/ramda-adjunct/1.1.0),
+ [1.0.0](https://char0n.github.io/ramda-adjunct/1.0.0),
+ [0.7.0](https://char0n.github.io/ramda-adjunct/0.7.0),
+ [0.6.0](https://char0n.github.io/ramda-adjunct/0.6.0),
+ [0.5.1](https://char0n.github.io/ramda-adjunct/0.5.1),
+ [0.4.0](https://char0n.github.io/ramda-adjunct/0.4.0),
+ [0.3.0](https://char0n.github.io/ramda-adjunct/0.3.0),
+ [0.2.0](https://char0n.github.io/ramda-adjunct/0.2.0),
+ [0.1.0](https://char0n.github.io/ramda-adjunct/0.1.0),
+ [0.0.1](https://char0n.github.io/ramda-adjunct/0.0.1)
 
 ## Development
 
@@ -161,38 +206,6 @@ The command will create three types of bundles.
 
 You can always find fresh build files in circle-ci [artifacts](https://circleci.com/gh/char0n/ramda-adjunct).
 
-## Usage
-
-### Web browser
-
-```html
-<script src="ramda.js"></script>
-<script src="RA.web.js"></script>
-```
-or
-```html
-<script src="RA.web.standalone.js"></script>
-```
-
-Including Ramda Adjunct into HTML document exposes global variable **RA** on `window` object.
-
-```javascript
-RA.isArray([]);
-```
-
-### Node
-
-```javascript
-const RA = require('ramda-adjunct');
-
-RA.isArray([]);
-```
-or
-```javascript
-const { isArray } = require('ramda-adjunct');
-
-isArray([]);
-```
 
 ## Tree shaking support
 
@@ -232,6 +245,12 @@ Although Ramda Adjunct is written in ES2016, we also support **Typescript**. Whe
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
 <a href="https://github.com/char0n/ramda-adjunct/graphs/contributors"><img src="https://opencollective.com/ramda-adjunct/contributors.svg?width=890" /></a>
+
+## Support us
+
+Although we love working on ramda-adjunct, we must invest our free time to make this library great. Support this project's evolution via [Open Collective](https://opencollective.com/ramda-adjunct).
+
+[![Support via Open Collective](https://opencollective.com/ramda-adjunct/tiers/backer.svg?avatarHeight=36)](https://opencollective.com/ramda-adjunct/donate)
 
 
 ## Backers

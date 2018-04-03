@@ -13,7 +13,7 @@ import { propEq, complement } from 'ramda';
  * @param {a} val The value to compare to
  * @param {Object} object The object, that presumably contains value under the property
  * @return {Boolean} Comparison result
- * @see {@link http://ramdajs.com/docs/#propEq|propEq}
+ * @see {@link http://ramdajs.com/docs/#propEq|R.propEq}
  * @example
  *
  * const abby = { name: 'Abby', age: 7, hair: 'blond' };
