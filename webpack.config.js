@@ -2,25 +2,33 @@
 
 const webpack = require('webpack');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const minimizeTrait = {
   plugins: [
     new webpack.LoaderOptionsPlugin({
       minimize: true,
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-      output: {
-        comments: false,
-      },
-    }),
     new webpack.optimize.ModuleConcatenationPlugin(),
   ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: {
+            warnings: false,
+          },
+          output: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+  },
 };
 
 const ra = {
+  mode: 'production',
   entry: './src/index.js',
   target: 'node',
   output: {
@@ -31,10 +39,9 @@ const ra = {
   },
   externals: {
     ramda: 'ramda',
-    'fantasy-land': 'fantasy-land',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
@@ -46,6 +53,7 @@ const ra = {
 
 const raMin = Object.assign(
   {
+    mode: 'production',
     entry: './src/index.js',
     target: 'node',
     output: {
@@ -56,10 +64,9 @@ const raMin = Object.assign(
     },
     externals: {
       ramda: 'ramda',
-      'fantasy-land': 'fantasy-land',
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.(js)$/,
           exclude: /node_modules/,
@@ -72,6 +79,7 @@ const raMin = Object.assign(
 );
 
 const raWeb = {
+  mode: 'production',
   entry: './src/index.js',
   target: 'web',
   output: {
@@ -84,7 +92,7 @@ const raWeb = {
     ramda: 'R',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
@@ -96,6 +104,7 @@ const raWeb = {
 
 const raWebMin = Object.assign(
   {
+    mode: 'production',
     entry: './src/index.js',
     target: 'web',
     output: {
@@ -108,7 +117,7 @@ const raWebMin = Object.assign(
       ramda: 'R',
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.(js)$/,
           exclude: /node_modules/,
@@ -121,6 +130,7 @@ const raWebMin = Object.assign(
 );
 
 const raWebStandalone = {
+  mode: 'production',
   entry: './src/index.js',
   target: 'web',
   output: {
@@ -130,7 +140,7 @@ const raWebStandalone = {
     library: 'RA',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
@@ -142,6 +152,7 @@ const raWebStandalone = {
 
 const rawWebStandaloneMin = Object.assign(
   {
+    mode: 'production',
     entry: './src/index.js',
     target: 'web',
     output: {
@@ -151,7 +162,7 @@ const rawWebStandaloneMin = Object.assign(
       library: 'RA',
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.(js)$/,
           exclude: /node_modules/,
