@@ -12,7 +12,7 @@ import { append, flip } from 'ramda';
  * @param {Array} list The list of elements to add a new item to
  * @param {*} el The element to add to the end of the new list
  * @return {Array} A new list containing the elements of the old list followed by `el`
- * @see {@link http://ramdajs.com/docs/#append|append}
+ * @see {@link http://ramdajs.com/docs/#append|R.append}
  * @example
  *
  * RA.appendFlipped(['write', 'more'], 'tests'); //=> ['write', 'more', 'tests']

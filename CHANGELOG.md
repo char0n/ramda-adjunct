@@ -1,3 +1,18 @@
+<a name="2.6.0"></a>
+# [2.6.0](https://github.com/char0n/ramda-adjunct/compare/v2.5.0...v2.6.0) (2018-03-19)
+
+
+### Features
+
+* add concatAll ([#404](https://github.com/char0n/ramda-adjunct/issues/404)) ([341f3f1](https://github.com/char0n/ramda-adjunct/commit/341f3f1)), closes [#109](https://github.com/char0n/ramda-adjunct/issues/109)
+* add dispatch ([#407](https://github.com/char0n/ramda-adjunct/issues/407)) ([fb5aa08](https://github.com/char0n/ramda-adjunct/commit/fb5aa08)), closes [#66](https://github.com/char0n/ramda-adjunct/issues/66)
+* add ensureArray ([#375](https://github.com/char0n/ramda-adjunct/issues/375)) ([7b60189](https://github.com/char0n/ramda-adjunct/commit/7b60189)), closes [#371](https://github.com/char0n/ramda-adjunct/issues/371)
+* add isNonPositive, isNonNegative ([#434](https://github.com/char0n/ramda-adjunct/issues/434)) ([8d62dc1](https://github.com/char0n/ramda-adjunct/commit/8d62dc1)), closes [#324](https://github.com/char0n/ramda-adjunct/issues/324)
+* add isTrue, isFalse ([#435](https://github.com/char0n/ramda-adjunct/issues/435)) ([9687b51](https://github.com/char0n/ramda-adjunct/commit/9687b51)), closes [#255](https://github.com/char0n/ramda-adjunct/issues/255)
+* add omitBy ([#376](https://github.com/char0n/ramda-adjunct/issues/376)) ([c7c9c7e](https://github.com/char0n/ramda-adjunct/commit/c7c9c7e)), closes [#171](https://github.com/char0n/ramda-adjunct/issues/171)
+
+
+
 <a name="2.5.0"></a>
 # [2.5.0](https://github.com/char0n/ramda-adjunct/compare/v2.4.1...v2.5.0) (2018-02-14)
 

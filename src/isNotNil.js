@@ -10,7 +10,7 @@ import { isNil, complement } from 'ramda';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link http://ramdajs.com/docs/#isNil|isNil}
+ * @see {@link http://ramdajs.com/docs/#isNil|R.isNil}
  * @example
  *
  * RA.isNotNil(null); //=> false

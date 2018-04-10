@@ -10,7 +10,7 @@ import { either, isEmpty, isNil } from 'ramda';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}, {@link http://ramdajs.com/docs/#isNil|isNil}
+ * @see {@link http://ramdajs.com/docs/#isEmpty|R.isEmpty}, {@link http://ramdajs.com/docs/#isNil|R.isNil}
  * @example
  *
  * RA.isNilOrEmpty([1, 2, 3]); //=> false

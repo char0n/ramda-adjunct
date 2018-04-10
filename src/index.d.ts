@@ -251,14 +251,28 @@ declare namespace RamdaAdjunct {
         isNotNumber(val: any): boolean;
 
         /**
-         * Checks if value is a positive `Number` primitive or object.
+         * Checks if value is a positive `Number` primitive or object. Zero is considered neither
+         * positive or negative.
          */
         isPositive(val: any): val is number;
 
         /**
-         * Checks if value is a negative `Number` primitive or object.
+         * Checks if value is a negative `Number` primitive or object. Zero is considered neither
+         * positive or negative.
          */
         isNegative(val: any): val is number;
+
+        /**
+         * Checks if value is a non-positive `Number` primitive or object. This includes all
+         * negative numbers and zero.
+         */
+        isNonPositive(val: any): val is number;
+
+        /**
+         * Checks if value is a non-negative `Number` primitive or object. This includes all
+         * positive numbers and zero.
+         */
+        isNonNegative(val: any): val is number;
 
         /**
          * Checks whether the passed value is a finite `Number`.
@@ -426,18 +440,18 @@ declare namespace RamdaAdjunct {
          * will be called with the left value.
          */
         cata<V1, V2, T1, T2>(
-          leftFn: (leftValue: V1) => T1,
-          rightFn: (rightValue: V2) => T2,
-          either: Catamorphism<V1|V2>,
-        ): T1|T2;
+            leftFn: (leftValue: V1) => T1,
+            rightFn: (rightValue: V2) => T2,
+            either: Catamorphism<V1 | V2>,
+        ): T1 | T2;
         cata<V1, V2, T1, T2>(
-          leftFn: (leftValue: V1) => T1,
-          rightFn: (rightValue: V2) => T2):
-          (either: Catamorphism<V1|V2>,
-        ) => T1|T2;
+            leftFn: (leftValue: V1) => T1,
+            rightFn: (rightValue: V2) => T2):
+            (either: Catamorphism<V1 | V2>,
+            ) => T1 | T2;
         cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1): {
-            (rightFn: (rightValue: V2) => T1, either: Catamorphism<V1|V2>): T1|T2;
-            (rightFn: (rightValue: V2) => T1): (either: Catamorphism<V1|V2>) => T1|T2
+            (rightFn: (rightValue: V2) => T1, either: Catamorphism<V1 | V2>): T1 | T2;
+            (rightFn: (rightValue: V2) => T1): (either: Catamorphism<V1 | V2>) => T1 | T2
         };
 
         /**
@@ -466,7 +480,7 @@ declare namespace RamdaAdjunct {
 
         /**
          * Reset properties of the object to their default values.
-         * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
+         * Alias of {@link http://ramdajs.com/docs/#merge|R.mergeRight}.
          */
         resetToDefault(defaultOptions: object, options: object): object; // alias of mergeRight
         resetToDefault(defaultOptions: object): (options: object) => object; // alias of mergeRight
@@ -575,7 +589,7 @@ declare namespace RamdaAdjunct {
         ): {
                 (acc: TResult): (list: R) => TResult;
                 (acc: TResult, list: R): TResult
-        };
+            };
 
         /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
@@ -667,9 +681,9 @@ declare namespace RamdaAdjunct {
          * Returns true if the specified object property is not equal,
          * in R.equals terms, to the given value; false otherwise.
          */
-        propNotEq(prop: string|number, value: any, obj: object): boolean;
-        propNotEq(prop: string|number, value: any): (obj: object) => boolean;
-        propNotEq(prop: string|number): {
+        propNotEq(prop: string | number, value: any, obj: object): boolean;
+        propNotEq(prop: string | number, value: any): (obj: object) => boolean;
+        propNotEq(prop: string | number): {
             (value: any, obj: object): boolean;
             (value: any): (obj: object) => boolean;
         };
@@ -678,9 +692,9 @@ declare namespace RamdaAdjunct {
          * Determines whether a nested path on an object doesn't have a specific value,
          * in R.equals terms. Most likely used to filter a list.
          */
-        pathNotEq(path: Array<string|number>, value: any, obj: object): boolean;
-        pathNotEq(path: Array<string|number>, value: any): (obj: object) => boolean;
-        pathNotEq(path: Array<string|number>): {
+        pathNotEq(path: Array<string | number>, value: any, obj: object): boolean;
+        pathNotEq(path: Array<string | number>, value: any): (obj: object) => boolean;
+        pathNotEq(path: Array<string | number>): {
             (value: any, obj: object): boolean;
             (value: any): (obj: object) => boolean;
         };
@@ -694,32 +708,32 @@ declare namespace RamdaAdjunct {
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
-        hasPath(path: Array<string|number>, obj: object): boolean;
-        hasPath(path: Array<string|number>): (obj: object) => boolean;
+        hasPath(path: Array<string | number>, obj: object): boolean;
+        hasPath(path: Array<string | number>): (obj: object) => boolean;
 
         /**
          * Spreads object under property path onto provided object.
          */
-        spreadPath(path: Array<string|number>, obj: object): object;
-        spreadPath(path: Array<string|number>): (obj: object) => object;
+        spreadPath(path: Array<string | number>, obj: object): object;
+        spreadPath(path: Array<string | number>): (obj: object) => object;
 
         /**
          * Spreads object under property onto provided object.
          */
-        spreadProp(prop: string|number, obj: object): object;
-        spreadProp(prop: string|number): (obj: object) => object;
+        spreadProp(prop: string | number, obj: object): object;
+        spreadProp(prop: string | number): (obj: object) => object;
 
         /**
          * Flattens a property path so that its fields are spread out into the provided object.
          */
-        flattenPath(path: Array<string|number>, obj: object): object;
-        flattenPath(path: Array<string|number>): (obj: object) => object;
+        flattenPath(path: Array<string | number>, obj: object): object;
+        flattenPath(path: Array<string | number>): (obj: object) => object;
 
         /**
          * Flattens a property so that its fields are spread out into the provided object.
          */
-        flattenProp(prop: string|number, obj: object): object;
-        flattenProp(prop: string|number): (obj: object) => object;
+        flattenProp(prop: string | number, obj: object): object;
+        flattenProp(prop: string | number): (obj: object) => object;
 
         /**
          * Composable shortcut for `Promise.all`.
@@ -760,16 +774,17 @@ declare namespace RamdaAdjunct {
          * from fromIndex (inclusive).
          * Dispatches to the slice method of the third argument, if present.
          */
-        sliceFrom<T>(fromIndex: number, list: string|T[]): string|T[];
-        sliceFrom(fromIndex: number): <T>(list: string|T[]) => string|T[];
+        sliceFrom<T>(fromIndex: number, list: string | T[]): string | T[];
+        sliceFrom(fromIndex: number): <T>(list: string | T[]) => string | T[];
+        sliceFrom<T>(fromIndex: number, list: string | T[]): string | T[];
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
          * to toIndex (exclusive).
          * Dispatches to the slice method of the second argument, if present.
          */
-        sliceTo<T>(toIndex: number, list: string|T[]): string|T[];
-        sliceTo(toIndex: number): <T>(list: string|T[]) => string|T[];
+        sliceTo<T>(toIndex: number, list: string | T[]): string | T[];
+        sliceTo(toIndex: number): <T>(list: string | T[]) => string | T[];
 
         /**
          * Returns a partial copy of an array omitting the indexes specified.
@@ -789,6 +804,17 @@ declare namespace RamdaAdjunct {
          * of an asynchronous operation, and its resulting value.
          */
         isPromise(val: any): val is Promise<any>;
+
+        /**
+         * Checks if input value is the Boolean primitive `true`. Will return false for Boolean
+         * objects created using the `Boolean` function as a constructor.
+         */
+        isTrue(val: any): boolean;
+
+        /**
+         * Checks if input value is the Boolean primitive `false`. Will return false for Boolean objects created using the `Boolean` function as a constructor.
+         */
+        isFalse(val: any): boolean;
 
         /**
          * In JavaScript, a `truthy` value is a value that is considered true

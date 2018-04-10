@@ -13,7 +13,7 @@ import { __, slice } from 'ramda';
  * @param {number} fromIndex The start index (inclusive)
  * @param {Array|string} list The list or string to slice
  * @return {Array|string} The sliced list or string
- * @see {@link http://ramdajs.com/docs/#slice|slice}, {@link RA.sliceTo|sliceTo}
+ * @see {@link http://ramdajs.com/docs/#slice|R.slice}, {@link RA.sliceTo|sliceTo}
  * @example
  *
  * RA.sliceFrom(1, [1, 2, 3]); //=> [2, 3]

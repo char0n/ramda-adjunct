@@ -12,7 +12,7 @@ import isPair from './isPair';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#pair|pair}, {@link RA.isPair|isPair}
+ * @see {@link http://ramdajs.com/docs/#pair|R.pair}, {@link RA.isPair|isPair}
  * @example
  *
  * RA.isNotPair([]); // => true

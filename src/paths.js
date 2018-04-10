@@ -11,7 +11,7 @@ import { curry, ap, path, __ } from 'ramda';
  * @param {Array} ps The property paths to fetch
  * @param {Object} obj The object to query
  * @return {Array} The corresponding values or partially applied function
- * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#derivative-of-rprops-for-deep-fields|Ramda Cookbook}, {@link http://ramdajs.com/docs/#props|props}
+ * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#derivative-of-rprops-for-deep-fields|Ramda Cookbook}, {@link http://ramdajs.com/docs/#props|R.props}
  * @example
  *
  * const obj = {
