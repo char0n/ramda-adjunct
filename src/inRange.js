@@ -12,7 +12,7 @@ const errorMessage = `low must not be greater than high in inRange(low, high, va
  * @category Relation
  * @sig Number -> Number -> Number -> Boolean
  * @param {Number} low The lowest value within the range
- * @param {Number} high The highest value within the range
+ * @param {Number} high The first value outside the range
  * @param {Number} value The value to test
  * @return {Boolean}
  * @throws {Error} When `low` is greater than or equal to `high`
