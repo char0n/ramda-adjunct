@@ -1,6 +1,4 @@
-import { applyTo, ifElse, curry, useWith, flip, both, gte, lt } from 'ramda';
-
-import throwError from './internal/throwError';
+import { ifElse, curry, useWith, flip, both, gte, lt } from 'ramda';
 
 const errorMessage = `low must not be greater than high in inRange(low, high, value)`;
 
@@ -29,7 +27,9 @@ const errorMessage = `low must not be greater than high in inRange(low, high, va
 export default curry((low, high, value) =>
   ifElse(
     gte,
-    () => applyTo(errorMessage, throwError),
+    () => {
+      throw new Error(errorMessage);
+    },
     useWith(both, [flip(gte), flip(lt)])
   )(low, high)(value)
 );
