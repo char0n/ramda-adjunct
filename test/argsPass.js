@@ -43,9 +43,9 @@ describe('argsPass', function() {
     assert.isTrue(c2True.calledOnce);
   });
 
-  context('with same number of predicates as arguments', function() {
-    context('with all predicates passing', function() {
-      specify('tests args with supplied predicates', function() {
+  context('with same number of functions as arguments', function() {
+    context('with all functions returning truthy values', function() {
+      specify('returns true', function() {
         const f = argsPass(c1True, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3));
         assert.isTrue(p1True.calledWith(1));
@@ -60,8 +60,8 @@ describe('argsPass', function() {
       });
     });
 
-    context('with one predicate failing', function() {
-      specify('tests args with supplied predicates', function() {
+    context('with one function returning a falsy value', function() {
+      specify('returns false', function() {
         const f = argsPass(c1False, [p1True, p2True, p3False]);
         assert.isFalse(f(1, 2, 3));
         assert.isTrue(p1True.calledWith(1));
@@ -78,27 +78,24 @@ describe('argsPass', function() {
   });
 
   context('with more arguments than predicates', function() {
-    context('with all predicates passing', function() {
-      specify(
-        'tests args with supplied predicates and passes remaining args untouched',
-        function() {
-          const f = argsPass(c1True, [p1True, p2True, p3True]);
-          assert.isTrue(f(1, 2, 3, 4));
-          assert.isTrue(p1True.calledWith(1));
-          assert.isTrue(p2True.calledWith(2));
-          assert.isTrue(p3True.calledWith(3));
-          assert.isTrue(c2True.calledWith([true, true, true, 4]));
-          assert.isTrue(p1True.calledOnce);
-          assert.isTrue(p2True.calledOnce);
-          assert.isTrue(p3True.calledOnce);
-          assert.isTrue(c1True.calledOnce);
-          assert.isTrue(c2True.calledOnce);
-        }
-      );
+    context('with all functions returning truthy values', function() {
+      specify('returns true', function() {
+        const f = argsPass(c1True, [p1True, p2True, p3True]);
+        assert.isTrue(f(1, 2, 3, 4));
+        assert.isTrue(p1True.calledWith(1));
+        assert.isTrue(p2True.calledWith(2));
+        assert.isTrue(p3True.calledWith(3));
+        assert.isTrue(c2True.calledWith([true, true, true, 4]));
+        assert.isTrue(p1True.calledOnce);
+        assert.isTrue(p2True.calledOnce);
+        assert.isTrue(p3True.calledOnce);
+        assert.isTrue(c1True.calledOnce);
+        assert.isTrue(c2True.calledOnce);
+      });
     });
 
     context('with one predicate failing', function() {
-      specify('tests args with supplied predicates', function() {
+      specify('returns false', function() {
         const f = argsPass(c1False, [p1True, p2True, p3False]);
         assert.isFalse(f(1, 2, 3, 4));
         assert.isTrue(p1True.calledWith(1));
@@ -115,14 +112,14 @@ describe('argsPass', function() {
   });
 
   context('with `all` as the combinator', function() {
-    context('with all predicates passing', function() {
+    context('with all functions returning truthy values', function() {
       specify('returns true', function() {
         const f = argsPass(all, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
-    context('with a predicate failing', function() {
+    context('with one function returning a falsy value', function() {
       specify('returns true', function() {
         const f = argsPass(all, [p1True, p2True, p3False]);
         assert.isFalse(f(1, 2, 3));
@@ -130,22 +127,22 @@ describe('argsPass', function() {
     });
   });
 
-  context('with `any` as the combinator', function() {
-    context('with all predicates passing', function() {
+  context('with `any` as the combining predicate', function() {
+    context('with all functions returning truthy values', function() {
       specify('returns true', function() {
         const f = argsPass(any, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
-    context('with one predicates passing', function() {
+    context('with one function returning a truthy value', function() {
       specify('returns true', function() {
         const f = argsPass(any, [p1True, p2False, p3True]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
-    context('with no predicate passing', function() {
+    context('with all functions returning falsy values', function() {
       specify('returns true', function() {
         const f = argsPass(any, [p1False, p2False, p3False]);
         assert.isFalse(f(1, 2, 3));
@@ -153,22 +150,22 @@ describe('argsPass', function() {
     });
   });
 
-  context('with `none` as the combinator', function() {
-    context('with all predicates passing', function() {
+  context('with `none` as the combining predicate', function() {
+    context('with all functions returning truthy values', function() {
       specify('returns true', function() {
         const f = argsPass(none, [p1False, p2False, p3False]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
-    context('with all predicates failing', function() {
+    context('with all functions returning falsy values', function() {
       specify('returns true', function() {
         const f = argsPass(none, [p1False, p2False, p3False]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
-    context('with one predicate passing', function() {
+    context('with one function returning a truthy value', function() {
       specify('returns true', function() {
         const f = argsPass(none, [p1False, p2False, p3True]);
         assert.isFalse(f(1, 2, 3));
