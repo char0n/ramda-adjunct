@@ -700,7 +700,7 @@ declare namespace RamdaAdjunct {
         };
 
         /** 
-         * Checks if `value` is between `low` and upto but not including `high`.
+         * Checks if `value` is between `low` and up to but not including `high`.
          */
         inRange(low: number, high: number, value: number): boolean;
         inRange(low: number, high: number): (value: number) => boolean;

@@ -11,7 +11,7 @@ const inRangeImp = ifElse(
 );
 
 /**
- * Checks if `value` is between `low` and upto but not including `high`.
+ * Checks if `value` is between `low` and up to but not including `high`.
  *
  * @func inRange
  * @memberOf RA
