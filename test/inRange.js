@@ -33,6 +33,12 @@ describe('inRange', function() {
     eq(f(-11), false);
   });
 
+  it('should return false when NaN is used`', function() {
+    eq(RA.inRange(0, NaN, 5), false);
+    eq(RA.inRange(NaN, 10, 5), false);
+    eq(RA.inRange(5, 10, NaN), false);
+  });
+
   it('should support `Number.POSITIVE_INFINITY`', function() {
     const f = RA.inRange(0, Number.POSITIVE_INFINITY);
     eq(f(Number.MAX_VALUE), true);
