@@ -1,6 +1,14 @@
-import { ifElse, curry, useWith, flip, both, gte, lt } from 'ramda';
+import { ifElse, curry, useWith, both, gte, lte, gt } from 'ramda';
 
-const errorMessage = `low must not be greater than high in inRange(low, high, value)`;
+const inRangeImp = ifElse(
+  gte,
+  () => {
+    throw new Error(
+      'low must not be greater than high in inRange(low, high, value)'
+    );
+  },
+  useWith(both, [lte, gt])
+);
 
 /**
  * Checks if input value falls within the supplied range. The bottom of the range is inclusive, the
@@ -24,12 +32,4 @@ const errorMessage = `low must not be greater than high in inRange(low, high, va
  * RA.inRange(0, 5, 5); //=> false
  * RA.inRange(0, 5, -1); //=> false
  */
-export default curry((low, high, value) =>
-  ifElse(
-    gte,
-    () => {
-      throw new Error(errorMessage);
-    },
-    useWith(both, [flip(gte), flip(lt)])
-  )(low, high)(value)
-);
+export default curry((low, high, value) => inRangeImp(low, high)(value));
