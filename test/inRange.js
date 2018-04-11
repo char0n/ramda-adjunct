@@ -2,6 +2,8 @@ import chai from 'chai';
 
 import * as RA from '../src/index';
 import eq from './shared/eq';
+import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
+import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 
 describe('inRange', function() {
   it('tests whether an integer falls within supplied range', function() {
@@ -59,5 +61,15 @@ describe('inRange', function() {
   it('should throw error if `low` value is same as `high` value', function() {
     const f = RA.inRange(10, 10);
     chai.assert.throws(() => f(5), Error);
+  });
+
+  it('supports `Number.MAX_SAFE_INTEGER`', function() {
+    const f = RA.inRange(0, MAX_SAFE_INTEGER);
+    eq(f(MAX_SAFE_INTEGER), false);
+  });
+
+  it('supports `Number.MIN_SAFE_INTEGER`', function() {
+    const f = RA.inRange(MIN_SAFE_INTEGER, 0);
+    eq(f(MIN_SAFE_INTEGER), true);
   });
 });
