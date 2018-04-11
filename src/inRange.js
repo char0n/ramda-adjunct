@@ -11,16 +11,15 @@ const inRangeImp = ifElse(
 );
 
 /**
- * Checks if input value falls within the supplied range. The bottom of the range is inclusive, the
- * top of the range is exclusive.
+ * Checks if `value` is between `low` and upto but not including `high`.
  *
  * @func inRange
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.6.0|v2.6.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|v2.7.0}
  * @category Relation
  * @sig Number -> Number -> Number -> Boolean
- * @param {Number} low The lowest value within the range
- * @param {Number} high The first value outside the range
+ * @param {Number} low Start of the range
+ * @param {Number} The end of the range
  * @param {Number} value The value to test
  * @return {Boolean}
  * @throws {Error} When `low` is greater than or equal to `high`
