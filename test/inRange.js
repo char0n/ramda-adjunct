@@ -35,7 +35,8 @@ describe('inRange', function() {
 
   it('should support currying', function() {
     eq(RA.inRange(5)(10)(5), true);
-    eq(RA.inRange(5)(10)(11), false);
+    eq(RA.inRange(5, 10)(5), true);
+    eq(RA.inRange(5)(10, 5), true);
   });
 
   it('should return false when NaN is used`', function() {
