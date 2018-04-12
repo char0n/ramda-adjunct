@@ -74,12 +74,12 @@ describe('inRange', function() {
     chai.assert.throws(() => f(5), Error);
   });
 
-  it('supports `Number.MAX_SAFE_INTEGER`', function() {
+  it('should support `Number.MAX_SAFE_INTEGER`', function() {
     const f = RA.inRange(0, MAX_SAFE_INTEGER);
     eq(f(MAX_SAFE_INTEGER), false);
   });
 
-  it('supports `Number.MIN_SAFE_INTEGER`', function() {
+  it('should support `Number.MIN_SAFE_INTEGER`', function() {
     const f = RA.inRange(MIN_SAFE_INTEGER, 0);
     eq(f(MIN_SAFE_INTEGER), true);
   });
