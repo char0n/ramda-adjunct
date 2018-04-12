@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isString.js - Documentation</title>
+    <title>inRange.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isString.js</h1>
+    <h1 class="page-title">inRange.js</h1>
     
 
     
@@ -52,27 +52,40 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import _isString from 'ramda/src/internal/_isString';
+            <pre class="prettyprint source linenums"><code>import { ifElse, curry, useWith, both, gte, lte, gt } from 'ramda';
+
+const inRangeImp = ifElse(
+  gte,
+  () => {
+    throw new Error(
+      'low must not be greater than high in inRange(low, high, value)'
+    );
+  },
+  useWith(both, [lte, gt])
+);
 
 /**
- * Checks if input value is `String`.
+ * Checks if `value` is between `low` and up to but not including `high`.
  *
- * @func isString
+ * @func inRange
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|v2.7.0}
+ * @category Relation
+ * @sig Number -> Number -> Number -> Boolean
+ * @param {Number} low Start of the range
+ * @param {Number} The end of the range
+ * @param {Number} value The value to test
  * @return {Boolean}
- * @see {@link RA.isNotString|isNotString}
+ * @throws {Error} When `low` is greater than or equal to `high`
  * @example
  *
- * RA.isString('abc'); //=> true
- * RA.isString(1); //=> false
+ * RA.inRange(0, 5, 3); //=> true
+ * RA.inRange(0, 5, 0); //=> true
+ * RA.inRange(0, 5, 4); //=> true
+ * RA.inRange(0, 5, 5); //=> false
+ * RA.inRange(0, 5, -1); //=> false
  */
-const isString = _isString;
-
-export default isString;
+export default curry((low, high, value) => inRangeImp(low, high)(value));
 </code></pre>
         </article>
     </section>
