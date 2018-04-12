@@ -699,6 +699,17 @@ declare namespace RamdaAdjunct {
             (value: any): (obj: object) => boolean;
         };
 
+        /** 
+         * Checks if `value` is between `low` and up to but not including `high`.
+         */
+        inRange(low: number, high: number, value: number): boolean;
+        inRange(low: number, high: number): (value: number) => boolean;
+        inRange(low: number): {
+            (high: number, value: number): boolean;
+            (high: number): (value: number) => boolean;
+        }, 
+
+
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
