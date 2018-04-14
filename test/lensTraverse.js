@@ -56,6 +56,26 @@ describe('lensTraverse', function() {
     assert.deepEqual(result, expected);
   });
 
+  it('should be inspectable via view', function() {
+    const result = R.view(RA.lensTraverse(RA.Identity.of), [
+      RA.Identity.of(2),
+      RA.Identity.of(3),
+    ]);
+    const expected = RA.Identity.of([2, 3]);
+
+    assert.deepEqual(result, expected);
+  });
+
+  it('should be modifiable via set', function() {
+    const result = R.set(RA.lensTraverse(RA.Identity.of), RA.Identity.of(2), [
+      RA.Identity.of(2),
+      RA.Identity.of(3),
+    ]);
+    const expected = RA.Identity.of([2, 2]);
+
+    assert.deepEqual(result, expected);
+  });
+
   it('should be curried', function() {
     const toFunctorFn = x => RA.Identity.of(R.map(R.add(1), x));
     const target = [RA.Identity.of(1)];
