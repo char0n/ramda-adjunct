@@ -765,6 +765,31 @@ declare namespace RamdaAdjunct {
         sliceTo<T>(toIndex: number, list: string|T[]): string|T[];
         sliceTo(toIndex: number): <T>(list: string|T[]) => string|T[];
 
+        updateSlice(fromIndex: number, toIndex: number, replacement: string, list: string): string;
+        updateSlice(fromIndex: number, toIndex: number, replacement: string): (list: string) => string;
+        updateSlice(fromIndex: number, toIndex: number): {
+            (replacement: string): (list: string) => string;
+            (replacement: string, list: string): string;
+        }
+        updateSlice(fromIndex: number): {
+            (toIndex: number): (replacement: string) => (list: string) => string;
+            (toIndex: number): (replacement: string, list: string) => string;
+            (toIndex: number, replacement: string): (list: string) => string;
+            (toIndex: number, replacement: string, list: string): string;
+        }
+        updateSlice<T>(fromIndex: number, toIndex: number, replacement: T[], list: T[]): T[];
+        updateSlice<T>(fromIndex: number, toIndex: number, replacement: T[]): (list: T[]) => T[];
+        updateSlice<T>(fromIndex: number, toIndex: number): {
+            (replacement: T[]): (list: T[]) => T[];
+            (replacement: T[], list: T[]): T[];
+        }
+        updateSlice<T>(fromIndex: number): {
+            (toIndex: number): (replacement: T[]) => (list: T[]) => T[];
+            (toIndex: number): (replacement: T[], list: T[]) => T[];
+            (toIndex: number, replacement: T[]): (list: T[]) => T[];
+            (toIndex: number, replacement: T[], list: T[]): T[];
+        }
+
         /**
          * Returns a partial copy of an array omitting the indexes specified.
          */
