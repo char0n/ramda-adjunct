@@ -39,7 +39,7 @@ describe('lensTraverse', function() {
   }
 
   if (!isRamdaFlSpec1Compatible) {
-    it('should travers Applicatives left to right', function() {
+    it('should traverse Applicatives left to right', function() {
       const result = R.over(RA.lensTraverse(RA.Identity.of), R.identity, [
         RA.Identity.of(2),
         RA.Identity.of(3),
