@@ -38,7 +38,7 @@ describe('lensTraverse', function() {
     assert.throws(() => fn([2, 3]), TypeError);
   });
 
-  context('should dispatch to sequence function', function() {
+  it('should dispatch to sequence function', function() {
     RA.Identity.prototype.sequence = function() {
       return R.map(RA.Identity.of, this.value);
     };
