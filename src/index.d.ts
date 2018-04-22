@@ -720,7 +720,7 @@ declare namespace RamdaAdjunct {
         inRange(low: number): {
             (high: number, value: number): boolean;
             (high: number): (value: number) => boolean;
-        }, 
+        }; 
 
 
         /**
@@ -932,6 +932,18 @@ declare namespace RamdaAdjunct {
          * dispatching functions returns a non-nil value.
          */
         dispatch(functions: Function[]): Function;
+
+        /**
+         * Returns a new list with the item at the position `fromIdx` moved to the position `toIdx`.
+         * If the * `toIdx` is greater than the number of items - 1, it will be placed in the last
+         * position.
+         */
+        move<T>(fromIdx: number, toIdx: number, list: T[]): T[]
+        move<T>(fromIdx: number): (toIdx: number, list: T[]) => T[]
+        move<T>(fromIdx: number): {
+            (toIdx: number, list: T[]): T[];
+            (toIdx: number): (list: T[]) => T[];
+        };
 
         /**
          * Identity type.
