@@ -678,6 +678,19 @@ declare namespace RamdaAdjunct {
         };
 
         /**
+         * Creates a [Traversable](https://github.com/fantasyland/fantasy-land#traversable) lens
+         * from an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning function.
+         *
+         * When executed, it maps an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning
+         * function over a [Traversable](https://github.com/fantasyland/fantasy-land#traversable),
+         * then uses [`sequence`](#sequence) to transform the resulting Traversable of Applicative
+         * into an Applicative of Traversable.
+         *
+         * Dispatches to the `traverse` method of the third argument, if present.
+         */
+        lensTraverse(of: Function): Function;
+
+        /**
          * Returns true if the specified object property is not equal,
          * in R.equals terms, to the given value; false otherwise.
          */
@@ -698,6 +711,17 @@ declare namespace RamdaAdjunct {
             (value: any, obj: object): boolean;
             (value: any): (obj: object) => boolean;
         };
+
+        /** 
+         * Checks if `value` is between `low` and up to but not including `high`.
+         */
+        inRange(low: number, high: number, value: number): boolean;
+        inRange(low: number, high: number): (value: number) => boolean;
+        inRange(low: number): {
+            (high: number, value: number): boolean;
+            (high: number): (value: number) => boolean;
+        }, 
+
 
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.

@@ -16,7 +16,7 @@ module.exports = {
     ramda: 'R',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules\/(?!(chai-as-promised))/,
