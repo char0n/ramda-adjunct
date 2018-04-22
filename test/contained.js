@@ -34,5 +34,10 @@ describe('contained', function() {
     it('should return true if substring is part of string', function() {
       eq(RA.contained('banana', 'ba'), true);
     });
+
+    it('is curried', function() {
+      eq(RA.contained('abcd', 'b'), true);
+      eq(RA.contained('abcd')('b'), true);
+    });
   });
 });
