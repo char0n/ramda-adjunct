@@ -25,7 +25,7 @@ import Identity from './fantasy-land/Identity';
  *
  * @example
  *
- * const maybeLens = RA.lensTraversable(Maybe.of);
+ * const maybeLens = RA.lensTraverse(Maybe.of);
  * const safeDiv = n => d => d === 0 ? Maybe.Nothing() : Maybe.Just(n / d)
  *
  * R.over(maybeLens, safeDiv(10), [2, 4, 5]); // => Just([5, 2.5, 2])
