@@ -712,7 +712,7 @@ declare namespace RamdaAdjunct {
             (value: any): (obj: object) => boolean;
         };
 
-        /** 
+        /**
          * Checks if `value` is between `low` and up to but not including `high`.
          */
         inRange(low: number, high: number, value: number): boolean;
@@ -720,7 +720,7 @@ declare namespace RamdaAdjunct {
         inRange(low: number): {
             (high: number, value: number): boolean;
             (high: number): (value: number) => boolean;
-        }, 
+        },
 
 
         /**
@@ -920,6 +920,7 @@ declare namespace RamdaAdjunct {
          * reversed.
          */
         appendFlipped<T>(list: T[], val: any): T[];
+        appendFlipped<T>(list: T[]): (val: any) => T[];
 
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,
