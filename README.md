@@ -36,7 +36,7 @@ yarn add ramda-adjunct
 ### ES6
 
 ```javascript
-import RA from 'ramda-adjunct'
+import * as RA from 'ramda-adjunct'
 
 RA.isArray([]);
 ```
