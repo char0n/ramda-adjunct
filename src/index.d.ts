@@ -939,7 +939,8 @@ declare namespace RamdaAdjunct {
 
         /**
          * Returns true if the specified value is equal, in R.equals terms,
-         * to at least one element of the given list; false otherwise.
+         * to at least one element of the given list or false otherwise.
+         * Given list can be a string.
          *
          * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
          */
