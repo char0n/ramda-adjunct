@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>defaultWhen.js - Documentation</title>
+    <title>lensTraverse.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">defaultWhen.js</h1>
+    <h1 class="page-title">lensTraverse.js</h1>
     
 
     
@@ -52,32 +52,49 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curry } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { traverse, curry, pipe, prop } from 'ramda';
+
+import Identity from './fantasy-land/Identity';
 
 /**
- * Returns the second argument if predicate function returns `true`,
- * otherwise the third argument is returned.
+ * Creates a [Traversable](https://github.com/fantasyland/fantasy-land#traversable) lens
+ * from an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning function.
  *
- * @func defaultWhen
+ * When executed, it maps an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning
+ * function over a [Traversable](https://github.com/fantasyland/fantasy-land#traversable),
+ * then uses [`sequence`](#sequence) to transform the resulting Traversable of Applicative
+ * into an Applicative of Traversable.
+ *
+ * Dispatches to the `traverse` method of the third argument, if present.
+ *
+ * @func lensTraverse
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2.0}
- * @category Logic
- * @sig  (a -> Boolean) -> b -> a -> a | b
- * @param {!function} predicate The predicate function
- * @param {*} defaultVal The default value
- * @param {*} val `val` will be returned instead of `defaultVal` if predicate returns false
- * @return {*} The `val` if predicate returns `false`, otherwise the default value
- * @see {@link http://ramdajs.com/docs/#defaultTo|R.defaultTo}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|2.7.0}
+ * @category Relation
+ * @typedef Lens s a = Functor f => (a -> f a) -> s -> f s
+ * @sig Applicative f => (a -> f a) -> Lens s a
+ * @param {!function} of The Applicative-returning function
+ * @return {!function} The Traversable lens
+ * @see {@link http://ramdajs.com/docs/#lens|R.lens}, {@link http://ramdajs.com/docs/#traverse|R.traverse}
+ *
  * @example
  *
- * RA.defaultWhen(RA.isNull, 1, null); // => 1
- * RA.defaultWhen(RA.isNull, 1, 2); // => 2
+ * const maybeLens = RA.lensTraverse(Maybe.of);
+ * const safeDiv = n => d => d === 0 ? Maybe.Nothing() : Maybe.Just(n / d)
+ *
+ * R.over(maybeLens, safeDiv(10), [2, 4, 5]); // => Just([5, 2.5, 2])
+ * R.over(maybeLens, safeDiv(10), [2, 0, 5]); // => Nothing
+ *
+ * R.view(maybeLens, [Maybe.Just(2), Maybe.Just(3)]); // => Maybe.Just([2, 3])
+ *
+ * R.set(maybeLens, Maybe.Just(1), [Maybe.just(2), Maybe.Just(3)]); // => Maybe.Just([1, 1])
  */
-const defaultWhen = curry(
-  (predicate, defaultVal, val) => (predicate(val) ? defaultVal : val)
-);
+const lensTraverse = of =>
+  curry((toFunctorFn, target) =>
+    Identity.of(traverse(of, pipe(toFunctorFn, prop('value')), target))
+  );
 
-export default defaultWhen;
+export default lensTraverse;
 </code></pre>
         </article>
     </section>
