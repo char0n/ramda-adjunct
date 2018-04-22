@@ -19,7 +19,6 @@ import isTruthy from './isTruthy';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|v2.7.0}
  * @category Logic
- * @sig ([*] -> Boolean) -> [(* -> Boolean), …] -> (*…) -> Boolean
  * @sig ((* -> Boolean) -> [*] -> Boolean) -> [(* -> Boolean), ...] -> (*...) -> Boolean
  * @param {Function} combiningPredicate The predicate used to combine the values returned from the
  * list of functions
@@ -27,12 +26,12 @@ import isTruthy from './isTruthy';
  * @return {Boolean} Returns the combined result of mapping arguments to functions
  * @example
  *
- * RA.argsPass(R.all, RA.isArray, RA.isBoolean, RA.isString)([], false, 'abc') //=> true
- * RA.argsPass(R.all, RA.isArray, RA.isBoolean, RA.isString)([], false, 1) //=> false
- * RA.argsPass(R.any, RA.isArray, RA.isBoolean, RA.isString)({}, 1, 'abc') //=> true
- * RA.argsPass(R.any, RA.isArray, RA.isBoolean, RA.isString)({}, 1, false) //=> false
- * RA.argsPass(R.none, RA.isArray, RA.isBoolean, RA.isString)({}, 1, false) //=> true
- * RA.argsPass(R.none, RA.isArray, RA.isBoolean, RA.isString)({}, 1, 'abc') //=> false
+ * RA.argsPass(R.all, [RA.isArray, RA.isBoolean, RA.isString])([], false, 'abc') //=> true
+ * RA.argsPass(R.all, [RA.isArray, RA.isBoolean, RA.isString])([], false, 1) //=> false
+ * RA.argsPass(R.any, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, 'abc') //=> true
+ * RA.argsPass(R.any, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, false) //=> false
+ * RA.argsPass(R.none, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, false) //=> true
+ * RA.argsPass(R.none, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, 'abc') //=> false
  */
 export default curry((combiningPredicate, predicates) =>
   useWith(compose(combiningPredicate(isTruthy), list), predicates)

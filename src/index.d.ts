@@ -885,17 +885,20 @@ declare namespace RamdaAdjunct {
         nonePass(predicates: Function[]): Function;
 
         /**
-         * Takes a combining predicate–predicate that combines a list of Boolean values (such as
-         * `any` or `all`)–and a list of predicates and returns a function which will map the
-         * arguments it receives to the list of predicates and returns the result of passing the
-         * boolean values returned from each predicate to the combining predicate. 
-         * 
-         * The function returned is curried to the number of predicates supplied, and if called with
-         * more arguments than predicates, any remaining arguments are passed in to the combining
+         * Takes a combining predicate and a list of functions and returns a function which will map
+         * the arguments it receives to the list of functions and returns the result of passing the
+         * values returned from each function to the combining predicate. A combining predicate is a
+         * function that combines a list of Boolean values into a single Boolean value, such as
+         * `R.any` or `R.all`. It will test each value using `RA.isTruthy`, meaning the functions
+         * don't necessarily have to be predicates.
+         *
+         * The function returned is curried to the number of functions supplied, and if called with
+         * more arguments than functions, any remaining arguments are passed in to the combining
          * predicate untouched.
          */
         argsPass(combiningPredicate: Function, predicates: Function[]): Function;
-        
+        argsPass(combiningPredicate: Function): (predicates: Function[]) => Function;
+
         /**
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
