@@ -678,6 +678,19 @@ declare namespace RamdaAdjunct {
         };
 
         /**
+         * Creates a [Traversable](https://github.com/fantasyland/fantasy-land#traversable) lens
+         * from an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning function.
+         *
+         * When executed, it maps an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning
+         * function over a [Traversable](https://github.com/fantasyland/fantasy-land#traversable),
+         * then uses [`sequence`](#sequence) to transform the resulting Traversable of Applicative
+         * into an Applicative of Traversable.
+         *
+         * Dispatches to the `traverse` method of the third argument, if present.
+         */
+        lensTraverse(of: Function): Function;
+
+        /**
          * Returns true if the specified object property is not equal,
          * in R.equals terms, to the given value; false otherwise.
          */
