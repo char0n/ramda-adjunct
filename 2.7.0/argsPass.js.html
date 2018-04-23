@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>mergeProps.js - Documentation</title>
+    <title>argsPass.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">mergeProps.js</h1>
+    <h1 class="page-title">argsPass.js</h1>
     
 
     
@@ -52,33 +52,44 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curryN, pipe, mergeAll, props } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { useWith, curry, compose } from 'ramda';
+
+import list from './list';
+import isTruthy from './isTruthy';
 
 /**
- * Functional equivalent of merging object properties with object spread operator.
+ * Takes a combining predicate and a list of functions and returns a function which will map the
+ * arguments it receives to the list of functions and returns the result of passing the values
+ * returned from each function to the combining predicate. A combining predicate is a function that
+ * combines a list of Boolean values into a single Boolean value, such as `R.any` or `R.all`. It
+ * will test each value using `RA.isTruthy`, meaning the functions don't necessarily have to be
+ * predicates.
  *
- * @func mergeProps
+ * The function returned is curried to the number of functions supplied, and if called with more
+ * arguments than functions, any remaining arguments are passed in to the combining predicate
+ * untouched.
+ *
+ * @func argsPass
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.17.0|v1.17.0}
- * @category Object
- * @sig [k] -> {k: {a}} -> {a}
- * @see {@link RA.mergePaths|mergePaths}
- * @param {!Array} ps The property names to merge
- * @param {!Object} obj The object to query
- * @return {!Object} The object composed of merged properties of obj
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|v2.7.0}
+ * @category Logic
+ * @sig ((* -> Boolean) -> [*] -> Boolean) -> [(* -> Boolean), ...] -> (*...) -> Boolean
+ * @param {Function} combiningPredicate The predicate used to combine the values returned from the
+ * list of functions
+ * @param {Array} functions List of functions
+ * @return {Boolean} Returns the combined result of mapping arguments to functions
  * @example
  *
- * const obj = {
- *   foo: { fooInner: 1 },
- *   bar: { barInner: 2 }
- * };
- *
- * { ...obj.foo, ...obj.bar }; //=> { fooInner: 1, barInner: 2 }
- * RA.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
+ * RA.argsPass(R.all, [RA.isArray, RA.isBoolean, RA.isString])([], false, 'abc') //=> true
+ * RA.argsPass(R.all, [RA.isArray, RA.isBoolean, RA.isString])([], false, 1) //=> false
+ * RA.argsPass(R.any, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, 'abc') //=> true
+ * RA.argsPass(R.any, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, false) //=> false
+ * RA.argsPass(R.none, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, false) //=> true
+ * RA.argsPass(R.none, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, 'abc') //=> false
  */
-const mergeProps = curryN(2, pipe(props, mergeAll));
-
-export default mergeProps;
+export default curry((combiningPredicate, predicates) =>
+  useWith(compose(combiningPredicate(isTruthy), list), predicates)
+);
 </code></pre>
         </article>
     </section>
