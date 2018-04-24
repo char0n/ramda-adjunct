@@ -712,7 +712,7 @@ declare namespace RamdaAdjunct {
             (value: any): (obj: object) => boolean;
         };
 
-        /** 
+        /**
          * Checks if `value` is between `low` and up to but not including `high`.
          */
         inRange(low: number, high: number, value: number): boolean;
@@ -720,9 +720,8 @@ declare namespace RamdaAdjunct {
         inRange(low: number): {
             (high: number, value: number): boolean;
             (high: number): (value: number) => boolean;
-        }; 
-
-
+        };
+        
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
@@ -909,6 +908,21 @@ declare namespace RamdaAdjunct {
         nonePass(predicates: Function[]): Function;
 
         /**
+         * Takes a combining predicate and a list of functions and returns a function which will map
+         * the arguments it receives to the list of functions and returns the result of passing the
+         * values returned from each function to the combining predicate. A combining predicate is a
+         * function that combines a list of Boolean values into a single Boolean value, such as
+         * `R.any` or `R.all`. It will test each value using `RA.isTruthy`, meaning the functions
+         * don't necessarily have to be predicates.
+         *
+         * The function returned is curried to the number of functions supplied, and if called with
+         * more arguments than functions, any remaining arguments are passed in to the combining
+         * predicate untouched.
+         */
+        argsPass(combiningPredicate: Function, predicates: Function[]): Function;
+        argsPass(combiningPredicate: Function): (predicates: Function[]) => Function;
+
+        /**
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
@@ -920,6 +934,7 @@ declare namespace RamdaAdjunct {
          * reversed.
          */
         appendFlipped<T>(list: T[], val: any): T[];
+        appendFlipped<T>(list: T[]): (val: any) => T[];
 
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,
