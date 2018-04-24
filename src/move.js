@@ -1,7 +1,9 @@
 import { curry, compose, insert, nth, remove } from 'ramda';
 
 /**
- * Returns a new list with the item at the position `fromIdx` moved to the position `toIdx`. If the * `toIdx` is greater than the number of items - 1, it will be placed in the last position.
+ * Returns a new list with the item at the position `fromIdx` moved to the position `toIdx`. If the
+ * `toIdx` is out of the `list` range, the item will be placed at the last position of the `list`.
+ * Negative indices are not supported.
  *
  * @func move
  * @memberOf RA
@@ -16,8 +18,8 @@ import { curry, compose, insert, nth, remove } from 'ramda';
  * const list = ['a', 'b', 'c', 'd', 'e'];
  * RA.move(1, 3, list) //=> ['a', 'c', 'd', 'b', 'e']
  */
-const moveItem = curry((oldIdx, newIdx, list) =>
-  compose(insert(newIdx, nth(oldIdx, list)), remove(oldIdx, 1))(list)
+const move = curry((fromIdx, toIdx, list) =>
+  compose(insert(toIdx, nth(fromIdx, list)), remove(fromIdx, 1))(list)
 );
 
-export default moveItem;
+export default move;

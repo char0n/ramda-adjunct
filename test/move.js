@@ -48,6 +48,13 @@ describe('move', function() {
     eq(RA.move(1)(3)(list), expected);
   });
 
+  context('when `fromIdx` is greater than maximum index', function() {
+    specify('should place `undefined` in newIdx position', function() {
+      const expected = ['a', 'b', undefined, 'c', 'd', 'e'];
+      eq(RA.move(6, 2, list), expected);
+    });
+  });
+
   it(`should treat nested lists like any other items`, function() {
     const listOfLists = [['a', 'b'], ['c', 'd'], ['e', 'f']];
     const expected = [['e', 'f'], ['a', 'b'], ['c', 'd']];

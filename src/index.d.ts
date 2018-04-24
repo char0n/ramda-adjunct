@@ -935,8 +935,8 @@ declare namespace RamdaAdjunct {
 
         /**
          * Returns a new list with the item at the position `fromIdx` moved to the position `toIdx`.
-         * If the * `toIdx` is greater than the number of items - 1, it will be placed in the last
-         * position.
+         * If the `toIdx` is out of the `list` range, the item will be placed at the last position
+         * of the `list`. Nagative indices are not supported.
          */
         move<T>(fromIdx: number, toIdx: number, list: T[]): T[]
         move<T>(fromIdx: number): (toIdx: number, list: T[]) => T[]
