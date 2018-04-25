@@ -112,6 +112,7 @@ We are building our npm distributions using Webpack to support legacy versions o
 ## API Documentation
 
  [LATEST](https://char0n.github.io/ramda-adjunct),
+ [2.6.0](https://char0n.github.io/ramda-adjunct/2.6.0),
  [2.5.0](https://char0n.github.io/ramda-adjunct/2.5.0),
  [2.4.1](https://char0n.github.io/ramda-adjunct/2.4.1),
  [2.4.0](https://char0n.github.io/ramda-adjunct/2.4.0),

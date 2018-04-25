@@ -1,3 +1,15 @@
+<a name="2.7.0"></a>
+# [2.7.0](https://github.com/char0n/ramda-adjunct/compare/v2.6.0...v2.7.0) (2018-04-25)
+
+
+### Features
+
+* add argsPass ([#437](https://github.com/char0n/ramda-adjunct/issues/437)) ([f7d7f7c](https://github.com/char0n/ramda-adjunct/commit/f7d7f7c)), closes [#370](https://github.com/char0n/ramda-adjunct/issues/370)
+* add inRange ([#436](https://github.com/char0n/ramda-adjunct/issues/436)) ([9937600](https://github.com/char0n/ramda-adjunct/commit/9937600)), closes [#393](https://github.com/char0n/ramda-adjunct/issues/393)
+* add traversable lenses ([#494](https://github.com/char0n/ramda-adjunct/issues/494)) ([d34be73](https://github.com/char0n/ramda-adjunct/commit/d34be73))
+
+
+
 <a name="2.6.0"></a>
 # [2.6.0](https://github.com/char0n/ramda-adjunct/compare/v2.5.0...v2.6.0) (2018-03-19)
 
