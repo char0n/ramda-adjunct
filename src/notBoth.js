@@ -20,7 +20,7 @@ import { compose, complement, both } from 'ramda';
  * @param {Function} f A predicate
  * @param {Function} g Another predicate
  * @return {Function} Returns a function that applies its arguments to `f` and `g` and returns the complement of `&&`ing their outputs together.
- * @see {@link http://ramdajs.com/docs/#both|both}
+ * @see {@link http://ramdajs.com/docs/#both|R.both}
  * @example
  *
  * const gt10 = R.gt(R.__, 10)

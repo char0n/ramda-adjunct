@@ -10,7 +10,7 @@ import { complement, isEmpty } from 'ramda';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {Boolean}
- * @see {@link http://ramdajs.com/docs/#isEmpty|isEmpty}
+ * @see {@link http://ramdajs.com/docs/#isEmpty|R.isEmpty}
  * @example
  *
  * RA.isNotEmpty([1, 2, 3]); //=> true

@@ -13,7 +13,7 @@ import { curry } from 'ramda';
  * @param {*} defaultVal The default value
  * @param {*} val `val` will be returned instead of `defaultVal` if predicate returns false
  * @return {*} The `val` if predicate returns `false`, otherwise the default value
- * @see {@link http://ramdajs.com/docs/#defaultTo|defaultTo}
+ * @see {@link http://ramdajs.com/docs/#defaultTo|R.defaultTo}
  * @example
  *
  * RA.defaultWhen(RA.isNull, 1, null); // => 1

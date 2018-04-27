@@ -3,7 +3,7 @@ import { both, lt } from 'ramda';
 import isNumber from './isNumber';
 
 /**
- * Checks if value is a positive `Number` primitive or object.
+ * Checks if value is a positive `Number` primitive or object. Zero is not considered positive.
  *
  * @func isPositive
  * @memberOf RA

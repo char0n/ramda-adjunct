@@ -15,7 +15,7 @@ import { complement, compose, anyPass } from 'ramda';
  * @sig [(*... -> Boolean)] -> (*... -> Boolean)
  * @param {Array} predicates An array of predicates to check
  * @return {Function} The combined predicate
- * @see {@link http://ramdajs.com/docs/#anyPass|anyPass}
+ * @see {@link http://ramdajs.com/docs/#anyPass|R.anyPass}
  * @example
  *
  * const gt10 = R.gt(R.__, 10)

@@ -13,7 +13,7 @@ import curryRightN from './curryRightN';
  * @sig Number -> (* -> a) -> (* -> a)
  * @param {Function} fn The function to curry
  * @return {Function}  A new, curried function
- * @see {@link http://ramdajs.com/docs/#curry|curry}, {@link RA.curryRightN|curryRightN}
+ * @see {@link http://ramdajs.com/docs/#curry|R.curry}, {@link RA.curryRightN|curryRightN}
  * @example
  *
  * const concatStrings = (a, b, c) => a + b + c;

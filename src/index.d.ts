@@ -251,14 +251,28 @@ declare namespace RamdaAdjunct {
         isNotNumber(val: any): boolean;
 
         /**
-         * Checks if value is a positive `Number` primitive or object.
+         * Checks if value is a positive `Number` primitive or object. Zero is considered neither
+         * positive or negative.
          */
         isPositive(val: any): val is number;
 
         /**
-         * Checks if value is a negative `Number` primitive or object.
+         * Checks if value is a negative `Number` primitive or object. Zero is considered neither
+         * positive or negative.
          */
         isNegative(val: any): val is number;
+
+        /**
+         * Checks if value is a non-positive `Number` primitive or object. This includes all
+         * negative numbers and zero.
+         */
+        isNonPositive(val: any): val is number;
+
+        /**
+         * Checks if value is a non-negative `Number` primitive or object. This includes all
+         * positive numbers and zero.
+         */
+        isNonNegative(val: any): val is number;
 
         /**
          * Checks whether the passed value is a finite `Number`.
@@ -466,7 +480,7 @@ declare namespace RamdaAdjunct {
 
         /**
          * Reset properties of the object to their default values.
-         * Alias of {@link http://ramdajs.com/docs/#merge|mergeRight}.
+         * Alias of {@link http://ramdajs.com/docs/#merge|R.mergeRight}.
          */
         resetToDefault(defaultOptions: object, options: object): object; // alias of mergeRight
         resetToDefault(defaultOptions: object): (options: object) => object; // alias of mergeRight
@@ -664,6 +678,19 @@ declare namespace RamdaAdjunct {
         };
 
         /**
+         * Creates a [Traversable](https://github.com/fantasyland/fantasy-land#traversable) lens
+         * from an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning function.
+         *
+         * When executed, it maps an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning
+         * function over a [Traversable](https://github.com/fantasyland/fantasy-land#traversable),
+         * then uses [`sequence`](#sequence) to transform the resulting Traversable of Applicative
+         * into an Applicative of Traversable.
+         *
+         * Dispatches to the `traverse` method of the third argument, if present.
+         */
+        lensTraverse(of: Function): Function;
+
+        /**
          * Returns true if the specified object property is not equal,
          * in R.equals terms, to the given value; false otherwise.
          */
@@ -684,6 +711,17 @@ declare namespace RamdaAdjunct {
             (value: any, obj: object): boolean;
             (value: any): (obj: object) => boolean;
         };
+
+        /**
+         * Checks if `value` is between `low` and up to but not including `high`.
+         */
+        inRange(low: number, high: number, value: number): boolean;
+        inRange(low: number, high: number): (value: number) => boolean;
+        inRange(low: number): {
+            (high: number, value: number): boolean;
+            (high: number): (value: number) => boolean;
+        },
+
 
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
@@ -756,6 +794,10 @@ declare namespace RamdaAdjunct {
          */
         sliceFrom<T>(fromIndex: number, list: string | T[]): string | T[];
         sliceFrom(fromIndex: number): <T>(list: string | T[]) => string | T[];
+<<<<<<< HEAD
+=======
+        sliceFrom<T>(fromIndex: number, list: string | T[]): string | T[];
+>>>>>>> master
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
@@ -809,6 +851,17 @@ declare namespace RamdaAdjunct {
          * of an asynchronous operation, and its resulting value.
          */
         isPromise(val: any): val is Promise<any>;
+
+        /**
+         * Checks if input value is the Boolean primitive `true`. Will return false for Boolean
+         * objects created using the `Boolean` function as a constructor.
+         */
+        isTrue(val: any): boolean;
+
+        /**
+         * Checks if input value is the Boolean primitive `false`. Will return false for Boolean objects created using the `Boolean` function as a constructor.
+         */
+        isFalse(val: any): boolean;
 
         /**
          * In JavaScript, a `truthy` value is a value that is considered true
@@ -885,6 +938,21 @@ declare namespace RamdaAdjunct {
         nonePass(predicates: Function[]): Function;
 
         /**
+         * Takes a combining predicate and a list of functions and returns a function which will map
+         * the arguments it receives to the list of functions and returns the result of passing the
+         * values returned from each function to the combining predicate. A combining predicate is a
+         * function that combines a list of Boolean values into a single Boolean value, such as
+         * `R.any` or `R.all`. It will test each value using `RA.isTruthy`, meaning the functions
+         * don't necessarily have to be predicates.
+         *
+         * The function returned is curried to the number of functions supplied, and if called with
+         * more arguments than functions, any remaining arguments are passed in to the combining
+         * predicate untouched.
+         */
+        argsPass(combiningPredicate: Function, predicates: Function[]): Function;
+        argsPass(combiningPredicate: Function): (predicates: Function[]) => Function;
+
+        /**
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
@@ -896,6 +964,7 @@ declare namespace RamdaAdjunct {
          * reversed.
          */
         appendFlipped<T>(list: T[], val: any): T[];
+        appendFlipped<T>(list: T[]): (val: any) => T[];
 
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,

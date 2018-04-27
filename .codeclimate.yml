@@ -8,12 +8,6 @@ engines:
     config:
       languages:
       - javascript
-  eslint:
-    enabled: true
-    channel: "eslint-4"
-    checks:
-          import/extensions:
-            enabled: false
   fixme:
     enabled: true
 ratings:

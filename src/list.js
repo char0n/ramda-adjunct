@@ -1,7 +1,7 @@
 import { unapply, identity } from 'ramda';
 
 /**
- * Creates a list from from arguments.
+ * Creates a list from arguments.
  *
  * @func list
  * @memberOf RA
