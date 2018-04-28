@@ -16,6 +16,16 @@ describe('isLengthGte', function() {
     eq(RA.isLengthGte(0, ''), true);
   });
 
+  it(`should return false for values without a length property`, function() {
+    eq(RA.isLengthGte(1, NaN), false);
+    eq(RA.isLengthGte(1, undefined), false);
+    eq(RA.isLengthGte(1, null), false);
+    eq(RA.isLengthGte(1, {}), false);
+    eq(RA.isLengthGte(1, true), false);
+    eq(RA.isLengthGte(1, false), false);
+    eq(RA.isLengthGte(1, 5), false);
+  });
+
   it(`should be curried`, function() {
     eq(RA.isLengthGte(1)([1]), true);
   });

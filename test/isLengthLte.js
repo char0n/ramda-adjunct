@@ -16,6 +16,16 @@ describe('isLengthLte', function() {
     eq(RA.isLengthLte(0, ''), true);
   });
 
+  it(`should return false for values without a length property`, function() {
+    eq(RA.isLengthLte(1, NaN), false);
+    eq(RA.isLengthLte(1, undefined), false);
+    eq(RA.isLengthLte(1, null), false);
+    eq(RA.isLengthLte(1, {}), false);
+    eq(RA.isLengthLte(1, true), false);
+    eq(RA.isLengthLte(1, false), false);
+    eq(RA.isLengthLte(1, 5), false);
+  });
+
   it(`should be curried`, function() {
     eq(RA.isLengthLte(1)([1]), true);
   });

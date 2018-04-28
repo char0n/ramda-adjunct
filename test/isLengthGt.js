@@ -14,6 +14,16 @@ describe('isLengthGt', function() {
     eq(RA.isLengthGt(0, ''), false);
   });
 
+  it(`should return false for values without a length property`, function() {
+    eq(RA.isLengthGt(1, NaN), false);
+    eq(RA.isLengthGt(1, undefined), false);
+    eq(RA.isLengthGt(1, null), false);
+    eq(RA.isLengthGt(1, {}), false);
+    eq(RA.isLengthGt(1, true), false);
+    eq(RA.isLengthGt(1, false), false);
+    eq(RA.isLengthGt(1, 5), false);
+  });
+
   it(`should be curried`, function() {
     eq(RA.isLengthGt(1)([1, 2]), true);
   });

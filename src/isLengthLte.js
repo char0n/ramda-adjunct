@@ -1,6 +1,4 @@
-import { complement } from 'ramda';
-
-import isLengthGt from './isLengthGt';
+import { curry, compose, flip, length, lte } from 'ramda';
 
 /**
  * Returns `true` if the supplied list or string has a length less than or equal to `valueLength`.
@@ -20,6 +18,8 @@ import isLengthGt from './isLengthGt';
  * RA.isLengthLte(3, [1,2,3]); //=> true
  * RA.isLengthLte(3, [1,2,3,4]); //=> false
  */
-const isLengthLte = complement(isLengthGt);
+const isLengthLte = curry((valueLength, value) =>
+  compose(flip(lte)(valueLength), length)(value)
+);
 
 export default isLengthLte;
