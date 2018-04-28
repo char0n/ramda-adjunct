@@ -1,4 +1,6 @@
-import { curry, compose, flip, length, lt } from 'ramda';
+import { lt } from 'ramda';
+
+import compareLength from './internal/compareLength';
 
 /**
  * Returns `true` if the supplied list or string has a length less than `valueLength`.
@@ -17,8 +19,6 @@ import { curry, compose, flip, length, lt } from 'ramda';
  * RA.isLengthLt(3, [1,2]); //=> true
  * RA.isLengthLt(3, [1,2,3]); //=> false
  */
-const isLengthLt = curry((valueLength, value) =>
-  compose(flip(lt)(valueLength), length)(value)
-);
+const isLengthLt = compareLength(lt);
 
 export default isLengthLt;
