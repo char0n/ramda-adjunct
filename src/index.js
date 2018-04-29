@@ -109,10 +109,10 @@ export { default as sliceTo } from './sliceTo';
 export { default as omitIndexes } from './omitIndexes';
 export { default as compact } from './compact';
 export { default as appendFlipped } from './appendFlipped';
-export { default as isLengthGt } from './isLengthGt';
-export { default as isLengthLt } from './isLengthLt';
-export { default as isLengthGte } from './isLengthGte';
-export { default as isLengthLte } from './isLengthLte';
+export { default as lengthGt } from './lengthGt';
+export { default as lengthLt } from './lengthLt';
+export { default as lengthGte } from './lengthGte';
+export { default as lengthLte } from './lengthLte';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';

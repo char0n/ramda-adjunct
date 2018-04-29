@@ -21,6 +21,6 @@ import compareLength from './internal/compareLength';
  * RA.isLenghtGte(3, [1,2,3]); //=> true
  * RA.isLenghtGte(3, [1,2,3]); //=> false
  */
-const isLengthGte = compareLength(gte);
+const lengthGte = compareLength(gte);
 
-export default isLengthGte;
+export default lengthGte;

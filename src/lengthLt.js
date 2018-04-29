@@ -5,7 +5,7 @@ import compareLength from './internal/compareLength';
 /**
  * Returns `true` if the supplied list or string has a length less than `valueLength`.
  *
- * @func isLengthLt
+ * @func lengthLt
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @category List
@@ -16,9 +16,9 @@ import compareLength from './internal/compareLength';
  * @see {@link http://ramdajs.com/docs/#lt|lt}, {@link http://ramdajs.com/docs/#length|length}
  * @example
  *
- * RA.isLengthLt(3, [1,2]); //=> true
- * RA.isLengthLt(3, [1,2,3]); //=> false
+ * RA.lengthLt(3, [1,2]); //=> true
+ * RA.lengthLt(3, [1,2,3]); //=> false
  */
-const isLengthLt = compareLength(lt);
+const lengthLt = compareLength(lt);
 
-export default isLengthLt;
+export default lengthLt;

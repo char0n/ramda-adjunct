@@ -812,14 +812,14 @@ declare namespace RamdaAdjunct {
         /**
          * Returns `true` if the supplied list or string has a length greater than `valueLength`.
          */
-        islengthGt<T>(valueLength: number, list: string | T[]): boolean;
-        islengthGt(valueLength: number): <T>(list: string | T[]) => boolean;
+        lengthGt<T>(valueLength: number, list: string | T[]): boolean;
+        lengthGt(valueLength: number): <T>(list: string | T[]) => boolean;
 
         /**
          * Returns `true` if the supplied list or string has a length less than `valueLength`.
          */
-        islengthLt<T>(valueLength: number, list: string | T[]): boolean;
-        islengthLt(valueLength: number): <T>(list: string | T[]) => boolean;
+        lengthLt<T>(valueLength: number, list: string | T[]): boolean;
+        lengthLt(valueLength: number): <T>(list: string | T[]) => boolean;
 
         /**
          * Returns `true` if the supplied list or string has a length less than or equal to
