@@ -3,11 +3,11 @@ import { curry, compose, insert, nth, remove } from 'ramda';
 /**
  * Returns a new list with the item at the position `fromIdx` moved to the position `toIdx`. If the
  * `toIdx` is out of the `list` range, the item will be placed at the last position of the `list`.
- * Negative indices are not supported.
+ * When negative indices are provided, the behavior of the move is unspecified.
  *
  * @func move
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|v2.7.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @category List
  * @sig Number -> Number -> [a] -> [a]
  * @param {Number} fromIdx Position of item to be moved
