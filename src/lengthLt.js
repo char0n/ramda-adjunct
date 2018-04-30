@@ -1,4 +1,4 @@
-import { lt } from 'ramda';
+import { lt, flip } from 'ramda';
 
 import compareLength from './internal/compareLength';
 
@@ -19,6 +19,6 @@ import compareLength from './internal/compareLength';
  * RA.lengthLt(3, [1,2]); //=> true
  * RA.lengthLt(3, [1,2,3]); //=> false
  */
-const lengthLt = compareLength(lt);
+const lengthLt = compareLength(flip(lt));
 
 export default lengthLt;

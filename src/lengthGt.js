@@ -1,4 +1,4 @@
-import { gt } from 'ramda';
+import { gt, flip } from 'ramda';
 
 import compareLength from './internal/compareLength';
 
@@ -19,6 +19,6 @@ import compareLength from './internal/compareLength';
  * RA.lengthGt(3, [1,2,3,4]); //=> true
  * RA.lengthGt(3, [1,2,3]); //=> false
  */
-const lengthGt = compareLength(gt);
+const lengthGt = compareLength(flip(gt));
 
 export default lengthGt;

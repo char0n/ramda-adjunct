@@ -1,4 +1,4 @@
-import { gte } from 'ramda';
+import { gte, flip } from 'ramda';
 
 import compareLength from './internal/compareLength';
 
@@ -21,6 +21,6 @@ import compareLength from './internal/compareLength';
  * RA.isLenghtGte(3, [1,2,3]); //=> true
  * RA.isLenghtGte(3, [1,2,3]); //=> false
  */
-const lengthGte = compareLength(gte);
+const lengthGte = compareLength(flip(gte));
 
 export default lengthGte;

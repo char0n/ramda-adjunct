@@ -1,8 +1,7 @@
-import { curry, compose, flip, length } from 'ramda';
+import { curry, compose, length } from 'ramda';
 
-const compareLength = comparator =>
-  curry((valueLength, value) =>
-    compose(flip(comparator)(valueLength), length)(value)
-  );
+const compareLength = curry((comparator, value, list) =>
+  compose(comparator(value), length)(list)
+);
 
 export default compareLength;

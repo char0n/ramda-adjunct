@@ -1,4 +1,4 @@
-import { lte } from 'ramda';
+import { lte, flip } from 'ramda';
 
 import compareLength from './internal/compareLength';
 
@@ -20,6 +20,6 @@ import compareLength from './internal/compareLength';
  * RA.lengthLte(3, [1,2,3]); //=> true
  * RA.lengthLte(3, [1,2,3,4]); //=> false
  */
-const lengthLte = compareLength(lte);
+const lengthLte = compareLength(flip(lte));
 
 export default lengthLte;
