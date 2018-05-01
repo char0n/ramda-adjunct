@@ -6,7 +6,7 @@ import compareLength from './internal/compareLength';
  * Returns `true` if the supplied list or string has a length greater than or equal to
  * `valueLength`.
  *
- * @func isLenghtGte
+ * @func lengthGte
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @category List
@@ -17,9 +17,9 @@ import compareLength from './internal/compareLength';
  * @see {@link http://ramdajs.com/docs/#gte|gte}, {@link http://ramdajs.com/docs/#length|length}
  * @example
  *
- * RA.isLenghtGte(3, [1,2,3,4]); //=> true
- * RA.isLenghtGte(3, [1,2,3]); //=> true
- * RA.isLenghtGte(3, [1,2,3]); //=> false
+ * RA.lengthGte(3, [1,2,3,4]); //=> true
+ * RA.lengthGte(3, [1,2,3]); //=> true
+ * RA.lengthGte(3, [1,2,3]); //=> false
  */
 const lengthGte = compareLength(flip(gte));
 

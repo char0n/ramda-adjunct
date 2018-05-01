@@ -825,15 +825,15 @@ declare namespace RamdaAdjunct {
          * Returns `true` if the supplied list or string has a length less than or equal to
          * `valueLength`.
          */
-        isLenghtLte<T>(valueLength: number, list: string | T[]): boolean;
-        isLenghtLte(valueLength: number): <T>(list: string | T[]) => boolean;
+        lengthLte<T>(valueLength: number, list: string | T[]): boolean;
+        lengthLte(valueLength: number): <T>(list: string | T[]) => boolean;
 
         /**
          * Returns `true` if the supplied list or string has a length greater than or equal to
          * `valueLength`.
          */
-        isLenghtGte<T>(valueLength: number, list: string | T[]): boolean;
-        isLenghtGte(valueLength: number): <T>(list: string | T[]) => boolean;
+        lengthGte<T>(valueLength: number, list: string | T[]): boolean;
+        lengthGte(valueLength: number): <T>(list: string | T[]) => boolean;
 
         /**
          * Checks if input value is a `thenable`.
