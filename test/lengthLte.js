@@ -27,6 +27,7 @@ describe('lengthLte', function() {
   });
 
   it(`should be curried`, function() {
+    eq(RA.lengthLte(1, [1]), true);
     eq(RA.lengthLte(1)([1]), true);
   });
 });

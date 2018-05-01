@@ -25,6 +25,7 @@ describe('lengthGt', function() {
   });
 
   it(`should be curried`, function() {
+    eq(RA.lengthGt(1, [1, 2]), true);
     eq(RA.lengthGt(1)([1, 2]), true);
   });
 });
