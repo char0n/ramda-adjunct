@@ -14,7 +14,7 @@ import { flip, contains } from 'ramda';
  * @sig [a] -> a -> Boolean
  * @param {Array|String} list The list to consider
  * @param {*} a The item to compare against
- * @return {Boolean} Returns Boolean `true` if an equivalent item is in the list or `false` otherwise
+ * @return {boolean} Returns Boolean `true` if an equivalent item is in the list or `false` otherwise
  * @see {@link http://ramdajs.com/docs/#contains|R.contains}
  * @example
  *
