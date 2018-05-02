@@ -9,12 +9,12 @@ import { flip, contains } from 'ramda';
  *
  * @func contained
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|v2.7.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @category List
- * @sig [a] → a → Boolean
+ * @sig [a] -> a -> Boolean
  * @param {Array|String} list The list to consider
  * @param {*} a The item to compare against
- * @return {Boolean} Returns Boolean `true` if an equivalent item is in the list or `false` otherwise.
+ * @return {Boolean} Returns Boolean `true` if an equivalent item is in the list or `false` otherwise
  * @see {@link http://ramdajs.com/docs/#contains|R.contains}
  * @example
  *
