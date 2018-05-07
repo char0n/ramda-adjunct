@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isObj.js - Documentation</title>
+    <title>contained.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isObj.js</h1>
+    <h1 class="page-title">contained.js</h1>
     
 
     
@@ -52,37 +52,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both, either } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { flip, contains } from 'ramda';
 
-import isNotNull from './isNotNull';
-import isFunction from './isFunction';
-import isOfTypeObject from './internal/isOfTypeObject';
-
-/* eslint-disable max-len */
 /**
- * Checks if input value is language type of `Object`.
+ * Returns true if the specified value is equal, in R.equals terms,
+ * to at least one element of the given list or false otherwise.
+ * Given list can be a string.
  *
- * @func isObj
- * @aliases isObject
+ * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
+ *
+ * @func contained
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {Boolean}
- * @see {@link RA.isNotObj|isNotObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isPlainObj|isPlainObj}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
+ * @category List
+ * @sig [a] -> a -> Boolean
+ * @param {Array|String} list The list to consider
+ * @param {*} a The item to compare against
+ * @return {boolean} Returns Boolean `true` if an equivalent item is in the list or `false` otherwise
+ * @see {@link http://ramdajs.com/docs/#contains|R.contains}
  * @example
  *
- * RA.isObj({}); //=> true
- * RA.isObj([]); //=> true
- * RA.isObj(() => {}); //=> true
- * RA.isObj(null); //=> false
- * RA.isObj(undefined); //=> false
+ * RA.contained([1, 2, 3], 3); //=> true
+ * RA.contained([1, 2, 3], 4); //=> false
+ * RA.contained([{ name: 'Fred' }], { name: 'Fred' }); //=> true
+ * RA.contained([[42]], [42]); //=> true
  */
-/* eslint-enable max-len */
-const isObj = both(isNotNull, either(isOfTypeObject, isFunction));
+const contained = flip(contains);
 
-export default isObj;
+export default contained;
 </code></pre>
         </article>
     </section>
