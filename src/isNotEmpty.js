@@ -9,7 +9,7 @@ import { complement, isEmpty } from 'ramda';
  * @category Logic
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link http://ramdajs.com/docs/#isEmpty|R.isEmpty}
  * @example
  *

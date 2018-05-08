@@ -12,7 +12,7 @@ import { propEq, complement } from 'ramda';
  * @param {String} name The property to pick
  * @param {a} val The value to compare to
  * @param {Object} object The object, that presumably contains value under the property
- * @return {Boolean} Comparison result
+ * @return {boolean} Comparison result
  * @see {@link http://ramdajs.com/docs/#propEq|R.propEq}
  * @example
  *

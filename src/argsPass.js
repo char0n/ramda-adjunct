@@ -23,7 +23,7 @@ import isTruthy from './isTruthy';
  * @param {Function} combiningPredicate The predicate used to combine the values returned from the
  * list of functions
  * @param {Array} functions List of functions
- * @return {Boolean} Returns the combined result of mapping arguments to functions
+ * @return {boolean} Returns the combined result of mapping arguments to functions
  * @example
  *
  * RA.argsPass(R.all, [RA.isArray, RA.isBoolean, RA.isString])([], false, 'abc') //=> true

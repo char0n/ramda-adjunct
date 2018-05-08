@@ -11,7 +11,7 @@ import isString from './isString';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isString|isString}
  * @example
  *

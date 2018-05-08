@@ -11,7 +11,7 @@ import isArray from './isArray';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link http://ramdajs.com/docs/#pair|R.pair}, {@link RA.isNotPair|isNotPair}
  * @example
  *
