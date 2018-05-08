@@ -12,7 +12,7 @@ import isArray from './isArray';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isEmptyArray|isEmptyArray}
  * @example
  *

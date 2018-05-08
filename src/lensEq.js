@@ -13,7 +13,7 @@ import { view, curryN, equals, pipe } from 'ramda';
  * @param {function} lens Van Laarhoven lens
  * @param {*} value The value to compare the focused data structure with
  * @param {*} data The data structure
- * @return {Boolean} `true` if the focused data structure equals value, `false` otherwise
+ * @return {boolean} `true` if the focused data structure equals value, `false` otherwise
  *
  * @example
  *

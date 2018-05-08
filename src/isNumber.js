@@ -9,7 +9,7 @@ import _isNumber from 'ramda/src/internal/_isNumber';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isNotNumber|isNotNumber}
  * @example
  *
