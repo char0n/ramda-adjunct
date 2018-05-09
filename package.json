@@ -98,6 +98,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "=6.1.0",
+    "@commitlint/cli": "=6.2.0",
     "babel-cli": "=6.26.0",
     "babel-core": "=6.26.0",
     "babel-loader": "7.1.4",
