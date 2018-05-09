@@ -11,7 +11,7 @@ import isPair from './isPair';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link http://ramdajs.com/docs/#pair|R.pair}, {@link RA.isPair|isPair}
  * @example
  *

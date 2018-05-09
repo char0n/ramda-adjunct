@@ -17,7 +17,7 @@ import isTrue from './isTrue';
  * @param {Function} predicate The predicate function
  * @param {Function} lens Van Laarhoven lens
  * @param {*} data The data structure
- * @return {Boolean} `true` if the focused data structure satisfies the predicate, `false` otherwise
+ * @return {boolean} `true` if the focused data structure satisfies the predicate, `false` otherwise
  *
  * @example
  *

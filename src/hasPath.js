@@ -13,7 +13,7 @@ import isObj from './isObj';
  * @sig [Idx] -> {a} -> Boolean
  * @param {Array.<string|number>} path The path of the nested property
  * @param {Object} obj The object to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link http://ramdajs.com/docs/#has|R.has}
  * @example
  *

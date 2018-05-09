@@ -16,7 +16,7 @@ import lensSatisfies from './lensSatisfies';
  * @param {Function} predicate The predicate function
  * @param {Function} lens Van Laarhoven lens
  * @param {*} data The data structure
- * @return {Boolean} `false` if the focused data structure satisfies the predicate, `true` otherwise
+ * @return {boolean} `false` if the focused data structure satisfies the predicate, `true` otherwise
  *
  * @example
  *

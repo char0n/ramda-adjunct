@@ -11,7 +11,7 @@ import isRegExp from './isRegExp';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isRegExp|isRegExp}
  * @example
  *
