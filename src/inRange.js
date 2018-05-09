@@ -21,7 +21,7 @@ const inRangeImp = ifElse(
  * @param {Number} low Start of the range
  * @param {Number} The end of the range
  * @param {Number} value The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @throws {Error} When `low` is greater than or equal to `high`
  * @example
  *

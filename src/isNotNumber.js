@@ -11,7 +11,7 @@ import isNumber from './isNumber';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isNumber|isNumber}
  * @example
  *

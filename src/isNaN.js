@@ -11,7 +11,7 @@ import polyfill from './internal/polyfills/Number.isNaN';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isNotNaN|isNotNaN}
  * @example
  *

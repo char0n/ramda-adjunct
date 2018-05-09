@@ -14,7 +14,7 @@ import isOfTypeObject from './internal/isOfTypeObject';
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {Boolean}
+ * @return {boolean}
  * @see {@link RA.isNotObjLike|isNotObjLike}, {@link RA.isObj|isObj}, {@link RA.isPlainObj|isPlainObj}
  * @example
  *
