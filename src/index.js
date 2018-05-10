@@ -110,6 +110,7 @@ export { default as omitIndexes } from './omitIndexes';
 export { default as compact } from './compact';
 export { default as appendFlipped } from './appendFlipped';
 export { default as contained } from './contained';
+export { default as move } from './move';
 export { default as lengthGt } from './lengthGt';
 export { default as lengthLt } from './lengthLt';
 export { default as lengthGte } from './lengthGte';

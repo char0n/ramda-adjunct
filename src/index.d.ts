@@ -720,9 +720,8 @@ declare namespace RamdaAdjunct {
         inRange(low: number): {
             (high: number, value: number): boolean;
             (high: number): (value: number) => boolean;
-        },
-
-
+        };
+        
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
@@ -983,6 +982,19 @@ declare namespace RamdaAdjunct {
          * dispatching functions returns a non-nil value.
          */
         dispatch(functions: Function[]): Function;
+
+        /**
+         * Returns a new list with the item at the position `fromIdx` moved to the position `toIdx`.
+         * If the `toIdx` is out of the `list` range, the item will be placed at the last position
+         * of the `list`. When negative indices are provided, the behavior of the move is
+         * unspecified.
+         */
+        move<T>(fromIdx: number, toIdx: number, list: T[]): T[]
+        move<T>(fromIdx: number): (toIdx: number, list: T[]) => T[]
+        move<T>(fromIdx: number): {
+            (toIdx: number, list: T[]): T[];
+            (toIdx: number): (list: T[]) => T[];
+        };
 
         /**
          * Identity type.
