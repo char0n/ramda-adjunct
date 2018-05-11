@@ -765,6 +765,14 @@ declare namespace RamdaAdjunct {
         sliceTo<T>(toIndex: number, list: string|T[]): string|T[];
         sliceTo(toIndex: number): <T>(list: string|T[]) => string|T[];
 
+        /**
+         * Returns a new copy of the list or string
+         * with slice from fromIndex (inclusive) to toIndex (exclusive)
+         * replaced by the provided value.
+         *
+         * If toIndex is lower then fromIndex,
+         * then the behavior of the updateSlice is unspecified.
+         */
         updateSlice(fromIndex: number, toIndex: number, replacement: string, list: string): string;
         updateSlice(fromIndex: number, toIndex: number, replacement: string): (list: string) => string;
         updateSlice(fromIndex: number, toIndex: number): {
