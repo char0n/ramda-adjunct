@@ -13,4 +13,14 @@ describe('updateSlice', function() {
   it('should support negative indexes', function() {
     eq(RA.updateSlice(-5, -3, 'DDDD', 'ABBCCC'), 'ADDDDCCC');
   });
+
+  it('is curried', function() {
+    eq(RA.updateSlice(1, 3, 'DDDD')('ABBCCC'), 'ADDDDCCC');
+    eq(RA.updateSlice(1, 3)('DDDD', 'ABBCCC'), 'ADDDDCCC');
+    eq(RA.updateSlice(1, 3)('DDDD')('ABBCCC'), 'ADDDDCCC');
+    eq(RA.updateSlice(1)(3, 'DDDD', 'ABBCCC'), 'ADDDDCCC');
+    eq(RA.updateSlice(1)(3, 'DDDD')('ABBCCC'), 'ADDDDCCC');
+    eq(RA.updateSlice(1)(3)('DDDD', 'ABBCCC'), 'ADDDDCCC');
+    eq(RA.updateSlice(1)(3)('DDDD')('ABBCCC'), 'ADDDDCCC');
+  });
 });
