@@ -19,13 +19,13 @@
     },
     {
       "name": "Guillaume ARM",
-      "email": " trapcodien@gmail.com",
+      "email": "trapcodien@gmail.com",
       "url": "https://github.com/guillaumearm"
     }
   ],
   "name": "ramda-adjunct",
   "description": "Community-maintained extension of Ramda",
-  "keywords": "ramda extensions addons cookbook adjunct recipe extras",
+  "keywords": ["ramda","extensions","addons","cookbook","adjunct","recipe","extras"],
   "sideEffects": false,
   "version": "2.8.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
