@@ -721,7 +721,7 @@ declare namespace RamdaAdjunct {
             (high: number, value: number): boolean;
             (high: number): (value: number) => boolean;
         };
-        
+
         /**
          * Returns whether or not an object has an own property with the specified name at a given path.
          */
@@ -776,6 +776,15 @@ declare namespace RamdaAdjunct {
          * Returns a Promise object that is rejected with the given reason.
          */
         rejectP<T>(value?: T): Promise<T>;
+
+        /**
+         * Composable shortcut for `Promise.then`.
+         * The thenP returns a Promise. It takes two arguments: callback function for the success of the Promise
+         * and the Promise instance itself.
+         */
+        thenP<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
+        thenP<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
+
 
         /**
          * Runs the given list of functions in order with the supplied object, then returns the object.
