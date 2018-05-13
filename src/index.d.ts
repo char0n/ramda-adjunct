@@ -793,7 +793,6 @@ declare namespace RamdaAdjunct {
          */
         sliceFrom<T>(fromIndex: number, list: string | T[]): string | T[];
         sliceFrom(fromIndex: number): <T>(list: string | T[]) => string | T[];
-        sliceFrom<T>(fromIndex: number, list: string | T[]): string | T[];
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
@@ -808,6 +807,32 @@ declare namespace RamdaAdjunct {
          */
         omitIndexes<T>(indexes: number[], list: T[]): T[];
         omitIndexes(indexes: number[]): <T>(list: T[]) => T[];
+
+        /**
+         * Returns `true` if the supplied list or string has a length greater than `valueLength`.
+         */
+        lengthGt<T>(valueLength: number, list: string | T[]): boolean;
+        lengthGt(valueLength: number): <T>(list: string | T[]) => boolean;
+
+        /**
+         * Returns `true` if the supplied list or string has a length less than `valueLength`.
+         */
+        lengthLt<T>(valueLength: number, list: string | T[]): boolean;
+        lengthLt(valueLength: number): <T>(list: string | T[]) => boolean;
+
+        /**
+         * Returns `true` if the supplied list or string has a length less than or equal to
+         * `valueLength`.
+         */
+        lengthLte<T>(valueLength: number, list: string | T[]): boolean;
+        lengthLte(valueLength: number): <T>(list: string | T[]) => boolean;
+
+        /**
+         * Returns `true` if the supplied list or string has a length greater than or equal to
+         * `valueLength`.
+         */
+        lengthGte<T>(valueLength: number, list: string | T[]): boolean;
+        lengthGte(valueLength: number): <T>(list: string | T[]) => boolean;
 
         /**
          * Checks if input value is a `thenable`.

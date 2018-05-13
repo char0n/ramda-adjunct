@@ -111,6 +111,10 @@ export { default as compact } from './compact';
 export { default as appendFlipped } from './appendFlipped';
 export { default as contained } from './contained';
 export { default as move } from './move';
+export { default as lengthGt } from './lengthGt';
+export { default as lengthLt } from './lengthLt';
+export { default as lengthGte } from './lengthGte';
+export { default as lengthLte } from './lengthLte';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
