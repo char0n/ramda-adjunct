@@ -1,4 +1,4 @@
-import { lt, flip } from 'ramda';
+import { flip, lt } from 'ramda';
 
 import compareLength from './internal/compareLength';
 
@@ -11,9 +11,9 @@ import compareLength from './internal/compareLength';
  * @category List
  * @sig Number -> [*] -> Boolean
  * @param {number} valueLength The length of the list or string
- * @param {number} value The list or string
+ * @param {Array|string} value The list or string
  * @return {boolean}
- * @see {@link http://ramdajs.com/docs/#lt|lt}, {@link http://ramdajs.com/docs/#length|length}
+ * @see {@link RA.lengthEq|lengthEq}, {@link RA.lengthNotEq|lengthNotEq}, {@link RA.lengthGt|lengthGt}, {@link RA.lengthLte|lengthLte}, {@link RA.lengthGte|lengthGte}, {@link http://ramdajs.com/docs/#lt|lt}, {@link http://ramdajs.com/docs/#length|length}
  * @example
  *
  * RA.lengthLt(3, [1,2]); //=> true
