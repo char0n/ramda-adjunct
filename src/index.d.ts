@@ -834,6 +834,18 @@ declare namespace RamdaAdjunct {
         lengthGte<T>(valueLength: number, list: string | T[]): boolean;
         lengthGte(valueLength: number): <T>(list: string | T[]) => boolean;
 
+         /**
+         * Returns `true` if the supplied list or string has a length equal to `valueLength`.
+         */
+        lengthEq<T>(valueLength: number, list: string | T[]): boolean;
+        lengthEq(valueLength: number): <T>(list: string | T[]) => boolean;
+
+         /**
+         * Returns `true` if the supplied list or string has a length not equal to `valueLength`.
+         */
+        lengthNotEq<T>(valueLength: number, list: string | T[]): boolean;
+        lengthNotEq(valueLength: number): <T>(list: string | T[]) => boolean;
+
         /**
          * Checks if input value is a `thenable`.
          * `thenable` is an object or function that defines a `then` method.

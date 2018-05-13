@@ -115,6 +115,8 @@ export { default as lengthGt } from './lengthGt';
 export { default as lengthLt } from './lengthLt';
 export { default as lengthGte } from './lengthGte';
 export { default as lengthLte } from './lengthLte';
+export { default as lengthEq } from './lengthEq';
+export { default as lengthNotEq } from './lengthNotEq';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
