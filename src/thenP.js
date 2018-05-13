@@ -2,7 +2,7 @@ import { invoker } from 'ramda';
 
 /**
  * Composable shortcut for `Promise.then`.
- * The thenP returns a Promise. It takes two arguments: callback function for the success of the Promise
+ * The thenP function returns a Promise. It takes two arguments: a callback function for the success of the Promise
  * and the promise instance itself.
  *
  * @func thenP

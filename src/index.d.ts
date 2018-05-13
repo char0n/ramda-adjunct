@@ -779,8 +779,8 @@ declare namespace RamdaAdjunct {
 
         /**
          * Composable shortcut for `Promise.then`.
-         * The thenP returns a Promise. It takes two arguments: callback function for the success of the Promise
-         * and the Promise instance itself.
+         * The thenP function returns a Promise. It takes two arguments: a callback function for the success of the Promise
+         * and the promise instance itself.
          */
         thenP<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
         thenP<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
