@@ -1,3 +1,17 @@
+<a name="2.8.0"></a>
+# [2.8.0](https://github.com/char0n/ramda-adjunct/compare/v2.7.0...v2.8.0) (2018-05-13)
+
+
+### Features
+
+* add contained ([#510](https://github.com/char0n/ramda-adjunct/issues/510)) ([381f2df](https://github.com/char0n/ramda-adjunct/commit/381f2df)), closes [#392](https://github.com/char0n/ramda-adjunct/issues/392)
+* add lengthEq and lengthNotEq ([#552](https://github.com/char0n/ramda-adjunct/issues/552)) ([f71ad1e](https://github.com/char0n/ramda-adjunct/commit/f71ad1e)), closes [#444](https://github.com/char0n/ramda-adjunct/issues/444)
+* add lengthLt, lengthGt, lengthLte, lengthGte ([47d4560](https://github.com/char0n/ramda-adjunct/commit/47d4560))
+* add move ([#507](https://github.com/char0n/ramda-adjunct/issues/507)) ([22ecfc0](https://github.com/char0n/ramda-adjunct/commit/22ecfc0)), closes [#485](https://github.com/char0n/ramda-adjunct/issues/485)
+* add thenP ([#551](https://github.com/char0n/ramda-adjunct/issues/551)) ([92ba7b5](https://github.com/char0n/ramda-adjunct/commit/92ba7b5)), closes [#35](https://github.com/char0n/ramda-adjunct/issues/35)
+
+
+
 <a name="2.7.0"></a>
 # [2.7.0](https://github.com/char0n/ramda-adjunct/compare/v2.6.0...v2.7.0) (2018-04-25)
 
