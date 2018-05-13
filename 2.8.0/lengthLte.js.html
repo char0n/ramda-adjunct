@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>contained.js - Documentation</title>
+    <title>lengthLte.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">contained.js</h1>
+    <h1 class="page-title">lengthLte.js</h1>
     
 
     
@@ -52,34 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { flip, contains } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { lte, flip } from 'ramda';
+
+import compareLength from './internal/compareLength';
 
 /**
- * Returns true if the specified value is equal, in R.equals terms,
- * to at least one element of the given list or false otherwise.
- * Given list can be a string.
+ * Returns `true` if the supplied list or string has a length less than or equal to `valueLength`.
  *
- * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
- *
- * @func contained
+ * @func lengthLte
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @category List
- * @sig [a] -> a -> Boolean
- * @param {Array|String} list The list to consider
- * @param {*} a The item to compare against
- * @return {boolean} Returns Boolean `true` if an equivalent item is in the list or `false` otherwise
- * @see {@link http://ramdajs.com/docs/#contains|R.contains}
+ * @sig Number -> [*] -> Boolean
+ * @param {number} valueLength The length of the list or string
+ * @param {number} value The list or string
+ * @return {boolean}
+ * @see {@link http://ramdajs.com/docs/#lte|lte}, {@link http://ramdajs.com/docs/#length|length}
  * @example
  *
- * RA.contained([1, 2, 3], 3); //=> true
- * RA.contained([1, 2, 3], 4); //=> false
- * RA.contained([{ name: 'Fred' }], { name: 'Fred' }); //=> true
- * RA.contained([[42]], [42]); //=> true
+ * RA.lengthLte(3, [1,2]); //=> true
+ * RA.lengthLte(3, [1,2,3]); //=> true
+ * RA.lengthLte(3, [1,2,3,4]); //=> false
  */
-const contained = flip(contains);
+const lengthLte = compareLength(flip(lte));
 
-export default contained;
+export default lengthLte;
 </code></pre>
         </article>
     </section>
