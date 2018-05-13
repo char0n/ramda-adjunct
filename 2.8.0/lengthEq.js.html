@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>sliceTo.js - Documentation</title>
+    <title>lengthEq.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">sliceTo.js</h1>
+    <h1 class="page-title">lengthEq.js</h1>
     
 
     
@@ -52,29 +52,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { slice } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
+
+import compareLength from './internal/compareLength';
 
 /**
- * Returns the elements of the given list or string (or object with a slice method)
- * to toIndex (exclusive).
- * Dispatches to the slice method of the second argument, if present.
+ * Returns `true` if the supplied list or string has a length equal to `valueLength`.
  *
- * @func sliceTo
+ * @func lengthEq
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.16.0|v1.16.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @category List
- * @sig  Number -> [a] -> [a]
- * @param {number} toIndex The end index (exclusive)
- * @param {Array|string} list The list or string to slice
- * @return {Array|string} The sliced list or string
- * @see {@link http://ramdajs.com/docs/#slice|R.slice}, {@link RA.sliceFrom|sliceFrom}
+ * @sig Number -> [*] -> Boolean
+ * @param {number} valueLength The length of the list or string
+ * @param {Array|string} value The list or string
+ * @return {boolean}
+ * @see {@link RA.lengthNotEq|lengthNotEq}, {@link RA.lengthLt|lengthLt}, {@link RA.lengthGt|lengthGt}, {@link RA.lengthLte|lengthLte}, {@link RA.lengthGte|lengthGte},, {@link http://ramdajs.com/docs/#equals|equals}, {@link http://ramdajs.com/docs/#length|length}
  * @example
  *
- * RA.sliceTo(2, [1, 2, 3]); //=> [1, 2]
+ * RA.lengthEq(3, [1,2,3]); //=> true
+ * RA.lengthEq(3, [1,2,3,4]); //=> false
  */
-const sliceTo = slice(0);
+const lengthEq = compareLength(equals);
 
-export default sliceTo;
+export default lengthEq;
 </code></pre>
         </article>
     </section>
