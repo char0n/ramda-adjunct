@@ -90,6 +90,7 @@ export { default as curryRight } from './curryRight';
 export { default as allP } from './allP';
 export { default as resolveP } from './resolveP';
 export { default as rejectP } from './rejectP';
+export { default as thenP } from './thenP';
 export { default as Y } from './Y';
 export { default as seq } from './seq';
 export { default as sequencing } from './seq';

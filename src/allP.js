@@ -1,6 +1,5 @@
 import { bind } from 'ramda';
 
-/* eslint-disable max-len */
 /**
  * Composable shortcut for `Promise.all`.
  *
@@ -24,7 +23,6 @@ import { bind } from 'ramda';
  * RA.allP([Promise.resolve(1), Promise.resolve(2)]); //=> Promise([1, 2])
  * RA.allP([1, Promise.reject(2)]); //=> Promise(2)
  */
-/* eslint-enable */
 const allP = bind(Promise.all, Promise);
 
 export default allP;
