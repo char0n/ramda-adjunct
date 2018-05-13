@@ -106,6 +106,7 @@ export { default as reduceP } from './reduceP';
 export { default as reduceRightP } from './reduceRightP';
 export { default as sliceFrom } from './sliceFrom';
 export { default as sliceTo } from './sliceTo';
+export { default as updateSlice } from './updateSlice';
 export { default as omitIndexes } from './omitIndexes';
 export { default as compact } from './compact';
 export { default as appendFlipped } from './appendFlipped';
