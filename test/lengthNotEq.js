@@ -3,9 +3,9 @@ import eq from './shared/eq';
 
 describe('lengthNotEq', function() {
   context(
-    `when the length of a list is not equal to the supplied length`,
+    'when the length of a list is not equal to the supplied length',
     function() {
-      specify(`should return true`, function() {
+      specify('should return true', function() {
         eq(RA.lengthNotEq(3, [1, 2, 3, 4]), true);
         eq(RA.lengthNotEq(3, [1, 2]), true);
         eq(RA.lengthNotEq(3, [1, 2, 3]), false);
@@ -15,9 +15,9 @@ describe('lengthNotEq', function() {
   );
 
   context(
-    `when the length of a string is not equal to the supplied length`,
+    'when the length of a string is not equal to the supplied length',
     function() {
-      specify(`should return true`, function() {
+      specify('should return true', function() {
         eq(RA.lengthNotEq(3, 'abcd'), true);
         eq(RA.lengthNotEq(3, 'ab'), true);
         eq(RA.lengthNotEq(3, 'abc'), false);
@@ -26,8 +26,8 @@ describe('lengthNotEq', function() {
     }
   );
 
-  context(`when a value doesn't have a length property`, function() {
-    specify(`should return true`, function() {
+  context("when a value doesn't have a length property", function() {
+    specify('should return true', function() {
       eq(RA.lengthNotEq(1, NaN), true);
       eq(RA.lengthNotEq(1, undefined), true);
       eq(RA.lengthNotEq(1, null), true);
@@ -38,7 +38,7 @@ describe('lengthNotEq', function() {
     });
   });
 
-  it(`should be curried`, function() {
+  it('should be curried', function() {
     eq(RA.lengthNotEq(1, [1, 2]), true);
     eq(RA.lengthNotEq(1)([1, 2]), true);
   });
