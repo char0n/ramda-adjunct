@@ -55,7 +55,7 @@ describe('move', function() {
     });
   });
 
-  it(`should treat nested lists like any other items`, function() {
+  it('should treat nested lists like any other items', function() {
     const listOfLists = [['a', 'b'], ['c', 'd'], ['e', 'f']];
     const expected = [['e', 'f'], ['a', 'b'], ['c', 'd']];
     eq(RA.move(2)(0, listOfLists), expected);

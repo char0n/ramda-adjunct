@@ -3,9 +3,9 @@ import eq from './shared/eq';
 
 describe('lengthEq', function() {
   context(
-    `when the length of a list is equal to the supplied length`,
+    'when the length of a list is equal to the supplied length',
     function() {
-      specify(`should return true`, function() {
+      specify('should return true', function() {
         eq(RA.lengthEq(3, [1, 2, 3]), true);
         eq(RA.lengthEq(3, [1, 2, 3, 4]), false);
         eq(RA.lengthEq(3, [1, 2]), false);
@@ -15,9 +15,9 @@ describe('lengthEq', function() {
   );
 
   context(
-    `when the length of a string is equal to the supplied length`,
+    'when the length of a string is equal to the supplied length',
     function() {
-      specify(`should return true`, function() {
+      specify('should return true', function() {
         eq(RA.lengthEq(3, 'abc'), true);
         eq(RA.lengthEq(3, 'abcd'), false);
         eq(RA.lengthEq(3, 'ab'), false);
@@ -26,8 +26,8 @@ describe('lengthEq', function() {
     }
   );
 
-  context(`when a value doesn't have a length property`, function() {
-    specify(`should return true`, function() {
+  context("when a value doesn't have a length property", function() {
+    specify('should return true', function() {
       eq(RA.lengthEq(1, NaN), false);
       eq(RA.lengthEq(1, undefined), false);
       eq(RA.lengthEq(1, null), false);
@@ -38,7 +38,7 @@ describe('lengthEq', function() {
     });
   });
 
-  it(`should be curried`, function() {
+  it('should be curried', function() {
     eq(RA.lengthEq(2, [1, 2]), true);
     eq(RA.lengthEq(2)([1, 2]), true);
   });
