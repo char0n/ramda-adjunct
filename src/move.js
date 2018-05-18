@@ -1,4 +1,4 @@
-import { curry, compose, insert, nth, remove } from 'ramda';
+import { compose, curry, insert, nth, remove } from 'ramda';
 
 /**
  * Returns a new list with the item at the position `fromIdx` moved to the position `toIdx`. If the
@@ -10,8 +10,9 @@ import { curry, compose, insert, nth, remove } from 'ramda';
  * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @category List
  * @sig Number -> Number -> [a] -> [a]
- * @param {Number} fromIdx Position of item to be moved
- * @param {Number} toIdx Position of item after move
+ * @param {Number} fromIdx The position of item to be moved
+ * @param {Number} toIdx The position of item after move
+ * @param {Array} list The list containing the item to be moved
  * @return {Array}
  * @example
  *

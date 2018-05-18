@@ -1,4 +1,4 @@
-import { concat, identical, identity, pipe, when, reduce } from 'ramda';
+import { concat, identical, identity, pipe, reduce, when } from 'ramda';
 
 import stubUndefined from './stubUndefined';
 
@@ -19,10 +19,7 @@ const leftIdentitySemigroup = { concat: identity };
  * @sig Semigroup s => Foldable s f => f -> s | Undefined
  * @param {Array.<Array|string>} list List containing elements that will be concatenated
  * @return {Array|string|undefined} Concatenated elements
- * @see {@link http://ramdajs.com/docs/#concat|R.concat}
- * @see {@link RA.concatRight|concatRight}
- * @see {@link http://ramdajs.com/docs/#unnest|R.unnest}
- * @see {@link http://ramdajs.com/docs/#join|R.join}
+ * @see {@link http://ramdajs.com/docs/#concat|R.concat}, {@link RA.concatRight|concatRight}, {@link http://ramdajs.com/docs/#unnest|R.unnest}, {@link http://ramdajs.com/docs/#join|R.join}
  * @example
  *
  * concatAll([[1], [2], [3]]); //=> [1, 2, 3]
