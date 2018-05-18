@@ -29,12 +29,14 @@
     "ramda",
     "utils",
     "utilities",
+    "toolkit",
     "extensions",
     "addons",
     "adjunct",
     "recipes",
     "extras",
-    "cookbook"
+    "cookbook",
+    "functional"
   ],
   "sideEffects": false,
   "version": "2.9.0",
