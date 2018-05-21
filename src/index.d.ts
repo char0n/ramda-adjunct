@@ -989,8 +989,8 @@ declare namespace RamdaAdjunct {
          *
          * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
          */
-         contained<T>(list: T[], val: T): T[];
-         contained<T>(list: T[]): (val: T) => T[]
+         contained<T>(list: T[], val: T): boolean;
+         contained<T>(list: T[]): (val: T) => boolean;
 
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,
