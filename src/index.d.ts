@@ -856,6 +856,11 @@ declare namespace RamdaAdjunct {
         lengthNotEq(valueLength: number): <T>(list: string | T[]) => boolean;
 
         /**
+         * Checks that all elements in a list are equal.
+         */
+        allEqual<T>(list: T[]): boolean;
+
+        /**
          * Checks if input value is a `thenable`.
          * `thenable` is an object or function that defines a `then` method.
          */
