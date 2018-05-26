@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>resolveP.js - Documentation</title>
+    <title>allEqual.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">resolveP.js</h1>
+    <h1 class="page-title">allEqual.js</h1>
     
 
     
@@ -52,34 +52,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { bind } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { pipe, uniq } from 'ramda';
 
-/* eslint-disable max-len */
+import lengthLte from './lengthLte';
+
+// Original idea for this function was conceived by https://github.com/jackmellis
+// in https://github.com/char0n/ramda-adjunct/pull/513.
+
 /**
- * Composable shortcut for `Promise.resolve`.
+ * Returns true if all items in the list are equivalent using `R.equals` for equality comparisons.
  *
- * Returns a Promise object that is resolved with the given value.
- * If the value is a thenable (i.e. has a "then" method), the returned promise will
- * "follow" that thenable, adopting its eventual state.
- *
- * @func resolveP
+ * @func allEqual
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.16.0|v1.16.0}
- * @category Function
- * @sig a -> Promise a
- * @param {*} [value=undefined] Argument to be resolved by this Promise. Can also be a Promise or a thenable to resolve
- * @return {Promise} A Promise that is resolved with the given value, or the promise passed as value, if the value was a promise object
- * @see {@link RA.rejectP|rejectP}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.9.0|v2.9.0}
+ * @category List
+ * @sig [a] -> Boolean
+ * @param {Array} list The list of values
+ * @return {boolean}
+ * @see {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
- * RA.resolveP(); //=> Promise(undefined)
- * RA.resolveP('a'); //=> Promise('a')
- * RA.resolveP([1, 2, 3]); //=> Promise([1, 2, 3])
+ * RA.allEqual([ 1, 2, 3, 4 ]); //=> false
+ * RA.allEqual([ 1, 1, 1, 1 ]); //=> true
+ * RA.allEqual([]); //=> true
+ *
  */
-/* eslint-enable max-len */
-const resolveP = bind(Promise.resolve, Promise);
+const allEqual = pipe(uniq, lengthLte(1));
 
-export default resolveP;
+export default allEqual;
 </code></pre>
         </article>
     </section>
