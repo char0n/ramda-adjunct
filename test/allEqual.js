@@ -3,6 +3,7 @@ import R from 'ramda';
 
 import * as RA from '../src/index';
 
+// https://github.com/ramda/ramda/pull/1992
 const hasFunctionReferenceEqualityBug = (() => {
   const f = () => {};
   return R.uniq([f, f, f]).length !== 1;
