@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import chai from 'chai';
+import { assert } from 'chai';
 import { Maybe } from 'monet';
 
 import * as RA from '../src/index';
@@ -23,7 +23,7 @@ describe('liftFN', function() {
   });
 
   it('throws error on variadic function is more arguments than arity', function() {
-    chai.assert.throws(
+    assert.throws(
       addN3.bind(
         null,
         Maybe.Some(1),

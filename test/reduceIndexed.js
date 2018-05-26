@@ -1,4 +1,4 @@
-import chai from 'chai';
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src/index';
@@ -94,7 +94,7 @@ describe('reduceIndexed', function() {
     specify('should be the same reference that original list', function() {
       RA.reduceIndexed(
         (acc, val, idx, list) => {
-          chai.assert.strictEqual(list, initialList);
+          assert.strictEqual(list, initialList);
           return acc;
         },
         '',

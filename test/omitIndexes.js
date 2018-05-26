@@ -1,4 +1,4 @@
-import chai from 'chai';
+import { assert } from 'chai';
 
 import * as RA from '../src/index';
 import eq from './shared/eq';
@@ -27,16 +27,13 @@ describe('omitIndexes', function() {
 
   context('when indexes is a non-array', function() {
     specify('should produce TypeError', function() {
-      chai.assert.throws(RA.omitIndexes.bind(null, undefined, list), TypeError);
+      assert.throws(RA.omitIndexes.bind(null, undefined, list), TypeError);
     });
   });
 
   context('when list is a non-array', function() {
     specify('should product TypeError', function() {
-      chai.assert.throws(
-        RA.omitIndexes.bind(null, [0, 2], undefined),
-        TypeError
-      );
+      assert.throws(RA.omitIndexes.bind(null, [0, 2], undefined), TypeError);
     });
   });
 

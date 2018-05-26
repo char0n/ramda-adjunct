@@ -1,4 +1,4 @@
-import chai from 'chai';
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src/index';
@@ -56,10 +56,10 @@ describe('mapIndexed', function() {
     });
 
     it('throws a TypeError on null and undefined', function() {
-      chai.assert.throws(function fn() {
+      assert.throws(function fn() {
         return RA.mapIndexed(times2, null);
       }, TypeError);
-      chai.assert.throws(function fn() {
+      assert.throws(function fn() {
         return RA.mapIndexed(times2, undefined);
       }, TypeError);
     });
@@ -104,7 +104,7 @@ describe('mapIndexed', function() {
     const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
     specify('should be the same reference that original list', function() {
       RA.mapIndexed((val, idx, list) => {
-        chai.assert.strictEqual(list, initialList);
+        assert.strictEqual(list, initialList);
         return val;
       }, initialList);
     });

@@ -1,4 +1,4 @@
-import chai from 'chai';
+import { assert } from 'chai';
 
 import * as RA from '../src/index';
 import eq from './shared/eq';
@@ -67,12 +67,12 @@ describe('inRange', function() {
 
   it('should throw error if `low` value is greater than `high` value', function() {
     const f = RA.inRange(10, 5);
-    chai.assert.throws(() => f(5), Error);
+    assert.throws(() => f(5), Error);
   });
 
   it('should throw error if `low` value is same as `high` value', function() {
     const f = RA.inRange(10, 10);
-    chai.assert.throws(() => f(5), Error);
+    assert.throws(() => f(5), Error);
   });
 
   it('should support `Number.MAX_SAFE_INTEGER`', function() {
