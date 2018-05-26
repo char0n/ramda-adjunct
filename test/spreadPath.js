@@ -20,7 +20,7 @@ describe('spreadPath', function() {
     eq(RA.spreadPath(path)(obj), expected);
   });
 
-  context('when path leads to non object', function() {
+  context('given path leads to non object', function() {
     specify('should return object without path', function() {
       obj = {
         a: 1,
@@ -30,7 +30,7 @@ describe('spreadPath', function() {
     });
   });
 
-  context("when path doesn't exist", function() {
+  context("given path doesn't exist", function() {
     specify(
       'should return object with identical structure as provided object',
       function() {

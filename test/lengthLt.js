@@ -3,7 +3,7 @@ import eq from './shared/eq';
 
 describe('lengthLt', function() {
   context(
-    'when the length of a list is less than the supplied length',
+    'given the length of a list is less than the supplied length',
     function() {
       specify('should return true', function() {
         eq(RA.lengthLt(3, [1, 2]), true);
@@ -14,7 +14,7 @@ describe('lengthLt', function() {
   );
 
   context(
-    'when the length of a string is less than the supplied length',
+    'given the length of a string is less than the supplied length',
     function() {
       specify('should return true', function() {
         eq(RA.lengthLt(3, 'ab'), true);
@@ -24,7 +24,7 @@ describe('lengthLt', function() {
     }
   );
 
-  context("when a value doesn't have a length property", function() {
+  context("given a value doesn't have a length property", function() {
     specify('should return false', function() {
       eq(RA.lengthLt(1, NaN), false);
       eq(RA.lengthLt(1, undefined), false);

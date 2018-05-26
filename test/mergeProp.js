@@ -14,7 +14,7 @@ describe('mergeProp', function() {
     expected = { a: { c1: 1, c2: 22, c3: 33 } };
   });
 
-  it('tests currying', function() {
+  it('should curry', function() {
     eq(RA.mergeProp(prop, source, obj), expected);
     eq(RA.mergeProp(prop)(source, obj), expected);
     eq(RA.mergeProp(prop, source)(obj), expected);
@@ -25,17 +25,23 @@ describe('mergeProp', function() {
     eq(RA.mergeProp(prop, source, obj), expected);
   });
 
-  it('returns unmodified object when source empty', function() {
-    eq(RA.mergeProp(prop, {}, obj), obj);
+  context('given source is empty', function() {
+    specify('should return unmodified object', function() {
+      eq(RA.mergeProp(prop, {}, obj), obj);
+    });
   });
 
-  it('creates object with subject under prop when obj empty', function() {
-    expected = { a: { c2: 22, c3: 33 } };
-    eq(RA.mergeProp(prop, source, {}), expected);
+  context('given obj is empty', function() {
+    specify('should create object with subject under prop', function() {
+      expected = { a: { c2: 22, c3: 33 } };
+      eq(RA.mergeProp(prop, source, {}), expected);
+    });
   });
 
-  it('creates object with subject under prop when target is not object', function() {
-    expected = { a: { c2: 22, c3: 33 } };
-    eq(RA.mergeProp(prop, source, { a: 1 }), expected);
+  context('given target is not an object', function() {
+    specify('should create object with subject under prop', function() {
+      expected = { a: { c2: 22, c3: 33 } };
+      eq(RA.mergeProp(prop, source, { a: 1 }), expected);
+    });
   });
 });

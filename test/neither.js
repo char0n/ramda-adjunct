@@ -38,7 +38,7 @@ describe('neither', function() {
     eq(f(12, 2, 7), true);
   });
 
-  context('when the result of first function is true', function() {
+  context('given the result of first function is true', function() {
     specify('should not evaluate the second expression', function() {
       const z = sinon.spy();
 

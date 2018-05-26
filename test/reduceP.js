@@ -76,20 +76,24 @@ describe('reduceP', function() {
     return Promise.all([testAdd, testMultiply]);
   });
 
-  it('tests returning initial value when iterable is empty', function() {
-    const add = sinon.spy();
+  context('given iterable is empty', function() {
+    specify('should return initial vlaue', function() {
+      const add = sinon.spy();
 
-    return RA.reduceP(add, 0, [])
-      .then(actual => eq(actual, 0))
-      .then(() => eq(add.called, false));
+      return RA.reduceP(add, 0, [])
+        .then(actual => eq(actual, 0))
+        .then(() => eq(add.called, false));
+    });
   });
 
-  it('tests returning initial value when iterable is empty (promise version)', function() {
-    const add = sinon.spy();
+  context('given iterable is empty (promise version)', function() {
+    specify('should return initial value', function() {
+      const add = sinon.spy();
 
-    return RA.reduceP(add, Promise.resolve(0), [])
-      .then(actual => eq(actual, 0))
-      .then(() => eq(add.called, false));
+      return RA.reduceP(add, Promise.resolve(0), [])
+        .then(actual => eq(actual, 0))
+        .then(() => eq(add.called, false));
+    });
   });
 
   it('tests if initial value is undefined', function() {

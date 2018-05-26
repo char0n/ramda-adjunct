@@ -6,7 +6,7 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isPromise', function() {
-  context('when value is not a Promise', function() {
+  context('given value is not a Promise', function() {
     specify('should return false', function() {
       eq(RA.isPromise(args), false);
       eq(RA.isPromise([1, 2, 3]), false);
@@ -21,13 +21,13 @@ describe('isPromise', function() {
     });
   });
 
-  context('when value is thenable object', function() {
+  context('given value is thenable object', function() {
     specify('should return false', function() {
       eq(RA.isPromise({ then: () => {} }), false);
     });
   });
 
-  context("when value contains then method on it's prototype", function() {
+  context("given value contains then method on it's prototype", function() {
     specify('should return false', function() {
       const objWithPrototype = Object.create({ then: () => {} });
 
@@ -35,7 +35,7 @@ describe('isPromise', function() {
     });
   });
 
-  context('when value is an instance of native Promise', function() {
+  context('given value is an instance of native Promise', function() {
     const hasNativePromise =
       typeof Promise !== 'undefined' &&
       contains('[native code]', Promise.toString());
@@ -51,7 +51,7 @@ describe('isPromise', function() {
     });
   });
 
-  context('when value is a thenable function', function() {
+  context('given value is a thenable function', function() {
     specify('should return false', function() {
       const func = () => {};
       func.then = () => {};

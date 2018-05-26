@@ -3,7 +3,7 @@ import eq from './shared/eq';
 
 describe('lengthGte', function() {
   context(
-    'when the length of a list is greater than or equal to the supplied length',
+    'given the length of a list is greater than or equal to the supplied length',
     function() {
       specify('should return true', function() {
         eq(RA.lengthGte(3, [1, 2, 3, 4]), true);
@@ -15,7 +15,7 @@ describe('lengthGte', function() {
   );
 
   context(
-    'when the length of a string is greater than or equal to the supplied length',
+    'given the length of a string is greater than or equal to the supplied length',
     function() {
       specify('should return true', function() {
         eq(RA.lengthGte(3, 'abcd'), true);
@@ -26,7 +26,7 @@ describe('lengthGte', function() {
     }
   );
 
-  context("when a value doesn't have a length property", function() {
+  context("given a value doesn't have a length property", function() {
     specify('should return false', function() {
       eq(RA.lengthGte(1, NaN), false);
       eq(RA.lengthGte(1, undefined), false);
