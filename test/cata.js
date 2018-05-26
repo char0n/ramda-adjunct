@@ -1,6 +1,6 @@
 import { Either } from 'monet';
 import { identity } from 'ramda';
-import chai from 'chai';
+import { assert } from 'chai';
 
 import * as RA from '../src/index';
 import eq from './shared/eq';
@@ -20,12 +20,12 @@ describe('cata', function() {
   });
 
   it('tests left for catamorphism without functions', function() {
-    chai.assert.throws(RA.cata.bind(null, null, identity, eitherL), TypeError);
+    assert.throws(RA.cata.bind(null, null, identity, eitherL), TypeError);
     eq(RA.cata(identity, null, eitherL), 2);
   });
 
   it('tests right for catamorphism without functions', function() {
-    chai.assert.throws(RA.cata.bind(null, identity, null, eitherR), TypeError);
+    assert.throws(RA.cata.bind(null, identity, null, eitherR), TypeError);
     eq(RA.cata(null, identity, eitherR), 1);
   });
 
@@ -41,11 +41,8 @@ describe('cata', function() {
   });
 
   it('tests on monad without catamorphic behavior', function() {
-    chai.assert.throws(RA.cata.bind(null, identity, identity, {}), TypeError);
-    chai.assert.throws(RA.cata.bind(null, identity, identity, null), TypeError);
-    chai.assert.throws(
-      RA.cata.bind(null, identity, identity, undefined),
-      TypeError
-    );
+    assert.throws(RA.cata.bind(null, identity, identity, {}), TypeError);
+    assert.throws(RA.cata.bind(null, identity, identity, null), TypeError);
+    assert.throws(RA.cata.bind(null, identity, identity, undefined), TypeError);
   });
 });

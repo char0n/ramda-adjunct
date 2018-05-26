@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import chai from 'chai';
+import { assert } from 'chai';
 
 import eq from './shared/eq';
 import * as RA from '../src/index';
@@ -42,10 +42,10 @@ describe('concatRight', function() {
   });
 
   it('throws if attempting to combine an array with a non-array', function() {
-    chai.assert.throws(RA.concatRight.bind(null, [1], 2), TypeError);
+    assert.throws(RA.concatRight.bind(null, [1], 2), TypeError);
   });
 
   it('throws if not an array, String, or object with a concat method', function() {
-    chai.assert.throws(RA.concatRight.bind(null, {}, {}), TypeError);
+    assert.throws(RA.concatRight.bind(null, {}, {}), TypeError);
   });
 });

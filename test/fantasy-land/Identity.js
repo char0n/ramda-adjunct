@@ -1,4 +1,4 @@
-import chai from 'chai';
+import { assert } from 'chai';
 import sinon from 'sinon';
 import { add, identity, always } from 'ramda';
 import fl from 'fantasy-land/';
@@ -71,7 +71,7 @@ describe('Identity', function() {
       const a = Identity.of({});
       const b = Identity.of([]);
 
-      chai.assert.throws(a.concat.bind(b), TypeError);
+      assert.throws(a.concat.bind(b), TypeError);
     });
 
     it('tests concat for returning a value of the same Setoid', function() {
@@ -145,7 +145,7 @@ describe('Identity', function() {
       const a = Identity.of(1);
       const b = Identity.of(1).map(identity);
 
-      chai.assert.throws(() => a.ap(b).get(), TypeError);
+      assert.throws(() => a.ap(b).get(), TypeError);
     });
 
     it('test ap caller for an apply of any value', function() {
@@ -217,7 +217,7 @@ describe('Identity', function() {
       const fn = null;
       const a = Identity.of(1);
 
-      chai.assert.throws(a.map.bind(a, fn), TypeError);
+      assert.throws(a.map.bind(a, fn), TypeError);
     });
 
     it('tests f for returning any value', function() {
@@ -278,7 +278,7 @@ describe('Identity', function() {
       const fn = null;
       const a = Identity.of(identity);
 
-      chai.assert.throws(() => a.contramap(fn).get()(), TypeError);
+      assert.throws(() => a.contramap(fn).get()(), TypeError);
     });
 
     it('tests f for returning any value', function() {
@@ -336,7 +336,7 @@ describe('Identity', function() {
       const a = Identity.of(1);
       const nonFn = null;
 
-      chai.assert.throws(() => a.chain(nonFn), TypeError);
+      assert.throws(() => a.chain(nonFn), TypeError);
     });
 
     it('tests if the only argument is a function returning the value of the same Chain', function() {
