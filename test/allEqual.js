@@ -5,7 +5,7 @@ import * as RA from '../src/index';
 
 const hasFunctionReferenceEqualityBug = (() => {
   const f = () => {};
-  return R.uniq([f, f, f]) !== 1;
+  return R.uniq([f, f, f]).length !== 1;
 })();
 
 describe('allEqual', function() {
