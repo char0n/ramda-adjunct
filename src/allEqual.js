@@ -6,7 +6,7 @@ import lengthLte from './lengthLte';
 // in https://github.com/char0n/ramda-adjunct/pull/513.
 
 /**
- * Checks that all elements in a list are equal.
+ * Returns true if all items in the list are equivalent using `R.equals` for equality comparisons.
  *
  * @func allEqual
  * @memberOf RA

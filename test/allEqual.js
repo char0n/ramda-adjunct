@@ -21,6 +21,19 @@ describe('allEqual', function() {
     });
   });
 
+  context('when items have different type', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.allEqual([1, 1, '1', 1]));
+    });
+  });
+
+  context('when items are reference to function', function() {
+    specify('should return true', function() {
+      const f = () => {};
+      assert.isTrue(RA.allEqual([f, f, f]));
+    });
+  });
+
   context('when empty list provided', function() {
     specify('should return true', function() {
       assert.isTrue(RA.allEqual([]));
