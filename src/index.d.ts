@@ -856,7 +856,7 @@ declare namespace RamdaAdjunct {
         lengthNotEq(valueLength: number): <T>(list: string | T[]) => boolean;
 
         /**
-         * Checks that all elements in a list are equal.
+         *  Returns true if all items in the list are equivalent using `R.equals` for equality comparisons.
          */
         allEqual<T>(list: T[]): boolean;
 
