@@ -18,7 +18,7 @@ describe('spreadProp', function() {
     eq(RA.spreadProp('prop')({}), {});
   });
 
-  context("when prop doesn't exist", function() {
+  context("given prop doesn't exist", function() {
     specify(
       'should return object with identical structure as provided object',
       function() {
@@ -27,7 +27,7 @@ describe('spreadProp', function() {
     );
   });
 
-  context('when prop leads to non object', function() {
+  context('given prop leads to non object', function() {
     specify('should return object without prop', function() {
       obj = {
         a: 1,
@@ -38,7 +38,7 @@ describe('spreadProp', function() {
     });
   });
 
-  context('when prop leads to object with same prop name', function() {
+  context('given prop leads to object with same prop name', function() {
     specify('should override existing props on provided object', function() {
       obj = {
         a: 1,

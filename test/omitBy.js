@@ -7,24 +7,28 @@ import eq from './shared/eq';
 describe('omitBy', function() {
   const obj = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 };
 
-  it('creates a copy of the object', function() {
+  it('should create a copy of the object', function() {
     notStrictEqual(RA.omitBy(R.F, obj), obj);
     deepStrictEqual(RA.omitBy(R.F, obj), obj);
   });
 
-  it('when returning truthy, omits the key', function() {
-    eq(RA.omitBy(R.T, obj), {});
-    eq(RA.omitBy(R.always({}), obj), {});
-    eq(RA.omitBy(R.always(1), obj), {});
+  context('given the predicate returns truthy', function() {
+    specify('should omit the key', function() {
+      eq(RA.omitBy(R.T, obj), {});
+      eq(RA.omitBy(R.always({}), obj), {});
+      eq(RA.omitBy(R.always(1), obj), {});
+    });
   });
 
-  it('when returning falsy, keeps the key', function() {
-    eq(RA.omitBy(R.F, obj), obj);
-    eq(RA.omitBy(R.always(0), obj), obj);
-    eq(RA.omitBy(R.always(null), obj), obj);
+  context('given the predicate returns falsy', function() {
+    specify('should keep the key', function() {
+      eq(RA.omitBy(R.F, obj), obj);
+      eq(RA.omitBy(R.always(0), obj), obj);
+      eq(RA.omitBy(R.always(null), obj), obj);
+    });
   });
 
-  it('is called with (val, key, obj)', function() {
+  it('should be called with (val, key, obj)', function() {
     eq(
       RA.omitBy(function(val, key, _obj) {
         eq(_obj, obj);
@@ -34,7 +38,7 @@ describe('omitBy', function() {
     );
   });
 
-  it('retrieves prototype properties', function() {
+  it('should retrieve prototype properties', function() {
     const F = function(param) {
       this.x = param;
     };
@@ -51,7 +55,7 @@ describe('omitBy', function() {
     );
   });
 
-  it('is curried', function() {
+  it('should be curried', function() {
     const copier = RA.omitBy(R.F);
     eq(copier(obj), obj);
   });

@@ -32,7 +32,7 @@ describe('lensIso', function() {
     eq(over(lensJSON, assoc('b', 2), '{"a":1}'), '{"a":1,"b":2}');
   });
 
-  context('when reversed isomorphism', function() {
+  context('given reversed isomorphism', function() {
     const lensJSONReversed = RA.lensIso.from(lensJSON);
 
     specify('test reading through lens', function() {

@@ -38,7 +38,7 @@ describe('notBoth', function() {
     eq(f(5, 6, 15), true);
   });
 
-  context('when the first function returns false', function() {
+  context('given the first function returns false', function() {
     specify('should not evaluate the second function', function() {
       const z = sinon.spy();
 

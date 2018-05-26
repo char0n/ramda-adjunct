@@ -10,7 +10,7 @@ describe('pathNotEq', function() {
     obj = { a: { b: 1 } };
   });
 
-  it('tests currying', function() {
+  it('should curry', function() {
     eq(RA.pathNotEq(['a', 'b'], 'foo', obj), true);
     eq(RA.pathNotEq(['a', 'b'])('foo', obj), true);
     eq(RA.pathNotEq(['a', 'b'], 'foo')(obj), true);
@@ -42,13 +42,13 @@ describe('pathNotEq', function() {
     );
   });
 
-  context('when there is no path', function() {
+  context('given there is no path', function() {
     specify('should return true', function() {
       eq(RA.pathNotEq(['bar', 'baz'], 'foo', obj), true);
     });
   });
 
-  context('when data is array and path consists integers', function() {
+  context('given data is array and path consists integers', function() {
     context('and array contains provided path', function() {
       // eslint-disable-next-line mocha/no-hooks-for-single-case
       beforeEach(function() {
@@ -72,7 +72,7 @@ describe('pathNotEq', function() {
     });
   });
 
-  it('tests example', function() {
+  it('should test example', function() {
     const user1 = { address: { zipCode: 90210 } };
     const user2 = { address: { zipCode: 55555 } };
     const user3 = { name: 'Bob' };

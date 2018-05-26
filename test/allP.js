@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import * as RA from '../src/index';
 
 describe('allP', function() {
-  context('when no arguments', function() {
+  context('given no arguments', function() {
     specify('throws TypeError', function(done) {
       assert.isRejected(RA.allP(), Error).notify(done);
     });
@@ -51,7 +51,7 @@ describe('allP', function() {
     assert.isRejected(RA.allP([p1, p2, p3, p4, p5]), Error).notify(done);
   });
 
-  context('when there are two rejections', function() {
+  context('given there are two rejections', function() {
     specify('should reject with the first one', function(done) {
       const p1 = RA.resolveP(1);
       const p2 = RA.rejectP(1);

@@ -5,7 +5,7 @@ import * as R from 'ramda';
 import * as RA from '../src/index';
 
 describe('thenP', function() {
-  context('when applied on Promise', function() {
+  context('given applied on Promise', function() {
     specify('should call then method with onFulfilled function', function() {
       const promise = RA.resolveP(1);
       const expected = RA.thenP(R.add(1), promise);
@@ -14,7 +14,7 @@ describe('thenP', function() {
     });
   });
 
-  context('when applied on Thenable', function() {
+  context('given applied on Thenable', function() {
     specify('should call then method with onFulfilled function', function() {
       const thenable = { then: fn => RA.resolveP(fn(1)) };
       const expected = RA.thenP(R.add(1), thenable);
@@ -23,7 +23,7 @@ describe('thenP', function() {
     });
   });
 
-  context('when applied on non-thenable', function() {
+  context('given applied on non-thenable', function() {
     specify('should throw TypeError', function() {
       assert.throws(() => RA.thenP(R.identity, {}), TypeError);
     });

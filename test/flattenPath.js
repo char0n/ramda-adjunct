@@ -18,7 +18,7 @@ describe('flattenPath', function() {
     eq(RA.flattenPath([])({}), {});
   });
 
-  context('when path leads to non object', function() {
+  context('given path leads to non object', function() {
     specify(
       'should return object with identical structure as provided object',
       function() {
@@ -31,7 +31,7 @@ describe('flattenPath', function() {
     );
   });
 
-  context("when path doesn't exist", function() {
+  context("given path doesn't exist", function() {
     specify(
       'should return object with identical structure as provided object',
       function() {

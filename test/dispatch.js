@@ -55,7 +55,7 @@ describe('dispatch', function() {
     assert.isTrue(dateDispatch.notCalled);
   });
 
-  context('when dispatched function throws', function() {
+  context('given dispatched function throws', function() {
     context('the error', function() {
       specify('should bubble up', function() {
         const configuredDispatch = RA.dispatch([
@@ -70,13 +70,13 @@ describe('dispatch', function() {
     });
   });
 
-  context('when empty array provided as input', function() {
+  context('given empty array provided as input', function() {
     specify('should return undefined', function() {
       eq(RA.dispatch([]), undefined);
     });
   });
 
-  context('when all dispatched functions returns nil', function() {
+  context('given all dispatched functions returns nil', function() {
     specify('should return undefined', function() {
       const configuredDispatch = RA.dispatch([RA.stubUndefined, RA.stubNull]);
 
@@ -85,7 +85,7 @@ describe('dispatch', function() {
   });
 
   context(
-    'when all dispatched functions have implicit return statement',
+    'given all dispatched functions have implicit return statement',
     function() {
       specify('should return undefined', function() {
         const configuredDispatch = RA.dispatch([() => {}, () => {}]);

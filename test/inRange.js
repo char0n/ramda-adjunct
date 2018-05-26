@@ -39,10 +39,12 @@ describe('inRange', function() {
     eq(RA.inRange(5)(10, 5), true);
   });
 
-  it('should return false when NaN is used`', function() {
-    eq(RA.inRange(0, NaN, 5), false);
-    eq(RA.inRange(NaN, 10, 5), false);
-    eq(RA.inRange(5, 10, NaN), false);
+  context('given NAN is used', function() {
+    it('should return false', function() {
+      eq(RA.inRange(0, NaN, 5), false);
+      eq(RA.inRange(NaN, 10, 5), false);
+      eq(RA.inRange(5, 10, NaN), false);
+    });
   });
 
   it('should support `Number.POSITIVE_INFINITY`', function() {
@@ -65,14 +67,18 @@ describe('inRange', function() {
     eq(f(Number.MAX_VALUE), false);
   });
 
-  it('should throw error if `low` value is greater than `high` value', function() {
-    const f = RA.inRange(10, 5);
-    assert.throws(() => f(5), Error);
+  context('given `low` value is greater than `high` value', function() {
+    it('should throw error', function() {
+      const f = RA.inRange(10, 5);
+      assert.throws(() => f(5), Error);
+    });
   });
 
-  it('should throw error if `low` value is same as `high` value', function() {
-    const f = RA.inRange(10, 10);
-    assert.throws(() => f(5), Error);
+  context('given `low` value is same as `high` value', function() {
+    it('should throw error', function() {
+      const f = RA.inRange(10, 10);
+      assert.throws(() => f(5), Error);
+    });
   });
 
   it('should support `Number.MAX_SAFE_INTEGER`', function() {

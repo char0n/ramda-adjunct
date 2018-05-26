@@ -4,7 +4,7 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isThenable', function() {
-  context('when value is not `thenable`', function() {
+  context('given value is not `thenable`', function() {
     specify('should return false', function() {
       eq(RA.isThenable(args), false);
       eq(RA.isThenable([1, 2, 3]), false);
@@ -19,13 +19,13 @@ describe('isThenable', function() {
     });
   });
 
-  context('when value is thenable object', function() {
+  context('given value is thenable object', function() {
     specify('should return true', function() {
       eq(RA.isThenable({ then: () => {} }), true);
     });
   });
 
-  context("when value contains then method on it's prototype", function() {
+  context("given value contains then method on it's prototype", function() {
     specify('should return true', function() {
       const objWithPrototype = Object.create({ then: () => {} });
 
@@ -33,7 +33,7 @@ describe('isThenable', function() {
     });
   });
 
-  context('when value is an instance of native Promise', function() {
+  context('given value is an instance of native Promise', function() {
     specify('should return true', function() {
       const resolvedP = Promise.resolve();
       const rejectedP = Promise.reject();
@@ -45,7 +45,7 @@ describe('isThenable', function() {
     });
   });
 
-  context('when value is a thenable function', function() {
+  context('given value is a thenable function', function() {
     specify('should return true', function() {
       const func = () => {};
       func.then = () => {};

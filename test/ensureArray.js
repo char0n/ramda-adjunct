@@ -4,7 +4,7 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 describe('ensureArray', function() {
-  context('when argument is not an array', function() {
+  context('given argument is not an array', function() {
     it('wraps value into singleton array', function() {
       const arrayPrototype = Array.prototype;
 
@@ -22,7 +22,7 @@ describe('ensureArray', function() {
     });
   });
 
-  context('when argument is empty array', function() {
+  context('given argument is empty array', function() {
     let emptyArray;
 
     beforeEach(function() {
@@ -38,7 +38,7 @@ describe('ensureArray', function() {
     });
   });
 
-  context('when argument is filled array', function() {
+  context('given argument is filled array', function() {
     let filledArray;
 
     beforeEach(function() {
@@ -54,7 +54,7 @@ describe('ensureArray', function() {
     });
   });
 
-  context('when argument is array instance', function() {
+  context('given argument is array instance', function() {
     let arrayInstance;
 
     beforeEach(function() {
@@ -70,7 +70,7 @@ describe('ensureArray', function() {
     });
   });
 
-  context('when argument is Array.prototype', function() {
+  context('given argument is Array.prototype', function() {
     let arrayPrototype;
 
     beforeEach(function() {
