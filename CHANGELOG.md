@@ -1,3 +1,13 @@
+<a name="2.9.0"></a>
+# [2.9.0](https://github.com/char0n/ramda-adjunct/compare/v2.8.0...v2.9.0) (2018-05-29)
+
+
+### Features
+
+* add allEqual ([#572](https://github.com/char0n/ramda-adjunct/issues/572)) ([c362939](https://github.com/char0n/ramda-adjunct/commit/c362939))
+
+
+
 <a name="2.8.0"></a>
 # [2.8.0](https://github.com/char0n/ramda-adjunct/compare/v2.7.0...v2.8.0) (2018-05-13)
 
