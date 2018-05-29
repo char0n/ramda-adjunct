@@ -21,7 +21,11 @@ import { curry, toPairs, pipe, map, adjust, fromPairs } from 'ramda';
  * RA.renameKeysWith(R.concat('a'), { A: 1, B: 2, C: 3 }) //=> { aA: 1, aB: 2, aC: 3 }
  */
 const renameKeysWith = curry((fn, obj) =>
-  pipe(toPairs, map(adjust(fn, 0)), fromPairs)(obj)
+  pipe(
+    toPairs,
+    map(adjust(fn, 0)),
+    fromPairs
+  )(obj)
 );
 
 export default renameKeysWith;
