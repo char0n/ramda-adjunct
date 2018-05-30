@@ -24,6 +24,12 @@ import isObj from './isObj';
  * RA.isPromise(Promise.reject()); // => true
  * RA.isPromise({ then: () => 1 }); // => false
  */
-const isPromise = both(isObj, pipe(toString, equals('[object Promise]')));
+const isPromise = both(
+  isObj,
+  pipe(
+    toString,
+    equals('[object Promise]')
+  )
+);
 
 export default isPromise;

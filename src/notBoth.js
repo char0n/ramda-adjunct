@@ -33,6 +33,9 @@ import { compose, complement, both } from 'ramda';
  * f(9); //=> true
  */
 /* eslint-enable max-len */
-const notBoth = compose(complement, both);
+const notBoth = compose(
+  complement,
+  both
+);
 
 export default notBoth;

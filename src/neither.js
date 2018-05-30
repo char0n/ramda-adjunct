@@ -33,6 +33,9 @@ import { compose, complement, either } from 'ramda';
  * f(9); //=> true
  */
 /* eslint-enable max-len */
-const neither = compose(complement, either);
+const neither = compose(
+  complement,
+  either
+);
 
 export default neither;

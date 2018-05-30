@@ -76,7 +76,10 @@ describe('lensTraverse', function() {
   if (!isRamdaFlSpec1Compatible) {
     it('should compose', function() {
       const result = R.over(
-        R.compose(R.lensProp('prop'), RA.lensTraverse(RA.Identity.of)),
+        R.compose(
+          R.lensProp('prop'),
+          RA.lensTraverse(RA.Identity.of)
+        ),
         R.map(R.add(1)),
         {
           prop: [RA.Identity.of(2), RA.Identity.of(3)],

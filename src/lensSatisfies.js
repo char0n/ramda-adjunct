@@ -27,7 +27,11 @@ import isTrue from './isTrue';
  * RA.lensSatisfies(R.identity, R.lensProp('x'), { x: 1 }); // => false
  */
 const lensSatisfies = curryN(3, (predicate, lens, data) =>
-  pipe(view(lens), predicate, isTrue)(data)
+  pipe(
+    view(lens),
+    predicate,
+    isTrue
+  )(data)
 );
 
 export default lensSatisfies;

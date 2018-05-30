@@ -135,7 +135,10 @@ describe('reduceRightP', function() {
 
   it('tests iterator function returning promises', function() {
     return RA.reduceRightP(
-      R.pipe(R.add, Promise.resolve.bind(Promise)),
+      R.pipe(
+        R.add,
+        Promise.resolve.bind(Promise)
+      ),
       0,
       Promise.resolve([1, Promise.resolve(2), 3])
     ).then(actual => eq(actual, 6));

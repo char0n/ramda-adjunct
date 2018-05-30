@@ -5,7 +5,10 @@ import resolveP from './resolveP';
 import allP from './allP';
 
 // in older ramda versions the order of the arguments is flipped
-const flipArgs = pipe(reduceRight(concat, ''), equals('ba'))(['a', 'b']);
+const flipArgs = pipe(
+  reduceRight(concat, ''),
+  equals('ba')
+)(['a', 'b']);
 
 /* eslint-disable max-len */
 /**

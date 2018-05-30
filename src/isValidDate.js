@@ -21,6 +21,12 @@ import isNotNaN from './isNotNaN';
  * RA.isValidDate(new Date('a')); //=> false
  */
 /* eslint-enable max-len */
-const isValidDate = both(isDate, pipe(invoker(0, 'getTime'), isNotNaN));
+const isValidDate = both(
+  isDate,
+  pipe(
+    invoker(0, 'getTime'),
+    isNotNaN
+  )
+);
 
 export default isValidDate;
