@@ -19,7 +19,7 @@ const inRangeImp = ifElse(
  * @category Relation
  * @sig Number -> Number -> Number -> Boolean
  * @param {Number} low Start of the range
- * @param {Number} The end of the range
+ * @param {Number} high The end of the range
  * @param {Number} value The value to test
  * @return {boolean}
  * @throws {Error} When `low` is greater than or equal to `high`
