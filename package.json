@@ -114,7 +114,7 @@
     "babel-cli": "=6.26.0",
     "babel-core": "=6.26.0",
     "babel-loader": "7.1.4",
-    "babel-plugin-annotate-pure-calls": "=0.2.2",
+    "babel-plugin-annotate-pure-calls": "0.3.0",
     "babel-plugin-istanbul": "4.1.6",
     "babel-preset-es2015": "=6.24.1",
     "babel-preset-es2016": "=6.24.1",
