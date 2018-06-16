@@ -160,7 +160,7 @@
     "typescript-definition-tester": "=0.0.5",
     "uglifyjs-webpack-plugin": "1.2.5",
     "webpack": "4.12.0",
-    "webpack-cli": "3.0.7"
+    "webpack-cli": "3.0.8"
   },
   "tonicExampleFilename": "tonicExample.js"
 }
