@@ -6,8 +6,6 @@
     "test/*.js"
   ],
   "serve_files": [
-    "node_modules/ramda/dist/ramda.js",
-    "node_modules/es6-promise/dist/es6-promise.auto.js",
     "tmp-test-bundle.js"
   ],
   "before_tests": "npm run test:bundle-create",
