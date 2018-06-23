@@ -1,6 +1,8 @@
 import { equals, pathSatisfies } from 'ramda';
 
-import { isString, isNumber, isFunction } from '../index';
+import isString from '../isString';
+import isNumber from '../isNumber';
+import isFunction from '../isFunction';
 import { isSameType } from './util';
 import fl from './mapping';
 

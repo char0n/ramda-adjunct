@@ -28,7 +28,8 @@ const hasPath = curryN(2, (objPath, obj) => {
   // termination conditions
   if (length(objPath) === 0 || !isObj(obj)) {
     return false;
-  } else if (length(objPath) === 1) {
+  }
+  if (length(objPath) === 1) {
     return has(prop, obj);
   }
 
