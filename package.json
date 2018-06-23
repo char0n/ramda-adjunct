@@ -24,7 +24,7 @@
     }
   ],
   "name": "ramda-adjunct",
-  "description": "Community-maintained extension of Ramda",
+  "description": "Ramda Adjunct is the most popular and most comprehensive set of utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation.",
   "keywords": [
     "ramda",
     "utils",
