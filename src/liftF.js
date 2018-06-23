@@ -4,7 +4,7 @@ import liftFN from './liftFN';
  * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
  * the fantasy land Apply spec of algebraic structures.
  *
- * Lifting is specific for {@link https://github.com/scalaz/scalaz|scalaz} and {@link http://www.functionaljava.org/|functional java} implementations.
+ * Lifting is specific for {@link https://github.com/scalaz/scalaz|scalaz} and {@link http://functionaljava.org/|function Java} implementations.
  * Old version of fantasy land spec were not compatible with this approach,
  * but as of fantasy land 1.0.0 Apply spec also adopted this approach.
  *
