@@ -17,9 +17,11 @@
 
 # Ramda Adjunct
 
-This library is a community maintained extension of Ramda offering a wide variety of useful and commonly used functions built from Ramda. 
+Ramda Adjunct is the most popular and most comprehensive set of utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation. 
 
 For a full list of functions see the [**Documentation For The Latest Release**](https://char0n.github.io/ramda-adjunct).
+
+Adjunct is a thing added to something else as a supplementary rather than an essential part. And that something is being ramda.
 
 ## Installation
 
