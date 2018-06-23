@@ -8,7 +8,8 @@
       "always",
       [
         "camel-case",
-        "kebab-case"
+        "kebab-case",
+        "upper-case"
       ]
     ]
   }
