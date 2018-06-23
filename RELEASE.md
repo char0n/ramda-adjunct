@@ -54,7 +54,7 @@ Bump the `package.json` version by incrementing **MAJOR**, **MINOR** or **PATCH*
 ```sh
  $ git add package.json
  $ git commit -m "chore: bump version to vX.Y.Z"
- $ git push origim master
+ $ git push origin master
 ```
 
 
