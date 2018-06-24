@@ -1,8 +1,8 @@
 import { stub } from 'sinon';
-import { all, any, none } from 'ramda';
+import * as R from 'ramda';
 import { assert } from 'chai';
 
-import { argsPass } from '../src/index';
+import * as RA from '../src';
 
 describe('argsPass', function() {
   let p1False;
@@ -30,7 +30,7 @@ describe('argsPass', function() {
   });
 
   it('should return a new curried function for each argument supplied', function() {
-    const f = argsPass(c1True, [p1True, p2True, p3True]);
+    const f = RA.argsPass(c1True, [p1True, p2True, p3True]);
     assert.isTrue(f(1)(2)(3));
     assert.isTrue(p1True.calledWith(1));
     assert.isTrue(p2True.calledWith(2));
@@ -46,7 +46,7 @@ describe('argsPass', function() {
   context('with same number of functions as arguments', function() {
     context('with all functions returning truthy values', function() {
       specify('should return `true`', function() {
-        const f = argsPass(c1True, [p1True, p2True, p3True]);
+        const f = RA.argsPass(c1True, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3));
         assert.isTrue(p1True.calledWith(1));
         assert.isTrue(p2True.calledWith(2));
@@ -62,7 +62,7 @@ describe('argsPass', function() {
 
     context('with one function returning a falsy value', function() {
       specify('should return `false`', function() {
-        const f = argsPass(c1False, [p1True, p2True, p3False]);
+        const f = RA.argsPass(c1False, [p1True, p2True, p3False]);
         assert.isFalse(f(1, 2, 3));
         assert.isTrue(p1True.calledWith(1));
         assert.isTrue(p2True.calledWith(2));
@@ -80,7 +80,7 @@ describe('argsPass', function() {
   context('with more arguments than predicates', function() {
     context('with all functions returning truthy values', function() {
       specify('should return `true`', function() {
-        const f = argsPass(c1True, [p1True, p2True, p3True]);
+        const f = RA.argsPass(c1True, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3, 4));
         assert.isTrue(p1True.calledWith(1));
         assert.isTrue(p2True.calledWith(2));
@@ -96,7 +96,7 @@ describe('argsPass', function() {
 
     context('with one predicate failing', function() {
       specify('should return `false`', function() {
-        const f = argsPass(c1False, [p1True, p2True, p3False]);
+        const f = RA.argsPass(c1False, [p1True, p2True, p3False]);
         assert.isFalse(f(1, 2, 3, 4));
         assert.isTrue(p1True.calledWith(1));
         assert.isTrue(p2True.calledWith(2));
@@ -114,14 +114,14 @@ describe('argsPass', function() {
   context('with `all` as the combinator', function() {
     context('with all functions returning truthy values', function() {
       specify('should return `true`', function() {
-        const f = argsPass(all, [p1True, p2True, p3True]);
+        const f = RA.argsPass(R.all, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
     context('with one function returning a falsy value', function() {
       specify('should return `true`', function() {
-        const f = argsPass(all, [p1True, p2True, p3False]);
+        const f = RA.argsPass(R.all, [p1True, p2True, p3False]);
         assert.isFalse(f(1, 2, 3));
       });
     });
@@ -130,21 +130,21 @@ describe('argsPass', function() {
   context('with `any` as the combining predicate', function() {
     context('with all functions returning truthy values', function() {
       specify('should return `true`', function() {
-        const f = argsPass(any, [p1True, p2True, p3True]);
+        const f = RA.argsPass(R.any, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
     context('with one function returning a truthy value', function() {
       specify('should return `true`', function() {
-        const f = argsPass(any, [p1True, p2False, p3True]);
+        const f = RA.argsPass(R.any, [p1True, p2False, p3True]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
     context('with all functions returning falsy values', function() {
       specify('should return `true`', function() {
-        const f = argsPass(any, [p1False, p2False, p3False]);
+        const f = RA.argsPass(R.any, [p1False, p2False, p3False]);
         assert.isFalse(f(1, 2, 3));
       });
     });
@@ -153,23 +153,28 @@ describe('argsPass', function() {
   context('with `none` as the combining predicate', function() {
     context('with all functions returning truthy values', function() {
       specify('should return `true`', function() {
-        const f = argsPass(none, [p1False, p2False, p3False]);
+        const f = RA.argsPass(R.none, [p1False, p2False, p3False]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
     context('with all functions returning falsy values', function() {
       specify('should return `true`', function() {
-        const f = argsPass(none, [p1False, p2False, p3False]);
+        const f = RA.argsPass(R.none, [p1False, p2False, p3False]);
         assert.isTrue(f(1, 2, 3));
       });
     });
 
     context('with one function returning a truthy value', function() {
       specify('should return `true`', function() {
-        const f = argsPass(none, [p1False, p2False, p3True]);
+        const f = RA.argsPass(R.none, [p1False, p2False, p3True]);
         assert.isFalse(f(1, 2, 3));
       });
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const f = RA.argsPass(R.__)(R.none, [p1False, p2False, p3True]);
+    assert.isFalse(f(1, 2, 3));
   });
 });

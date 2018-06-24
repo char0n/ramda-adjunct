@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 
 // https://github.com/ramda/ramda/pull/1992
 const hasFunctionReferenceEqualityBug = (() => {
@@ -47,5 +47,11 @@ describe('allEqual', function() {
     specify('should return true', function() {
       assert.isTrue(RA.allEqual([]));
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const allEqual = RA.allEqual(R.__);
+
+    assert.isTrue(allEqual([1, 1, 1]));
   });
 });

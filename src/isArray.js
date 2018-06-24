@@ -1,3 +1,4 @@
+import { curryN } from 'ramda';
 import _isArray from 'ramda/src/internal/_isArray';
 
 /**
@@ -17,6 +18,6 @@ import _isArray from 'ramda/src/internal/_isArray';
  * RA.isArray(null); //=> false
  * RA.isArray({}); //=> false
  */
-const isArray = Array.isArray || _isArray;
+const isArray = curryN(1, Array.isArray || _isArray);
 
 export default isArray;
