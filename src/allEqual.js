@@ -1,4 +1,5 @@
 import { pipe, uniq } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 import lengthLte from './lengthLte';
 
@@ -23,9 +24,11 @@ import lengthLte from './lengthLte';
  * RA.allEqual([]); //=> true
  *
  */
-const allEqual = pipe(
-  uniq,
-  lengthLte(1)
+const allEqual = curry1(
+  pipe(
+    uniq,
+    lengthLte(1)
+  )
 );
 
 export default allEqual;

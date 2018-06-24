@@ -1,8 +1,10 @@
-import * as RA from '../src/index';
+import * as R from 'ramda';
+
+import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('isArray', function() {
-  it('tests a value for `Array`', function() {
+  it('should test a value for `Array`', function() {
     eq(RA.isArray([]), true);
     eq(RA.isArray([1]), true);
     eq(RA.isArray(new Array()), true);
@@ -17,5 +19,11 @@ describe('isArray', function() {
     eq(RA.isArray(true), false);
     eq(RA.isArray(false), false);
     eq(RA.isArray({ __proto__: Array.prototype }), false);
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isArray = RA.isArray(R.__);
+
+    eq(isArray([]), true);
   });
 });

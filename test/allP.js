@@ -1,29 +1,29 @@
 import { assert } from 'chai';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 
 describe('allP', function() {
   context('given no arguments', function() {
-    specify('throws TypeError', function(done) {
-      assert.isRejected(RA.allP(), Error).notify(done);
+    specify('should return reference to itself', function() {
+      assert.strictEqual(RA.allP(), RA.allP);
     });
   });
 
-  it('tests resolving list of thenable values', function(done) {
+  it('should resolve list of thenable values', function(done) {
     const p1 = RA.resolveP(1);
     const p2 = RA.resolveP(2);
 
     assert.eventually.deepEqual(RA.allP([p1, p2]), [1, 2]).notify(done);
   });
 
-  it('tests resolving list of mixed thenable and non-thenable values', function(done) {
+  it('should resolve list of mixed thenable and non-thenable values', function(done) {
     const p1 = RA.resolveP(1);
     const p2 = 2;
 
     assert.eventually.deepEqual(RA.allP([p1, p2]), [1, 2]).notify(done);
   });
 
-  it('tests resolving list of rejected thenable values', function(done) {
+  it('should resolve list of rejected thenable values', function(done) {
     const p1 = RA.resolveP(1);
     const p2 = RA.rejectP(2);
 
@@ -31,7 +31,7 @@ describe('allP', function() {
   });
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#Promise.all_fail-fast_behaviour
-  it('tests fail-fast behavior', function(done) {
+  it('should have fail-fast behavior', function(done) {
     const p1 = new Promise(resolve => {
       setTimeout(resolve, 10, 'one');
     });
