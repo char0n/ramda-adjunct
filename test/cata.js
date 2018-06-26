@@ -2,7 +2,7 @@ import { Either } from 'monet';
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('cata', function() {
