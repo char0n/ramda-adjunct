@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import { NEL, Nil } from 'monet';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 import eq from './shared/eq';
@@ -42,5 +43,11 @@ describe('concatAll', function() {
     specify('should throw', function() {
       assert.throws(() => RA.concatAll(null), TypeError);
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const concatAll = RA.concatAll(R.__);
+
+    eq(concatAll(['1', '2', '3']), '123');
   });
 });
