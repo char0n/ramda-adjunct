@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src/index';
 import eq from './shared/eq';
@@ -28,5 +29,11 @@ describe('compact', function() {
 
       assert.notStrictEqual(RA.compact(list), list);
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const compact = RA.compact(R.__);
+
+    eq(compact([]), []);
   });
 });
