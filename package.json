@@ -131,7 +131,7 @@
     "eslint": "5.0.1",
     "eslint-config-prettier": "=2.9.0",
     "eslint-plugin-import": "2.13.0",
-    "eslint-plugin-mocha": "5.0.0",
+    "eslint-plugin-mocha": "5.1.0",
     "eslint-plugin-prettier": "2.6.1",
     "eslint-plugin-ramda": "2.5.1",
     "fantasy-land": "3.5.0",
