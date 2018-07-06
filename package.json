@@ -123,7 +123,7 @@
     "better-npm-run": "=0.1.0",
     "chai": "=4.1.2",
     "chai-as-promised": "=7.1.1",
-    "codecov": "3.0.1",
+    "codecov": "3.0.3",
     "cross-env": "5.2.0",
     "conventional-changelog-cli": "2.0.1",
     "docdash": "git+https://github.com/char0n/docdash.git#bf4b4eebfdaf042c0ea9038419bc26813f243c94",
