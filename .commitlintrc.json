@@ -11,6 +11,10 @@
         "kebab-case",
         "upper-case"
       ]
+    ],
+    "subject-case": [
+      0,
+      "always"
     ]
   }
 }
