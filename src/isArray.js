@@ -1,5 +1,7 @@
-import { curryN } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 import _isArray from 'ramda/src/internal/_isArray';
+
+import isFunction from './isFunction';
 
 /**
  * Checks if input value is `Array`.
@@ -18,6 +20,6 @@ import _isArray from 'ramda/src/internal/_isArray';
  * RA.isArray(null); //=> false
  * RA.isArray({}); //=> false
  */
-const isArray = curryN(1, Array.isArray || _isArray);
+const isArray = curry1(isFunction(Array.isArray) ? Array.isArray : _isArray);
 
 export default isArray;
