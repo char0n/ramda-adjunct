@@ -152,7 +152,7 @@
     "ramda": "=0.25.0",
     "rimraf": "=2.6.2",
     "sinon": "6.0.1",
-    "testem": "2.9.0",
+    "testem": "2.9.1",
     "tslint": "=5.9.1",
     "tslint-config-prettier": "1.14.0",
     "typescript": "2.6.2",
