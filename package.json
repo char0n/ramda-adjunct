@@ -129,7 +129,7 @@
     "docdash": "git+https://github.com/char0n/docdash.git#bf4b4eebfdaf042c0ea9038419bc26813f243c94",
     "eslint-config-airbnb-base": "13.0.0",
     "eslint": "5.0.1",
-    "eslint-config-prettier": "=2.9.0",
+    "eslint-config-prettier": "2.10.0",
     "eslint-plugin-import": "2.13.0",
     "eslint-plugin-mocha": "5.2.0",
     "eslint-plugin-prettier": "2.6.2",
