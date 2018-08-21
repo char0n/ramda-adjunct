@@ -158,7 +158,7 @@
     "typescript": "2.6.2",
     "typescript-definition-tester": "=0.0.5",
     "uglifyjs-webpack-plugin": "1.3.0",
-    "webpack": "4.16.5",
+    "webpack": "4.17.0",
     "webpack-cli": "3.1.0"
   },
   "tonicExampleFilename": "tonicExample.js"
