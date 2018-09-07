@@ -110,7 +110,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "7.1.0",
-    "@commitlint/config-conventional": "7.0.0",
+    "@commitlint/config-conventional": "7.1.0",
     "babel-cli": "=6.26.0",
     "babel-core": "=6.26.0",
     "babel-loader": "7.1.4",
@@ -152,7 +152,7 @@
     "ramda": "=0.25.0",
     "rimraf": "=2.6.2",
     "sinon": "6.0.1",
-    "testem": "2.9.3",
+    "testem": "2.10.0",
     "tslint": "=5.9.1",
     "tslint-config-prettier": "1.15.0",
     "typescript": "2.6.2",
