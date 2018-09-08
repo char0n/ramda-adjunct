@@ -16,7 +16,7 @@ import { nAry } from 'ramda';
  *
  * const fn = (a = 1, b = 2) => a + b;
  *
- * RA.dropArgs(fn)(3, 4); //=> 3
+ * RA.dropArgs(fn)('ignore1', 'ignore2'); //=> 3
  */
 const dropArgs = nAry(0);
 
