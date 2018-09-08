@@ -974,6 +974,12 @@ declare namespace RamdaAdjunct {
         argsPass(combiningPredicate: Function): (predicates: Function[]) => Function;
 
         /**
+         * Accepts a function with any arity and returns a function with arity of zero.
+         * The returned function ignores any arguments supplied to it.
+         */
+        dropArgs(fn: Function): Function;
+
+        /**
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
