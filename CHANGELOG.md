@@ -1,3 +1,14 @@
+<a name="2.10.0"></a>
+# [2.10.0](https://github.com/char0n/ramda-adjunct/compare/v2.9.0...v2.10.0) (2018-09-09)
+
+
+### Features
+
+* add dropArgs ([197b3f1](https://github.com/char0n/ramda-adjunct/commit/197b3f1)), closes [#679](https://github.com/char0n/ramda-adjunct/issues/679)
+* add support for ramda placeholder ([9539e92](https://github.com/char0n/ramda-adjunct/commit/9539e92)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+
+
+
 <a name="2.9.0"></a>
 # [2.9.0](https://github.com/char0n/ramda-adjunct/compare/v2.8.0...v2.9.0) (2018-05-29)
 
