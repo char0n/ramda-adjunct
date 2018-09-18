@@ -152,13 +152,13 @@
     "ramda": "=0.25.0",
     "rimraf": "=2.6.2",
     "sinon": "6.0.1",
-    "testem": "2.11.0",
+    "testem": "2.12.0",
     "tslint": "=5.9.1",
     "tslint-config-prettier": "1.15.0",
     "typescript": "2.6.2",
     "typescript-definition-tester": "=0.0.5",
     "uglifyjs-webpack-plugin": "2.0.1",
-    "webpack": "4.19.0",
+    "webpack": "4.19.1",
     "webpack-cli": "3.1.0"
   },
   "tonicExampleFilename": "tonicExample.js"
