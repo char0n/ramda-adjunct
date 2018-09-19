@@ -148,7 +148,7 @@
     "nsp": "3.2.0",
     "nyc": "13.0.0",
     "phantomjs-prebuilt": "=2.1.16",
-    "prettier": "1.14.1",
+    "prettier": "1.14.3",
     "ramda": "=0.25.0",
     "rimraf": "=2.6.2",
     "sinon": "6.0.1",
