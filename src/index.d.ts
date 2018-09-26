@@ -380,7 +380,7 @@ declare namespace RamdaAdjunct {
         /**
          * A function that performs no operations.
          */
-        noop(): undefined;
+        noop(...args: any[]): undefined;
 
         /**
          * Picks values from list by indexes.
