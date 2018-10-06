@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright 2017-2018 Vladimír Gorej
+Copyright 2017-2018 Ramda-Adjunct contributors
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
