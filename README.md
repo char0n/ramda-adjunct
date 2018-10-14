@@ -16,7 +16,7 @@
 
 # Ramda Adjunct
 
-<p align="center"><img src="logo.jpg" width="250" height="200" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/char0n/ramda-adjunct/master/logo.jpg" width="250" height="200" /></p>
 
 
 Ramda Adjunct is the most popular and most comprehensive set of utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation. 
