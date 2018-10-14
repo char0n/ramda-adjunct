@@ -5,7 +5,6 @@
 [![npm](https://img.shields.io/npm/dm/ramda-adjunct.svg)](https://www.npmjs.com/package/ramda-adjunct)
 [![devDependenciesStatus](https://david-dm.org/char0n/ramda-adjunct/dev-status.svg)](https://david-dm.org/char0n/ramda-adjunct?type=dev)
 [![peerDependenciesStatus](https://david-dm.org/char0n/ramda-adjunct/peer-status.svg)](https://david-dm.org/char0n/ramda-adjunct?type=peer)
-[![NSPStatus](https://nodesecurity.io/orgs/mortality/projects/70e819a7-1551-4973-801e-0315fed21068/badge)](https://nodesecurity.io/orgs/mortality/projects/70e819a7-1551-4973-801e-0315fed21068)
 [![Greenkeeper badge](https://badges.greenkeeper.io/char0n/ramda-adjunct.svg)](https://greenkeeper.io/) [![startwithwhy](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](https://www.linkedin.com/pulse/ramda-adjunct-vladim%C3%ADr-gorej)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/char0n/ramda-adjunct/issues)
 [![try on RunKit](https://img.shields.io/badge/try%20on-RunKit-brightgreen.svg?style=flat)](https://npm.runkit.com/ramda-adjunct)
