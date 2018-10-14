@@ -157,6 +157,23 @@ We are building our npm distributions using Webpack to support legacy versions o
  [0.2.0](https://char0n.github.io/ramda-adjunct/0.2.0),
  [0.1.0](https://char0n.github.io/ramda-adjunct/0.1.0),
  [0.0.1](https://char0n.github.io/ramda-adjunct/0.0.1)
+ 
+ 
+## Wrote about us
+
+- [Ramda — R.adjust](https://medium.com/@kyletilman/ramda-r-adjust-b69a575274fa)
+- [Refactoring JavaScript: Imperative to Functional](https://www.derrickbeining.com/2018/07/04/refactoring-javascript-imperative-to-functional/)
+- [Functional Programming Unit Testing in Node – Part 5](http://jessewarden.com/2018/06/functional-programming-unit-testing-in-node-part-5.html)
+- [What's Ramda equivalent to underscore.js 'compact'?](https://stackoverflow.com/questions/29900130/whats-ramda-equivalent-to-underscore-js-compact)
+- [Ramda Adjunct](https://www.linkedin.com/pulse/ramda-adjunct-vladim%C3%ADr-gorej/)
+- [Lifting functions into monadic Context in JavaScript](https://www.linkedin.com/pulse/lifting-functions-monadic-context-javascript-vladim%C3%ADr-gorej/)
+- [Folding Promises in JavaScript](https://www.linkedin.com/pulse/folding-promises-javascript-vladim%C3%ADr-gorej/)
+- [Monad transformers in JavaScript](https://www.linkedin.com/pulse/monad-transformers-javascript-vladim%C3%ADr-gorej/)
+- [Functional lenses in JavaScript](https://www.linkedin.com/pulse/functional-lenses-javascript-vladim%C3%ADr-gorej/)
+- [Functional lenses in JavaScript - Isos](https://www.linkedin.com/pulse/functional-lenses-javascript-isos-vladim%C3%ADr-gorej/)
+- [Functional lenses in JavaScript - Traversables](https://www.linkedin.com/pulse/functional-lenses-javascript-traversables-vladim%C3%ADr-gorej/)
+- [chore: ramda-adjunct v2.10.0 release](https://www.linkedin.com/pulse/chore-ramda-adjunct-v2100-release-vladim%C3%ADr-gorej/)
+
 
 ## Development
 
