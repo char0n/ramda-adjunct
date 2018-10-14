@@ -35,5 +35,8 @@
 /test-results.xml
 /tsconfig.json
 /RELEASE.md
+/CODE_OF_CONDUCT.md
+/CONTRIBUTING.md
+/GOVERNANCE.md
 /ramda-adjunct-*.*.*.tgz
 .eslintrc
