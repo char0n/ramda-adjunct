@@ -70,7 +70,6 @@
     "build:es": "better-npm-run build:es",
     "build:commonjs": "better-npm-run build:commonjs",
     "build:umd": "better-npm-run build:umd",
-    "nsp:check": "better-npm-run nsp:check",
     "prepublishOnly": "better-npm-run prepublishOnly",
     "clean": "better-npm-run clean"
   },
@@ -100,7 +99,6 @@
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:umd": "webpack --config webpack.config.js --progress",
-    "nsp:check": "nsp check",
     "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run test:web && npm run build && npm run docs",
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
@@ -145,7 +143,6 @@
     "mocha-junit-reporter": "1.18.0",
     "mocha-multi-reporters": "1.1.7",
     "monet": "=0.9.0-alpha.4",
-    "nsp": "3.2.0",
     "nyc": "13.0.0",
     "phantomjs-prebuilt": "=2.1.16",
     "prettier": "1.14.3",

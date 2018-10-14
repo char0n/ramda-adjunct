@@ -11,7 +11,6 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run lint
-      - run: npm run nsp:check
       - run:
           command: |
             ./node_modules/.bin/license-cli auth ccf8289006445461c967cb7874f84a8a
