@@ -861,6 +861,13 @@ declare namespace RamdaAdjunct {
         allEqual<T>(list: T[]): boolean;
 
         /**
+         * Constructs and returns a new string which contains the specified
+         * number of copies of the string on which it was called, concatenated together.
+         */
+        repeatStr(value: string, count: number): string;
+        repeatStr(value: string): (count: number) => string;
+
+        /**
          * Checks if input value is a `thenable`.
          * `thenable` is an object or function that defines a `then` method.
          */
