@@ -121,6 +121,7 @@ export { default as lengthNotEq } from './lengthNotEq';
 export { default as allEqual } from './allEqual';
 export { default as repeatStr } from './repeatStr';
 export { default as allIdentical } from './allIdentical';
+export { default as allIdenticalTo } from './allIdenticalTo';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
