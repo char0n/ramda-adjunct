@@ -867,6 +867,11 @@ declare namespace RamdaAdjunct {
         repeatStr(value: string, count: number): string;
         repeatStr(value: string): (count: number) => string;
 
+        /*
+         * Returns true if all items in the list are equivalent using `R.identical` for equality comparisons.
+         */
+        allIdentical<T>(list: T[]): boolean;
+
         /**
          * Checks if input value is a `thenable`.
          * `thenable` is an object or function that defines a `then` method.

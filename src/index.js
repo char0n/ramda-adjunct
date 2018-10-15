@@ -120,6 +120,7 @@ export { default as lengthEq } from './lengthEq';
 export { default as lengthNotEq } from './lengthNotEq';
 export { default as allEqual } from './allEqual';
 export { default as repeatStr } from './repeatStr';
+export { default as allIdentical } from './allIdentical';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
