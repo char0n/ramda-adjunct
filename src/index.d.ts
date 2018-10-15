@@ -872,6 +872,12 @@ declare namespace RamdaAdjunct {
          */
         allIdentical<T>(list: T[]): boolean;
 
+        /*
+         * Returns true if all items in the list are equivalent to user provided value using `R.identical` for equality comparisons.
+         */
+        allIdenticalTo<T>(val: T, list: T[]): boolean;
+        allIdenticalTo<T>(val: T): (list: T[]) => boolean;
+
         /**
          * Checks if input value is a `thenable`.
          * `thenable` is an object or function that defines a `then` method.
