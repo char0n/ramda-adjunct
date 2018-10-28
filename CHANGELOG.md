@@ -1,3 +1,16 @@
+<a name="2.11.0"></a>
+# [2.11.0](https://github.com/char0n/ramda-adjunct/compare/v2.10.0...v2.11.0) (2018-10-28)
+
+
+### Features
+
+* add allEqualTo ([d14dac9](https://github.com/char0n/ramda-adjunct/commit/d14dac9)), closes [#525](https://github.com/char0n/ramda-adjunct/issues/525)
+* add allIdentical ([c5267f5](https://github.com/char0n/ramda-adjunct/commit/c5267f5)), closes [#578](https://github.com/char0n/ramda-adjunct/issues/578)
+* add allIdenticalTo ([fb61085](https://github.com/char0n/ramda-adjunct/commit/fb61085)), closes [#525](https://github.com/char0n/ramda-adjunct/issues/525)
+* add repeatStr ([f1c5dfa](https://github.com/char0n/ramda-adjunct/commit/f1c5dfa)), closes [#667](https://github.com/char0n/ramda-adjunct/issues/667)
+
+
+
 <a name="2.10.0"></a>
 # [2.10.0](https://github.com/char0n/ramda-adjunct/compare/v2.9.0...v2.10.0) (2018-09-09)
 
