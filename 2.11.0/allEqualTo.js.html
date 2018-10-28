@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isObj.js - Documentation</title>
+    <title>allEqualTo.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isObj.js</h1>
+    <h1 class="page-title">allEqualTo.js</h1>
     
 
     
@@ -52,37 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both, either } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { all, equals, curry } from 'ramda';
 
-import isNotNull from './isNotNull';
-import isFunction from './isFunction';
-import isOfTypeObject from './internal/isOfTypeObject';
-
-/* eslint-disable max-len */
 /**
- * Checks if input value is language type of `Object`.
+ * Returns true if all items in the list are equivalent to user provided value using `R.equals` for equality comparisons.
  *
- * @func isObj
- * @aliases isObject
+ * @func allEqualTo
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.11.0|v2.11.0}
+ * @category List
+ * @sig a -> [b] -> Boolean
+ * @param {*} val User provided value to check the `list` against
+ * @param {Array} list The list of values
  * @return {boolean}
- * @see {@link RA.isNotObj|isNotObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isPlainObj|isPlainObj}
+ * @see {@link RA.allEqual|allEqual}, {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
- * RA.isObj({}); //=> true
- * RA.isObj([]); //=> true
- * RA.isObj(() => {}); //=> true
- * RA.isObj(null); //=> false
- * RA.isObj(undefined); //=> false
+ * RA.allEqualTo(1, [ 1, 2, 3, 4 ]); //=> false
+ * RA.allEqualTo(1, [ 1, 1, 1, 1 ]); //=> true
+ * RA.allEqualTo({}, [ {}, {} ]); //=> true
+ * RA.allEqualTo(1, []); //=> true
+ *
  */
-/* eslint-enable max-len */
-const isObj = both(isNotNull, either(isOfTypeObject, isFunction));
+const allEqualTo = curry((val, list) => all(equals(val), list));
 
-export default isObj;
+export default allEqualTo;
 </code></pre>
         </article>
     </section>
