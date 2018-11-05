@@ -785,7 +785,6 @@ declare namespace RamdaAdjunct {
         thenP<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
         thenP<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
 
-
         /**
          * Runs the given list of functions in order with the supplied object, then returns the object.
          * Also known as the normal order sequencing combinator.
@@ -793,7 +792,9 @@ declare namespace RamdaAdjunct {
          * Acts as a transducer if a transformer is given as second parameter.
          */
         seq<T>(fns: Function[], x: T): T;
+        seq<T>(fns: Function[]): (x: T) => T;
         sequencing<T>(fns: Function[], x: T): T; // alias
+        sequencing<T>(fns: Function[]): (x: T) => T; // alias
 
         /**
          * Returns the elements of the given list or string (or object with a slice method)
