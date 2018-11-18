@@ -146,7 +146,7 @@
     "nyc": "13.0.0",
     "phantomjs-prebuilt": "=2.1.16",
     "prettier": "1.14.3",
-    "ramda": "=0.25.0",
+    "ramda": "0.26.0",
     "rimraf": "=2.6.2",
     "sinon": "6.0.1",
     "testem": "2.14.0",
