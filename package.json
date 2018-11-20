@@ -142,7 +142,7 @@
     "mocha": "5.2.0",
     "mocha-junit-reporter": "1.18.0",
     "mocha-multi-reporters": "1.1.7",
-    "monet": "=0.9.0-alpha.4",
+    "monet": "0.9.0",
     "nyc": "13.0.0",
     "phantomjs-prebuilt": "=2.1.16",
     "prettier": "1.14.3",
