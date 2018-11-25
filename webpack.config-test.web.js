@@ -20,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js)$/,
-        exclude: /node_modules\/(?!(chai-as-promised|sinon))/,
+        exclude: /node_modules\/(?!(chai-as-promised|sinon|ramda))/,
         loader: 'babel-loader',
       },
     ],
