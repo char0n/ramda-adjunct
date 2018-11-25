@@ -7,6 +7,7 @@ import { invoker } from 'ramda';
  *
  * @func thenP
  * @memberOf RA
+ * @aliases then
  * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @deprecated since v2.12.0; available in ramda@0.26.0 as R.then
  * @category Function

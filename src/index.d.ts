@@ -781,6 +781,8 @@ declare namespace RamdaAdjunct {
          */
         thenP<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
         thenP<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
+        then<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
+        then<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
 
         /**
          * Runs the given list of functions in order with the supplied object, then returns the object.
