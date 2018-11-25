@@ -178,6 +178,8 @@ We are building our npm distributions using Webpack to support legacy versions o
 - [Functional lenses in JavaScript - Isos](https://www.linkedin.com/pulse/functional-lenses-javascript-isos-vladim%C3%ADr-gorej/)
 - [Functional lenses in JavaScript - Traversables](https://www.linkedin.com/pulse/functional-lenses-javascript-traversables-vladim%C3%ADr-gorej/)
 - [chore: ramda-adjunct v2.10.0 release](https://www.linkedin.com/pulse/chore-ramda-adjunct-v2100-release-vladim%C3%ADr-gorej/)
+- [chore: ramda-adjunct v2.11.0 release](https://www.linkedin.com/pulse/chore-ramda-adjunct-v2110-release-vladim%C3%ADr-gorej/)
+- [chore: ramda-adjunct v2.12.0 release](https://www.linkedin.com/pulse/chore-ramda-adjunct-v2120-release-vladim%C3%ADr-gorej/)
 
 
 ## Development
