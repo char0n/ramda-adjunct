@@ -8,8 +8,10 @@ import { flip, contains } from 'ramda';
  * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
  *
  * @func contained
+ * @aliases included
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
+ * @deprecated since v2.12.0; please use RA.included alias
  * @category List
  * @sig [a] -> a -> Boolean
  * @param {Array|String} list The list to consider

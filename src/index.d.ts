@@ -1027,6 +1027,9 @@ declare namespace RamdaAdjunct {
          */
          contained<T>(list: T[], val: T): boolean;
          contained<T>(list: T[]): (val: T) => boolean;
+         included<T>(list: T[], val: T): boolean; // alias
+         included<T>(list: T[]): (val: T) => boolean; // alias
+
 
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,
