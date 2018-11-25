@@ -1,3 +1,20 @@
+<a name="2.12.0"></a>
+# [2.12.0](https://github.com/char0n/ramda-adjunct/compare/v2.11.0...v2.12.0) (2018-11-25)
+
+### Bug Fixes
+
+* **renameKeysWith**: use lenses instead of adjust to support ramda@0.26.0 ([43839f3](https://github.com/char0n/ramda-adjunct/commit/43839f3)) 
+
+### Features
+
+* add support for ramda@0.26.0 ([7849c62](https://github.com/char0n/ramda-adjunct/commit/7849c62))
+* deprecate `contained`; add new alias to `contained` as `included` ([c8ef8a4](https://github.com/char0n/ramda-adjunct/commit/c8ef8a4))
+* deprecate `hasPath`; ramda@0.26.0 contains it as `R.hasPath` ([2f475d2](https://github.com/char0n/ramda-adjunct/commit/2f475d2))
+* deprecate `mergeRight`; add new alias to `mergeRight` as `mergeLeft`; ramda@0.26.0 contains it as `R.mergeLeft` ([7849c62](https://github.com/char0n/ramda-adjunct/commit/7849c62))
+* deprecate `thenP`; ramda@0.26.0 contains it as `R.then` ([a4c3475](https://github.com/char0n/ramda-adjunct/commit/a4c3475))
+* add alias `then` to `thenP` ([3ebd1ee](https://github.com/char0n/ramda-adjunct/commit/3ebd1ee))
+ 
+
 <a name="2.11.0"></a>
 # [2.11.0](https://github.com/char0n/ramda-adjunct/compare/v2.10.0...v2.11.0) (2018-10-28)
 
