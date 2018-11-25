@@ -1,4 +1,4 @@
-import { curry, toPairs, pipe, map, adjust, fromPairs } from 'ramda';
+import { curry, toPairs, pipe, map, over, lensIndex, fromPairs } from 'ramda';
 
 /**
  * Creates a new object with the own properties of the provided object, but the
@@ -23,7 +23,7 @@ import { curry, toPairs, pipe, map, adjust, fromPairs } from 'ramda';
 const renameKeysWith = curry((fn, obj) =>
   pipe(
     toPairs,
-    map(adjust(fn, 0)),
+    map(over(lensIndex(0), fn)),
     fromPairs
   )(obj)
 );
