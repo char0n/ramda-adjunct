@@ -104,7 +104,7 @@ _Do you want to find out more about why this library exists ? Read this [**artic
 
 ## Requirements
 
- - ramda >= 0.19.0
+ - ramda >= 0.19.0 <= 0.26.0 
  - node >= 0.10.48
 
 Ramda Adjunct is being automatically tested against node version >=6 <=9.
