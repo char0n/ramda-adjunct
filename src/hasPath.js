@@ -8,6 +8,7 @@ import isObj from './isObj';
  * @func hasPath
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
+ * @deprecated since v2.12.0; ramda@0.26.0 contains hasPath
  * @category Object
  * @typedef Idx = String | Int
  * @sig [Idx] -> {a} -> Boolean
