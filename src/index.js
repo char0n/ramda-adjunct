@@ -129,6 +129,7 @@ export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as mergeRight } from './mergeRight';
+export { default as mergeLeft } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
 export { default as mergeProps } from './mergeProps';
 export { default as mergePaths } from './mergePaths';
