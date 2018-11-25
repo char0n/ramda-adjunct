@@ -477,11 +477,8 @@ declare namespace RamdaAdjunct {
          */
         mergeRight(source: object, destination: object): object;
         mergeRight(source: object): (destination: object) => object;
-
-        /**
-         * Reset properties of the object to their default values.
-         * Alias of {@link http://ramdajs.com/docs/#merge|R.mergeRight}.
-         */
+        mergeLeft(source: object, destination: object): object; // alias
+        mergeLeft(source: object): (destination: object) => object; // alias
         resetToDefault(defaultOptions: object, options: object): object; // alias of mergeRight
         resetToDefault(defaultOptions: object): (options: object) => object; // alias of mergeRight
 
