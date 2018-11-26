@@ -1,11 +1,14 @@
-import isNotNull from './isNotNull';
+import { type, is, F as stubFalse, either, identical, pipe } from 'ramda';
 
 let GeneratorFunction = null;
+let legacyCheck = null;
 try {
   GeneratorFunction = new Function('return function* () {}')().constructor; // eslint-disable-line no-new-func
-} catch (e) {} // eslint-disable-line no-empty
+  legacyCheck = is(GeneratorFunction);
+} catch (e) {
+  legacyCheck = stubFalse;
+}
 
-/* eslint-disable max-len */
 /**
  * Checks if input value is `Generator Function`.
  *
@@ -24,14 +27,12 @@ try {
  * RA.isGeneratorFunction(function test() { }); //=> false
  * RA.isGeneratorFunction(() => {}); //=> false
  */
-/* eslint-enable max-len */
-const isGeneratorFunction = val => {
-  const toStringCheck =
-    Object.prototype.toString.call(val) === '[object GeneratorFunction]';
-  const legacyConstructorCheck =
-    isNotNull(GeneratorFunction) && val instanceof GeneratorFunction;
-
-  return toStringCheck || legacyConstructorCheck;
-};
+const isGeneratorFunction = either(
+  pipe(
+    type,
+    identical('GeneratorFunction')
+  ),
+  legacyCheck
+);
 
 export default isGeneratorFunction;
