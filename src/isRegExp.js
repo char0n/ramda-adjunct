@@ -1,4 +1,4 @@
-import { is } from 'ramda';
+import { type, identical, pipe } from 'ramda';
 
 /**
  * Checks if value is `RegExp` object.
@@ -17,6 +17,9 @@ import { is } from 'ramda';
  * RA.isRegExp(/(?:)/); //=> true
  * RA.isRegExp(1); //=> false
  */
-const isRegExp = is(RegExp);
+const isRegExp = pipe(
+  type,
+  identical('RegExp')
+);
 
 export default isRegExp;
