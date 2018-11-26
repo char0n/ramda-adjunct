@@ -1,9 +1,8 @@
-import { anyPass } from 'ramda';
+import { anyPass, type, pipe, identical } from 'ramda';
 
 import isGeneratorFunction from './isGeneratorFunction';
 import isAsyncFunction from './isAsyncFunction';
 
-/* eslint-disable max-len */
 /**
  * Checks if input value is `Function`.
  *
@@ -24,9 +23,11 @@ import isAsyncFunction from './isAsyncFunction';
  * RA.isFunction(null); //=> false
  * RA.isFunction('abc'); //=> false
  */
-/* eslint-enable max-len */
 const isFunction = anyPass([
-  val => Object.prototype.toString.call(val) === '[object Function]',
+  pipe(
+    type,
+    identical('Function')
+  ),
   isGeneratorFunction,
   isAsyncFunction,
 ]);

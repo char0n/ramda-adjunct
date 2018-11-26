@@ -1,4 +1,5 @@
-/* eslint-disable max-len */
+import { pipe, type, identical } from 'ramda';
+
 /**
  * Checks if input value is `Async Function`.
  *
@@ -17,8 +18,9 @@
  * RA.isAsyncFunction(function test() { }); //=> false
  * RA.isAsyncFunction(() => {}); //=> false
  */
-/* eslint-enable max-len */
-const isAsyncFunction = val =>
-  Object.prototype.toString.call(val) === '[object AsyncFunction]';
+const isAsyncFunction = pipe(
+  type,
+  identical('AsyncFunction')
+);
 
 export default isAsyncFunction;
