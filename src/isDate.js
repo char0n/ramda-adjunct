@@ -1,6 +1,5 @@
-import { is } from 'ramda';
+import { type, identical, pipe } from 'ramda';
 
-/* eslint-disable max-len */
 /**
  * Checks if value is `Date` object.
  *
@@ -17,7 +16,9 @@ import { is } from 'ramda';
  * RA.isDate(new Date()); //=> true
  * RA.isDate('1997-07-16T19:20+01:00'); //=> false
  */
-/* eslint-enable max-len */
-const isDate = is(Date);
+const isDate = pipe(
+  type,
+  identical('Date')
+);
 
 export default isDate;
