@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:9
+      - image: circleci/node:11
     filters:
       branches:
         ignore: gh-pages
@@ -24,30 +24,6 @@ jobs:
           path: ./lib
       - store_artifacts:
           path: ./es
-
-  test_node_6:
-    docker:
-      - image: circleci/node:6
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run test
-      - run: npm run test:ramda
-
-  test_node_7:
-    docker:
-      - image: circleci/node:7
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run test
-      - run: npm run test:ramda
 
   test_node_8:
     docker:
@@ -73,9 +49,33 @@ jobs:
       - run: npm run test
       - run: npm run test:ramda
 
+  test_node_10:
+    docker:
+      - image: circleci/node:10
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:ramda
+
+  test_node_11:
+    docker:
+      - image: circleci/node:11
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:ramda
+
   code_coverage:
     docker:
-      - image: circleci/node:9
+      - image: circleci/node:11
     filters:
       branches:
         only: master
@@ -95,7 +95,7 @@ jobs:
 
   docs:
     docker:
-      - image: circleci/node:9
+      - image: circleci/node:11
     environment:
       GH_NAME: char0n
       GH_EMAIL: vladimir.gorej@gmail.com
@@ -118,24 +118,24 @@ workflows:
   build_test_docs:
     jobs:
       - build
-      - test_node_6:
-          requires:
-            - build
-      - test_node_7:
-          requires:
-            - build
       - test_node_8:
           requires:
             - build
       - test_node_9:
           requires:
             - build
+      - test_node_10:
+          requires:
+            - build
+      - test_node_11:
+          requires:
+            - build
       - code_coverage:
           requires:
-            - test_node_6
-            - test_node_7
             - test_node_8
             - test_node_9
+            - test_node_10
+            - test_node_11
           filters:
             branches:
               only: master
