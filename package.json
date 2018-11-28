@@ -80,7 +80,7 @@
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
     "test": "cross-env BABEL_ENV=commonjs mocha",
     "test:web": "testem ci",
-    "test:ramda": "bnr test:ramda0.26.0 && bnr test:ramda0.25.0 && bnr test:ramda0.24.1 && bnr test:ramda0.24.0 && bnr test:ramda0.23.0 && bnr test:ramda0.22.1 && bnr test:ramda0.22.0 && bnr test:ramda0.21.0 && bnr test:ramda0.20.1 && bnr test:ramda0.20.0 && bnr test:ramda0.19.1 && bnr test:ramda0.19.0",
+    "test:ramda": "bnr test:ramda0.26.1 && bnr test:ramda0.26.0 && bnr test:ramda0.25.0 && bnr test:ramda0.24.1 && bnr test:ramda0.24.0 && bnr test:ramda0.23.0 && bnr test:ramda0.22.1 && bnr test:ramda0.22.0 && bnr test:ramda0.21.0 && bnr test:ramda0.20.1 && bnr test:ramda0.20.0 && bnr test:ramda0.19.1 && bnr test:ramda0.19.0",
     "test:ramda0.19.0": "npm install ramda@0.19.0 && npm test && bnr test:web",
     "test:ramda0.19.1": "npm install ramda@0.19.1 && npm test && bnr test:web",
     "test:ramda0.20.0": "npm install ramda@0.20.0 && npm test && bnr test:web",
@@ -93,6 +93,7 @@
     "test:ramda0.24.1": "npm install ramda@0.24.1 && npm test && bnr test:web",
     "test:ramda0.25.0": "npm install ramda@0.25.0 && npm test && bnr test:web",
     "test:ramda0.26.0": "npm install ramda@0.26.0 && npm test && bnr test:web",
+    "test:ramda0.26.1": "npm install ramda@0.26.1 && npm test && bnr test:web",
     "test:bundle-create": "webpack --config webpack.config-test.web.js",
     "test:bundle-clean": "rimraf tmp-test-bundle.js",
     "coverage": "cross-env BABEL_ENV=coverage nyc mocha",
@@ -105,7 +106,7 @@
   },
   "readme": "README.md",
   "peerDependencies": {
-    "ramda": ">= 0.19.0 <= 0.26.0"
+    "ramda": ">= 0.19.0 <= 0.26.1"
   },
   "devDependencies": {
     "@commitlint/cli": "7.2.1",
@@ -147,7 +148,7 @@
     "nyc": "13.0.0",
     "phantomjs-prebuilt": "=2.1.16",
     "prettier": "1.15.0",
-    "ramda": "0.26.1",
+    "ramda": "=0.26.1",
     "rimraf": "=2.6.2",
     "sinon": "6.0.1",
     "testem": "2.14.0",
