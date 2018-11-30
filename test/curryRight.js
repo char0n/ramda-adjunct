@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import jsv from 'jsverify';
 
 import eq from './shared/eq';
-import * as RA from '../src/index';
+import * as RA from '../src';
 
 describe('curryRight', function() {
   it('should curry a single value', function() {
