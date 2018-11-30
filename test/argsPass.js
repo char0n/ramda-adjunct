@@ -43,8 +43,8 @@ describe('argsPass', function() {
     assert.isTrue(c2True.calledOnce);
   });
 
-  context('with same number of functions as arguments', function() {
-    context('with all functions returning truthy values', function() {
+  context('given same number of functions as arguments', function() {
+    context('given all functions returning truthy values', function() {
       specify('should return `true`', function() {
         const f = RA.argsPass(c1True, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3));
@@ -60,7 +60,7 @@ describe('argsPass', function() {
       });
     });
 
-    context('with one function returning a falsy value', function() {
+    context('given one function returning a falsy value', function() {
       specify('should return `false`', function() {
         const f = RA.argsPass(c1False, [p1True, p2True, p3False]);
         assert.isFalse(f(1, 2, 3));
@@ -77,8 +77,8 @@ describe('argsPass', function() {
     });
   });
 
-  context('with more arguments than predicates', function() {
-    context('with all functions returning truthy values', function() {
+  context('given more arguments than predicates', function() {
+    context('given all functions returning truthy values', function() {
       specify('should return `true`', function() {
         const f = RA.argsPass(c1True, [p1True, p2True, p3True]);
         assert.isTrue(f(1, 2, 3, 4));
@@ -94,7 +94,7 @@ describe('argsPass', function() {
       });
     });
 
-    context('with one predicate failing', function() {
+    context('given one predicate failing', function() {
       specify('should return `false`', function() {
         const f = RA.argsPass(c1False, [p1True, p2True, p3False]);
         assert.isFalse(f(1, 2, 3, 4));
@@ -171,6 +171,11 @@ describe('argsPass', function() {
         assert.isFalse(f(1, 2, 3));
       });
     });
+  });
+
+  it('should curry', function() {
+    assert.isFalse(RA.argsPass(R.none, [p1False, p2False, p3True])(1, 2, 3));
+    assert.isFalse(RA.argsPass(R.none)([p1False, p2False, p3True])(1, 2, 3));
   });
 
   it('should support placeholder to specify "gaps"', function() {
