@@ -4,16 +4,22 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 describe('contained', function() {
-  it('should return true if an element is in a list', function() {
-    eq(RA.contained([1, 2, 3, 9, 8, 7, 100, 200, 300], 7), true);
+  context('given element is in the list', function() {
+    specify('should return true', function() {
+      eq(RA.contained([1, 2, 3, 9, 8, 7, 100, 200, 300], 7), true);
+    });
   });
 
-  it('should return false if an element is not in a list', function() {
-    eq(RA.contained([1, 2, 3, 9, 8, 7, 100, 200, 300], 99), false);
+  context('given element is not in the list', function() {
+    specify('should return false', function() {
+      eq(RA.contained([1, 2, 3, 9, 8, 7, 100, 200, 300], 99), false);
+    });
   });
 
-  it('should return false for the empty list', function() {
-    eq(RA.contained([], 1), false);
+  context('given empty list', function() {
+    specify('should return false', function() {
+      eq(RA.contained([], 1), false);
+    });
   });
 
   it('should have R.equals semantics', function() {
@@ -30,8 +36,10 @@ describe('contained', function() {
     eq(RA.contained([new Just([42])], new Just([42])), true);
   });
 
-  it('should return true if substring is part of string', function() {
-    eq(RA.contained('banana', 'ba'), true);
+  context('given substring is part of string', function() {
+    it('should return true', function() {
+      eq(RA.contained('banana', 'ba'), true);
+    });
   });
 
   it('should be curried', function() {
