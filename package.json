@@ -53,9 +53,13 @@
   "engines": {
     "node": ">=0.10.3"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "bash scripts/pre-commit.sh"
+    }
+  },
   "scripts": {
-    "commitmsg": "commitlint -e $GIT_PARAMS",
-    "precommit": "bash scripts/pre-commit.sh",
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
     "lint:fix": "better-npm-run lint:fix",
