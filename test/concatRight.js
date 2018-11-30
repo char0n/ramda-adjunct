@@ -55,4 +55,9 @@ describe('concatRight', function() {
       });
     }
   );
+
+  it('should curry', function() {
+    eq(RA.concatRight(['a', 'b'], ['c', 'd']), ['c', 'd', 'a', 'b']);
+    eq(RA.concatRight(['a', 'b'])(['c', 'd']), ['c', 'd', 'a', 'b']);
+  });
 });
