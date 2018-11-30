@@ -5,7 +5,7 @@ import eq from './shared/eq';
 import * as RA from '../src/index';
 
 describe('curryRight', function() {
-  it('curries a single value', function() {
+  it('should curry a single value', function() {
     const f = RA.curryRight(function(a, b, c, d) {
       return (a + b * c) / d;
     }); // f(2, 6, 3, 10) == 2
@@ -13,7 +13,7 @@ describe('curryRight', function() {
     eq(g(3, 6, 2), 2);
   });
 
-  it('curries multiple values', function() {
+  it('should curry multiple values', function() {
     // f(2, 6, 3, 10) == 2
     const f = RA.curryRight(function(a, b, c, d) {
       return (a + b * c) / d;
@@ -24,7 +24,7 @@ describe('curryRight', function() {
     eq(h(2), 2);
   });
 
-  it('allows further currying of a curried function', function() {
+  it('should allow further currying of a curried function', function() {
     // f(2, 6, 3, 10) == 2
     const f = RA.curryRight(function(a, b, c, d) {
       return (a + b * c) / d;
@@ -36,7 +36,7 @@ describe('curryRight', function() {
     eq(g(3, 6)(2), 2);
   });
 
-  it('properly reports the length of the curried function', function() {
+  it('should properly report the length of the curried function', function() {
     const f = RA.curryRight(function(a, b, c, d) {
       return (a + b * c) / d;
     });
@@ -48,7 +48,7 @@ describe('curryRight', function() {
     eq(g(3, 6).length, 1);
   });
 
-  it('preserves context', function() {
+  it('should preserve context', function() {
     const ctx = { x: 10 };
     const f = function(a, b) {
       return a + b * this.x;
@@ -59,7 +59,7 @@ describe('curryRight', function() {
     eq(g.call(ctx, 2).call(ctx, 4), 24);
   });
 
-  it('supports R.__ placeholder', function() {
+  it('should support R.__ placeholder', function() {
     const f = function(a, b, c) {
       return [a, b, c];
     };
@@ -91,7 +91,7 @@ describe('curryRight', function() {
     eq(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
-  it('supports @@functional/placeholder', function() {
+  it('should support @@functional/placeholder', function() {
     const f = function(a, b, c) {
       return [a, b, c];
     };
@@ -123,7 +123,7 @@ describe('curryRight', function() {
     eq(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
-  it('forwards extra arguments', function() {
+  it('should forward extra arguments', function() {
     const f = function(a, b, c) {
       void c;
       return Array.prototype.slice.call(arguments);
@@ -141,7 +141,7 @@ describe('curryRight', function() {
 /* eslint-disable max-len */
 describe('curryRight properties', function() {
   jsv.property(
-    'curries multiple values',
+    'should curry multiple values',
     jsv.integer,
     jsv.integer,
     jsv.integer,
@@ -160,7 +160,7 @@ describe('curryRight properties', function() {
   );
 
   jsv.property(
-    'curries with placeholder',
+    'should curry with placeholder',
     jsv.integer,
     jsv.integer,
     jsv.integer,
