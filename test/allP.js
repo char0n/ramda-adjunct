@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
@@ -59,5 +60,11 @@ describe('allP', function() {
 
       assert.isRejected(RA.allP([p1, p2, p3]), 1).notify(done);
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function(done) {
+    const allP = RA.allP(R.__);
+
+    assert.eventually.deepEqual(allP([1, 2, 3]), [1, 2, 3]).notify(done);
   });
 });
