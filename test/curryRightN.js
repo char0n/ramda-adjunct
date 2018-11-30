@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 
 import eq from './shared/eq';
-import * as RA from '../src/index';
+import * as RA from '../src';
 
 describe('curryRightN', function() {
   const source = (a, b, c, d) => {
@@ -9,7 +9,7 @@ describe('curryRightN', function() {
     return a * b * c;
   };
 
-  it('accepts an arity', function() {
+  it('should accept an arity', function() {
     const curried = RA.curryRightN(3, source);
     eq(curried(1)(2)(3), 6);
     eq(curried(1, 2)(3), 6);
@@ -17,7 +17,7 @@ describe('curryRightN', function() {
     eq(curried(1, 2, 3), 6);
   });
 
-  it('can be partially applied', function() {
+  it('should support partial application/currying', function() {
     const curryRight3 = RA.curryRightN(3);
     const curried = curryRight3(source);
     eq(curried.length, 3);
@@ -27,7 +27,7 @@ describe('curryRightN', function() {
     eq(curried(1, 2, 3), 6);
   });
 
-  it('preserves context', function() {
+  it('should preserve context', function() {
     const ctx = { x: 10 };
     const f = function(a, b) {
       return a + b * this.x;
@@ -38,7 +38,7 @@ describe('curryRightN', function() {
     eq(g.call(ctx, 2).call(ctx, 4), 24);
   });
 
-  it('supports R.__ placeholder', function() {
+  it('should support R.__ placeholder', function() {
     const f = function(...args) {
       return args;
     };
@@ -70,7 +70,7 @@ describe('curryRightN', function() {
     eq(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
-  it('supports @@functional/placeholder', function() {
+  it('should support @@functional/placeholder', function() {
     const f = function() {
       return Array.prototype.slice.call(arguments);
     };
@@ -102,7 +102,7 @@ describe('curryRightN', function() {
     eq(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
-  it('forwards extra arguments', function() {
+  it('should forward extra arguments', function() {
     const f = function() {
       return Array.prototype.slice.call(arguments);
     };
