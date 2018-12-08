@@ -1,3 +1,20 @@
+<a name="2.13.0"></a>
+# [2.13.0](https://github.com/char0n/ramda-adjunct/compare/v2.12.0...v2.13.0) (2018-12-08)
+
+
+### Bug Fixes
+
+* **isBoolean:** make this predicate work in different realms ([b89ade0](https://github.com/char0n/ramda-adjunct/commit/b89ade0)), closes [#724](https://github.com/char0n/ramda-adjunct/issues/724)
+* **isDate:** make this predicate work in different realms ([1963c2d](https://github.com/char0n/ramda-adjunct/commit/1963c2d)), closes [#724](https://github.com/char0n/ramda-adjunct/issues/724)
+* **isRegExp:** make this predicate work in different realms ([f0150a9](https://github.com/char0n/ramda-adjunct/commit/f0150a9)), closes [#724](https://github.com/char0n/ramda-adjunct/issues/724)
+
+
+### Features
+
+* add support for ramda@0.26.1 ([2de8c22](https://github.com/char0n/ramda-adjunct/commit/2de8c22))
+
+
+
 <a name="2.12.0"></a>
 # [2.12.0](https://github.com/char0n/ramda-adjunct/compare/v2.11.0...v2.12.0) (2018-11-25)
 
