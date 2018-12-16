@@ -39,7 +39,7 @@ jobs:
 
   test_node_9:
     docker:
-      - image: circleci/node:9-browsers-legacy
+      - image: circleci/node:9
     filters:
       branches:
         ignore: gh-pages
