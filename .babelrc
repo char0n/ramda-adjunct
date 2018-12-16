@@ -1,12 +1,4 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "forceAllTransforms": true
-      }
-    ]
-  ],
   "env": {
     "commonjs": {
       "presets": [

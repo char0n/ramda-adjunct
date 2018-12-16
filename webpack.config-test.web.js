@@ -7,9 +7,9 @@ module.exports = {
   mode: 'production',
   target: 'web',
   entry: [
-    require.resolve('@babel/polyfill'),
+    '@babel/polyfill',
     ...glob.sync('./test/*.js', {
-      ignore: './test/typescript.js',
+      ignore: ['./test/typescript.js', './test/mocha-bootstrap.js'],
     }),
   ],
   output: {
@@ -20,7 +20,6 @@ module.exports = {
     rules: [
       {
         test: /\.(js)$/,
-        exclude: /node_modules\/(?!(chai-as-promised|sinon))/,
         loader: 'babel-loader',
         options: {
           presets: [

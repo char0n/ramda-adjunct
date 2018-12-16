@@ -10,29 +10,37 @@ describe('allP', function() {
     });
   });
 
-  it('should resolve list of thenable values', function(done) {
+  it('should resolve list of thenable values', async function() {
     const p1 = RA.resolveP(1);
     const p2 = RA.resolveP(2);
+    const actual = await RA.allP([p1, p2]);
 
-    assert.eventually.deepEqual(RA.allP([p1, p2]), [1, 2]).notify(done);
+    assert.deepEqual(actual, [1, 2]);
   });
 
-  it('should resolve list of mixed thenable and non-thenable values', function(done) {
+  it('should resolve list of mixed thenable and non-thenable values', async function() {
     const p1 = RA.resolveP(1);
     const p2 = 2;
+    const actual = await RA.allP([p1, p2]);
 
-    assert.eventually.deepEqual(RA.allP([p1, p2]), [1, 2]).notify(done);
+    assert.deepEqual(actual, [1, 2]);
   });
 
-  it('should resolve list of rejected thenable values', function(done) {
+  it('should resolve list of rejected thenable values', async function(done) {
     const p1 = RA.resolveP(1);
     const p2 = RA.rejectP(2);
 
-    assert.isRejected(RA.allP([p1, p2]), 2).notify(done);
+    try {
+      await RA.allP([p1, p2]);
+      done('resolving should fail');
+    } catch (e) {
+      assert.strictEqual(e, 2);
+      done();
+    }
   });
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#Promise.all_fail-fast_behaviour
-  it('should have fail-fast behavior', function(done) {
+  it('should have fail-fast behavior', async function(done) {
     const p1 = new Promise(resolve => {
       setTimeout(resolve, 10, 'one');
     });
@@ -49,22 +57,34 @@ describe('allP', function() {
       reject(new Error());
     });
 
-    assert.isRejected(RA.allP([p1, p2, p3, p4, p5]), Error).notify(done);
+    try {
+      await RA.allP([p1, p2, p3, p4, p5]);
+      done('resolving should fail');
+    } catch (e) {
+      assert.instanceOf(e, Error);
+      done();
+    }
   });
 
   context('given there are two rejections', function() {
-    specify('should reject with the first one', function(done) {
+    specify('should reject with the first one', async function(done) {
       const p1 = RA.resolveP(1);
       const p2 = RA.rejectP(1);
       const p3 = RA.rejectP(2);
 
-      assert.isRejected(RA.allP([p1, p2, p3]), 1).notify(done);
+      try {
+        await RA.allP([p1, p2, p3]);
+        done('resolving should fail');
+      } catch (e) {
+        assert.strictEqual(e, 1);
+        done();
+      }
     });
   });
 
-  it('should support placeholder to specify "gaps"', function(done) {
+  it('should support placeholder to specify "gaps"', async function() {
     const allP = RA.allP(R.__);
 
-    assert.eventually.deepEqual(allP([1, 2, 3]), [1, 2, 3]).notify(done);
+    assert.deepEqual(await allP([1, 2, 3]), [1, 2, 3]);
   });
 });
