@@ -2,13 +2,7 @@ import {
   useWith,
   curry,
   curryN,
-  toPairs,
   equals,
-  over,
-  lensIndex,
-  replace,
-  pipe,
-  map,
   path,
   either,
   complement,
@@ -27,11 +21,3 @@ export const isSameType = curryN(2, useWith(equals, [type, type]));
 
 // isNotSameType :: (Monad a, Monad b) => a -> b -> Boolean
 export const isNotSameType = complement(isSameType);
-
-// aliases :: Prototype -> NewPrototypePairs
-//     Prototype = Object
-//     NewPrototypePairs = Array
-export const aliases = pipe(
-  toPairs,
-  map(over(lensIndex(0), replace('fantasy-land/', '')))
-);

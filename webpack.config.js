@@ -46,6 +46,19 @@ const ra = {
         test: /\.(js)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  node: '4',
+                },
+                forceAllTransforms: true,
+              },
+            ],
+          ],
+        },
       },
     ],
   },
@@ -71,6 +84,19 @@ const raMin = Object.assign(
           test: /\.(js)$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  targets: {
+                    node: '4',
+                  },
+                  forceAllTransforms: true,
+                },
+              ],
+            ],
+          },
         },
       ],
     },
@@ -97,6 +123,24 @@ const raWeb = {
         test: /\.(js)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                forceAllTransforms: true,
+              },
+            ],
+          ],
+          plugins: [
+            [
+              '@babel/plugin-transform-modules-commonjs',
+              {
+                loose: true,
+              },
+            ],
+          ],
+        },
       },
     ],
   },
@@ -122,6 +166,24 @@ const raWebMin = Object.assign(
           test: /\.(js)$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  forceAllTransforms: true,
+                },
+              ],
+            ],
+            plugins: [
+              [
+                '@babel/plugin-transform-modules-commonjs',
+                {
+                  loose: true,
+                },
+              ],
+            ],
+          },
         },
       ],
     },
@@ -145,6 +207,24 @@ const raWebStandalone = {
         test: /\.(js)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+        options: {
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                forceAllTransforms: true,
+              },
+            ],
+          ],
+          plugins: [
+            [
+              '@babel/plugin-transform-modules-commonjs',
+              {
+                loose: true,
+              },
+            ],
+          ],
+        },
       },
     ],
   },
@@ -167,6 +247,24 @@ const rawWebStandaloneMin = Object.assign(
           test: /\.(js)$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  forceAllTransforms: true,
+                },
+              ],
+            ],
+            plugins: [
+              [
+                '@babel/plugin-transform-modules-commonjs',
+                {
+                  loose: true,
+                },
+              ],
+            ],
+          },
         },
       ],
     },
