@@ -1,6 +1,5 @@
 import { empty as emptyR } from 'ramda';
 
-import { aliases } from './util';
 import fl from './mapping';
 import {
   applyTrait,
@@ -53,6 +52,10 @@ class Identity {
     return new Identity(value);
   }
 
+  static of(value) {
+    return new Identity(value);
+  }
+
   /**
    * @static
    */
@@ -100,6 +103,10 @@ class Identity {
     return applyTrait[ap].call(this, applyWithFn);
   }
 
+  ap(applyWithFn) {
+    return this[ap](applyWithFn);
+  }
+
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#functor|Functor} specification.
    *
@@ -113,6 +120,10 @@ class Identity {
    */
   [map](fn) {
     return functorTrait[map].call(this, fn);
+  }
+
+  map(fn) {
+    return this[map](fn);
   }
 
   /**
@@ -132,6 +143,10 @@ class Identity {
    */
   [equals](setoid) {
     return setoidTrait[equals].call(this, setoid);
+  }
+
+  equals(setoid) {
+    return this[equals](setoid);
   }
 
   /**
@@ -158,6 +173,10 @@ class Identity {
     return semigroupTrait[concat].call(this, semigroup);
   }
 
+  concat(semigroup) {
+    return this[concat](semigroup);
+  }
+
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#chain|Chain} specification.
    *
@@ -173,6 +192,10 @@ class Identity {
    */
   [chain](fn) {
     return chainTrait[chain].call(this, fn);
+  }
+
+  chain(fn) {
+    return this[chain](fn);
   }
 
   /**
@@ -195,6 +218,10 @@ class Identity {
     return ordTrait[lte].call(this, ord);
   }
 
+  lte(ord) {
+    return this[lte](ord);
+  }
+
   /**
    * Fantasy land {@link https://github.com/fantasyland/fantasy-land#monoid|Monoid*} specification.
    * Partial implementation of Monoid specification. `empty` method on instance only, returning
@@ -213,6 +240,10 @@ class Identity {
    */
   [empty]() {
     return this.constructor.of(emptyR(this.value));
+  }
+
+  empty() {
+    return this[empty]();
   }
 
   /**
@@ -234,13 +265,10 @@ class Identity {
   [contramap](fn) {
     return this.constructor.of(value => this.value(fn(value)));
   }
-}
 
-aliases(Identity).forEach(([alias, fn]) => {
-  Identity[alias] = fn;
-});
-aliases(Identity.prototype).forEach(([alias, fn]) => {
-  Identity.prototype[alias] = fn;
-});
+  contramap(fn) {
+    return this[contramap](fn);
+  }
+}
 
 export default Identity;

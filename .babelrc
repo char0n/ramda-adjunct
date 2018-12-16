@@ -1,47 +1,55 @@
 {
-  "plugins": [
-    // stage-3
-    "transform-object-rest-spread",
-    "transform-async-generator-functions",
-    "syntax-trailing-function-commas",
-    "transform-async-to-generator",
-    // ES2016
-    "transform-exponentiation-operator",
-    // ES2015
-    "check-es2015-constants",
-    "transform-es2015-arrow-functions",
-    "transform-es2015-block-scoped-functions",
-    "transform-es2015-block-scoping",
-    ["transform-es2015-classes", { "loose": true }],
-    ["transform-es2015-computed-properties", { "loose": true }],
-    ["transform-es2015-destructuring", { "loose": true }],
-    "transform-es2015-duplicate-keys",
-    ["transform-es2015-for-of", { "loose": true }],
-    "transform-es2015-function-name",
-    "transform-es2015-literals",
-    "transform-es2015-object-super",
-    "transform-es2015-parameters",
-    "transform-es2015-shorthand-properties",
-    ["transform-es2015-spread", { "loose": true }],
-    "transform-es2015-sticky-regex",
-    ["transform-es2015-template-literals", { "loose": true }],
-    "transform-es2015-typeof-symbol",
-    "transform-es2015-unicode-regex",
-    "transform-regenerator",
-    "annotate-pure-calls"
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "forceAllTransforms": true
+      }
+    ]
   ],
   "env": {
     "commonjs": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": "commonjs",
+            "forceAllTransforms": true
+          }
+        ]
+      ],
       "plugins": [
-        ["transform-es2015-modules-commonjs", { "loose": true }]
+        ["@babel/plugin-transform-modules-commonjs", {
+          "loose": true
+        }]
       ]
     },
     "es": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": false,
+            "forceAllTransforms": true
+          }
+        ]
+      ]
     },
     "coverage": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": "commonjs",
+            "forceAllTransforms": true
+          }
+        ]
+      ],
       "plugins": [
-        ["transform-es2015-modules-commonjs", { "loose": true }],
-        "istanbul"
+        "istanbul",
+        ["@babel/plugin-transform-modules-commonjs", {
+          "loose": true
+        }]
       ]
     }
   }
