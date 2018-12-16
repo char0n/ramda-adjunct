@@ -26,21 +26,20 @@ describe('allP', function() {
     assert.deepEqual(actual, [1, 2]);
   });
 
-  it('should resolve list of rejected thenable values', async function(done) {
+  it('should resolve list of rejected thenable values', async function() {
     const p1 = RA.resolveP(1);
     const p2 = RA.rejectP(2);
 
     try {
       await RA.allP([p1, p2]);
-      done('resolving should fail');
+      throw new Error('resolving should fail');
     } catch (e) {
       assert.strictEqual(e, 2);
-      done();
     }
   });
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#Promise.all_fail-fast_behaviour
-  it('should have fail-fast behavior', async function(done) {
+  it('should have fail-fast behavior', async function() {
     const p1 = new Promise(resolve => {
       setTimeout(resolve, 10, 'one');
     });
@@ -59,25 +58,24 @@ describe('allP', function() {
 
     try {
       await RA.allP([p1, p2, p3, p4, p5]);
-      done('resolving should fail');
+      throw new Error('resolving should fail');
     } catch (e) {
+      assert.notStrictEqual(e.message, 'resolving should fail');
       assert.instanceOf(e, Error);
-      done();
     }
   });
 
   context('given there are two rejections', function() {
-    specify('should reject with the first one', async function(done) {
+    specify('should reject with the first one', async function() {
       const p1 = RA.resolveP(1);
       const p2 = RA.rejectP(1);
       const p3 = RA.rejectP(2);
 
       try {
         await RA.allP([p1, p2, p3]);
-        done('resolving should fail');
+        throw new Error('resolving should fail');
       } catch (e) {
         assert.strictEqual(e, 1);
-        done();
       }
     });
   });
