@@ -13,7 +13,7 @@ describe('flattenPath', function() {
     };
   });
 
-  it('tests currying', function() {
+  it('should curry', function() {
     eq(RA.flattenPath([], {}), {});
     eq(RA.flattenPath([])({}), {});
   });
