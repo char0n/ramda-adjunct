@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src/index';
 import eq from './shared/eq';
@@ -84,5 +85,11 @@ describe('ensureArray', function() {
     specify('should be the same array instance', function() {
       assert.strictEqual(RA.ensureArray(arrayPrototype), arrayPrototype);
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const ensureArray = RA.ensureArray(R.__);
+
+    eq(ensureArray(1), [1]);
   });
 });
