@@ -6,22 +6,26 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 
 describe('inRange', function() {
-  it('tests whether an integer falls within supplied range', function() {
-    const f = RA.inRange(5, 10);
-    eq(f(5), true);
-    eq(f(9), true);
-    eq(f(10), false);
-    eq(f(4), false);
-    eq(f(11), false);
+  context('given integer falls within supplied range', function() {
+    specify('should return true', function() {
+      const f = RA.inRange(5, 10);
+      eq(f(5), true);
+      eq(f(9), true);
+      eq(f(10), false);
+      eq(f(4), false);
+      eq(f(11), false);
+    });
   });
 
-  it('tests whether a float falls within supplied range', function() {
-    const f = RA.inRange(5.5, 10.5);
-    eq(f(5.5), true);
-    eq(f(9.5), true);
-    eq(f(10.5), false);
-    eq(f(4.5), false);
-    eq(f(11.5), false);
+  context('given float falls within supplied range', function() {
+    specify('should return true', function() {
+      const f = RA.inRange(5.5, 10.5);
+      eq(f(5.5), true);
+      eq(f(9.5), true);
+      eq(f(10.5), false);
+      eq(f(4.5), false);
+      eq(f(11.5), false);
+    });
   });
 
   it('should support negative values', function() {
