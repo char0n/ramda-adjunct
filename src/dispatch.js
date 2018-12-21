@@ -10,6 +10,7 @@ import {
   curry,
   ifElse,
 } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
  * Can be used as a way to compose multiple invokers together to form polymorphic functions,
@@ -73,4 +74,4 @@ const dispatch = functions => {
   );
 };
 
-export default ifElse(isNonEmptyArray, dispatch, stubUndefined);
+export default curry1(ifElse(isNonEmptyArray, dispatch, stubUndefined));
