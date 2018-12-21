@@ -13,7 +13,7 @@ describe('flattenProp', function() {
     };
   });
 
-  it('tests currying', function() {
+  it('should curry', function() {
     eq(RA.flattenProp('prop', {}), {});
     eq(RA.flattenProp('prop')({}), {});
   });
