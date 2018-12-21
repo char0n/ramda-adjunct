@@ -19,14 +19,18 @@ describe('cata', function() {
     eq(RA.cata(R.identity, R.identity)(eitherL), 2);
   });
 
-  it('should test Left for catamorphism without function', function() {
-    assert.throws(RA.cata.bind(null, null, R.identity, eitherL), TypeError);
-    eq(RA.cata(R.identity, null, eitherL), 2);
+  context('given catamorphism without right function', function() {
+    it('should return value from Left', function() {
+      assert.throws(RA.cata.bind(null, null, R.identity, eitherL), TypeError);
+      eq(RA.cata(R.identity, null, eitherL), 2);
+    });
   });
 
-  it('should test Right for catamorphism without function', function() {
-    assert.throws(RA.cata.bind(null, R.identity, null, eitherR), TypeError);
-    eq(RA.cata(null, R.identity, eitherR), 1);
+  context('given catamorphism without left function', function() {
+    it('should return value from Right', function() {
+      assert.throws(RA.cata.bind(null, R.identity, null, eitherR), TypeError);
+      eq(RA.cata(null, R.identity, eitherR), 1);
+    });
   });
 
   it('should call either method on catamorphic object', function() {
@@ -40,12 +44,17 @@ describe('cata', function() {
     eq(RA.cata(R.identity, R.identity, eitherLWithEither), 2);
   });
 
-  it('should throw Error on monad without catamorphic behavior', function() {
-    assert.throws(RA.cata.bind(null, R.identity, R.identity, {}), TypeError);
-    assert.throws(RA.cata.bind(null, R.identity, R.identity, null), TypeError);
-    assert.throws(
-      RA.cata.bind(null, R.identity, R.identity, undefined),
-      TypeError
-    );
+  context('given monad without catamorphic behavior', function() {
+    it('should throw Error', function() {
+      assert.throws(RA.cata.bind(null, R.identity, R.identity, {}), TypeError);
+      assert.throws(
+        RA.cata.bind(null, R.identity, R.identity, null),
+        TypeError
+      );
+      assert.throws(
+        RA.cata.bind(null, R.identity, R.identity, undefined),
+        TypeError
+      );
+    });
   });
 });
