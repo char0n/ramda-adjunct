@@ -1,4 +1,5 @@
 import { has } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 import isArray from './isArray';
 import isString from './isString';
@@ -27,7 +28,7 @@ import isString from './isString';
  * RA.isArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> true
  */
 /* eslint-enable max-len */
-const isArrayLike = val => {
+const isArrayLike = curry1(val => {
   if (isArray(val)) {
     return true;
   }
@@ -50,7 +51,7 @@ const isArrayLike = val => {
     return has(0, val) && has(val.length - 1, val);
   }
   return false;
-};
+});
 
 export default isArrayLike;
 
