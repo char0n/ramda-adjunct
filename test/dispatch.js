@@ -94,4 +94,10 @@ describe('dispatch', function() {
       });
     }
   );
+
+  it('should support placeholder to specify "gaps"', function() {
+    const dispatch = RA.dispatch(R.__);
+
+    eq(dispatch([RA.stubNull, R.always(1)])(), 1);
+  });
 });
