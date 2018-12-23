@@ -1,4 +1,5 @@
 import { pipe, type, identical } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
  * Checks if input value is `Async Function`.
@@ -18,9 +19,11 @@ import { pipe, type, identical } from 'ramda';
  * RA.isAsyncFunction(function test() { }); //=> false
  * RA.isAsyncFunction(() => {}); //=> false
  */
-const isAsyncFunction = pipe(
-  type,
-  identical('AsyncFunction')
+const isAsyncFunction = curry1(
+  pipe(
+    type,
+    identical('AsyncFunction')
+  )
 );
 
 export default isAsyncFunction;
