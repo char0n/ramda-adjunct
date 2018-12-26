@@ -1,4 +1,5 @@
 import { both, complement } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 import isInteger from './isInteger';
 import isOdd from './isOdd';
@@ -26,6 +27,6 @@ import isOdd from './isOdd';
  * RA.isEven(4); // => true
  * RA.isEven(3); // => false
  */
-const isEven = both(isInteger, complement(isOdd));
+const isEven = curry1(both(isInteger, complement(isOdd)));
 
 export default isEven;

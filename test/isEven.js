@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import * as RA from '../src/index';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
@@ -6,7 +8,7 @@ import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isEven', function() {
-  it('tests a value for even integer `Number`', function() {
+  it('should test value for an even integer `Number`', function() {
     eq(RA.isEven(0), true);
     eq(RA.isEven(4), true);
     eq(RA.isEven(Object(4)), false);
@@ -41,5 +43,11 @@ describe('isEven', function() {
 
     eq(RA.isOdd(null), false);
     eq(RA.isOdd(undefined), false);
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isEven = RA.isEven(R.__);
+
+    eq(isEven(2), true);
   });
 });
