@@ -1,10 +1,12 @@
+import * as R from 'ramda';
+
 import * as RA from '../src/index';
 import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isFalse', function() {
-  it("tests whether a value is 'false' primative", function() {
+  it("should test value for 'false' primitive", function() {
     eq(RA.isFalse(false), true);
     eq(RA.isFalse(Boolean(false)), true);
 
@@ -36,5 +38,11 @@ describe('isFalse', function() {
     if (Symbol !== 'undefined') {
       eq(RA.isFalse(Symbol), false);
     }
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isFalse = RA.isFalse(R.__);
+
+    eq(isFalse(false), true);
   });
 });

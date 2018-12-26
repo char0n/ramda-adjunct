@@ -1,4 +1,4 @@
-import { equals } from 'ramda';
+import { identical } from 'ramda';
 
 /**
  * Checks if input value is the Boolean primitive `false`. Will return false for all values created
@@ -26,4 +26,4 @@ import { equals } from 'ramda';
  * RA.isFalse(new Boolean(false)); // => false
  */
 
-export default equals(false);
+export default identical(false);
