@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import * as RA from '../src/index';
 import eq from './shared/eq';
 
@@ -18,5 +20,11 @@ describe('isEmptyString', function() {
     eq(RA.isEmptyString('String'), false);
     eq(RA.isEmptyString(true), false);
     eq(RA.isEmptyString(false), false);
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isEmptyString = RA.isEmptyString(R.__);
+
+    eq(isEmptyString(''), true);
   });
 });
