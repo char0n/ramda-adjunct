@@ -1,10 +1,12 @@
+import * as R from 'ramda';
+
 import * as RA from '../src/index';
 import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isDate', function() {
-  it('tests a value for `Date`', function() {
+  it('should test value for a `Date`', function() {
     eq(RA.isDate(new Date()), true);
 
     eq(RA.isDate(Date.now()), false);
@@ -25,5 +27,11 @@ describe('isDate', function() {
 
     eq(RA.isDate(null), false);
     eq(RA.isDate(undefined), false);
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isDate = RA.isDate(R.__);
+
+    eq(isDate(new Date()), true);
   });
 });
