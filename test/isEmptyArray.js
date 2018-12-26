@@ -4,7 +4,7 @@ import * as RA from '../src/index';
 import eq from './shared/eq';
 
 describe('isEmptyArray', function() {
-  it('should tests value for an empty `Array`', function() {
+  it('should test value for an empty `Array`', function() {
     eq(RA.isEmptyArray([]), true);
     eq(RA.isEmptyArray(new Array()), true);
     eq(RA.isEmptyArray(Array.prototype), true);
