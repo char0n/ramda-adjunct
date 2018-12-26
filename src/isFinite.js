@@ -1,3 +1,6 @@
+import curry1 from 'ramda/src/internal/_curry1';
+
+import isFunction from './isFunction';
 import polyfill from './internal/polyfills/Number.isFinite';
 
 /**
@@ -25,6 +28,8 @@ import polyfill from './internal/polyfills/Number.isFinite';
  * RA.isFinite(null); // => false
  *                    // would've been true with global isFinite(null)
  */
-const _isFinite = Number.isFinite || polyfill;
+const _isFinite = curry1(
+  isFunction(Number.isFinite) ? Number.isFinite : polyfill
+);
 
 export default _isFinite;
