@@ -34,7 +34,7 @@ describe('isFloat', function() {
     });
   });
 
-  context('given number that looks like float number', function() {
+  context('given a number that looks like a float number', function() {
     specify('should treat the number as integer', function() {
       eq(RA.isFloat(1.0), false);
     });
