@@ -1,6 +1,6 @@
 import { Maybe } from 'monet';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 
 const add3 = (a, b, c) => a + b + c;

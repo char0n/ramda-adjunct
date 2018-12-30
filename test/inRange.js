@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';

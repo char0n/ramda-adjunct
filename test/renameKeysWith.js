@@ -1,6 +1,6 @@
 import { concat } from 'ramda';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('renameKeysWith', function() {

@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import sinon from 'sinon';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('reduceP', function() {

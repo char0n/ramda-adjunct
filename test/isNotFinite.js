@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import polyfill from '../src/internal/polyfills/Number.isFinite';
 import eq from './shared/eq';
 

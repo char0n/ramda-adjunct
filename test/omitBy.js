@@ -1,7 +1,7 @@
 import { notStrictEqual, deepStrictEqual } from 'assert';
 import * as R from 'ramda';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('omitBy', function() {

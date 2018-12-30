@@ -1,4 +1,4 @@
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 import element from './shared/element';
 import args from './shared/arguments';
