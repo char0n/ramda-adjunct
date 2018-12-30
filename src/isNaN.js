@@ -1,3 +1,5 @@
+import curry1 from 'ramda/src/internal/_curry1';
+
 import polyfill from './internal/polyfills/Number.isNaN';
 
 /**
@@ -33,6 +35,6 @@ import polyfill from './internal/polyfills/Number.isNaN';
  * RA.isNaN(''); // => false
  * RA.isNaN(' '); // => false
  */
-const _isNaN = Number.isNaN || polyfill;
+const _isNaN = curry1(Number.isNaN || polyfill);
 
 export default _isNaN;
