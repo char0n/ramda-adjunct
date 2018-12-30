@@ -1,3 +1,4 @@
+import curry1 from 'ramda/src/internal/_curry1';
 import { type, is, F as stubFalse, either, identical, pipe } from 'ramda';
 
 let GeneratorFunction = null;
@@ -27,12 +28,14 @@ try {
  * RA.isGeneratorFunction(function test() { }); //=> false
  * RA.isGeneratorFunction(() => {}); //=> false
  */
-const isGeneratorFunction = either(
-  pipe(
-    type,
-    identical('GeneratorFunction')
-  ),
-  legacyCheck
+const isGeneratorFunction = curry1(
+  either(
+    pipe(
+      type,
+      identical('GeneratorFunction')
+    ),
+    legacyCheck
+  )
 );
 
 export default isGeneratorFunction;
