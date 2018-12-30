@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 import { Maybe } from 'monet';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 import Identity from '../src/fantasy-land/Identity';
 

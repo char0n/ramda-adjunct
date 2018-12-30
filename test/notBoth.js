@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { Just, Nothing } from 'monet';
 import sinon from 'sinon';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 
 const supportsFantasyLand = () => {

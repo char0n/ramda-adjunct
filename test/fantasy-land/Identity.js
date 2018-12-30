@@ -12,7 +12,7 @@ import monad from 'fantasy-land/laws/monad';
 import ord from 'fantasy-land/laws/ord';
 import contravarian from 'fantasy-land/laws/contravariant';
 
-import { isFunction, Identity } from '../../src/index';
+import { isFunction, Identity } from '../../src';
 import eq from '../shared/eq';
 
 describe('Identity', function() {

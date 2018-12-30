@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import sinon from 'sinon';
 import * as R from 'ramda';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 
 describe('thenP', function() {
   context('given applied on Promise', function() {

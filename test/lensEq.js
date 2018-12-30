@@ -1,6 +1,6 @@
 import { lens, lensIndex, lensPath, lensProp, path } from 'ramda';
 
-import * as RA from '../src/index';
+import * as RA from '../src';
 import eq from './shared/eq';
 
 describe('lensEq', function() {
