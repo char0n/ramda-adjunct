@@ -28,6 +28,6 @@ describe('isFunction', function() {
   it('should support placeholder to specify "gaps"', function() {
     const isFunction = RA.isFunction(R.__);
 
-    eq(isFunction(genFunc), true);
+    eq(isFunction(genFunc), typeof genFunc === 'function');
   });
 });

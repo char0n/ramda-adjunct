@@ -24,6 +24,6 @@ describe('isGeneratorFunction', function() {
   it('should support placeholder to specify "gaps"', function() {
     const isGeneratorFunction = RA.isGeneratorFunction(R.__);
 
-    eq(isGeneratorFunction(genFunc), true);
+    eq(isGeneratorFunction(genFunc), typeof genFunc === 'function');
   });
 });
