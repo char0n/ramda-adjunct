@@ -1,3 +1,5 @@
+import curry1 from 'ramda/src/internal/_curry1';
+
 import polyfill from './internal/polyfills/Number.isInteger';
 
 /**
@@ -28,6 +30,6 @@ import polyfill from './internal/polyfills/Number.isInteger';
  * RA.isInteger(false);     //=> false
  * RA.isInteger([1]);       //=> false
  */
-const isInteger = Number.isInteger || polyfill;
+const isInteger = curry1(Number.isInteger || polyfill);
 
 export default isInteger;
