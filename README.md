@@ -175,6 +175,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 - [Ramda — R.adjust](https://medium.com/@kyletilman/ramda-r-adjust-b69a575274fa)
 - [Refactoring JavaScript: Imperative to Functional](https://www.derrickbeining.com/2018/07/04/refactoring-javascript-imperative-to-functional/)
 - [Functional Programming Unit Testing in Node – Part 5](http://jessewarden.com/2018/06/functional-programming-unit-testing-in-node-part-5.html)
+- [30 Seconds of Code: Rename MANY Object Keys in Javascript](https://medium.com/front-end-weekly/30-seconds-of-code-rename-many-object-keys-in-javascript-268f279c7bfa)
 - [What's Ramda equivalent to underscore.js 'compact'?](https://stackoverflow.com/questions/29900130/whats-ramda-equivalent-to-underscore-js-compact)
 - [Ramda Adjunct](https://medium.com/ramda-adjunct/ramda-adjunct-6932c20e6b21)
 - [Lifting functions into monadic Context in JavaScript](https://www.linkedin.com/pulse/lifting-functions-monadic-context-javascript-vladim%C3%ADr-gorej/)
