@@ -25,6 +25,9 @@ For a full list of functions see the [**Documentation For The Latest Release**](
 
 Adjunct is a thing added to something else as a supplementary rather than an essential part. And that something is being ramda.
 
+Follow Ramda Adjunct on [**medium.com/ramda-adjunct**](https://medium.com/ramda-adjunct) to read latest news and 
+articles about the library. 
+
 ## Installation
 
 ```sh
