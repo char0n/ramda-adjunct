@@ -189,6 +189,8 @@ It is also possible that our ES5 distributions run on node versions older than 0
 - [chore: ramda-adjunct v2.11.0 release](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-11-0-release-7442f6c16655)
 - [chore: ramda-adjunct v2.12.0 release](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-12-0-release-8e2ec0d5e48)
 - [chore: ramda-adjunct v2.13.0 release](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-13-0-release-b96b308f155b)
+- [chore: ramda-adjunct v2.14.0 release](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-14-0-release-e87ea4f5cc0e)
+
 
 ## Development
 
