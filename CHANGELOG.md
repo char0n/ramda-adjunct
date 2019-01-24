@@ -1,3 +1,23 @@
+<a name="2.14.0"></a>
+# [2.14.0](https://github.com/char0n/ramda-adjunct/compare/v2.13.0...v2.14.0) (2019-01-24)
+
+
+### Features
+
+* **dispatch:** add support for currying ([6187992](https://github.com/char0n/ramda-adjunct/commit/6187992))
+* **isArrayLike:** add support for currying ([a3e843c](https://github.com/char0n/ramda-adjunct/commit/a3e843c))
+* **isAsyncFunction:** add support for ramda placeholder ([4747e6a](https://github.com/char0n/ramda-adjunct/commit/4747e6a)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isBoolean:** add ramda placeholder support ([3c7ee1c](https://github.com/char0n/ramda-adjunct/commit/3c7ee1c)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isDate:** add ramda placeholder support ([96d0772](https://github.com/char0n/ramda-adjunct/commit/96d0772)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isEven:** add support for ramda placeholder ([47aae9c](https://github.com/char0n/ramda-adjunct/commit/47aae9c)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isFinite:** add support for ramda placeholder ([3c8b161](https://github.com/char0n/ramda-adjunct/commit/3c8b161)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isFloat:** add support for ramda placeholder ([8374ba9](https://github.com/char0n/ramda-adjunct/commit/8374ba9)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isGeneratorFunction:** add support ramda placeholder ([84e8816](https://github.com/char0n/ramda-adjunct/commit/84e8816)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isInteger:** add support for ramda placeholder ([69d9f2c](https://github.com/char0n/ramda-adjunct/commit/69d9f2c)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isNaN:** add support for ramda placeholder ([ec09c4c](https://github.com/char0n/ramda-adjunct/commit/ec09c4c)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+
+
+
 <a name="2.13.0"></a>
 # [2.13.0](https://github.com/char0n/ramda-adjunct/compare/v2.12.0...v2.13.0) (2018-12-08)
 
