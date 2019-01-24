@@ -49,7 +49,7 @@ github release, please refer to this [page](https://help.github.com/articles/cre
 
 ## Bump the version
 
-Bump the `package.json` version by incrementing **MAJOR**, **MINOR** or **PATCH** part of the semver version.
+Bump the `package.json` and `package-lock.json` version by incrementing **MAJOR**, **MINOR** or **PATCH** part of the semver version.
 
 ```sh
  $ git add package.json
