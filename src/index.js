@@ -162,5 +162,7 @@ export { default as notAllPass } from './notAllPass';
 export { default as nonePass } from './nonePass';
 export { default as argsPass } from './argsPass';
 export { default as dropArgs } from './dropArgs';
+// Math
+export { default as round } from './round';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
