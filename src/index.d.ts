@@ -320,7 +320,7 @@ declare namespace RamdaAdjunct {
          * Checks if value is odd integer number.
          * An odd number is an integer which is not a multiple DIVISIBLE of two.
          */
-        isOdd(val: any): number;
+        isOdd(val: any): boolean;
 
         /**
          * Checks if value is even integer number.
@@ -329,7 +329,7 @@ declare namespace RamdaAdjunct {
          * which despite not being a natural number, is an integer.
          * Even numbers are either positive or negative.
          */
-        isEven(val: any): number;
+        isEven(val: any): boolean;
 
         /**
          * Checks if input value is a pair.
@@ -1054,6 +1054,11 @@ declare namespace RamdaAdjunct {
             (toIdx: number, list: T[]): T[];
             (toIdx: number): (list: T[]) => T[];
         };
+
+        /**
+         * Returns the value of a number rounded to the nearest integer.
+         */
+         round(val: number): number;
 
         /**
          * Identity type.
