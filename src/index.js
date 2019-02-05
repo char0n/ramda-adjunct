@@ -164,5 +164,6 @@ export { default as argsPass } from './argsPass';
 export { default as dropArgs } from './dropArgs';
 // Math
 export { default as round } from './round';
+export { default as ceil } from './ceil';
 // Types
 export { default as Identity } from './fantasy-land/Identity';

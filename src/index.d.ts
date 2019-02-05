@@ -1058,7 +1058,14 @@ declare namespace RamdaAdjunct {
         /**
          * Returns the value of a number rounded to the nearest integer.
          */
-         round(val: number): number;
+        round(val: number): number;
+
+        /**
+         * Returns the smallest integer greater than or equal to a given number.
+         *
+         * Note: ceil(null) returns integer 0 and does not give a NaN error.
+         */
+        ceil(val: number): number;
 
         /**
          * Identity type.
