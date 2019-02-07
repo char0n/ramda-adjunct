@@ -178,7 +178,7 @@
     "typescript": "=3.2.2",
     "typescript-definition-tester": "0.0.6",
     "uglifyjs-webpack-plugin": "2.1.1",
-    "webpack": "4.29.2",
+    "webpack": "4.29.3",
     "webpack-cli": "3.2.3"
   },
   "browserslist": "> 0.25%, ie 10, ie 11, not op_mini all",
