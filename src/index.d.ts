@@ -1075,6 +1075,12 @@ declare namespace RamdaAdjunct {
         floor(val: number): number
 
         /**
+         * Returns the integer part of a number by removing any fractional digits.
+         *
+         */
+        trunc(val: number): number;
+
+        /**
          * Identity type.
          */
         Identity: Function;

@@ -11,8 +11,8 @@ import curry1 from 'ramda/src/internal/_curry1';
  * @since {@link https://char0n.github.io/ramda-adjunct/2.15.0|v2.15.0}
  * @category Math
  * @sig Number -> Number
- * @param {*} number The number to ceil
- * @return {number} The smallest integer greater than or equal to the given number.
+ * @param {number} number The number to ceil
+ * @return {number} The smallest integer greater than or equal to the given number
  * @example
  *
  * RA.ceil(.95); //=> 1
