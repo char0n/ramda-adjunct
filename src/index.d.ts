@@ -1081,8 +1081,13 @@ declare namespace RamdaAdjunct {
         trunc(val: number): number;
 
         /**
-         * Identity type.
+         * Returns the sign of a number, indicating whether the number is positive, negative or zero.
          */
+        sign(val: number): number;
+
+         /**
+          * Identity type.
+          */
         Identity: Function;
     }
 
