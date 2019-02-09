@@ -1068,6 +1068,13 @@ declare namespace RamdaAdjunct {
         ceil(val: number): number;
 
         /**
+         * Returns the largest integer less than or equal to a given number.
+         *
+         * Note: floor(null) returns integer 0 and do not give a NaN error.
+         */
+        floor(val: number): number
+
+        /**
          * Identity type.
          */
         Identity: Function;
