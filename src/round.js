@@ -9,7 +9,7 @@ import curry1 from 'ramda/src/internal/_curry1';
  * @since {@link https://char0n.github.io/ramda-adjunct/2.15.0|v2.15.0}
  * @category Math
  * @sig Number -> Number
- * @param {*} number The number to round
+ * @param {number} number The number to round
  * @return {number} The value of the given number rounded to the nearest integer
  * @example
  *
