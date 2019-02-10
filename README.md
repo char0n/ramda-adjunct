@@ -3,6 +3,7 @@
 [![jsdoc](https://img.shields.io/badge/docs-100%25-green.svg)](https://char0n.github.io/ramda-adjunct/)
 [![npmversion](https://badge.fury.io/js/ramda-adjunct.svg)](https://www.npmjs.com/package/ramda-adjunct)
 [![npm](https://img.shields.io/npm/dm/ramda-adjunct.svg)](https://www.npmjs.com/package/ramda-adjunct)
+[![](https://data.jsdelivr.com/v1/package/npm/ramda-adjunct/badge)](https://www.jsdelivr.com/package/npm/ramda-adjunct)
 [![devDependenciesStatus](https://david-dm.org/char0n/ramda-adjunct/dev-status.svg)](https://david-dm.org/char0n/ramda-adjunct?type=dev)
 [![peerDependenciesStatus](https://david-dm.org/char0n/ramda-adjunct/peer-status.svg)](https://david-dm.org/char0n/ramda-adjunct?type=peer)
 [![Greenkeeper badge](https://badges.greenkeeper.io/char0n/ramda-adjunct.svg)](https://greenkeeper.io/) [![startwithwhy](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](https://www.linkedin.com/pulse/ramda-adjunct-vladim%C3%ADr-gorej)
