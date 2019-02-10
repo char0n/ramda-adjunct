@@ -15,7 +15,7 @@ to semver rules.
 ## Edit README.md
 
 Edit `README.md` file ([API Documentation section](https://github.com/char0n/ramda-adjunct/blob/master/README.md#api-documentation)) and 
-add link to the version you're currently releasing. 
+add link to the version you're currently releasing. Also add the link to release article from [ramda-adjunct medium publication](https://medium.com/ramda-adjunct).
 
 ## Commit to git
 

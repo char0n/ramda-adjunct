@@ -1,3 +1,17 @@
+<a name="2.15.0"></a>
+# [2.15.0](https://github.com/char0n/ramda-adjunct/compare/v2.14.0...v2.15.0) (2019-02-10)
+
+
+### Features
+
+* add ceil ([d9dee2b](https://github.com/char0n/ramda-adjunct/commit/d9dee2b)), closes [#748](https://github.com/char0n/ramda-adjunct/issues/748)
+* add floor ([0ce6fbe](https://github.com/char0n/ramda-adjunct/commit/0ce6fbe)), closes [#748](https://github.com/char0n/ramda-adjunct/issues/748)
+* add round ([eab931c](https://github.com/char0n/ramda-adjunct/commit/eab931c)), closes [#106](https://github.com/char0n/ramda-adjunct/issues/106)
+* add sign ([6d2a080](https://github.com/char0n/ramda-adjunct/commit/6d2a080)), closes [#748](https://github.com/char0n/ramda-adjunct/issues/748)
+* add trunc ([ddfb12e](https://github.com/char0n/ramda-adjunct/commit/ddfb12e)), closes [#748](https://github.com/char0n/ramda-adjunct/issues/748)
+
+
+
 <a name="2.14.0"></a>
 # [2.14.0](https://github.com/char0n/ramda-adjunct/compare/v2.13.0...v2.14.0) (2019-01-24)
 
