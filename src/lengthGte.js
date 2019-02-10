@@ -19,7 +19,7 @@ import compareLength from './internal/compareLength';
  *
  * RA.lengthGte(3, [1,2,3,4]); //=> true
  * RA.lengthGte(3, [1,2,3]); //=> true
- * RA.lengthGte(3, [1,2,3]); //=> false
+ * RA.lengthGte(3, [1,2]); //=> false
  */
 const lengthGte = compareLength(flip(gte));
 
