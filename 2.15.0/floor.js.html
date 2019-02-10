@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isUndefined.js - Documentation</title>
+    <title>floor.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isUndefined.js</h1>
+    <h1 class="page-title">floor.js</h1>
     
 
     
@@ -52,30 +52,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
-
-import stubUndefined from './stubUndefined';
+            <pre class="prettyprint source linenums"><code>import { bind } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
- * Checks if input value is `undefined`.
+ * Returns the largest integer less than or equal to a given number.
  *
- * @func isUndefined
+ * Note: floor(null) returns integer 0 and do not give a NaN error.
+ *
+ * @func floor
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isNotUndefined|isNotUndefined}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.15.0|v2.15.0}
+ * @category Math
+ * @sig Number -> Number
+ * @param {number} number The number to floor
+ * @return {number} A number representing the largest integer less than or equal to the specified number
  * @example
  *
- * RA.isUndefined(1); //=> false
- * RA.isUndefined(undefined); //=> true
- * RA.isUndefined(null); //=> false
+ * RA.floor(45.95); //=> 45
+ * RA.floor(45.05); //=> 45
+ * RA.floor(4); //=> 4
+ * RA.floor(-45.05); //=> -46
+ * RA.floor(-45.95); //=> -46
+ * RA.floor(null); //=> 0
  */
-const isUndefined = equals(stubUndefined());
 
-export default isUndefined;
+const floor = curry1(bind(Math.floor, Math));
+
+export default floor;
 </code></pre>
         </article>
     </section>
