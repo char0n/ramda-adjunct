@@ -96,6 +96,7 @@ export { default as Y } from './Y';
 export { default as seq } from './seq';
 export { default as sequencing } from './seq';
 export { default as dispatch } from './dispatch';
+export { default as async } from './async';
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';
