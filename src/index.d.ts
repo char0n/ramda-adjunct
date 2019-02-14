@@ -1,3 +1,5 @@
+import { GeneratorFn } from 'jsverify';
+
 declare var RA: RamdaAdjunct.Static;
 
 declare namespace RamdaAdjunct {
@@ -1084,6 +1086,14 @@ declare namespace RamdaAdjunct {
          * Returns the sign of a number, indicating whether the number is positive, negative or zero.
          */
         sign(val: number): number;
+
+        /**
+         * Takes a generator function and returns an async function.
+         * The async function returned is a curried function whose arity matches that of the generator function.
+         *
+         * Note: This function is handy for environments that does support generators but doesn't support async/await.
+         */
+        async(generatorFn: Function): Function;
 
          /**
           * Identity type.
