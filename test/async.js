@@ -18,13 +18,47 @@ describe('async', function() {
       eq(expected, 3);
     });
 
-    context('and the generator throw Error', function() {
+    context('and the generator throw Error as the last statement', function() {
       specify('should resolve with rejection', async function() {
         const asyncFn = RA.async(function* generator(val1, val2) {
           yield RA.resolveP(val1);
           yield RA.resolveP(val2);
 
           throw new Error('generator error');
+        });
+
+        try {
+          await asyncFn(1, 2);
+          throw new Error('fulfilling should fail');
+        } catch (error) {
+          assert.instanceOf(error, Error);
+          eq(error.message, 'generator error');
+        }
+      });
+    });
+
+    context('and the generator throw Error as the first statement', function() {
+      specify('should resolve with rejection', async function() {
+        // eslint-disable-next-line require-yield
+        const asyncFn = RA.async(function* generator() {
+          throw new Error('generator error');
+        });
+
+        try {
+          await asyncFn(1, 2);
+          throw new Error('fulfilling should fail');
+        } catch (error) {
+          assert.instanceOf(error, Error);
+          eq(error.message, 'generator error');
+        }
+      });
+    });
+
+    context('and the generator contains rejection', function() {
+      specify('should resolve with rejection', async function() {
+        const asyncFn = RA.async(function* generator(val) {
+          yield RA.resolveP(val);
+          yield RA.rejectP(new Error('generator error'));
         });
 
         try {

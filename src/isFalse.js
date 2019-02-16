@@ -26,4 +26,6 @@ import { identical } from 'ramda';
  * RA.isFalse(new Boolean(false)); // => false
  */
 
-export default identical(false);
+const isFalse = identical(false);
+
+export default isFalse;
