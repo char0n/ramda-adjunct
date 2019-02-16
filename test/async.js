@@ -70,6 +70,55 @@ describe('async', function() {
         }
       });
     });
+
+    context(
+      'and the generator handles error for another generator',
+      function() {
+        specify('should not throw Error', async function() {
+          const foo = function* generator(val) {
+            yield RA.resolveP(val);
+            throw new Error('generator foo error');
+          };
+          const bar = RA.async(function* generator(val1, val2) {
+            const a = yield RA.resolveP(val1);
+            const b = yield RA.resolveP(val2);
+            let c;
+            try {
+              c = yield* foo(a, b);
+            } catch (error) {
+              c = 6;
+            }
+
+            return c + 3;
+          });
+
+          eq(await bar(1, 2), 9);
+        });
+      }
+    );
+
+    context('and the generator handles error for another async', function() {
+      specify('should not throw Error', async function() {
+        const foo = RA.async(function* generator(val) {
+          yield RA.resolveP(val);
+          throw new Error('generator foo error');
+        });
+        const bar = RA.async(function* generator(val1, val2) {
+          const a = yield RA.resolveP(val1);
+          const b = yield RA.resolveP(val2);
+          let c;
+          try {
+            c = yield foo(a, b);
+          } catch (error) {
+            c = 6;
+          }
+
+          return c + 3;
+        });
+
+        eq(await bar(1, 2), 9);
+      });
+    });
   });
 
   it('should support yield delegation', async function() {
