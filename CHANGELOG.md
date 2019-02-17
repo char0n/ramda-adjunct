@@ -1,3 +1,13 @@
+<a name="2.16.0"></a>
+# [2.16.0](https://github.com/char0n/ramda-adjunct/compare/v2.15.0...v2.16.0) (2019-02-17)
+
+
+### Features
+
+* add async ([cbd709f](https://github.com/char0n/ramda-adjunct/commit/cbd709f)), closes [#830](https://github.com/char0n/ramda-adjunct/issues/830)
+
+
+
 <a name="2.15.0"></a>
 # [2.15.0](https://github.com/char0n/ramda-adjunct/compare/v2.14.0...v2.15.0) (2019-02-10)
 
