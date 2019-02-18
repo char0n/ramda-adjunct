@@ -143,7 +143,7 @@
     "@commitlint/config-conventional": "7.3.1",
     "babel-loader": "8.0.5",
     "babel-plugin-annotate-pure-calls": "0.4.0",
-    "babel-plugin-istanbul": "=5.1.0",
+    "babel-plugin-istanbul": "5.1.1",
     "better-npm-run": "0.1.1",
     "chai": "4.2.0",
     "codecov": "3.2.0",
