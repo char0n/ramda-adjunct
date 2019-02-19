@@ -1,3 +1,13 @@
+<a name="2.16.1"></a>
+## [2.16.1](https://github.com/char0n/ramda-adjunct/compare/v2.16.0...v2.16.1) (2019-02-19)
+
+
+### Bug Fixes
+
+* **typings:** remove accidental import ([3e7bfae](https://github.com/char0n/ramda-adjunct/commit/3e7bfae)), closes [#838](https://github.com/char0n/ramda-adjunct/issues/838)
+
+
+
 <a name="2.16.0"></a>
 # [2.16.0](https://github.com/char0n/ramda-adjunct/compare/v2.15.0...v2.16.0) (2019-02-17)
 
