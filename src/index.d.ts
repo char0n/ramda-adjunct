@@ -1,5 +1,3 @@
-import { GeneratorFn } from 'jsverify';
-
 declare var RA: RamdaAdjunct.Static;
 
 declare namespace RamdaAdjunct {
