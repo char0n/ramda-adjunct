@@ -1,421 +1,499 @@
 import { assert } from 'chai';
 import sinon from 'sinon';
-import { add, identity, always } from 'ramda';
-import fl from 'fantasy-land/';
-import setoid from 'fantasy-land/laws/setoid';
-import semigroup from 'fantasy-land/laws/semigroup';
-import apply from 'fantasy-land/laws/apply';
-import applicative from 'fantasy-land/laws/applicative';
-import functor from 'fantasy-land/laws/functor';
-import chain from 'fantasy-land/laws/chain';
-import monad from 'fantasy-land/laws/monad';
-import ord from 'fantasy-land/laws/ord';
-import contravarian from 'fantasy-land/laws/contravariant';
+import * as R from 'ramda';
+import show from 'sanctuary-show';
+import fl from 'fantasy-land';
+import laws from 'fantasy-laws';
+import jsv from 'jsverify';
 
-import { isFunction, Identity } from '../../src';
+import * as RA from '../../src';
 import eq from '../shared/eq';
 
 describe('Identity', function() {
+  const IdentityArb = arbitrary =>
+    arbitrary.smap(RA.Identity.of, i => i.get(), show);
+
   describe('Setoid', function() {
-    it('tests for reflexivity', function() {
-      setoid.reflexivity(Identity.of)(eq)(1);
+    const { reflexivity, symmetry, transitivity } = laws.Setoid;
+
+    it('should satisfy reflexivity law', reflexivity(IdentityArb(jsv.falsy)));
+
+    it(
+      'should satisfy symmetry law',
+      symmetry(IdentityArb(jsv.bool), IdentityArb(jsv.bool))
+    );
+
+    it(
+      'should satisfy transitivity law',
+      transitivity(
+        IdentityArb(jsv.bool),
+        IdentityArb(jsv.bool),
+        IdentityArb(jsv.bool)
+      )
+    );
+
+    context('given same values inside same Setoid types', function() {
+      specify('should equal', function() {
+        const a = RA.Identity.of(1);
+        const b = RA.Identity.of(1);
+
+        eq(a.equals(b), true);
+      });
     });
 
-    it('tests for symetry', function() {
-      setoid.symmetry(Identity.of)(eq)(1);
+    context('given same values inside different Setoid types', function() {
+      specify('should not equal', function() {
+        const a = RA.Identity.of(1);
+        const b = RA.Identity.of(1);
+
+        b['@@type'] = 'unknown-type';
+
+        eq(a.equals(b), false);
+      });
     });
 
-    it('tests for transitivity', function() {
-      setoid.transitivity(Identity.of)(eq)(1);
-    });
-
-    it('tests for value of the same Setoid', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(1);
-
-      eq(a.equals(b), true);
-    });
-
-    it('tests for value of different Setoid', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(1);
-
-      b['@@type'] = 'unknown-type';
-
-      eq(a.equals(b), false);
-    });
-
-    it('tests for returning a boolean', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(2);
+    it('should return a boolean', function() {
+      const a = RA.Identity.of(1);
+      const b = RA.Identity.of(2);
 
       eq(a.equals(a), true);
       eq(a.equals(b), false);
     });
 
-    it('tests isomorphism', function() {
-      const type = Identity.of(1);
+    it('should be isomorphic', function() {
+      const type = RA.Identity.of(1);
       const value = type.get();
 
-      eq(type instanceof Identity, true);
+      eq(type instanceof RA.Identity, true);
       eq(value, 1);
     });
   });
 
   describe('Semigroup', function() {
-    it('tests for associativity', function() {
-      semigroup.associativity(Identity.of)(eq)(1);
+    const { associativity } = laws.Semigroup(R.equals);
+
+    it(
+      'should satisfy associativity law',
+      associativity(
+        IdentityArb(jsv.string),
+        IdentityArb(jsv.string),
+        IdentityArb(jsv.string)
+      )
+    );
+
+    context('given two Semigroups of different value types', function() {
+      specify('should trow an error', function() {
+        const a = RA.Identity.of({});
+        const b = RA.Identity.of([]);
+
+        assert.throws(a.concat.bind(b), TypeError);
+      });
     });
 
-    it('tests for value of different Semigroup', function() {
-      const a = Identity.of({});
-      const b = Identity.of([]);
+    context('given two Semigroups of same value types', function() {
+      specify('should return a new Semigroup', function() {
+        const a = RA.Identity.of(1);
+        const b = RA.Identity.of(2);
+        const c = a.concat(b);
 
-      assert.throws(a.concat.bind(b), TypeError);
+        eq(a instanceof RA.Identity, true);
+        eq(b instanceof RA.Identity, true);
+        eq(c instanceof RA.Identity, true);
+      });
     });
 
-    it('tests concat for returning a value of the same Setoid', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(2);
-      const c = a.concat(b);
+    context('given two Semigroups of number value type', function() {
+      specify('should add the numbers inside Semigroups', function() {
+        const a = RA.Identity.of(1);
+        const b = RA.Identity.of(2);
+        const c = a.concat(b);
 
-      eq(a instanceof Identity, true);
-      eq(b instanceof Identity, true);
-      eq(c instanceof Identity, true);
+        eq(c.get(), 3);
+      });
     });
 
-    it('tests concat on number Semigroup', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(2);
-      const c = a.concat(b);
+    context('given two Semigroups of string value type', function() {
+      specify('should concatenate the strings inside Semigroups', function() {
+        const a = RA.Identity.of('a');
+        const b = RA.Identity.of('b');
+        const c = a.concat(b);
 
-      eq(c.get(), 3);
+        eq(c.get(), 'ab');
+      });
     });
 
-    it('tests concat on string Semigroup', function() {
-      const a = Identity.of('a');
-      const b = Identity.of('b');
-      const c = a.concat(b);
+    context('given two Semigroups of array value type', function() {
+      specify('should contacenate the arrays inside Semigroups', function() {
+        const a = RA.Identity.of([1]);
+        const b = RA.Identity.of([2]);
+        const c = a.concat(b);
 
-      eq(c.get(), 'ab');
+        eq(c.get(), [1, 2]);
+      });
     });
 
-    it('tests concat on array Semigroup', function() {
-      const a = Identity.of([1]);
-      const b = Identity.of([2]);
-      const c = a.concat(b);
+    context('given two fantasy-land compatible Semigroups', function() {
+      specify('should concatenate', function() {
+        const arrayA = [1];
+        const arrayB = [2];
 
-      eq(c.get(), [1, 2]);
-    });
+        arrayA[fl.concat] = arrayA.concat;
+        arrayB[fl.concat] = arrayB.concat;
 
-    it('test concat of fantas-land compatible Semigroup', function() {
-      const arrayA = [1];
-      const arrayB = [2];
+        const a = RA.Identity.of(arrayA);
+        const b = RA.Identity.of(arrayB);
+        const c = a.concat(b);
 
-      arrayA[fl.concat] = arrayA.concat;
-      arrayB[fl.concat] = arrayB.concat;
-
-      const a = Identity.of(arrayA);
-      const b = Identity.of(arrayB);
-      const c = a.concat(b);
-
-      eq(c.get(), [1, 2]);
+        eq(c.get(), [1, 2]);
+      });
     });
   });
 
   describe('Apply', function() {
-    it('tests for Functor spec', function() {
-      const a = Identity.of(1);
+    const { composition } = laws.Apply(R.equals);
 
-      eq(isFunction(a[fl.map]), true);
+    it('should support Functor specification', function() {
+      const a = RA.Identity.of(1);
+
+      eq(RA.isFunction(a[fl.map]), true);
     });
 
-    it('tests for composition', function() {
-      apply.composition(Identity)(eq)(1);
-    });
+    it(
+      'should satisfy composition law',
+      composition(
+        IdentityArb(jsv.constant(Math.sqrt)),
+        IdentityArb(jsv.constant(Math.abs)),
+        IdentityArb(jsv.number)
+      )
+    );
 
-    it('test ap argument for an apply of a function', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(1).map(add);
+    it('should apply the Apply of a function on a value', function() {
+      const a = RA.Identity.of(1);
+      const b = RA.Identity.of(1).map(R.add);
 
       eq(a.ap(b).get(), 2);
     });
 
-    it('test ap argument for an apply of a non-function', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(1).map(identity);
+    context('given Apply without a function provided', function() {
+      specify('should trow error', function() {
+        const a = RA.Identity.of(1);
+        const b = RA.Identity.of(1).map(R.identity);
 
-      assert.throws(() => a.ap(b).get(), TypeError);
+        assert.throws(() => a.ap(b).get(), TypeError);
+      });
     });
 
-    it('test ap caller for an apply of any value', function() {
-      const a = Identity.of(NaN);
-      const b = Identity.of(1).map(add);
+    it('should apply the Apply with function over the Apply with value', function() {
+      const a = RA.Identity.of(NaN);
+      const b = RA.Identity.of(1).map(R.add);
 
       eq(a.ap(b).get(), NaN);
     });
 
-    it('test for non parts or return value being checked', function() {
+    it('should not check any parts of the return value', function() {
       // TODO(vladimir.gorej@gmail.com): how to tests this one ?
     });
   });
 
   describe('Applicative', function() {
-    it('tests for an Apply spec', function() {
-      const a = Identity.of(1);
+    const { identity, homomorphism, interchange } = laws.Applicative(
+      R.equals,
+      RA.Identity
+    );
 
-      eq(isFunction(a[fl.ap]), true);
+    it('should support Apply specification', function() {
+      const a = RA.Identity.of(1);
+
+      eq(RA.isFunction(a[fl.ap]), true);
     });
 
-    it('tests for identity', function() {
-      applicative.identity(Identity)(eq)(1);
+    it('should satisfy identity law', identity(IdentityArb(jsv.number)));
+
+    it(
+      'should satisfy homomorphism law',
+      homomorphism(jsv.constant(Math.abs), IdentityArb(jsv.number))
+    );
+
+    it(
+      'should satisfy interchange law',
+      interchange(IdentityArb(jsv.constant(Math.abs)), IdentityArb(jsv.number))
+    );
+
+    it('should have unit function on type representative', function() {
+      eq(RA.isFunction(RA.Identity[fl.of]), true);
+      eq(RA.Identity.of(1).constructor[fl.of], RA.Identity[fl.of]);
     });
 
-    it('tests for homomorphism', function() {
-      applicative.homomorphism(Identity)(eq)(1);
+    it('should return Applicative of the same type', function() {
+      const a = RA.Identity.of(1);
+
+      eq(a instanceof RA.Identity, true);
     });
 
-    it('tests for interchange', function() {
-      applicative.interchange(Identity)(eq)(1);
-    });
-
-    it('tests for of function on type representative', function() {
-      eq(isFunction(Identity[fl.of]), true);
-      eq(Identity.of(1).constructor[fl.of], Identity[fl.of]);
-    });
-
-    it('tests for of providing value of same Applicative', function() {
-      const a = Identity.of(1);
-
-      eq(a instanceof Identity, true);
-    });
-
-    it("tests if no parts of of's arguments are being checked", function() {
+    it('should not check any parts of the value supplied to unit function', function() {
       // TODO(vladimir.gorej@gmail.com): how to tests this one ?
     });
   });
 
   describe('Functor', function() {
-    it('tests for identity', function() {
-      functor.identity(Identity.of)(eq)(1);
-    });
+    const { identity, composition } = laws.Functor(R.equals);
 
-    it('tests for composition', function() {
-      functor.composition(Identity.of)(eq)(identity)(identity)(1);
-    });
+    it('should satisfy identity law', identity(IdentityArb(jsv.number)));
 
-    it('tests f for a function type', function() {
+    it(
+      'should satisfy composition law',
+      composition(
+        IdentityArb(jsv.number),
+        jsv.constant(Math.sqrt),
+        jsv.constant(Math.abs)
+      )
+    );
+
+    it('should map value with mapping function', function() {
       const fn = sinon.spy();
-      const a = Identity.of(1).map(fn);
+      const a = RA.Identity.of(1).map(fn);
 
-      eq(a instanceof Identity, true);
+      eq(a instanceof RA.Identity, true);
       eq(fn.calledOnce, true);
       eq(fn.calledWith(1), true);
     });
 
-    it('tests f for non-function type and unspecified behavior', function() {
-      const fn = null;
-      const a = Identity.of(1);
+    context('given mapping function is a not a function', function() {
+      specify('should throw error', function() {
+        const fn = null;
+        const a = RA.Identity.of(1);
 
-      assert.throws(a.map.bind(a, fn), TypeError);
+        assert.throws(a.map.bind(a, fn), TypeError);
+      });
     });
 
-    it('tests f for returning any value', function() {
-      const stubNull = () => null;
-      const stubUndefined = () => undefined;
-      const stubNumber = () => 1;
-      const stubString = () => 'string';
+    context('given mapping function is mapped over value', function() {
+      it('should contain mapped value', function() {
+        const a = RA.Identity.of(1);
 
-      const a = Identity.of(1);
-
-      eq(a.map(stubNull).get(), null);
-      eq(a.map(stubUndefined).get(), undefined);
-      eq(a.map(stubNumber).get(), 1);
-      eq(a.map(stubString).get(), 'string');
+        eq(a.map(RA.stubNull).get(), null);
+        eq(a.map(RA.stubUndefined).get(), undefined);
+        eq(a.map(R.always(1)).get(), 1);
+        eq(a.map(RA.stubString).get(), '');
+      });
     });
 
-    it("tests for non parts of f's return value should be checked", function() {
+    it('should not check any parts mapping function return value', function() {
       const result = {};
-      const a = Identity.of(result).map(identity);
+      const a = RA.Identity.of(result).map(R.identity);
 
       // TODO(vladimir.gorej@gmail.com): could not come up with something better
       eq(a.get() === result, true);
       eq(a.get(), result);
     });
 
-    it('tests map for returning a value of the same Functor', function() {
-      const a = Identity.of(1);
+    it('should return a value of the same Functor', function() {
+      const a = RA.Identity.of(1);
       const b = a.map(identity);
 
-      eq(a instanceof Identity, true);
-      eq(b instanceof Identity, true);
+      eq(a instanceof RA.Identity, true);
+      eq(b instanceof RA.Identity, true);
     });
   });
 
   describe('Contravariant', function() {
-    const contramapEq = (a, b) => eq(a.get()(1), b.get()(1));
+    const { identity, composition } = laws.Contravariant((a, b) =>
+      R.equals(a.get()(1))(b.get()(1))
+    );
 
-    it('tests for identity', function() {
-      contravarian.identity(Identity.of)(contramapEq)(identity);
-    });
+    it(
+      'should satisfy identity law',
+      identity(IdentityArb(jsv.constant(Math.sqrt)))
+    );
 
-    it('tests for composition', function() {
-      contravarian.composition(Identity.of)(contramapEq)(always(1));
-    });
+    it(
+      'should satisfy composition law',
+      composition(
+        IdentityArb(jsv.constant(Math.sqrt)),
+        jsv.constant(Math.sqrt),
+        jsv.constant(Math.abs)
+      )
+    );
 
-    it('tests f for a function type', function() {
+    it('should call mapping function', function() {
       const fn = sinon.spy();
-      const a = Identity.of(always(1)).contramap(fn);
+      const a = RA.Identity.of(R.always(1)).contramap(fn);
 
       a.get()(2);
 
-      eq(a instanceof Identity, true);
+      eq(a instanceof RA.Identity, true);
       eq(fn.calledOnce, true);
       eq(fn.calledWith(2), true);
     });
 
-    it('tests f for non-function type and unspecified behavior', function() {
-      const fn = null;
-      const a = Identity.of(identity);
+    context('given mapping function is not a function', function() {
+      specify('should throw error', function() {
+        const fn = null;
+        const a = RA.Identity.of(identity);
 
-      assert.throws(() => a.contramap(fn).get()(), TypeError);
+        assert.throws(() => a.contramap(fn).get()(), TypeError);
+      });
     });
 
-    it('tests f for returning any value', function() {
-      const stubNull = () => null;
-      const stubUndefined = () => undefined;
-      const stubNumber = () => 1;
-      const stubString = () => 'string';
+    it('should map over any value type', function() {
+      const a = RA.Identity.of(R.identity);
 
-      const a = Identity.of(identity);
-
-      eq(a.contramap(stubNull).get()(), null);
-      eq(a.contramap(stubUndefined).get()(), undefined);
-      eq(a.contramap(stubNumber).get()(), 1);
-      eq(a.contramap(stubString).get()(), 'string');
+      eq(a.contramap(RA.stubNull).get()(), null);
+      eq(a.contramap(RA.stubUndefined).get()(), undefined);
+      eq(a.contramap(R.always(1)).get()(), 1);
+      eq(a.contramap(RA.stubString).get()(), '');
     });
 
-    it("tests for non parts of f's return value should be checked", function() {
+    it('should not check any parts of the return value', function() {
       const result = {};
-      const a = Identity.of(identity).contramap(always(result));
+      const a = RA.Identity.of(R.identity).contramap(R.always(result));
 
       // TODO(vladimir.gorej@gmail.com): could not come up with something better
       eq(a.get()() === result, true);
       eq(a.get()(), result);
     });
 
-    it('tests contramap for returning a value of the same Functor', function() {
-      const a = Identity.of(identity);
+    it('should return value of the same Contravariant', function() {
+      const a = RA.Identity.of(identity);
       const b = a.contramap(identity);
 
-      eq(a instanceof Identity, true);
-      eq(b instanceof Identity, true);
+      eq(a instanceof RA.Identity, true);
+      eq(b instanceof RA.Identity, true);
     });
   });
 
   describe('Chain', function() {
-    it('tests for an Apply spec', function() {
-      const a = Identity.of(1);
+    const { associativity } = laws.Chain(R.equals);
 
-      eq(isFunction(a[fl.ap]), true);
-      eq(isFunction(a.constructor[fl.of]), true);
+    it('should support an Apply specification', function() {
+      const a = RA.Identity.of(1);
+
+      eq(RA.isFunction(a[fl.ap]), true);
+      eq(RA.isFunction(a.constructor[fl.of]), true);
     });
 
-    it('tests for associativity', function() {
-      chain.associativity(Identity)(eq)(1);
-    });
+    it(
+      'should satisfy associativity law',
+      associativity(
+        IdentityArb(jsv.number),
+        jsv.constant(RA.Identity.of),
+        jsv.constant(n => RA.Identity.of(Math.sqrt(n)))
+      )
+    );
 
-    it('tests the only argument to be a function', function() {
-      const a = Identity.of(1);
-      const fn = val => Identity.of(val + 1);
+    it('should map the mapping function over the value', function() {
+      const a = RA.Identity.of(1);
+      const fn = val => RA.Identity.of(val + 1);
 
       eq(a.chain(fn).get(), 2);
     });
 
-    it('tests the only argument to be a non-function', function() {
-      const a = Identity.of(1);
-      const nonFn = null;
+    context('given mapping function is not a function', function() {
+      specify('should throw error', function() {
+        const a = RA.Identity.of(1);
+        const nonFn = null;
 
-      assert.throws(() => a.chain(nonFn), TypeError);
+        assert.throws(() => a.chain(nonFn), TypeError);
+      });
     });
 
-    it('tests if the only argument is a function returning the value of the same Chain', function() {
-      const a = Identity.of(1);
-      const fn = val => Identity.of(val + 1);
+    context('given mapping function', function() {
+      context('and it returns value of the same Chain', function() {
+        specify('should return mapped value of the same Chain', function() {
+          const a = RA.Identity.of(1);
+          const fn = val => RA.Identity.of(val + 1);
 
-      eq(a.chain(fn) instanceof Identity, true);
-    });
+          eq(a.chain(fn) instanceof RA.Identity, true);
+          eq(a.chain(fn).get(), 2);
+        });
+      });
 
-    it('tests if the only argument is a function returning the value of different Chain', function() {
-      const a = Identity.of(1);
-      const fn = val => val + 1;
+      context('and it returns value of the different Chain', function() {
+        specify('should return original Chain', function() {
+          const a = RA.Identity.of(1);
+          const fn = val => val + 1;
 
-      eq(a.chain(fn) instanceof Identity, true);
-      eq(a.chain(fn).get(), 1);
+          eq(a.chain(fn) instanceof RA.Identity, true);
+          eq(a.chain(fn).get(), 1);
+        });
+      });
     });
   });
 
   describe('Monad', function() {
-    it('test for Applicative spec', function() {
-      const a = Identity.of(1);
+    const { leftIdentity, rightIdentity } = laws.Monad(R.equals, RA.Identity);
 
-      eq(isFunction(Identity[fl.of]), true);
-      eq(isFunction(a.constructor[fl.of]), true);
+    it('should support Applicative specification', function() {
+      const a = RA.Identity.of(1);
+
+      eq(RA.isFunction(RA.Identity[fl.of]), true);
+      eq(RA.isFunction(a.constructor[fl.of]), true);
     });
 
-    it('test for Chain spec', function() {
-      const a = Identity.of(1);
+    it('should support Chain specification', function() {
+      const a = RA.Identity.of(1);
 
-      eq(isFunction(a[fl.chain]), true);
+      eq(RA.isFunction(a[fl.chain]), true);
     });
 
-    it('tests for leftIdentity', function() {
-      monad.leftIdentity(Identity)(eq)(Identity.of)(1);
-    });
+    it(
+      'should satisfy left identity law',
+      leftIdentity(jsv.constant(n => RA.Identity.of(Math.sqrt(n))), jsv.number)
+    );
 
-    it('tests for rightIdentity', function() {
-      monad.rightIdentity(Identity)(eq)(1);
-    });
+    it(
+      'should satisfy right identity law',
+      rightIdentity(IdentityArb(jsv.number))
+    );
   });
 
   describe('Ord', function() {
-    it('tests for Setoid spec', function() {
-      const a = Identity.of(1);
+    const { totality, antisymmetry, transitivity } = laws.Ord;
 
-      eq(isFunction(a[fl.equals]), true);
+    it('should support Setoid specification', function() {
+      const a = RA.Identity.of(1);
+
+      eq(RA.isFunction(a[fl.equals]), true);
     });
 
-    it('tests for totality', function() {
-      ord.totality(eq)(Identity.of(1))(Identity.of(2));
-    });
+    it(
+      'should satisfy totality law',
+      totality(IdentityArb(jsv.number), IdentityArb(jsv.number))
+    );
 
-    it('tests for antisymetry', function() {
-      ord.antisymmetry(eq)(Identity.of(1))(Identity.of(1));
-    });
+    it(
+      'should satisfy antisymmetry law',
+      antisymmetry(IdentityArb(jsv.number), IdentityArb(jsv.number))
+    );
 
-    it('tests for transitivity', function() {
-      ord.transitivity(eq)(Identity.of(1))(Identity.of(2))(Identity.of(3));
-    });
+    it(
+      'should satisfy transitivity law',
+      transitivity(
+        IdentityArb(jsv.number),
+        IdentityArb(jsv.number),
+        IdentityArb(jsv.number)
+      )
+    );
 
-    it('tests for value of the same Ord', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(2);
+    it('should support values of the same Ord', function() {
+      const a = RA.Identity.of(1);
+      const b = RA.Identity.of(2);
 
       eq(a.lte(b), true);
     });
 
-    it('tests for value of different Ord', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(2);
+    it('should not support values of the different Ord', function() {
+      const a = RA.Identity.of(1);
+      const b = RA.Identity.of(2);
 
       b['@@type'] = 'unknown-type';
 
       eq(a.lte(b), false);
     });
 
-    it('tests for returning a boolean', function() {
-      const a = Identity.of(1);
-      const b = Identity.of(2);
+    it('should return a boolean', function() {
+      const a = RA.Identity.of(1);
+      const b = RA.Identity.of(2);
 
       eq(a.lte(b), true);
       eq(b.lte(a), false);
@@ -423,45 +501,45 @@ describe('Identity', function() {
   });
 
   describe('Monoid*', function() {
-    it('tests for an Semigroup spec', function() {
-      const i = Identity.of('string').empty();
+    it('should support Semigroup specification', function() {
+      const i = RA.Identity.of('string').empty();
 
-      eq(isFunction(i[fl.concat]), true);
+      eq(RA.isFunction(i[fl.concat]), true);
     });
 
-    it('tests for right identity', function() {
-      const a = Identity.of('string');
+    it('should satisfy right identity law', function() {
+      const a = RA.Identity.of('string');
       const i = a.empty();
 
       eq(a.concat(i), a);
     });
 
-    it('tests for left identity', function() {
-      const a = Identity.of('string');
+    it('should satisfy left identity law', function() {
+      const a = RA.Identity.of('string');
       const i = a.empty();
 
       eq(i.concat(a), a);
     });
 
-    it('tests empty for returning a value of the same Monoid', function() {
-      const a = Identity.of('string');
+    it('should return value of the same Monoid', function() {
+      const a = RA.Identity.of('string');
       const i = a.empty();
 
-      eq(a instanceof Identity, true);
-      eq(i instanceof Identity, true);
+      eq(a instanceof RA.Identity, true);
+      eq(i instanceof RA.Identity, true);
     });
 
-    it("tests delegating to inner's type empty method", function() {
+    it('should delegate to `empty` method of the value', function() {
       const Type = {
         empty() {
           return 0;
         },
       };
 
-      const a = Identity.of(Type);
+      const a = RA.Identity.of(Type);
       const i = a.empty();
 
-      eq(i, Identity.of(0));
+      eq(i, RA.Identity.of(0));
     });
   });
 });
