@@ -181,7 +181,7 @@
     "typescript-definition-tester": "0.0.6",
     "uglifyjs-webpack-plugin": "2.1.2",
     "webpack": "4.29.6",
-    "webpack-cli": "3.2.3"
+    "webpack-cli": "3.3.0"
   },
   "browserslist": "> 0.25%, ie 10, ie 11, not op_mini all",
   "tonicExampleFilename": "tonicExample.js"
