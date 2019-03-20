@@ -172,7 +172,7 @@
     "prettier": "1.15.3",
     "ramda": "=0.26.1",
     "rimraf": "2.6.3",
-    "sinon": "7.2.7",
+    "sinon": "7.3.0",
     "sanctuary-show": "=1.0.0",
     "testem": "2.14.0",
     "tslint": "5.12.1",
