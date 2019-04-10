@@ -174,7 +174,7 @@
     "rimraf": "2.6.3",
     "sinon": "7.3.0",
     "sanctuary-show": "=1.0.0",
-    "testem": "2.14.0",
+    "testem": "2.15.0",
     "tslint": "5.12.1",
     "tslint-config-prettier": "1.17.0",
     "typescript": "=3.2.2",
