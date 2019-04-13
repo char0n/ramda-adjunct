@@ -173,7 +173,7 @@
     "ramda": "=0.26.1",
     "rimraf": "2.6.3",
     "sanctuary-show": "=1.0.0",
-    "sinon": "7.3.0",
+    "sinon": "=7.3.1",
     "testem": "=2.15.1",
     "tslint": "5.12.1",
     "tslint-config-prettier": "1.17.0",
