@@ -169,5 +169,7 @@ export { default as ceil } from './ceil';
 export { default as floor } from './floor';
 export { default as trunc } from './trunc';
 export { default as sign } from './sign';
+// String
+export { default as replaceAll } from './replaceAll';
 // Types
 export { default as Identity } from './fantasy-land/Identity';

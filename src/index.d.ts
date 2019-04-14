@@ -1093,6 +1093,16 @@ declare namespace RamdaAdjunct {
          */
         async(generatorFn: Function): Function;
 
+        /**
+         * Replace all substring matches in a string with a replacement.
+         */
+        replaceAll(searchValue: string, replaceValue: string, str: string): string;
+        replaceAll(searchValue: string): (replaceValue: string, str: string) => string;
+        replaceAll(searchValue: string): {
+            (replaceValue: string, str: string): string;
+            (replaceValue: string): (str: string) => string;
+        };
+
          /**
           * Identity type.
           */
