@@ -1,3 +1,13 @@
+<a name="2.17.0"></a>
+# [2.17.0](https://github.com/char0n/ramda-adjunct/compare/v2.16.1...v2.17.0) (2019-04-14)
+
+
+### Features
+
+* add replaceAll ([84c7066](https://github.com/char0n/ramda-adjunct/commit/84c7066)), closes [#878](https://github.com/char0n/ramda-adjunct/issues/878)
+
+
+
 <a name="2.16.1"></a>
 ## [2.16.1](https://github.com/char0n/ramda-adjunct/compare/v2.16.0...v2.16.1) (2019-02-19)
 
