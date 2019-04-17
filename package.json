@@ -165,7 +165,7 @@
     "jsverify": "0.8.4",
     "license-cli": "1.1.6",
     "mocha": "6.1.3",
-    "mocha-junit-reporter": "=1.19.0",
+    "mocha-junit-reporter": "1.22.0",
     "mocha-multi-reporters": "1.1.7",
     "monet": "0.9.0",
     "nyc": "13.3.0",
