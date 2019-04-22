@@ -29,7 +29,9 @@ Adjunct is a thing added to something else as a supplementary rather than an ess
 Follow Ramda Adjunct on [**medium.com/ramda-adjunct**](https://medium.com/ramda-adjunct) to read latest news and 
 articles about the library. 
 
-## Installation
+### Getting Started
+
+### Installation
 
 ```sh
 npm i ramda-adjunct
@@ -39,9 +41,9 @@ or
 yarn add ramda-adjunct
 ```
 
-## Usage
+### Usage
 
-### ES6
+#### ES6
 
 ```javascript
 import * as RA from 'ramda-adjunct'
@@ -55,7 +57,7 @@ import { isArray } from 'ramda-adjunct';
 isArray([]);
 ```
 
-### Node
+#### Node
 
 ```javascript
 const RA = require('ramda-adjunct');
@@ -69,7 +71,7 @@ const { isArray } = require('ramda-adjunct');
 isArray([]);
 ```
 
-### Web browser
+#### Web browser
 
 ```html
 <script src="ramda.js"></script>
@@ -201,7 +203,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 - [chore: ramda-adjunct v2.16.0 release](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-16-0-release-16873c535636)
 
 
-## Development
+## Contributing
 
 If you want to contribute to this project, please consult the [CONTRIBUTING.md](https://github.com/char0n/ramda-adjunct/blob/master/CONTRIBUTING.md) guidelines.
 
@@ -217,7 +219,25 @@ If you want to contribute to this project, please consult the [CONTRIBUTING.md](
  $ npm run test
 ```
 
+**Running tests in browser**
+```sh
+ $ npm run test:web
+```
+
+**Running compatibility tests for supported ramda versions**
+```sh
+ $ npm run test:ramda
+```
+
+**Running code coverage numbers**
+```sh
+ $ npm run coverage
+```
+
 **Running linter**
+
+We're using [eslint](https://eslint.org/) and [airbnb codestyle](https://github.com/airbnb/javascript) rules with [prettier](https://prettier.io/) integrated as an eslint plugin.  
+
 ```sh
  $ npm run lint
 ```
@@ -271,6 +291,10 @@ Tree shaking is a term commonly used in a JavaScript context for dead-code elimi
 ```
 
 These two statements are equivalent and _only_ `isArray` should be incorporated into your bundle. You can pick and choose the functions you need without worrying about the whole library being included in your build.
+
+## Contributing
+
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
 
 ## Assimilated libraries
