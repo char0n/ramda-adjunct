@@ -87,18 +87,18 @@
 <p>Adjunct is a thing added to something else as a supplementary rather than an essential part. And that something is being ramda.</p>
 <p>Follow Ramda Adjunct on <a href="https://medium.com/ramda-adjunct"><strong>medium.com/ramda-adjunct</strong></a> to read latest news and 
 articles about the library. </p>
-<h2>Installation</h2><pre class="prettyprint source lang-sh"><code>npm i ramda-adjunct</code></pre><p>or</p>
-<pre class="prettyprint source lang-sh"><code>yarn add ramda-adjunct</code></pre><h2>Usage</h2><h3>ES6</h3><pre class="prettyprint source lang-javascript"><code>import * as RA from 'ramda-adjunct'
+<h3>Getting Started</h3><h3>Installation</h3><pre class="prettyprint source lang-sh"><code>npm i ramda-adjunct</code></pre><p>or</p>
+<pre class="prettyprint source lang-sh"><code>yarn add ramda-adjunct</code></pre><h3>Usage</h3><h4>ES6</h4><pre class="prettyprint source lang-javascript"><code>import * as RA from 'ramda-adjunct'
 
 RA.isArray([]);</code></pre><p>or</p>
 <pre class="prettyprint source lang-javascript"><code>import { isArray } from 'ramda-adjunct';
 
-isArray([]);</code></pre><h3>Node</h3><pre class="prettyprint source lang-javascript"><code>const RA = require('ramda-adjunct');
+isArray([]);</code></pre><h4>Node</h4><pre class="prettyprint source lang-javascript"><code>const RA = require('ramda-adjunct');
 
 RA.isArray([]);</code></pre><p>or</p>
 <pre class="prettyprint source lang-javascript"><code>const { isArray } = require('ramda-adjunct');
 
-isArray([]);</code></pre><h3>Web browser</h3><pre class="prettyprint source lang-html"><code>&lt;script src=&quot;ramda.js&quot;>&lt;/script>
+isArray([]);</code></pre><h4>Web browser</h4><pre class="prettyprint source lang-html"><code>&lt;script src=&quot;ramda.js&quot;>&lt;/script>
 &lt;script src=&quot;RA.web.js&quot;>&lt;/script></code></pre><p>or</p>
 <pre class="prettyprint source lang-html"><code>&lt;script src=&quot;RA.web.standalone.js&quot;>&lt;/script></code></pre><p>Including Ramda Adjunct into HTML document exposes global variable <strong>RA</strong> on <code>window</code> object.</p>
 <pre class="prettyprint source lang-javascript"><code>RA.isArray([]);</code></pre><h2>Motivation</h2><p>It's very common for people to create their own utils and recipes by composing Ramda's functions and creating more complex aggregate functions. Ramda Adjunct eliminates this repetitive wheel of reinvention and centralizes commonly used and useful utils.</p>
@@ -190,11 +190,15 @@ It is also possible that our ES5 distributions run on node versions older than 0
 <li><a href="https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-15-0-release-6743ca06b2e4">chore: ramda-adjunct v2.15.0 release</a></li>
 <li><a href="https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-16-0-release-16873c535636">chore: ramda-adjunct v2.16.0 release</a></li>
 </ul>
-<h2>Development</h2><p>If you want to contribute to this project, please consult the <a href="https://github.com/char0n/ramda-adjunct/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> guidelines.</p>
+<h2>Contributing</h2><p>If you want to contribute to this project, please consult the <a href="https://github.com/char0n/ramda-adjunct/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> guidelines.</p>
 <p><strong>Obtaining project copy</strong></p>
 <pre class="prettyprint source lang-sh"><code> $ git clone https://github.com/char0n/ramda-adjunct
  $ npm i</code></pre><p><strong>Running tests</strong></p>
-<pre class="prettyprint source lang-sh"><code> $ npm run test</code></pre><p><strong>Running linter</strong></p>
+<pre class="prettyprint source lang-sh"><code> $ npm run test</code></pre><p><strong>Running tests in browser</strong></p>
+<pre class="prettyprint source lang-sh"><code> $ npm run test:web</code></pre><p><strong>Running compatibility tests for supported ramda versions</strong></p>
+<pre class="prettyprint source lang-sh"><code> $ npm run test:ramda</code></pre><p><strong>Running code coverage numbers</strong></p>
+<pre class="prettyprint source lang-sh"><code> $ npm run coverage</code></pre><p><strong>Running linter</strong></p>
+<p>We're using <a href="https://eslint.org/">eslint</a> and <a href="https://github.com/airbnb/javascript">airbnb codestyle</a> rules with <a href="https://prettier.io/">prettier</a> integrated as an eslint plugin.  </p>
 <pre class="prettyprint source lang-sh"><code> $ npm run lint</code></pre><h2>Builds</h2><pre class="prettyprint source lang-sh"><code> $ npm run build:es</code></pre><p>If you use a bundler that supports tree shaking and ES2015 imports. <code>package.json</code> is automatically pre-configured to tell ES2015 <code>import</code> to import from this directory.</p>
 <p><code>es/*</code> - ES5 code containing ES2015 imports.</p>
 <pre class="prettyprint source lang-sh"><code> $ npm run build:commonjs</code></pre><p>If you use node to import ramda-adjunct. <code>package.json</code> is automatically pre-configured to tell <code>require</code> to import from this directory.</p>
@@ -210,6 +214,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
   RA.isArray([]); //=> true</code></pre><pre class="prettyprint source lang-javascript"><code>  import { isArray } from 'ramda-adjunct';
 
   isArray([]); //=> true</code></pre><p>These two statements are equivalent and <em>only</em> <code>isArray</code> should be incorporated into your bundle. You can pick and choose the functions you need without worrying about the whole library being included in your build.</p>
+<h2>Contributing</h2><p>Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.</p>
 <h2>Assimilated libraries</h2><ul>
 <li><a href="https://github.com/enten/rcb">rcb</a> - Ramda Cookbook implementation</li>
 </ul>
@@ -238,7 +243,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Apr 22 2019 18:01:18 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Apr 22 2019 18:02:57 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
