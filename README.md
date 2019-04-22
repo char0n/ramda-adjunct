@@ -15,7 +15,7 @@
 [![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Open Source Helpers](https://www.codetriage.com/char0n/ramda-adjunct/badges/users.svg)](https://www.codetriage.com/char0n/ramda-adjunct)
 
-# Ramda Adjunct [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Start%20your%20functional%20programming%20journey%20in%20JavaScript%20with%20ramda%20%2B%20ramda-adjunct4&url=https%3A%2F%2Fgithub.com%2Fchar0n%2Framda-adjunct&via=froala&hashtags=functional,javascript,ramda,utilities,addons)
+# Ramda Adjunct [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Start%20your%20functional%20programming%20journey%20in%20JavaScript%20with%20ramda%20%2B%20ramda-adjunct4&url=https%3A%2F%2Fgithub.com%2Fchar0n%2Framda-adjunct&via=vladimirgorej&hashtags=functional,javascript,ramda,utilities,addons)
 
 <p align="center"><img src="https://raw.githubusercontent.com/char0n/ramda-adjunct/master/logo.jpg" width="250" height="200" /></p>
 
