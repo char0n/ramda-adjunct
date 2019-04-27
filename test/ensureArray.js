@@ -6,7 +6,7 @@ import eq from './shared/eq';
 
 describe('ensureArray', function() {
   context('given argument is not an array', function() {
-    it('wraps value into singleton array', function() {
+    specify('should wrap value into singleton array', function() {
       const arrayPrototype = Array.prototype;
 
       eq(RA.ensureArray(void 0), [void 0]);
