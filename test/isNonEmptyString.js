@@ -1,22 +1,36 @@
+import { assert } from 'chai';
+import * as R from 'ramda';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isNonEmptyString', function() {
-  it('tests a value to be an empty `String`', function() {
-    eq(RA.isNonEmptyString('42'), true);
+  context('given non empty string', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNonEmptyString('non empty string'));
+    });
+  });
 
-    eq(RA.isNonEmptyString(''), false);
-    eq(RA.isNonEmptyString(new String('42')), false);
-    eq(RA.isNonEmptyString(new String('')), false);
-    eq(RA.isNonEmptyString(String.prototype), false);
-    eq(RA.isNonEmptyString([]), false);
-    eq(RA.isNonEmptyString([42]), false);
-    eq(RA.isNonEmptyString(void 0), false);
-    eq(RA.isNonEmptyString({}), false);
-    eq(RA.isNonEmptyString(null), false);
-    eq(RA.isNonEmptyString(undefined), false);
-    eq(RA.isNonEmptyString(17), false);
-    eq(RA.isNonEmptyString(true), false);
-    eq(RA.isNonEmptyString(false), false);
+  context('given empty string or any other value', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.isNonEmptyString(''));
+      assert.isFalse(RA.isNonEmptyString(new String('42')));
+      assert.isFalse(RA.isNonEmptyString(new String('')));
+      assert.isFalse(RA.isNonEmptyString(String.prototype));
+      assert.isFalse(RA.isNonEmptyString([]));
+      assert.isFalse(RA.isNonEmptyString([42]));
+      assert.isFalse(RA.isNonEmptyString(void 0));
+      assert.isFalse(RA.isNonEmptyString({}));
+      assert.isFalse(RA.isNonEmptyString(null));
+      assert.isFalse(RA.isNonEmptyString(undefined));
+      assert.isFalse(RA.isNonEmptyString(17));
+      assert.isFalse(RA.isNonEmptyString(true));
+      assert.isFalse(RA.isNonEmptyString(false));
+    });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNonEmptyString = RA.isNonEmptyString(R.__);
+
+    assert.isTrue(isNonEmptyString('non empty string'));
   });
 });
