@@ -1,23 +1,37 @@
+import * as R from 'ramda';
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isNonEmptyArray', function() {
-  it('tests a value to be a non empty `Array`', function() {
-    eq(RA.isNonEmptyArray([42]), true);
-    eq(RA.isNonEmptyArray(new Array('content')), true);
+  context('given non empty Array', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNonEmptyArray([42]));
+      assert.isTrue(RA.isNonEmptyArray(new Array('content')));
+    });
+  });
 
-    eq(RA.isNonEmptyArray([]), false);
-    eq(RA.isNonEmptyArray(new Array()), false);
-    eq(RA.isNonEmptyArray(new Array(42)), false);
-    eq(RA.isNonEmptyArray(Array.prototype), false);
-    eq(RA.isNonEmptyArray(void 0), false);
-    eq(RA.isNonEmptyArray({}), false);
-    eq(RA.isNonEmptyArray(null), false);
-    eq(RA.isNonEmptyArray(undefined), false);
-    eq(RA.isNonEmptyArray(42), false);
-    eq(RA.isNonEmptyArray('Array'), false);
-    eq(RA.isNonEmptyArray(true), false);
-    eq(RA.isNonEmptyArray(false), false);
-    eq(RA.isNonEmptyArray({ __proto__: Array.prototype }), false);
+  context('given empty Array or any other value', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.isNonEmptyArray([]));
+      assert.isFalse(RA.isNonEmptyArray(new Array()));
+      assert.isFalse(RA.isNonEmptyArray(new Array(42)));
+      assert.isFalse(RA.isNonEmptyArray(Array.prototype));
+      assert.isFalse(RA.isNonEmptyArray(void 0));
+      assert.isFalse(RA.isNonEmptyArray({}));
+      assert.isFalse(RA.isNonEmptyArray(null));
+      assert.isFalse(RA.isNonEmptyArray(undefined));
+      assert.isFalse(RA.isNonEmptyArray(42));
+      assert.isFalse(RA.isNonEmptyArray('Array'));
+      assert.isFalse(RA.isNonEmptyArray(true));
+      assert.isFalse(RA.isNonEmptyArray(false));
+      assert.isFalse(RA.isNonEmptyArray({ __proto__: Array.prototype }));
+    });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNonEmptyArray = RA.isNonEmptyArray(R.__);
+
+    assert.isTrue(isNonEmptyArray([1]));
   });
 });
