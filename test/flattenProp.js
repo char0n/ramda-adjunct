@@ -13,11 +13,6 @@ describe('flattenProp', function() {
     };
   });
 
-  it('should curry', function() {
-    eq(RA.flattenProp('prop', {}), {});
-    eq(RA.flattenProp('prop')({}), {});
-  });
-
   context("given prop doesn't exist", function() {
     specify(
       'should return object with identical structure as provided object',
@@ -66,5 +61,10 @@ describe('flattenProp', function() {
     };
 
     eq(RA.flattenProp(prop, obj), expected);
+  });
+
+  it('should curry', function() {
+    eq(RA.flattenProp('prop', {}), {});
+    eq(RA.flattenProp('prop')({}), {});
   });
 });
