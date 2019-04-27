@@ -1,4 +1,5 @@
 import { either, isEmpty, isNil } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
  * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
@@ -21,6 +22,6 @@ import { either, isEmpty, isNil } from 'ramda';
  * RA.isNilOrEmpty({}); //=> true
  * RA.isNilOrEmpty({length: 0}); //=> false
  */
-const isNilOrEmpty = either(isNil, isEmpty);
+const isNilOrEmpty = curry1(either(isNil, isEmpty));
 
 export default isNilOrEmpty;

@@ -1,61 +1,102 @@
+import { assert } from 'chai';
+import * as R from 'ramda';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isNilOrEmpty', function() {
-  it('tests a value for `null` or `undefined`', function() {
-    eq(RA.isNilOrEmpty(void 0), true);
-    eq(RA.isNilOrEmpty(null), true);
-    eq(RA.isNilOrEmpty([]), true);
-    eq(RA.isNilOrEmpty({}), true);
-    eq(RA.isNilOrEmpty(0), false);
-    eq(RA.isNilOrEmpty(''), true);
+  it('should test value for `null` or `undefined`', function() {
+    assert.isTrue(RA.isNilOrEmpty(void 0));
+    assert.isTrue(RA.isNilOrEmpty(null));
+    assert.isTrue(RA.isNilOrEmpty([]));
+    assert.isTrue(RA.isNilOrEmpty({}));
+    assert.isFalse(RA.isNilOrEmpty(0));
+    assert.isTrue(RA.isNilOrEmpty(''));
   });
 
-  it('returns true for null', function() {
-    eq(RA.isNilOrEmpty(null), true);
+  context('given null', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNilOrEmpty(null));
+    });
   });
 
-  it('returns true for undefined', function() {
-    eq(RA.isNilOrEmpty(undefined), true);
+  context('given undefined', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNilOrEmpty(undefined));
+    });
   });
 
-  it('returns true for empty string', function() {
-    eq(RA.isNilOrEmpty(''), true);
-    eq(RA.isNilOrEmpty(' '), false);
+  context('given empty string', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNilOrEmpty(''));
+    });
   });
 
-  it('returns true for empty array', function() {
-    eq(RA.isNilOrEmpty([]), true);
-    eq(RA.isNilOrEmpty([[]]), false);
+  context('given string with space character', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.isNilOrEmpty(' '));
+    });
   });
 
-  it('returns true for empty object', function() {
-    eq(RA.isNilOrEmpty({}), true);
-    eq(RA.isNilOrEmpty({ x: 0 }), false);
+  context('given empty array', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNilOrEmpty([]));
+    });
+
+    context('with another empty array inside it', function() {
+      specify('should return false', function() {
+        assert.isFalse(RA.isNilOrEmpty([[]]));
+      });
+    });
   });
 
-  it('returns true for empty arguments object', function() {
-    eq(
-      RA.isNilOrEmpty(
-        (function() {
-          return arguments;
-        })()
-      ),
-      true
-    );
-    eq(
-      RA.isNilOrEmpty(
-        (function() {
-          return arguments;
-        })(0)
-      ),
-      false
-    );
+  context('given empty object literal', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNilOrEmpty({}));
+    });
   });
 
-  it('returns false for every other value', function() {
-    eq(RA.isNilOrEmpty(0), false);
-    eq(RA.isNilOrEmpty(NaN), false);
-    eq(RA.isNilOrEmpty(['']), false);
+  context('given empty object', function() {
+    context('and the empty object was created with Object.create', function() {
+      specify('should return true', function() {
+        assert.isTrue(RA.isNilOrEmpty(Object.create({})));
+        assert.isTrue(RA.isNilOrEmpty(Object.create(null)));
+      });
+    });
+  });
+
+  context('given arguments object', function() {
+    context('and the arguments object is empty', function() {
+      specify('should return true', function() {
+        assert.isTrue(
+          RA.isNilOrEmpty(
+            (function() {
+              return arguments;
+            })()
+          )
+        );
+      });
+    });
+
+    context('and the arguments object has one or more property', function() {
+      assert.isFalse(
+        RA.isNilOrEmpty(
+          (function() {
+            return arguments;
+          })(0)
+        )
+      );
+    });
+  });
+
+  it('should return false for every other value', function() {
+    assert.isFalse(RA.isNilOrEmpty(0));
+    assert.isFalse(RA.isNilOrEmpty(NaN));
+    assert.isFalse(RA.isNilOrEmpty(['']));
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNilOrEmpty = RA.isNilOrEmpty(R.__);
+
+    assert.isTrue(isNilOrEmpty({}));
   });
 });
