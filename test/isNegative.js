@@ -1,3 +1,6 @@
+import { assert } from 'chai';
+import * as R from 'ramda';
+
 import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
@@ -6,7 +9,7 @@ import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isNegative', function() {
-  it('tests a value for negative `Number`', function() {
+  it('should test value for a negative `Number`', function() {
     eq(RA.isNegative(0), false);
     eq(RA.isNegative(-0.1), true);
     eq(RA.isNegative(Object(0)), false);
@@ -36,5 +39,11 @@ describe('isNegative', function() {
 
     eq(RA.isNegative(null), false);
     eq(RA.isNegative(undefined), false);
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNegative = RA.isNegative(R.__);
+
+    assert.isTrue(isNegative(-1));
   });
 });

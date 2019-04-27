@@ -1,4 +1,5 @@
 import { both, gt } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 import isNumber from './isNumber';
 
@@ -22,6 +23,6 @@ import isNumber from './isNumber';
  * RA.isNegative(NaN); // => false
  * RA.isNegative('5'); // => false
  */
-const isNegative = both(isNumber, gt(0));
+const isNegative = curry1(both(isNumber, gt(0)));
 
 export default isNegative;
