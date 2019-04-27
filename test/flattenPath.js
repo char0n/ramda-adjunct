@@ -13,11 +13,6 @@ describe('flattenPath', function() {
     };
   });
 
-  it('should curry', function() {
-    eq(RA.flattenPath([], {}), {});
-    eq(RA.flattenPath([])({}), {});
-  });
-
   context('given path leads to non object', function() {
     specify(
       'should return object with identical structure as provided object',
@@ -38,5 +33,10 @@ describe('flattenPath', function() {
         eq(RA.flattenPath(['does', 'not', 'exist'], obj), obj);
       }
     );
+  });
+
+  it('should curry', function() {
+    eq(RA.flattenPath([], {}), {});
+    eq(RA.flattenPath([])({}), {});
   });
 });
