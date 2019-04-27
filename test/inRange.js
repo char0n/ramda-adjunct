@@ -37,12 +37,6 @@ describe('inRange', function() {
     eq(f(-11), false);
   });
 
-  it('should support currying', function() {
-    eq(RA.inRange(5)(10)(5), true);
-    eq(RA.inRange(5, 10)(5), true);
-    eq(RA.inRange(5)(10, 5), true);
-  });
-
   context('given NAN is used', function() {
     it('should return false', function() {
       eq(RA.inRange(0, NaN, 5), false);
@@ -93,5 +87,11 @@ describe('inRange', function() {
   it('should support `Number.MIN_SAFE_INTEGER`', function() {
     const f = RA.inRange(MIN_SAFE_INTEGER, 0);
     eq(f(MIN_SAFE_INTEGER), true);
+  });
+
+  it('should support currying', function() {
+    eq(RA.inRange(5)(10)(5), true);
+    eq(RA.inRange(5, 10)(5), true);
+    eq(RA.inRange(5)(10, 5), true);
   });
 });
