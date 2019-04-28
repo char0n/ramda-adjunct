@@ -1,25 +1,44 @@
 import * as R from 'ramda';
+import { assert } from 'chai';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 
 describe('isNotBoolean', function() {
-  it('tests a value for complement of `Boolean`', function() {
-    eq(RA.isNotBoolean(true), false);
-    eq(RA.isNotBoolean(false), false);
-    eq(RA.isNotBoolean(Object(true)), false);
-    eq(RA.isNotBoolean(Object(false)), false);
+  context('given non boolean value', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNotBoolean([1, 2, 3]));
+      assert.isTrue(RA.isNotBoolean(new Date()));
+      assert.isTrue(RA.isNotBoolean(new Error()));
+      assert.isTrue(RA.isNotBoolean(R));
+      assert.isTrue(RA.isNotBoolean(RA.isNotBoolean));
+      assert.isTrue(RA.isNotBoolean({ a: 1 }));
+      assert.isTrue(RA.isNotBoolean(3));
+      assert.isTrue(RA.isNotBoolean(/regex/));
+      assert.isTrue(RA.isNotBoolean('abc'));
+      assert.isTrue(RA.isNotBoolean(Symbol));
+    });
+  });
 
-    eq(RA.isNotBoolean([1, 2, 3]), true);
-    eq(RA.isNotBoolean(new Date()), true);
-    eq(RA.isNotBoolean(new Error()), true);
-    eq(RA.isNotBoolean(R), true);
-    eq(RA.isNotBoolean(RA.isNotBoolean), true);
-    eq(RA.isNotBoolean({ a: 1 }), true);
-    eq(RA.isNotBoolean(3), true);
-    eq(RA.isNotBoolean(/regex/), true);
-    eq(RA.isNotBoolean('abc'), true);
-    eq(RA.isNotBoolean(Symbol), true);
+  context('given boolean value', function() {
+    context('and the boolean value is primitive', function() {
+      specify('should return false', function() {
+        assert.isFalse(RA.isNotBoolean(true));
+        assert.isFalse(RA.isNotBoolean(false));
+      });
+    });
+
+    context('and the boolean value is box wrapper', function() {
+      specify('should return false', function() {
+        assert.isFalse(RA.isNotBoolean(Object(true)));
+        assert.isFalse(RA.isNotBoolean(Object(false)));
+      });
+    });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNotBoolean = RA.isNotBoolean(R.__);
+
+    assert.isTrue(isNotBoolean(-1));
   });
 });
