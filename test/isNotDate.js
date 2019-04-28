@@ -1,29 +1,43 @@
+import * as R from 'ramda';
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isNotDate', function() {
-  it('tests a value for complement of `Date`', function() {
-    eq(RA.isNotDate(new Date()), false);
+  context('given date object', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.isNotDate(new Date()));
+    });
+  });
 
-    eq(RA.isNotDate(Date.now()), true);
-    eq(RA.isNotDate(args), true);
-    eq(RA.isNotDate([1, 2, 3]), true);
-    eq(RA.isNotDate(Object(true)), true);
-    eq(RA.isNotDate(new Error()), true);
-    eq(RA.isNotDate(RA), true);
-    eq(RA.isNotDate(Array.prototype.slice), true);
-    eq(RA.isNotDate({ a: 1 }), true);
-    eq(RA.isNotDate(Object(0)), true);
-    eq(RA.isNotDate(/x/), true);
-    eq(RA.isNotDate(Object('a')), true);
+  context('given non date object', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNotDate(Date.now()));
+      assert.isTrue(RA.isNotDate(args));
+      assert.isTrue(RA.isNotDate([1, 2, 3]));
+      assert.isTrue(RA.isNotDate(Object(true)));
+      assert.isTrue(RA.isNotDate(new Error()));
+      assert.isTrue(RA.isNotDate(RA));
+      assert.isTrue(RA.isNotDate(Array.prototype.slice));
+      assert.isTrue(RA.isNotDate({ a: 1 }));
+      assert.isTrue(RA.isNotDate(Object(0)));
+      assert.isTrue(RA.isNotDate(/x/));
+      assert.isTrue(RA.isNotDate(Object('a')));
 
-    if (Symbol !== 'undefined') {
-      eq(RA.isNotDate(Symbol), true);
-    }
+      if (RA.isNotUndefined(Symbol)) {
+        assert.isTrue(RA.isNotDate(Symbol));
+      }
 
-    eq(RA.isNotDate(null), true);
-    eq(RA.isNotDate(undefined), true);
+      assert.isTrue(RA.isNotDate(null));
+      assert.isTrue(RA.isNotDate(undefined));
+    });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNotDate = RA.isNotDate(R.__);
+
+    assert.isTrue(isNotDate(-1));
   });
 });
