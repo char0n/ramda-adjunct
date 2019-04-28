@@ -1,21 +1,35 @@
+import * as R from 'ramda';
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isNotArray', function() {
-  it('tests a value for complement of `Array`', function() {
-    eq(RA.isNotArray([]), false);
-    eq(RA.isNotArray([1]), false);
-    eq(RA.isNotArray(new Array()), false);
-    eq(RA.isNotArray(Array.prototype), false);
+  context('given non array value', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNotArray(void 0));
+      assert.isTrue(RA.isNotArray({}));
+      assert.isTrue(RA.isNotArray(null));
+      assert.isTrue(RA.isNotArray(undefined));
+      assert.isTrue(RA.isNotArray(17));
+      assert.isTrue(RA.isNotArray('Array'));
+      assert.isTrue(RA.isNotArray(true));
+      assert.isTrue(RA.isNotArray(true));
+      assert.isTrue(RA.isNotArray({ __proto__: Array.prototype }));
+    });
+  });
 
-    eq(RA.isNotArray(void 0), true);
-    eq(RA.isNotArray({}), true);
-    eq(RA.isNotArray(null), true);
-    eq(RA.isNotArray(undefined), true);
-    eq(RA.isNotArray(17), true);
-    eq(RA.isNotArray('Array'), true);
-    eq(RA.isNotArray(true), true);
-    eq(RA.isNotArray(true), true);
-    eq(RA.isNotArray({ __proto__: Array.prototype }), true);
+  context('given array value', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.isNotArray([]));
+      assert.isFalse(RA.isNotArray([1]));
+      assert.isFalse(RA.isNotArray(new Array()));
+      assert.isFalse(RA.isNotArray(Array.prototype));
+    });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNotArray = RA.isNotArray(R.__);
+
+    assert.isTrue(isNotArray(-1));
   });
 });
