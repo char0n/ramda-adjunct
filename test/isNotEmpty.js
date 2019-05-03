@@ -1,52 +1,100 @@
+import { assert } from 'chai';
+import * as R from 'ramda';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isNotEmpty', function() {
-  it('returns true for null', function() {
-    eq(RA.isNotEmpty(null), true);
+  context('given null', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNotEmpty(null));
+    });
   });
 
-  it('returns true for undefined', function() {
-    eq(RA.isNotEmpty(undefined), true);
+  context('given undefined', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNotEmpty(undefined));
+    });
   });
 
-  it('returns false for empty string', function() {
-    eq(RA.isNotEmpty(''), false);
-    eq(RA.isNotEmpty(' '), true);
+  context('given string', function() {
+    context('and the string is empty', function() {
+      specify('should return false', function() {
+        assert.isFalse(RA.isNotEmpty(''));
+      });
+    });
+
+    context('and the string contains empty spaces', function() {
+      specify('should return true', function() {
+        assert.isTrue(RA.isNotEmpty(' '));
+      });
+    });
   });
 
-  it('returns false for empty array', function() {
-    eq(RA.isNotEmpty([]), false);
-    eq(RA.isNotEmpty([[]]), true);
+  context('given array', function() {
+    context('and the array is empty', function() {
+      specify('should return false', function() {
+        assert.isFalse(RA.isNotEmpty([]));
+      });
+    });
+
+    context('and the array contains another empty array', function() {
+      specify('should return true', function() {
+        assert.isTrue(RA.isNotEmpty([[]]));
+      });
+    });
   });
 
-  it('returns false for empty object', function() {
-    eq(RA.isNotEmpty({}), false);
-    eq(RA.isNotEmpty({ x: 0 }), true);
+  context('given object', function() {
+    context('and the object is empty', function() {
+      specify('should return false', function() {
+        assert.isFalse(RA.isNotEmpty({}));
+      });
+    });
+
+    context('and the object contains property', function() {
+      specify('should return true', function() {
+        assert.isTrue(RA.isNotEmpty({ x: 0 }));
+      });
+    });
   });
 
-  it('returns false for empty arguments object', function() {
-    eq(
-      RA.isNotEmpty(
-        (function() {
-          return arguments;
-        })()
-      ),
-      false
-    );
-    eq(
-      RA.isNotEmpty(
-        (function() {
-          return arguments;
-        })(0)
-      ),
-      true
-    );
+  context('given arguments object', function() {
+    context('and arguments objects is empty', function() {
+      specify('should return false', function() {
+        assert.isFalse(
+          RA.isNotEmpty(
+            (function() {
+              return arguments;
+            })()
+          )
+        );
+      });
+    });
+
+    context('and arguments object is not empty', function() {
+      specify('should return true', function() {
+        assert.isTrue(
+          RA.isNotEmpty(
+            (function() {
+              return arguments;
+            })(0)
+          )
+        );
+      });
+    });
   });
 
-  it('returns true for every other value', function() {
-    eq(RA.isNotEmpty(0), true);
-    eq(RA.isNotEmpty(NaN), true);
-    eq(RA.isNotEmpty(['']), true);
+  context('given some non empty values', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isNotEmpty(0));
+      assert.isTrue(RA.isNotEmpty(NaN));
+      assert.isTrue(RA.isNotEmpty(['']));
+    });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNotEmpty = RA.isNotEmpty(R.__);
+
+    assert.isTrue(isNotEmpty(-1));
   });
 });
