@@ -12,7 +12,7 @@ import curry1 from 'ramda/src/internal/_curry1';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
  * @category Function
- * @sig [Promise a] -> [a]
+ * @sig [Promise a] -> Promise [a]
  * @param {Iterable.<*>} iterable An iterable object such as an Array or String
  * @return {Promise} An already resolved Promise if the iterable passed is empty. An asynchronously resolved Promise if the iterable passed contains no promises. Note, Google Chrome 58 returns an already resolved promise in this case. A pending Promise in all other cases. This returned promise is then resolved/rejected asynchronously (as soon as the stack is empty) when all the promises in the given iterable have resolved, or if any of the promises reject. See the example about "Asynchronicity or synchronicity of allP" below.
  * @see {@link RA.resolveP|resolveP}, {@link RA.rejectP|rejectP}
