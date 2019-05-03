@@ -758,6 +758,13 @@ declare namespace RamdaAdjunct {
          */
         allP<T>(iterator: Iterator<T>): Promise<T[]>;
 
+       /**
+        * allSettledP returns a promise that is fulfilled with an array of promise state snapshots,
+        * but only after all the original promises have settled, i.e. become either fulfilled or rejected.
+        * We say that a promise is settled if it is not pending, i.e. if it is either fulfilled or rejected.
+        */
+        allSettledP<T>(iterator: Iterator<T>): Promise<T[]>;
+
         /**
          * Composable shortcut for `Promise.resolve`.
          *
