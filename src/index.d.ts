@@ -62,6 +62,11 @@ declare namespace RamdaAdjunct {
         isNilOrEmpty(val: any): boolean;
 
         /**
+         * Returns `true` if the given value is not its type's empty value, nor `null` nor `undefined`.
+         */
+        isNotNilOrEmpty(val: any): boolean;
+
+        /**
          * Checks if input value is complement of `Array`.
          */
         isNotArray(val: any): boolean;
