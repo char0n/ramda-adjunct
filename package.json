@@ -169,7 +169,7 @@
     "mocha-junit-reporter": "1.22.0",
     "mocha-multi-reporters": "1.1.7",
     "monet": "0.9.0",
-    "nyc": "14.1.0",
+    "nyc": "14.1.1",
     "prettier": "1.17.0",
     "ramda": "=0.26.1",
     "rimraf": "2.6.3",
