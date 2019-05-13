@@ -1,47 +1,98 @@
-import { Either } from 'monet';
+import monet from 'monet';
+import folktale from 'folktale';
+import ramdaFantasy from 'ramda-fantasy';
 import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('cata', function() {
-  const eitherR = Either.Right(1);
-  const eitherL = Either.Left(2);
+  context('monet support', function() {
+    specify('should support Either type', function() {
+      const eitherR = monet.Either.Right(1);
+      const eitherL = monet.Either.Left(2);
 
-  it('should test for Either catamorphism', function() {
-    eq(RA.cata(R.identity, R.identity, eitherR), 1);
-    eq(RA.cata(R.identity, R.identity, eitherL), 2);
+      assert.strictEqual(RA.cata(null, R.identity, eitherR), 1);
+      assert.strictEqual(RA.cata(R.identity, null, eitherL), 2);
+    });
+
+    specify('should support Maybe type', function() {
+      const maybeR = monet.Maybe.Just(1);
+      const maybeL = monet.Maybe.Nothing();
+
+      assert.strictEqual(RA.cata(null, R.identity, maybeR), 1);
+      assert.isUndefined(RA.cata(v => v, null, maybeL));
+    });
+
+    specify('should support Validation type', function() {
+      const validationR = monet.Validation.Success(1);
+      const validationL = monet.Validation.Fail(2);
+
+      assert.strictEqual(RA.cata(null, R.identity, validationR), 1);
+      assert.strictEqual(RA.cata(R.identity, null, validationL), 2);
+    });
   });
 
-  it('should curry', function() {
-    eq(RA.cata(R.identity)(R.identity)(eitherR), 1);
-    eq(RA.cata(R.identity, R.identity)(eitherL), 2);
+  context('folktale support', function() {
+    specify('should support Maybe type', function() {
+      const maybeR = folktale.maybe.Just(1);
+      const maybeL = folktale.maybe.Nothing();
+
+      assert.strictEqual(RA.cata(null, R.identity, maybeR), 1);
+      assert.isUndefined(RA.cata(v => v, null, maybeL));
+    });
+
+    specify('should support Result type', function() {
+      const resultR = folktale.result.Ok(1);
+      const resultL = folktale.result.Error(2);
+
+      assert.strictEqual(RA.cata(null, R.identity, resultR), 1);
+      assert.strictEqual(RA.cata(v => v, null, resultL), 2);
+    });
+
+    specify('should support Validation type', function() {
+      const validationR = folktale.validation.Success(1);
+      const validationL = folktale.validation.Failure(2);
+
+      assert.strictEqual(RA.cata(null, R.identity, validationR), 1);
+      assert.strictEqual(RA.cata(v => v, null, validationL), 2);
+    });
+  });
+
+  context('ramda-fantasy support', function() {
+    specify('should support Either type', function() {
+      const eitherR = ramdaFantasy.Either.Right(1);
+      const eitherL = ramdaFantasy.Either.Left(2);
+
+      assert.strictEqual(RA.cata(null, R.identity, eitherR), 1);
+      assert.strictEqual(RA.cata(R.identity, null, eitherL), 2);
+    });
+
+    specify('should support Maybe type', function() {
+      const maybeR = ramdaFantasy.Maybe.Just(1);
+      const maybeL = ramdaFantasy.Maybe.Nothing();
+
+      assert.strictEqual(RA.cata(null, R.identity, maybeR), 1);
+      assert.isUndefined(RA.cata(v => v, null, maybeL));
+    });
   });
 
   context('given catamorphism without right function', function() {
-    it('should return value from Left', function() {
+    specify('should return value from Left', function() {
+      const eitherL = monet.Either.Left(2);
+
       assert.throws(RA.cata.bind(null, null, R.identity, eitherL), TypeError);
-      eq(RA.cata(R.identity, null, eitherL), 2);
+      assert.strictEqual(RA.cata(R.identity, null, eitherL), 2);
     });
   });
 
   context('given catamorphism without left function', function() {
-    it('should return value from Right', function() {
+    specify('should return value from Right', function() {
+      const eitherR = monet.Either.Right(1);
+
       assert.throws(RA.cata.bind(null, R.identity, null, eitherR), TypeError);
-      eq(RA.cata(null, R.identity, eitherR), 1);
+      assert.strictEqual(RA.cata(null, R.identity, eitherR), 1);
     });
-  });
-
-  it('should call either method on catamorphic object', function() {
-    const eitherRWithEither = Either.Right(1);
-    const eitherLWithEither = Either.Left(2);
-
-    eitherRWithEither.either = eitherRWithEither.cata;
-    eitherLWithEither.either = eitherLWithEither.cata;
-
-    eq(RA.cata(R.identity, R.identity, eitherRWithEither), 1);
-    eq(RA.cata(R.identity, R.identity, eitherLWithEither), 2);
   });
 
   context('given monad without catamorphic behavior', function() {
@@ -56,5 +107,13 @@ describe('cata', function() {
         TypeError
       );
     });
+  });
+
+  it('should curry', function() {
+    const eitherR = monet.Either.Right(1);
+    const eitherL = monet.Either.Left(2);
+
+    assert.strictEqual(RA.cata(R.identity)(R.identity)(eitherR), 1);
+    assert.strictEqual(RA.cata(R.identity, R.identity)(eitherL), 2);
   });
 });
