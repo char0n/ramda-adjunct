@@ -162,7 +162,7 @@
     "glob": "7.1.4",
     "husky": "2.2.0",
     "istanbul": "=0.4.5",
-    "jsdoc": "3.6.1",
+    "jsdoc": "3.6.2",
     "jsverify": "0.8.4",
     "license-cli": "1.1.6",
     "mocha": "6.1.4",
