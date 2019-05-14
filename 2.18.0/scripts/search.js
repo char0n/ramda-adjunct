@@ -5,7 +5,7 @@ $(document).ready(function() {
   filterInput.on('input', function() {
      var val = $(this).val().toLowerCase();
 
-     $('nav > ul:nth-of-type(2) ul li').each(function(index, el) {
+     $('nav > ul li').each(function(index, el) {
        var li = $(el);
        var liText = li.text().toLowerCase();
 
