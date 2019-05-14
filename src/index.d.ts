@@ -516,9 +516,9 @@ declare namespace RamdaAdjunct {
          * merged with the own properties of the provided `source`.
          * If a key exists in both objects, the value from the `source` object will be used.
          */
-        mergePath(path: Array<Array<string | number>>, source: object, obj: object): object;
-        mergePath(path: Array<Array<string | number>>, source: object): (obj: object) => object;
-        mergePath(path: Array<Array<string | number>>): {
+        mergePath(path: Array<string | number>, source: object, obj: object): object;
+        mergePath(path: Array<string | number>, source: object): (obj: object) => object;
+        mergePath(path: Array<string | number>): {
             (source: object, obj: object): object;
             (source: object): (obj: object) => object;
         };
