@@ -47,6 +47,11 @@ declare namespace RamdaAdjunct {
         isArray(val: any): val is any[];
 
         /**
+         * Checks whether the passed value is iterable.
+         */
+        isIterable<T>(val: any): val is IterableIterator<T>;
+
+        /**
          * Checks if input value is an empty `Array`.
          */
         isEmptyArray(val: any): val is any[];
