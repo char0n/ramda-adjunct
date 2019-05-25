@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isFloat.js - Documentation</title>
+    <title>isIterable.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isFloat.js</h1>
+    <h1 class="page-title">isIterable.js</h1>
     
 
     
@@ -52,42 +52,44 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement, both } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { hasIn } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
-import isInteger from './isInteger';
-import isFinite from './isFinite';
+import isFunction from './isFunction';
 
 /**
- * Checks whether the passed value is a `float`.
+ * Checks whether the passed value is iterable.
  *
- * @func isFloat
+ * @func isIterable
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.14.0|v1.14.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.18.0|v2.18.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol}
  * @return {boolean}
- * @see {@link RA.isNotFloat|isNotFloat}
  * @example
  *
- * RA.isFloat(0); //=> false
- * RA.isFloat(1); //=> false
- * RA.isFloat(-100000); //=> false
+ * RA.isIterable(['arrays', 'are', 'iterable']); //=> true
+ * RA.isIterable('strings are iterable, too'); //=> true
+ * RA.isIterable((function* () {})()); //=> true (generator objects are both iterable and iterators)
  *
- * RA.isFloat(0.1);       //=> true
- * RA.isFloat(Math.PI);   //=> true
- *
- * RA.isFloat(NaN);       //=> false
- * RA.isFloat(Infinity);  //=> false
- * RA.isFloat(-Infinity); //=> false
- * RA.isFloat('10');      //=> false
- * RA.isFloat(true);      //=> false
- * RA.isFloat(false);     //=> false
- * RA.isFloat([1]);       //=> false
+ * RA.isIterable({}); //=> false
+ * RA.isIterable(-0); //=> false
+ * RA.isIterable(null); //=> false
+ * RA.isIterable(undefined); //=> false
  */
-const isFloat = both(isFinite, complement(isInteger));
+const isIterable = curry1(val => {
+  if (typeof Symbol === 'undefined') {
+    return false;
+  }
 
-export default isFloat;
+  return (
+    hasIn(Symbol.iterator, Object(val)) &amp;&amp; isFunction(val[Symbol.iterator])
+  );
+});
+
+export default isIterable;
 </code></pre>
         </article>
     </section>
