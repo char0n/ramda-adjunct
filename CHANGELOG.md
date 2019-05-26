@@ -1,3 +1,25 @@
+<a name="2.18.0"></a>
+# [2.18.0](https://github.com/char0n/ramda-adjunct/compare/v2.17.0...v2.18.0) (2019-05-26)
+
+
+### Bug Fixes
+
+* **mergePath:**  fix TS typings ([#928](https://github.com/char0n/ramda-adjunct/issues/928)) ([4aebb39](https://github.com/char0n/ramda-adjunct/commit/4aebb39)), closes [#925](https://github.com/char0n/ramda-adjunct/issues/925)
+
+
+### Features
+
+* add isIterable ([#935](https://github.com/char0n/ramda-adjunct/issues/935)) ([8a67554](https://github.com/char0n/ramda-adjunct/commit/8a67554)), closes [#351](https://github.com/char0n/ramda-adjunct/issues/351)
+* **cata:** add support for more catamorphic types ([adc3d11](https://github.com/char0n/ramda-adjunct/commit/adc3d11)), closes [#922](https://github.com/char0n/ramda-adjunct/issues/922)
+* add allSettledP ([1e56c50](https://github.com/char0n/ramda-adjunct/commit/1e56c50)), closes [#761](https://github.com/char0n/ramda-adjunct/issues/761)
+* add isNotNilOrEmpty ([#912](https://github.com/char0n/ramda-adjunct/issues/912)) ([3fedee4](https://github.com/char0n/ramda-adjunct/commit/3fedee4)), closes [#70](https://github.com/char0n/ramda-adjunct/issues/70)
+* **isNegative:** add support Ramda placeholder ([86b7e1c](https://github.com/char0n/ramda-adjunct/commit/86b7e1c)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isNilOrEmpty:** add support for Ramda placeholder ([22f4ec2](https://github.com/char0n/ramda-adjunct/commit/22f4ec2)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isNonNegative:** add support for Ramda placeholder ([87f97de](https://github.com/char0n/ramda-adjunct/commit/87f97de)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* **isNonPositive:** add support for Ramda placeholder ([b6b358f](https://github.com/char0n/ramda-adjunct/commit/b6b358f)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+
+
+
 <a name="2.17.0"></a>
 # [2.17.0](https://github.com/char0n/ramda-adjunct/compare/v2.16.1...v2.17.0) (2019-04-14)
 
