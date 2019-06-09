@@ -7,6 +7,9 @@ const containsIndex = curry((indexes, val, index) => contains(index, indexes));
 /**
  * Picks values from list by indexes.
  *
+ * Note: pickIndexes will skip non existing indexes. If you want to include them
+ * use ramda's `props` function.
+ *
  * @func pickIndexes
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.1.0|v1.1.0}
