@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>mergeProps.js - Documentation</title>
+    <title>nand.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">mergeProps.js</h1>
+    <h1 class="page-title">nand.js</h1>
     
 
     
@@ -52,39 +52,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curryN, pipe, mergeAll, props } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { and, complement } from 'ramda';
 
 /**
- * Functional equivalent of merging object properties with object spread operator.
+ * Returns true if both arguments are falsy; false otherwise.
  *
- * @func mergeProps
+ * @func nand
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.17.0|v1.17.0}
- * @category Object
- * @sig [k] -> {k: {a}} -> {a}
- * @see {@link RA.mergePaths|mergePaths}
- * @param {!Array} ps The property names to merge
- * @param {!Object} obj The object to query
- * @return {!Object} The object composed of merged properties of obj
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.19.0|v2.19.0}
+ * @category Logic
+ * @sig a -> b -> Boolean
+ * @param {Boolean} a
+ * @param {Boolean} b
+ * @return {Boolean} true if both arguments are false
  * @example
  *
- * const obj = {
- *   foo: { fooInner: 1 },
- *   bar: { barInner: 2 }
- * };
- *
- * { ...obj.foo, ...obj.bar }; //=> { fooInner: 1, barInner: 2 }
- * RA.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
+ * RA.nand(true, true); //=> false
+ * RA.nand(false, true); //=> true
+ * RA.nand(true, false); //=> true
+ * RA.nand(false, false); //=> true
+ * RA.nand(1.0, 1.0); //=> false
+ * RA.nand(1.0, 0); //=> true
+ * RA.nand(0, 1.0); //=> true
+ * RA.nand(0, 0); //=> true
  */
-const mergeProps = curryN(
-  2,
-  pipe(
-    props,
-    mergeAll
-  )
-);
+const nand = complement(and); // eslint-disable-line ramda/complement-simplification
 
-export default mergeProps;
+export default nand;
 </code></pre>
         </article>
     </section>
