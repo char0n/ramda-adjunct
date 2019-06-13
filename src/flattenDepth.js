@@ -1,6 +1,8 @@
 import { curry } from 'ramda';
 import _makeFlat from 'ramda/src/internal/_makeFlat';
 
+const flatten1 = _makeFlat(false);
+
 /**
  * Flattens the list to the specified depth.
  *
@@ -8,10 +10,10 @@ import _makeFlat from 'ramda/src/internal/_makeFlat';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.19.0|v2.19.0}
  * @category List
- * @sig number -> [a] -> [b]
- * @param {!number} depth The depth it should be flattened to
- * @param {!Array} list The provided list
- * @return {!Array} The flattened list
+ * @sig Number -> [a] -> [b]
+ * @param {!number} depth The maximum recursion depth.
+ * @param {!Array} list The array to flatten
+ * @return {!Array} Returns the new flattened array
  * @see {@link http://ramdajs.com/docs/#flatten|R.flatten}, {@link http://ramdajs.com/docs/#unnest|R.unnest}
  * @example
  *
@@ -25,7 +27,7 @@ const flattenDepth = curry((depth, list) => {
   let flatList = list;
 
   while (currentDept > 0) {
-    flatList = _makeFlat(false)(flatList);
+    flatList = flatten1(flatList);
 
     currentDept -= 1;
   }
