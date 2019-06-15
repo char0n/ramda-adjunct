@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isTruthy.js - Documentation</title>
+    <title>flattenDepth.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isTruthy.js</h1>
+    <h1 class="page-title">flattenDepth.js</h1>
     
 
     
@@ -52,32 +52,44 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * In JavaScript, a `truthy` value is a value that is considered true
- * when evaluated in a Boolean context. All values are truthy unless
- * they are defined as falsy (i.e., except for `false`, `0`, `""`, `null`, `undefined`, and `NaN`).
+            <pre class="prettyprint source linenums"><code>import { curry } from 'ramda';
+import _makeFlat from 'ramda/src/internal/_makeFlat';
+
+const flatten1 = _makeFlat(false);
+
+/**
+ * Flattens the list to the specified depth.
  *
- * @func isTruthy
+ * @func flattenDepth
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link https://developer.mozilla.org/en-US/docs/Glossary/Truthy|truthy}, {@link RA.isFalsy|isFalsy}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.19.0|v2.19.0}
+ * @category List
+ * @sig Number -> [a] -> [b]
+ * @param {!number} depth The maximum recursion depth.
+ * @param {!Array} list The array to flatten
+ * @return {!Array} Returns the new flattened array
+ * @see {@link http://ramdajs.com/docs/#flatten|R.flatten}, {@link http://ramdajs.com/docs/#unnest|R.unnest}
  * @example
  *
- * RA.isTruthy({}); // => true
- * RA.isTruthy([]); // => true
- * RA.isTruthy(42); // => true
- * RA.isTruthy(3.14); // => true
- * RA.isTruthy('foo'); // => true
- * RA.isTruthy(new Date()); // => true
- * RA.isTruthy(Infinity); // => true
+ * RA.flattenDepth(
+ *   2,
+ *   [1, [2], [3, [4, 5], 6, [[[7], 8]]], 9, 10]
+ * ); // => [1, 2, 3, 4, 5, 6, [[7], 8], 9, 10];
  */
-const isTruthy = Boolean;
+const flattenDepth = curry((depth, list) => {
+  let currentDept = depth;
+  let flatList = list;
 
-export default isTruthy;
+  while (currentDept > 0) {
+    flatList = flatten1(flatList);
+
+    currentDept -= 1;
+  }
+
+  return flatList;
+});
+
+export default flattenDepth;
 </code></pre>
         </article>
     </section>
