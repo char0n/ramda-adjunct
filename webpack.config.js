@@ -7,6 +7,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const nonMinimizeTrait = {
   optimization: {
     minimize: false,
+    usedExports: false,
+    concatenateModules: false,
   },
 };
 
@@ -15,7 +17,6 @@ const minimizeTrait = {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
     }),
-    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   optimization: {
     minimizer: [
@@ -65,6 +66,14 @@ const ra = Object.assign(
                 },
               ],
             ],
+            plugins: [
+              [
+                '@babel/plugin-transform-modules-commonjs',
+                {
+                  loose: true,
+                },
+              ],
+            ],
           },
         },
       ],
@@ -102,6 +111,14 @@ const raMin = Object.assign(
                     node: '4',
                   },
                   forceAllTransforms: true,
+                },
+              ],
+            ],
+            plugins: [
+              [
+                '@babel/plugin-transform-modules-commonjs',
+                {
+                  loose: true,
                 },
               ],
             ],
