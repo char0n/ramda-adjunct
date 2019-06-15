@@ -129,6 +129,7 @@ export { default as repeatStr } from './repeatStr';
 export { default as allIdentical } from './allIdentical';
 export { default as allIdenticalTo } from './allIdenticalTo';
 export { default as allEqualTo } from './allEqualTo';
+export { default as flattenDepth } from './flattenDepth';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';

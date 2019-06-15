@@ -901,6 +901,12 @@ declare namespace RamdaAdjunct {
         allEqualTo<T>(val: T, list: T[]): boolean;
         allEqualTo<T>(val: T): <T>(list: T[]) => boolean;
 
+        /*
+         * Flattens the list to the specified depth.
+         */
+        flattenDepth<T>(depth: number, list: T[]): T[]
+        flattenDepth<T>(depth: number): <T>(list: T[]) => T[]
+
         /**
          * Checks if input value is a `thenable`.
          * `thenable` is an object or function that defines a `then` method.
