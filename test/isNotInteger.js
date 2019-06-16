@@ -1,49 +1,41 @@
-import { complement } from 'ramda';
+import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
-import eq from './shared/eq';
-import polyfill from '../src/internal/polyfills/Number.isInteger';
 
 describe('isNotInteger', function() {
-  it('tests a value for complement of `integer`', function() {
-    eq(RA.isNotInteger(0), false);
-    eq(RA.isNotInteger(1), false);
-    eq(RA.isNotInteger(-100000), false);
-    eq(RA.isNotInteger(MAX_SAFE_INTEGER), false);
-    eq(RA.isNotInteger(MIN_SAFE_INTEGER), false);
+  it('should test value for an `integer`', function() {
+    assert.isFalse(RA.isNotInteger(0));
+    assert.isFalse(RA.isNotInteger(1));
+    assert.isFalse(RA.isNotInteger(-100000));
+    assert.isFalse(RA.isNotInteger(MAX_SAFE_INTEGER));
+    assert.isFalse(RA.isNotInteger(MIN_SAFE_INTEGER));
+    assert.isFalse(RA.isNotInteger(5));
 
-    eq(RA.isNotInteger(0.1), true);
-    eq(RA.isNotInteger(Math.PI), true);
+    assert.isTrue(RA.isNotInteger(0.1));
+    assert.isTrue(RA.isNotInteger(Math.PI));
+    assert.isTrue(RA.isNotInteger(5.56789));
 
-    eq(RA.isNotInteger(NaN), true);
-    eq(RA.isNotInteger(Infinity), true);
-    eq(RA.isNotInteger(-Infinity), true);
-    eq(RA.isNotInteger('10'), true);
-    eq(RA.isNotInteger(true), true);
-    eq(RA.isNotInteger(false), true);
-    eq(RA.isNotInteger([1]), true);
+    assert.isTrue(RA.isNotInteger(NaN));
+    assert.isTrue(RA.isNotInteger(Infinity));
+    assert.isTrue(RA.isNotInteger(-Infinity));
+    assert.isTrue(RA.isNotInteger('10'));
+    assert.isTrue(RA.isNotInteger(true));
+    assert.isTrue(RA.isNotInteger(false));
+    assert.isTrue(RA.isNotInteger([1]));
   });
 
-  it('tests polyfill for complement of `integer', function() {
-    const polyfillC = complement(polyfill);
+  context('given a number that looks like a float number', function() {
+    specify('should treat the number as integer', function() {
+      assert.isFalse(RA.isNotInteger(1.0));
+    });
+  });
 
-    eq(polyfillC(0), false);
-    eq(polyfillC(1), false);
-    eq(polyfillC(-100000), false);
-    eq(polyfillC(MAX_SAFE_INTEGER), false);
-    eq(polyfillC(MIN_SAFE_INTEGER), false);
+  it('should support placeholder to specify "gaps"', function() {
+    const isNotInteger = RA.isNotInteger(R.__);
 
-    eq(polyfillC(0.1), true);
-    eq(polyfillC(Math.PI), true);
-
-    eq(polyfillC(NaN), true);
-    eq(polyfillC(Infinity), true);
-    eq(polyfillC(-Infinity), true);
-    eq(polyfillC('10'), true);
-    eq(polyfillC(true), true);
-    eq(polyfillC(false), true);
-    eq(polyfillC([1]), true);
+    assert.isFalse(isNotInteger(1));
   });
 });
