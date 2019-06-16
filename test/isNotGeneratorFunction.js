@@ -1,3 +1,6 @@
+import { assert } from 'chai';
+import * as R from 'ramda';
+
 import * as RA from '../src';
 import eq from './shared/eq';
 import Symbol from './shared/Symbol';
@@ -5,17 +8,27 @@ import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 
 describe('isNotGeneratorFunction', function() {
-  it('tests a value for complement of `Generator Function`', function() {
-    eq(RA.isNotGeneratorFunction(genFunc), typeof genFunc !== 'function');
-    eq(RA.isNotGeneratorFunction(args), true);
-    eq(RA.isNotGeneratorFunction([1, 2, 3]), true);
-    eq(RA.isNotGeneratorFunction(true), true);
-    eq(RA.isNotGeneratorFunction(new Date()), true);
-    eq(RA.isNotGeneratorFunction(new Error()), true);
-    eq(RA.isNotGeneratorFunction(Array.prototype.slice), true);
-    eq(RA.isNotGeneratorFunction({ 0: 1, length: 1 }), true);
-    eq(RA.isNotGeneratorFunction(1), true);
-    eq(RA.isNotGeneratorFunction(/x/), true);
-    eq(RA.isNotGeneratorFunction(Symbol), true);
+  it('should tests value for a `Generator Function`', function() {
+    assert.strictEqual(
+      RA.isNotGeneratorFunction(genFunc),
+      typeof genFunc !== 'function'
+    );
+
+    assert.isTrue(RA.isNotGeneratorFunction(args));
+    assert.isTrue(RA.isNotGeneratorFunction([1, 2, 3]));
+    assert.isTrue(RA.isNotGeneratorFunction(true));
+    assert.isTrue(RA.isNotGeneratorFunction(new Date()));
+    assert.isTrue(RA.isNotGeneratorFunction(new Error()));
+    assert.isTrue(RA.isNotGeneratorFunction(Array.prototype.slice));
+    assert.isTrue(RA.isNotGeneratorFunction({ 0: 1, length: 1 }));
+    assert.isTrue(RA.isNotGeneratorFunction(1));
+    assert.isTrue(RA.isNotGeneratorFunction(/x/));
+    assert.isTrue(RA.isNotGeneratorFunction(Symbol));
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNotGeneratorFunction = RA.isNotGeneratorFunction(R.__);
+
+    eq(isNotGeneratorFunction(genFunc), typeof genFunc !== 'function');
   });
 });
