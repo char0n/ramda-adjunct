@@ -1,25 +1,41 @@
+import { assert } from 'chai';
+import * as R from 'ramda';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 import asyncFunc from './shared/asyncFunc';
 
 describe('isNotFunction', function() {
-  it('tests a value for complement of `Function`', function() {
-    eq(RA.isNotFunction(genFunc), typeof genFunc !== 'function');
-    eq(RA.isNotFunction(asyncFunc), typeof asyncFunc !== 'function');
-    eq(RA.isNotFunction(Symbol), typeof Symbol !== 'function');
-    eq(RA.isNotFunction(() => {}), false);
-    eq(RA.isNotFunction(function() {}), false);
-    eq(RA.isNotFunction(Array.prototype.slice), false);
-    eq(RA.isNotFunction(args), true);
-    eq(RA.isNotFunction([1, 2, 3]), true);
-    eq(RA.isNotFunction(true), true);
-    eq(RA.isNotFunction(new Date()), true);
-    eq(RA.isNotFunction(new Error()), true);
-    eq(RA.isNotFunction({ 0: 1, length: 1 }), true);
-    eq(RA.isNotFunction(1), true);
-    eq(RA.isNotFunction(/x/), true);
+  it('should test value for a `Function`', function() {
+    assert.strictEqual(
+      RA.isNotFunction(genFunc),
+      typeof genFunc !== 'function'
+    );
+    assert.strictEqual(
+      RA.isNotFunction(asyncFunc),
+      typeof asyncFunc !== 'function'
+    );
+    assert.strictEqual(RA.isNotFunction(Symbol), typeof Symbol !== 'function');
+
+    assert.isFalse(RA.isNotFunction(() => {}));
+    assert.isFalse(RA.isNotFunction(function() {}));
+    assert.isFalse(RA.isNotFunction(Array.prototype.slice));
+
+    assert.isTrue(RA.isNotFunction(args));
+    assert.isTrue(RA.isNotFunction([1, 2, 3]));
+    assert.isTrue(RA.isNotFunction(true));
+    assert.isTrue(RA.isNotFunction(new Date()));
+    assert.isTrue(RA.isNotFunction(new Error()));
+    assert.isTrue(RA.isNotFunction({ 0: 1, length: 1 }));
+    assert.isTrue(RA.isNotFunction(1));
+    assert.isTrue(RA.isNotFunction(/x/));
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isNotFunction = RA.isNotFunction(R.__);
+
+    assert.strictEqual(isNotFunction(genFunc), typeof genFunc !== 'function');
   });
 });
