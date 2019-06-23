@@ -30,10 +30,10 @@
     "mocha/no-nested-tests": 2,
     "mocha/no-exclusive-tests": 2
   },
-  "overrides": {
+  "overrides": [{
     "files": ["mocha-bootstrap.js"],
     "parserOptions": {
       "sourceType": "script"
     }
-  }
+  }]
 }
