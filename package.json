@@ -182,7 +182,7 @@
     "tslint-config-prettier": "1.17.0",
     "typescript": "=3.2.2",
     "typescript-definition-tester": "0.0.6",
-    "webpack": "4.35.0",
+    "webpack": "4.35.2",
     "webpack-cli": "3.3.5"
   },
   "browserslist": "> 0.25%, ie 10, ie 11, not op_mini all",
