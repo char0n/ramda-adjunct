@@ -133,11 +133,11 @@
     "ramda": ">= 0.19.0 <= 0.26.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.4.4",
-    "@babel/core": "7.4.5",
-    "@babel/plugin-transform-modules-commonjs": "7.4.4",
+    "@babel/cli": "7.5.0",
+    "@babel/core": "7.5.0",
+    "@babel/plugin-transform-modules-commonjs": "7.5.0",
     "@babel/polyfill": "7.4.4",
-    "@babel/preset-env": "7.4.5",
+    "@babel/preset-env": "7.5.0",
     "@babel/register": "7.4.4",
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "=8.0.0",
