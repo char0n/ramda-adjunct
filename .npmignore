@@ -22,7 +22,6 @@
 /.commitlintrc.json
 /.prettierignore
 /.prettierrc
-/tslint.json
 /codecov.yml
 /circle.yml
 /jsdoc.js
@@ -33,7 +32,8 @@
 /webpack.config-test.web.js
 /webpack.config-test.node.js
 /test-results.xml
-/tsconfig.json
+/types/tslint.json
+/types/tsconfig.json
 /RELEASE.md
 /CODE_OF_CONDUCT.md
 /CONTRIBUTING.md
