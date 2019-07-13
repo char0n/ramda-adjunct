@@ -1,9 +1,20 @@
 {
   "compilerOptions": {
+    "typeRoots" : [
+      "./src"
+    ],
     "target": "es5",
+    "lib": ["es6"],
     "module": "commonjs",
     "noEmit": true,
+    "strict": true,
     "noImplicitAny": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "strictFunctionTypes": true
+  },
+  "baseUrl": "../",
+  "paths": {
+    "ramda-adjunct": ["types/index.d.ts"]
   }
 }
