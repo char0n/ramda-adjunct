@@ -36,6 +36,7 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
+      - run: npm run test:types
 
   test_node_9:
     docker:
@@ -48,6 +49,7 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
+      - run: npm run test:types
 
   test_node_10:
     docker:
@@ -60,6 +62,7 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
+      - run: npm run test:types
 
   test_node_11:
     docker:
@@ -72,6 +75,7 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
+      - run: npm run test:types
 
   test_node_12:
     docker:
@@ -84,6 +88,7 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run test:ramda
+      - run: npm run test:types
 
   code_coverage:
     docker:

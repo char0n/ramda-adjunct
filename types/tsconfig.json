@@ -11,10 +11,10 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "noImplicitThis": true,
-    "strictFunctionTypes": true
-  },
-  "baseUrl": "../",
-  "paths": {
-    "ramda-adjunct": ["types/index.d.ts"]
+    "strictFunctionTypes": true,
+    "baseUrl": "../types",
+    "paths": {
+      "ramda-adjunct": ["index.d.ts"]
+    }
   }
 }
