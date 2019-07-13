@@ -1,5 +1,5 @@
 declare var RA: RamdaAdjunct.Static;
-// TypeScript Version: 2.2
+// TypeScript Version: 2.4
 
 declare namespace RamdaAdjunct {
     interface Functor<T> {
@@ -23,18 +23,17 @@ declare namespace RamdaAdjunct {
         cata<T1>(leftFn: (v: T1) => T, rightFn: (v: T1) => T): T;
     }
 
-    type Variadic<T1, T2> = (...args: T1[]) => T2;
+    enum SettledPromiseStatus {
+        Fulfilled = "fulfilled",
+        Rejected = "rejected",
+    }
 
-    interface IteratorResult<T> {
-        done: boolean;
+    interface SettledPromise<T> {
+        status: SettledPromiseStatus;
         value: T;
     }
 
-    interface Iterator<T> {
-        next(value?: any): IteratorResult<T>;
-        return?(value?: any): IteratorResult<T>;
-        throw?(e?: any): IteratorResult<T>;
-    }
+    type Variadic<T1, T2> = (...args: T1[]) => T2;
 
     interface Dictionary<T> { [key: string]: T; }
 
@@ -768,14 +767,14 @@ declare namespace RamdaAdjunct {
          * in the iterable argument have resolved or when the iterable argument contains no promises.
          * It rejects with the reason of the first promise that rejects.
          */
-        allP<T>(iterator: Iterator<T>): Promise<T[]>;
+        allP<T>(iterable: Iterable<T>): Promise<T[]>;
 
        /**
         * allSettledP returns a promise that is fulfilled with an array of promise state snapshots,
         * but only after all the original promises have settled, i.e. become either fulfilled or rejected.
         * We say that a promise is settled if it is not pending, i.e. if it is either fulfilled or rejected.
         */
-        allSettledP<T>(iterator: Iterator<T>): Promise<T[]>;
+        allSettledP<T>(iterable: Iterable<T>): Promise<Array<SettledPromise<T>>>;
 
         /**
          * Composable shortcut for `Promise.resolve`.
