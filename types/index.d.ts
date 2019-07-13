@@ -1,7 +1,7 @@
 declare var RA: RamdaAdjunct.Static;
+// TypeScript Version: 2.2
 
 declare namespace RamdaAdjunct {
-
     interface Functor<T> {
         map<U>(fn: (t: T) => U): Functor<U>;
     }
@@ -40,7 +40,7 @@ declare namespace RamdaAdjunct {
 
     type DictPred<T> = (value: T, key: string) => boolean;
 
-    export interface Static {
+    interface Static {
         /**
          * Checks if input value is `Array`.
          */
@@ -49,7 +49,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks whether the passed value is iterable.
          */
-        isIterable<T>(val: any): val is IterableIterator<T>;
+        isIterable(val: any): boolean;
 
         /**
          * Checks if input value is an empty `Array`.
@@ -411,8 +411,10 @@ declare namespace RamdaAdjunct {
 
         /**
          * Returns the result of concatenating the given lists or strings.
-         * Note: RA.concatAll expects all elements to be of the same type. It will throw an error if you concat an Array with a non-Array value.
-         * Dispatches to the concat method of the preceding element, if present. Can also concatenate multiple elements of a [fantasy-land compatible semigroup](https://github.com/fantasyland/fantasy-land#semigroup).
+         * Note: RA.concatAll expects all elements to be of the same type.
+         * It will throw an error if you concat an Array with a non-Array value.
+         * Dispatches to the concat method of the preceding element, if present.
+         * Can also concatenate multiple elements of a [fantasy-land compatible semigroup](https://github.com/fantasyland/fantasy-land#semigroup).
          * Returns undefined if empty array was passed.
          */
         concatAll<S extends Semigroup>(foldable: Foldable<S>): S | undefined;
@@ -904,8 +906,8 @@ declare namespace RamdaAdjunct {
         /*
          * Flattens the list to the specified depth.
          */
-        flattenDepth<T>(depth: number, list: T[]): T[]
-        flattenDepth<T>(depth: number): <T>(list: T[]) => T[]
+        flattenDepth<T>(depth: number, list: T[]): T[];
+        flattenDepth(depth: number): (list: any[]) => any[];
 
         /**
          * Checks if input value is a `thenable`.
@@ -1058,7 +1060,6 @@ declare namespace RamdaAdjunct {
          included<T>(list: T[], val: T): boolean; // alias
          included<T>(list: T[]): (val: T) => boolean; // alias
 
-
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,
          * or functions that exhibit different behaviors based on their argument(s).
@@ -1077,8 +1078,8 @@ declare namespace RamdaAdjunct {
          * of the `list`. When negative indices are provided, the behavior of the move is
          * unspecified.
          */
-        move<T>(fromIdx: number, toIdx: number, list: T[]): T[]
-        move<T>(fromIdx: number): (toIdx: number, list: T[]) => T[]
+        move<T>(fromIdx: number, toIdx: number, list: T[]): T[];
+        move<T>(fromIdx: number): (toIdx: number, list: T[]) => T[];
         move<T>(fromIdx: number): {
             (toIdx: number, list: T[]): T[];
             (toIdx: number): (list: T[]) => T[];
@@ -1101,7 +1102,7 @@ declare namespace RamdaAdjunct {
          *
          * Note: floor(null) returns integer 0 and do not give a NaN error.
          */
-        floor(val: number): number
+        floor(val: number): number;
 
         /**
          * Returns the integer part of a number by removing any fractional digits.
@@ -1137,7 +1138,6 @@ declare namespace RamdaAdjunct {
           */
         Identity: Function;
     }
-
 }
 
 export = RA;

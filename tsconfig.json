@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "noEmit": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true
-  }
-}
