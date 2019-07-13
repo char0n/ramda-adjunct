@@ -34,6 +34,7 @@
 /test-results.xml
 /types/tslint.json
 /types/tsconfig.json
+/types/test
 /RELEASE.md
 /CODE_OF_CONDUCT.md
 /CONTRIBUTING.md
