@@ -183,7 +183,7 @@
     "tslint": "=5.14.0",
     "typescript": "=3.5.3",
     "webpack": "4.35.3",
-    "webpack-cli": "3.3.5"
+    "webpack-cli": "3.3.6"
   },
   "browserslist": "> 0.25%, ie 10, ie 11, not op_mini all",
   "tonicExampleFilename": "tonicExample.js"
