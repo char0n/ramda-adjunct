@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=0.10.3"
+  },
   "author": {
     "name": "Vladimir Gorej",
     "email": "vladimir.gorej@gmail.com",
@@ -50,15 +53,6 @@
   "module": "./es/index.js",
   "jsnext:main": "./es/index.js",
   "types": "types/index.d.ts",
-  "engines": {
-    "node": ">=0.10.3"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-commit": "bash scripts/pre-commit.sh"
-    }
-  },
   "scripts": {
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
@@ -80,7 +74,7 @@
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.js",
-    "lint": "eslint ./ && tslint -c types/tslint.json types/index.d.ts",
+    "lint": "eslint ./ && tslint --project types/tsconfig.json -c types/tslint.json types/index.d.ts",
     "lint:fix": "eslint ./ --fix && tslint --fix -c types/tslint.json types/index.d.ts",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
     "test": {
@@ -167,6 +161,7 @@
     "jsdoc": "3.6.3",
     "jsverify": "0.8.4",
     "license-cli": "1.1.6",
+    "lint-staged": "=9.2.0",
     "mocha": "6.2.0",
     "mocha-junit-reporter": "1.23.1",
     "mocha-multi-reporters": "1.1.7",

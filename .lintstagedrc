@@ -1,0 +1,4 @@
+{
+  "*.js": "eslint",
+  "*.ts": "tslint --project types/tsconfig.json -c types/tslint.json"
+}
