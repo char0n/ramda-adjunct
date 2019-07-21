@@ -93,7 +93,7 @@ describe('sign', function() {
       }
     });
 
-    it('should return proper sign result', function() {
+    specify('should return proper sign result', function() {
       eq(signPolyfill(3), 1);
       eq(signPolyfill(3.3), 1);
       eq(signPolyfill(-3), -1);
