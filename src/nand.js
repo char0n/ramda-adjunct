@@ -8,9 +8,9 @@ import { and, complement } from 'ramda';
  * @since {@link https://char0n.github.io/ramda-adjunct/2.19.0|v2.19.0}
  * @category Logic
  * @sig a -> b -> Boolean
- * @param {Boolean} a
- * @param {Boolean} b
- * @return {Boolean} true if both arguments are false
+ * @param {*} a
+ * @param {*} b
+ * @return {Boolean} true if both arguments are falsy
  * @example
  *
  * RA.nand(true, true); //=> false
