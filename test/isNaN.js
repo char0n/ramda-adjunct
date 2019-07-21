@@ -1,55 +1,62 @@
 import * as R from 'ramda';
+import { assert } from 'chai';
 
 import * as RA from '../src';
-import polyfill from '../src/internal/polyfills/Number.isNaN';
+import { isNanPolyfill } from '../src/isNaN';
 import eq from './shared/eq';
 
 describe('isNaN', function() {
   it('should test value for a `NaN`', function() {
-    eq(RA.isNaN(NaN), true);
-    eq(RA.isNaN(Number.NaN), true);
-    eq(RA.isNaN(0 / 0), true);
+    assert.isTrue(RA.isNaN(NaN));
+    assert.isTrue(RA.isNaN(Number.NaN));
+    assert.isTrue(RA.isNaN(0 / 0));
 
     // e.g. these would have been true with global isNaN().
-    eq(RA.isNaN('NaN'), false);
-    eq(RA.isNaN(undefined), false);
-    eq(RA.isNaN({}), false);
-    eq(RA.isNaN('blabla'), false);
+    assert.isFalse(RA.isNaN('NaN'));
+    assert.isFalse(RA.isNaN(undefined));
+    assert.isFalse(RA.isNaN({}));
+    assert.isFalse(RA.isNaN('blabla'));
 
-    // These all return false.
-    eq(RA.isNaN(true), false);
-    eq(RA.isNaN(null), false);
-    eq(RA.isNaN(37), false);
-    eq(RA.isNaN('37'), false);
-    eq(RA.isNaN('37.37'), false);
-    eq(RA.isNaN(''), false);
-    eq(RA.isNaN(' '), false);
-  });
-
-  it('should test polyfill for a `NaN', function() {
-    eq(polyfill(NaN), true);
-    eq(polyfill(Number.NaN), true);
-    eq(polyfill(0 / 0), true);
-
-    // e.g. these would have been true with global isNaN().
-    eq(polyfill('NaN'), false);
-    eq(polyfill(undefined), false);
-    eq(polyfill({}), false);
-    eq(polyfill('blabla'), false);
-
-    // These all return false.
-    eq(polyfill(true), false);
-    eq(polyfill(null), false);
-    eq(polyfill(37), false);
-    eq(polyfill('37'), false);
-    eq(polyfill('37.37'), false);
-    eq(polyfill(''), false);
-    eq(polyfill(' '), false);
+    assert.isFalse(RA.isNaN(true));
+    assert.isFalse(RA.isNaN(null));
+    assert.isFalse(RA.isNaN(37));
+    assert.isFalse(RA.isNaN('37'));
+    assert.isFalse(RA.isNaN('37.37'));
+    assert.isFalse(RA.isNaN(''));
+    assert.isFalse(RA.isNaN(' '));
   });
 
   it('should support placeholder to specify "gaps"', function() {
     const isNaN = RA.isNaN(R.__);
 
     eq(isNaN(NaN), true);
+  });
+
+  context('isNanPolyfill', function() {
+    specify('should test polyfill for a `NaN', function() {
+      assert.isTrue(isNanPolyfill(NaN));
+      assert.isTrue(isNanPolyfill(Number.NaN));
+      assert.isTrue(isNanPolyfill(0 / 0));
+
+      // e.g. these would have been true with global isNaN().
+      assert.isFalse(isNanPolyfill('NaN'));
+      assert.isFalse(isNanPolyfill(undefined));
+      assert.isFalse(isNanPolyfill({}));
+      assert.isFalse(isNanPolyfill('blabla'));
+
+      assert.isFalse(isNanPolyfill(true));
+      assert.isFalse(isNanPolyfill(null));
+      assert.isFalse(isNanPolyfill(37));
+      assert.isFalse(isNanPolyfill('37'));
+      assert.isFalse(isNanPolyfill('37.37'));
+      assert.isFalse(isNanPolyfill(''));
+      assert.isFalse(isNanPolyfill(' '));
+    });
+
+    specify('should support placeholder to specify "gaps"', function() {
+      const isNaN = isNanPolyfill(R.__);
+
+      eq(isNaN(NaN), true);
+    });
   });
 });
