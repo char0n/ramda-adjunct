@@ -1,47 +1,62 @@
-import { complement } from 'ramda';
+import * as R from 'ramda';
+import { assert } from 'chai';
 
 import * as RA from '../src';
-import polyfill from '../src/internal/polyfills/Number.isNaN';
-import eq from './shared/eq';
+import { isNaNPolyfill } from '../src/isNaN';
 
 describe('isNotNaN', function() {
   it('should test value for complement of `NaN`', function() {
-    eq(RA.isNotNaN(NaN), false);
-    eq(RA.isNotNaN(Number.NaN), false);
-    eq(RA.isNotNaN(0 / 0), false);
+    assert.isFalse(RA.isNotNaN(NaN));
+    assert.isFalse(RA.isNotNaN(Number.NaN));
+    assert.isFalse(RA.isNotNaN(0 / 0));
 
-    eq(RA.isNotNaN('NaN'), true);
-    eq(RA.isNotNaN(undefined), true);
-    eq(RA.isNotNaN({}), true);
-    eq(RA.isNotNaN('blabla'), true);
+    assert.isTrue(RA.isNotNaN('NaN'));
+    assert.isTrue(RA.isNotNaN(undefined));
+    assert.isTrue(RA.isNotNaN({}));
+    assert.isTrue(RA.isNotNaN('blabla'));
 
-    eq(RA.isNotNaN(true), true);
-    eq(RA.isNotNaN(null), true);
-    eq(RA.isNotNaN(37), true);
-    eq(RA.isNotNaN('37'), true);
-    eq(RA.isNotNaN('37.37'), true);
-    eq(RA.isNotNaN(''), true);
-    eq(RA.isNotNaN(' '), true);
+    assert.isTrue(RA.isNotNaN(true));
+    assert.isTrue(RA.isNotNaN(null));
+    assert.isTrue(RA.isNotNaN(37));
+    assert.isTrue(RA.isNotNaN('37'));
+    assert.isTrue(RA.isNotNaN('37.37'));
+    assert.isTrue(RA.isNotNaN(''));
+    assert.isTrue(RA.isNotNaN(' '));
   });
 
-  it('tests polyfill for complement of `NaN', function() {
-    const polyfillC = complement(polyfill);
+  specify('should support placeholder to specify "gaps"', function() {
+    const isNotNaN = RA.isNotNaN(R.__);
 
-    eq(polyfillC(NaN), false);
-    eq(polyfillC(Number.NaN), false);
-    eq(polyfillC(0 / 0), false);
+    assert.isFalse(isNotNaN(NaN));
+  });
 
-    eq(polyfillC('NaN'), true);
-    eq(polyfillC(undefined), true);
-    eq(polyfillC({}), true);
-    eq(polyfillC('blabla'), true);
+  context('isNotNaNPolyfill', function() {
+    const isNotNaNpolyfill = R.complement(isNaNPolyfill);
 
-    eq(polyfillC(true), true);
-    eq(polyfillC(null), true);
-    eq(polyfillC(37), true);
-    eq(polyfillC('37'), true);
-    eq(polyfillC('37.37'), true);
-    eq(polyfillC(''), true);
-    eq(polyfillC(' '), true);
+    specify('should test polyfill for a `NaN', function() {
+      assert.isFalse(isNotNaNpolyfill(NaN));
+      assert.isFalse(isNotNaNpolyfill(Number.NaN));
+      assert.isFalse(isNotNaNpolyfill(0 / 0));
+
+      // e.g. these would have been true with global isNaN().
+      assert.isTrue(isNotNaNpolyfill('NaN'));
+      assert.isTrue(isNotNaNpolyfill(undefined));
+      assert.isTrue(isNotNaNpolyfill({}));
+      assert.isTrue(isNotNaNpolyfill('blabla'));
+
+      assert.isTrue(isNotNaNpolyfill(true));
+      assert.isTrue(isNotNaNpolyfill(null));
+      assert.isTrue(isNotNaNpolyfill(37));
+      assert.isTrue(isNotNaNpolyfill('37'));
+      assert.isTrue(isNotNaNpolyfill('37.37'));
+      assert.isTrue(isNotNaNpolyfill(''));
+      assert.isTrue(isNotNaNpolyfill(' '));
+    });
+
+    specify('should support placeholder to specify "gaps"', function() {
+      const should = isNotNaNpolyfill(R.__);
+
+      assert.isFalse(should(NaN));
+    });
   });
 });

@@ -3,7 +3,7 @@ import curry1 from 'ramda/src/internal/_curry1';
 import isFunction from './isFunction';
 import polyfill from './internal/polyfills/Number.isNaN';
 
-export const isNanPolyfill = curry1(polyfill);
+export const isNaNPolyfill = curry1(polyfill);
 
 /**
  * Checks whether the passed value is `NaN` and its type is `Number`.
@@ -38,6 +38,6 @@ export const isNanPolyfill = curry1(polyfill);
  * RA.isNaN(''); // => false
  * RA.isNaN(' '); // => false
  */
-const _isNaN = isFunction(Number.isNaN) ? curry1(Number.isNaN) : isNanPolyfill;
+const _isNaN = isFunction(Number.isNaN) ? curry1(Number.isNaN) : isNaNPolyfill;
 
 export default _isNaN;
