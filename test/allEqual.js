@@ -11,7 +11,7 @@ const hasFunctionReferenceEqualityBug = (() => {
 
 describe('allEqual', function() {
   context('given all items are equal', function() {
-    specify('returns true', function() {
+    specify('should return true', function() {
       assert.isTrue(RA.allEqual([4, 4, 4, 4]));
     });
   });
