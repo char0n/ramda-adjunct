@@ -70,7 +70,8 @@
     "build:commonjs": "better-npm-run build:commonjs",
     "build:umd": "better-npm-run build:umd",
     "prepublishOnly": "better-npm-run prepublishOnly",
-    "clean": "better-npm-run clean"
+    "clean": "better-npm-run clean",
+    "postinstall": "opencollective postinstall"
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.js",
@@ -124,6 +125,9 @@
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
   "readme": "README.md",
+  "dependencies": {
+    "opencollective": "=1.0.3"
+  },
   "peerDependencies": {
     "ramda": ">= 0.19.0 <= 0.26.1"
   },
@@ -181,5 +185,10 @@
     "webpack-cli": "3.3.6"
   },
   "browserslist": "> 0.25%, ie 10, ie 11, not op_mini all",
-  "tonicExampleFilename": "tonicExample.js"
+  "tonicExampleFilename": "tonicExample.js",
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/ramda-adjunct",
+    "logo": "https://opencollective.com/ramda-adjunct/logo.txt"
+  }
 }
