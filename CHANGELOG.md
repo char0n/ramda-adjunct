@@ -1,3 +1,15 @@
+<a name="2.19.0"></a>
+# [2.19.0](https://github.com/char0n/ramda-adjunct/compare/v2.18.0...v2.19.0) (2019-08-12)
+
+
+### Features
+
+* **isNotFloat:** add support for ramda placeholder ([4b9934f](https://github.com/char0n/ramda-adjunct/commit/4b9934f)), closes [#624](https://github.com/char0n/ramda-adjunct/issues/624)
+* add flattenDepth ([#946](https://github.com/char0n/ramda-adjunct/issues/946)) ([3c4651a](https://github.com/char0n/ramda-adjunct/commit/3c4651a)), closes [#844](https://github.com/char0n/ramda-adjunct/issues/844)
+* **logic:** add nand ([#952](https://github.com/char0n/ramda-adjunct/issues/952)) ([7931fa0](https://github.com/char0n/ramda-adjunct/commit/7931fa0)), closes [#237](https://github.com/char0n/ramda-adjunct/issues/237)
+
+
+
 <a name="2.18.0"></a>
 # [2.18.0](https://github.com/char0n/ramda-adjunct/compare/v2.17.0...v2.18.0) (2019-05-26)
 
