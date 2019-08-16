@@ -146,6 +146,11 @@ declare namespace RamdaAdjunct {
         isNotArrayLike(val: any): boolean;
 
         /**
+         * Checks if input value is a sparse array: at least one index is missing.
+         */
+        isSparseArray<T>(val: T[]): boolean;
+
+        /**
          * Checks if input value is `Generator Function`.
          */
         isGeneratorFunction(val: any): val is Function;
