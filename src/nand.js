@@ -1,7 +1,7 @@
 import { and, complement } from 'ramda';
 
 /**
- * Returns true if both arguments are falsy; false otherwise.
+ * Returns false if both arguments are truesy; true otherwise.
  *
  * @func nand
  * @memberOf RA
@@ -10,7 +10,7 @@ import { and, complement } from 'ramda';
  * @sig a -> b -> Boolean
  * @param {*} a
  * @param {*} b
- * @return {Boolean} true if both arguments are falsy
+ * @return {Boolean} false if both arguments are truesy
  * @example
  *
  * RA.nand(true, true); //=> false

@@ -987,7 +987,7 @@ declare namespace RamdaAdjunct {
         neither(firstPredicate: Function, secondPredicate: Function): Function;
 
         /**
-         * Returns true if both arguments are falsy; false otherwise.
+         * Returns false if both arguments are truesy; true otherwise.
          */
         nand(a: any, b: any): Boolean;
         nand(a: any): (b: any) => Boolean;
