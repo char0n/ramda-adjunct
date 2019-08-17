@@ -993,6 +993,12 @@ declare namespace RamdaAdjunct {
         nand(a: any): (b: any) => Boolean;
 
         /**
+         * Returns true if both arguments are falsy; false otherwise.
+         */
+        nor(a: any, b: any): Boolean;
+        nor(a: any): (b: any) => Boolean;
+
+        /**
          * Takes a list of predicates and returns a predicate that returns true for a given list of
          * arguments if one or more of the provided predicates is not satisfied by those arguments.
          * It is the complement of Ramda's allPass.

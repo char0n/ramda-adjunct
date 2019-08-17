@@ -164,6 +164,7 @@ export { default as defaultWhen } from './defaultWhen';
 export { default as notBoth } from './notBoth';
 export { default as nand } from './nand';
 export { default as neither } from './neither';
+export { default as nor } from './nor';
 export { default as notAllPass } from './notAllPass';
 export { default as nonePass } from './nonePass';
 export { default as argsPass } from './argsPass';
