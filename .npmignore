@@ -5,9 +5,9 @@
 /coverage
 /docs
 /node_modules
-/scripts
 /npm-debug.log
-/srcipts
+/scripts/**/*
+!/scripts/donations.js
 /test
 /.babelrc
 /.editorconfig
