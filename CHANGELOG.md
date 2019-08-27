@@ -1,3 +1,8 @@
+<a name="2.19.1"></a>
+## [2.19.1](https://github.com/char0n/ramda-adjunct/compare/v2.19.0...v2.19.1) (2019-08-27)
+
+* **opencollective:** remove opencollective as dependency ([35f46ce](https://github.com/char0n/ramda-adjunct/commit/35f46ce)), closes [#1021](https://github.com/char0n/ramda-adjunct/issues/1021)
+
 <a name="2.19.0"></a>
 # [2.19.0](https://github.com/char0n/ramda-adjunct/compare/v2.18.0...v2.19.0) (2019-08-12)
 
