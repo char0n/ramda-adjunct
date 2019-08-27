@@ -1,7 +1,7 @@
 'use strict';
 
 (() => {
-  if (!(console && typeof console.log === 'function')) {
+  if (!(console && typeof console.log === 'function' && String.raw)) {
     return;
   }
 
