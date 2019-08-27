@@ -1,3 +1,13 @@
+<a name="2.19.2"></a>
+## [2.19.2](https://github.com/char0n/ramda-adjunct/compare/v2.19.1...v2.19.2) (2019-08-27)
+
+
+### Bug Fixes
+
+* include donate script into npm distribution ([e477be3](https://github.com/char0n/ramda-adjunct/commit/e477be3))
+
+
+
 <a name="2.19.1"></a>
 ## [2.19.1](https://github.com/char0n/ramda-adjunct/compare/v2.19.0...v2.19.1) (2019-08-27)
 

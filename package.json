@@ -42,7 +42,7 @@
     "functional"
   ],
   "sideEffects": false,
-  "version": "2.19.1",
+  "version": "2.19.2",
   "homepage": "https://github.com/char0n/ramda-adjunct",
   "license": "BSD-3-Clause",
   "repository": {
