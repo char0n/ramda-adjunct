@@ -1,3 +1,9 @@
+<a name="2.19.3"></a>
+## [2.19.3](https://github.com/char0n/ramda-adjunct/compare/v2.19.2...v2.19.3) (2019-08-28)
+
+* remove donations from postinstall script ([9acaf53](https://github.com/char0n/ramda-adjunct/commit/9acaf53))
+
+
 <a name="2.19.2"></a>
 ## [2.19.2](https://github.com/char0n/ramda-adjunct/compare/v2.19.1...v2.19.2) (2019-08-27)
 
