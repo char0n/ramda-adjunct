@@ -8,6 +8,8 @@
 /npm-debug.log
 /scripts/**/*
 /test
+/.huskyrc
+/.lintstagedrc
 /.babelrc
 /.editorconfig
 /.eslintignore
