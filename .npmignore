@@ -7,7 +7,6 @@
 /node_modules
 /npm-debug.log
 /scripts/**/*
-!/scripts/**/donate.js
 /test
 /.babelrc
 /.editorconfig
