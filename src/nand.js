@@ -1,7 +1,7 @@
 import { and, complement } from 'ramda';
 
 /**
- * Returns false if both arguments are truesy; true otherwise.
+ * Returns false if both arguments are truthy; true otherwise.
  *
  * @func nand
  * @memberOf RA
