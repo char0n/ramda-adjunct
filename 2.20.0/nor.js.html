@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotBoolean.js - Documentation</title>
+    <title>nor.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotBoolean.js</h1>
+    <h1 class="page-title">nor.js</h1>
     
 
     
@@ -52,30 +52,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isBoolean from './isBoolean';
+            <pre class="prettyprint source linenums"><code>import { or, complement } from 'ramda';
 
 /**
- * Checks if input value is complement of `Boolean`.
+ * Returns true if both arguments are falsy; false otherwise.
  *
- * @func isNotBoolean
+ * @func nor
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isBoolean|isBoolean}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.20.0|v2.20.0}
+ * @category Logic
+ * @sig a -> b -> a ⊽ b
+ * @param {*} a
+ * @param {*} b
+ * @return {boolean} true if both arguments are falsy
+ * @see {@link RA.neither|neither}
  * @example
  *
- * RA.isNotBoolean(false); //=> false
- * RA.isNotBoolean(true); //=> false
- * RA.isNotBoolean(null); //=> true
+ * RA.nor(true, true); //=> false
+ * RA.nor(false, true); //=> false
+ * RA.nor(true, false); //=> false
+ * RA.nor(false, false); //=> true
+ * RA.nor(1, 1); //=> false
+ * RA.nor(1, 0); //=> false
+ * RA.nor(0, 1); //=> false
+ * RA.nor(0, 0); //=> true
  */
-const isNotBoolean = complement(isBoolean);
+const nor = complement(or); // eslint-disable-line ramda/complement-simplification
 
-export default isNotBoolean;
+export default nor;
 </code></pre>
         </article>
     </section>
