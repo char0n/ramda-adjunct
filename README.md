@@ -30,10 +30,10 @@ Adjunct is a thing added to something else as a supplementary rather than an ess
 Follow Ramda Adjunct on [**medium.com/ramda-adjunct**](https://medium.com/ramda-adjunct) to read latest news and 
 articles about the library. 
 
-<table>
+<table border="0">
     <tr>
       <td align="right" valign="middle">
-        <img src="https://cdn2.hubspot.net/hubfs/4008838/website/logos/logos_for_download/Tidelift_primary-shorthand-logo.png" alt="Tidelift" width="250" />
+        <img src="https://cdn2.hubspot.net/hubfs/4008838/website/logos/logos_for_download/Tidelift_primary-shorthand-logo.png" alt="Tidelift" width="100" />
       </td>
       <td valign="middle">
         <a href="https://tidelift.com/subscription/pkg/npm-ramda-adjunct?utm_source=npm-ramda-adjunct&utm_medium=referral&utm_campaign=readme">
