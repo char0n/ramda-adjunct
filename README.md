@@ -14,6 +14,7 @@
 [![Sponsors on Open Collective](https://opencollective.com/ramda-adjunct/sponsors/badge.svg)](#sponsors)
 [![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Open Source Helpers](https://www.codetriage.com/char0n/ramda-adjunct/badges/users.svg)](https://www.codetriage.com/char0n/ramda-adjunct)
+[![Tidelift](https://tidelift.com/badges/package/npm/ramda-adjunct)](https://tidelift.com/subscription/pkg/npm-ramda-adjunct?utm_source=npm-ramda-adjunct&utm_medium=referral&utm_campaign=readme)
 
 # Ramda Adjunct [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Start%20your%20functional%20programming%20journey%20in%20JavaScript%20with%20ramda%20%2B%20ramda-adjunct&url=https%3A%2F%2Fgithub.com%2Fchar0n%2Framda-adjunct&via=vladimirgorej&hashtags=functional,javascript,ramda,utilities,addons)
 
@@ -28,6 +29,17 @@ Adjunct is a thing added to something else as a supplementary rather than an ess
 
 Follow Ramda Adjunct on [**medium.com/ramda-adjunct**](https://medium.com/ramda-adjunct) to read latest news and 
 articles about the library. 
+
+<table>
+    <tr>
+      <td align="right" valign="middle">
+        <img src="https://cdn2.hubspot.net/hubfs/4008838/website/logos/logos_for_download/Tidelift_primary-shorthand-logo.png" alt="Tidelift" width="40" />
+      </td>
+      <td valign="middle">
+        [Get professionally supported ramda-adjunct with Tidelift Subscription.](https://tidelift.com/subscription/pkg/npm-ramda-adjunct?utm_source=npm-ramda-adjunct&utm_medium=referral&utm_campaign=readme)
+      </td>
+    </tr>
+</table>
 
 ### Getting Started
 
