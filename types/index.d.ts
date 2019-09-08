@@ -361,6 +361,14 @@ declare namespace RamdaAdjunct {
         isNotRegExp(val: any): boolean;
 
         /**
+         * Checks if input value is a sparse Array.
+         * An array with at least one "empty slot" in it is often called a "sparse array."
+         * Empty slot doesn't mean that the slot contains `null` or `undefined` values,
+         * but rather that the slots don't exist.
+         */
+        isSparseArray(val: any): boolean;
+
+        /**
          * A function that returns `undefined`.
          */
         stubUndefined(): undefined;
