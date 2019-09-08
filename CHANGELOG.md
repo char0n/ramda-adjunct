@@ -1,3 +1,14 @@
+<a name="2.20.0"></a>
+# [2.20.0](https://github.com/char0n/ramda-adjunct/compare/v2.19.2...v2.20.0) (2019-09-08)
+
+
+### Features
+
+* **logic:** add nor ([#1023](https://github.com/char0n/ramda-adjunct/issues/1023)) ([608ff01](https://github.com/char0n/ramda-adjunct/commit/608ff01)), closes [#285](https://github.com/char0n/ramda-adjunct/issues/285)
+* **type:** add isSparseArray predicate ([f8d439b](https://github.com/char0n/ramda-adjunct/commit/f8d439b)), closes [#785](https://github.com/char0n/ramda-adjunct/issues/785)
+
+
+
 <a name="2.19.3"></a>
 ## [2.19.3](https://github.com/char0n/ramda-adjunct/compare/v2.19.2...v2.19.3) (2019-08-28)
 

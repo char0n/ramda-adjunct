@@ -138,7 +138,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 ## API Documentation
 
  [LATEST](https://char0n.github.io/ramda-adjunct),
- [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.19.2), 
+ [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.19.3), 
  [ALL VERSIONS](./VERSIONS.md) 
  
 ## Wrote about us
@@ -166,6 +166,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 - [chore: ramda-adjunct v2.16.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-16-0-release-16873c535636)
 - [chore: ramda-adjunct v2.17.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-17-0-release-eec79b981279)
 - [chore: ramda-adjunct v2.18.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-18-0-release-fcab52989195)
+- [chore: ramda-adjunct v2.19.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-19-0-release-9a1b012929b2)
 
 
 ## Contributing
