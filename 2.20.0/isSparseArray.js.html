@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isObj.js - Documentation</title>
+    <title>isSparseArray.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isObj.js</h1>
+    <h1 class="page-title">isSparseArray.js</h1>
     
 
     
@@ -52,37 +52,55 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both, either } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import {
+  values,
+  both,
+  complement,
+  pipe,
+  converge,
+  identical,
+  length,
+} from 'ramda';
 
-import isNotNull from './isNotNull';
-import isFunction from './isFunction';
-import isOfTypeObject from './internal/isOfTypeObject';
+import isArray from './isArray';
 
-/* eslint-disable max-len */
 /**
- * Checks if input value is language type of `Object`.
+ * Checks if input value is a sparse Array.
+ * An array with at least one "empty slot" in it is often called a "sparse array."
+ * Empty slot doesn't mean that the slot contains `null` or `undefined` values,
+ * but rather that the slots don't exist.
  *
- * @func isObj
- * @aliases isObject
+ * @func isSparseArray
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.20.0|v2.20.0}
  * @category Type
  * @sig * -> Boolean
- * @param {*} val The value to test
+ * @param {*} list The list to test
  * @return {boolean}
- * @see {@link RA.isNotObj|isNotObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isPlainObj|isPlainObj}
+ * @see {@link https://github.com/getify/You-Dont-Know-JS/blob/f0d591b6502c080b92e18fc470432af8144db610/types%20%26%20grammar/ch3.md#array|Sparse Arrays}, {@link RA.isArray|isArray}
  * @example
  *
- * RA.isObj({}); //=> true
- * RA.isObj([]); //=> true
- * RA.isObj(() => {}); //=> true
- * RA.isObj(null); //=> false
- * RA.isObj(undefined); //=> false
+ * RA.isSparseArray(new Array(3)); // => true
+ * RA.isSparseArray([1,,3]); // => true
+ *
+ * const list = [1, 2, 3];
+ * delete list[1];
+ * RA.isSparseArray(list); // => true
+ *
+ * RA.isSparseArray([1, 2, 3]); // => false
  */
-/* eslint-enable max-len */
-const isObj = both(isNotNull, either(isOfTypeObject, isFunction));
+const isSparseArray = both(
+  isArray,
+  converge(complement(identical), [
+    pipe(
+      values,
+      length
+    ),
+    length,
+  ])
+);
 
-export default isObj;
+export default isSparseArray;
 </code></pre>
         </article>
     </section>
