@@ -132,7 +132,7 @@
     "@babel/core": "7.6.2",
     "@babel/plugin-transform-modules-commonjs": "7.6.0",
     "@babel/polyfill": "7.6.0",
-    "@babel/preset-env": "7.6.0",
+    "@babel/preset-env": "7.6.2",
     "@babel/register": "7.6.0",
     "@commitlint/cli": "8.2.0",
     "@commitlint/config-conventional": "8.2.0",
