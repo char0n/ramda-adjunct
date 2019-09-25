@@ -157,17 +157,8 @@ It is also possible that our ES5 distributions run on node versions older than 0
 - [Functional lenses in JavaScript - Isos](https://www.linkedin.com/pulse/functional-lenses-javascript-isos-vladim%C3%ADr-gorej/)
 - [Functional lenses in JavaScript - Traversables](https://www.linkedin.com/pulse/functional-lenses-javascript-traversables-vladim%C3%ADr-gorej/)
 - [Using JavaScript Generators to yield Promises](https://www.linkedin.com/pulse/using-javascript-generators-yield-promises-vladim%C3%ADr-gorej/)
-- [chore: ramda-adjunct v2.10.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-10-0-release-be5bee161fef)
-- [chore: ramda-adjunct v2.11.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-11-0-release-7442f6c16655)
-- [chore: ramda-adjunct v2.12.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-12-0-release-8e2ec0d5e48)
-- [chore: ramda-adjunct v2.13.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-13-0-release-b96b308f155b)
-- [chore: ramda-adjunct v2.14.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-14-0-release-e87ea4f5cc0e)
-- [chore: ramda-adjunct v2.15.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-15-0-release-6743ca06b2e4)
-- [chore: ramda-adjunct v2.16.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-16-0-release-16873c535636)
-- [chore: ramda-adjunct v2.17.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-17-0-release-eec79b981279)
-- [chore: ramda-adjunct v2.18.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-18-0-release-fcab52989195)
-- [chore: ramda-adjunct v2.19.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-19-0-release-9a1b012929b2)
-- [chore: ramda-adjunct v2.20.0 release notes](https://medium.com/ramda-adjunct/chore-ramda-adjunct-v2-20-0-release-cc8d42d95ac2)
+- [Integrating React Native navigators](https://blog.inspeerity.com/react-native/integrating-react-native-navigators/)
+- [Ramda Adjunct Changelog articles](https://medium.com/ramda-adjunct)
 
 ## Contributing
 
