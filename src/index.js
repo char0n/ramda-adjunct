@@ -178,5 +178,6 @@ export { default as trunc } from './trunc';
 export { default as sign } from './sign';
 // String
 export { default as replaceAll } from './replaceAll';
+export { default as escapeRegExp } from './escapeRegExp';
 // Types
 export { default as Identity } from './fantasy-land/Identity';

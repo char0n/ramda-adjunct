@@ -1146,9 +1146,15 @@ declare namespace RamdaAdjunct {
             (replaceValue: string): (str: string) => string;
         };
 
-         /**
-          * Identity type.
-          */
+        /**
+         * Escapes the RegExp special characters.
+         */
+        escapeRegExp(val: string): string;
+        escapeRegExp<T>(val: T): T;
+
+        /**
+         * Identity type.
+         */
         Identity: Function;
     }
 }
