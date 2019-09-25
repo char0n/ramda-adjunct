@@ -1,3 +1,13 @@
+<a name="2.21.0"></a>
+# [2.21.0](https://github.com/char0n/ramda-adjunct/compare/v2.20.0...v2.21.0) (2019-09-25)
+
+
+### Features
+
+* **string:** add escapeRegExp ([6b676af](https://github.com/char0n/ramda-adjunct/commit/6b676af)), closes [#880](https://github.com/char0n/ramda-adjunct/issues/880)
+
+
+
 <a name="2.20.0"></a>
 # [2.20.0](https://github.com/char0n/ramda-adjunct/compare/v2.19.2...v2.20.0) (2019-09-08)
 
