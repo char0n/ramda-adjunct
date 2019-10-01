@@ -14,7 +14,7 @@ const anyPolyfill = iterable => {
   const exceptions = [];
 
   return new Promise((resolve, reject) => {
-    const onReject = (e) => {
+    const onReject = e => {
       exceptions.push(e);
 
       if (exceptions.length === iterable.length) {
@@ -22,11 +22,14 @@ const anyPolyfill = iterable => {
       }
     };
 
-    map(p => {
-      resolveP(p)
-        .then(resolve)
-        .catch(onReject);
-    }, [...iterable]);
+    map(
+      p => {
+        resolveP(p)
+          .then(resolve)
+          .catch(onReject);
+      },
+      [...iterable]
+    );
   });
 };
 

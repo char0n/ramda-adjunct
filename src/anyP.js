@@ -2,10 +2,10 @@ import { bind } from 'ramda';
 import curry1 from 'ramda/src/internal/_curry1';
 
 import isFunction from './isFunction';
-import polyfill, {AggregatedError} from './internal/polyfills/Promise.any';
+import polyfill, { AggregatedError } from './internal/polyfills/Promise.any';
 
 export const anyPPolyfill = curry1(polyfill);
-export {AggregatedError};
+export { AggregatedError };
 
 /**
  * returns a promise that is fulfilled by the first given promise to be fulfilled,
