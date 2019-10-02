@@ -176,6 +176,7 @@ export { default as ceil } from './ceil';
 export { default as floor } from './floor';
 export { default as trunc } from './trunc';
 export { default as sign } from './sign';
+export { default as subtractValue } from './subtractValue';
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
