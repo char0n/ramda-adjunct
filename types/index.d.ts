@@ -116,6 +116,11 @@ declare namespace RamdaAdjunct {
         isNotUndefined(val: any): boolean;
 
         /**
+         * Checks if input value is `Symbol`.
+         */
+        isSymbol(val: any): val is Symbol;
+
+        /**
          * Checks if input value is `null`.
          */
         isNull(val: any): val is null;
