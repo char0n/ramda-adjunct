@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNull.js - Documentation</title>
+    <title>isSymbol.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNull.js</h1>
+    <h1 class="page-title">isSymbol.js</h1>
     
 
     
@@ -52,30 +52,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isNull from './isNull';
+            <pre class="prettyprint source linenums"><code>import { type } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
- * Checks if input value is complement of `null`.
+ * Checks if input value is a Symbol.
  *
- * @func isNotNull
+ * @func isSymbol
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.1.0|v0.1.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isNull|isNull}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol|MDN Symbol}
  * @example
  *
- * RA.isNotNull(1); //=> true
- * RA.isNotNull(undefined); //=> true
- * RA.isNotNull(null); //=> false
+ * RA.isSymbol(Symbol('1')); //=> true
+ * RA.isSymbol(Symbol(1)); //=> true
+ * RA.isSymbol('string'); //=> false
+ * RA.isSymbol(undefined); //=> false
+ * RA.isSymbol(null); //=> false
  */
-const isNotNull = complement(isNull);
+const isSymbol = curry1(val => {
+  return (
+    typeof val === 'symbol' ||
+    (typeof val === 'object' &amp;&amp; type(val) === 'Symbol')
+  );
+});
 
-export default isNotNull;
+export default isSymbol;
 </code></pre>
         </article>
     </section>
