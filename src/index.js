@@ -101,7 +101,6 @@ export { default as seq } from './seq';
 export { default as sequencing } from './seq';
 export { default as dispatch } from './dispatch';
 export { default as async } from './async';
-export { default as toArray } from './toArray';
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';
@@ -132,6 +131,7 @@ export { default as allIdentical } from './allIdentical';
 export { default as allIdenticalTo } from './allIdenticalTo';
 export { default as allEqualTo } from './allEqualTo';
 export { default as flattenDepth } from './flattenDepth';
+export { default as toArray } from './toArray';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
