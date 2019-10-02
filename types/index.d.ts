@@ -1156,6 +1156,12 @@ declare namespace RamdaAdjunct {
          * Identity type.
          */
         Identity: Function;
+
+        /**
+         * Converts input to an array.
+         */
+        toArray<T>(iterable: Iterable<T> | T): T[];
+        toArray(val: {}): [];
     }
 }
 
