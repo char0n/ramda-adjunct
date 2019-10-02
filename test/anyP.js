@@ -33,7 +33,7 @@ describe('anyP', function() {
         } catch (e) {
           assert.notStrictEqual(e.message, 'resolving should fail');
           assert.strictEqual(e instanceof AggregatedError, true);
-          assert.deepEqual(e.exceptions, expected);
+          assert.deepEqual(e.errors, expected);
         }
       }
     );
@@ -125,7 +125,7 @@ describe('anyP', function() {
           } catch (e) {
             assert.notStrictEqual(e.message, 'resolving should fail');
             assert.strictEqual(e instanceof AggregatedError, true);
-            assert.deepEqual(e.exceptions, expected);
+            assert.deepEqual(e.errors, expected);
           }
         }
       );

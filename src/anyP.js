@@ -8,13 +8,13 @@ export const anyPPolyfill = curry1(polyfill);
 export { AggregatedError };
 
 /**
- * returns a promise that is fulfilled by the first given promise to be fulfilled,
+ * Returns a promise that is fulfilled by the first given promise to be fulfilled,
  * or rejected with an array of rejection reasons if all of the given promises are rejected.
  *
  * @func anyP
  * @memberOf RA
  * @category Function
- * @sig [Promise a] -> Promise [a]
+ * @sig [Promise a] -> Promise a
  * @param {Iterable.<*>} iterable An iterable object such as an Array or String
  * @return {Promise} Returns a promise that is fulfilled by the first given promise to be fulfilled,
  * or rejected with an array of rejection reasons if all of the given promises are rejected.
@@ -24,7 +24,7 @@ export { AggregatedError };
  *   Promise.resolve(1),
  *   2,
  *   Promise.reject(3),
- * ]); //=> Promise(2)
+ * ]); //=> Promise(1)
  */
 const anyP = isFunction(Promise.any)
   ? curry1(bind(Promise.any, Promise))

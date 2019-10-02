@@ -3,10 +3,10 @@ import { map } from 'ramda';
 import resolveP from '../../resolveP';
 
 export class AggregatedError extends Error {
-  constructor(exceptions) {
-    super();
+  constructor(errors = [], message) {
+    super(message);
 
-    this.exceptions = exceptions;
+    this.errors = errors;
   }
 }
 
@@ -23,11 +23,10 @@ const anyPolyfill = iterable => {
     };
 
     map(
-      p => {
+      p =>
         resolveP(p)
           .then(resolve)
-          .catch(onReject);
-      },
+          .catch(onReject),
       [...iterable]
     );
   });
