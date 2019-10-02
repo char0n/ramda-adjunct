@@ -1153,6 +1153,12 @@ declare namespace RamdaAdjunct {
         escapeRegExp<T>(val: T): T;
 
         /**
+         * Divides two numbers, where the second number is divided by the first number.
+         */
+        divideBy(divisor: number, dividend: number): number;
+        divideBy(divisor: number): (dividend: number) => number;
+
+        /**
          * Identity type.
          */
         Identity: Function;

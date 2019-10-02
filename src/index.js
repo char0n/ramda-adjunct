@@ -173,6 +173,7 @@ export { default as dropArgs } from './dropArgs';
 // Math
 export { default as round } from './round';
 export { default as ceil } from './ceil';
+export { default as divideBy } from './divideBy';
 export { default as floor } from './floor';
 export { default as trunc } from './trunc';
 export { default as sign } from './sign';
