@@ -1,4 +1,4 @@
-import { curryN, isNil, nAry, path, when } from 'ramda';
+import { curryN, isNil, nAry, pathOr, when } from 'ramda';
 
 /**
  * If the given, non-null object has a value at the given path, returns the value at that path.
@@ -20,7 +20,7 @@ import { curryN, isNil, nAry, path, when } from 'ramda';
  * RA.pathOrLazy(() => 'N/A', ['a', 'b'], {c: {b: 2}}); //=> "N/A"\
  */
 const pathOrLazy = curryN(3, function pathOrLazy(fd, p, obj) {
-  return when(isNil, nAry(0, fd), path(p, obj));
+  return when(isNil, nAry(0, fd), pathOr(null, p, obj));
 });
 
 export default pathOrLazy;
