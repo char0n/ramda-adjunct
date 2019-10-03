@@ -446,6 +446,26 @@ declare namespace RamdaAdjunct {
         paths(ps: Array<Array<string | number>>): (obj: object) => any[];
 
         /**
+         * If the given, non-null object has a value at the given path, returns the value at that path.
+         * Otherwise returns the result of invoking the provided function.
+         */
+        pathOrLazy<T>(
+            defaultValueFn: () => T,
+            path: Array<number | string>,
+            obj: object
+          ): T;
+          pathOrLazy<T>(
+            defaultValueFn: () => T,
+            path: Array<number | string>
+          ): (object: object) => T;
+          pathOrLazy<T>(
+            defaultValueFn: () => T
+          ): {
+            (path: Array<number | string>, object: object): T;
+            (path: Array<number | string>): (object: object) => T;
+          };
+
+        /**
          * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
          * the Apply spec of fantasy land.
          */
