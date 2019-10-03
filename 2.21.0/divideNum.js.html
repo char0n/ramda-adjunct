@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNumber.js - Documentation</title>
+    <title>divideNum.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNumber.js</h1>
+    <h1 class="page-title">divideNum.js</h1>
     
 
     
@@ -52,31 +52,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isNumber from './isNumber';
+            <pre class="prettyprint source linenums"><code>import { divide, flip } from 'ramda';
 
 /**
- * Checks if value is a complement of `Number` primitive or object.
+ * Divides two numbers, where the second number is divided by the first number.
  *
- * @func isNotNumber
+ * @func divideNum
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isNumber|isNumber}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @category Math
+ * @sig Number -> Number -> Number
+ * @param {number} divisor the number to divide by
+ * @param {number} dividend the number to divide
+ * @return {number} A number representing the quotient of dividing the dividend by the divisor
  * @example
  *
- * RA.isNotNumber(5); // => false
- * RA.isNotNumber(Number.MAX_VALUE); // => false
- * RA.isNotNumber(-Infinity); // => false
- * RA.isNotNumber('5'); // => true
+ * RA.divideNum(2, 1); //=> 0.5
  */
-const isNotNumber = complement(isNumber);
+const divideNum = flip(divide);
 
-export default isNotNumber;
+export default divideNum;
 </code></pre>
         </article>
     </section>
