@@ -1106,8 +1106,8 @@ declare namespace RamdaAdjunct {
         /**
          * Subtracts its first argument from its second argument.
          */
-        subtractValue(subtrahend: number, minuend: number): number;
-        subtractValue(subtrahend: number): (minuend: number) => number;
+        subtractNum(subtrahend: number, minuend: number): number;
+        subtractNum(subtrahend: number): (minuend: number) => number;
 
         /**
          * Returns the smallest integer greater than or equal to a given number.
