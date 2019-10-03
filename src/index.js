@@ -174,6 +174,7 @@ export { default as dropArgs } from './dropArgs';
 // Math
 export { default as round } from './round';
 export { default as ceil } from './ceil';
+export { default as divideNum } from './divideNum';
 export { default as floor } from './floor';
 export { default as trunc } from './trunc';
 export { default as sign } from './sign';
