@@ -1109,6 +1109,12 @@ declare namespace RamdaAdjunct {
         round(val: number): number;
 
         /**
+         * Subtracts its first argument from its second argument.
+         */
+        subtractNum(subtrahend: number, minuend: number): number;
+        subtractNum(subtrahend: number): (minuend: number) => number;
+
+        /**
          * Returns the smallest integer greater than or equal to a given number.
          *
          * Note: ceil(null) returns integer 0 and does not give a NaN error.

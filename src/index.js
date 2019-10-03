@@ -178,6 +178,7 @@ export { default as divideNum } from './divideNum';
 export { default as floor } from './floor';
 export { default as trunc } from './trunc';
 export { default as sign } from './sign';
+export { default as subtractNum } from './subtractNum';
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
