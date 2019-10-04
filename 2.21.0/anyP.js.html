@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>liftF.js - Documentation</title>
+    <title>anyP.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">liftF.js</h1>
+    <h1 class="page-title">anyP.js</h1>
     
 
     
@@ -52,41 +52,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import liftFN from './liftFN';
+            <pre class="prettyprint source linenums"><code>import { bind } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
+
+import isFunction from './isFunction';
+import polyfill, { AggregatedError } from './internal/polyfills/Promise.any';
+
+export const anyPPolyfill = curry1(polyfill);
+export { AggregatedError };
 
 /**
- * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
- * the fantasy land Apply spec of algebraic structures.
+ * Returns a promise that is fulfilled by the first given promise to be fulfilled,
+ * or rejected with an array of rejection reasons if all of the given promises are rejected.
  *
- * Lifting is specific for {@link https://github.com/scalaz/scalaz|scalaz} and {@link http://functionaljava.org/|function Java} implementations.
- * Old version of fantasy land spec were not compatible with this approach,
- * but as of fantasy land 1.0.0 Apply spec also adopted this approach.
- *
- * This function acts as interop for ramda &lt;= 0.23.0 and {@link https://monet.github.io/monet.js/|monet.js}.
- *
- * More info {@link https://github.com/fantasyland/fantasy-land/issues/50|here}.
- *
- * @func liftF
+ * @func anyP
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.2.0|v1.2.0}
  * @category Function
- * @sig Apply a => (a... -> a) -> (a... -> a)
- * @param {Function} fn The function to lift into higher context
- * @return {Function} The lifted function
- * @see {@link RA.liftFN|liftFN}
+ * @sig [Promise a] -> Promise a
+ * @param {Iterable.&lt;*>} iterable An iterable object such as an Array or String
+ * @return {Promise} Returns a promise that is fulfilled by the first given promise to be fulfilled,
+ * or rejected with an array of rejection reasons if all of the given promises are rejected.
  * @example
  *
- * const { Maybe } = require('monet');
- *
- * const add3 = (a, b, c) => a + b + c;
- * const madd3 = RA.liftF(add3);
- *
- * madd3(Maybe.Some(10), Maybe.Some(15), Maybe.Some(17)); //=> Maybe.Some(42)
- * madd3(Maybe.Some(10), Maybe.Nothing(), Maybe.Some(17)); //=> Maybe.Nothing()
+ * RA.anyP([
+ *   Promise.resolve(1),
+ *   2,
+ *   Promise.reject(3),
+ * ]); //=> Promise(1)
  */
-const liftF = fn => liftFN(fn.length, fn);
+const anyP = isFunction(Promise.any)
+  ? curry1(bind(Promise.any, Promise))
+  : anyPPolyfill;
 
-export default liftF;
+export default anyP;
 </code></pre>
         </article>
     </section>
