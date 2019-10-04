@@ -790,6 +790,12 @@ declare namespace RamdaAdjunct {
         allSettledP<T>(iterable: Iterable<T>): Promise<Array<SettledPromise<T>>>;
 
         /**
+         * Returns a promise that is fulfilled by the first given promise to be fulfilled,
+         * or rejected with an array of rejection reasons if all of the given promises are rejected.
+         */
+        anyP<T>(iterable: Iterable<T>): Promise<T>;
+
+        /**
          * Composable shortcut for `Promise.resolve`.
          *
          * Returns a Promise object that is resolved with the given value.
