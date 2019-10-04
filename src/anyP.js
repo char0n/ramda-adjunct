@@ -14,6 +14,7 @@ export { AggregatedError };
  * @func anyP
  * @memberOf RA
  * @category Function
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @sig [Promise a] -> Promise a
  * @param {Iterable.<*>} iterable An iterable object such as an Array or String
  * @return {Promise} Returns a promise that is fulfilled by the first given promise to be fulfilled,
