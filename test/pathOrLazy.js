@@ -31,10 +31,10 @@ describe('pathOrLazy', function() {
     eq(RA.pathOrLazy(() => 7, ['g'], obj), 7);
   });
 
-  it('does not pass args to lazy function', function() {
+  it('passes object to lazy function as only argument', function() {
     const fn = sinon.spy();
     RA.pathOrLazy(fn, ['nonexistent'], obj);
-    eq(fn.calledOnceWithExactly(), true);
+    eq(fn.calledOnceWithExactly(obj), true);
   });
 
   it('does not invoke lazy function if path exists', function() {

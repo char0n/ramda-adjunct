@@ -447,7 +447,7 @@ declare namespace RamdaAdjunct {
 
         /**
          * If the given, non-null object has a value at the given path, returns the value at that path.
-         * Otherwise returns the result of invoking the provided function.
+         * Otherwise returns the result of invoking the provided function with the object.
          */
         pathOrLazy<T>(
             defaultValueFn: () => T,
