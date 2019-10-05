@@ -1160,8 +1160,7 @@ declare namespace RamdaAdjunct {
         /**
          * Converts input to an array.
          */
-        toArray<T>(iterable: Iterable<T> | T): T[];
-        toArray(val: {}): [];
+        toArray<T>(iterable: Iterable<T> | T): any[];
     }
 }
 
