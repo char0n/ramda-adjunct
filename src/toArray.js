@@ -1,6 +1,10 @@
-import { ifElse, values } from 'ramda';
+import { ifElse, values, curry } from 'ramda';
 
 import isIterable from './isIterable';
+import isFunction from './isFunction';
+import polyfill from './internal/polyfills/Array.from';
+
+export const fromPolyfill = curry(polyfill);
 
 /**
  * Converts input to an array.
@@ -18,6 +22,8 @@ import isIterable from './isIterable';
  * RA.toArray({'foo': 1, 'bar': 2}); //=> [1, 2]
  */
 
-const toArray = ifElse(isIterable, Array.from, values);
+const fromArray = isFunction(Array.from) ? curry(Array.from) : fromPolyfill;
+
+const toArray = ifElse(isIterable, fromArray, values);
 
 export default toArray;
