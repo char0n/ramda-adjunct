@@ -796,6 +796,12 @@ declare namespace RamdaAdjunct {
         anyP<T>(iterable: Iterable<T>): Promise<T>;
 
         /**
+         * Returns a promise that is fulfilled by the first of given promises to be fulfilled,
+         * or rejected by the first of given promises to be rejected.
+         */
+        firstP<T>(iterable: Iterable<T>): Promise<T>;
+
+        /**
          * Composable shortcut for `Promise.resolve`.
          *
          * Returns a Promise object that is resolved with the given value.
