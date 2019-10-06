@@ -104,5 +104,26 @@ describe('toArray', function() {
 
       assert.sameOrderedMembers(actual, [2, 3, 4]);
     });
+
+    specify(
+      'should throw error if second argument is not function',
+      function() {
+        const error =
+          'Array.from: when provided, the second argument must be a function';
+        assert.throws(() => fromPolyfill([1, 2, 3], 1), error);
+        assert.throws(() => fromPolyfill([1, 2, 3], {}), error);
+      }
+    );
+
+    specify('should call the map function with thisArg as this', function() {
+      const thisArg = { increment: 2 };
+      const mapFn = function(x) {
+        return x + this.increment;
+      };
+
+      const actual = fromPolyfill([1, 2, 3], mapFn, thisArg);
+
+      assert.sameOrderedMembers(actual, [3, 4, 5]);
+    });
   });
 });

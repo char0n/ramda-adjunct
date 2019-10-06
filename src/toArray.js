@@ -7,11 +7,11 @@ import polyfill from './internal/polyfills/Array.from';
 export const fromPolyfill = curry(polyfill);
 
 /**
- * Converts input to an array.
+ * Converts value to an array.
  *
  * @func toArray
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.21.0|v2.21.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @category List
  * @sig * -> [a]
  * @param {*} val The value to convert
