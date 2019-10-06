@@ -807,7 +807,7 @@ declare namespace RamdaAdjunct {
         /**
          * Returns a Promise that is resolved with an array of reasons when all of the provided Promises reject, or rejected when any Promise is resolved.
          */
-        noneP<T>(iterable: Iterable<T>): Promise<T[]>;
+        noneP<T>(iterable: Iterable<T | Promise<T>>): Promise<T[]>;
 
        /**
         * allSettledP returns a promise that is fulfilled with an array of promise state snapshots,
