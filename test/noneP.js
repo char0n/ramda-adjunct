@@ -32,8 +32,8 @@ describe('noneP', function() {
       async function() {
         const value = await RA.noneP([
           RA.rejectP(),
-          wait(2).then(() => RA.resolveP('slow')),
-          wait(1).then(() => RA.resolveP('fast')),
+          wait(500).then(() => RA.resolveP('slow')),
+          wait(10).then(() => RA.resolveP('fast')),
         ]).catch(RA.resolveP);
         eq(value, 'fast');
       }
