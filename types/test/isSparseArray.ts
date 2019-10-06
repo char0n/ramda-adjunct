@@ -1,11 +1,8 @@
 import * as RA from 'ramda-adjunct';
 
-/**
- * Tests.
- */
-
 RA.isSparseArray(new Array(3)); // $ExpectType boolean
-RA.isSparseArray([1, , 3]); // tslint:disable-line no-sparse-arrays
+// tslint:disable-next-line:no-sparse-arrays
+RA.isSparseArray([1, , 3]); // $ExpectType boolean
 
 RA.isSparseArray([1, 2, 3]); // $ExpectType boolean
 RA.isSparseArray(new Array()); // $ExpectType boolean
