@@ -457,12 +457,12 @@ declare namespace RamdaAdjunct {
           pathOrLazy<T>(
             defaultValueFn: () => T,
             path: Array<number | string>
-          ): (object: object) => T;
+          ): (obj: object) => T;
           pathOrLazy<T>(
             defaultValueFn: () => T
           ): {
-            (path: Array<number | string>, object: object): T;
-            (path: Array<number | string>): (object: object) => T;
+            (path: Array<number | string>, obj: object): T;
+            (path: Array<number | string>): (obj: object) => T;
           };
 
         /**
