@@ -33,7 +33,7 @@ import isTruthy from './isTruthy';
  * RA.argsPass(R.none, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, false) //=> true
  * RA.argsPass(R.none, [RA.isArray, RA.isBoolean, RA.isString])({}, 1, 'abc') //=> false
  */
-export default curry((combiningPredicate, predicates) =>
+const argsPass = curry((combiningPredicate, predicates) =>
   useWith(
     compose(
       combiningPredicate(isTruthy),
@@ -42,3 +42,5 @@ export default curry((combiningPredicate, predicates) =>
     predicates
   )
 );
+
+export default argsPass;

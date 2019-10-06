@@ -65,7 +65,7 @@ const iteratorFn = curry((args, accumulator, fn) => {
   return isNotNil(result) ? reduced(result) : accumulator;
 });
 
-const dispatch = functions => {
+const dispatchImpl = functions => {
   const arity = getMaxArity(functions);
 
   return curryN(arity, (...args) =>
@@ -73,4 +73,6 @@ const dispatch = functions => {
   );
 };
 
-export default ifElse(isNonEmptyArray, dispatch, stubUndefined);
+const dispatch = ifElse(isNonEmptyArray, dispatchImpl, stubUndefined);
+
+export default dispatch;
