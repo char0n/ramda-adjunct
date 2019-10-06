@@ -92,6 +92,7 @@ export { default as weaveLazy } from './weaveLazy';
 export { default as curryRightN } from './curryRightN';
 export { default as curryRight } from './curryRight';
 export { default as allP } from './allP';
+export { default as noneP } from './noneP';
 export { default as resolveP } from './resolveP';
 export { default as rejectP } from './rejectP';
 export { default as thenP } from './thenP';
