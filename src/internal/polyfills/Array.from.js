@@ -11,10 +11,10 @@ const copyArray = (items, mapFn, thisArg) => {
   return isNotUndefined(mapFn) ? [...items].map(boundMapFn) : [...items];
 };
 
-const fromArray = (items, mapFn = undefined, thisArg = undefined) => {
+const fromArray = (items, mapFn, thisArg) => {
   if (items == null) {
     throw new TypeError(
-      'Array.from: when provided, the second argument must be a function'
+      'Array.from requires an array-like object - not null or undefined'
     );
   }
 

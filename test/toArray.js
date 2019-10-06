@@ -69,7 +69,7 @@ describe('toArray', function() {
 
     specify('should throw error if null of undefined', function() {
       const error =
-        'Array.from: when provided, the second argument must be a function';
+        'Array.from requires an array-like object - not null or undefined';
       assert.throws(() => fromPolyfill(null), error);
       assert.throws(() => fromPolyfill(undefined), error);
     });
