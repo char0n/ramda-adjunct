@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotFunction.js - Documentation</title>
+    <title>pathOrLazy.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotFunction.js</h1>
+    <h1 class="page-title">pathOrLazy.js</h1>
     
 
     
@@ -52,35 +52,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curryN, identical, partial, pathOr, unary, when } from 'ramda';
 
-import isFunction from './isFunction';
-
-/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Function`.
+ * If the given, non-null object has a value at the given path, returns the value at that path.
+ * Otherwise returns the result of invoking the provided function with the object.
  *
- * @func isNotFunction
+ * @func pathOrLazy
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isNotAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @category Object
+ * @typedef Idx = String | Int
+ * @sig ({a} -> a) -> [Idx] -> {a} -> a
+ * @param {Function} defaultFn The function that will return the default value.
+ * @param {Array} path The path to use.
+ * @param {Object} obj The object to retrieve the nested property from.
+ * @return {*} The data at `path` of the supplied object or the default value.
  * @example
  *
- * RA.isNotFunction(function test() { }); //=> false
- * RA.isNotFunction(function* test() { }); //=> false
- * RA.isNotFunction(async function test() { }); //=> false
- * RA.isNotFunction(() => {}); //=> false
- * RA.isNotFunction(null); //=> true
- * RA.isNotFunction('abc'); //=> true
+ * RA.pathOrLazy(() => 'N/A', ['a', 'b'], {a: {b: 2}}); //=> 2
+ * RA.pathOrLazy(() => 'N/A', ['a', 'b'], {c: {b: 2}}); //=> "N/A"
  */
-/* eslint-enable max-len */
-const isNotFunction = complement(isFunction);
+const pathOrLazy = curryN(3, function pathOrLazy(defaultFn, path, obj) {
+  return when(
+    identical(defaultFn),
+    partial(unary(defaultFn), [obj]),
+    pathOr(defaultFn, path, obj)
+  );
+});
 
-export default isNotFunction;
+export default pathOrLazy;
 </code></pre>
         </article>
     </section>
