@@ -35,6 +35,8 @@ declare namespace RamdaAdjunct {
 
     type Variadic<T1, T2> = (...args: T1[]) => T2;
 
+    type Pred = (...a: any[]) => boolean;
+
     interface Dictionary<T> { [key: string]: T; }
 
     type DictPred<T> = (value: T, key: string) => boolean;
@@ -1049,8 +1051,8 @@ declare namespace RamdaAdjunct {
          * more arguments than functions, any remaining arguments are passed in to the combining
          * predicate untouched.
          */
-        argsPass(combiningPredicate: Function, predicates: Function[]): Function;
-        argsPass(combiningPredicate: Function): (predicates: Function[]) => Function;
+        argsPass<T>(combiningPredicate: (fn: (a: T) => boolean) => (list: T[]) => boolean, predicates: Pred[]): Pred;
+        argsPass<T>(combiningPredicate: (fn: (a: T) => boolean) => (list: T[]) => boolean): (predicates: Pred[]) => Pred;
 
         /**
          * Accepts a function with any arity and returns a function with arity of zero.
