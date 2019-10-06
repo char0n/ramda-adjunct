@@ -11,36 +11,48 @@ describe('pathOrLazy', function() {
     g: undefined,
   };
 
-  it('returns value for requested path', function() {
-    eq(RA.pathOrLazy(() => {}, ['a', 'b', 'c'], obj), 1);
+  context('given requested path exists', function() {
+    specify('should return value at path', function() {
+      eq(RA.pathOrLazy(() => {}, ['a', 'b', 'c'], obj), 1);
+    });
+
+    specify('should not invoke lazy function', function() {
+      const fn = sinon.spy();
+      RA.pathOrLazy(fn, ['a', 'b', 'c'], obj);
+      eq(fn.notCalled, true);
+    });
   });
 
-  it('returns default value when requested path does not exist', function() {
-    eq(RA.pathOrLazy(() => 7, ['nonexistent'], obj), 7);
-  });
+  context('given requested path does not exist', function() {
+    context('and the value is missing', function() {
+      specify('should return default value', function() {
+        eq(RA.pathOrLazy(() => 7, ['nonexistent'], obj), 7);
+      });
+    });
 
-  it('returns default value when requested path is NaN', function() {
-    eq(RA.pathOrLazy(() => 7, ['e'], obj), 7);
-  });
+    context('and the value is NaN', function() {
+      specify('should return default value', function() {
+        eq(RA.pathOrLazy(() => 7, ['e'], obj), 7);
+      });
+    });
 
-  it('returns default value when requested path is null', function() {
-    eq(RA.pathOrLazy(() => 7, ['f'], obj), 7);
-  });
+    context('and the value is null', function() {
+      specify('should return default value', function() {
+        eq(RA.pathOrLazy(() => 7, ['f'], obj), 7);
+      });
+    });
 
-  it('returns default value when requested path is undefined', function() {
-    eq(RA.pathOrLazy(() => 7, ['g'], obj), 7);
-  });
+    context('and the value is undefined', function() {
+      specify('should return default value', function() {
+        eq(RA.pathOrLazy(() => 7, ['g'], obj), 7);
+      });
+    });
 
-  it('passes object to lazy function as only argument', function() {
-    const fn = sinon.spy();
-    RA.pathOrLazy(fn, ['nonexistent'], obj);
-    eq(fn.calledOnceWithExactly(obj), true);
-  });
-
-  it('does not invoke lazy function if path exists', function() {
-    const fn = sinon.spy();
-    RA.pathOrLazy(fn, ['a', 'b', 'c'], obj);
-    eq(fn.notCalled, true);
+    specify('should pass object to lazy function as only argument', function() {
+      const fn = sinon.spy();
+      RA.pathOrLazy(fn, ['nonexistent'], obj);
+      eq(fn.calledOnceWithExactly(obj), true);
+    });
   });
 
   it('should curry', function() {
