@@ -1169,7 +1169,6 @@ declare namespace RamdaAdjunct {
          * Escapes the RegExp special characters.
          */
         escapeRegExp(val: string): string;
-        escapeRegExp<T>(val: T): T;
 
         /**
          * Divides two numbers, where the second number is divided by the first number.
