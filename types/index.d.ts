@@ -35,6 +35,8 @@ declare namespace RamdaAdjunct {
 
     type Variadic<T1, T2> = (...args: T1[]) => T2;
 
+    type Pred = (...a: any[]) => boolean;
+
     interface Dictionary<T> { [key: string]: T; }
 
     type DictPred<T> = (value: T, key: string) => boolean;
@@ -444,6 +446,26 @@ declare namespace RamdaAdjunct {
          */
         paths(ps: Array<Array<string | number>>, obj: object): any[];
         paths(ps: Array<Array<string | number>>): (obj: object) => any[];
+
+        /**
+         * If the given, non-null object has a value at the given path, returns the value at that path.
+         * Otherwise returns the result of invoking the provided function with the object.
+         */
+        pathOrLazy<T>(
+            defaultValueFn: () => T,
+            path: Array<number | string>,
+            obj: object
+        ): T;
+        pathOrLazy<T>(
+            defaultValueFn: () => T,
+            path: Array<number | string>
+        ): (obj: object) => T;
+        pathOrLazy<T>(
+            defaultValueFn: () => T
+        ): {
+            (path: Array<number | string>, obj: object): T;
+            (path: Array<number | string>): (obj: object) => T;
+        };
 
         /**
          * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
@@ -1055,8 +1077,8 @@ declare namespace RamdaAdjunct {
          * more arguments than functions, any remaining arguments are passed in to the combining
          * predicate untouched.
          */
-        argsPass(combiningPredicate: Function, predicates: Function[]): Function;
-        argsPass(combiningPredicate: Function): (predicates: Function[]) => Function;
+        argsPass<T>(combiningPredicate: (fn: (a: T) => boolean) => (list: T[]) => boolean, predicates: Pred[]): Pred;
+        argsPass<T>(combiningPredicate: (fn: (a: T) => boolean) => (list: T[]) => boolean): (predicates: Pred[]) => Pred;
 
         /**
          * Accepts a function with any arity and returns a function with arity of zero.
@@ -1173,7 +1195,6 @@ declare namespace RamdaAdjunct {
          * Escapes the RegExp special characters.
          */
         escapeRegExp(val: string): string;
-        escapeRegExp<T>(val: T): T;
 
         /**
          * Divides two numbers, where the second number is divided by the first number.
