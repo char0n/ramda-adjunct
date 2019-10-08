@@ -1,4 +1,4 @@
-import { map } from 'ramda';
+import { map, length, equals } from 'ramda';
 import curry1 from 'ramda/src/internal/_curry1';
 
 import resolveP from './resolveP';
@@ -10,10 +10,13 @@ import resolveP from './resolveP';
  * @func firstP
  * @memberOf RA
  * @category Function
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @sig [Promise a] -> Promise a
+ * @aliases headP
  * @param {Iterable.<*>} iterable An iterable object such as an Array or String
  * @return {Promise} Returns a promise that is fulfilled by the first of given promises to be fulfilled,
- * or rejected by the first of given promises to be rejected.
+ * or rejected when all of given promises to be rejected.
+ * @see {@link RA.anyP|anyP}
  * @example
  *
  * RA.firstP([
@@ -23,15 +26,28 @@ import resolveP from './resolveP';
  * ]); //=> Promise(1)
  */
 const firstP = iterable => {
-  const [head, ...rest] = iterable;
+  const errors = [];
+  const isEqualsIterableLength = equals(length(iterable));
 
   return new Promise((resolve, reject) => {
-    resolveP(head)
-      .then(resolve)
-      .catch(reject);
+    const onReject = e => {
+      errors.push(e);
 
-    map(p => resolveP(p).catch(() => {}), rest);
+      if (isEqualsIterableLength(length(errors))) {
+        reject(errors);
+      }
+    };
+
+    map(
+      p =>
+        resolveP(p)
+          .then(resolve)
+          .catch(onReject),
+      iterable
+    );
   });
 };
 
-export default curry1(firstP);
+const curriedFirstP = curry1(firstP);
+
+export default curriedFirstP;
