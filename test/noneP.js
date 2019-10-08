@@ -1,7 +1,9 @@
+import * as R from 'ramda';
+
 import * as RA from '../src';
 import eq from './shared/eq';
 
-const wait = (ms = 0) => new Promise(res => setTimeout(res, ms));
+const delay = (ms = 0) => new Promise(res => setTimeout(res, ms));
 
 describe('noneP', function() {
   context('given all promises reject', function() {
@@ -11,6 +13,7 @@ describe('noneP', function() {
         RA.rejectP('b'),
         RA.rejectP(),
       ]);
+
       eq(reasons, [1, 'b', undefined]);
     });
   });
@@ -21,7 +24,8 @@ describe('noneP', function() {
         RA.rejectP(),
         RA.rejectP(),
         RA.resolveP('oops'),
-      ]).catch(RA.resolveP);
+      ]).then(RA.rejectP, R.identity);
+
       eq(value, 'oops');
     });
   });
@@ -32,9 +36,10 @@ describe('noneP', function() {
       async function() {
         const value = await RA.noneP([
           RA.rejectP(),
-          wait(500).then(() => RA.resolveP('slow')),
-          wait(10).then(() => RA.resolveP('fast')),
-        ]).catch(RA.resolveP);
+          delay(500).then(() => RA.resolveP('slow')),
+          delay(10).then(() => RA.resolveP('fast')),
+        ]).then(RA.rejectP, R.identity);
+
         eq(value, 'fast');
       }
     );
@@ -48,7 +53,8 @@ describe('noneP', function() {
           RA.resolveP(1),
           RA.resolveP(2),
           RA.resolveP(3),
-        ]).catch(RA.resolveP);
+        ]).then(RA.rejectP, R.identity);
+
         eq(value, 1);
       }
     );
@@ -56,17 +62,31 @@ describe('noneP', function() {
 
   context('given a value that is not a promise', function() {
     specify('should reject with the non-promise value', async function() {
-      const value = await RA.noneP([RA.rejectP(1), 2, RA.rejectP(3)]).catch(
-        RA.resolveP
+      const value = await RA.noneP([RA.rejectP(1), 2, RA.rejectP(3)]).then(
+        RA.rejectP,
+        R.identity
       );
+
       eq(value, 2);
     });
   });
 
   context('given an empty list', function() {
     specify('should resolve with empty reasons', async function() {
-      const value = await RA.noneP([]).catch(RA.resolveP);
+      const value = await RA.noneP([]);
+
       eq(value, []);
     });
+  });
+
+  it('should support placeholder to specify "gaps"', async function() {
+    const noneP = RA.noneP(R.__);
+    const p1 = RA.rejectP(1);
+    const v2 = RA.rejectP(2);
+    const p3 = RA.rejectP(3);
+    const actual = [p1, v2, p3];
+    const expected = [1, 2, 3];
+
+    eq(await noneP(actual), expected);
   });
 });

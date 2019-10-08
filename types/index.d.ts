@@ -806,6 +806,7 @@ declare namespace RamdaAdjunct {
 
         /**
          * Returns a Promise that is resolved with an array of reasons when all of the provided Promises reject, or rejected when any Promise is resolved.
+         * This pattern is like allP, but fulfillments and rejections are transposed - rejections become the fulfillment values and vice versa.
          */
         noneP<T>(iterable: Iterable<T | Promise<T>>): Promise<T[]>;
 
