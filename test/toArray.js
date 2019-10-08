@@ -1,9 +1,16 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 import { fromPolyfill } from '../src/toArray';
 
 describe('toArray', function() {
+  it('should support placeholder to specify "gaps"', function() {
+    const toArray = RA.toArray(R.__);
+
+    assert.sameOrderedMembers(toArray([1, 2, 3]), [1, 2, 3]);
+  });
+
   context('given an object', function() {
     specify('should return values', function() {
       const actual = RA.toArray({ foo: 1, bar: 2 });
@@ -45,40 +52,29 @@ describe('toArray', function() {
       const actual = RA.toArray(array);
 
       assert.sameOrderedMembers(actual, [1, 2]);
-      assert.notEqual(actual, array);
+      assert.notStrictEqual(actual, array);
     });
   });
 
   context('given non object types', function() {
+    const assertIsEmptyArray = val => {
+      assert.isArray(val);
+      assert.isEmpty(val);
+    };
+
     specify('should return an empty array', function() {
-      assert.isArray(RA.toArray(1));
-      assert.isArray(RA.toArray(undefined));
-      assert.isArray(RA.toArray(null));
-      assert.isArray(RA.toArray(true));
+      assertIsEmptyArray(RA.toArray(1));
+      assertIsEmptyArray(RA.toArray(undefined));
+      assertIsEmptyArray(RA.toArray(null));
+      assertIsEmptyArray(RA.toArray(true));
     });
   });
 
   context('fromPolyfill', function() {
-    specify('should return a shallow copy of array', function() {
-      const array = [1, 2];
-      const actual = fromPolyfill(array);
+    it('should support placeholder to specify "gaps"', function() {
+      const polyfill = fromPolyfill(R.__);
 
-      assert.sameOrderedMembers(actual, [1, 2]);
-      assert.notEqual(actual, array);
-    });
-
-    specify('should throw error if null of undefined', function() {
-      const error =
-        'Array.from requires an array-like object - not null or undefined';
-      assert.throws(() => fromPolyfill(null), error);
-      assert.throws(() => fromPolyfill(undefined), error);
-    });
-
-    specify('should return an empty array', function() {
-      assert.sameOrderedMembers(fromPolyfill(1), []);
-      assert.sameOrderedMembers(fromPolyfill(false), []);
-      assert.sameOrderedMembers(fromPolyfill(x => x + 1), []);
-      assert.sameOrderedMembers(fromPolyfill({ a: 1 }), []);
+      assert.sameOrderedMembers(polyfill([1, 2, 3]), [1, 2, 3]);
     });
 
     specify('should convert a map into an array of arrays', function() {
@@ -99,31 +95,28 @@ describe('toArray', function() {
       assert.sameOrderedMembers(actual, [1, 2, 3]);
     });
 
-    specify('should call map function', function() {
-      const actual = fromPolyfill([1, 2, 3], x => x + 1);
+    specify('should convert an iterator into an array', function() {
+      const object = { '0': 'a', length: 1 };
+      object[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
-      assert.sameOrderedMembers(actual, [2, 3, 4]);
+      const actual = fromPolyfill(object);
+
+      assert.sameOrderedMembers(actual, ['a']);
     });
 
-    specify(
-      'should throw error if second argument is not function',
-      function() {
-        const error =
-          'Array.from: when provided, the second argument must be a function';
-        assert.throws(() => fromPolyfill([1, 2, 3], 1), error);
-        assert.throws(() => fromPolyfill([1, 2, 3], {}), error);
-      }
-    );
+    specify('should return a shallow copy of array', function() {
+      const array = [1, 2];
+      const actual = fromPolyfill(array);
 
-    specify('should call the map function with thisArg as this', function() {
-      const thisArg = { increment: 2 };
-      const mapFn = function(x) {
-        return x + this.increment;
-      };
+      assert.sameOrderedMembers(actual, [1, 2]);
+      assert.notEqual(actual, array);
+    });
 
-      const actual = fromPolyfill([1, 2, 3], mapFn, thisArg);
-
-      assert.sameOrderedMembers(actual, [3, 4, 5]);
+    specify('should return an empty array', function() {
+      assert.sameOrderedMembers(fromPolyfill(1), []);
+      assert.sameOrderedMembers(fromPolyfill(false), []);
+      assert.sameOrderedMembers(fromPolyfill(x => x + 1), []);
+      assert.sameOrderedMembers(fromPolyfill({ a: 1 }), []);
     });
   });
 });

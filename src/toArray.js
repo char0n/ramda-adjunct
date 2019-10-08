@@ -7,6 +7,8 @@ import polyfill from './internal/polyfills/Array.from';
 
 export const fromPolyfill = curry1(polyfill);
 
+const fromArray = isFunction(Array.from) ? curry1(Array.from) : fromPolyfill;
+
 /**
  * Converts value to an array.
  *
@@ -21,9 +23,10 @@ export const fromPolyfill = curry1(polyfill);
  *
  * RA.toArray([1, 2]); //=> [1, 2]
  * RA.toArray({'foo': 1, 'bar': 2}); //=> [1, 2]
+ * RA.toArray('abc'); //=> ['a', 'b', 'c']
+ * RA.toArray(1); //=> []
+ * RA.toArray(null); //=> []
  */
-
-const fromArray = isFunction(Array.from) ? curry1(Array.from) : fromPolyfill;
 
 const toArray = ifElse(isIterable, fromArray, values);
 
