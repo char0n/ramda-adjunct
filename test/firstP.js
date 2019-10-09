@@ -2,6 +2,7 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
+import customIterable from './shared/customIterable';
 
 describe('firstP', function() {
   context('given list of fulfilled promises', function() {
@@ -72,6 +73,14 @@ describe('firstP', function() {
       const expected = list[0];
 
       assert.strictEqual(await RA.firstP(actual), expected);
+    });
+  });
+
+  context('given custom iterable', function() {
+    specify('should handle them properly', async function() {
+      const expected = 1;
+
+      assert.strictEqual(await RA.firstP(customIterable), expected);
     });
   });
 

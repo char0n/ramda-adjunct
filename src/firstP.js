@@ -1,4 +1,4 @@
-import { map, length, equals } from 'ramda';
+import { reduce, length, equals, inc } from 'ramda';
 import curry1 from 'ramda/src/internal/_curry1';
 
 import resolveP from './resolveP';
@@ -25,29 +25,31 @@ import resolveP from './resolveP';
  *   Promise.reject(3),
  * ]); //=> Promise(1)
  */
-const firstP = iterable => {
+const firstP = curry1(iterable => {
   const errors = [];
-  const isEqualsIterableLength = equals(length(iterable));
+  let iterableLength = 0;
 
   return new Promise((resolve, reject) => {
     const onReject = e => {
       errors.push(e);
 
-      if (isEqualsIterableLength(length(errors))) {
+      if (equals(iterableLength, length(errors))) {
         reject(errors);
       }
     };
 
-    map(
-      p =>
+    iterableLength = reduce(
+      (sum, p) => {
         resolveP(p)
           .then(resolve)
-          .catch(onReject),
+          .catch(onReject);
+
+        return inc(sum);
+      },
+      iterableLength,
       iterable
     );
   });
-};
+});
 
-const curriedFirstP = curry1(firstP);
-
-export default curriedFirstP;
+export default firstP;
