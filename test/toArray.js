@@ -109,7 +109,7 @@ describe('toArray', function() {
       const actual = fromPolyfill(array);
 
       assert.sameOrderedMembers(actual, [1, 2]);
-      assert.notEqual(actual, array);
+      assert.notStrictEqual(actual, array);
     });
 
     specify('should return an empty array', function() {
