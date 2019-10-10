@@ -804,6 +804,12 @@ declare namespace RamdaAdjunct {
          */
         allP<T>(iterable: Iterable<T>): Promise<T[]>;
 
+        /**
+         * Returns a Promise that is resolved with an array of reasons when all of the provided Promises reject, or rejected when any Promise is resolved.
+         * This pattern is like allP, but fulfillments and rejections are transposed - rejections become the fulfillment values and vice versa.
+         */
+        noneP<T>(iterable: Iterable<T | Promise<T>>): Promise<T[]>;
+
        /**
         * allSettledP returns a promise that is fulfilled with an array of promise state snapshots,
         * but only after all the original promises have settled, i.e. become either fulfilled or rejected.
