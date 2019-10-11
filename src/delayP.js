@@ -1,3 +1,6 @@
+import { curry, propOr, partial, nth } from 'ramda';
+
+import isPlainObj from './isPlainObj';
 /**
  *
  * @func delayP
@@ -15,29 +18,22 @@
  * RA.delayP.reject({ timeout: 100, value: new Error('error') }); //=> rejects after 100 milliseconds with `Error('error')` value
  */
 
-const makeDelay = (value, delayInMS, promiseType) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (promiseType === 'resolve') {
-        return resolve(value);
-      }
-      return reject(value);
-    }, delayInMS);
-  });
-};
+const makeDelay = curry((settleFnPicker, opts) => {
+  let timeout = opts;
+  let value;
 
-const delayPTemplate = (param, promiseType) => {
-  if (typeof param === 'number') {
-    return makeDelay(undefined, param, promiseType);
+  if (isPlainObj(opts)) {
+    timeout = propOr(0, 'timeout', opts);
+    value = propOr(value, 'value', opts);
   }
-  return makeDelay(param.value, param.timeout, promiseType);
-};
-const delayP = param => {
-  return delayPTemplate(param, 'resolve');
-};
 
-delayP.reject = param => {
-  return delayPTemplate(param, 'reject');
-};
+  return new Promise((...args) => {
+    const settleFn = settleFnPicker(args);
 
+    setTimeout(partial(settleFn, [value]), timeout);
+  });
+});
+
+const delayP = makeDelay(nth(0));
+delayP.reject = makeDelay(nth(1));
 export default delayP;

@@ -16,6 +16,13 @@ describe('delayP', function() {
     });
   });
 
+  it('test delay when passing object with different properties as argument', function(done) {
+    RA.delayP({ time: 200, b: 1 }).then(actual => {
+      eq(actual, undefined);
+      done();
+    });
+  });
+
   it('test delay reject when passing number as argument', function(done) {
     RA.delayP.reject(1000).catch(actual => {
       eq(actual, undefined);
