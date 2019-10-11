@@ -26,18 +26,18 @@ const makeDelay = (value, delayInMS, promiseType) => {
   });
 };
 
-const delayP = param => {
+const delayPTemplate = (param, promiseType) => {
   if (typeof param === 'number') {
-    return makeDelay(undefined, param, 'resolve');
+    return makeDelay(undefined, param, promiseType);
   }
-  return makeDelay(param.value, param.timeout, 'resolve');
+  return makeDelay(param.value, param.timeout, promiseType);
+};
+const delayP = param => {
+  return delayPTemplate(param, 'resolve');
 };
 
 delayP.reject = param => {
-  if (typeof param === 'number') {
-    return makeDelay(undefined, param, 'reject');
-  }
-  return makeDelay(param.value, param.timeout, 'reject');
+  return delayPTemplate(param, 'reject');
 };
 
 export default delayP;
