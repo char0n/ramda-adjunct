@@ -49,6 +49,7 @@ export { default as isNumber } from './isNumber';
 export { default as isNotNumber } from './isNotNumber';
 export { default as isPositive } from './isPositive';
 export { default as isNegative } from './isNegative';
+export { default as isNegativeZero } from './isNegativeZero';
 export { default as isNotNilOrEmpty } from './isNotNilOrEmpty';
 export { default as isNonPositive } from './isNonPositive';
 export { default as isNonNegative } from './isNonNegative';
