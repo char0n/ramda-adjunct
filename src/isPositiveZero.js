@@ -10,7 +10,7 @@ import { identical } from 'ramda';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link https://ramdajs.com/docs/#identical|R.identical}
+ * @see {@link RA.isNegativeZero|isNegativeZero}
  * @example
  *
  * RA.isPositiveZero(+0); //=> true
