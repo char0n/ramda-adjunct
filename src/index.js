@@ -76,6 +76,7 @@ export { default as isRegExp } from './isRegExp';
 export { default as isNotRegExp } from './isNotRegExp';
 export { default as isSparseArray } from './isSparseArray';
 export { default as isSymbol } from './isSymbol';
+export { default as isSafeInteger } from './isSafeInteger';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
