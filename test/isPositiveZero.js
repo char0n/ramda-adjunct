@@ -4,7 +4,7 @@ import * as R from 'ramda';
 import * as RA from '../src';
 
 describe('isPositiveZero', function() {
-  context('given a positive zero (+0) or an implicit positive zero (0)', function() {
+  context('given a positive zero (+0) or (0)', function() {
     specify('should return true', function() {
       assert.isTrue(RA.isPositiveZero(+0));
       assert.isTrue(RA.isPositiveZero(0));
