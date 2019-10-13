@@ -135,6 +135,7 @@ export { default as allIdenticalTo } from './allIdenticalTo';
 export { default as allEqualTo } from './allEqualTo';
 export { default as flattenDepth } from './flattenDepth';
 export { default as toArray } from './toArray';
+export { default as allUnique } from './allUnique';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
