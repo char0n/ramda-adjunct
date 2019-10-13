@@ -26,6 +26,12 @@ export const isSafeIntegerPolyfill = curry1(polyfill);
  * RA.isSafeInteger('3') //=> false
  * RA.isSafeInteger(3.1); //=> false
  * RA.isSafeInteger(3.0); //=> true
+ * RA.isSafeInteger('string'); //=> false
+ * RA.isSafeInteger(null); //=> false
+ * RA.isSafeInteger(undefined); //=> false
+ * RA.isSafeInteger({}); //=> false
+ * RA.isSafeInteger(() => { }); //=> false
+ * RA.isSafeInteger(true); //=> false
  */
 
 const isSafeInteger = isFunction(Number.isSafeInteger)
