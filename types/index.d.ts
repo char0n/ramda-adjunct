@@ -1211,6 +1211,12 @@ declare namespace RamdaAdjunct {
          * Converts value to an array.
          */
         toArray<T>(iterable: Iterable<T> | T): any[];
+
+        /**
+         * Removes whitespace from the beginning of a string
+         */
+        trimStart(value: string): string;
+        trimLeft(value: string): string;
     }
 }
 

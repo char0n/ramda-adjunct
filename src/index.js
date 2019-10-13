@@ -186,5 +186,7 @@ export { default as subtractNum } from './subtractNum';
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
+export { default as trimStart } from './trimStart';
+export { default as trimLeft } from './trimStart'; // alias of trimStart
 // Types
 export { default as Identity } from './fantasy-land/Identity';
