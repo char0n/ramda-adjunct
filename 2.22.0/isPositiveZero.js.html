@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isDate.js - Documentation</title>
+    <title>isPositiveZero.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isDate.js</h1>
+    <h1 class="page-title">isPositiveZero.js</h1>
     
 
     
@@ -52,33 +52,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { type, identical, pipe } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+            <pre class="prettyprint source linenums"><code>import { identical } from 'ramda';
 
 /**
- * Checks if value is `Date` object.
+ * Checks if value is a positive zero (+0).
  *
- * @func isDate
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
+ * @func isPositiveZero
+ * @memberof RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isNotDate|isNotDate}, {@link RA.isValidDate|isValidDate}, {@link RA.isNotValidDate|isNotValidDate}
+ * @see {@link RA.isNegativeZero|isNegativeZero}
  * @example
  *
- * RA.isDate(new Date()); //=> true
- * RA.isDate('1997-07-16T19:20+01:00'); //=> false
+ * RA.isPositiveZero(+0); //=> true
+ * RA.isPositiveZero(0); //=> true
+ * RA.isPositiveZero(-0); //=> false
+ * RA.isPositiveZero(null); //=> false
  */
-const isDate = curry1(
-  pipe(
-    type,
-    identical('Date')
-  )
-);
+const isPositiveZero = identical(+0);
 
-export default isDate;
+export default isPositiveZero;
 </code></pre>
         </article>
     </section>
