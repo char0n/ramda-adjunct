@@ -279,6 +279,11 @@ declare namespace RamdaAdjunct {
         isNegative(val: any): val is number;
 
         /**
+         * Checks if value is a positive zero (+0).
+         */
+        isPositiveZero(val: any): boolean;
+
+        /**
          * Checks if value is a negative zero (-0).
          */
         isNegativeZero(val: any): boolean;
