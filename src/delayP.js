@@ -2,20 +2,22 @@ import { curry, propOr, partial, nth } from 'ramda';
 
 import isPlainObj from './isPlainObj';
 /**
+ * Create a promise which resolves/rejects after
+ * the specified milliseconds.
  *
  * @func delayP
  * @memberOf RA
  * @category Function
  * @sig a -> Promise a
- * @param {Number|Object} Argument to be resolved after a certain timeout and returns value if provided.
- * @return {Promise} A Promise that is resolved with the given value if provided after certain delay.
- * @see {@link RA.delayP|delayP}
+ * @sig () -> Promise Undefined
+ * @param {number|Object}  milliseconds number of milliseconds or options object.
+ * @return {Promise} A Promise that is resolved/rejected with the given value if provided after certain delay.
  * @example
  *
- * RA.delayP(200); //=> Returns Promise(undefined) after 200ms
- * RA.delayP({ timeout: 1000, value: 'hello world' }); //=> Returns Promise('hello world') after 1000ms
- * RA.delayP.reject(100); //=> rejects after 100 milliseconds with `undefined` value
- * RA.delayP.reject({ timeout: 100, value: new Error('error') }); //=> rejects after 100 milliseconds with `Error('error')` value
+ * RA.delayP(200); //=> Promise(undefined)
+ * RA.delayP({ timeout: 1000, value: 'hello world' }); //=> Promise('hello world')
+ * RA.delayP.reject(100); //=> Promise(undefined)
+ * RA.delayP.reject({ timeout: 100, value: new Error('error') }); //=> Promise(Error('error'))
  */
 
 const makeDelay = curry((settleFnPicker, opts) => {
@@ -36,4 +38,5 @@ const makeDelay = curry((settleFnPicker, opts) => {
 
 const delayP = makeDelay(nth(0));
 delayP.reject = makeDelay(nth(1));
+
 export default delayP;
