@@ -840,7 +840,8 @@ declare namespace RamdaAdjunct {
         rejectP<T>(value?: T): Promise<T>;
 
         /**
-         * Composable shortcut for `setTimeout(Promise)`.
+         * Create a promise which resolves/rejects after
+         * the specified milliseconds.
          * Returns A Promise that is resolved/rejected with
          * the given value if provided after certain delay.
          */
