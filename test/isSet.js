@@ -1,24 +1,34 @@
+import * as R from 'ramda';
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 import Symbol from './shared/Symbol';
-import args from './shared/arguments';
 
 describe('isSet', function() {
-  it('tests a value for type of `Set`', function() {
-    eq(RA.isSet('abc'), false);
-    eq(RA.isSet(Object('abc')), false);
+  context('given a set', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isSet(new Set()));
+      assert.isTrue(RA.isSet(new Set([1, 2])));
+    });
+  });
 
-    eq(RA.isSet(args), false);
-    eq(RA.isSet([1, 2, 3]), false);
-    eq(RA.isSet(true), false);
-    eq(RA.isSet({ 0: 1, length: 1 }), false);
-    eq(RA.isSet(1), false);
-    eq(RA.isSet(/x/), false);
-    eq(RA.isSet(Symbol), false);
-    eq(RA.isSet(new Date()), false);
-    eq(RA.isSet(new Error()), false);
-    eq(RA.isSet(Array.prototype.slice), false);
-    eq(RA.isSet(new Set()), true);
-    eq(RA.isSet(new Set([1, 2])), true);
+  context('given not a set', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.isSet('abc'));
+      assert.isFalse(RA.isSet(Object('abc')));
+      assert.isFalse(RA.isSet(new Date()));
+      assert.isFalse(RA.isSet(new Error()));
+      assert.isFalse(RA.isSet(RA.isSet));
+      assert.isFalse(RA.isSet(3));
+      assert.isFalse(RA.isSet(Symbol));
+      assert.isFalse(RA.isSet(R));
+      assert.isFalse(RA.isSet(/regex/));
+    });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isSet = RA.isSet(R.__);
+
+    assert.isTrue(isSet(new Set()));
   });
 });
