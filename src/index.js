@@ -53,6 +53,7 @@ export { default as isPositiveZero } from './isPositiveZero';
 export { default as isNotNilOrEmpty } from './isNotNilOrEmpty';
 export { default as isNonPositive } from './isNonPositive';
 export { default as isNonNegative } from './isNonNegative';
+export { default as isMap } from './isMap';
 export { default as isNaN } from './isNaN';
 export { default as isNotNaN } from './isNotNaN';
 export { default as isFinite } from './isFinite';
