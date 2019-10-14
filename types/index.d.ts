@@ -1216,6 +1216,11 @@ declare namespace RamdaAdjunct {
          * Converts value to an array.
          */
         toArray<T>(iterable: Iterable<T> | T): any[];
+
+        /**
+         * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
+         */
+        allUnique<T>(list: T[]): boolean;
     }
 }
 
