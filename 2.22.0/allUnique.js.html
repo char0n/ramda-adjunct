@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>replaceAll.js - Documentation</title>
+    <title>allUnique.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">replaceAll.js</h1>
+    <h1 class="page-title">allUnique.js</h1>
     
 
     
@@ -52,40 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curryN, split, join, pipe } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { converge, length, uniq } from 'ramda';
 
-import isRegExp from './isRegExp';
+import lengthEq from './lengthEq';
 
 /**
- * Replaces all substring matches in a string with a replacement.
+ * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
  *
- * @func replaceAll
+ * @func allUnique
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.17.0|v2.17.0}
- * @category String
- * @sig String -> String -> String -> String
- * @param {string} searchValue The substring to match
- * @param {string} replaceValue The string to replace the matches with
- * @param {string} str The String to do the search and replacement in
- * @return {string} A new string containing all the `searchValue` replaced with the `replaceValue`
- * @throws {Error} When `searchValue` is RegExp
- * @see {@link http://ramdajs.com/docs/#replace|R.replace}, {@link https://github.com/tc39/proposal-string-replaceall|TC39 proposal}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @category List
+ * @sig [a] -> Boolean
+ * @param {Array} list The list of values
+ * @return {boolean}
+ * @see {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
- * RA.replaceAll('ac', 'ef', 'ac ab ac ab'); //=> 'ef ab ef ab'
+ * RA.allUnique([ 1, 2, 3, 4 ]); //=> true
+ * RA.allUnique([ 1, 1, 2, 3 ]); //=> false
+ * RA.allUnique([]); //=> true
+ *
  */
-const replaceAll = curryN(3, (searchValue, replaceValue, str) => {
-  if (isRegExp(searchValue)) {
-    throw new Error('searchValue must be a String, not a RegExp.');
-  }
+const allUnique = converge(lengthEq, [length, uniq]);
 
-  return pipe(
-    split(String(searchValue)),
-    join(String(replaceValue))
-  )(str);
-});
-
-export default replaceAll;
+export default allUnique;
 </code></pre>
         </article>
     </section>
