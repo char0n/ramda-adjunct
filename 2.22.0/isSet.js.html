@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isEmptyArray.js - Documentation</title>
+    <title>isSet.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isEmptyArray.js</h1>
+    <h1 class="page-title">isSet.js</h1>
     
 
     
@@ -52,34 +52,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both, isEmpty } from 'ramda';
-
-import isArray from './isArray';
+            <pre class="prettyprint source linenums"><code>import { type, identical, pipe } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
- * Checks if input value is an empty `Array`.
+ * Predicate for determining if a provided value is an instance of a Set.
  *
- * @func isEmptyArray
+ * @func isSet
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.4.0|v2.4.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isNotEmptyArray|isNotEmptyArray}
+ * @see {@link RA.isMap|isMap}}
  * @example
  *
- * RA.isEmptyArray([]); // => true
- * RA.isEmptyArray([42]); // => false
- * RA.isEmptyArray({}); // => false
- * RA.isEmptyArray(null); // => false
- * RA.isEmptyArray(undefined); // => false
- * RA.isEmptyArray(42); // => false
- * RA.isEmptyArray('42'); // => false
+ * RA.isSet(new Map()); //=> false
+ * RA.isSet(new Set()); //=> true
+ * RA.isSet(new Set([1,2]); //=> true
+ * RA.isSet(new Object()); //=> false
  */
-const isEmptyArray = both(isArray, isEmpty);
 
-export default isEmptyArray;
+const isSet = curry1(
+  pipe(
+    type,
+    identical('Set')
+  )
+);
+
+export default isSet;
 </code></pre>
         </article>
     </section>
