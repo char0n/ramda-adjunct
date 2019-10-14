@@ -1,4 +1,4 @@
-import { is } from 'ramda';
+import { type, identical, pipe } from 'ramda';
 import curry1 from 'ramda/src/internal/_curry1';
 
 /**
@@ -11,7 +11,7 @@ import curry1 from 'ramda/src/internal/_curry1';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isSet}
+ * @see {@link RA.isMap|isMap}}
  * @example
  *
  * RA.isSet(new Map()); //=> false
@@ -20,6 +20,11 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isSet(new Object()); //=> false
  */
 
-const isSet = curry1(val => is(Set, val));
+const isSet = curry1(
+  pipe(
+    type,
+    identical('Set')
+  )
+);
 
 export default isSet;
