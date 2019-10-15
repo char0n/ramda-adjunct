@@ -1,17 +1,17 @@
 import * as RA from 'ramda-adjunct';
 
-RA.isSet(new Map()); // $ExpectType boolean
-RA.isSet(new Map([[1, 2], [2, 1]])); // $ExpectType boolean
-RA.isSet(new Set()); // $ExpectType boolean
-RA.isSet(new Set([1, 2])); // $ExpectType boolean
-RA.isSet(+0); // $ExpectType boolean
-RA.isSet(null); // $ExpectType boolean
-RA.isSet(true); // $ExpectType boolean
-RA.isSet(NaN); // $ExpectType boolean
-RA.isSet({}); // $ExpectType boolean
-RA.isSet([]); // $ExpectType boolean
-RA.isSet(() => {}); // $ExpectType boolean
-RA.isSet('string'); // $ExpectType boolean
-RA.isSet(1); // $ExpectType boolean
-RA.isSet(Object()); // $ExpectType boolean
-RA.isSet(Object(5)); // $ExpectType boolean
+RA.isMap(new Map()); // $ExpectType boolean
+RA.isMap(new Map([[1, 2], [2, 1]])); // $ExpectType boolean
+RA.isMap(new Set()); // $ExpectType boolean
+RA.isMap(new Set([1, 2])); // $ExpectType boolean
+RA.isMap(+0); // $ExpectType boolean
+RA.isMap(null); // $ExpectType boolean
+RA.isMap(true); // $ExpectType boolean
+RA.isMap(NaN); // $ExpectType boolean
+RA.isMap({}); // $ExpectType boolean
+RA.isMap([]); // $ExpectType boolean
+RA.isMap(() => {}); // $ExpectType boolean
+RA.isMap('string'); // $ExpectType boolean
+RA.isMap(1); // $ExpectType boolean
+RA.isMap(Object()); // $ExpectType boolean
+RA.isMap(Object(5)); // $ExpectType boolean
