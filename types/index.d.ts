@@ -246,6 +246,11 @@ declare namespace RamdaAdjunct {
         isInvalidDate(val: any): boolean; // alias of isNotValidDate
 
         /**
+         * Checks if value is `Map`.
+         */
+        isMap(val: any): val is Map<any, any>;
+
+        /**
          * Checks whether the passed value is `NaN` and its type is `Number`.
          * It is a more robust version of the original, global isNaN().
          */
