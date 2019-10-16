@@ -4,23 +4,15 @@ const checkArguments = (str, searchValue, replaceValue) => {
   }
 };
 
-const checkStr = (str) => {
-  if (typeof str !== 'string') {
-    if (!(str instanceof String)) {
-      throw TypeError('`str` must be a string');
+const checkValue = (value, valueName) => {
+  if (typeof value !== 'string') {
+    if (!(value instanceof String)) {
+      throw TypeError('`'+valueName+'` must be a string');
     }
   }
-};
+}
 
-const checkReplaceValue = (replaceValue) => {
-  if (typeof replaceValue !== 'string') {
-    if (!(replaceValue instanceof String)) {
-      throw TypeError('`replaceValue` must be a string');
-    }
-  }
-};
-
-const checkSearchValue = (searchValue) => {
+const checkSearchValue = searchValue => {
   if (typeof searchValue !== 'string') {
     if (!(searchValue instanceof String)) {
       if (!(searchValue instanceof RegExp)) {
@@ -30,12 +22,7 @@ const checkSearchValue = (searchValue) => {
   }
 };
 
-const replaceAll = (str, searchValue, replaceValue) => {
-  checkArguments(str, searchValue, replaceValue);
-  checkStr(str);
-  checkReplaceValue(replaceValue);
-  checkSearchValue(searchValue);
-
+const returnResult = (str, searchValue, replaceValue) => {
   // searchValue is an empty string
   if (searchValue === '') return str.replace(/(?:)/g, replaceValue);
 
@@ -49,6 +36,15 @@ const replaceAll = (str, searchValue, replaceValue) => {
 
   // common case
   return str.split(searchValue).join(replaceValue);
+};
+
+const replaceAll = (str, searchValue, replaceValue) => {
+  checkArguments(str, searchValue, replaceValue);
+  checkValue(str, 'str');
+  checkValue(replaceValue, 'replaceValue');
+  checkSearchValue(searchValue);
+
+  return returnResult(str, searchValue, replaceValue);
 };
 
 export default replaceAll;
