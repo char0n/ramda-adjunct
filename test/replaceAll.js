@@ -42,6 +42,11 @@ describe('replaceAll', function() {
     assert.strictEqual(RA.replaceAll('a', 'c')('aba'), 'cbc');
     assert.strictEqual(RA.replaceAll('a')('c')('aba'), 'cbc');
   });
+  context('given searchValue is a non-global RegExp', function() {
+    specify('should throw Error', function() {
+      assert.throws(() => RA.replaceAll(/a/, 'c', 'abc'));
+    });
+  });
 });
 
 describe('replaceAllPolyfill', function() {

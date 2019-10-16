@@ -1,20 +1,26 @@
-const replaceAll = (str, searchValue, replaceValue) => {
+const checkArguments = (str, searchValue, replaceValue) => {
   if (str == null || searchValue == null || replaceValue == null) {
     throw TypeError('Input values must not be `null` or `undefined`');
   }
+};
 
+const checkStr = (str) => {
   if (typeof str !== 'string') {
     if (!(str instanceof String)) {
       throw TypeError('`str` must be a string');
     }
   }
+};
 
+const checkReplaceValue = (replaceValue) => {
   if (typeof replaceValue !== 'string') {
     if (!(replaceValue instanceof String)) {
       throw TypeError('`replaceValue` must be a string');
     }
   }
+};
 
+const checkSearchValue = (searchValue) => {
   if (typeof searchValue !== 'string') {
     if (!(searchValue instanceof String)) {
       if (!(searchValue instanceof RegExp)) {
@@ -22,6 +28,13 @@ const replaceAll = (str, searchValue, replaceValue) => {
       }
     }
   }
+};
+
+const replaceAll = (str, searchValue, replaceValue) => {
+  checkArguments(str, searchValue, replaceValue);
+  checkStr(str);
+  checkReplaceValue(replaceValue);
+  checkSearchValue(searchValue);
 
   // searchValue is an empty string
   if (searchValue === '') return str.replace(/(?:)/g, replaceValue);
