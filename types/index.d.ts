@@ -1204,18 +1204,12 @@ declare namespace RamdaAdjunct {
         /**
          * Replace all substring matches in a string with a replacement.
          */
-        replaceAll(searchValue: string, replaceValue: string, str: string): string;
-        replaceAll(searchValue: string): (replaceValue: string, str: string) => string;
-        replaceAll(searchValue: string): {
+        replaceAll(searchValue: string | RegExp, replaceValue: string, str: string): string;
+        replaceAll(searchValue: string | RegExp): (replaceValue: string, str: string) => string;
+        replaceAll(searchValue: string | RegExp): {
             (replaceValue: string, str: string): string;
             (replaceValue: string): (str: string) => string;
         };
-
-        replaceAll(searchValue: RegExp, replaceValue: string, str: string): string;
-        replaceAll(searchValue: RegExp): (replaceValue: string, str: string) => string;
-        replaceAll(searchValue: RegExp): {
-            (replaceValue: string, str: string): string;
-            (replaceValue: string): (str: string) => string;
 
         /**
          * Escapes the RegExp special characters.
