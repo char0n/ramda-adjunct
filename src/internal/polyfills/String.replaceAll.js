@@ -7,18 +7,18 @@ const checkArguments = (str, searchValue, replaceValue) => {
 const checkValue = (value, valueName) => {
   if (typeof value !== 'string') {
     if (!(value instanceof String)) {
-      throw TypeError('`'+valueName+'` must be a string');
+      throw TypeError(`\`${valueName}\` must be a string`);
     }
   }
-}
+};
 
 const checkSearchValue = searchValue => {
-  if (typeof searchValue !== 'string') {
-    if (!(searchValue instanceof String)) {
-      if (!(searchValue instanceof RegExp)) {
-        throw TypeError('`searchValue`  must be a string or an regexp');
-      }
-    }
+  if (
+    typeof searchValue !== 'string' &&
+    !(searchValue instanceof String) &&
+    !(searchValue instanceof RegExp)
+  ) {
+    throw TypeError('`searchValue` must be a string or an regexp');
   }
 };
 
