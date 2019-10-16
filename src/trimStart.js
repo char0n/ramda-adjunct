@@ -8,7 +8,7 @@ export const trimStartPolyfill = polyfill;
 export const trimStartInvoker = invoker(0, 'trimStart');
 
 /**
- * Removes whitespace from the beginning of a string
+ * Removes whitespace from the beginning of a string.
  *
  * @func trimStart
  * @memberOf RA

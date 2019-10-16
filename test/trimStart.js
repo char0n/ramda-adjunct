@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+
 import * as RA from '../src';
 import { trimStartInvoker, trimStartPolyfill } from '../src/trimStart';
 import eq from './shared/eq';
@@ -27,6 +29,12 @@ describe('trimStart', function() {
     specify('should return an empty string', function() {
       eq(RA.trimStart('   '), '');
     });
+  });
+
+  specify('should support placeholder to specify "gaps"', function() {
+    const trimStart = RA.trimStart(R.__);
+
+    eq(trimStart('  abc'), 'abc');
   });
 
   context('trimStartInvoker', function() {
@@ -61,6 +69,12 @@ describe('trimStart', function() {
         eq(trimStartInvoker('   '), '');
       });
     });
+
+    specify('should support placeholder to specify "gaps"', function() {
+      const trimStart = trimStartInvoker(R.__);
+
+      eq(trimStart('  abc'), 'abc');
+    });
   });
 
   context('trimStartPolyfill', function() {
@@ -88,6 +102,12 @@ describe('trimStart', function() {
       specify('should return an empty string', function() {
         eq(trimStartPolyfill('   '), '');
       });
+    });
+
+    specify('should support placeholder to specify "gaps"', function() {
+      const trimStart = trimStartPolyfill(R.__);
+
+      eq(trimStart('  abc'), 'abc');
     });
   });
 });
