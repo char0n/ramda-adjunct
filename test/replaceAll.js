@@ -1,7 +1,6 @@
 import { assert } from 'chai';
 
 import * as RA from '../src';
-
 import replaceAllPolyfill from '../src/internal/polyfills/String.replaceAll';
 
 describe('replaceAll', function() {

@@ -1,7 +1,6 @@
 import { curryN } from 'ramda';
 
 import polyfill from './internal/polyfills/String.replaceAll';
-
 import isFunction from './isFunction';
 
 /**
@@ -25,11 +24,10 @@ import isFunction from './isFunction';
  * RA.replaceAll(/x/, 'v', 'xxx'); //=> TypeError
  */
 const replaceAll = curryN(3, (searchValue, replaceValue, str) => {
-  if (isFunction(String.prototype.replaceAll)) {
+  if (isFunction(String.prototype.replaceAll))
     return str.replaceAll(searchValue, replaceValue);
-  } else {
-    return polyfill(str, searchValue, replaceValue);
-  }
+
+  return polyfill(str, searchValue, replaceValue);
 });
 
 export default replaceAll;
