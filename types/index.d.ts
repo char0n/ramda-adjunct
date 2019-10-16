@@ -1211,6 +1211,12 @@ declare namespace RamdaAdjunct {
             (replaceValue: string): (str: string) => string;
         };
 
+        replaceAll(searchValue: RegExp, replaceValue: string, str: string): string;
+        replaceAll(searchValue: RegExp): (replaceValue: string, str: string) => string;
+        replaceAll(searchValue: RegExp): {
+            (replaceValue: string, str: string): string;
+            (replaceValue: string): (str: string) => string;
+
         /**
          * Escapes the RegExp special characters.
          */
