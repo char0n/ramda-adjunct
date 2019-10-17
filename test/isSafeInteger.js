@@ -60,7 +60,7 @@ describe('isSafeInteger', function() {
         assert.isFalse(isSafeIntegerPolyfill(true));
       });
     });
-    
+
     specify('should support placeholder to specify "gaps"', function() {
       const isSafeInteger = isSafeIntegerPolyfill(R.__);
 
