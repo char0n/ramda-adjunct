@@ -49,9 +49,12 @@ export { default as isNumber } from './isNumber';
 export { default as isNotNumber } from './isNotNumber';
 export { default as isPositive } from './isPositive';
 export { default as isNegative } from './isNegative';
+export { default as isPositiveZero } from './isPositiveZero';
+export { default as isNegativeZero } from './isNegativeZero';
 export { default as isNotNilOrEmpty } from './isNotNilOrEmpty';
 export { default as isNonPositive } from './isNonPositive';
 export { default as isNonNegative } from './isNonNegative';
+export { default as isMap } from './isMap';
 export { default as isNaN } from './isNaN';
 export { default as isNotNaN } from './isNotNaN';
 export { default as isFinite } from './isFinite';
@@ -74,6 +77,7 @@ export { default as isTruthy } from './isTruthy';
 export { default as isFalsy } from './isFalsy';
 export { default as isRegExp } from './isRegExp';
 export { default as isNotRegExp } from './isNotRegExp';
+export { default as isSet } from './isSet';
 export { default as isSparseArray } from './isSparseArray';
 export { default as isSymbol } from './isSymbol';
 // Function
@@ -135,6 +139,7 @@ export { default as allIdenticalTo } from './allIdenticalTo';
 export { default as allEqualTo } from './allEqualTo';
 export { default as flattenDepth } from './flattenDepth';
 export { default as toArray } from './toArray';
+export { default as allUnique } from './allUnique';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';

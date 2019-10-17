@@ -246,6 +246,11 @@ declare namespace RamdaAdjunct {
         isInvalidDate(val: any): boolean; // alias of isNotValidDate
 
         /**
+         * Checks if value is `Map`.
+         */
+        isMap(val: any): val is Map<any, any>;
+
+        /**
          * Checks whether the passed value is `NaN` and its type is `Number`.
          * It is a more robust version of the original, global isNaN().
          */
@@ -277,6 +282,16 @@ declare namespace RamdaAdjunct {
          * positive or negative.
          */
         isNegative(val: any): val is number;
+
+        /**
+         * Checks if value is a positive zero (+0).
+         */
+        isPositiveZero(val: any): boolean;
+
+        /**
+         * Checks if value is a negative zero (-0).
+         */
+        isNegativeZero(val: any): boolean;
 
         /**
          * Checks if value is a non-positive `Number` primitive or object. This includes all
@@ -361,6 +376,11 @@ declare namespace RamdaAdjunct {
          * Checks if value is `RegExp` object.
          */
         isRegExp(val: any): boolean;
+
+        /**
+         * Checks if value is `Set`.
+         */
+        isSet(val: any): val is Set<any>;
 
         /**
          * Checks if value is complement of `RegExp` object.
@@ -1211,6 +1231,11 @@ declare namespace RamdaAdjunct {
          * Converts value to an array.
          */
         toArray<T>(iterable: Iterable<T> | T): any[];
+
+        /**
+         * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
+         */
+        allUnique<T>(list: T[]): boolean;
 
         /**
          * Removes whitespace from the beginning of a string
