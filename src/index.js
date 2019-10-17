@@ -140,6 +140,7 @@ export { default as allEqualTo } from './allEqualTo';
 export { default as flattenDepth } from './flattenDepth';
 export { default as toArray } from './toArray';
 export { default as allUnique } from './allUnique';
+export { default as notAllUnique } from './notAllUnique';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';

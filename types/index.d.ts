@@ -1236,6 +1236,11 @@ declare namespace RamdaAdjunct {
          * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
          */
         allUnique<T>(list: T[]): boolean;
+
+        /**
+         * Returns true if at least one item of the list is repeated. `R.equals` is used to determine equality.
+         */
+        notAllUnique<T>(list: T[]): boolean;
     }
 }
 
