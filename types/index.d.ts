@@ -331,6 +331,11 @@ declare namespace RamdaAdjunct {
         isFloat(val: any): val is number;
 
         /**
+         * Checks whether the passed value is a safe `integer`.
+         */
+        isSafeInteger(val: any): boolean;
+
+        /**
          * Checks whether the passed value is complement of a `float`.
          */
         isNotFloat(val: any): boolean;
