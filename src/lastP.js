@@ -1,4 +1,4 @@
-import { bind, curryN, ifElse, last, map, pipe, then } from 'ramda';
+import { bind, curryN, ifElse, last, map, pipe } from 'ramda';
 
 import allP from './allP';
 import rejectP from './rejectP';
@@ -44,7 +44,10 @@ const lastP = curryN(1, iterable => {
     pipe(
       map(toResolvedAndRejected),
       allP,
-      then(() => ifElse(isEmptyArray, () => rejectP(rejected), last)(resolved))
+      p =>
+        p.then(() =>
+          ifElse(isEmptyArray, () => rejectP(rejected), last)(resolved)
+        )
     )
   )(iterable);
 });
