@@ -850,6 +850,12 @@ declare namespace RamdaAdjunct {
         firstP<T>(iterable: Iterable<T>): Promise<T>; // alias
 
         /**
+         * Returns a promise that is fulfilled by the last given promise to be fulfilled,
+         * or rejected with an array of rejection reasons if all of the given promises are rejected.
+         */
+        lastP<T>(iterable: Iterable<T>): Promise<T>;
+
+        /**
          * Composable shortcut for `Promise.resolve`.
          *
          * Returns a Promise object that is resolved with the given value.
