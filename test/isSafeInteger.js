@@ -36,7 +36,7 @@ describe('isSafeInteger', function() {
     assert.isTrue(isSafeInteger(3));
   });
 
-  context('fromPolyfill', function() {
+  context('isSafeIntegerPolyfill', function() {
     context('given a safe integer', function() {
       specify('should return true', function() {
         assert.isTrue(isSafeIntegerPolyfill(3));
