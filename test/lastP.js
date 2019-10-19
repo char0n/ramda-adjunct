@@ -90,12 +90,12 @@ describe('lastP', function() {
 
   it('should support placeholder to specify "gaps"', async function() {
     const lastP = RA.lastP(R.__);
-    const p1 = RA.resolveP(1);
-    const v2 = 2;
-    const p3 = RA.resolveP(3);
-    const actual = [p1, v2, p3];
-    const expected = 3;
+    const p1 = new Promise(resolve => setTimeout(resolve, 20, 'one'));
+    const p2 = new Promise(resolve => setTimeout(resolve, 40, 'two'));
+    const p3 = new Promise(resolve => setTimeout(resolve, 30, 'three'));
+    const iterable = [p1, p2, p3];
+    const slowest = 'two';
 
-    assert.strictEqual(await lastP(actual), expected);
+    assert.strictEqual(await lastP(iterable), slowest);
   });
 });
