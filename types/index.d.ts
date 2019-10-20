@@ -1241,6 +1241,12 @@ declare namespace RamdaAdjunct {
          * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
          */
         allUnique<T>(list: T[]): boolean;
+
+        /**
+         * Removes whitespace from the beginning of a string
+         */
+        trimStart(value: string): string;
+        trimLeft(value: string): string;
     }
 }
 
