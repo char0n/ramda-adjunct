@@ -9,6 +9,7 @@ RA.trimStart(null); // $ExpectError
 RA.trimStart(undefined); // $ExpectError
 RA.trimStart([]); // $ExpectError
 
+// alias
 RA.trimLeft('abc'); // $ExpectType string
 RA.trimLeft(''); // $ExpectType string
 

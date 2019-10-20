@@ -113,7 +113,7 @@ describe('trimStart', function() {
 });
 
 describe('trimLeft', function() {
-  it('tests an alias', function() {
+  it('should be alias of trimStart', function() {
     eq(RA.trimLeft === RA.trimStart, true);
   });
 });
