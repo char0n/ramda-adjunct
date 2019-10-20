@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>mergePaths.js - Documentation</title>
+    <title>trimStart.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">mergePaths.js</h1>
+    <h1 class="page-title">trimStart.js</h1>
     
 
     
@@ -52,41 +52,35 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curryN, pipe, mergeAll } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
 
-import paths from './paths';
+import polyfill from './internal/polyfills/String.trimStart';
+import isFunction from './isFunction';
+
+export const trimStartPolyfill = polyfill;
+
+export const trimStartInvoker = invoker(0, 'trimStart');
 
 /**
- * Merge objects under corresponding paths.
+ * Removes whitespace from the beginning of a string.
  *
- * @func mergePaths
+ * @func trimStart
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.17.0|v1.17.0}
- * @category Object
- * @sig [[k]] -> {k: {a}} -> {a}
- * @see {@link RA.mergeProps|mergeProps}
- * @param {!Array} paths The property paths to merge
- * @param {!Object} obj The object to query
- * @return {!Object} The object composed of merged property paths of obj
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @category String
+ * @sig String -> String
+ * @param {string} value String value to have the whitespace removed from the beginning
+ * @return {string} A new string representing the calling string stripped of whitespace from its beginning (left end).
  * @example
  *
- * const obj = {
- *   foo: { fooInner: { fooInner2: 1 } },
- *   bar: { barInner: 2 }
- * };
- *
- * { ...obj.foo.fooInner, ...obj.bar }; //=>  { fooInner2: 1, barInner: 2 }
- * RA.mergePaths([['foo', 'fooInner'], ['bar']], obj); //=> { fooInner2: 1, barInner: 2 }
+ * RA.trimStart('  abc'); //=> 'abc'
  */
-const mergePaths = curryN(
-  2,
-  pipe(
-    paths,
-    mergeAll
-  )
-);
 
-export default mergePaths;
+const trimStart = isFunction(String.prototype.trimStart)
+  ? trimStartInvoker
+  : trimStartPolyfill;
+
+export default trimStart;
 </code></pre>
         </article>
     </section>
