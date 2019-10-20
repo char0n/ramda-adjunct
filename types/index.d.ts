@@ -847,6 +847,7 @@ declare namespace RamdaAdjunct {
          * or rejected with an array of rejection reasons if all of the given promises are rejected.
          */
         anyP<T>(iterable: Iterable<T>): Promise<T>;
+        firstP<T>(iterable: Iterable<T>): Promise<T>; // alias
 
         /**
          * Composable shortcut for `Promise.resolve`.
