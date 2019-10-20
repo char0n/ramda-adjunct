@@ -109,6 +109,7 @@ export { default as sequencing } from './seq';
 export { default as dispatch } from './dispatch';
 export { default as async } from './async';
 export { default as anyP } from './anyP';
+export { default as firstP } from './anyP'; // alias of anyP
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';
