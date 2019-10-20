@@ -1236,6 +1236,14 @@ declare namespace RamdaAdjunct {
          * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
          */
         allUnique<T>(list: T[]): boolean;
+
+        /**
+         * Pads current string with a given string (repeated, if needed)
+         * so that resulting string reaches a given length
+         */
+        padCharsEnd(padString: string, targetLength: number, value: string): string;
+        padCharsEnd(padString: string, targetLength: number): (value: string) => string;
+        padCharsEnd(padString: string): (targetLength: number, value: string) => string;
     }
 }
 

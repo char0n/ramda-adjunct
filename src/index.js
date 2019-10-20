@@ -191,5 +191,6 @@ export { default as subtractNum } from './subtractNum';
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
+export { default as padCharsEnd } from './padCharsEnd';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
