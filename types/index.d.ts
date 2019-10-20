@@ -331,6 +331,11 @@ declare namespace RamdaAdjunct {
         isFloat(val: any): val is number;
 
         /**
+         * Checks whether the passed value is a safe `integer`.
+         */
+        isSafeInteger(val: any): boolean;
+
+        /**
          * Checks whether the passed value is complement of a `float`.
          */
         isNotFloat(val: any): boolean;
@@ -842,6 +847,7 @@ declare namespace RamdaAdjunct {
          * or rejected with an array of rejection reasons if all of the given promises are rejected.
          */
         anyP<T>(iterable: Iterable<T>): Promise<T>;
+        firstP<T>(iterable: Iterable<T>): Promise<T>; // alias
 
         /**
          * Returns a promise that is fulfilled by the last given promise to be fulfilled,
@@ -1242,6 +1248,12 @@ declare namespace RamdaAdjunct {
          * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
          */
         allUnique<T>(list: T[]): boolean;
+
+        /**
+         * Removes whitespace from the beginning of a string
+         */
+        trimStart(value: string): string;
+        trimLeft(value: string): string;
     }
 }
 

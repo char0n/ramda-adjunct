@@ -80,6 +80,7 @@ export { default as isNotRegExp } from './isNotRegExp';
 export { default as isSet } from './isSet';
 export { default as isSparseArray } from './isSparseArray';
 export { default as isSymbol } from './isSymbol';
+export { default as isSafeInteger } from './isSafeInteger';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
@@ -109,6 +110,7 @@ export { default as dispatch } from './dispatch';
 export { default as async } from './async';
 export { default as anyP } from './anyP';
 export { default as lastP } from './lastP';
+export { default as firstP } from './anyP'; // alias of anyP
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';
@@ -192,5 +194,7 @@ export { default as subtractNum } from './subtractNum';
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
+export { default as trimStart } from './trimStart';
+export { default as trimLeft } from './trimStart'; // alias of trimStart
 // Types
 export { default as Identity } from './fantasy-land/Identity';
