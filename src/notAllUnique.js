@@ -12,12 +12,12 @@ import allUnique from './allUnique';
  * @sig [a] -> Boolean
  * @param {Array} list The list of values
  * @return {boolean}
- * @see {@link https://ramdajs.com/docs/#equals|equals}
+ * @see {@link RA.allUnique|allUnique}, {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
- * RA.allUnique([ 1, 1, 2, 3 ]); //=> true
- * RA.allUnique([ 1, 2, 3, 4 ]); //=> false
- * RA.allUnique([]); //=> false
+ * RA.notAllUnique([ 1, 1, 2, 3 ]); //=> true
+ * RA.notAllUnique([ 1, 2, 3, 4 ]); //=> false
+ * RA.notAllUnique([]); //=> false
  *
  */
 const notAllUnique = complement(allUnique);
