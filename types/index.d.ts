@@ -331,6 +331,11 @@ declare namespace RamdaAdjunct {
         isFloat(val: any): val is number;
 
         /**
+         * Checks whether the passed value is a safe `integer`.
+         */
+        isSafeInteger(val: any): boolean;
+
+        /**
          * Checks whether the passed value is complement of a `float`.
          */
         isNotFloat(val: any): boolean;
@@ -1241,6 +1246,12 @@ declare namespace RamdaAdjunct {
          * Returns true if at least one item of the list is repeated. `R.equals` is used to determine equality.
          */
         notAllUnique<T>(list: T[]): boolean;
+
+        /**
+         * Removes whitespace from the beginning of a string
+         */
+        trimStart(value: string): string;
+        trimLeft(value: string): string;
     }
 }
 
