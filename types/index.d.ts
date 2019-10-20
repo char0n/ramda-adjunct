@@ -821,6 +821,11 @@ declare namespace RamdaAdjunct {
         flattenProp(prop: string | number): (obj: object) => object;
 
         /**
+         * Unzips an object into an two arrays of transformed keys and transformed values.
+         */
+        unzipObjWith<T, U, V>(fn: (value: T, key: string) => [U, V], obj: {}): [U[], V[]];
+
+        /**
          * Composable shortcut for `Promise.all`.
          *
          * The `allP` method returns a single Promise that resolves when all of the promises
