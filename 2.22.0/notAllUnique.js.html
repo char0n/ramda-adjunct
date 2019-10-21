@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>pickIndexes.js - Documentation</title>
+    <title>notAllUnique.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">pickIndexes.js</h1>
+    <h1 class="page-title">notAllUnique.js</h1>
     
 
     
@@ -52,36 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { filter, addIndex, curry, contains } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
 
-// helpers
-const filterIndexed = addIndex(filter);
-const containsIndex = curry((indexes, val, index) => contains(index, indexes));
+import allUnique from './allUnique';
 
 /**
- * Picks values from list by indexes.
+ * Returns true if at least one item of the list is repeated. `R.equals` is used to determine equality.
  *
- * Note: pickIndexes will skip non existing indexes. If you want to include them
- * use ramda's `props` function.
- *
- * @func pickIndexes
+ * @func notAllUnique
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.1.0|v1.1.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @category List
- * @sig  [Number] -> [a] -> [a]
- * @param {Array} indexes The indexes to pick
- * @param {Array} list The list to pick values from
- * @return {Array} New array containing only values at `indexes`
- * @see {@link http://ramdajs.com/docs/#pick|R.pick}, {@link RA.omitIndexes|omitIndexes}
+ * @sig [a] -> Boolean
+ * @param {Array} list The list of values
+ * @return {boolean}
+ * @see {@link RA.allUnique|allUnique}, {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
- * RA.pickIndexes([0, 2], ['a', 'b', 'c']); //=> ['a', 'c']
+ * RA.notAllUnique([ 1, 1, 2, 3 ]); //=> true
+ * RA.notAllUnique([ 1, 2, 3, 4 ]); //=> false
+ * RA.notAllUnique([]); //=> false
+ *
  */
-const pickIndexes = curry((indexes, list) =>
-  filterIndexed(containsIndex(indexes), list)
-);
+const notAllUnique = complement(allUnique);
 
-export default pickIndexes;
+export default notAllUnique;
 </code></pre>
         </article>
     </section>
