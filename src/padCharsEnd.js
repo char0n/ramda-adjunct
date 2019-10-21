@@ -14,7 +14,7 @@ export const padCharsEndStrInvoker = flip(invoker(2, 'padEnd'));
  *
  * @func padCharsEnd
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.11.0|v2.11.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @category String
  * @sig String -> Number -> String -> String
  * @param {string} padString The string to pad the current string with
