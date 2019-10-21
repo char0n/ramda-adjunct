@@ -1,4 +1,4 @@
-import { curryN, bind  } from 'ramda';
+import { curryN } from 'ramda';
 
 import polyfill from './internal/polyfills/String.replaceAll';
 import isFunction from './isFunction';
