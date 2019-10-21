@@ -1,4 +1,4 @@
-const checkArguments = (str, searchValue, replaceValue) => {
+const checkArguments = (searchValue, replaceValue, str) => {
   if (str == null || searchValue == null || replaceValue == null) {
     throw TypeError('Input values must not be `null` or `undefined`');
   }
@@ -22,7 +22,7 @@ const checkSearchValue = searchValue => {
   }
 };
 
-const returnResult = (str, searchValue, replaceValue) => {
+const returnResult = (searchValue, replaceValue, str) => {
   // searchValue is an empty string
   if (searchValue === '') return str.replace(/(?:)/g, replaceValue);
 
@@ -38,13 +38,13 @@ const returnResult = (str, searchValue, replaceValue) => {
   return str.split(searchValue).join(replaceValue);
 };
 
-const replaceAll = (str, searchValue, replaceValue) => {
-  checkArguments(str, searchValue, replaceValue);
+const replaceAll = (searchValue, replaceValue, str) => {
+  checkArguments(searchValue, replaceValue, str);
   checkValue(str, 'str');
   checkValue(replaceValue, 'replaceValue');
   checkSearchValue(searchValue);
 
-  return returnResult(str, searchValue, replaceValue);
+  return returnResult(searchValue, replaceValue, str);
 };
 
 export default replaceAll;
