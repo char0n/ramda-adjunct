@@ -189,3 +189,9 @@ describe('anyP', function() {
     });
   });
 });
+
+describe('firstP', function() {
+  it('should be alias for anyP', function() {
+    assert.isTrue(RA.firstP === RA.anyP);
+  });
+});

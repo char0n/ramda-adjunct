@@ -331,6 +331,11 @@ declare namespace RamdaAdjunct {
         isFloat(val: any): val is number;
 
         /**
+         * Checks whether the passed value is a safe `integer`.
+         */
+        isSafeInteger(val: any): boolean;
+
+        /**
          * Checks whether the passed value is complement of a `float`.
          */
         isNotFloat(val: any): boolean;
@@ -842,6 +847,7 @@ declare namespace RamdaAdjunct {
          * or rejected with an array of rejection reasons if all of the given promises are rejected.
          */
         anyP<T>(iterable: Iterable<T>): Promise<T>;
+        firstP<T>(iterable: Iterable<T>): Promise<T>; // alias
 
         /**
          * Composable shortcut for `Promise.resolve`.
@@ -1238,6 +1244,17 @@ declare namespace RamdaAdjunct {
         allUnique<T>(list: T[]): boolean;
 
         /**
+         * Returns true if at least one item of the list is repeated. `R.equals` is used to determine equality.
+         */
+        notAllUnique<T>(list: T[]): boolean;
+
+        /**
+         * Removes whitespace from the beginning of a string
+         */
+        trimStart(value: string): string;
+        trimLeft(value: string): string;
+
+        /*
          * The function pads the current string with a given string
          * (repeated, if needed) so that the resulting string reaches a given length.
          * The padding is applied from the end of the current string.
