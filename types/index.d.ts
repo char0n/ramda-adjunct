@@ -821,7 +821,7 @@ declare namespace RamdaAdjunct {
         flattenProp(prop: string | number): (obj: object) => object;
 
         /**
-         * Unzips an object into an two arrays of transformed keys and transformed values.
+         * Creates a new list out of the supplied object by applying the function to each key/value pairing.
          */
         unzipObjWith<T, U, V>(fn: (value: T, key: string) => [U, V], obj: {}): [U[], V[]];
 

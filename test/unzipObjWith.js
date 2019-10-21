@@ -5,66 +5,35 @@ import * as RA from '../src';
 
 describe('unzipObjWith', function() {
   it('unzips an object into key/value arrays applying a value/key transform', function() {
-    const obj = {
-      'abbrev@1': {
-        version: '1.0.9',
-        resolved:
-          'https://registry.yarnpkg.com/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135',
-      },
-      'shell-quote@git+https://github.com/srghma/node-shell-quote.git#without_unlicenced_jsonify': {
-        version: '1.6.0',
-        resolved:
-          'git+https://github.com/srghma/node-shell-quote.git#0aa381896e0cd7409ead15fd444f225807a61e0a',
-      },
-      '@graphile/plugin-supporter@git+https://1234user:1234pass@git.graphile.com/git/users/1234user/postgraphile-supporter.git': {
-        version: '1.6.0',
-        resolved:
-          'git+https://1234user:1234pass@git.graphile.com/git/users/1234user/postgraphile-supporter.git#1234commit',
-      },
-    };
     const fn = (value, key) => [key, { ...value, name: key }];
+    const obj = {
+      packageA: { version: '1.0.9' },
+      packageB: { version: '1.6.1' },
+      packageC: { version: '1.6.0' },
+    };
 
     const actual = RA.unzipObjWith(fn, obj);
 
     const expected = [
+      ['packageA', 'packageB', 'packageC'],
       [
-        'abbrev@1',
-        'shell-quote@git+https://github.com/srghma/node-shell-quote.git#without_unlicenced_jsonify',
-        '@graphile/plugin-supporter@git+https://1234user:1234pass@git.graphile.com/git/users/1234user/postgraphile-supporter.git',
-      ],
-      [
-        {
-          name: 'abbrev@1',
-          version: '1.0.9',
-          resolved:
-            'https://registry.yarnpkg.com/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135',
-        },
-        {
-          name:
-            'shell-quote@git+https://github.com/srghma/node-shell-quote.git#without_unlicenced_jsonify',
-          version: '1.6.0',
-          resolved:
-            'git+https://github.com/srghma/node-shell-quote.git#0aa381896e0cd7409ead15fd444f225807a61e0a',
-        },
-        {
-          name:
-            '@graphile/plugin-supporter@git+https://1234user:1234pass@git.graphile.com/git/users/1234user/postgraphile-supporter.git',
-          version: '1.6.0',
-          resolved:
-            'git+https://1234user:1234pass@git.graphile.com/git/users/1234user/postgraphile-supporter.git#1234commit',
-        },
+        { name: 'packageA', version: '1.0.9' },
+        { name: 'packageB', version: '1.6.1' },
+        { name: 'packageC', version: '1.6.0' },
       ],
     ];
 
     assert.deepEqual(actual, expected);
   });
 
-  it('supports gap placeholders and currying', function() {
-    const obj = { a: 1, b: 2, c: 3 };
-    const partial = RA.unzipObjWith(R.__, obj);
+  it('should curry', function() {
     const fn = (v, k) => [`new${k.toUpperCase()}`, 2 * v];
-    const actual = partial(fn);
+    const obj = { a: 1, b: 2, c: 3 };
     const expected = [['newA', 'newB', 'newC'], [2, 4, 6]];
-    assert.deepEqual(actual, expected);
+
+    assert.deepEqual(RA.unzipObjWith(fn, obj), expected);
+    assert.deepEqual(RA.unzipObjWith(fn)(obj), expected);
+    assert.deepEqual(RA.unzipObjWith()(fn)(obj), expected);
+    assert.deepEqual(RA.unzipObjWith(R.__, obj)(fn), expected);
   });
 });

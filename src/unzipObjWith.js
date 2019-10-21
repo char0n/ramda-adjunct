@@ -1,20 +1,7 @@
-import {
-  curryN,
-  compose,
-  pipe,
-  apply,
-  map,
-  toPairs,
-  flip,
-  transpose,
-} from 'ramda';
+import { curryN, pipe, apply, map, toPairs, flip, transpose } from 'ramda';
 
 /**
- * Unzips an object into an two arrays of transformed keys and transformed values.
- *
- * When executed it converts the object into value/key pairs which are passed to the transformation
- * functor. The returned, transformed, `[key, value]` pairs are then grouped into two arrays of
- * keys and values which are returned as the unziped object.
+ * Creates a new list out of the supplied object by applying the function to each key/value pairing.
  *
  * @func unzipObjWith
  * @memberOf RA
@@ -30,16 +17,17 @@ import {
  * RA.unzipObjWith((v, k) => [`new${k.toUpperCase()}`, 2 * v], { a: 1, b: 2, c: 3 });
  * //=> [['newA', 'newB', 'newC'], [2, 4, 6]]
  */
-const unzipObjWith = curryN(2, (fn, obj) => {
-  const withFn = compose(
-    apply,
-    flip
-  )(fn);
-  return pipe(
+const unzipObjWith = curryN(2, (fn, obj) =>
+  pipe(
     toPairs,
-    map(withFn),
+    map(
+      pipe(
+        flip,
+        apply
+      )(fn)
+    ),
     transpose
-  )(obj);
-});
+  )(obj)
+);
 
 export default unzipObjWith;
