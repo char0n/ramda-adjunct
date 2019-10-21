@@ -1,7 +1,7 @@
 import { curryN } from 'ramda';
 
-import polyfill from './internal/polyfills/String.replaceAll';
 import isFunction from './isFunction';
+import polyfill from './internal/polyfills/String.replaceAll';
 
 export const replaceAllPolyfill = curryN(3, polyfill);
 
