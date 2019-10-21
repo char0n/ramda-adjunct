@@ -1244,6 +1244,11 @@ declare namespace RamdaAdjunct {
         allUnique<T>(list: T[]): boolean;
 
         /**
+         * Returns true if at least one item of the list is repeated. `R.equals` is used to determine equality.
+         */
+        notAllUnique<T>(list: T[]): boolean;
+
+        /**
          * Removes whitespace from the beginning of a string
          */
         trimStart(value: string): string;
