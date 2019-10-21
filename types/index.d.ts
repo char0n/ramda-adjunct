@@ -821,6 +821,12 @@ declare namespace RamdaAdjunct {
         flattenProp(prop: string | number): (obj: object) => object;
 
         /**
+         * Creates a new object out of a list of keys and a list of values by applying the function
+         * to each equally-positioned pair in the lists.
+         */
+        zipObjWith<T, U, V>(fn: (value: T, key: U) => [string, V], keys: U[], values: T[]): {};
+
+        /**
          * Composable shortcut for `Promise.all`.
          *
          * The `allP` method returns a single Promise that resolves when all of the promises
