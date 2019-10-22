@@ -1253,6 +1253,15 @@ declare namespace RamdaAdjunct {
          */
         trimStart(value: string): string;
         trimLeft(value: string): string;
+
+        /*
+         * The function pads the current string with a given string
+         * (repeated, if needed) so that the resulting string reaches a given length.
+         * The padding is applied from the end of the current string.
+         */
+        padCharsEnd(padString: string, targetLength: number, value: string): string;
+        padCharsEnd(padString: string, targetLength: number): (value: string) => string;
+        padCharsEnd(padString: string): (targetLength: number, value: string) => string;
     }
 }
 
