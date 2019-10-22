@@ -198,5 +198,6 @@ export { default as trimStart } from './trimStart';
 export { default as trimLeft } from './trimStart'; // alias of trimStart
 export { default as trimEnd } from './trimEnd';
 export { default as trimRight } from './trimEnd'; // alias of trimEnd
+export { default as padCharsEnd } from './padCharsEnd';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
