@@ -1268,7 +1268,6 @@ declare namespace RamdaAdjunct {
         padCharsEnd(padString: string, targetLength: number, value: string): string;
         padCharsEnd(padString: string, targetLength: number): (value: string) => string;
         padCharsEnd(padString: string): (targetLength: number, value: string) => string;
-
     }
 }
 
