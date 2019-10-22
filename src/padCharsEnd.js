@@ -23,6 +23,7 @@ export const padCharsEndStrInvoker = flip(invoker(2, 'padEnd'));
  * @param {string} value String value to be padded
  * @return {string} A new string of the specified length with the pad string
  * applied at the end of the current string
+ * @see {@link RA.padEnd|padEnd}, {@link RA.padCharsStart|padCharsStart}, {@link RA.padStart|padStart}
  * @example
  *
  * RA.padCharsEnd('-', 3, 'a'); // => 'a--'
