@@ -15,7 +15,7 @@ export const trimEndInvoker = invoker(0, 'trimEnd');
  * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @category String
  * @sig String -> String
- * @param {string} value String value to have the whitespace removed from the end 
+ * @param {string} value String value to have the whitespace removed from the end
  * @return {string} A new string representing the calling string stripped of whitespace from its end (right end).
  * @see {@link RA.trimEnd|trimEnd}
  * @example
