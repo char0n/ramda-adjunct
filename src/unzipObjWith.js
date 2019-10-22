@@ -1,4 +1,15 @@
-import { curryN, pipe, apply, map, toPairs, flip, transpose } from 'ramda';
+import {
+  apply,
+  curryN,
+  flip,
+  map,
+  pipe,
+  toPairs,
+  transpose,
+  when,
+} from 'ramda';
+
+import lengthEq from './lengthEq';
 
 /**
  * Creates a new list out of the supplied object by applying the function to each key/value pairing.
@@ -7,10 +18,10 @@ import { curryN, pipe, apply, map, toPairs, flip, transpose } from 'ramda';
  * @memberOf RA
  * @category Object
  * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
- * @sig Functor f => (v, k) => [c, d] -> { k: v } -> [[c], [d]]
+ * @sig  (v, k) => [k, v] -> { k: v } -> [[k], [v]]
  * @param {Function} fn The function to transform each value-key pair
  * @param {Object} obj Object to unzip
- * @return {Array} An array with two elements: an array of keys and an array of values
+ * @return {Array} A pair of tw lists: a list of keys and a list of values
  * @see {@link https://ramdajs.com/docs/#mapObjIndexed}
  * @example
  *
@@ -26,7 +37,8 @@ const unzipObjWith = curryN(2, (fn, obj) =>
         apply
       )(fn)
     ),
-    transpose
+    transpose,
+    when(lengthEq(0), () => [[], []])
   )(obj)
 );
 

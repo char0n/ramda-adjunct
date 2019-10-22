@@ -4,7 +4,7 @@ import * as R from 'ramda';
 import * as RA from '../src';
 
 describe('unzipObjWith', function() {
-  it('unzips an object into key/value arrays applying a value/key transform', function() {
+  it('should unzip an object into pair of lists', function() {
     const fn = (value, key) => [key, { ...value, name: key }];
     const obj = {
       packageA: { version: '1.0.9' },
@@ -24,6 +24,18 @@ describe('unzipObjWith', function() {
     ];
 
     assert.deepEqual(actual, expected);
+  });
+
+  context('given empty object', function() {
+    specify('should return a pair of empty arrays', function() {
+      const fn = (value, key) => [key, value];
+      const obj = {};
+
+      const actual = RA.unzipObjWith(fn, obj);
+      const expected = [[], []];
+
+      assert.deepEqual(actual, expected);
+    });
   });
 
   it('should curry', function() {
