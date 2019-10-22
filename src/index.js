@@ -196,5 +196,7 @@ export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
 export { default as trimStart } from './trimStart';
 export { default as trimLeft } from './trimStart'; // alias of trimStart
+export { default as trimEnd } from './trimEnd';
+export { default as trimRight } from './trimEnd'; // alias of trimEnd
 // Types
 export { default as Identity } from './fantasy-land/Identity';

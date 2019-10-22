@@ -1253,6 +1253,12 @@ declare namespace RamdaAdjunct {
          */
         trimStart(value: string): string;
         trimLeft(value: string): string;
+
+        /**
+         * Removes whitespace from the end of a string
+         */
+        trimEnd(value: string): string;
+        trimRight(value: string): string;
     }
 }
 
