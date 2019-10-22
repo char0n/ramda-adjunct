@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotRegExp.js - Documentation</title>
+    <title>trimEnd.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotRegExp.js</h1>
+    <h1 class="page-title">trimEnd.js</h1>
     
 
     
@@ -52,30 +52,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
 
-import isRegExp from './isRegExp';
+import polyfill from './internal/polyfills/String.trimEnd';
+import isFunction from './isFunction';
+
+export const trimEndPolyfill = polyfill;
+
+export const trimEndInvoker = invoker(0, 'trimEnd');
 
 /**
- * Checks if value is complement of `RegExp` object.
+ * Removes whitespace from the end of a string.
  *
- * @func isNotRegExp
+ * @func trimEnd
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isRegExp|isRegExp}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @category String
+ * @sig String -> String
+ * @param {string} value String value to have the whitespace removed from the end
+ * @return {string} A new string representing the calling string stripped of whitespace from its end (right end).
+ * @see {@link RA.trimEnd|trimEnd}
  * @example
  *
- * RA.isNotRegExp(1); //=> true
- * RA.isNotRegExp(/(?:)/); //=> false
- * RA.isNotRegExp(new RegExp()); //=> false
+ * RA.trimEnd('abc   '); //=> 'abc'
  */
-const isNotRegExp = complement(isRegExp);
 
-export default isNotRegExp;
+const trimEnd = isFunction(String.prototype.trimEnd)
+  ? trimEndInvoker
+  : trimEndPolyfill;
+
+export default trimEnd;
 </code></pre>
         </article>
     </section>
