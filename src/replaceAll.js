@@ -1,9 +1,11 @@
-import { curryN } from 'ramda';
+import { curryN, invoker } from 'ramda';
 
 import isFunction from './isFunction';
 import polyfill from './internal/polyfills/String.replaceAll';
 
 export const replaceAllPolyfill = curryN(3, polyfill);
+
+export const replaceAllInvoker = invoker(2, 'replaceAll');
 
 /**
  * Replaces all substring matches in a string with a replacement.
@@ -27,12 +29,8 @@ export const replaceAllPolyfill = curryN(3, polyfill);
  * RA.replaceAll(/x/, 'v', 'xxx'); //=> TypeError
  */
 
-const standardReplaceAll = curryN(3, (searchValue, replaceValue, str) => {
-  return str.replaceAll(searchValue, replaceValue);
-});
-
 const replaceAll = isFunction(String.prototype.replaceAll)
-  ? standardReplaceAll
+  ? replaceAllInvoker
   : replaceAllPolyfill;
 
 export default replaceAll;

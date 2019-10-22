@@ -45,7 +45,7 @@ describe('replaceAll', function() {
 
   context('given searchValue is a non-global RegExp', function() {
     specify('should throw Error', function() {
-      assert.throws(() => RA.replaceAll(/a/, 'c', 'abc'));
+      assert.throws(() => RA.replaceAll(/a/, 'c', 'abc'), TypeError);
     });
   });
 });
@@ -53,7 +53,7 @@ describe('replaceAll', function() {
 describe('replaceAllPolyfill', function() {
   context('given searchValue is a non-global RegExp', function() {
     specify('should throw Error', function() {
-      assert.throws(() => replaceAllPolyfill(/a/, 'c', 'abc'));
+      assert.throws(() => replaceAllPolyfill(/a/, 'c', 'abc'), TypeError);
     });
   });
 
@@ -103,5 +103,12 @@ describe('replaceAllPolyfill', function() {
     const actual = replaceAllPolyfill('cd', 'ef', bigString);
 
     assert.strictEqual(actual, expected);
+  });
+
+  it('should curry', function() {
+    assert.strictEqual(replaceAllPolyfill('a', 'c', 'aba'), 'cbc');
+    assert.strictEqual(replaceAllPolyfill('a')('c', 'aba'), 'cbc');
+    assert.strictEqual(replaceAllPolyfill('a', 'c')('aba'), 'cbc');
+    assert.strictEqual(replaceAllPolyfill('a')('c')('aba'), 'cbc');
   });
 });
