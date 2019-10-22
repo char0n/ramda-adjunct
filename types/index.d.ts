@@ -1268,6 +1268,14 @@ declare namespace RamdaAdjunct {
         padCharsEnd(padString: string, targetLength: number, value: string): string;
         padCharsEnd(padString: string, targetLength: number): (value: string) => string;
         padCharsEnd(padString: string): (targetLength: number, value: string) => string;
+
+        /**
+         * The function pads the current string with an empty string
+         * so that the resulting string reaches a given length.
+         * The padding is applied from the end of the current string.
+         */
+        padEnd(targetLength: number, value: string): string;
+        padEnd(targetLength: number): (value: string) => string;
     }
 }
 
