@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotPlainObj.js - Documentation</title>
+    <title>padCharsEnd.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotPlainObj.js</h1>
+    <h1 class="page-title">padCharsEnd.js</h1>
     
 
     
@@ -52,41 +52,43 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry, invoker, flip } from 'ramda';
 
-import isPlainObj from './isPlainObj';
+import polyfill from './internal/polyfills/String.padCharsEnd';
+import isFunction from './isFunction';
 
-/* eslint-disable max-len */
+export const padCharsEndStrPolyfill = curry(polyfill);
+
+export const padCharsEndStrInvoker = flip(invoker(2, 'padEnd'));
+
 /**
- * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`).
+ * The function pads the current string with a given string
+ * (repeated, if needed) so that the resulting string reaches a given length.
+ * The padding is applied from the end of the current string.
  *
- * @func isNotPlainObj
- * @aliases isNotPlainObject
+ * @func padCharsEnd
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isPlainObj|isPlainObj}, {@link RA.isObjLike|isObjLike}, {@link RA.isObj|isObj}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @category String
+ * @sig String -> Number -> String -> String
+ * @param {string} padString The string to pad the current string with
+ * @param {number} targetLength The length of the resulting string once
+ * the current string has been padded
+ * @param {string} value String value to be padded
+ * @return {string} A new string of the specified length with the pad string
+ * applied at the end of the current string
+ * @see {@link RA.padEnd|padEnd}, {@link RA.padCharsStart|padCharsStart}, {@link RA.padStart|padStart}
  * @example
  *
- * class Bar {
- *   constructor() {
- *     this.prop = 'value';
- *   }
- * }
- *
- * RA.isNotPlainObj(new Bar()); //=> true
- * RA.isNotPlainObj({ prop: 'value' }); //=> false
- * RA.isNotPlainObj(['a', 'b', 'c']); //=> true
- * RA.isNotPlainObj(Object.create(null); //=> false
- * RA.isNotPlainObj(new Object()); //=> false
+ * RA.padCharsEnd('-', 3, 'a'); // => 'a--'
+ * RA.padCharsEnd('foo', 10, 'abc'); // => 'abcfoofoof'
+ * RA.padCharsEnd('123456', 6, 'abc'); // => 'abc123'
  */
-/* eslint-enable max-len */
-const isNotPlainObj = complement(isPlainObj);
+const padCharsEnd = isFunction(String.prototype.padEnd)
+  ? padCharsEndStrInvoker
+  : padCharsEndStrPolyfill;
 
-export default isNotPlainObj;
+export default padCharsEnd;
 </code></pre>
         </article>
     </section>
