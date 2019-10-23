@@ -12,7 +12,7 @@ export const replaceAllInvoker = invoker(2, 'replaceAll');
  *
  * @func replaceAll
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.17.0|v2.17.0}
  * @category String
  * @sig String -> String -> String -> String
  * @param {string} searchValue The substring or a global RegExp to match
