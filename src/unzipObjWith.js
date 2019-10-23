@@ -22,7 +22,7 @@ import lengthEq from './lengthEq';
  * @param {Function} fn The function to transform each value-key pair
  * @param {Object} obj Object to unzip
  * @return {Array} A pair of tw lists: a list of keys and a list of values
- * @see {@link https://ramdajs.com/docs/#mapObjIndexed}
+ * @see {@link https://ramdajs.com/docs/#mapObjIndexed}, {@link RA.zipObjWith|zipObjWith}
  * @example
  *
  * RA.unzipObjWith((v, k) => [`new${k.toUpperCase()}`, 2 * v], { a: 1, b: 2, c: 3 });
