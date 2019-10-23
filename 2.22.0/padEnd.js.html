@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>liftFN.js - Documentation</title>
+    <title>padEnd.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">liftFN.js</h1>
+    <h1 class="page-title">padEnd.js</h1>
     
 
     
@@ -52,51 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curry, head, slice, reduce, curryN, map } from 'ramda';
-
-import ap from './internal/ap';
+            <pre class="prettyprint source linenums"><code>import padCharsEnd from './padCharsEnd';
 
 /**
- * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy
- * the fantasy land Apply spec of algebraic structures.
+ * The function pads the current string with an empty string
+ * so that the resulting string reaches a given length.
+ * The padding is applied from the end of the current string.
  *
- * Lifting is specific for {@link https://github.com/scalaz/scalaz|scalaz} and {@link http://www.functionaljava.org/|functional java} implementations.
- * Old version of fantasy land spec were not compatible with this approach,
- * but as of fantasy land 1.0.0 Apply spec also adopted this approach.
- *
- * This function acts as interop for ramda &lt;= 0.23.0 and {@link https://monet.github.io/monet.js/|monet.js}.
- *
- * More info {@link https://github.com/fantasyland/fantasy-land/issues/50|here}.
- *
- * @func liftFN
+ * @func padEnd
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.2.0|v1.2.0}
- * @category Function
- * @sig Apply a => Number -> (a... -> a) -> (a... -> a)
- * @param {Number} arity The arity of the lifter function
- * @param {Function} fn The function to lift into higher context
- * @return {Function} The lifted function
- * @see {@link http://ramdajs.com/docs/#lift|R.lift}, {@link http://ramdajs.com/docs/#ap|R.ap}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @category String
+ * @sig Number -> String -> String
+ * @param {number} targetLength The length of the resulting string once
+ * the current string has been padded
+ * @param {string} value String value to be padded
+ * @return {string} A new string of the specified length with the pad string
+ * applied at the end of the current string
+ * @see {@link RA.padCharsEnd|padCharsEnd}, {@link RA.padCharsStart|padCharsStart}, {@link RA.padStart|padStart}
  * @example
  *
- * const { Maybe } = require('monet');
- *
- * const add3 = (a, b, c) => a + b + c;
- * const madd3 = RA.liftFN(3, add3);
- *
- * madd3(Maybe.Some(10), Maybe.Some(15), Maybe.Some(17)); //=> Maybe.Some(42)
- * madd3(Maybe.Some(10), Maybe.Nothing(), Maybe.Some(17)); //=> Maybe.Nothing()
+ * RA.padEnd(3, 'a'); // => 'a  '
  */
-const liftFN = curry((arity, fn) => {
-  const lifted = curryN(arity, fn);
-  return curryN(arity, (...args) => {
-    const accumulator = map(lifted, head(args));
-    const apps = slice(1, Infinity, args);
-    return reduce(ap, accumulator, apps);
-  });
-});
+const padEnd = padCharsEnd(' ');
 
-export default liftFN;
+export default padEnd;
 </code></pre>
         </article>
     </section>
