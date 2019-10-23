@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNaN.js - Documentation</title>
+    <title>unzipObjWith.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNaN.js</h1>
+    <h1 class="page-title">unzipObjWith.js</h1>
     
 
     
@@ -52,43 +52,51 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import {
+  apply,
+  curryN,
+  flip,
+  map,
+  pipe,
+  toPairs,
+  transpose,
+  when,
+} from 'ramda';
 
-import _isNaN from './isNaN';
+import lengthEq from './lengthEq';
 
 /**
- * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
+ * Creates a new list out of the supplied object by applying the function to each key/value pairing.
  *
- * @func isNotNaN
+ * @func unzipObjWith
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.6.0|v0.6.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isNaN|isNaN}
+ * @category Object
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @sig  (v, k) => [k, v] -> { k: v } -> [[k], [v]]
+ * @param {Function} fn The function to transform each value-key pair
+ * @param {Object} obj Object to unzip
+ * @return {Array} A pair of tw lists: a list of keys and a list of values
+ * @see {@link https://ramdajs.com/docs/#zipObj|zipObj}, {@link RA.zipObjWith|zipObjWith}
  * @example
  *
- * RA.isNotNaN(NaN); // => false
- * RA.isNotNaN(Number.NaN); // => false
- * RA.isNotNaN(0 / 0); // => false
- *
- * RA.isNotNaN('NaN'); // => true
- * RA.isNotNaN(undefined); // => true
- * RA.isNotNaN({}); // => true
- * RA.isNotNaN('blabla'); // => true
- *
- * RA.isNotNaN(true); // => true
- * RA.isNotNaN(null); // => true
- * RA.isNotNaN(37); // => true
- * RA.isNotNaN('37'); // => true
- * RA.isNotNaN('37.37'); // => true
- * RA.isNotNaN(''); // => true
- * RA.isNotNaN(' '); // => true
+ * RA.unzipObjWith((v, k) => [`new${k.toUpperCase()}`, 2 * v], { a: 1, b: 2, c: 3 });
+ * //=> [['newA', 'newB', 'newC'], [2, 4, 6]]
  */
-const isNotNaN = complement(_isNaN);
+const unzipObjWith = curryN(2, (fn, obj) =>
+  pipe(
+    toPairs,
+    map(
+      pipe(
+        flip,
+        apply
+      )(fn)
+    ),
+    transpose,
+    when(lengthEq(0), () => [[], []])
+  )(obj)
+);
 
-export default isNotNaN;
+export default unzipObjWith;
 </code></pre>
         </article>
     </section>
