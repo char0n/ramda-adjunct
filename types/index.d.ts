@@ -833,6 +833,12 @@ declare namespace RamdaAdjunct {
         };
 
         /**
+         * Creates a new list out of the supplied object by applying the function to each key/value pairing.
+         */
+        unzipObjWith<T, U, V>(fn: (v: T, k: string) => [U, V], obj: { [k: string]: T }): [U[], V[]];
+        unzipObjWith<T, U, V>(fn: (v: T, k: string) => [U, V]): (obj: { [k: string]: T }) => [U[], V[]];
+
+        /**
          * Composable shortcut for `Promise.all`.
          *
          * The `allP` method returns a single Promise that resolves when all of the promises
