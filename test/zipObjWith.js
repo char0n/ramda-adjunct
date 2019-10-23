@@ -3,8 +3,8 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('unzipObjWith', function() {
-  it('unzips an object into key/value arrays applying a value/key transform', function() {
+describe('zipObjWith', function() {
+  it('should zip a pair of lists into an object', function() {
     const keys = ['packageA', 'packageB', 'packageC'];
     const values = [
       { name: 'packageA', version: '1.0.9' },
@@ -22,6 +22,28 @@ describe('unzipObjWith', function() {
     };
 
     assert.deepEqual(actual, expected);
+  });
+
+  context('given empty key/value lists', function() {
+    specify('should return an empty object', function() {
+      const fn = (v, k) => [k, v];
+      const keys = [];
+      const values = [];
+      const expected = {};
+
+      assert.deepEqual(RA.zipObjWith(fn, keys, values), expected);
+    });
+  });
+
+  context('given key/value lists of unequal length', function() {
+    specify('should truncate to the length of the shortest list', function() {
+      const fn = (v, k) => [k, v];
+      const long = ['a', 'b', 'c'];
+      const short = ['x', 'y'];
+
+      assert.deepEqual(RA.zipObjWith(fn, long, short), { a: 'x', b: 'y' });
+      assert.deepEqual(RA.zipObjWith(fn, short, long), { x: 'a', y: 'b' });
+    });
   });
 
   it('should curry', function() {

@@ -823,8 +823,14 @@ declare namespace RamdaAdjunct {
         /**
          * Creates a new object out of a list of keys and a list of values by applying the function
          * to each equally-positioned pair in the lists.
+         * Key/value pairing is truncated to the length of the shorter of the two lists.
          */
-        zipObjWith<T, U, V>(fn: (value: T, key: U) => [string, V], keys: U[], values: T[]): {};
+        zipObjWith<T, U, V>(fn: (value: T, key: U) => [string, V], keys: U[], values: T[]): { [k: string]: V };
+        zipObjWith<T, U, V>(fn: (value: T, key: U) => [string, V]): (keys: U[], values: T[]) => { [k: string]: V };
+        zipObjWith<T, U, V>(fn: (value: T, key: U) => [string, V]): {
+            (keys: U[], values: T[]): { [k: string]: V };
+            (keys: U[]): (values: T[]) => { [k: string]: V };
+        };
 
         /**
          * Composable shortcut for `Promise.all`.
