@@ -5,8 +5,16 @@ import * as RA from '../src';
 
 describe('appendFlipped', function() {
   it('should add the element to the end of the list', function() {
-    assert.sameOrderedMembers(RA.appendFlipped(['x', 'y'], 'z'), ['x', 'y', 'z']);
-    assert.sameDeepOrderedMembers(RA.appendFlipped(['x', 'y'], ['a', 'z']), ['x', 'y', ['a', 'z']]);
+    assert.sameOrderedMembers(RA.appendFlipped(['x', 'y'], 'z'), [
+      'x',
+      'y',
+      'z',
+    ]);
+    assert.sameDeepOrderedMembers(RA.appendFlipped(['x', 'y'], ['a', 'z']), [
+      'x',
+      'y',
+      ['a', 'z'],
+    ]);
   });
 
   it('should work on empty list', function() {
