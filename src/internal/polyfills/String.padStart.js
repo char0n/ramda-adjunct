@@ -18,7 +18,7 @@ const stringPadStartPolyfill = (padString, targetLength, value) => {
   finalLength -= value.length;
 
   if (finalLength > finalPadString.length) {
-    const lenghtToPad = finalLength / finalLength.length;
+    const lenghtToPad = finalLength / finalPadString.length;
 
     // append to original to ensure we are longer than needed
     finalPadString += isFunction(String.prototype.repeat)
