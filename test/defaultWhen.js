@@ -1,20 +1,21 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('defaultWhen', function() {
   it('should return default value', function() {
-    eq(RA.defaultWhen(RA.isNull, 1, null), 1);
-    eq(RA.defaultWhen(RA.isString, 2, ''), 2);
+    assert.strictEqual(RA.defaultWhen(RA.isNull, 1, null), 1);
+    assert.strictEqual(RA.defaultWhen(RA.isString, 2, ''), 2);
   });
 
   it('should return value', function() {
-    eq(RA.defaultWhen(RA.isNull, 1, undefined), undefined);
-    eq(RA.defaultWhen(RA.isString, 2, 3), 3);
+    assert.isUndefined(RA.defaultWhen(RA.isNull, 1, undefined));
+    assert.strictEqual(RA.defaultWhen(RA.isString, 2, 3), 3);
   });
 
   it('should curry', function() {
-    eq(RA.defaultWhen(RA.isNull)(1)(null), 1);
-    eq(RA.defaultWhen(RA.isNull, 1)(null), 1);
-    eq(RA.defaultWhen(RA.isNull, 1, null), 1);
+    assert.strictEqual(RA.defaultWhen(RA.isNull)(1)(null), 1);
+    assert.strictEqual(RA.defaultWhen(RA.isNull, 1)(null), 1);
+    assert.strictEqual(RA.defaultWhen(RA.isNull, 1, null), 1);
   });
 });

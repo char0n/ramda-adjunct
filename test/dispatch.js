@@ -3,7 +3,6 @@ import { assert } from 'chai';
 import sinon from 'sinon';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('dispatch', function() {
   it('should return first non-nil value', function() {
@@ -29,7 +28,7 @@ describe('dispatch', function() {
   it('should return curried function with max arity', function() {
     const fn = RA.dispatch([R.divide, R.identity]);
 
-    eq(fn.length, 2);
+    assert.strictEqual(fn.length, 2);
   });
 
   it('should act as switch', function() {
@@ -72,7 +71,7 @@ describe('dispatch', function() {
 
   context('given empty array provided as input', function() {
     specify('should return undefined', function() {
-      eq(RA.dispatch([]), undefined);
+      assert.isUndefined(RA.dispatch([]));
     });
   });
 
@@ -80,7 +79,7 @@ describe('dispatch', function() {
     specify('should return undefined', function() {
       const configuredDispatch = RA.dispatch([RA.stubUndefined, RA.stubNull]);
 
-      eq(configuredDispatch(), undefined);
+      assert.isUndefined(configuredDispatch());
     });
   });
 
@@ -90,7 +89,7 @@ describe('dispatch', function() {
       specify('should return undefined', function() {
         const configuredDispatch = RA.dispatch([() => {}, () => {}]);
 
-        eq(configuredDispatch(), undefined);
+        assert.isUndefined(configuredDispatch());
       });
     }
   );
@@ -98,6 +97,6 @@ describe('dispatch', function() {
   it('should support placeholder to specify "gaps"', function() {
     const dispatch = RA.dispatch(R.__);
 
-    eq(dispatch([RA.stubNull, R.always(1)])(), 1);
+    assert.strictEqual(dispatch([RA.stubNull, R.always(1)])(), 1);
   });
 });
