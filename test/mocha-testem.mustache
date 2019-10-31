@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test'em</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mocha/6.2.0/mocha.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mocha/6.2.0/mocha.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.js"></script>
+    <script src="/testem.js"></script>
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <script src="../tmp-test-bundle.js"></script>
+</head>
+<body>
+<div id="mocha"></div>
+<script>
+    mocha.run();
+</script>
+</body>
+</html>
