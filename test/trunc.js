@@ -84,7 +84,7 @@ describe('trunc', function() {
   });
 
   context('truncPolyfill', function() {
-    beforeEach(function() {
+    before(function() {
       if (RA.isNotFunction(Math.trunc)) {
         this.skip();
       }

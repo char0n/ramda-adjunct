@@ -1,24 +1,24 @@
 import * as R from 'ramda';
+import { assert } from 'chai';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('contained', function() {
   context('given element is in the list', function() {
     specify('should return true', function() {
-      eq(RA.contained([1, 2, 3, 9, 8, 7, 100, 200, 300], 7), true);
+      assert.isTrue(RA.contained([1, 2, 3, 9, 8, 7, 100, 200, 300], 7));
     });
   });
 
   context('given element is not in the list', function() {
     specify('should return false', function() {
-      eq(RA.contained([1, 2, 3, 9, 8, 7, 100, 200, 300], 99), false);
+      assert.isFalse(RA.contained([1, 2, 3, 9, 8, 7, 100, 200, 300], 99));
     });
   });
 
   context('given empty list', function() {
     specify('should return false', function() {
-      eq(RA.contained([], 1), false);
+      assert.isFalse(RA.contained([], 1));
     });
   });
 
@@ -30,20 +30,20 @@ describe('contained', function() {
       return x instanceof Just && R.equals(x.value, this.value);
     };
 
-    eq(RA.contained([-0], 0), false);
-    eq(RA.contained([0], -0), false);
-    eq(RA.contained([NaN], NaN), true);
-    eq(RA.contained([new Just([42])], new Just([42])), true);
+    assert.isFalse(RA.contained([-0], 0));
+    assert.isFalse(RA.contained([0], -0));
+    assert.isTrue(RA.contained([NaN], NaN));
+    assert.isTrue(RA.contained([new Just([42])], new Just([42])));
   });
 
   context('given substring is part of string', function() {
     it('should return true', function() {
-      eq(RA.contained('banana', 'ba'), true);
+      assert.isTrue(RA.contained('banana', 'ba'));
     });
   });
 
   it('should be curried', function() {
-    eq(RA.contained('abcd', 'b'), true);
-    eq(RA.contained('abcd')('b'), true);
+    assert.isTrue(RA.contained('abcd', 'b'));
+    assert.isTrue(RA.contained('abcd')('b'));
   });
 });

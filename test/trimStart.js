@@ -38,7 +38,7 @@ describe('trimStart', function() {
   });
 
   context('trimStartInvoker', function() {
-    beforeEach(function() {
+    before(function() {
       if (RA.isNotFunction(String.prototype.trimStart)) {
         this.skip();
       }

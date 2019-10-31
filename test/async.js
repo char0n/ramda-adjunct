@@ -1,7 +1,6 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import eq from './shared/eq';
 import * as RA from '../src';
 
 describe('async', function() {
@@ -15,7 +14,7 @@ describe('async', function() {
       });
       const expected = await asyncFn(1, 2);
 
-      eq(expected, 3);
+      assert.strictEqual(expected, 3);
     });
 
     context('and the generator throw Error as the last statement', function() {
@@ -32,7 +31,7 @@ describe('async', function() {
           throw new Error('fulfilling should fail');
         } catch (error) {
           assert.instanceOf(error, Error);
-          eq(error.message, 'generator error');
+          assert.strictEqual(error.message, 'generator error');
         }
       });
     });
@@ -49,7 +48,7 @@ describe('async', function() {
           throw new Error('fulfilling should fail');
         } catch (error) {
           assert.instanceOf(error, Error);
-          eq(error.message, 'generator error');
+          assert.strictEqual(error.message, 'generator error');
         }
       });
     });
@@ -66,7 +65,7 @@ describe('async', function() {
           throw new Error('fulfilling should fail');
         } catch (error) {
           assert.instanceOf(error, Error);
-          eq(error.message, 'generator error');
+          assert.strictEqual(error.message, 'generator error');
         }
       });
     });
@@ -92,7 +91,7 @@ describe('async', function() {
             return c + 3;
           });
 
-          eq(await bar(1, 2), 9);
+          assert.strictEqual(await bar(1, 2), 9);
         });
       }
     );
@@ -116,7 +115,7 @@ describe('async', function() {
           return c + 3;
         });
 
-        eq(await bar(1, 2), 9);
+        assert.strictEqual(await bar(1, 2), 9);
       });
     });
   });
@@ -136,7 +135,7 @@ describe('async', function() {
       return c + 3;
     });
 
-    eq(await bar(1, 2), 6);
+    assert.strictEqual(await bar(1, 2), 6);
   });
 
   it('should support async delegation', async function() {
@@ -154,7 +153,7 @@ describe('async', function() {
       return c + 3;
     });
 
-    eq(await bar(1, 2), 6);
+    assert.strictEqual(await bar(1, 2), 6);
   });
 
   it('should support recursion delegation', async function() {
@@ -168,7 +167,7 @@ describe('async', function() {
       return yield newVal;
     });
 
-    eq(await async(10), 1);
+    assert.strictEqual(await async(10), 1);
   });
 
   it('should curry', async function() {
@@ -179,7 +178,7 @@ describe('async', function() {
     });
     const expected = await asyncFn();
 
-    eq(expected, 2);
+    assert.strictEqual(expected, 2);
   });
 
   context('given wrapping of generator with arity of 2', function() {
@@ -193,12 +192,12 @@ describe('async', function() {
     });
 
     specify('should translate generator arity to wrapper', function() {
-      eq(asyncFn.length, 2);
+      assert.strictEqual(asyncFn.length, 2);
     });
 
     specify('should curry wrapper to appropriate arity', async function() {
-      eq(await asyncFn(1, 2), 3);
-      eq(await asyncFn(1)(2), 3);
+      assert.strictEqual(await asyncFn(1, 2), 3);
+      assert.strictEqual(await asyncFn(1)(2), 3);
     });
   });
 
@@ -216,13 +215,13 @@ describe('async', function() {
       specify('should not support placeholder', async function() {
         const expected = await asyncFn(R.__);
 
-        eq(expected, 1);
+        assert.strictEqual(expected, 1);
       });
 
       specify('should support call without arguments', async function() {
         const expected = await asyncFn();
 
-        eq(expected, 1);
+        assert.strictEqual(expected, 1);
       });
     });
   });
