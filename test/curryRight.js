@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import jsv from 'jsverify';
+import { assert } from 'chai';
 
-import eq from './shared/eq';
 import * as RA from '../src';
 
 describe('curryRight', function() {
@@ -10,7 +10,7 @@ describe('curryRight', function() {
       return (a + b * c) / d;
     }); // f(2, 6, 3, 10) == 2
     const g = f(10);
-    eq(g(3, 6, 2), 2);
+    assert.strictEqual(g(3, 6, 2), 2);
   });
 
   it('should curry multiple values', function() {
@@ -19,9 +19,9 @@ describe('curryRight', function() {
       return (a + b * c) / d;
     });
     const g = f(10, 3);
-    eq(g(6, 2), 2);
+    assert.strictEqual(g(6, 2), 2);
     const h = f(10, 3, 6);
-    eq(h(2), 2);
+    assert.strictEqual(h(2), 2);
   });
 
   it('should allow further currying of a curried function', function() {
@@ -30,22 +30,22 @@ describe('curryRight', function() {
       return (a + b * c) / d;
     });
     const g = f(10);
-    eq(g(3, 6, 2), 2);
+    assert.strictEqual(g(3, 6, 2), 2);
     const h = g(3);
-    eq(h(6, 2), 2);
-    eq(g(3, 6)(2), 2);
+    assert.strictEqual(h(6, 2), 2);
+    assert.strictEqual(g(3, 6)(2), 2);
   });
 
   it('should properly report the length of the curried function', function() {
     const f = RA.curryRight(function(a, b, c, d) {
       return (a + b * c) / d;
     });
-    eq(f.length, 4);
+    assert.strictEqual(f.length, 4);
     const g = f(10);
-    eq(g.length, 3);
+    assert.strictEqual(g.length, 3);
     const h = g(3);
-    eq(h.length, 2);
-    eq(g(3, 6).length, 1);
+    assert.strictEqual(h.length, 2);
+    assert.strictEqual(g(3, 6).length, 1);
   });
 
   it('should preserve context', function() {
@@ -55,8 +55,8 @@ describe('curryRight', function() {
     };
     const g = RA.curryRight(f);
 
-    eq(g.call(ctx, 2, 4), 24);
-    eq(g.call(ctx, 2).call(ctx, 4), 24);
+    assert.strictEqual(g.call(ctx, 2, 4), 24);
+    assert.strictEqual(g.call(ctx, 2).call(ctx, 4), 24);
   });
 
   it('should support R.__ placeholder', function() {
@@ -66,29 +66,29 @@ describe('curryRight', function() {
     const g = RA.curryRight(f);
     const _ = R.__;
 
-    eq(g(1)(2)(3), [3, 2, 1]);
-    eq(g(1)(2, 3), [3, 2, 1]);
-    eq(g(1, 2)(3), [3, 2, 1]);
-    eq(g(1, 2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1)(2)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1)(2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2, 3), [3, 2, 1]);
 
-    eq(g(_, 2, 3)(1), [3, 2, 1]);
-    eq(g(1, _, 3)(2), [3, 2, 1]);
-    eq(g(1, 2, _)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, 2, 3)(1), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, _, 3)(2), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2, _)(3), [3, 2, 1]);
 
-    eq(g(1, _, _)(2)(3), [3, 2, 1]);
-    eq(g(_, 2, _)(1)(3), [3, 2, 1]);
-    eq(g(_, _, 3)(1)(2), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, _, _)(2)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, 2, _)(1)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, 3)(1)(2), [3, 2, 1]);
 
-    eq(g(1, _, _)(2, 3), [3, 2, 1]);
-    eq(g(_, 2, _)(1, 3), [3, 2, 1]);
-    eq(g(_, _, 3)(1, 2), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, _, _)(2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, 2, _)(1, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, 3)(1, 2), [3, 2, 1]);
 
-    eq(g(1, _, _)(_, 3)(2), [3, 2, 1]);
-    eq(g(_, 2, _)(_, 3)(1), [3, 2, 1]);
-    eq(g(_, _, 3)(_, 2)(1), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, _, _)(_, 3)(2), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, 2, _)(_, 3)(1), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, 3)(_, 2)(1), [3, 2, 1]);
 
-    eq(g(_, _, _)(_, _)(_)(1, 2, 3), [3, 2, 1]);
-    eq(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, _)(_, _)(_)(1, 2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
   it('should support @@functional/placeholder', function() {
@@ -98,29 +98,29 @@ describe('curryRight', function() {
     const g = RA.curryRight(f);
     const _ = { '@@functional/placeholder': true, x: Math.random() };
 
-    eq(g(1)(2)(3), [3, 2, 1]);
-    eq(g(1)(2, 3), [3, 2, 1]);
-    eq(g(1, 2)(3), [3, 2, 1]);
-    eq(g(1, 2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1)(2)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1)(2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2, 3), [3, 2, 1]);
 
-    eq(g(_, 2, 3)(1), [3, 2, 1]);
-    eq(g(1, _, 3)(2), [3, 2, 1]);
-    eq(g(1, 2, _)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, 2, 3)(1), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, _, 3)(2), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2, _)(3), [3, 2, 1]);
 
-    eq(g(1, _, _)(2)(3), [3, 2, 1]);
-    eq(g(_, 2, _)(1)(3), [3, 2, 1]);
-    eq(g(_, _, 3)(1)(2), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, _, _)(2)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, 2, _)(1)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, 3)(1)(2), [3, 2, 1]);
 
-    eq(g(1, _, _)(2, 3), [3, 2, 1]);
-    eq(g(_, 2, _)(1, 3), [3, 2, 1]);
-    eq(g(_, _, 3)(1, 2), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, _, _)(2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, 2, _)(1, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, 3)(1, 2), [3, 2, 1]);
 
-    eq(g(1, _, _)(_, 3)(2), [3, 2, 1]);
-    eq(g(_, 2, _)(_, 3)(1), [3, 2, 1]);
-    eq(g(_, _, 3)(_, 2)(1), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, _, _)(_, 3)(2), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, 2, _)(_, 3)(1), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, 3)(_, 2)(1), [3, 2, 1]);
 
-    eq(g(_, _, _)(_, _)(_)(1, 2, 3), [3, 2, 1]);
-    eq(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, _)(_, _)(_)(1, 2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
   it('should forward extra arguments', function() {
@@ -130,11 +130,11 @@ describe('curryRight', function() {
     };
     const g = RA.curryRight(f);
 
-    eq(g(1, 2, 3), [3, 2, 1]);
-    eq(g(1, 2, 3, 4), [4, 3, 2, 1]);
-    eq(g(1, 2)(3, 4), [4, 3, 2, 1]);
-    eq(g(1)(2, 3, 4), [4, 3, 2, 1]);
-    eq(g(1)(2)(3, 4), [4, 3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2, 3), [3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2, 3, 4), [4, 3, 2, 1]);
+    assert.sameOrderedMembers(g(1, 2)(3, 4), [4, 3, 2, 1]);
+    assert.sameOrderedMembers(g(1)(2, 3, 4), [4, 3, 2, 1]);
+    assert.sameOrderedMembers(g(1)(2)(3, 4), [4, 3, 2, 1]);
   });
 });
 
