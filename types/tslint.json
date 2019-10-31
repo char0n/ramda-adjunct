@@ -16,6 +16,7 @@
       "no-import-default-of-export-equals": [false],
       "no-relative-import-in-test": [false],
       "no-unnecessary-generics": [false],
+      "strict-export-declare-modifiers": [false],
       "interface-name": [true, "never-prefix"],
       "ban-types": [true, ["Object", "Use {} instead."], ["String"], ["Number"]],
       "member-ordering": false,
