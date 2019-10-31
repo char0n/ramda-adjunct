@@ -70,7 +70,7 @@ describe('padCharsEnd', function() {
   });
 
   context('padCharsEndStrInvoker', function() {
-    beforeEach(function() {
+    before(function() {
       if (RA.isNotFunction(String.prototype.padEnd)) {
         this.skip();
       }

@@ -50,7 +50,7 @@ describe('replaceAll', function() {
   });
 
   context('replaceAllInvoker', function() {
-    beforeEach(function() {
+    before(function() {
       if (RA.isNotFunction(String.prototype.replaceAll)) {
         this.skip();
       }
