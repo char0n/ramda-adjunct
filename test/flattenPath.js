@@ -1,5 +1,6 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('flattenPath', function() {
   let path;
@@ -21,7 +22,7 @@ describe('flattenPath', function() {
           a: 1,
           b1: { b2: 999 },
         };
-        eq(RA.flattenPath(path, obj), obj);
+        assert.deepEqual(RA.flattenPath(path, obj), obj);
       }
     );
   });
@@ -30,13 +31,13 @@ describe('flattenPath', function() {
     specify(
       'should return object with identical structure as provided object',
       function() {
-        eq(RA.flattenPath(['does', 'not', 'exist'], obj), obj);
+        assert.deepEqual(RA.flattenPath(['does', 'not', 'exist'], obj), obj);
       }
     );
   });
 
   it('should curry', function() {
-    eq(RA.flattenPath([], {}), {});
-    eq(RA.flattenPath([])({}), {});
+    assert.deepEqual(RA.flattenPath([], {}), {});
+    assert.deepEqual(RA.flattenPath([])({}), {});
   });
 });

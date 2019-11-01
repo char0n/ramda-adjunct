@@ -1,7 +1,7 @@
 import * as R from 'ramda';
+import { assert } from 'chai';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('dropArgs', function() {
   let fn;
@@ -16,12 +16,12 @@ describe('dropArgs', function() {
     const actual = zeroArityFn('ignore1', 'ignore2');
     const expected = 3;
 
-    eq(actual, expected);
+    assert.strictEqual(actual, expected);
   });
 
   it('should support placeholder to specify "gaps"', function() {
     const dropArgs = RA.dropArgs(R.__);
 
-    eq(dropArgs(fn)('ignore1', 'ignore2'), 3);
+    assert.strictEqual(dropArgs(fn)('ignore1', 'ignore2'), 3);
   });
 });
