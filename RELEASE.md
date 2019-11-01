@@ -61,6 +61,15 @@ registry is Github Package Registry.
 }
 ```
 
+Github Package Registry only supports scoped packages. We need to change the name of the library from:
+```json
+"name": "ramda-adjunct",
+```
+to
+```json
+"name": "@char0n/ramda-adjunct",
+```
+
 Now publish to GitHub Package Registry:
 
 ```sh
