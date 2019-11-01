@@ -39,7 +39,7 @@ describe('padEnd', function() {
     });
   });
 
-  specify('should be curried', function() {
+  specify('should curry', function() {
     eq(RA.padEnd(5, 'abc'), 'abc  ');
     eq(RA.padEnd(5)('abc'), 'abc  ');
   });

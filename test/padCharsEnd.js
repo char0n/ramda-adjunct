@@ -1,8 +1,5 @@
 import * as RA from '../src';
-import {
-  padCharsEndStrInvoker,
-  padCharsEndStrPolyfill,
-} from '../src/padCharsEnd';
+import { padEndInvoker, padEndPolyfill } from '../src/padCharsEnd';
 import eq from './shared/eq';
 
 describe('padCharsEnd', function() {
@@ -69,7 +66,7 @@ describe('padCharsEnd', function() {
     eq(RA.padCharsEnd('*')(5)('abc'), 'abc**');
   });
 
-  context('padCharsEndStrInvoker', function() {
+  context('padEndInvoker', function() {
     before(function() {
       if (RA.isNotFunction(String.prototype.padEnd)) {
         this.skip();
@@ -77,18 +74,18 @@ describe('padCharsEnd', function() {
     });
 
     specify('should pad string with given padString', function() {
-      eq(padCharsEndStrInvoker('-', 3, 'a'), 'a--');
+      eq(padEndInvoker('-', 3, 'a'), 'a--');
     });
 
     context('given targetLength as 0', function() {
       specify('should return original string', function() {
-        eq(padCharsEndStrInvoker('$', 0, 'abc'), 'abc');
+        eq(padEndInvoker('$', 0, 'abc'), 'abc');
       });
     });
 
     context('given targetLength less than string length', function() {
       specify('should return original string', function() {
-        eq(padCharsEndStrInvoker('$', 1, 'abc'), 'abc');
+        eq(padEndInvoker('$', 1, 'abc'), 'abc');
       });
     });
 
@@ -96,15 +93,15 @@ describe('padCharsEnd', function() {
       'given targetLength less than equal to padString length',
       function() {
         specify('should trim padString', function() {
-          eq(padCharsEndStrInvoker('123456', 6, 'abc'), 'abc123');
-          eq(padCharsEndStrInvoker('123456', 5, 'abc'), 'abc12');
+          eq(padEndInvoker('123456', 6, 'abc'), 'abc123');
+          eq(padEndInvoker('123456', 5, 'abc'), 'abc12');
         });
       }
     );
 
     context('given targetLength supplied as float', function() {
       specify('should convert targetLength to integer', function() {
-        eq(padCharsEndStrInvoker('$', 7.5, 'abc'), 'abc$$$$');
+        eq(padEndInvoker('$', 7.5, 'abc'), 'abc$$$$');
       });
     });
 
@@ -112,51 +109,51 @@ describe('padCharsEnd', function() {
       'given targetLength is a value coercible to valid integer number',
       function() {
         specify('should return padded string', function() {
-          eq(padCharsEndStrInvoker('*', '5', 'abc'), 'abc**');
+          eq(padEndInvoker('*', '5', 'abc'), 'abc**');
         });
       }
     );
 
     context('given targeLength is a negative number', function() {
       specify('should return original string', function() {
-        eq(padCharsEndStrInvoker('$', -10, 'abc'), 'abc');
+        eq(padEndInvoker('$', -10, 'abc'), 'abc');
       });
     });
 
     context('given padString set to undefined', function() {
       specify('should return string padded with spaces', function() {
-        eq(padCharsEndStrInvoker(undefined, 5, '200'), '200  ');
+        eq(padEndInvoker(undefined, 5, '200'), '200  ');
       });
     });
 
     context('given null padString', function() {
       specify('should convert null to string type', function() {
-        eq(padCharsEndStrInvoker(null, 5, 'abc'), 'abcnu');
+        eq(padEndInvoker(null, 5, 'abc'), 'abcnu');
       });
     });
 
     specify('should be curried', function() {
-      eq(padCharsEndStrInvoker('*', 5, 'abc'), 'abc**');
-      eq(padCharsEndStrInvoker('*', 5)('abc'), 'abc**');
-      eq(padCharsEndStrInvoker('*')(5, 'abc'), 'abc**');
-      eq(padCharsEndStrInvoker('*')(5)('abc'), 'abc**');
+      eq(padEndInvoker('*', 5, 'abc'), 'abc**');
+      eq(padEndInvoker('*', 5)('abc'), 'abc**');
+      eq(padEndInvoker('*')(5, 'abc'), 'abc**');
+      eq(padEndInvoker('*')(5)('abc'), 'abc**');
     });
   });
 
-  context('padCharsEndStrPolyfill', function() {
+  context('padEndPolyfill', function() {
     specify('should pad string with given padString', function() {
-      eq(padCharsEndStrPolyfill('-', 3, 'a'), 'a--');
+      eq(padEndPolyfill('-', 3, 'a'), 'a--');
     });
 
     context('given targetLength as 0', function() {
       specify('should return original string', function() {
-        eq(padCharsEndStrPolyfill('$', 0, 'abc'), 'abc');
+        eq(padEndPolyfill('$', 0, 'abc'), 'abc');
       });
     });
 
     context('given targetLength less than string length', function() {
       specify('should return original string', function() {
-        eq(padCharsEndStrPolyfill('$', 1, 'abc'), 'abc');
+        eq(padEndPolyfill('$', 1, 'abc'), 'abc');
       });
     });
 
@@ -164,15 +161,15 @@ describe('padCharsEnd', function() {
       'given targetLength less than equal to padString length',
       function() {
         specify('should trim padString', function() {
-          eq(padCharsEndStrPolyfill('123456', 6, 'abc'), 'abc123');
-          eq(padCharsEndStrPolyfill('123456', 5, 'abc'), 'abc12');
+          eq(padEndPolyfill('123456', 6, 'abc'), 'abc123');
+          eq(padEndPolyfill('123456', 5, 'abc'), 'abc12');
         });
       }
     );
 
     context('given targetLength supplied as float', function() {
       specify('should convert targetLength to integer', function() {
-        eq(padCharsEndStrPolyfill('$', 7.5, 'abc'), 'abc$$$$');
+        eq(padEndPolyfill('$', 7.5, 'abc'), 'abc$$$$');
       });
     });
 
@@ -180,34 +177,34 @@ describe('padCharsEnd', function() {
       'given targetLength is a value coercible to valid integer number',
       function() {
         specify('should return padded string', function() {
-          eq(padCharsEndStrPolyfill('*', '5', 'abc'), 'abc**');
+          eq(padEndPolyfill('*', '5', 'abc'), 'abc**');
         });
       }
     );
 
     context('given targeLength is a negative number', function() {
       specify('should return original string', function() {
-        eq(padCharsEndStrPolyfill('$', -10, 'abc'), 'abc');
+        eq(padEndPolyfill('$', -10, 'abc'), 'abc');
       });
     });
 
     context('given padString set to undefined', function() {
       specify('should return string padded with spaces', function() {
-        eq(padCharsEndStrPolyfill(undefined, 5, '200'), '200  ');
+        eq(padEndPolyfill(undefined, 5, '200'), '200  ');
       });
     });
 
     context('given null padString', function() {
       specify('should convert null to string type', function() {
-        eq(padCharsEndStrPolyfill(null, 5, 'abc'), 'abcnu');
+        eq(padEndPolyfill(null, 5, 'abc'), 'abcnu');
       });
     });
 
     specify('should be curried', function() {
-      eq(padCharsEndStrPolyfill('*', 5, 'abc'), 'abc**');
-      eq(padCharsEndStrPolyfill('*', 5)('abc'), 'abc**');
-      eq(padCharsEndStrPolyfill('*')(5, 'abc'), 'abc**');
-      eq(padCharsEndStrPolyfill('*')(5)('abc'), 'abc**');
+      eq(padEndPolyfill('*', 5, 'abc'), 'abc**');
+      eq(padEndPolyfill('*', 5)('abc'), 'abc**');
+      eq(padEndPolyfill('*')(5, 'abc'), 'abc**');
+      eq(padEndPolyfill('*')(5)('abc'), 'abc**');
     });
   });
 });

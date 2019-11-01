@@ -1,11 +1,11 @@
 import { curry, invoker, flip } from 'ramda';
 
-import polyfill from './internal/polyfills/String.padCharsEnd';
+import polyfill from './internal/polyfills/String.padEnd';
 import isFunction from './isFunction';
 
-export const padCharsEndStrPolyfill = curry(polyfill);
+export const padEndPolyfill = curry(polyfill);
 
-export const padCharsEndStrInvoker = flip(invoker(2, 'padEnd'));
+export const padEndInvoker = flip(invoker(2, 'padEnd'));
 
 /**
  * The function pads the current string with a given string
@@ -31,7 +31,7 @@ export const padCharsEndStrInvoker = flip(invoker(2, 'padEnd'));
  * RA.padCharsEnd('123456', 6, 'abc'); // => 'abc123'
  */
 const padCharsEnd = isFunction(String.prototype.padEnd)
-  ? padCharsEndStrInvoker
-  : padCharsEndStrPolyfill;
+  ? padEndInvoker
+  : padEndPolyfill;
 
 export default padCharsEnd;
