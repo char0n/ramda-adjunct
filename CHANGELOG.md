@@ -1,3 +1,35 @@
+<a name="2.22.0"></a>
+# [2.22.0](https://github.com/char0n/ramda-adjunct/compare/v2.21.0...v2.22.0) (2019-11-01)
+
+
+### Features
+
+* **function:** add anyP ([#1080](https://github.com/char0n/ramda-adjunct/issues/1080)) ([f8e87a8](https://github.com/char0n/ramda-adjunct/commit/f8e87a8)), closes [#807](https://github.com/char0n/ramda-adjunct/issues/807)
+* **function:** add firstP alias for anyP ([5926aa0](https://github.com/char0n/ramda-adjunct/commit/5926aa0))
+* **function:** add noneP ([#1095](https://github.com/char0n/ramda-adjunct/issues/1095)) ([9eacf26](https://github.com/char0n/ramda-adjunct/commit/9eacf26)), closes [#814](https://github.com/char0n/ramda-adjunct/issues/814)
+* **list:** add allUnique ([#1117](https://github.com/char0n/ramda-adjunct/issues/1117)) ([63a8f46](https://github.com/char0n/ramda-adjunct/commit/63a8f46)), closes [#515](https://github.com/char0n/ramda-adjunct/issues/515)
+* **list:** add notAllUnique ([#1125](https://github.com/char0n/ramda-adjunct/issues/1125)) ([6d5005f](https://github.com/char0n/ramda-adjunct/commit/6d5005f)), closes [#515](https://github.com/char0n/ramda-adjunct/issues/515)
+* **list:** add toArray [#342](https://github.com/char0n/ramda-adjunct/issues/342) ([#1085](https://github.com/char0n/ramda-adjunct/issues/1085)) ([eb0e66f](https://github.com/char0n/ramda-adjunct/commit/eb0e66f))
+* **math:** add divideNum ([#1081](https://github.com/char0n/ramda-adjunct/issues/1081)) ([7b0c3b2](https://github.com/char0n/ramda-adjunct/commit/7b0c3b2)), closes [#482](https://github.com/char0n/ramda-adjunct/issues/482)
+* **math:** add subtractNum ([#1082](https://github.com/char0n/ramda-adjunct/issues/1082)) ([7080706](https://github.com/char0n/ramda-adjunct/commit/7080706)), closes [#483](https://github.com/char0n/ramda-adjunct/issues/483)
+* **object:** add pathOrLazy ([#1086](https://github.com/char0n/ramda-adjunct/issues/1086)) ([4fbf439](https://github.com/char0n/ramda-adjunct/commit/4fbf439)), closes [#1084](https://github.com/char0n/ramda-adjunct/issues/1084)
+* **object:** add unzipObjWith ([#1130](https://github.com/char0n/ramda-adjunct/issues/1130)) ([64ce9b6](https://github.com/char0n/ramda-adjunct/commit/64ce9b6)), closes [#801](https://github.com/char0n/ramda-adjunct/issues/801)
+* **object:** add zipObjWith ([#1132](https://github.com/char0n/ramda-adjunct/issues/1132)) ([b803a7a](https://github.com/char0n/ramda-adjunct/commit/b803a7a)), closes [#1129](https://github.com/char0n/ramda-adjunct/issues/1129)
+* **replaceAll:** implement TC39 proposal ([#1124](https://github.com/char0n/ramda-adjunct/issues/1124)) ([74d5163](https://github.com/char0n/ramda-adjunct/commit/74d5163)), closes [#878](https://github.com/char0n/ramda-adjunct/issues/878)
+* **string:** add padCharsEnd ([#1131](https://github.com/char0n/ramda-adjunct/issues/1131)) ([c3848be](https://github.com/char0n/ramda-adjunct/commit/c3848be)), closes [#1104](https://github.com/char0n/ramda-adjunct/issues/1104)
+* **string:** add padCharsStart ([#1143](https://github.com/char0n/ramda-adjunct/issues/1143)) ([4a54edd](https://github.com/char0n/ramda-adjunct/commit/4a54edd))
+* **string:** add padEnd ([ac4e319](https://github.com/char0n/ramda-adjunct/commit/ac4e319)), closes [#1105](https://github.com/char0n/ramda-adjunct/issues/1105)
+* **string:** add trimEnd ([#1134](https://github.com/char0n/ramda-adjunct/issues/1134)) ([4b8ec88](https://github.com/char0n/ramda-adjunct/commit/4b8ec88)), closes [#808](https://github.com/char0n/ramda-adjunct/issues/808)
+* **string:** add trimStart ([#1116](https://github.com/char0n/ramda-adjunct/issues/1116)) ([6ba2882](https://github.com/char0n/ramda-adjunct/commit/6ba2882)), closes [#808](https://github.com/char0n/ramda-adjunct/issues/808)
+* **type:** add  isSafeInteger ([#1112](https://github.com/char0n/ramda-adjunct/issues/1112)) ([bcb1f98](https://github.com/char0n/ramda-adjunct/commit/bcb1f98)), closes [#747](https://github.com/char0n/ramda-adjunct/issues/747)
+* **type:** add isMap ([#1120](https://github.com/char0n/ramda-adjunct/issues/1120)) ([fdd932a](https://github.com/char0n/ramda-adjunct/commit/fdd932a)), closes [#1113](https://github.com/char0n/ramda-adjunct/issues/1113)
+* **type:** add isNegativeZero ([#1109](https://github.com/char0n/ramda-adjunct/issues/1109)) ([d209ac5](https://github.com/char0n/ramda-adjunct/commit/d209ac5)), closes [#784](https://github.com/char0n/ramda-adjunct/issues/784)
+* **type:** add isSet ([#1114](https://github.com/char0n/ramda-adjunct/issues/1114)) ([00d6347](https://github.com/char0n/ramda-adjunct/commit/00d6347)), closes [#1110](https://github.com/char0n/ramda-adjunct/issues/1110)
+* **type:** add isSymbol ([#1079](https://github.com/char0n/ramda-adjunct/issues/1079)) ([49268f9](https://github.com/char0n/ramda-adjunct/commit/49268f9)), closes [#806](https://github.com/char0n/ramda-adjunct/issues/806)
+* **type:** isPositiveZero ([#1111](https://github.com/char0n/ramda-adjunct/issues/1111)) ([337c9d3](https://github.com/char0n/ramda-adjunct/commit/337c9d3))
+
+
+
 <a name="2.21.0"></a>
 # [2.21.0](https://github.com/char0n/ramda-adjunct/compare/v2.20.0...v2.21.0) (2019-09-25)
 
