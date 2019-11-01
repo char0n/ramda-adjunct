@@ -163,6 +163,7 @@ export { default as spreadPath } from './spreadPath';
 export { default as flattenProp } from './flattenProp';
 export { default as flattenPath } from './flattenPath';
 export { default as unzipObjWith } from './unzipObjWith';
+export { default as zipObjWith } from './zipObjWith';
 // Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
