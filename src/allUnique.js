@@ -12,7 +12,7 @@ import lengthEq from './lengthEq';
  * @sig [a] -> Boolean
  * @param {Array} list The list of values
  * @return {boolean}
- * @see {@link https://ramdajs.com/docs/#equals|equals}
+ * @see {@link RA.notAllUnique|notAllUnique},  {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
  * RA.allUnique([ 1, 2, 3, 4 ]); //=> true
