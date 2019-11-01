@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotValidNumber.js - Documentation</title>
+    <title>zipObjWith.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotValidNumber.js</h1>
+    <h1 class="page-title">zipObjWith.js</h1>
     
 
     
@@ -52,33 +52,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isValidNumber from './isValidNumber';
+            <pre class="prettyprint source linenums"><code>import { apply, curryN, fromPairs, map, pipe, zip } from 'ramda';
 
 /**
- * Checks if value is not a valid `Number`. A valid `Number` is a number that is not `NaN`,
- * `Infinity` or `-Infinity`.
+ * Creates a new object out of a list of keys and a list of values by applying the function
+ * to each equally-positioned pair in the lists.
+ * Key/value pairing is truncated to the length of the shorter of the two lists.
  *
- * @func isNotValidNumber
+ * @func zipObjWith
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isValidNumber|isValidNumber}
+ * @category Object
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @sig (b, a) -> [k, v] -> [a] -> [b] -> { k: v }
+ * @param {Function} fn The function to transform each value-key pair
+ * @param {Array} keys Array to transform into the properties on the output object
+ * @param {Array} values Array to transform into the values on the output object
+ * @return {Object}  The object made by pairing up and transforming same-indexed elements of `keys` and `values`.
+ * @see {@link https://ramdajs.com/docs/#zipObj|zipObj}, {@link RA.unzipObjWith|unzipObjWith}
  * @example
  *
- * RA.isNotValidNumber(1); //=> false
- * RA.isNotValidNumber(''); //=> true
- * RA.isNotValidNumber(NaN); //=> true
- * RA.isNotValidNumber(Infinity); //=> true
- * RA.isNotValidNumber(-Infinity); //=> true
+ * RA.zipObjWith((value, key) => [key, `${key}${value + 1}`]), ['a', 'b', 'c'], [1, 2, 3]);
+ *  // => { a: 'a2', b: 'b3', c: 'c4' }
  */
-const isNotValidNumber = complement(isValidNumber);
+const zipObjWith = curryN(3, (fn, keys, values) =>
+  pipe(
+    zip,
+    map(apply(fn)),
+    fromPairs
+  )(values, keys)
+);
 
-export default isNotValidNumber;
+export default zipObjWith;
 </code></pre>
         </article>
     </section>
