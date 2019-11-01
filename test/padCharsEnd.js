@@ -59,7 +59,7 @@ describe('padCharsEnd', function() {
     });
   });
 
-  specify('should be curried', function() {
+  specify('should curry', function() {
     eq(RA.padCharsEnd('*', 5, 'abc'), 'abc**');
     eq(RA.padCharsEnd('*', 5)('abc'), 'abc**');
     eq(RA.padCharsEnd('*')(5, 'abc'), 'abc**');
@@ -132,7 +132,7 @@ describe('padCharsEnd', function() {
       });
     });
 
-    specify('should be curried', function() {
+    specify('should curry', function() {
       eq(padEndInvoker('*', 5, 'abc'), 'abc**');
       eq(padEndInvoker('*', 5)('abc'), 'abc**');
       eq(padEndInvoker('*')(5, 'abc'), 'abc**');
@@ -200,7 +200,7 @@ describe('padCharsEnd', function() {
       });
     });
 
-    specify('should be curried', function() {
+    specify('should curry', function() {
       eq(padEndPolyfill('*', 5, 'abc'), 'abc**');
       eq(padEndPolyfill('*', 5)('abc'), 'abc**');
       eq(padEndPolyfill('*')(5, 'abc'), 'abc**');
