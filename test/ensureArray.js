@@ -2,24 +2,24 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('ensureArray', function() {
   context('given argument is not an array', function() {
     specify('should wrap value into singleton array', function() {
       const arrayPrototype = Array.prototype;
 
-      eq(RA.ensureArray(void 0), [void 0]);
-      eq(RA.ensureArray({}), [{}]);
-      eq(RA.ensureArray(null), [null]);
-      eq(RA.ensureArray(undefined), [undefined]);
-      eq(RA.ensureArray(42), [42]);
-      eq(RA.ensureArray('Array'), ['Array']);
-      eq(RA.ensureArray(true), [true]);
-      eq(RA.ensureArray(false), [false]);
-      eq(RA.ensureArray({ __proto__: arrayPrototype }), [
-        { __proto__: arrayPrototype },
-      ]);
+      assert.sameOrderedMembers(RA.ensureArray(void 0), [void 0]);
+      assert.sameDeepOrderedMembers(RA.ensureArray({}), [{}]);
+      assert.sameOrderedMembers(RA.ensureArray(null), [null]);
+      assert.sameOrderedMembers(RA.ensureArray(undefined), [undefined]);
+      assert.sameOrderedMembers(RA.ensureArray(42), [42]);
+      assert.sameOrderedMembers(RA.ensureArray('Array'), ['Array']);
+      assert.sameOrderedMembers(RA.ensureArray(true), [true]);
+      assert.sameOrderedMembers(RA.ensureArray(false), [false]);
+      assert.sameDeepOrderedMembers(
+        RA.ensureArray({ __proto__: arrayPrototype }),
+        [{ __proto__: arrayPrototype }]
+      );
     });
   });
 
@@ -90,6 +90,6 @@ describe('ensureArray', function() {
   it('should support placeholder to specify "gaps"', function() {
     const ensureArray = RA.ensureArray(R.__);
 
-    eq(ensureArray(1), [1]);
+    assert.sameOrderedMembers(ensureArray(1), [1]);
   });
 });

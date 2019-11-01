@@ -1,5 +1,6 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('flattenProp', function() {
   let prop;
@@ -17,7 +18,7 @@ describe('flattenProp', function() {
     specify(
       'should return object with identical structure as provided object',
       function() {
-        eq(RA.flattenProp('not_exist', obj), obj);
+        assert.deepEqual(RA.flattenProp('not_exist', obj), obj);
       }
     );
   });
@@ -30,7 +31,7 @@ describe('flattenProp', function() {
           a: 1,
           b: 999,
         };
-        eq(RA.flattenProp(prop, obj), obj);
+        assert.deepEqual(RA.flattenProp(prop, obj), obj);
       }
     );
   });
@@ -48,7 +49,7 @@ describe('flattenProp', function() {
         b: 999,
       };
 
-      eq(RA.flattenProp(prop, obj), expected);
+      assert.deepEqual(RA.flattenProp(prop, obj), expected);
     });
   });
 
@@ -60,11 +61,11 @@ describe('flattenProp', function() {
       b: { c: 3, d: 4 },
     };
 
-    eq(RA.flattenProp(prop, obj), expected);
+    assert.deepEqual(RA.flattenProp(prop, obj), expected);
   });
 
   it('should curry', function() {
-    eq(RA.flattenProp('prop', {}), {});
-    eq(RA.flattenProp('prop')({}), {});
+    assert.deepEqual(RA.flattenProp('prop', {}), {});
+    assert.deepEqual(RA.flattenProp('prop')({}), {});
   });
 });
