@@ -1,31 +1,32 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('hasPath', function() {
   it('should work on paths in objects', function() {
-    eq(RA.hasPath(['a', 'b'], { a: { b: 1 } }), true);
-    eq(RA.hasPath(['a', 'b', 'c'], { a: { b: 1 } }), false);
-    eq(RA.hasPath(['a', 'b'], { a: {} }), false);
+    assert.isTrue(RA.hasPath(['a', 'b'], { a: { b: 1 } }));
+    assert.isFalse(RA.hasPath(['a', 'b', 'c'], { a: { b: 1 } }));
+    assert.isFalse(RA.hasPath(['a', 'b'], { a: {} }));
   });
 
   it('should work on arrays', function() {
-    eq(RA.hasPath([0], [1, 2]), true);
-    eq(RA.hasPath([2], [1, 2]), false);
+    assert.isTrue(RA.hasPath([0], [1, 2]));
+    assert.isFalse(RA.hasPath([2], [1, 2]));
 
-    eq(RA.hasPath(['0'], [1, 2]), true);
-    eq(RA.hasPath(['2'], [1, 2]), false);
+    assert.isTrue(RA.hasPath(['0'], [1, 2]));
+    assert.isFalse(RA.hasPath(['2'], [1, 2]));
   });
 
   it('should return false for empty paths', function() {
-    eq(RA.hasPath([], { a: {} }), false);
+    assert.isFalse(RA.hasPath([], { a: {} }));
   });
 
   it('should return false on non-objects', function() {
-    eq(RA.hasPath(['a', 'b'], undefined), false);
-    eq(RA.hasPath(['a', 'b'], null), false);
+    assert.isFalse(RA.hasPath(['a', 'b'], undefined));
+    assert.isFalse(RA.hasPath(['a', 'b'], null));
   });
 
   it('should curry', function() {
-    eq(RA.hasPath(['a', 'b'])({ a: { b: 1 } }), true);
+    assert.isTrue(RA.hasPath(['a', 'b'])({ a: { b: 1 } }));
   });
 });

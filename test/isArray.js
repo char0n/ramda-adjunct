@@ -1,29 +1,29 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isArray', function() {
   it('should test a value for `Array`', function() {
-    eq(RA.isArray([]), true);
-    eq(RA.isArray([1]), true);
-    eq(RA.isArray(new Array()), true);
-    eq(RA.isArray(Array.prototype), true);
+    assert.isTrue(RA.isArray([]));
+    assert.isTrue(RA.isArray([1]));
+    assert.isTrue(RA.isArray(new Array()));
+    assert.isTrue(RA.isArray(Array.prototype));
 
-    eq(RA.isArray(void 0), false);
-    eq(RA.isArray({}), false);
-    eq(RA.isArray(null), false);
-    eq(RA.isArray(undefined), false);
-    eq(RA.isArray(17), false);
-    eq(RA.isArray('Array'), false);
-    eq(RA.isArray(true), false);
-    eq(RA.isArray(false), false);
-    eq(RA.isArray({ __proto__: Array.prototype }), false);
+    assert.isFalse(RA.isArray(void 0));
+    assert.isFalse(RA.isArray({}));
+    assert.isFalse(RA.isArray(null));
+    assert.isFalse(RA.isArray(undefined));
+    assert.isFalse(RA.isArray(17));
+    assert.isFalse(RA.isArray('Array'));
+    assert.isFalse(RA.isArray(true));
+    assert.isFalse(RA.isArray(false));
+    assert.isFalse(RA.isArray({ __proto__: Array.prototype }));
   });
 
   it('should support placeholder to specify "gaps"', function() {
     const isArray = RA.isArray(R.__);
 
-    eq(isArray([]), true);
+    assert.isTrue(isArray([]));
   });
 });
