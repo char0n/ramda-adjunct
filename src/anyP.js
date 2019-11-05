@@ -17,8 +17,7 @@ export { AggregatedError };
  * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
  * @sig [Promise a] -> Promise a
  * @param {Iterable.<*>} iterable An iterable object such as an Array or String
- * @return {Promise} Returns a promise that is fulfilled by the first given promise to be fulfilled,
- * or rejected with an array of rejection reasons if all of the given promises are rejected.
+ * @return {Promise} A promise that is fulfilled by the first given promise to be fulfilled, or rejected with an array of rejection reasons if all of the given promises are rejected
  * @example
  *
  * RA.anyP([
