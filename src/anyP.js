@@ -18,6 +18,7 @@ export { AggregatedError };
  * @sig [Promise a] -> Promise a
  * @param {Iterable.<*>} iterable An iterable object such as an Array or String
  * @return {Promise} A promise that is fulfilled by the first given promise to be fulfilled, or rejected with an array of rejection reasons if all of the given promises are rejected
+ * @see {@link RA.lastP|lastP}
  * @example
  *
  * RA.anyP([
