@@ -1,30 +1,30 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isEmptyString', function() {
   it('should test value for an empty `String`', function() {
-    eq(RA.isEmptyString(''), true);
+    assert.isTrue(RA.isEmptyString(''));
 
-    eq(RA.isEmptyString('42'), false);
-    eq(RA.isEmptyString(new String('')), false);
-    eq(RA.isEmptyString(String.prototype), false);
-    eq(RA.isEmptyString([]), false);
-    eq(RA.isEmptyString([42]), false);
-    eq(RA.isEmptyString(void 0), false);
-    eq(RA.isEmptyString({}), false);
-    eq(RA.isEmptyString(null), false);
-    eq(RA.isEmptyString(undefined), false);
-    eq(RA.isEmptyString(17), false);
-    eq(RA.isEmptyString('String'), false);
-    eq(RA.isEmptyString(true), false);
-    eq(RA.isEmptyString(false), false);
+    assert.isFalse(RA.isEmptyString('42'));
+    assert.isFalse(RA.isEmptyString(new String('')));
+    assert.isFalse(RA.isEmptyString(String.prototype));
+    assert.isFalse(RA.isEmptyString([]));
+    assert.isFalse(RA.isEmptyString([42]));
+    assert.isFalse(RA.isEmptyString(void 0));
+    assert.isFalse(RA.isEmptyString({}));
+    assert.isFalse(RA.isEmptyString(null));
+    assert.isFalse(RA.isEmptyString(undefined));
+    assert.isFalse(RA.isEmptyString(17));
+    assert.isFalse(RA.isEmptyString('String'));
+    assert.isFalse(RA.isEmptyString(true));
+    assert.isFalse(RA.isEmptyString(false));
   });
 
   it('should support placeholder to specify "gaps"', function() {
     const isEmptyString = RA.isEmptyString(R.__);
 
-    eq(isEmptyString(''), true);
+    assert.isTrue(isEmptyString(''));
   });
 });
