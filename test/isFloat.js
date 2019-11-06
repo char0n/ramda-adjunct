@@ -1,48 +1,48 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
-import eq from './shared/eq';
 
 describe('isFloat', function() {
   context('given float number', function() {
     specify('should return true', function() {
-      eq(RA.isFloat(0.1), true);
-      eq(RA.isFloat(Math.PI), true);
+      assert.isTrue(RA.isFloat(0.1));
+      assert.isTrue(RA.isFloat(Math.PI));
       // prettier-ignore
-      eq(RA.isFloat(5.56789+0), true);
+      assert.isTrue(RA.isFloat(5.56789+0));
     });
   });
 
   context('given non float number', function() {
     specify('should return false', function() {
-      eq(RA.isFloat(0), false);
-      eq(RA.isFloat(1), false);
-      eq(RA.isFloat(-100000), false);
-      eq(RA.isFloat(MAX_SAFE_INTEGER), false);
-      eq(RA.isFloat(MIN_SAFE_INTEGER), false);
+      assert.isFalse(RA.isFloat(0));
+      assert.isFalse(RA.isFloat(1));
+      assert.isFalse(RA.isFloat(-100000));
+      assert.isFalse(RA.isFloat(MAX_SAFE_INTEGER));
+      assert.isFalse(RA.isFloat(MIN_SAFE_INTEGER));
       // prettier-ignore
-      eq(RA.isFloat(5e+0), false);
-      eq(RA.isFloat(NaN), false);
-      eq(RA.isFloat(Infinity), false);
-      eq(RA.isFloat(-Infinity), false);
-      eq(RA.isFloat('10'), false);
-      eq(RA.isFloat(true), false);
-      eq(RA.isFloat(false), false);
-      eq(RA.isFloat([1]), false);
+      assert.isFalse(RA.isFloat(5e+0));
+      assert.isFalse(RA.isFloat(NaN));
+      assert.isFalse(RA.isFloat(Infinity));
+      assert.isFalse(RA.isFloat(-Infinity));
+      assert.isFalse(RA.isFloat('10'));
+      assert.isFalse(RA.isFloat(true));
+      assert.isFalse(RA.isFloat(false));
+      assert.isFalse(RA.isFloat([1]));
     });
   });
 
   context('given a number that looks like a float number', function() {
     specify('should treat the number as integer', function() {
-      eq(RA.isFloat(1.0), false);
+      assert.isFalse(RA.isFloat(1.0));
     });
   });
 
   it('should support placeholder to specify "gaps"', function() {
     const isFloat = RA.isFloat(R.__);
 
-    eq(isFloat(1.2), true);
+    assert.isTrue(isFloat(1.2));
   });
 });
