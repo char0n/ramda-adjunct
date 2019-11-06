@@ -1,5 +1,5 @@
-import * as R from 'ramda';
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
@@ -90,12 +90,6 @@ describe('lastP', function() {
 
   it('should support placeholder to specify "gaps"', async function() {
     const lastP = RA.lastP(R.__);
-    const p1 = new Promise(resolve => setTimeout(resolve, 20, 'one'));
-    const p2 = new Promise(resolve => setTimeout(resolve, 40, 'two'));
-    const p3 = new Promise(resolve => setTimeout(resolve, 30, 'three'));
-    const iterable = [p1, p2, p3];
-    const slowest = 'two';
-
-    assert.strictEqual(await lastP(iterable), slowest);
+    assert.strictEqual(await lastP([1]), 1);
   });
 });
