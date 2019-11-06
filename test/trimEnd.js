@@ -35,7 +35,7 @@ describe('trimEnd', function() {
   });
 
   context('trimEndInvoker', function() {
-    beforeEach(function() {
+    before(function() {
       if (RA.isNotFunction(String.prototype.trimEnd)) {
         this.skip();
       }

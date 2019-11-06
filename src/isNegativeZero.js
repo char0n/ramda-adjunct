@@ -15,6 +15,7 @@ import { identical } from 'ramda';
  *
  * RA.isNegativeZero(-0); //=> true
  * RA.isNegativeZero(+0); //=> false
+ * RA.isNegativeZero(0); //=> false
  * RA.isNegativeZero(null); //=> false
  */
 const isNegativeZero = identical(-0);

@@ -87,7 +87,7 @@ describe('sign', function() {
   });
 
   context('signPolyfill', function() {
-    beforeEach(function() {
+    before(function() {
       if (RA.isNotFunction(Math.sign)) {
         this.skip();
       }

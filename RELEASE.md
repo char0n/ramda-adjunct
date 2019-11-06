@@ -48,6 +48,34 @@ github release, please refer to this [page](https://help.github.com/articles/cre
  $ npm publish
 ```
 
+## Publish to Github Package Registry
+
+Read [this document](https://help.github.com/en/github/managing-packages-with-github-package-registry/configuring-npm-for-use-with-github-package-registry) to understand how to configure your npm to publish to Github Package Registry.
+
+Temporarily add the following entry into the `package.json` file. This modifications will set tell npm that the primary 
+registry is Github Package Registry.
+
+```json
+"publishConfig": {
+  "registry": "https://npm.pkg.github.com/"
+}
+```
+
+Github Package Registry only supports scoped packages. We need to change the name of the library from:
+```json
+"name": "ramda-adjunct",
+```
+to
+```json
+"name": "@char0n/ramda-adjunct",
+```
+
+Now publish to GitHub Package Registry:
+
+```sh
+ $ npm publish
+```
+
 ## Bump the version
 
 Bump the `package.json` and `package-lock.json` version by incrementing **MAJOR**, **MINOR** or **PATCH** part of the semver version.

@@ -1,53 +1,53 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
-import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isEven', function() {
   it('should test value for an even integer `Number`', function() {
-    eq(RA.isEven(0), true);
-    eq(RA.isEven(4), true);
-    eq(RA.isEven(Object(4)), false);
-    eq(RA.isEven(Object(0.1)), false);
-    eq(RA.isEven(Number(6)), true);
-    eq(RA.isEven(new Number(6)), false);
-    eq(RA.isEven(NaN), false);
-    eq(RA.isEven(3), false);
-    eq(RA.isEven(7), false);
-    eq(RA.isEven(-3), false);
-    eq(RA.isEven(-7), false);
-    eq(RA.isEven(-Infinity), false);
-    eq(RA.isEven(MAX_SAFE_INTEGER), false);
-    eq(RA.isEven(MIN_SAFE_INTEGER), false);
-    eq(RA.isEven(Number.MAX_VALUE), true);
-    eq(RA.isEven(Number.MIN_VALUE), false);
+    assert.isTrue(RA.isEven(0));
+    assert.isTrue(RA.isEven(4));
+    assert.isFalse(RA.isEven(Object(4)));
+    assert.isFalse(RA.isEven(Object(0.1)));
+    assert.isTrue(RA.isEven(Number(6)));
+    assert.isFalse(RA.isEven(new Number(6)));
+    assert.isFalse(RA.isEven(NaN));
+    assert.isFalse(RA.isEven(3));
+    assert.isFalse(RA.isEven(7));
+    assert.isFalse(RA.isEven(-3));
+    assert.isFalse(RA.isEven(-7));
+    assert.isFalse(RA.isEven(-Infinity));
+    assert.isFalse(RA.isEven(MAX_SAFE_INTEGER));
+    assert.isFalse(RA.isEven(MIN_SAFE_INTEGER));
+    assert.isTrue(RA.isEven(Number.MAX_VALUE));
+    assert.isFalse(RA.isEven(Number.MIN_VALUE));
 
-    eq(RA.isEven(new Date()), false);
-    eq(RA.isEven(args), false);
-    eq(RA.isEven([1, 2, 3]), false);
-    eq(RA.isEven(Object(false)), false);
-    eq(RA.isEven(new Error()), false);
-    eq(RA.isEven(RA), false);
-    eq(RA.isEven(Array.prototype.slice), false);
-    eq(RA.isEven({ a: 1 }), false);
-    eq(RA.isEven(/x/), false);
-    eq(RA.isEven(Object('a')), false);
+    assert.isFalse(RA.isEven(new Date()));
+    assert.isFalse(RA.isEven(args));
+    assert.isFalse(RA.isEven([1, 2, 3]));
+    assert.isFalse(RA.isEven(Object(false)));
+    assert.isFalse(RA.isEven(new Error()));
+    assert.isFalse(RA.isEven(RA));
+    assert.isFalse(RA.isEven(Array.prototype.slice));
+    assert.isFalse(RA.isEven({ a: 1 }));
+    assert.isFalse(RA.isEven(/x/));
+    assert.isFalse(RA.isEven(Object('a')));
 
     if (Symbol !== 'undefined') {
-      eq(RA.isEven(Symbol), false);
+      assert.isFalse(RA.isEven(Symbol));
     }
 
-    eq(RA.isOdd(null), false);
-    eq(RA.isOdd(undefined), false);
+    assert.isFalse(RA.isOdd(null));
+    assert.isFalse(RA.isOdd(undefined));
   });
 
   it('should support placeholder to specify "gaps"', function() {
     const isEven = RA.isEven(R.__);
 
-    eq(isEven(2), true);
+    assert.isTrue(isEven(2));
   });
 });

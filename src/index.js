@@ -164,6 +164,8 @@ export { default as spreadProp } from './spreadProp';
 export { default as spreadPath } from './spreadPath';
 export { default as flattenProp } from './flattenProp';
 export { default as flattenPath } from './flattenPath';
+export { default as unzipObjWith } from './unzipObjWith';
+export { default as zipObjWith } from './zipObjWith';
 // Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
@@ -200,6 +202,7 @@ export { default as trimStart } from './trimStart';
 export { default as trimLeft } from './trimStart'; // alias of trimStart
 export { default as trimEnd } from './trimEnd';
 export { default as trimRight } from './trimEnd'; // alias of trimEnd
+export { default as padCharsStart } from './padCharsStart';
 export { default as padCharsEnd } from './padCharsEnd';
 export { default as padEnd } from './padEnd';
 // Types

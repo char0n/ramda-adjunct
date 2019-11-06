@@ -1,27 +1,27 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isArrayLike', function() {
   it('should return true for Arrays', function() {
-    eq(RA.isArrayLike([]), true);
-    eq(RA.isArrayLike([1, 2, 3, 4]), true);
-    eq(RA.isArrayLike([null]), true);
+    assert.isTrue(RA.isArrayLike([]));
+    assert.isTrue(RA.isArrayLike([1, 2, 3, 4]));
+    assert.isTrue(RA.isArrayLike([null]));
   });
 
   it('should return true for arguments', function() {
     function testingFn() {
       return RA.isArrayLike(arguments);
     }
-    eq(testingFn(), true);
-    eq(testingFn(1, 2, 3), true);
-    eq(testingFn(null), true);
+    assert.isTrue(testingFn());
+    assert.isTrue(testingFn(1, 2, 3));
+    assert.isTrue(testingFn(null));
   });
 
   it('should return false for Strings', function() {
-    eq(RA.isArrayLike(''), false);
-    eq(RA.isArrayLike('abcdefg'), false);
+    assert.isFalse(RA.isArrayLike(''));
+    assert.isFalse(RA.isArrayLike('abcdefg'));
   });
 
   context('given extreme indices are defined', function() {
@@ -36,28 +36,28 @@ describe('isArrayLike', function() {
         const obj6 = { 0: 'zero', length: 2 };
         const obj7 = { 1: 'one', length: 2 };
 
-        eq(RA.isArrayLike(obj1), true);
-        eq(RA.isArrayLike(obj2), true);
-        eq(RA.isArrayLike(obj3), true);
-        eq(RA.isArrayLike(obj4), true);
-        eq(RA.isArrayLike(obj5), true);
-        eq(RA.isArrayLike(obj6), false);
-        eq(RA.isArrayLike(obj7), false);
+        assert.isTrue(RA.isArrayLike(obj1));
+        assert.isTrue(RA.isArrayLike(obj2));
+        assert.isTrue(RA.isArrayLike(obj3));
+        assert.isTrue(RA.isArrayLike(obj4));
+        assert.isTrue(RA.isArrayLike(obj5));
+        assert.isFalse(RA.isArrayLike(obj6));
+        assert.isFalse(RA.isArrayLike(obj7));
       }
     );
   });
 
   it('should return false for everything else', function() {
-    eq(RA.isArrayLike(undefined), false);
-    eq(RA.isArrayLike(1), false);
-    eq(RA.isArrayLike({}), false);
-    eq(RA.isArrayLike(false), false);
-    eq(RA.isArrayLike(function() {}), false);
+    assert.isFalse(RA.isArrayLike(undefined));
+    assert.isFalse(RA.isArrayLike(1));
+    assert.isFalse(RA.isArrayLike({}));
+    assert.isFalse(RA.isArrayLike(false));
+    assert.isFalse(RA.isArrayLike(function() {}));
   });
 
   it('should support placeholder to specify "gaps"', function() {
     const isArrayLike = RA.isArrayLike(R.__);
 
-    eq(isArrayLike([]), true);
+    assert.isTrue(isArrayLike([]));
   });
 });

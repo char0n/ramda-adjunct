@@ -54,7 +54,7 @@ describe('repeatStr', function() {
   });
 
   context('repeatStrInvoker', function() {
-    beforeEach(function() {
+    before(function() {
       if (RA.isNotFunction(String.prototype.repeat)) {
         this.skip();
       }
