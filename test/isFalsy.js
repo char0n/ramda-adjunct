@@ -1,45 +1,45 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isFalsy', function() {
   context('given falsy value', function() {
     specify('should return true', function() {
-      eq(RA.isFalsy(false), true);
-      eq(RA.isFalsy(0), true);
-      eq(RA.isFalsy(-0), true);
-      eq(RA.isFalsy(''), true);
-      eq(RA.isFalsy(null), true);
-      eq(RA.isFalsy(undefined), true);
-      eq(RA.isFalsy(NaN), true);
+      assert.isTrue(RA.isFalsy(false));
+      assert.isTrue(RA.isFalsy(0));
+      assert.isTrue(RA.isFalsy(-0));
+      assert.isTrue(RA.isFalsy(''));
+      assert.isTrue(RA.isFalsy(null));
+      assert.isTrue(RA.isFalsy(undefined));
+      assert.isTrue(RA.isFalsy(NaN));
     });
   });
 
   context('given truthy value', function() {
     specify('should return false', function() {
-      eq(RA.isFalsy('abc'), false);
-      eq(RA.isFalsy(Object('abc')), false);
-      eq(RA.isFalsy(args), false);
-      eq(RA.isFalsy([1, 2, 3]), false);
-      eq(RA.isFalsy(new Date()), false);
-      eq(RA.isFalsy(new Error()), false);
-      eq(RA.isFalsy(Array.prototype.slice), false);
-      eq(RA.isFalsy({ 0: 1, length: 1 }), false);
-      eq(RA.isFalsy(1), false);
-      eq(RA.isFalsy(/x/), false);
-      eq(RA.isFalsy(Symbol), RA.isUndefined(Symbol));
-      eq(RA.isFalsy({}), false);
-      eq(RA.isFalsy([]), false);
-      eq(RA.isFalsy(Infinity), false);
+      assert.isFalse(RA.isFalsy('abc'));
+      assert.isFalse(RA.isFalsy(Object('abc')));
+      assert.isFalse(RA.isFalsy(args));
+      assert.isFalse(RA.isFalsy([1, 2, 3]));
+      assert.isFalse(RA.isFalsy(new Date()));
+      assert.isFalse(RA.isFalsy(new Error()));
+      assert.isFalse(RA.isFalsy(Array.prototype.slice));
+      assert.isFalse(RA.isFalsy({ 0: 1, length: 1 }));
+      assert.isFalse(RA.isFalsy(1));
+      assert.isFalse(RA.isFalsy(/x/));
+      assert.strictEqual(RA.isFalsy(Symbol), RA.isUndefined(Symbol));
+      assert.isFalse(RA.isFalsy({}));
+      assert.isFalse(RA.isFalsy([]));
+      assert.isFalse(RA.isFalsy(Infinity));
     });
   });
 
   it('should support placeholder to specify "gaps"', function() {
     const isFalsy = RA.isFalsy(R.__);
 
-    eq(isFalsy(null), true);
+    assert.isTrue(isFalsy(null));
   });
 });
