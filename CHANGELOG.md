@@ -1,3 +1,8 @@
+<a name="2.22.1"></a>
+## [2.22.1](https://github.com/char0n/ramda-adjunct/compare/v2.22.0...v2.22.1) (2019-11-06)
+
+* add funding field to package.json ([600ccc7](https://github.com/char0n/ramda-adjunct/commit/600ccc7))
+
 <a name="2.22.0"></a>
 # [2.22.0](https://github.com/char0n/ramda-adjunct/compare/v2.21.0...v2.22.0) (2019-11-01)
 
