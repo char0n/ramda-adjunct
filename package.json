@@ -1,4 +1,30 @@
 {
+  "name": "ramda-adjunct",
+  "description": "Ramda Adjunct is the most popular and most comprehensive set of utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation.",
+  "keywords": [
+    "ramda",
+    "utils",
+    "utilities",
+    "toolkit",
+    "extensions",
+    "addons",
+    "adjunct",
+    "recipes",
+    "extras",
+    "cookbook",
+    "functional"
+  ],
+  "version": "2.23.0",
+  "homepage": "https://github.com/char0n/ramda-adjunct",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/char0n/ramda-adjunct.git"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/ramda-adjunct"
+  },
   "engines": {
     "node": ">=0.10.3"
   },
@@ -26,29 +52,7 @@
       "url": "https://github.com/guillaumearm"
     }
   ],
-  "name": "ramda-adjunct",
-  "description": "Ramda Adjunct is the most popular and most comprehensive set of utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation.",
-  "keywords": [
-    "ramda",
-    "utils",
-    "utilities",
-    "toolkit",
-    "extensions",
-    "addons",
-    "adjunct",
-    "recipes",
-    "extras",
-    "cookbook",
-    "functional"
-  ],
   "sideEffects": false,
-  "version": "2.23.0",
-  "homepage": "https://github.com/char0n/ramda-adjunct",
-  "license": "BSD-3-Clause",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/char0n/ramda-adjunct.git"
-  },
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "jsnext:main": "./es/index.js",
