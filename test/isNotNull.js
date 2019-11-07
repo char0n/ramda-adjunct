@@ -1,13 +1,14 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isNotNull', function() {
   it('tests a value for complement of `null`', function() {
-    eq(RA.isNotNull(void 0), true);
-    eq(RA.isNotNull(null), false);
-    eq(RA.isNotNull([]), true);
-    eq(RA.isNotNull({}), true);
-    eq(RA.isNotNull(0), true);
-    eq(RA.isNotNull(''), true);
+    assert.isTrue(RA.isNotNull(void 0));
+    assert.isFalse(RA.isNotNull(null));
+    assert.isTrue(RA.isNotNull([]));
+    assert.isTrue(RA.isNotNull({}));
+    assert.isTrue(RA.isNotNull(0));
+    assert.isTrue(RA.isNotNull(''));
   });
 });
