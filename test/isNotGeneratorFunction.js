@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import genFunc from './shared/genFunc';
@@ -29,6 +28,9 @@ describe('isNotGeneratorFunction', function() {
   it('should support placeholder to specify "gaps"', function() {
     const isNotGeneratorFunction = RA.isNotGeneratorFunction(R.__);
 
-    eq(isNotGeneratorFunction(genFunc), typeof genFunc !== 'function');
+    assert.strictEqual(
+      isNotGeneratorFunction(genFunc),
+      typeof genFunc !== 'function'
+    );
   });
 });

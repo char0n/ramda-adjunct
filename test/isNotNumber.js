@@ -1,40 +1,41 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
-import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isNotNumber', function() {
   it('tests a value for complement of `Number`', function() {
-    eq(RA.isNotNumber(0), false);
-    eq(RA.isNotNumber(0.1), false);
-    eq(RA.isNotNumber(Object(0)), false);
-    eq(RA.isNotNumber(Object(0.1)), false);
-    eq(RA.isNotNumber(NaN), false);
-    eq(RA.isNotNumber(Infinity), false);
-    eq(RA.isNotNumber(-Infinity), false);
-    eq(RA.isNotNumber(MAX_SAFE_INTEGER), false);
-    eq(RA.isNotNumber(MIN_SAFE_INTEGER), false);
-    eq(RA.isNotNumber(Number.MAX_VALUE), false);
-    eq(RA.isNotNumber(Number.MIN_VALUE), false);
+    assert.isFalse(RA.isNotNumber(0));
+    assert.isFalse(RA.isNotNumber(0.1));
+    assert.isFalse(RA.isNotNumber(Object(0)));
+    assert.isFalse(RA.isNotNumber(Object(0.1)));
+    assert.isFalse(RA.isNotNumber(NaN));
+    assert.isFalse(RA.isNotNumber(Infinity));
+    assert.isFalse(RA.isNotNumber(-Infinity));
+    assert.isFalse(RA.isNotNumber(MAX_SAFE_INTEGER));
+    assert.isFalse(RA.isNotNumber(MIN_SAFE_INTEGER));
+    assert.isFalse(RA.isNotNumber(Number.MAX_VALUE));
+    assert.isFalse(RA.isNotNumber(Number.MIN_VALUE));
 
-    eq(RA.isNotNumber(new Date()), true);
-    eq(RA.isNotNumber(args), true);
-    eq(RA.isNotNumber([1, 2, 3]), true);
-    eq(RA.isNotNumber(Object(true)), true);
-    eq(RA.isNotNumber(new Error()), true);
-    eq(RA.isNotNumber(RA), true);
-    eq(RA.isNotNumber(Array.prototype.slice), true);
-    eq(RA.isNotNumber({ a: 1 }), true);
-    eq(RA.isNotNumber(/x/), true);
-    eq(RA.isNotNumber(Object('a')), true);
+    assert.isTrue(RA.isNotNumber(new Date()));
+    assert.isTrue(RA.isNotNumber(args));
+    assert.isTrue(RA.isNotNumber([1, 2, 3]));
+    assert.isTrue(RA.isNotNumber(Object(true)));
+    assert.isTrue(RA.isNotNumber(new Error()));
+    assert.isTrue(RA.isNotNumber(RA));
+    assert.isTrue(RA.isNotNumber(Array.prototype.slice));
+    assert.isTrue(RA.isNotNumber({ a: 1 }));
+    assert.isTrue(RA.isNotNumber(/x/));
+    assert.isTrue(RA.isNotNumber(Object('a')));
 
     if (Symbol !== 'undefined') {
-      eq(RA.isNotNumber(Symbol), true);
+      assert.isTrue(RA.isNotNumber(Symbol));
     }
 
-    eq(RA.isNotNumber(null), true);
-    eq(RA.isNotNumber(undefined), true);
+    assert.isTrue(RA.isNotNumber(null));
+    assert.isTrue(RA.isNotNumber(undefined));
   });
 });

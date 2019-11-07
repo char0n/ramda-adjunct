@@ -1,13 +1,14 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isNotNil', function() {
   it('tests a value for complement of `null` or `undefined`', function() {
-    eq(RA.isNotNil(void 0), false);
-    eq(RA.isNotNil(null), false);
-    eq(RA.isNotNil([]), true);
-    eq(RA.isNotNil({}), true);
-    eq(RA.isNotNil(0), true);
-    eq(RA.isNotNil(''), true);
+    assert.isFalse(RA.isNotNil(void 0));
+    assert.isFalse(RA.isNotNil(null));
+    assert.isTrue(RA.isNotNil([]));
+    assert.isTrue(RA.isNotNil({}));
+    assert.isTrue(RA.isNotNil(0));
+    assert.isTrue(RA.isNotNil(''));
   });
 });

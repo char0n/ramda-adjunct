@@ -1,32 +1,33 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isNotObjLike', function() {
   it('tests a value for non object-like interface', function() {
-    eq(RA.isNotObjLike({}), false);
-    eq(RA.isNotObjLike(Object(false)), false);
-    eq(RA.isNotObjLike(args), false);
-    eq(RA.isNotObjLike([1, 2, 3]), false);
-    eq(RA.isNotObjLike(Object(false)), false);
-    eq(RA.isNotObjLike(new Date()), false);
-    eq(RA.isNotObjLike(new Error()), false);
-    eq(RA.isNotObjLike(RA), false);
-    eq(RA.isNotObjLike({ a: 1 }), false);
-    eq(RA.isNotObjLike(Object(0)), false);
-    eq(RA.isNotObjLike(/x/), false);
-    eq(RA.isNotObjLike(Object('a')), false);
+    assert.isFalse(RA.isNotObjLike({}));
+    assert.isFalse(RA.isNotObjLike(Object(false)));
+    assert.isFalse(RA.isNotObjLike(args));
+    assert.isFalse(RA.isNotObjLike([1, 2, 3]));
+    assert.isFalse(RA.isNotObjLike(Object(false)));
+    assert.isFalse(RA.isNotObjLike(new Date()));
+    assert.isFalse(RA.isNotObjLike(new Error()));
+    assert.isFalse(RA.isNotObjLike(RA));
+    assert.isFalse(RA.isNotObjLike({ a: 1 }));
+    assert.isFalse(RA.isNotObjLike(Object(0)));
+    assert.isFalse(RA.isNotObjLike(/x/));
+    assert.isFalse(RA.isNotObjLike(Object('a')));
 
-    eq(RA.isNotObjLike(Symbol), true);
-    eq(RA.isNotObjLike(Array.prototype.slice), true);
-    eq(RA.isNotObjLike(null), true);
-    eq(RA.isNotObjLike(undefined), true);
+    assert.isTrue(RA.isNotObjLike(Symbol));
+    assert.isTrue(RA.isNotObjLike(Array.prototype.slice));
+    assert.isTrue(RA.isNotObjLike(null));
+    assert.isTrue(RA.isNotObjLike(undefined));
   });
 });
 
 describe('isNotObjectLike', function() {
   it('tests an alias', function() {
-    eq(RA.isNotObjLike === RA.isNotObjectLike, true);
+    assert.isTrue(RA.isNotObjLike === RA.isNotObjectLike);
   });
 });
