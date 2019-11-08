@@ -1,32 +1,33 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isNotRegExp', function() {
   it('tests a value for complement of `RegExp`', function() {
-    eq(RA.isNotRegExp('a'), true);
-    eq(RA.isNotRegExp(1), true);
-    eq(RA.isNotRegExp([]), true);
-    eq(RA.isNotRegExp({}), true);
-    eq(RA.isNotRegExp(true), true);
-    eq(RA.isNotRegExp(false), true);
-    eq(RA.isNotRegExp(new Error()), true);
-    eq(RA.isNotRegExp(new Date()), true);
-    eq(RA.isNotRegExp(RA), true);
-    eq(RA.isNotRegExp(function() {}), true);
-    eq(RA.isNotRegExp(Object(0)), true);
-    eq(RA.isNotRegExp(Object('a')), true);
-    eq(RA.isNotRegExp(args), true);
+    assert.isTrue(RA.isNotRegExp('a'));
+    assert.isTrue(RA.isNotRegExp(1));
+    assert.isTrue(RA.isNotRegExp([]));
+    assert.isTrue(RA.isNotRegExp({}));
+    assert.isTrue(RA.isNotRegExp(true));
+    assert.isTrue(RA.isNotRegExp(false));
+    assert.isTrue(RA.isNotRegExp(new Error()));
+    assert.isTrue(RA.isNotRegExp(new Date()));
+    assert.isTrue(RA.isNotRegExp(RA));
+    assert.isTrue(RA.isNotRegExp(function() {}));
+    assert.isTrue(RA.isNotRegExp(Object(0)));
+    assert.isTrue(RA.isNotRegExp(Object('a')));
+    assert.isTrue(RA.isNotRegExp(args));
 
     if (Symbol !== 'undefined') {
-      eq(RA.isNotRegExp(Symbol), true);
+      assert.isTrue(RA.isNotRegExp(Symbol));
     }
 
-    eq(RA.isNotRegExp(null), true);
-    eq(RA.isNotRegExp(undefined), true);
+    assert.isTrue(RA.isNotRegExp(null));
+    assert.isTrue(RA.isNotRegExp(undefined));
 
-    eq(RA.isNotRegExp(new RegExp()), false);
-    eq(RA.isNotRegExp(/(?:)/), false);
+    assert.isFalse(RA.isNotRegExp(new RegExp()));
+    assert.isFalse(RA.isNotRegExp(/(?:)/));
   });
 });
