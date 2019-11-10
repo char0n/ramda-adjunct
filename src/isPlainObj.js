@@ -5,10 +5,7 @@ import isNull from './isNull';
 import isObjLike from './isObjLike';
 import isFunction from './isFunction';
 
-const isObjectConstructor = pipe(
-  toString,
-  equals(toString(Object))
-);
+const isObjectConstructor = pipe(toString, equals(toString(Object)));
 const hasObjectConstructor = pathSatisfies(
   both(isFunction, isObjectConstructor),
   ['constructor']

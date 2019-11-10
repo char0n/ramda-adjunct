@@ -29,13 +29,7 @@ try {
  * RA.isGeneratorFunction(() => {}); //=> false
  */
 const isGeneratorFunction = curry1(
-  either(
-    pipe(
-      type,
-      identical('GeneratorFunction')
-    ),
-    legacyCheck
-  )
+  either(pipe(type, identical('GeneratorFunction')), legacyCheck)
 );
 
 export default isGeneratorFunction;

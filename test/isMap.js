@@ -8,7 +8,14 @@ describe('isMap', function() {
   context('given a map', function() {
     specify('should return true', function() {
       assert.isTrue(RA.isMap(new Map()));
-      assert.isTrue(RA.isMap(new Map([[1, 2], [2, 1]])));
+      assert.isTrue(
+        RA.isMap(
+          new Map([
+            [1, 2],
+            [2, 1],
+          ])
+        )
+      );
     });
   });
 

@@ -31,12 +31,7 @@ import lengthEq from './lengthEq';
 const unzipObjWith = curryN(2, (fn, obj) =>
   pipe(
     toPairs,
-    map(
-      pipe(
-        flip,
-        apply
-      )(fn)
-    ),
+    map(pipe(flip, apply)(fn)),
     transpose,
     when(lengthEq(0), () => [[], []])
   )(obj)

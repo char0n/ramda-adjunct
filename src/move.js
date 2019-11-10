@@ -20,10 +20,7 @@ import { compose, curry, insert, nth, remove } from 'ramda';
  * RA.move(1, 3, list) //=> ['a', 'c', 'd', 'b', 'e']
  */
 const move = curry((fromIdx, toIdx, list) =>
-  compose(
-    insert(toIdx, nth(fromIdx, list)),
-    remove(fromIdx, 1)
-  )(list)
+  compose(insert(toIdx, nth(fromIdx, list)), remove(fromIdx, 1))(list)
 );
 
 export default move;

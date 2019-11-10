@@ -22,11 +22,6 @@ import lengthLte from './lengthLte';
  * RA.allIdentical([ {}, {} ]); //=> false
  * RA.allIdentical([ () => {}, () => {} ]); //=> false
  */
-const allIdentical = curry1(
-  pipe(
-    uniqWith(identical),
-    lengthLte(1)
-  )
-);
+const allIdentical = curry1(pipe(uniqWith(identical), lengthLte(1)));
 
 export default allIdentical;

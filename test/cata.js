@@ -47,7 +47,10 @@ describe('cata', function() {
       const resultL = folktale.result.Error(2);
 
       assert.strictEqual(RA.cata(null, R.identity, resultR), 1);
-      assert.strictEqual(RA.cata(v => v, null, resultL), 2);
+      assert.strictEqual(
+        RA.cata(v => v, null, resultL),
+        2
+      );
     });
 
     specify('should support Validation type', function() {
@@ -55,7 +58,10 @@ describe('cata', function() {
       const validationL = folktale.validation.Failure(2);
 
       assert.strictEqual(RA.cata(null, R.identity, validationR), 1);
-      assert.strictEqual(RA.cata(v => v, null, validationL), 2);
+      assert.strictEqual(
+        RA.cata(v => v, null, validationL),
+        2
+      );
     });
   });
 

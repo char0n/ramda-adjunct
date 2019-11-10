@@ -11,8 +11,14 @@ describe('lensNotSatisfy', function() {
     );
     eq(RA.lensNotSatisfy(equals('foo'), lensProp('bar'), { foo: 'bar' }), true);
 
-    eq(RA.lensNotSatisfy(x => x > 0, lensIndex(1), [0, 1, 2]), false);
-    eq(RA.lensNotSatisfy(x => x > 0, lensIndex(0), [0, 1, 2]), true);
+    eq(
+      RA.lensNotSatisfy(x => x > 0, lensIndex(1), [0, 1, 2]),
+      false
+    );
+    eq(
+      RA.lensNotSatisfy(x => x > 0, lensIndex(0), [0, 1, 2]),
+      true
+    );
 
     eq(
       RA.lensNotSatisfy(pathEq(['foo', 'bar'], 42), lensPath(['o1', 'o2']), {

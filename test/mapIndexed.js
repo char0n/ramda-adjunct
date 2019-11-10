@@ -96,7 +96,10 @@ describe('mapIndexed', function() {
       const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
       const resultList = ['0-f', '1-o', '2-o', '3-b', '4-a', '5-r'];
 
-      eq(RA.mapIndexed((val, idx) => `${idx}-${val}`, initialList), resultList);
+      eq(
+        RA.mapIndexed((val, idx) => `${idx}-${val}`, initialList),
+        resultList
+      );
     });
   });
 
