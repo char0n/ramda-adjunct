@@ -73,10 +73,11 @@ describe('lastP', function() {
       const iterable = list.map(
         R.ifElse(
           R.equals(slowest),
-          () => new Promise(resolve => setTimeout(resolve, 100, slowest)),
+          () => new Promise(resolve => setTimeout(resolve, 10, slowest)),
           RA.resolveP
         )
       );
+
       assert.strictEqual(await RA.lastP(iterable), slowest);
     });
   });
@@ -88,8 +89,25 @@ describe('lastP', function() {
     });
   });
 
+  context('given a custom iterable', function() {
+    specify('should return the last value', async function() {
+      const myCustomIterable = {
+        *[Symbol.iterator]() {
+          yield new Promise(resolve => setTimeout(resolve, 20, 'one'));
+          yield new Promise(resolve => setTimeout(resolve, 40, 'two'));
+          yield RA.resolveP(3);
+          yield new Promise(resolve => setTimeout(resolve, 10, 'four'));
+        },
+      };
+      const slowest = 'two';
+
+      assert.strictEqual(await RA.lastP(myCustomIterable), slowest);
+    });
+  });
+
   it('should support placeholder to specify "gaps"', async function() {
     const lastP = RA.lastP(R.__);
+
     assert.strictEqual(await lastP([1]), 1);
   });
 });
