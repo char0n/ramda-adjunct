@@ -1,14 +1,15 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isNotUndefined', function() {
   it('tests a value for complement of `undefined`', function() {
-    eq(RA.isNotUndefined(void 0), false);
-    eq(RA.isNotUndefined(undefined), false);
-    eq(RA.isNotUndefined(null), true);
-    eq(RA.isNotUndefined([]), true);
-    eq(RA.isNotUndefined({}), true);
-    eq(RA.isNotUndefined(0), true);
-    eq(RA.isNotUndefined(''), true);
+    assert.isFalse(RA.isNotUndefined(void 0));
+    assert.isFalse(RA.isNotUndefined(undefined));
+    assert.isTrue(RA.isNotUndefined(null));
+    assert.isTrue(RA.isNotUndefined([]));
+    assert.isTrue(RA.isNotUndefined({}));
+    assert.isTrue(RA.isNotUndefined(0));
+    assert.isTrue(RA.isNotUndefined(''));
   });
 });

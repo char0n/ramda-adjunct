@@ -1,36 +1,37 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isNotValidDate', function() {
   it('tests a value for complement of valid `Date`', function() {
-    eq(RA.isNotValidDate(new Date()), false);
+    assert.isFalse(RA.isNotValidDate(new Date()));
 
-    eq(RA.isNotValidDate(new Date('a')), true);
-    eq(RA.isNotValidDate(Date.now()), true);
-    eq(RA.isNotValidDate(args), true);
-    eq(RA.isNotValidDate([1, 2, 3]), true);
-    eq(RA.isNotValidDate(Object(true)), true);
-    eq(RA.isNotValidDate(new Error()), true);
-    eq(RA.isNotValidDate(RA), true);
-    eq(RA.isNotValidDate(Array.prototype.slice), true);
-    eq(RA.isNotValidDate({ a: 1 }), true);
-    eq(RA.isNotValidDate(Object(0)), true);
-    eq(RA.isNotValidDate(/x/), true);
-    eq(RA.isNotValidDate(Object('a')), true);
+    assert.isTrue(RA.isNotValidDate(new Date('a')));
+    assert.isTrue(RA.isNotValidDate(Date.now()));
+    assert.isTrue(RA.isNotValidDate(args));
+    assert.isTrue(RA.isNotValidDate([1, 2, 3]));
+    assert.isTrue(RA.isNotValidDate(Object(true)));
+    assert.isTrue(RA.isNotValidDate(new Error()));
+    assert.isTrue(RA.isNotValidDate(RA));
+    assert.isTrue(RA.isNotValidDate(Array.prototype.slice));
+    assert.isTrue(RA.isNotValidDate({ a: 1 }));
+    assert.isTrue(RA.isNotValidDate(Object(0)));
+    assert.isTrue(RA.isNotValidDate(/x/));
+    assert.isTrue(RA.isNotValidDate(Object('a')));
 
     if (Symbol !== 'undefined') {
-      eq(RA.isNotValidDate(Symbol), true);
+      assert.isTrue(RA.isNotValidDate(Symbol));
     }
 
-    eq(RA.isNotValidDate(null), true);
-    eq(RA.isNotValidDate(undefined), true);
+    assert.isTrue(RA.isNotValidDate(null));
+    assert.isTrue(RA.isNotValidDate(undefined));
   });
 });
 
 describe('isInvalidDate', function() {
   it('tests an alias', function() {
-    eq(RA.isNotValidDate === RA.isInvalidDate, true);
+    assert.strictEqual(RA.isNotValidDate, RA.isInvalidDate);
   });
 });

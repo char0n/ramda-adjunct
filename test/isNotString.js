@@ -1,22 +1,23 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isNotString', function() {
   it('tests a value for complement of `String`', function() {
-    eq(RA.isNotString('abc'), false);
-    eq(RA.isNotString(Object('abc')), false);
+    assert.isFalse(RA.isNotString('abc'));
+    assert.isFalse(RA.isNotString(Object('abc')));
 
-    eq(RA.isNotString(args), true);
-    eq(RA.isNotString([1, 2, 3]), true);
-    eq(RA.isNotString(true), true);
-    eq(RA.isNotString(new Date()), true);
-    eq(RA.isNotString(new Error()), true);
-    eq(RA.isNotString(Array.prototype.slice), true);
-    eq(RA.isNotString({ 0: 1, length: 1 }), true);
-    eq(RA.isNotString(1), true);
-    eq(RA.isNotString(/x/), true);
-    eq(RA.isNotString(Symbol), true);
+    assert.isTrue(RA.isNotString(args));
+    assert.isTrue(RA.isNotString([1, 2, 3]));
+    assert.isTrue(RA.isNotString(true));
+    assert.isTrue(RA.isNotString(new Date()));
+    assert.isTrue(RA.isNotString(new Error()));
+    assert.isTrue(RA.isNotString(Array.prototype.slice));
+    assert.isTrue(RA.isNotString({ 0: 1, length: 1 }));
+    assert.isTrue(RA.isNotString(1));
+    assert.isTrue(RA.isNotString(/x/));
+    assert.isTrue(RA.isNotString(Symbol));
   });
 });
