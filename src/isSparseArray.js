@@ -37,13 +37,7 @@ import isArray from './isArray';
  */
 const isSparseArray = both(
   isArray,
-  converge(complement(identical), [
-    pipe(
-      values,
-      length
-    ),
-    length,
-  ])
+  converge(complement(identical), [pipe(values, length), length])
 );
 
 export default isSparseArray;

@@ -26,7 +26,10 @@ describe('toArray', function() {
 
       const actual = RA.toArray(map);
 
-      assert.sameDeepOrderedMembers(actual, [['0', 'foo'], [1, 'bar']]);
+      assert.sameDeepOrderedMembers(actual, [
+        ['0', 'foo'],
+        [1, 'bar'],
+      ]);
     });
 
     specify('should convert a set into an array', function() {
@@ -91,7 +94,10 @@ describe('toArray', function() {
 
         const actual = fromPolyfill(map);
 
-        assert.sameDeepOrderedMembers(actual, [['0', 'foo'], [1, 'bar']]);
+        assert.sameDeepOrderedMembers(actual, [
+          ['0', 'foo'],
+          [1, 'bar'],
+        ]);
       });
 
       specify('should convert a set into an array', function() {

@@ -53,11 +53,7 @@ import stubUndefined from './stubUndefined';
 
 const byArity = comparator((a, b) => a.length > b.length);
 
-const getMaxArity = pipe(
-  sort(byArity),
-  head,
-  prop('length')
-);
+const getMaxArity = pipe(sort(byArity), head, prop('length'));
 
 const iteratorFn = curry((args, accumulator, fn) => {
   const result = fn(...args);

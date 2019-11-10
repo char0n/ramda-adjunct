@@ -27,9 +27,6 @@ import { complement, compose, anyPass } from 'ramda';
  * f(11); //=> false
  * f(9); //=> true
  */
-const nonePass = compose(
-  complement,
-  anyPass
-);
+const nonePass = compose(complement, anyPass);
 
 export default nonePass;

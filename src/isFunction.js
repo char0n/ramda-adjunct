@@ -24,10 +24,7 @@ import isAsyncFunction from './isAsyncFunction';
  * RA.isFunction('abc'); //=> false
  */
 const isFunction = anyPass([
-  pipe(
-    type,
-    identical('Function')
-  ),
+  pipe(type, identical('Function')),
   isGeneratorFunction,
   isAsyncFunction,
 ]);

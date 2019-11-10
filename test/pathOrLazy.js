@@ -13,7 +13,10 @@ describe('pathOrLazy', function() {
 
   context('given requested path exists', function() {
     specify('should return value at path', function() {
-      eq(RA.pathOrLazy(() => {}, ['a', 'b', 'c'], obj), 1);
+      eq(
+        RA.pathOrLazy(() => {}, ['a', 'b', 'c'], obj),
+        1
+      );
     });
 
     specify('should not invoke lazy function', function() {
@@ -26,25 +29,37 @@ describe('pathOrLazy', function() {
   context('given requested path does not exist', function() {
     context('and the value is missing', function() {
       specify('should return default value', function() {
-        eq(RA.pathOrLazy(() => 7, ['nonexistent'], obj), 7);
+        eq(
+          RA.pathOrLazy(() => 7, ['nonexistent'], obj),
+          7
+        );
       });
     });
 
     context('and the value is NaN', function() {
       specify('should return default value', function() {
-        eq(RA.pathOrLazy(() => 7, ['e'], obj), 7);
+        eq(
+          RA.pathOrLazy(() => 7, ['e'], obj),
+          7
+        );
       });
     });
 
     context('and the value is null', function() {
       specify('should return default value', function() {
-        eq(RA.pathOrLazy(() => 7, ['f'], obj), 7);
+        eq(
+          RA.pathOrLazy(() => 7, ['f'], obj),
+          7
+        );
       });
     });
 
     context('and the value is undefined', function() {
       specify('should return default value', function() {
-        eq(RA.pathOrLazy(() => 7, ['g'], obj), 7);
+        eq(
+          RA.pathOrLazy(() => 7, ['g'], obj),
+          7
+        );
       });
     });
 

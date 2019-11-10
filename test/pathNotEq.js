@@ -52,7 +52,10 @@ describe('pathNotEq', function() {
     context('and array contains provided path', function() {
       // eslint-disable-next-line mocha/no-hooks-for-single-case
       beforeEach(function() {
-        obj = [['a', 'b', 'c'], ['d', 'f']];
+        obj = [
+          ['a', 'b', 'c'],
+          ['d', 'f'],
+        ];
       });
 
       specify('should return false', function() {
@@ -63,7 +66,10 @@ describe('pathNotEq', function() {
     context('and array does not contains provided path', function() {
       // eslint-disable-next-line mocha/no-hooks-for-single-case
       beforeEach(function() {
-        obj = [['a', 'b', 'c'], ['d', 'f']];
+        obj = [
+          ['a', 'b', 'c'],
+          ['d', 'f'],
+        ];
       });
 
       specify('should return true', function() {

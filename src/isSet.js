@@ -20,11 +20,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isSet(new Object()); //=> false
  */
 
-const isSet = curry1(
-  pipe(
-    type,
-    identical('Set')
-  )
-);
+const isSet = curry1(pipe(type, identical('Set')));
 
 export default isSet;

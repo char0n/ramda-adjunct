@@ -22,10 +22,7 @@ import { view, curryN, equals, pipe } from 'ramda';
  * RA.lensEq(R.lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } }) // => true
  */
 const lensEq = curryN(3, (lens, val, data) =>
-  pipe(
-    view(lens),
-    equals(val)
-  )(data)
+  pipe(view(lens), equals(val))(data)
 );
 
 export default lensEq;

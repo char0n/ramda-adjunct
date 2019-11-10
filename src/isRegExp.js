@@ -17,9 +17,6 @@ import { type, identical, pipe } from 'ramda';
  * RA.isRegExp(/(?:)/); //=> true
  * RA.isRegExp(1); //=> false
  */
-const isRegExp = pipe(
-  type,
-  identical('RegExp')
-);
+const isRegExp = pipe(type, identical('RegExp'));
 
 export default isRegExp;

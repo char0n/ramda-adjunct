@@ -22,12 +22,6 @@ import { curryN, pipe, mergeAll, props } from 'ramda';
  * { ...obj.foo, ...obj.bar }; //=> { fooInner: 1, barInner: 2 }
  * RA.mergeProps(['foo', 'bar'], obj); //=> { fooInner: 1, barInner: 2 }
  */
-const mergeProps = curryN(
-  2,
-  pipe(
-    props,
-    mergeAll
-  )
-);
+const mergeProps = curryN(2, pipe(props, mergeAll));
 
 export default mergeProps;

@@ -41,7 +41,10 @@ describe('unzipObjWith', function() {
   it('should curry', function() {
     const fn = (v, k) => [`new${k.toUpperCase()}`, 2 * v];
     const obj = { a: 1, b: 2, c: 3 };
-    const expected = [['newA', 'newB', 'newC'], [2, 4, 6]];
+    const expected = [
+      ['newA', 'newB', 'newC'],
+      [2, 4, 6],
+    ];
 
     assert.deepEqual(RA.unzipObjWith(fn, obj), expected);
     assert.deepEqual(RA.unzipObjWith(fn)(obj), expected);

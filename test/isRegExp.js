@@ -16,7 +16,10 @@ describe('isRegExp', function() {
     eq(RA.isRegExp(false), false);
     eq(RA.isRegExp(new Error()), false);
     eq(RA.isRegExp(new Date()), false);
-    eq(RA.isRegExp(function() {}), false);
+    eq(
+      RA.isRegExp(function() {}),
+      false
+    );
     eq(RA.isRegExp(Object(0)), false);
     eq(RA.isRegExp(Object('a')), false);
     eq(RA.isRegExp(Object(false)), false);

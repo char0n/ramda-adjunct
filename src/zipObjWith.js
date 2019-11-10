@@ -21,11 +21,7 @@ import { apply, curryN, fromPairs, map, pipe, zip } from 'ramda';
  *  // => { a: 'a2', b: 'b3', c: 'c4' }
  */
 const zipObjWith = curryN(3, (fn, keys, values) =>
-  pipe(
-    zip,
-    map(apply(fn)),
-    fromPairs
-  )(values, keys)
+  pipe(zip, map(apply(fn)), fromPairs)(values, keys)
 );
 
 export default zipObjWith;

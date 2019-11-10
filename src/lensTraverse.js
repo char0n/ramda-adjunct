@@ -37,16 +37,7 @@ import Identity from './fantasy-land/Identity';
  */
 const lensTraverse = of =>
   curry((toFunctorFn, target) =>
-    Identity.of(
-      traverse(
-        of,
-        pipe(
-          toFunctorFn,
-          prop('value')
-        ),
-        target
-      )
-    )
+    Identity.of(traverse(of, pipe(toFunctorFn, prop('value')), target))
   );
 
 export default lensTraverse;

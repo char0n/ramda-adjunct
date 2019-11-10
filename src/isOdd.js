@@ -21,12 +21,6 @@ import isInteger from './isInteger';
  * RA.isOdd(4); // => false
  * RA.isOdd(3); // => true
  */
-const isOdd = both(
-  isInteger,
-  pipe(
-    flip(modulo)(2),
-    complement(equals)(0)
-  )
-);
+const isOdd = both(isInteger, pipe(flip(modulo)(2), complement(equals)(0)));
 
 export default isOdd;

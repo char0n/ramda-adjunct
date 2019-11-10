@@ -63,9 +63,12 @@ describe('reduceP', function() {
   });
 
   it('tests initial value for promise', function() {
-    const testAdd = RA.reduceP(R.add, Promise.resolve(0), [1, 2, 3, 4]).then(
-      actual => eq(actual, 10)
-    );
+    const testAdd = RA.reduceP(R.add, Promise.resolve(0), [
+      1,
+      2,
+      3,
+      4,
+    ]).then(actual => eq(actual, 10));
     const testMultiply = RA.reduceP(R.multiply, Promise.resolve(1), [
       1,
       2,
@@ -134,10 +137,7 @@ describe('reduceP', function() {
 
   it('tests iterator function returning promises', function() {
     return RA.reduceP(
-      R.pipe(
-        R.add,
-        Promise.resolve.bind(Promise)
-      ),
+      R.pipe(R.add, Promise.resolve.bind(Promise)),
       0,
       Promise.resolve([1, Promise.resolve(2), 3])
     ).then(actual => eq(actual, 6));
