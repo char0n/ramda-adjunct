@@ -1,19 +1,20 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('isPair', function() {
   it('tests a value for pair', function() {
-    eq(RA.isPair([]), false);
-    eq(RA.isPair([0]), false);
-    eq(RA.isPair([0, 1]), true);
-    eq(RA.isPair([0, 1, 2]), false);
-    eq(RA.isPair(0), false);
-    eq(RA.isPair(''), false);
-    eq(RA.isPair('foo'), false);
-    eq(RA.isPair(false), false);
-    eq(RA.isPair(true), false);
-    eq(RA.isPair(new Date()), false);
-    eq(RA.isPair({ 0: 0, 1: 1 }), false);
-    eq(RA.isPair({ foo: 0, bar: 1 }), false);
+    assert.isFalse(RA.isPair([]));
+    assert.isFalse(RA.isPair([0]));
+    assert.isTrue(RA.isPair([0, 1]));
+    assert.isFalse(RA.isPair([0, 1, 2]));
+    assert.isFalse(RA.isPair(0));
+    assert.isFalse(RA.isPair(''));
+    assert.isFalse(RA.isPair('foo'));
+    assert.isFalse(RA.isPair(false));
+    assert.isFalse(RA.isPair(true));
+    assert.isFalse(RA.isPair(new Date()));
+    assert.isFalse(RA.isPair({ 0: 0, 1: 1 }));
+    assert.isFalse(RA.isPair({ foo: 0, bar: 1 }));
   });
 });
