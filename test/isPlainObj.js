@@ -1,5 +1,6 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 import element from './shared/element';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
@@ -12,53 +13,53 @@ class Bar {
 
 describe('isPlainObj', function() {
   it('tests a value for POJO', function() {
-    eq(RA.isPlainObj({}), true);
-    eq(RA.isPlainObj({ prop: 'value' }), true);
-    eq(RA.isPlainObj({ constructor: Bar }), true);
-    eq(RA.isPlainObj(new Bar()), false);
-    eq(RA.isPlainObj(['a', 'b', 'c']), false);
+    assert.isTrue(RA.isPlainObj({}));
+    assert.isTrue(RA.isPlainObj({ prop: 'value' }));
+    assert.isTrue(RA.isPlainObj({ constructor: Bar }));
+    assert.isFalse(RA.isPlainObj(new Bar()));
+    assert.isFalse(RA.isPlainObj(['a', 'b', 'c']));
   });
 
   it('tests a value with prototype of null', function() {
-    eq(RA.isPlainObj(Object.create(null)), true);
+    assert.isTrue(RA.isPlainObj(Object.create(null)));
 
     const object = Object.create(null);
     object.constructor = Object.prototype.constructor;
 
-    eq(RA.isPlainObj(object), true);
+    assert.isTrue(RA.isPlainObj(object));
   });
 
   it('tests a value with `valueOf` property', function() {
-    eq(RA.isPlainObj({ valueOf: 1 }), true);
+    assert.isTrue(RA.isPlainObj({ valueOf: 1 }));
   });
 
   it('test a value with custom prototype', function() {
-    eq(RA.isPlainObj(Object.create({ a: 3 })), true);
+    assert.isTrue(RA.isPlainObj(Object.create({ a: 3 })));
   });
 
   it('test a value that is DOM element', function() {
     if (element) {
-      eq(RA.isPlainObj(element), false);
+      assert.isFalse(RA.isPlainObj(element));
     }
   });
 
   it('test a value for non-objects', function() {
-    eq(RA.isPlainObj(args), false);
-    eq(RA.isPlainObj(Error), false);
-    eq(RA.isPlainObj(Math), false);
-    eq(RA.isPlainObj(true), false);
-    eq(RA.isPlainObj('abc'), false);
+    assert.isFalse(RA.isPlainObj(args));
+    assert.isFalse(RA.isPlainObj(Error));
+    assert.isFalse(RA.isPlainObj(Math));
+    assert.isFalse(RA.isPlainObj(true));
+    assert.isFalse(RA.isPlainObj('abc'));
   });
 
   it('test a value for Symbol', function() {
-    if (Symbol) {
-      eq(RA.isPlainObj(Symbol.for('symbol')), false);
+    if (Symbol !== 'undefined') {
+      assert.isFalse(RA.isPlainObj(Symbol.for('symbol')));
     }
   });
 });
 
 describe('isPlainObject', function() {
   it('tests an alias', function() {
-    eq(RA.isPlainObj === RA.isPlainObject, true);
+    assert.strictEqual(RA.isPlainObj, RA.isPlainObject);
   });
 });

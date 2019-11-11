@@ -1,40 +1,41 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
-import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isPositive', function() {
   it('tests a value for positive `Number`', function() {
-    eq(RA.isPositive(0), false);
-    eq(RA.isPositive(0.1), true);
-    eq(RA.isPositive(Object(0)), false);
-    eq(RA.isPositive(Object(0.1)), true);
-    eq(RA.isPositive(NaN), false);
-    eq(RA.isPositive(Infinity), true);
-    eq(RA.isPositive(-Infinity), false);
-    eq(RA.isPositive(MAX_SAFE_INTEGER), true);
-    eq(RA.isPositive(MIN_SAFE_INTEGER), false);
-    eq(RA.isPositive(Number.MAX_VALUE), true);
-    eq(RA.isPositive(Number.MIN_VALUE), true);
+    assert.isFalse(RA.isPositive(0));
+    assert.isTrue(RA.isPositive(0.1));
+    assert.isFalse(RA.isPositive(Object(0)));
+    assert.isTrue(RA.isPositive(Object(0.1)));
+    assert.isFalse(RA.isPositive(NaN));
+    assert.isTrue(RA.isPositive(Infinity));
+    assert.isFalse(RA.isPositive(-Infinity));
+    assert.isTrue(RA.isPositive(MAX_SAFE_INTEGER));
+    assert.isFalse(RA.isPositive(MIN_SAFE_INTEGER));
+    assert.isTrue(RA.isPositive(Number.MAX_VALUE));
+    assert.isTrue(RA.isPositive(Number.MIN_VALUE));
 
-    eq(RA.isPositive(new Date()), false);
-    eq(RA.isPositive(args), false);
-    eq(RA.isPositive([1, 2, 3]), false);
-    eq(RA.isPositive(Object(false)), false);
-    eq(RA.isPositive(new Error()), false);
-    eq(RA.isPositive(RA), false);
-    eq(RA.isPositive(Array.prototype.slice), false);
-    eq(RA.isPositive({ a: 1 }), false);
-    eq(RA.isPositive(/x/), false);
-    eq(RA.isPositive(Object('a')), false);
+    assert.isFalse(RA.isPositive(new Date()));
+    assert.isFalse(RA.isPositive(args));
+    assert.isFalse(RA.isPositive([1, 2, 3]));
+    assert.isFalse(RA.isPositive(Object(false)));
+    assert.isFalse(RA.isPositive(new Error()));
+    assert.isFalse(RA.isPositive(RA));
+    assert.isFalse(RA.isPositive(Array.prototype.slice));
+    assert.isFalse(RA.isPositive({ a: 1 }));
+    assert.isFalse(RA.isPositive(/x/));
+    assert.isFalse(RA.isPositive(Object('a')));
 
     if (Symbol !== 'undefined') {
-      eq(RA.isPositive(Symbol), false);
+      assert.isFalse(RA.isPositive(Symbol));
     }
 
-    eq(RA.isPositive(null), false);
-    eq(RA.isPositive(undefined), false);
+    assert.isFalse(RA.isPositive(null));
+    assert.isFalse(RA.isPositive(undefined));
   });
 });

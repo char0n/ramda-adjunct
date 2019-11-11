@@ -1,43 +1,44 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
-import eq from './shared/eq';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
 describe('isOdd', function() {
   it('tests a value for odd integer `Number`', function() {
-    eq(RA.isOdd(0), false);
-    eq(RA.isOdd(4), false);
-    eq(RA.isOdd(Object(0)), false);
-    eq(RA.isOdd(Object(0.1)), false);
-    eq(RA.isOdd(NaN), false);
-    eq(RA.isOdd(3), true);
-    eq(RA.isOdd(7), true);
-    eq(RA.isOdd(-3), true);
-    eq(RA.isOdd(-7), true);
-    eq(RA.isOdd(-Infinity), false);
-    eq(RA.isOdd(MAX_SAFE_INTEGER), true);
-    eq(RA.isOdd(MIN_SAFE_INTEGER), true);
-    eq(RA.isOdd(Number.MAX_VALUE), false);
-    eq(RA.isOdd(Number.MIN_VALUE), false);
+    assert.isFalse(RA.isOdd(0));
+    assert.isFalse(RA.isOdd(4));
+    assert.isFalse(RA.isOdd(Object(0)));
+    assert.isFalse(RA.isOdd(Object(0.1)));
+    assert.isFalse(RA.isOdd(NaN));
+    assert.isTrue(RA.isOdd(3));
+    assert.isTrue(RA.isOdd(7));
+    assert.isTrue(RA.isOdd(-3));
+    assert.isTrue(RA.isOdd(-7));
+    assert.isFalse(RA.isOdd(-Infinity));
+    assert.isTrue(RA.isOdd(MAX_SAFE_INTEGER));
+    assert.isTrue(RA.isOdd(MIN_SAFE_INTEGER));
+    assert.isFalse(RA.isOdd(Number.MAX_VALUE));
+    assert.isFalse(RA.isOdd(Number.MIN_VALUE));
 
-    eq(RA.isOdd(new Date()), false);
-    eq(RA.isOdd(args), false);
-    eq(RA.isOdd([1, 2, 3]), false);
-    eq(RA.isOdd(Object(false)), false);
-    eq(RA.isOdd(new Error()), false);
-    eq(RA.isOdd(RA), false);
-    eq(RA.isOdd(Array.prototype.slice), false);
-    eq(RA.isOdd({ a: 1 }), false);
-    eq(RA.isOdd(/x/), false);
-    eq(RA.isOdd(Object('a')), false);
+    assert.isFalse(RA.isOdd(new Date()));
+    assert.isFalse(RA.isOdd(args));
+    assert.isFalse(RA.isOdd([1, 2, 3]));
+    assert.isFalse(RA.isOdd(Object(false)));
+    assert.isFalse(RA.isOdd(new Error()));
+    assert.isFalse(RA.isOdd(RA));
+    assert.isFalse(RA.isOdd(Array.prototype.slice));
+    assert.isFalse(RA.isOdd({ a: 1 }));
+    assert.isFalse(RA.isOdd(/x/));
+    assert.isFalse(RA.isOdd(Object('a')));
 
     if (Symbol !== 'undefined') {
-      eq(RA.isOdd(Symbol), false);
+      assert.isFalse(RA.isOdd(Symbol));
     }
 
-    eq(RA.isOdd(null), false);
-    eq(RA.isOdd(undefined), false);
+    assert.isFalse(RA.isOdd(null));
+    assert.isFalse(RA.isOdd(undefined));
   });
 });
