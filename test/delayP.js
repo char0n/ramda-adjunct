@@ -60,7 +60,8 @@ describe('delayP', function() {
             });
             throw new Error('rejection should fail');
           } catch (e) {
-            assert.strictEqual(delayedValue, undefined);
+            delayedValue = e;
+            assert.strictEqual(delayedValue, error);
           }
         }
       );
