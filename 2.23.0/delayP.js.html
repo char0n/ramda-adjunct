@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNegativeZero.js - Documentation</title>
+    <title>delayP.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNegativeZero.js</h1>
+    <h1 class="page-title">delayP.js</h1>
     
 
     
@@ -52,29 +52,48 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { identical } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry, propOr, partial, nth } from 'ramda';
 
+import isPlainObj from './isPlainObj';
 /**
- * Checks if value is a negative zero (-0).
+ * Create a promise which resolves/rejects after
+ * the specified milliseconds.
  *
- * @func isNegativeZero
- * @memberof RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see @see {@link RA.isPositiveZero|isPositiveZero}
+ * @func delayP
+ * @memberOf RA
+ * @category Function
+ * @sig a -> Promise a
+ * @sig () -> Promise Undefined
+ * @param {number|Object}  milliseconds number of milliseconds or options object.
+ * @return {Promise} A Promise that is resolved/rejected with the given value if provided after certain delay.
  * @example
  *
- * RA.isNegativeZero(-0); //=> true
- * RA.isNegativeZero(+0); //=> false
- * RA.isNegativeZero(0); //=> false
- * RA.isNegativeZero(null); //=> false
+ * RA.delayP(200); //=> Promise(undefined)
+ * RA.delayP({ timeout: 1000, value: 'hello world' }); //=> Promise('hello world')
+ * RA.delayP.reject(100); //=> Promise(undefined)
+ * RA.delayP.reject({ timeout: 100, value: new Error('error') }); //=> Promise(Error('error'))
  */
-const isNegativeZero = identical(-0);
 
-export default isNegativeZero;
+const makeDelay = curry((settleFnPicker, opts) => {
+  let timeout = opts;
+  let value;
+
+  if (isPlainObj(opts)) {
+    timeout = propOr(0, 'timeout', opts);
+    value = propOr(value, 'value', opts);
+  }
+
+  return new Promise((...args) => {
+    const settleFn = settleFnPicker(args);
+
+    setTimeout(partial(settleFn, [value]), timeout);
+  });
+});
+
+const delayP = makeDelay(nth(0));
+delayP.reject = makeDelay(nth(1));
+
+export default delayP;
 </code></pre>
         </article>
     </section>
