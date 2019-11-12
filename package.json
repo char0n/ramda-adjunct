@@ -78,8 +78,8 @@
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.js",
-    "lint": "eslint ./ && tslint --project types/tsconfig.json -c types/tslint.json types/index.d.ts",
-    "lint:fix": "eslint ./ --fix && tslint --fix -c types/tslint.json types/index.d.ts",
+    "lint": "eslint ./ && tslint --project types/tsconfig.json -c types/tslint.json types/**/*.ts",
+    "lint:fix": "eslint ./ --fix && tslint --fix --project types/tsconfig.json -c types/tslint.json types/**/*.ts",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
     "test": {
       "command": "mocha",
@@ -180,7 +180,7 @@
     "terser-webpack-plugin": "2.2.1",
     "testem": "3.0.0",
     "tslint": "=5.14.0",
-    "typescript": "=3.5.3",
+    "typescript": "=3.7.2",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10"
   },

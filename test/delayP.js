@@ -1,70 +1,109 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
 describe('delayP', function() {
-  context('passing number as argument', function() {
-    specify('should delay the resolution of delayed promise', async function() {
-      const delayedValue = await RA.delayP(20);
+  context('given number as argument', function() {
+    specify(
+      'should delay the resolution of the returned promise',
+      async function() {
+        const delayedValue = await RA.delayP(2);
 
-      assert.isUndefined(delayedValue);
-    });
+        assert.isUndefined(delayedValue);
+      }
+    );
   });
 
-  context('passing object as argument', function() {
-    specify('should delay the resolution of delayed promise', async function() {
-      const delayedValue = await RA.delayP({
-        timeout: 20,
-        value: 'Hello there',
-      });
-      assert.deepEqual('Hello there', delayedValue);
-    });
+  context('given options object as argument', function() {
+    specify(
+      'should delay the resolution with specific value',
+      async function() {
+        const delayedValue = await RA.delayP({
+          timeout: 2,
+          value: 'Hello there',
+        });
+
+        assert.strictEqual(delayedValue, 'Hello there');
+      }
+    );
   });
 
-  context('passing object with different properties as argument', function() {
-    specify('should delay the resolution of delayed promise', async function() {
-      const delayedValue = await RA.delayP({
-        time: 200,
-        val: 1,
-      });
-      assert.isUndefined(delayedValue);
-    });
+  context('given invalid options object', function() {
+    specify(
+      'should delay the resolution of the returned promise',
+      async function() {
+        const delayedValue = await RA.delayP({
+          time: 200,
+          val: 'val',
+        });
+
+        assert.isUndefined(delayedValue);
+      }
+    );
+  });
+
+  it('should curry', async function() {
+    const delayP = RA.delayP(R.__);
+    const delayedValue = await delayP(0);
+
+    assert.isUndefined(delayedValue);
   });
 
   context('reject', function() {
-    context('passing number as argument', function() {
+    context('given number as argument', function() {
       specify(
-        'should delay the rejected of the returned promise',
+        'should delay the rejection of the returned promise',
         async function() {
-          let delayedValue;
           try {
-            delayedValue = await RA.delayP.reject(10);
-            throw new Error('rejection should fail');
+            await RA.delayP.reject(2);
+            throw new Error('Promise should reject');
           } catch (e) {
-            assert.isUndefined(delayedValue);
+            assert.isUndefined(e);
           }
         }
       );
     });
 
-    context('passing object as argument', function() {
+    context('given options object as argument', function() {
       specify(
-        'should delay the rejected of the returned promise',
+        'should delay the rejection with specific value',
         async function() {
-          const error = new Error('error');
-          let delayedValue;
           try {
-            delayedValue = await RA.delayP.reject({
-              timeout: 9,
-              value: error,
-            });
-            throw new Error('rejection should fail');
+            await RA.delayP.reject({ timeout: 2, value: 'Hello there' });
+            throw new Error('Promise should reject');
           } catch (e) {
-            delayedValue = e;
-            assert.strictEqual(delayedValue, error);
+            assert.strictEqual(e, 'Hello there');
           }
         }
       );
+    });
+
+    context('given invalid options object', function() {
+      specify(
+        'should delay the resolution of the returned promise',
+        async function() {
+          try {
+            await RA.delayP.reject({
+              time: 200,
+              val: 1,
+            });
+            throw new Error('Promise should reject');
+          } catch (e) {
+            assert.isUndefined(e);
+          }
+        }
+      );
+    });
+
+    specify('should curry', async function() {
+      const reject = RA.delayP.reject(R.__);
+      try {
+        await reject(0);
+        throw new Error('Promise should reject');
+      } catch (e) {
+        assert.isUndefined(e);
+      }
     });
   });
 });

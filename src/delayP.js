@@ -1,17 +1,18 @@
 import { curry, propOr, partial, nth } from 'ramda';
 
-import isPlainObj from './isPlainObj';
+import isNonNegative from './isNonNegative';
+import isInteger from './isInteger';
+
 /**
- * Create a promise which resolves/rejects after
- * the specified milliseconds.
+ * Creates a promise which resolves/rejects after the specified milliseconds.
  *
  * @func delayP
  * @memberOf RA
  * @category Function
- * @sig a -> Promise a
- * @sig () -> Promise Undefined
- * @param {number|Object}  milliseconds number of milliseconds or options object.
- * @return {Promise} A Promise that is resolved/rejected with the given value if provided after certain delay.
+ * @sig Number -> Promise Undefined
+ * @sig {timeout: Number, value: a} -> Promise a
+ * @param {number|Object} milliseconds number of milliseconds or options object
+ * @return {Promise} A Promise that is resolved/rejected with the given value (if provided) after the specified delay
  * @example
  *
  * RA.delayP(200); //=> Promise(undefined)
@@ -21,10 +22,12 @@ import isPlainObj from './isPlainObj';
  */
 
 const makeDelay = curry((settleFnPicker, opts) => {
-  let timeout = opts;
+  let timeout;
   let value;
 
-  if (isPlainObj(opts)) {
+  if (isInteger(opts) && isNonNegative(opts)) {
+    timeout = opts;
+  } else {
     timeout = propOr(0, 'timeout', opts);
     value = propOr(value, 'value', opts);
   }
