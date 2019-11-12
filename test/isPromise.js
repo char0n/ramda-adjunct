@@ -1,29 +1,32 @@
+import { assert } from 'chai';
 import { contains } from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isPromise', function() {
   context('given value is not a Promise', function() {
     specify('should return false', function() {
-      eq(RA.isPromise(args), false);
-      eq(RA.isPromise([1, 2, 3]), false);
-      eq(RA.isPromise(true), false);
-      eq(RA.isPromise(new Date()), false);
-      eq(RA.isPromise(new Error()), false);
-      eq(RA.isPromise(Array.prototype.slice), false);
-      eq(RA.isPromise({ 0: 1, length: 1 }), false);
-      eq(RA.isPromise(1), false);
-      eq(RA.isPromise(/x/), false);
-      eq(RA.isPromise(Symbol), false);
+      assert.isFalse(RA.isPromise(args));
+      assert.isFalse(RA.isPromise([1, 2, 3]));
+      assert.isFalse(RA.isPromise(true));
+      assert.isFalse(RA.isPromise(new Date()));
+      assert.isFalse(RA.isPromise(new Error()));
+      assert.isFalse(RA.isPromise(Array.prototype.slice));
+      assert.isFalse(RA.isPromise({ 0: 1, length: 1 }));
+      assert.isFalse(RA.isPromise(1));
+      assert.isFalse(RA.isPromise(/x/));
+
+      if (Symbol !== 'undefined') {
+        assert.isFalse(RA.isPromise(Symbol));
+      }
     });
   });
 
   context('given value is thenable object', function() {
     specify('should return false', function() {
-      eq(RA.isPromise({ then: () => {} }), false);
+      assert.isFalse(RA.isPromise({ then: () => {} }));
     });
   });
 
@@ -31,7 +34,7 @@ describe('isPromise', function() {
     specify('should return false', function() {
       const objWithPrototype = Object.create({ then: () => {} });
 
-      eq(RA.isPromise(objWithPrototype), false);
+      assert.isFalse(RA.isPromise(objWithPrototype));
     });
   });
 
@@ -44,8 +47,8 @@ describe('isPromise', function() {
       const resolvedP = Promise.resolve();
       const rejectedP = Promise.reject();
 
-      eq(RA.isPromise(resolvedP), hasNativePromise);
-      eq(RA.isPromise(rejectedP), hasNativePromise);
+      assert.strictEqual(RA.isPromise(resolvedP), hasNativePromise);
+      assert.strictEqual(RA.isPromise(rejectedP), hasNativePromise);
 
       rejectedP.catch(RA.noop);
     });
@@ -56,7 +59,7 @@ describe('isPromise', function() {
       const func = () => {};
       func.then = () => {};
 
-      eq(RA.isPromise(func), false);
+      assert.isFalse(RA.isPromise(func));
     });
   });
 });
