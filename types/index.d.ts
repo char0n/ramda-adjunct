@@ -890,6 +890,17 @@ declare namespace RamdaAdjunct {
         rejectP<T>(value?: T): Promise<T>;
 
         /**
+         * Create a promise which resolves/rejects after
+         * the specified milliseconds.
+         * Returns A Promise that is resolved/rejected with
+         * the given value if provided after certain delay.
+         */
+        delayP: {
+            <T>(value?: T): Promise<any>,
+            reject<T>(value?: T): Promise<any>
+        };
+
+        /**
          * Composable shortcut for `Promise.then`.
          * The thenP function returns a Promise. It takes two arguments: a callback function for the success of the Promise
          * and the promise instance itself.

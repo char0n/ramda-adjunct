@@ -100,6 +100,7 @@ export { default as allP } from './allP';
 export { default as noneP } from './noneP';
 export { default as resolveP } from './resolveP';
 export { default as rejectP } from './rejectP';
+export { default as delayP } from './delayP';
 export { default as thenP } from './thenP';
 export { default as then } from './thenP';
 export { default as allSettledP } from './allSettledP';
