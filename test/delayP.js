@@ -1,41 +1,69 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('delayP', function() {
-  it('test delay when passing number as argument', function(done) {
-    RA.delayP(1000).then(actual => {
-      eq(actual, undefined);
-      done();
+  context('passing number as argument', function() {
+    specify('should delay the resolution of delayed promise', async function() {
+      const delayedValue = await RA.delayP(20);
+
+      assert.isUndefined(delayedValue);
     });
   });
 
-  it('test delay when passing object as argument', function(done) {
-    RA.delayP({ timeout: 200, value: 'Hello there' }).then(actual => {
-      eq(actual, 'Hello there');
-      done();
-    });
-  });
-
-  it('test delay when passing object with different properties as argument', function(done) {
-    RA.delayP({ time: 200, b: 1 }).then(actual => {
-      eq(actual, undefined);
-      done();
-    });
-  });
-
-  it('test delay reject when passing number as argument', function(done) {
-    RA.delayP.reject(1000).catch(actual => {
-      eq(actual, undefined);
-      done();
-    });
-  });
-
-  it('test delay reject when passing object as argument', function(done) {
-    RA.delayP
-      .reject({ timeout: 900, value: new Error('Gracefull Error') })
-      .catch(actual => {
-        eq(actual, new Error('Gracefull Error'));
-        done();
+  context('passing object as argument', function() {
+    specify('should delay the resolution of delayed promise', async function() {
+      const delayedValue = await RA.delayP({
+        timeout: 20,
+        value: 'Hello there',
       });
+      assert.deepEqual('Hello there', delayedValue);
+    });
+  });
+
+  context('passing object with different properties as argument', function() {
+    specify('should delay the resolution of delayed promise', async function() {
+      const delayedValue = await RA.delayP({
+        time: 200,
+        val: 1,
+      });
+      assert.isUndefined(delayedValue);
+    });
+  });
+
+  context('reject', function() {
+    context('passing number as argument', function() {
+      specify(
+        'should delay the rejected of the returned promise',
+        async function() {
+          let delayedValue;
+          try {
+            delayedValue = await RA.delayP.reject(10);
+            throw new Error('rejection should fail');
+          } catch (e) {
+            assert.isUndefined(delayedValue);
+          }
+        }
+      );
+    });
+
+    context('passing object as argument', function() {
+      specify(
+        'should delay the rejected of the returned promise',
+        async function() {
+          const error = new Error('error');
+          let delayedValue;
+          try {
+            delayedValue = await RA.delayP.reject({
+              timeout: 9,
+              value: error,
+            });
+            throw new Error('rejection should fail');
+          } catch (e) {
+            assert.strictEqual(delayedValue, undefined);
+          }
+        }
+      );
+    });
   });
 });
