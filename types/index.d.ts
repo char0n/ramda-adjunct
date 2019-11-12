@@ -890,14 +890,13 @@ declare namespace RamdaAdjunct {
         rejectP<T>(value?: T): Promise<T>;
 
         /**
-         * Create a promise which resolves/rejects after
-         * the specified milliseconds.
-         * Returns A Promise that is resolved/rejected with
-         * the given value if provided after certain delay.
+         * Creates a promise which resolves/rejects after the specified milliseconds.
          */
         delayP: {
-            <T>(value?: T): Promise<any>,
-            reject<T>(value?: T): Promise<any>
+            (milliseconds: number): Promise<undefined>
+            <T>(options: {timeout: number, value: T}): Promise<T>
+            reject(milliseconds: number): Promise<undefined>
+            reject<T>(options: {timeout: number, value: T}): Promise<T>
         };
 
         /**
