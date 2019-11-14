@@ -1,15 +1,16 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('lengthNotEq', function() {
   context(
     'given the length of a list is not equal to the supplied length',
     function() {
       specify('should return true', function() {
-        eq(RA.lengthNotEq(3, [1, 2, 3, 4]), true);
-        eq(RA.lengthNotEq(3, [1, 2]), true);
-        eq(RA.lengthNotEq(3, [1, 2, 3]), false);
-        eq(RA.lengthNotEq(0, []), false);
+        assert.isTrue(RA.lengthNotEq(3, [1, 2, 3, 4]));
+        assert.isTrue(RA.lengthNotEq(3, [1, 2]));
+        assert.isFalse(RA.lengthNotEq(3, [1, 2, 3]));
+        assert.isFalse(RA.lengthNotEq(0, []));
       });
     }
   );
@@ -18,28 +19,28 @@ describe('lengthNotEq', function() {
     'given the length of a string is not equal to the supplied length',
     function() {
       specify('should return true', function() {
-        eq(RA.lengthNotEq(3, 'abcd'), true);
-        eq(RA.lengthNotEq(3, 'ab'), true);
-        eq(RA.lengthNotEq(3, 'abc'), false);
-        eq(RA.lengthNotEq(0, ''), false);
+        assert.isTrue(RA.lengthNotEq(3, 'abcd'));
+        assert.isTrue(RA.lengthNotEq(3, 'ab'));
+        assert.isFalse(RA.lengthNotEq(3, 'abc'));
+        assert.isFalse(RA.lengthNotEq(0, ''));
       });
     }
   );
 
   context("given a value doesn't have a length property", function() {
     specify('should return true', function() {
-      eq(RA.lengthNotEq(1, NaN), true);
-      eq(RA.lengthNotEq(1, undefined), true);
-      eq(RA.lengthNotEq(1, null), true);
-      eq(RA.lengthNotEq(1, {}), true);
-      eq(RA.lengthNotEq(1, true), true);
-      eq(RA.lengthNotEq(1, false), true);
-      eq(RA.lengthNotEq(1, 5), true);
+      assert.isTrue(RA.lengthNotEq(1, NaN));
+      assert.isTrue(RA.lengthNotEq(1, undefined));
+      assert.isTrue(RA.lengthNotEq(1, null));
+      assert.isTrue(RA.lengthNotEq(1, {}));
+      assert.isTrue(RA.lengthNotEq(1, true));
+      assert.isTrue(RA.lengthNotEq(1, false));
+      assert.isTrue(RA.lengthNotEq(1, 5));
     });
   });
 
   it('should be curried', function() {
-    eq(RA.lengthNotEq(1, [1, 2]), true);
-    eq(RA.lengthNotEq(1)([1, 2]), true);
+    assert.isTrue(RA.lengthNotEq(1, [1, 2]));
+    assert.isTrue(RA.lengthNotEq(1)([1, 2]));
   });
 });

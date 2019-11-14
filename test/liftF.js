@@ -1,7 +1,7 @@
+import { assert } from 'chai';
 import { Maybe } from 'monet';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 const add3 = (a, b, c) => a + b + c;
 const add4 = (a, b, c, d) => a + b + c + d;
@@ -13,16 +13,19 @@ describe('liftF', function() {
   const addF5 = RA.liftF(add5);
 
   it('returns a function', function() {
-    eq(typeof RA.liftF(add3), 'function');
+    assert.strictEqual(typeof RA.liftF(add3), 'function');
   });
 
   it('can lift functions of any arity', function() {
-    eq(addF3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)), Maybe.Some(3));
-    eq(
+    assert.deepEqual(
+      addF3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
+      Maybe.Some(3)
+    );
+    assert.deepEqual(
       addF4(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
       Maybe.Some(4)
     );
-    eq(
+    assert.deepEqual(
       addF5(
         Maybe.Some(1),
         Maybe.Some(1),
