@@ -1,5 +1,6 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('mergeProps', function() {
   let obj;
@@ -14,21 +15,26 @@ describe('mergeProps', function() {
   });
 
   it('tests currying', function() {
-    eq(RA.mergeProps(['foo', 'bar'], obj), expected);
-    eq(RA.mergeProps(['foo', 'bar'])(obj), expected);
+    assert.deepEqual(RA.mergeProps(['foo', 'bar'], obj), expected);
+    assert.deepEqual(RA.mergeProps(['foo', 'bar'])(obj), expected);
   });
 
   it('tests merging the props containing objects', function() {
-    eq(RA.mergeProps(['foo', 'bar'], obj), expected);
+    assert.deepEqual(RA.mergeProps(['foo', 'bar'], obj), expected);
   });
 
   it('tests merging the props containing non-objects', function() {
-    eq(RA.mergeProps(['foo', 'bar'], { foo: 1, bar: 2 }), {});
-    eq(RA.mergeProps(['foo', 'bar'], { foo: 'a', bar: 'b' }), { 0: 'b' });
-    eq(RA.mergeProps(['foo', 'bar'], { foo: null, bar: undefined }), {});
+    assert.deepEqual(RA.mergeProps(['foo', 'bar'], { foo: 1, bar: 2 }), {});
+    assert.deepEqual(RA.mergeProps(['foo', 'bar'], { foo: 'a', bar: 'b' }), {
+      0: 'b',
+    });
+    assert.deepEqual(
+      RA.mergeProps(['foo', 'bar'], { foo: null, bar: undefined }),
+      {}
+    );
   });
 
   it('tests if no props requested', function() {
-    eq(RA.mergeProps([], { foo: 1, bar: 2 }), {});
+    assert.deepEqual(RA.mergeProps([], { foo: 1, bar: 2 }), {});
   });
 });

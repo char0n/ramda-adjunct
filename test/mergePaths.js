@@ -1,5 +1,6 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('mergePaths', function() {
   let obj;
@@ -14,23 +15,32 @@ describe('mergePaths', function() {
   });
 
   it('tests currying', function() {
-    eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], obj), expected);
-    eq(RA.mergePaths([['foo', 'fooinner'], ['bar']])(obj), expected);
+    assert.deepEqual(
+      RA.mergePaths([['foo', 'fooinner'], ['bar']], obj),
+      expected
+    );
+    assert.deepEqual(
+      RA.mergePaths([['foo', 'fooinner'], ['bar']])(obj),
+      expected
+    );
   });
 
   it('tests merging the property paths containing object', function() {
-    eq(RA.mergePaths([['foo', 'fooinner'], ['bar']], obj), expected);
+    assert.deepEqual(
+      RA.mergePaths([['foo', 'fooinner'], ['bar']], obj),
+      expected
+    );
   });
 
   it('tests merging the property paths containing non-objects', function() {
-    eq(
+    assert.deepEqual(
       RA.mergePaths([['foo', 'fooinner'], ['bar']], {
         foo: { fooinner: 1 },
         bar: 2,
       }),
       {}
     );
-    eq(
+    assert.deepEqual(
       RA.mergePaths([['foo', 'fooinner'], ['bar']], {
         foo: { fooinner: 'a' },
         bar: 'b',
@@ -39,7 +49,7 @@ describe('mergePaths', function() {
         0: 'b',
       }
     );
-    eq(
+    assert.deepEqual(
       RA.mergePaths([['foo', 'fooinner'], ['bar']], {
         foo: { fooinner: null },
         bar: undefined,
@@ -49,6 +59,6 @@ describe('mergePaths', function() {
   });
 
   it('tests if no paths requested', function() {
-    eq(RA.mergePaths([], obj), {});
+    assert.deepEqual(RA.mergePaths([], obj), {});
   });
 });
