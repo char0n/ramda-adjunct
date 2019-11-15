@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import { Maybe } from 'monet';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
@@ -17,23 +18,29 @@ describe('liftF', function() {
   });
 
   it('can lift functions of any arity', function() {
-    assert.deepEqual(
-      addF3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
-      Maybe.Some(3)
+    assert.isTrue(
+      R.equals(
+        addF3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
+        Maybe.Some(3)
+      )
     );
-    assert.deepEqual(
-      addF4(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
-      Maybe.Some(4)
+    assert.isTrue(
+      R.equals(
+        addF4(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
+        Maybe.Some(4)
+      )
     );
-    assert.deepEqual(
-      addF5(
-        Maybe.Some(1),
-        Maybe.Some(1),
-        Maybe.Some(1),
-        Maybe.Some(1),
-        Maybe.Some(1)
-      ),
-      Maybe.Some(5)
+    assert.isTrue(
+      R.equals(
+        addF5(
+          Maybe.Some(1),
+          Maybe.Some(1),
+          Maybe.Some(1),
+          Maybe.Some(1),
+          Maybe.Some(1)
+        ),
+        Maybe.Some(5)
+      )
     );
   });
 });
