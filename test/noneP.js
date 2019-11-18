@@ -1,7 +1,7 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 const delay = (ms = 0) => new Promise(res => setTimeout(res, ms));
 
@@ -14,7 +14,7 @@ describe('noneP', function() {
         RA.rejectP(),
       ]);
 
-      eq(reasons, [1, 'b', undefined]);
+      assert.sameOrderedMembers(reasons, [1, 'b', undefined]);
     });
   });
 
@@ -26,7 +26,7 @@ describe('noneP', function() {
         RA.resolveP('oops'),
       ]).then(RA.rejectP, R.identity);
 
-      eq(value, 'oops');
+      assert.strictEqual(value, 'oops');
     });
   });
 
@@ -40,7 +40,7 @@ describe('noneP', function() {
           delay(10).then(() => RA.resolveP('fast')),
         ]).then(RA.rejectP, R.identity);
 
-        eq(value, 'fast');
+        assert.strictEqual(value, 'fast');
       }
     );
   });
@@ -55,7 +55,7 @@ describe('noneP', function() {
           RA.resolveP(3),
         ]).then(RA.rejectP, R.identity);
 
-        eq(value, 1);
+        assert.strictEqual(value, 1);
       }
     );
   });
@@ -67,7 +67,7 @@ describe('noneP', function() {
         R.identity
       );
 
-      eq(value, 2);
+      assert.strictEqual(value, 2);
     });
   });
 
@@ -75,7 +75,7 @@ describe('noneP', function() {
     specify('should resolve with empty reasons', async function() {
       const value = await RA.noneP([]);
 
-      eq(value, []);
+      assert.sameOrderedMembers(value, []);
     });
   });
 
@@ -87,6 +87,6 @@ describe('noneP', function() {
     const actual = [p1, v2, p3];
     const expected = [1, 2, 3];
 
-    eq(await noneP(actual), expected);
+    assert.sameOrderedMembers(await noneP(actual), expected);
   });
 });
