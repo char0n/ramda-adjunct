@@ -23,7 +23,7 @@ describe('notAllPass', function() {
   });
 
   it('returns a curried function whose arity matches that of the highest-arity predicate', function() {
-    assert.strictEqual(RA.notAllPass([odd, gt5, plusEq]).length, 4);
+    assert.lengthOf(RA.notAllPass([odd, gt5, plusEq]), 4);
     assert.isTrue(RA.notAllPass([odd, gt5, plusEq])(9, 9, 9, 10));
     assert.isTrue(RA.notAllPass([odd, gt5, plusEq])(9)(9)(9)(10));
   });
