@@ -25,7 +25,7 @@ describe('nonePass', function() {
   });
 
   it('returns a curried function whose arity matches that of the highest-arity predicate', function() {
-    assert.strictEqual(RA.nonePass([odd, divBy3, plusEq]).length, 4);
+    assert.lengthOf(RA.nonePass([odd, divBy3, plusEq]), 4);
     assert.isTrue(RA.nonePass([odd, divBy3, plusEq])(26, 26, 26, 28));
     assert.isTrue(RA.nonePass([odd, divBy3, plusEq])(26)(26)(26)(28));
   });

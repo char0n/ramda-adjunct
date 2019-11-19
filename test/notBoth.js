@@ -1,9 +1,9 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 import { Just, Nothing } from 'monet';
 import sinon from 'sinon';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 const supportsFantasyLand = () => {
   try {
@@ -21,10 +21,10 @@ describe('notBoth', function() {
     const gt10 = x => x > 10;
     const f = RA.notBoth(even, gt10);
 
-    eq(f(8), true);
-    eq(f(13), true);
-    eq(f(9), true);
-    eq(f(14), false);
+    assert.isTrue(f(8));
+    assert.isTrue(f(13));
+    assert.isTrue(f(9));
+    assert.isFalse(f(14));
   });
 
   it('accepts functions that take multiple parameters', function() {
@@ -32,10 +32,10 @@ describe('notBoth', function() {
     const total20 = (a, b, c) => a + b + c === 20;
     const f = RA.notBoth(between, total20);
 
-    eq(f(4, 5, 11), false);
-    eq(f(12, 2, 7), true);
-    eq(f(12, 2, 6), true);
-    eq(f(5, 6, 15), true);
+    assert.isFalse(f(4, 5, 11));
+    assert.isTrue(f(12, 2, 7));
+    assert.isTrue(f(12, 2, 6));
+    assert.isTrue(f(5, 6, 15));
   });
 
   context('given the first function returns false', function() {
@@ -43,21 +43,21 @@ describe('notBoth', function() {
       const z = sinon.spy();
 
       RA.notBoth(R.F, z)();
-      eq(z.notCalled, true);
+      assert.isTrue(z.notCalled);
     });
   });
 
   if (isFantasyLandSupported) {
     it('accepts fantasy-land applicative functors', function() {
-      eq(RA.notBoth(Just(true), Just(true)), Just(false));
-      eq(RA.notBoth(Just(true), Just(false)), Just(true));
-      eq(RA.notBoth(Just(false), Just(true)), Just(true));
-      eq(RA.notBoth(Just(false), Just(false)), Just(true));
-      eq(RA.notBoth(Just(true), Nothing()), Nothing());
-      eq(RA.notBoth(Nothing(), Just(true)), Nothing());
-      eq(RA.notBoth(Nothing(), Just(false)), Nothing());
-      eq(RA.notBoth(Just(false), Nothing()), Nothing());
-      eq(RA.notBoth(Nothing(), Nothing()), Nothing());
+      assert.isTrue(R.equals(RA.notBoth(Just(true), Just(true)), Just(false)));
+      assert.isTrue(R.equals(RA.notBoth(Just(true), Just(false)), Just(true)));
+      assert.isTrue(R.equals(RA.notBoth(Just(false), Just(true)), Just(true)));
+      assert.isTrue(R.equals(RA.notBoth(Just(false), Just(false)), Just(true)));
+      assert.isTrue(R.equals(RA.notBoth(Just(true), Nothing()), Nothing()));
+      assert.isTrue(R.equals(RA.notBoth(Nothing(), Just(true)), Nothing()));
+      assert.isTrue(R.equals(RA.notBoth(Nothing(), Just(false)), Nothing()));
+      assert.isTrue(R.equals(RA.notBoth(Just(false), Nothing()), Nothing()));
+      assert.isTrue(R.equals(RA.notBoth(Nothing(), Nothing()), Nothing()));
     });
   }
 });
