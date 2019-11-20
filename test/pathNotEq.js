@@ -1,7 +1,7 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('pathNotEq', function() {
   let obj;
@@ -11,18 +11,18 @@ describe('pathNotEq', function() {
   });
 
   it('should curry', function() {
-    eq(RA.pathNotEq(['a', 'b'], 'foo', obj), true);
-    eq(RA.pathNotEq(['a', 'b'])('foo', obj), true);
-    eq(RA.pathNotEq(['a', 'b'], 'foo')(obj), true);
-    eq(RA.pathNotEq(['a', 'b'])('foo')(obj), true);
+    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
+    assert.isTrue(RA.pathNotEq(['a', 'b'])('foo', obj));
+    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo')(obj));
+    assert.isTrue(RA.pathNotEq(['a', 'b'])('foo')(obj));
   });
 
   it('tests path value is not equal', function() {
-    eq(RA.pathNotEq(['a', 'b'], 'foo', obj), true);
+    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
   });
 
   it('tests path value is equal', function() {
-    eq(RA.pathNotEq(['a', 'b'], 1, obj), false);
+    assert.isFalse(RA.pathNotEq(['a', 'b'], 1, obj));
   });
 
   it('has R.equals semantics', function() {
@@ -33,18 +33,17 @@ describe('pathNotEq', function() {
       return x instanceof Just && R.equals(x.value, this.value);
     };
 
-    eq(RA.pathNotEq(['a', 'b'], 0, { a: { b: -0 } }), true);
-    eq(RA.pathNotEq(['a', 'b'], -0, { a: { b: 0 } }), true);
-    eq(RA.pathNotEq(['a', 'b'], NaN, { a: { b: NaN } }), false);
-    eq(
-      RA.pathNotEq(['a', 'b'], new Just([42]), { a: { b: new Just([42]) } }),
-      false
+    assert.isTrue(RA.pathNotEq(['a', 'b'], 0, { a: { b: -0 } }));
+    assert.isTrue(RA.pathNotEq(['a', 'b'], -0, { a: { b: 0 } }));
+    assert.isFalse(RA.pathNotEq(['a', 'b'], NaN, { a: { b: NaN } }));
+    assert.isFalse(
+      RA.pathNotEq(['a', 'b'], new Just([42]), { a: { b: new Just([42]) } })
     );
   });
 
   context('given there is no path', function() {
     specify('should return true', function() {
-      eq(RA.pathNotEq(['bar', 'baz'], 'foo', obj), true);
+      assert.isTrue(RA.pathNotEq(['bar', 'baz'], 'foo', obj));
     });
   });
 
@@ -59,7 +58,7 @@ describe('pathNotEq', function() {
       });
 
       specify('should return false', function() {
-        eq(RA.pathNotEq([0, 1], 'b', obj), false);
+        assert.isFalse(RA.pathNotEq([0, 1], 'b', obj));
       });
     });
 
@@ -73,7 +72,7 @@ describe('pathNotEq', function() {
       });
 
       specify('should return true', function() {
-        eq(RA.pathNotEq([999, 999], 'x', obj), true);
+        assert.isTrue(RA.pathNotEq([999, 999], 'x', obj));
       });
     });
   });
@@ -86,6 +85,6 @@ describe('pathNotEq', function() {
     const isFamous = RA.pathNotEq(['address', 'zipCode'], 90210);
     const result = R.filter(isFamous, users); //= > [ user2, user3 ]
 
-    eq(result, [user2, user3]);
+    assert.sameDeepOrderedMembers(result, [user2, user3]);
   });
 });
