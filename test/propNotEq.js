@@ -1,7 +1,7 @@
+import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('propNotEq', function() {
   let obj;
@@ -11,18 +11,18 @@ describe('propNotEq', function() {
   });
 
   it('tests currying', function() {
-    eq(RA.propNotEq('a', 'foo', obj), true);
-    eq(RA.propNotEq('a')('foo', obj), true);
-    eq(RA.propNotEq('a', 'foo')(obj), true);
-    eq(RA.propNotEq('a')('foo')(obj), true);
+    assert.isTrue(RA.propNotEq('a', 'foo', obj));
+    assert.isTrue(RA.propNotEq('a')('foo', obj));
+    assert.isTrue(RA.propNotEq('a', 'foo')(obj));
+    assert.isTrue(RA.propNotEq('a')('foo')(obj));
   });
 
   it('tests prop value is not equal', function() {
-    eq(RA.propNotEq('a', 'foo', obj), true);
+    assert.isTrue(RA.propNotEq('a', 'foo', obj));
   });
 
   it('tests prop value is equal', function() {
-    eq(RA.propNotEq('a', 1, obj), false);
+    assert.isFalse(RA.propNotEq('a', 1, obj));
   });
 
   it('has R.equals semantics', function() {
@@ -33,15 +33,17 @@ describe('propNotEq', function() {
       return x instanceof Just && R.equals(x.value, this.value);
     };
 
-    eq(RA.propNotEq('value', 0, { value: -0 }), true);
-    eq(RA.propNotEq('value', -0, { value: 0 }), true);
-    eq(RA.propNotEq('value', NaN, { value: NaN }), false);
-    eq(RA.propNotEq('value', new Just([42]), { value: new Just([42]) }), false);
+    assert.isTrue(RA.propNotEq('value', 0, { value: -0 }));
+    assert.isTrue(RA.propNotEq('value', -0, { value: 0 }));
+    assert.isFalse(RA.propNotEq('value', NaN, { value: NaN }));
+    assert.isFalse(
+      RA.propNotEq('value', new Just([42]), { value: new Just([42]) })
+    );
   });
 
   context('given there is no prop bar', function() {
     specify('should return true', function() {
-      eq(RA.propNotEq('bar', 'foo', obj), true);
+      assert.isTrue(RA.propNotEq('bar', 'foo', obj));
     });
   });
 
@@ -53,7 +55,7 @@ describe('propNotEq', function() {
       });
 
       specify('should return false', function() {
-        eq(RA.propNotEq(0, 'a', obj), false);
+        assert.isFalse(RA.propNotEq(0, 'a', obj));
       });
     });
 
@@ -64,7 +66,7 @@ describe('propNotEq', function() {
       });
 
       specify('should return true', function() {
-        eq(RA.propNotEq(0, 'x', obj), true);
+        assert.isTrue(RA.propNotEq(0, 'x', obj));
       });
     });
   });
