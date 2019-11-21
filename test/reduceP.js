@@ -34,7 +34,7 @@ describe('reduceP', function() {
   });
 
   it('returns the accumulator for an empty array', function() {
-    const testAdd = RA.reduceP(R.add, 0, []).then(actual => 
+    const testAdd = RA.reduceP(R.add, 0, []).then(actual =>
       assert.strictEqual(actual, 0)
     );
     const testMultiply = RA.reduceP(R.multiply, 1, []).then(actual =>
@@ -51,7 +51,7 @@ describe('reduceP', function() {
     const sum = RA.reduceP(R.add)(0);
     const cat = RA.reduceP(R.concat)('');
 
-    const testSum = sum([1, 2, 3, 4]).then(actual => 
+    const testSum = sum([1, 2, 3, 4]).then(actual =>
       assert.strictEqual(actual, 10)
     );
     const testConcat = cat(['1', '2', '3', '4']).then(actual =>
