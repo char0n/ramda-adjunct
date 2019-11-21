@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('reduceIndexed', function() {
   context('R.reduce', function() {
@@ -10,8 +9,8 @@ describe('reduceIndexed', function() {
     const mult = (a, b) => a * b;
 
     it('folds simple functions over arrays with the supplied accumulator', function() {
-      eq(R.reduce(addition, 0, [1, 2, 3, 4]), 10);
-      eq(R.reduce(mult, 1, [1, 2, 3, 4]), 24);
+      assert.strictEqual(R.reduce(addition, 0, [1, 2, 3, 4]), 10);
+      assert.strictEqual(R.reduce(mult, 1, [1, 2, 3, 4]), 24);
     });
 
     it('dispatches to objects that implement `reduce`', function() {
@@ -22,14 +21,14 @@ describe('reduceIndexed', function() {
         },
       };
 
-      eq(R.reduce(addition, 0, obj), 'override');
-      eq(R.reduce(addition, 10, obj), 'override');
+      assert.strictEqual(R.reduce(addition, 0, obj), 'override');
+      assert.strictEqual(R.reduce(addition, 10, obj), 'override');
     });
 
     it('returns the accumulator for an empty array', function() {
-      eq(R.reduce(addition, 0, []), 0);
-      eq(R.reduce(mult, 1, []), 1);
-      eq(R.reduce(R.concat, [], []), []);
+      assert.strictEqual(R.reduce(addition, 0, []), 0);
+      assert.strictEqual(R.reduce(mult, 1, []), 1);
+      assert.sameOrderedMembers(R.reduce(R.concat, [], []), []);
     });
 
     it('uses the iterator of an object (and handles short-circuits)', function() {
@@ -68,7 +67,7 @@ describe('reduceIndexed', function() {
       const rfn = xf(apendingT);
       const list = new Reducible([1, 2, 3, 4, 5, 6]);
 
-      eq(R.reduce(rfn, [], list), [1, 2]);
+      assert.sameOrderedMembers(R.reduce(rfn, [], list), [1, 2]);
     });
   });
 
@@ -77,7 +76,7 @@ describe('reduceIndexed', function() {
       const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
       const resultAcc = '-f0-o1-o2-b3-a4-r5';
 
-      eq(
+      assert.strictEqual(
         RA.reduceIndexed(
           (acc, val, idx) => `${acc}-${val}${idx}`,
           '',

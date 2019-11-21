@@ -1,7 +1,6 @@
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('pickIndexes', function() {
   let list;
@@ -11,17 +10,17 @@ describe('pickIndexes', function() {
   });
 
   it('tests currying', function() {
-    eq(RA.pickIndexes([], []), []);
-    eq(RA.pickIndexes([])([]), []);
+    assert.sameOrderedMembers(RA.pickIndexes([], []), []);
+    assert.sameOrderedMembers(RA.pickIndexes([])([]), []);
   });
 
   it('tests picking values from list by indexes', function() {
-    eq(RA.pickIndexes([0, 2], list), ['a', 'c']);
+    assert.sameOrderedMembers(RA.pickIndexes([0, 2], list), ['a', 'c']);
   });
 
   context("given indexes doesn't exist", function() {
     specify('should skip these indexes', function() {
-      eq(RA.pickIndexes([-1, 0, 5], list), ['a']);
+      assert.sameOrderedMembers(RA.pickIndexes([-1, 0, 5], list), ['a']);
     });
   });
 
@@ -39,19 +38,19 @@ describe('pickIndexes', function() {
 
   context('given empty indexes', function() {
     specify('should return empty array', function() {
-      eq(RA.pickIndexes([], list), []);
+      assert.sameOrderedMembers(RA.pickIndexes([], list), []);
     });
   });
 
   context('given empty list', function() {
     specify('should return empty array', function() {
-      eq(RA.pickIndexes([0, 1, 2], []), []);
+      assert.sameOrderedMembers(RA.pickIndexes([0, 1, 2], []), []);
     });
   });
 
   context('given empty indexes and list', function() {
     specify('should return empty array', function() {
-      eq(RA.pickIndexes([], []), []);
+      assert.sameOrderedMembers(RA.pickIndexes([], []), []);
     });
   });
 });
