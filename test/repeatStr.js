@@ -2,28 +2,27 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 import { repeatStrInvoker, repeatStrPolyfill } from '../src/repeatStr';
-import eq from './shared/eq';
 
 describe('repeatStr', function() {
   specify('should repeat string n times', function() {
-    eq(RA.repeatStr('abc', 3), 'abcabcabc');
+    assert.strictEqual(RA.repeatStr('abc', 3), 'abcabcabc');
   });
 
   context('given count 0', function() {
     specify('should return empty string', function() {
-      eq(RA.repeatStr('abc', 0), '');
+      assert.strictEqual(RA.repeatStr('abc', 0), '');
     });
   });
 
   context('given count 1', function() {
     specify('should return original string', function() {
-      eq(RA.repeatStr('abc', 1), 'abc');
+      assert.strictEqual(RA.repeatStr('abc', 1), 'abc');
     });
   });
 
   context('given count supplied as float', function() {
     specify('should convert count to integer', function() {
-      eq(RA.repeatStr('abc', 3.5), 'abcabcabc');
+      assert.strictEqual(RA.repeatStr('abc', 3.5), 'abcabcabc');
     });
   });
 
@@ -41,16 +40,16 @@ describe('repeatStr', function() {
 
   context('given count is not a number', function() {
     specify('should return empty string', function() {
-      eq(RA.repeatStr('abc', 'a'), '');
-      eq(RA.repeatStr('abc', null), '');
-      eq(RA.repeatStr('abc', undefined), '');
-      eq(RA.repeatStr('abc', NaN), '');
+      assert.strictEqual(RA.repeatStr('abc', 'a'), '');
+      assert.strictEqual(RA.repeatStr('abc', null), '');
+      assert.strictEqual(RA.repeatStr('abc', undefined), '');
+      assert.strictEqual(RA.repeatStr('abc', NaN), '');
     });
   });
 
   specify('should be curried', function() {
-    eq(RA.repeatStr('abc', 3.5), 'abcabcabc');
-    eq(RA.repeatStr('abc')(3.5), 'abcabcabc');
+    assert.strictEqual(RA.repeatStr('abc', 3.5), 'abcabcabc');
+    assert.strictEqual(RA.repeatStr('abc')(3.5), 'abcabcabc');
   });
 
   context('repeatStrInvoker', function() {
@@ -61,24 +60,24 @@ describe('repeatStr', function() {
     });
 
     specify('should repeat string n times', function() {
-      eq(repeatStrInvoker('abc', 3), 'abcabcabc');
+      assert.strictEqual(repeatStrInvoker('abc', 3), 'abcabcabc');
     });
 
     context('given count 0', function() {
       specify('should return empty string', function() {
-        eq(repeatStrInvoker('abc', 0), '');
+        assert.strictEqual(repeatStrInvoker('abc', 0), '');
       });
     });
 
     context('given count 1', function() {
       specify('should return original string', function() {
-        eq(repeatStrInvoker('abc', 1), 'abc');
+        assert.strictEqual(repeatStrInvoker('abc', 1), 'abc');
       });
     });
 
     context('given count supplied as float', function() {
       specify('should convert count to integer', function() {
-        eq(repeatStrInvoker('abc', 3.5), 'abcabcabc');
+        assert.strictEqual(repeatStrInvoker('abc', 3.5), 'abcabcabc');
       });
     });
 
@@ -96,39 +95,39 @@ describe('repeatStr', function() {
 
     context('given count is not a number', function() {
       specify('should return empty string', function() {
-        eq(repeatStrInvoker('abc', 'a'), '');
-        eq(repeatStrInvoker('abc', null), '');
-        eq(repeatStrInvoker('abc', undefined), '');
-        eq(repeatStrInvoker('abc', NaN), '');
+        assert.strictEqual(repeatStrInvoker('abc', 'a'), '');
+        assert.strictEqual(repeatStrInvoker('abc', null), '');
+        assert.strictEqual(repeatStrInvoker('abc', undefined), '');
+        assert.strictEqual(repeatStrInvoker('abc', NaN), '');
       });
     });
 
     specify('should be curried', function() {
-      eq(repeatStrInvoker('abc', 3.5), 'abcabcabc');
-      eq(repeatStrInvoker('abc')(3.5), 'abcabcabc');
+      assert.strictEqual(repeatStrInvoker('abc', 3.5), 'abcabcabc');
+      assert.strictEqual(repeatStrInvoker('abc')(3.5), 'abcabcabc');
     });
   });
 
   context('repeatStrPolyfill', function() {
     specify('should repeat string n times', function() {
-      eq(repeatStrPolyfill('abc', 3), 'abcabcabc');
+      assert.strictEqual(repeatStrPolyfill('abc', 3), 'abcabcabc');
     });
 
     context('given count 0', function() {
       specify('should return empty string', function() {
-        eq(repeatStrPolyfill('abc', 0), '');
+        assert.strictEqual(repeatStrPolyfill('abc', 0), '');
       });
     });
 
     context('given count 1', function() {
       specify('should return original string', function() {
-        eq(repeatStrPolyfill('abc', 1), 'abc');
+        assert.strictEqual(repeatStrPolyfill('abc', 1), 'abc');
       });
     });
 
     context('given count supplied as float', function() {
       specify('should convert count to integer', function() {
-        eq(repeatStrPolyfill('abc', 3.5), 'abcabcabc');
+        assert.strictEqual(repeatStrPolyfill('abc', 3.5), 'abcabcabc');
       });
     });
 
@@ -146,16 +145,16 @@ describe('repeatStr', function() {
 
     context('given count is not a number', function() {
       specify('should return empty string', function() {
-        eq(repeatStrPolyfill('abc', 'a'), '');
-        eq(repeatStrPolyfill('abc', null), '');
-        eq(repeatStrPolyfill('abc', undefined), '');
-        eq(repeatStrPolyfill('abc', NaN), '');
+        assert.strictEqual(repeatStrPolyfill('abc', 'a'), '');
+        assert.strictEqual(repeatStrPolyfill('abc', null), '');
+        assert.strictEqual(repeatStrPolyfill('abc', undefined), '');
+        assert.strictEqual(repeatStrPolyfill('abc', NaN), '');
       });
     });
 
     specify('should be curried', function() {
-      eq(repeatStrPolyfill('abc', 3.5), 'abcabcabc');
-      eq(repeatStrPolyfill('abc')(3.5), 'abcabcabc');
+      assert.strictEqual(repeatStrPolyfill('abc', 3.5), 'abcabcabc');
+      assert.strictEqual(repeatStrPolyfill('abc')(3.5), 'abcabcabc');
     });
   });
 });
