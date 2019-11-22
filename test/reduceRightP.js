@@ -6,15 +6,15 @@ import * as RA from '../src';
 
 describe('reduceRightP', function() {
   it('folds simple functions over arrays with the supplied accumulator', function() {
-    const testAdd = RA.reduceRightP(R.add, 0, [
+    const testAdd = RA.reduceRightP(R.add, 0, [1, 2, 3, 4]).then(actual =>
+      assert.strictEqual(actual, 10)
+    );
+    const testMultiply = RA.reduceRightP(R.multiply, 1, [
       1,
       2,
       3,
-      4
-    ]).then(actual => assert.strictEqual(actual, 10));
-    const testMultiply = RA.reduceRightP(R.multiply, 1, [1, 2, 3, 4]).then(
-      actual => assert.strictEqual(actual, 24)
-    );
+      4,
+    ]).then(actual => assert.strictEqual(actual, 24));
 
     return Promise.all([testAdd, testMultiply]);
   });
@@ -144,9 +144,7 @@ describe('reduceRightP', function() {
 
   it('tests iterator function returning promises', function() {
     return RA.reduceRightP(
-      R.pipe(
-        R.add, Promise.resolve.bind(Promise)
-      ),
+      R.pipe(R.add, Promise.resolve.bind(Promise)),
       0,
       Promise.resolve([1, Promise.resolve(2), 3])
     ).then(actual => assert.strictEqual(actual, 6));
@@ -167,9 +165,8 @@ describe('reduceRightP', function() {
       '1',
       '2',
       '3',
-      '4'
-    ]).then(actual => assert.strictEqual(actual, '4321')
-    );
+      '4',
+    ]).then(actual => assert.strictEqual(actual, '4321'));
 
     return Promise.all([testCat, testCatRight, testCatRightFlipped]);
   });
