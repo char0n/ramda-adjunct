@@ -1,3 +1,14 @@
+<a name="2.23.0"></a>
+# [2.23.0](https://github.com/char0n/ramda-adjunct/compare/v2.22.1...v2.23.0) (2019-11-25)
+
+
+### Features
+
+* **function:** add delayP ([#1107](https://github.com/char0n/ramda-adjunct/issues/1107)) ([b6c1856](https://github.com/char0n/ramda-adjunct/commit/b6c1856)), closes [#1099](https://github.com/char0n/ramda-adjunct/issues/1099)
+* **function:** add lastP ([#1127](https://github.com/char0n/ramda-adjunct/issues/1127)) ([7fe4836](https://github.com/char0n/ramda-adjunct/commit/7fe4836)), closes [#816](https://github.com/char0n/ramda-adjunct/issues/816)
+
+
+
 <a name="2.22.1"></a>
 ## [2.22.1](https://github.com/char0n/ramda-adjunct/compare/v2.22.0...v2.22.1) (2019-11-06)
 
