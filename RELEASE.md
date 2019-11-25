@@ -76,6 +76,9 @@ Now publish to GitHub Package Registry:
  $ npm publish
 ```
 
+Go to the current version [github package](https://github.com/char0n/ramda-adjunct/packages) and paste
+the newly generated section from [CHANGELOG.md](./CHANGELOG.md) file into the description of the package. 
+
 ## Bump the version
 
 Bump the `package.json` and `package-lock.json` version by incrementing **MAJOR**, **MINOR** or **PATCH** part of the semver version.
