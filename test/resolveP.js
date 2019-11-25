@@ -9,7 +9,8 @@ describe('resolveP', function() {
 
   it('tests resolving thenable values', function() {
     return RA.resolveP(Promise.resolve(1)).then(actual =>
-      assert.strictEqual(actual, 1));
+      assert.strictEqual(actual, 1)
+    );
   });
 
   it('tests resolving the only argument', function() {
