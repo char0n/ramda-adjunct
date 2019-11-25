@@ -149,7 +149,7 @@
     "conventional-changelog-cli": "2.0.28",
     "docdash": "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
     "dtslint": "2.0.2",
-    "eslint": "6.7.0",
+    "eslint": "6.7.1",
     "eslint-config-airbnb-base": "=14.0.0",
     "eslint-config-prettier": "6.7.0",
     "eslint-plugin-import": "2.18.2",
