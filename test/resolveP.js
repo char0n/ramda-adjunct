@@ -1,13 +1,15 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('resolveP', function() {
   it('tests resolving with no arguments', function() {
-    return RA.resolveP().then(actual => eq(actual, undefined));
+    return RA.resolveP().then(actual => assert.isUndefined(actual));
   });
 
   it('tests resolving thenable values', function() {
-    return RA.resolveP(Promise.resolve(1)).then(actual => eq(actual, 1));
+    return RA.resolveP(Promise.resolve(1)).then(actual =>
+      assert.strictEqual(actual, 1));
   });
 
   it('tests resolving the only argument', function() {
