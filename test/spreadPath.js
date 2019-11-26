@@ -1,5 +1,6 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('spreadPath', function() {
   let path;
@@ -16,8 +17,8 @@ describe('spreadPath', function() {
   it('tests currying', function() {
     const expected = { a: 1, c: 3, d: 4, b1: {} };
 
-    eq(RA.spreadPath(path, obj), expected);
-    eq(RA.spreadPath(path)(obj), expected);
+    assert.deepEqual(RA.spreadPath(path, obj), expected);
+    assert.deepEqual(RA.spreadPath(path)(obj), expected);
   });
 
   context('given path leads to non object', function() {
@@ -26,7 +27,7 @@ describe('spreadPath', function() {
         a: 1,
         b1: { b2: 999 },
       };
-      eq(RA.spreadPath(path, obj), { a: 1, b1: {} });
+      assert.deepEqual(RA.spreadPath(path, obj), { a: 1, b1: {} });
     });
   });
 
@@ -34,7 +35,7 @@ describe('spreadPath', function() {
     specify(
       'should return object with identical structure as provided object',
       function() {
-        eq(RA.spreadPath(['does', 'not', 'exist'], obj), obj);
+        assert.deepEqual(RA.spreadPath(['does', 'not', 'exist'], obj), obj);
       }
     );
   });

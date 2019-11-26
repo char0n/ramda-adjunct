@@ -1,14 +1,13 @@
-import assert from 'assert';
+import { assert } from 'chai';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('stubObj', function() {
   it('tests `function` that returns new empty object', function() {
-    eq(RA.stubObj(), {});
-    eq(RA.stubObj([1]), {});
-    eq(RA.stubObj(new Array()), {});
-    eq(RA.stubObj(1, 2, 3), {});
+    assert.deepEqual(RA.stubObj(), {});
+    assert.deepEqual(RA.stubObj([1]), {});
+    assert.deepEqual(RA.stubObj(new Array()), {});
+    assert.deepEqual(RA.stubObj(1, 2, 3), {});
   });
 
   context('when called', function() {
