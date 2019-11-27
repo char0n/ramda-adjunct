@@ -1,5 +1,6 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('Y', function() {
   it('tests for making a factorial function', function() {
@@ -12,6 +13,6 @@ describe('Y', function() {
 
     const factorial = RA.Y(makeFact);
 
-    eq(factorial(5), 120);
+    assert.strictEqual(factorial(5), 120);
   });
 });
