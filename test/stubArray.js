@@ -1,14 +1,13 @@
-import assert from 'assert';
+import { assert } from 'chai';
 
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('stubArray', function() {
   it('tests `function` that returns empty array', function() {
-    eq(RA.stubArray(), []);
-    eq(RA.stubArray([1]), []);
-    eq(RA.stubArray(new Array()), []);
-    eq(RA.stubArray(1, 2, 3), []);
+    assert.sameOrderedMembers(RA.stubArray(), []);
+    assert.sameOrderedMembers(RA.stubArray([1]), []);
+    assert.sameOrderedMembers(RA.stubArray(new Array()), []);
+    assert.sameOrderedMembers(RA.stubArray(1, 2, 3), []);
   });
 
   context('when called', function() {

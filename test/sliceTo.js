@@ -1,28 +1,29 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('sliceTo', function() {
   it('retrieves the proper sublist of a list', function() {
     const list = [8, 6, 7, 5, 3, 0, 9];
-    eq(RA.sliceTo(3, list), [8, 6, 7]);
+    assert.sameOrderedMembers(RA.sliceTo(3, list), [8, 6, 7]);
   });
 
   it('handles array-like object', function() {
     const args = (function() {
       return arguments;
     })(1, 2, 3, 4, 5);
-    eq(RA.sliceTo(2, args), [1, 2]);
+    assert.sameOrderedMembers(RA.sliceTo(2, args), [1, 2]);
   });
 
   it('can operate on strings', function() {
-    eq(RA.sliceTo(0, 'abc'), '');
-    eq(RA.sliceTo(1, 'abc'), 'a');
-    eq(RA.sliceTo(2, 'abc'), 'ab');
-    eq(RA.sliceTo(3, 'abc'), 'abc');
-    eq(RA.sliceTo(4, 'abc'), 'abc');
-    eq(RA.sliceTo(-4, 'abc'), '');
-    eq(RA.sliceTo(-3, 'abc'), '');
-    eq(RA.sliceTo(-2, 'abc'), 'a');
-    eq(RA.sliceTo(-1, 'abc'), 'ab');
+    assert.strictEqual(RA.sliceTo(0, 'abc'), '');
+    assert.strictEqual(RA.sliceTo(1, 'abc'), 'a');
+    assert.strictEqual(RA.sliceTo(2, 'abc'), 'ab');
+    assert.strictEqual(RA.sliceTo(3, 'abc'), 'abc');
+    assert.strictEqual(RA.sliceTo(4, 'abc'), 'abc');
+    assert.strictEqual(RA.sliceTo(-4, 'abc'), '');
+    assert.strictEqual(RA.sliceTo(-3, 'abc'), '');
+    assert.strictEqual(RA.sliceTo(-2, 'abc'), 'a');
+    assert.strictEqual(RA.sliceTo(-1, 'abc'), 'ab');
   });
 });

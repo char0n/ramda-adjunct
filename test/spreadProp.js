@@ -1,5 +1,6 @@
+import { assert } from 'chai';
+
 import * as RA from '../src';
-import eq from './shared/eq';
 
 describe('spreadProp', function() {
   let prop;
@@ -14,15 +15,15 @@ describe('spreadProp', function() {
   });
 
   it('tests currying', function() {
-    eq(RA.spreadProp('prop', {}), {});
-    eq(RA.spreadProp('prop')({}), {});
+    assert.deepEqual(RA.spreadProp('prop', {}), {});
+    assert.deepEqual(RA.spreadProp('prop')({}), {});
   });
 
   context("given prop doesn't exist", function() {
     specify(
       'should return object with identical structure as provided object',
       function() {
-        eq(RA.spreadProp('not_exist', obj), obj);
+        assert.deepEqual(RA.spreadProp('not_exist', obj), obj);
       }
     );
   });
@@ -34,7 +35,7 @@ describe('spreadProp', function() {
         b: 999,
       };
 
-      eq(RA.spreadProp(prop, obj), { a: 1 });
+      assert.deepEqual(RA.spreadProp(prop, obj), { a: 1 });
     });
   });
 
@@ -51,7 +52,7 @@ describe('spreadProp', function() {
         b: 999,
       };
 
-      eq(RA.spreadProp(prop, obj), expected);
+      assert.deepEqual(RA.spreadProp(prop, obj), expected);
     });
   });
 
@@ -62,6 +63,6 @@ describe('spreadProp', function() {
       d: 4,
     };
 
-    eq(RA.spreadProp(prop, obj), expected);
+    assert.deepEqual(RA.spreadProp(prop, obj), expected);
   });
 });
