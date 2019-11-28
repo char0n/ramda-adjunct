@@ -441,7 +441,8 @@ describe('Identity', function() {
       leftIdentity(
         jsv.constant(n => RA.Identity.of(Math.sqrt(n))),
         jsv.number
-      ));
+      )
+    );
 
     it(
       'should satisfy right identity law',
