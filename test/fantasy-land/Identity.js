@@ -7,7 +7,6 @@ import laws from 'fantasy-laws';
 import jsv from 'jsverify';
 
 import * as RA from '../../src';
-import eq from '../shared/eq';
 
 describe('Identity', function() {
   const IdentityArb = arbitrary =>
@@ -37,7 +36,7 @@ describe('Identity', function() {
         const a = RA.Identity.of(1);
         const b = RA.Identity.of(1);
 
-        eq(a.equals(b), true);
+        assert.isTrue(a.equals(b));
       });
     });
 
@@ -48,7 +47,7 @@ describe('Identity', function() {
 
         b['@@type'] = 'unknown-type';
 
-        eq(a.equals(b), false);
+        assert.isFalse(a.equals(b));
       });
     });
 
@@ -56,16 +55,16 @@ describe('Identity', function() {
       const a = RA.Identity.of(1);
       const b = RA.Identity.of(2);
 
-      eq(a.equals(a), true);
-      eq(a.equals(b), false);
+      assert.isTrue(a.equals(a));
+      assert.isFalse(a.equals(b));
     });
 
     it('should be isomorphic', function() {
       const type = RA.Identity.of(1);
       const value = type.get();
 
-      eq(type instanceof RA.Identity, true);
-      eq(value, 1);
+      assert.instanceOf(type, RA.Identity);
+      assert.strictEqual(value, 1);
     });
   });
 
@@ -96,9 +95,9 @@ describe('Identity', function() {
         const b = RA.Identity.of(2);
         const c = a.concat(b);
 
-        eq(a instanceof RA.Identity, true);
-        eq(b instanceof RA.Identity, true);
-        eq(c instanceof RA.Identity, true);
+        assert.instanceOf(a, RA.Identity);
+        assert.instanceOf(b, RA.Identity);
+        assert.instanceOf(c, RA.Identity);
       });
     });
 
@@ -108,7 +107,7 @@ describe('Identity', function() {
         const b = RA.Identity.of(2);
         const c = a.concat(b);
 
-        eq(c.get(), 3);
+        assert.strictEqual(c.get(), 3);
       });
     });
 
@@ -118,7 +117,7 @@ describe('Identity', function() {
         const b = RA.Identity.of('b');
         const c = a.concat(b);
 
-        eq(c.get(), 'ab');
+        assert.strictEqual(c.get(), 'ab');
       });
     });
 
@@ -128,7 +127,7 @@ describe('Identity', function() {
         const b = RA.Identity.of([2]);
         const c = a.concat(b);
 
-        eq(c.get(), [1, 2]);
+        assert.sameOrderedMembers(c.get(), [1, 2]);
       });
     });
 
@@ -144,7 +143,7 @@ describe('Identity', function() {
         const b = RA.Identity.of(arrayB);
         const c = a.concat(b);
 
-        eq(c.get(), [1, 2]);
+        assert.sameOrderedMembers(c.get(), [1, 2]);
       });
     });
   });
@@ -155,7 +154,7 @@ describe('Identity', function() {
     it('should support Functor specification', function() {
       const a = RA.Identity.of(1);
 
-      eq(RA.isFunction(a[fl.map]), true);
+      assert.isTrue(RA.isFunction(a[fl.map]));
     });
 
     it(
@@ -171,7 +170,7 @@ describe('Identity', function() {
       const a = RA.Identity.of(1);
       const b = RA.Identity.of(1).map(R.add);
 
-      eq(a.ap(b).get(), 2);
+      assert.strictEqual(a.ap(b).get(), 2);
     });
 
     context('given Apply without a function provided', function() {
@@ -187,7 +186,7 @@ describe('Identity', function() {
       const a = RA.Identity.of(NaN);
       const b = RA.Identity.of(1).map(R.add);
 
-      eq(a.ap(b).get(), NaN);
+      assert.isNaN(a.ap(b).get());
     });
 
     it('should not check any parts of the return value', function() {
@@ -204,7 +203,7 @@ describe('Identity', function() {
     it('should support Apply specification', function() {
       const a = RA.Identity.of(1);
 
-      eq(RA.isFunction(a[fl.ap]), true);
+      assert.isTrue(RA.isFunction(a[fl.ap]));
     });
 
     it('should satisfy identity law', identity(IdentityArb(jsv.number)));
@@ -220,14 +219,17 @@ describe('Identity', function() {
     );
 
     it('should have unit function on type representative', function() {
-      eq(RA.isFunction(RA.Identity[fl.of]), true);
-      eq(RA.Identity.of(1).constructor[fl.of], RA.Identity[fl.of]);
+      assert.isTrue(RA.isFunction(RA.Identity[fl.of]));
+      assert.deepEqual(
+        RA.Identity.of(1).constructor[fl.of],
+        RA.Identity[fl.of]
+      );
     });
 
     it('should return Applicative of the same type', function() {
       const a = RA.Identity.of(1);
 
-      eq(a instanceof RA.Identity, true);
+      assert.instanceOf(a, RA.Identity);
     });
 
     it('should not check any parts of the value supplied to unit function', function() {
@@ -253,9 +255,9 @@ describe('Identity', function() {
       const fn = sinon.spy();
       const a = RA.Identity.of(1).map(fn);
 
-      eq(a instanceof RA.Identity, true);
-      eq(fn.calledOnce, true);
-      eq(fn.calledWith(1), true);
+      assert.instanceOf(a, RA.Identity);
+      assert.isTrue(fn.calledOnce);
+      assert.isTrue(fn.calledWith(1));
     });
 
     context('given mapping function is a not a function', function() {
@@ -271,10 +273,10 @@ describe('Identity', function() {
       it('should contain mapped value', function() {
         const a = RA.Identity.of(1);
 
-        eq(a.map(RA.stubNull).get(), null);
-        eq(a.map(RA.stubUndefined).get(), undefined);
-        eq(a.map(R.always(1)).get(), 1);
-        eq(a.map(RA.stubString).get(), '');
+        assert.isNull(a.map(RA.stubNull).get());
+        assert.isUndefined(a.map(RA.stubUndefined).get());
+        assert.strictEqual(a.map(R.always(1)).get(), 1);
+        assert.strictEqual(a.map(RA.stubString).get(), '');
       });
     });
 
@@ -283,16 +285,15 @@ describe('Identity', function() {
       const a = RA.Identity.of(result).map(R.identity);
 
       // TODO(vladimir.gorej@gmail.com): could not come up with something better
-      eq(a.get() === result, true);
-      eq(a.get(), result);
+      assert.deepEqual(a.get(), result);
     });
 
     it('should return a value of the same Functor', function() {
       const a = RA.Identity.of(1);
       const b = a.map(identity);
 
-      eq(a instanceof RA.Identity, true);
-      eq(b instanceof RA.Identity, true);
+      assert.instanceOf(a, RA.Identity);
+      assert.instanceOf(b, RA.Identity);
     });
   });
 
@@ -321,9 +322,9 @@ describe('Identity', function() {
 
       a.get()(2);
 
-      eq(a instanceof RA.Identity, true);
-      eq(fn.calledOnce, true);
-      eq(fn.calledWith(2), true);
+      assert.instanceOf(a, RA.Identity);
+      assert.isTrue(fn.calledOnce);
+      assert.isTrue(fn.calledWith(2));
     });
 
     context('given mapping function is not a function', function() {
@@ -338,10 +339,10 @@ describe('Identity', function() {
     it('should map over any value type', function() {
       const a = RA.Identity.of(R.identity);
 
-      eq(a.contramap(RA.stubNull).get()(), null);
-      eq(a.contramap(RA.stubUndefined).get()(), undefined);
-      eq(a.contramap(R.always(1)).get()(), 1);
-      eq(a.contramap(RA.stubString).get()(), '');
+      assert.isNull(a.contramap(RA.stubNull).get()());
+      assert.isUndefined(a.contramap(RA.stubUndefined).get()());
+      assert.strictEqual(a.contramap(R.always(1)).get()(), 1);
+      assert.strictEqual(a.contramap(RA.stubString).get()(), '');
     });
 
     it('should not check any parts of the return value', function() {
@@ -349,16 +350,15 @@ describe('Identity', function() {
       const a = RA.Identity.of(R.identity).contramap(R.always(result));
 
       // TODO(vladimir.gorej@gmail.com): could not come up with something better
-      eq(a.get()() === result, true);
-      eq(a.get()(), result);
+      assert.deepEqual(a.get()(), result);
     });
 
     it('should return value of the same Contravariant', function() {
       const a = RA.Identity.of(identity);
       const b = a.contramap(identity);
 
-      eq(a instanceof RA.Identity, true);
-      eq(b instanceof RA.Identity, true);
+      assert.instanceOf(a, RA.Identity);
+      assert.instanceOf(b, RA.Identity);
     });
   });
 
@@ -368,8 +368,8 @@ describe('Identity', function() {
     it('should support an Apply specification', function() {
       const a = RA.Identity.of(1);
 
-      eq(RA.isFunction(a[fl.ap]), true);
-      eq(RA.isFunction(a.constructor[fl.of]), true);
+      assert.isTrue(RA.isFunction(a[fl.ap]));
+      assert.isTrue(RA.isFunction(a.constructor[fl.of]));
     });
 
     it(
@@ -385,7 +385,7 @@ describe('Identity', function() {
       const a = RA.Identity.of(1);
       const fn = val => RA.Identity.of(val + 1);
 
-      eq(a.chain(fn).get(), 2);
+      assert.strictEqual(a.chain(fn).get(), 2);
     });
 
     context('given mapping function is not a function', function() {
@@ -403,8 +403,8 @@ describe('Identity', function() {
           const a = RA.Identity.of(1);
           const fn = val => RA.Identity.of(val + 1);
 
-          eq(a.chain(fn) instanceof RA.Identity, true);
-          eq(a.chain(fn).get(), 2);
+          assert.instanceOf(a.chain(fn), RA.Identity);
+          assert.strictEqual(a.chain(fn).get(), 2);
         });
       });
 
@@ -413,8 +413,8 @@ describe('Identity', function() {
           const a = RA.Identity.of(1);
           const fn = val => val + 1;
 
-          eq(a.chain(fn) instanceof RA.Identity, true);
-          eq(a.chain(fn).get(), 1);
+          assert.instanceOf(a.chain(fn), RA.Identity);
+          assert.strictEqual(a.chain(fn).get(), 1);
         });
       });
     });
@@ -426,22 +426,19 @@ describe('Identity', function() {
     it('should support Applicative specification', function() {
       const a = RA.Identity.of(1);
 
-      eq(RA.isFunction(RA.Identity[fl.of]), true);
-      eq(RA.isFunction(a.constructor[fl.of]), true);
+      assert.isTrue(RA.isFunction(RA.Identity[fl.of]));
+      assert.isTrue(RA.isFunction(a.constructor[fl.of]));
     });
 
     it('should support Chain specification', function() {
       const a = RA.Identity.of(1);
 
-      eq(RA.isFunction(a[fl.chain]), true);
+      assert.isTrue(RA.isFunction(a[fl.chain]));
     });
 
     it(
       'should satisfy left identity law',
-      leftIdentity(
-        jsv.constant(n => RA.Identity.of(Math.sqrt(n))),
-        jsv.number
-      )
+      leftIdentity(jsv.constant(n => RA.Identity.of(Math.sqrt(n))), jsv.number)
     );
 
     it(
@@ -456,7 +453,7 @@ describe('Identity', function() {
     it('should support Setoid specification', function() {
       const a = RA.Identity.of(1);
 
-      eq(RA.isFunction(a[fl.equals]), true);
+      assert.isTrue(RA.isFunction(a[fl.equals]));
     });
 
     it(
@@ -482,7 +479,7 @@ describe('Identity', function() {
       const a = RA.Identity.of(1);
       const b = RA.Identity.of(2);
 
-      eq(a.lte(b), true);
+      assert.isTrue(a.lte(b));
     });
 
     it('should not support values of the different Ord', function() {
@@ -491,15 +488,15 @@ describe('Identity', function() {
 
       b['@@type'] = 'unknown-type';
 
-      eq(a.lte(b), false);
+      assert.isFalse(a.lte(b));
     });
 
     it('should return a boolean', function() {
       const a = RA.Identity.of(1);
       const b = RA.Identity.of(2);
 
-      eq(a.lte(b), true);
-      eq(b.lte(a), false);
+      assert.isTrue(a.lte(b));
+      assert.isFalse(b.lte(a));
     });
   });
 
@@ -507,29 +504,29 @@ describe('Identity', function() {
     it('should support Semigroup specification', function() {
       const i = RA.Identity.of('string').empty();
 
-      eq(RA.isFunction(i[fl.concat]), true);
+      assert.isTrue(RA.isFunction(i[fl.concat]));
     });
 
     it('should satisfy right identity law', function() {
       const a = RA.Identity.of('string');
       const i = a.empty();
 
-      eq(a.concat(i), a);
+      assert.isTrue(R.equals(a.concat(i), a));
     });
 
     it('should satisfy left identity law', function() {
       const a = RA.Identity.of('string');
       const i = a.empty();
 
-      eq(i.concat(a), a);
+      assert.isTrue(R.equals(i.concat(a), a));
     });
 
     it('should return value of the same Monoid', function() {
       const a = RA.Identity.of('string');
       const i = a.empty();
 
-      eq(a instanceof RA.Identity, true);
-      eq(i instanceof RA.Identity, true);
+      assert.instanceOf(a, RA.Identity);
+      assert.instanceOf(i, RA.Identity);
     });
 
     it('should delegate to `empty` method of the value', function() {
@@ -542,7 +539,7 @@ describe('Identity', function() {
       const a = RA.Identity.of(Type);
       const i = a.empty();
 
-      eq(i, RA.Identity.of(0));
+      assert.isTrue(R.equals(i, RA.Identity.of(0)));
     });
   });
 });
