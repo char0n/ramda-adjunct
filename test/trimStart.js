@@ -5,19 +5,13 @@ import * as RA from '../src';
 import { trimStartInvoker, trimStartPolyfill } from '../src/trimStart';
 
 describe('trimStart', function() {
-  specify(
-    'should remove whitespace from the beginning of a string',
-    function() {
-      assert.strictEqual(RA.trimStart('  abc'), 'abc');
-    }
-  );
+  it('should remove whitespace from the beginning of a string', function() {
+    assert.strictEqual(RA.trimStart('  abc'), 'abc');
+  });
 
-  specify(
-    'should not remove whitespace from the rest of the string',
-    function() {
-      assert.strictEqual(RA.trimStart('a b c '), 'a b c ');
-    }
-  );
+  it('should not remove whitespace from the rest of the string', function() {
+    assert.strictEqual(RA.trimStart('a b c '), 'a b c ');
+  });
 
   context('given an empty string', function() {
     specify('should return an empty string', function() {
@@ -31,7 +25,7 @@ describe('trimStart', function() {
     });
   });
 
-  specify('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function() {
     const trimStart = RA.trimStart(R.__);
 
     assert.strictEqual(trimStart('  abc'), 'abc');
