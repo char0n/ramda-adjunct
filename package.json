@@ -50,6 +50,11 @@
       "name": "Guillaume ARM",
       "email": "trapcodien@gmail.com",
       "url": "https://github.com/guillaumearm"
+    },
+    {
+      "name": "Alexander Zaika",
+      "email": "js636f@gmail.com",
+      "url": "https://github.com/js636f"
     }
   ],
   "sideEffects": false,
