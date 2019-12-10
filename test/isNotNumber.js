@@ -21,11 +21,11 @@ describe('isNotNumber', function() {
       assert.isTrue(RA.isNotNumber(/x/));
       assert.isTrue(RA.isNotNumber(Object('a')));
       assert.isTrue(RA.isNotNumber('123'));
-  
+
       if (Symbol !== 'undefined') {
         assert.isTrue(RA.isNotNumber(Symbol));
       }
-  
+
       assert.isTrue(RA.isNotNumber(null));
       assert.isTrue(RA.isNotNumber(undefined));
     });
@@ -52,5 +52,4 @@ describe('isNotNumber', function() {
 
     assert.isTrue(isNotNumber([1, 2, 3]));
   });
-
 });
