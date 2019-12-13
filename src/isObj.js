@@ -1,4 +1,5 @@
 import { both, either } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 import isNotNull from './isNotNull';
 import isFunction from './isFunction';
@@ -26,6 +27,6 @@ import isOfTypeObject from './internal/isOfTypeObject';
  * RA.isObj(undefined); //=> false
  */
 /* eslint-enable max-len */
-const isObj = both(isNotNull, either(isOfTypeObject, isFunction));
+const isObj = curry1(both(isNotNull, either(isOfTypeObject, isFunction)));
 
 export default isObj;

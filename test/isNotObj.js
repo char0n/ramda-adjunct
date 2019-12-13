@@ -36,13 +36,6 @@ describe('isNotObj', function() {
     });
   });
 
-  /*
-   We have a bug here
-   RA.isNotObj(R.__) returns false. I think the problem is in
-   src/isObj.js because src/isNotObj.js is a complement(isObj)
-   and RA.isObj(R.__) just returns true, so I think we need to
-   refactor src/isObj.js to eliminate the bug.
-  */
   it('should support placeholder to specify "gaps"', function() {
     const isNotObj = RA.isNotObj(R.__);
 
