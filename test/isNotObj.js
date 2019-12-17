@@ -44,7 +44,7 @@ describe('isNotObj', function() {
 });
 
 describe('isNotObject', function() {
-  it('tests an alias', function() {
+  it('should be an alias for isNotObject', function() {
     assert.strictEqual(RA.isNotObj, RA.isNotObject);
   });
 });

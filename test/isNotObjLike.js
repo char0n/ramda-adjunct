@@ -43,7 +43,7 @@ describe('isNotObjLike', function() {
 });
 
 describe('isNotObjectLike', function() {
-  it('tests an alias', function() {
+  it('should be an alias for isNotObjLike', function() {
     assert.strictEqual(RA.isNotObjLike, RA.isNotObjectLike);
   });
 });
