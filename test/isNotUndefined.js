@@ -20,7 +20,7 @@ describe('isNotUndefined', function() {
   });
 
   context('given an undefined value', function() {
-    specify('it should return false', function() {
+    specify('should return false', function() {
       assert.isFalse(RA.isNotUndefined(void 0));
       assert.isFalse(RA.isNotUndefined(undefined));
     });
