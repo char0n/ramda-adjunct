@@ -6,7 +6,7 @@ import Symbol from './shared/Symbol';
 
 describe('isNotUndefined', function() {
   context('given a non-undefined value', function() {
-    specify('it should return true', function() {
+    specify('should return true', function() {
       assert.isTrue(RA.isNotUndefined(null));
       assert.isTrue(RA.isNotUndefined([]));
       assert.isTrue(RA.isNotUndefined({}));
