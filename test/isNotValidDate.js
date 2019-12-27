@@ -7,7 +7,7 @@ import Symbol from './shared/Symbol';
 
 describe('isNotValidDate', function() {
   context('given a non-date value', function() {
-    specify('it should return true', function() {
+    specify('should return true', function() {
       assert.isTrue(RA.isNotValidDate(new Date('a')));
       assert.isTrue(RA.isNotValidDate(Date.now()));
       assert.isTrue(RA.isNotValidDate(args));
