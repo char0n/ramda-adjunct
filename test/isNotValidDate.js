@@ -31,7 +31,7 @@ describe('isNotValidDate', function() {
   });
 
   context('given a date value', function() {
-    specify('it should return false', function() {
+    specify('should return false', function() {
       assert.isFalse(RA.isNotValidDate(new Date()));
     });
   });
