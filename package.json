@@ -153,7 +153,7 @@
     "codecov": "3.6.1",
     "conventional-changelog-cli": "2.0.31",
     "docdash": "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
-    "dtslint": "2.0.2",
+    "dtslint": "=2.0.3",
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "=14.0.0",
     "eslint-config-prettier": "6.9.0",
@@ -185,7 +185,7 @@
     "terser-webpack-plugin": "2.3.1",
     "testem": "3.0.2",
     "tslint": "=5.14.0",
-    "typescript": "=3.7.2",
+    "typescript": "=3.7.4",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10"
   },
