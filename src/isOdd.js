@@ -1,4 +1,5 @@
 import { both, pipe, modulo, flip, equals, complement } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 import isInteger from './isInteger';
 
@@ -21,6 +22,8 @@ import isInteger from './isInteger';
  * RA.isOdd(4); // => false
  * RA.isOdd(3); // => true
  */
-const isOdd = both(isInteger, pipe(flip(modulo)(2), complement(equals)(0)));
+const isOdd = curry1(
+  both(isInteger, pipe(flip(modulo)(2), complement(equals)(0)))
+);
 
 export default isOdd;
