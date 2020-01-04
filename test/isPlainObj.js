@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 import element from './shared/element';
@@ -12,54 +13,79 @@ class Bar {
 }
 
 describe('isPlainObj', function() {
-  it('tests a value for POJO', function() {
-    assert.isTrue(RA.isPlainObj({}));
-    assert.isTrue(RA.isPlainObj({ prop: 'value' }));
-    assert.isTrue(RA.isPlainObj({ constructor: Bar }));
-    assert.isFalse(RA.isPlainObj(new Bar()));
-    assert.isFalse(RA.isPlainObj(['a', 'b', 'c']));
+  context('given a POJO value', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isPlainObj({}));
+      assert.isTrue(RA.isPlainObj({ prop: 'value' }));
+      assert.isTrue(RA.isPlainObj({ constructor: Bar }));
+    });
   });
 
-  it('tests a value with prototype of null', function() {
-    assert.isTrue(RA.isPlainObj(Object.create(null)));
-
-    const object = Object.create(null);
-    object.constructor = Object.prototype.constructor;
-
-    assert.isTrue(RA.isPlainObj(object));
+  context('given a non POJO value', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.isPlainObj(new Bar()));
+      assert.isFalse(RA.isPlainObj(['a', 'b', 'c']));
+    });
   });
 
-  it('tests a value with `valueOf` property', function() {
-    assert.isTrue(RA.isPlainObj({ valueOf: 1 }));
+  context('given a value with prototype of null', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isPlainObj(Object.create(null)));
+
+      const object = Object.create(null);
+      object.constructor = Object.prototype.constructor;
+
+      assert.isTrue(RA.isPlainObj(object));
+    });
   });
 
-  it('test a value with custom prototype', function() {
-    assert.isTrue(RA.isPlainObj(Object.create({ a: 3 })));
+  context('given a value with `valueOf` property', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isPlainObj({ valueOf: 1 }));
+    });
   });
 
-  it('test a value that is DOM element', function() {
-    if (element) {
-      assert.isFalse(RA.isPlainObj(element));
-    }
+  context('given a value with custom prototype', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.isPlainObj(Object.create({ a: 3 })));
+    });
   });
 
-  it('test a value for non-objects', function() {
-    assert.isFalse(RA.isPlainObj(args));
-    assert.isFalse(RA.isPlainObj(Error));
-    assert.isFalse(RA.isPlainObj(Math));
-    assert.isFalse(RA.isPlainObj(true));
-    assert.isFalse(RA.isPlainObj('abc'));
+  context('given a value that is DOM element', function() {
+    specify('should return false', function() {
+      if (element) {
+        assert.isFalse(RA.isPlainObj(element));
+      }
+    });
   });
 
-  it('test a value for Symbol', function() {
-    if (Symbol !== 'undefined') {
-      assert.isFalse(RA.isPlainObj(Symbol.for('symbol')));
-    }
+  context('given a non-object value', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.isPlainObj(args));
+      assert.isFalse(RA.isPlainObj(Error));
+      assert.isFalse(RA.isPlainObj(Math));
+      assert.isFalse(RA.isPlainObj(true));
+      assert.isFalse(RA.isPlainObj('abc'));
+    });
+  });
+
+  context('given a Symbol value', function() {
+    specify('should return false', function() {
+      if (Symbol !== 'undefined') {
+        assert.isFalse(RA.isPlainObj(Symbol.for('symbol')));
+      }
+    });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isPlainObj = RA.isPlainObj(R.__);
+
+    assert.isTrue(isPlainObj({}));
   });
 });
 
 describe('isPlainObject', function() {
-  it('tests an alias', function() {
+  it('should be an alias for isPlainObj', function() {
     assert.strictEqual(RA.isPlainObj, RA.isPlainObject);
   });
 });
