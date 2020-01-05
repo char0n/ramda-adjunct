@@ -1295,6 +1295,12 @@ declare namespace RamdaAdjunct {
         trimRight(value: string): string;
 
         /**
+         * Removes specified characters from the beginning of a string
+         */
+        trimCharsStart(charsToTrim: string, targetString: string): string;
+        trimCharsStart(charsToTrim: string): (targetString: string) => string;
+
+        /**
          * The function pads the current string with a given string
          * (repeated, if needed) so that the resulting string reaches a given length.
          * The padding is applied from the end of the current string.
