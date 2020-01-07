@@ -10,7 +10,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/char0n/ramda-adjunct/issues)
 [![try on RunKit](https://img.shields.io/badge/try%20on-RunKit-brightgreen.svg?style=flat)](https://npm.runkit.com/ramda-adjunct)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fchar0n%2Framda-adjunct?ref=badge_shield)
-[![Backers on Open Collective](https://opencollective.com/ramda-adjunct/backers/badge.svg)](#backers) 
+[![Backers on Open Collective](https://opencollective.com/ramda-adjunct/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/ramda-adjunct/sponsors/badge.svg)](#sponsors)
 [![Join the chat at https://gitter.im/ramda-adjunct/Lobby](https://badges.gitter.im/ramda-adjunct/Lobby.svg)](https://gitter.im/ramda-adjunct/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Open Source Helpers](https://www.codetriage.com/char0n/ramda-adjunct/badges/users.svg)](https://www.codetriage.com/char0n/ramda-adjunct)
@@ -21,14 +21,14 @@
 <p align="center"><img src="https://raw.githubusercontent.com/char0n/ramda-adjunct/master/logo.jpg" width="250" height="200" /></p>
 
 
-Ramda Adjunct is the most popular and most comprehensive set of functional utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation. 
+Ramda Adjunct is the most popular and most comprehensive set of functional utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation.
 
 For a full list of functions see the [**Documentation For The Latest Release**](https://char0n.github.io/ramda-adjunct).
 
 Adjunct is a thing added to something else as a supplementary rather than an essential part. And that something is being ramda.
 
-Follow Ramda Adjunct on [**medium.com/ramda-adjunct**](https://medium.com/ramda-adjunct) to read latest news and 
-articles about the library. 
+Follow Ramda Adjunct on [**medium.com/ramda-adjunct**](https://medium.com/ramda-adjunct) to read latest news and
+articles about the library.
 
 <table>
   <tr>
@@ -38,7 +38,7 @@ articles about the library.
       <td valign="middle">
         <a href="https://tidelift.com/subscription/pkg/npm-ramda-adjunct?utm_source=npm-ramda-adjunct&utm_medium=referral&utm_campaign=readme">
             Get professionally supported ramda-adjunct with Tidelift Subscription.
-        </a>    
+        </a>
       </td>
   </tr>
 </table>
@@ -124,7 +124,7 @@ _Do you want to find out more about why this library exists ? Read this [**artic
 
 ## Requirements
 
- - ramda >= 0.19.0 <= 0.26.1 
+ - ramda >= 0.19.0 <= 0.26.1
  - node >= 0.10.48
 
 Ramda Adjunct is being automatically tested against node version >=8 <=11.
@@ -138,9 +138,9 @@ It is also possible that our ES5 distributions run on node versions older than 0
 ## API Documentation
 
  [LATEST](https://char0n.github.io/ramda-adjunct),
- [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.23.0), 
- [ALL VERSIONS](./VERSIONS.md) 
- 
+ [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.23.0),
+ [ALL VERSIONS](./VERSIONS.md)
+
 ## Wrote about us
 
 - [Ramda — R.adjust](https://medium.com/@kyletilman/ramda-r-adjust-b69a575274fa)
@@ -193,7 +193,7 @@ If you want to contribute to this project, please consult the [CONTRIBUTING.md](
 
 **Running linter**
 
-We're using [eslint](https://eslint.org/) and [airbnb codestyle](https://github.com/airbnb/javascript) rules with [prettier](https://prettier.io/) integrated as an eslint plugin.  
+We're using [eslint](https://eslint.org/) and [airbnb codestyle](https://github.com/airbnb/javascript) rules with [prettier](https://prettier.io/) integrated as an eslint plugin.
 
 ```sh
  $ npm run lint
@@ -234,7 +234,7 @@ You can always find fresh build files in circle-ci [artifacts](https://circleci.
 
 ## Tree shaking support
 
-Tree shaking is a term commonly used in a JavaScript context for dead-code elimination. It relies on the static structure of ES2015's module syntax, i.e. `import` and `export`. Ramda Adjunct natively supports tree shaking thanks to the way the code is organized and its use of ES2015 imports. 
+Tree shaking is a term commonly used in a JavaScript context for dead-code elimination. It relies on the static structure of ES2015's module syntax, i.e. `import` and `export`. Ramda Adjunct natively supports tree shaking thanks to the way the code is organized and its use of ES2015 imports.
 
 ```javascript
   import * as RA from 'ramda-adjunct';
@@ -248,11 +248,6 @@ Tree shaking is a term commonly used in a JavaScript context for dead-code elimi
 ```
 
 These two statements are equivalent and _only_ `isArray` should be incorporated into your bundle. You can pick and choose the functions you need without worrying about the whole library being included in your build.
-
-## Contributing
-
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
 
 ## Assimilated libraries
 
