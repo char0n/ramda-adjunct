@@ -15,11 +15,6 @@ describe('trimCharsStart', function() {
     assert.strictEqual(RA.trimCharsStart('_-', '-_-abc-_-'), 'abc-_-');
   });
 
-  it('should curry', function() {
-    assert.strictEqual(RA.trimCharsStart('_-', ''), '');
-    assert.strictEqual(RA.trimCharsStart('_-')(''), '');
-  });
-
   context('given none of the trim characters are present', function() {
     specify('should return the target string as-is', function() {
       assert.strictEqual(RA.trimCharsStart('_-', 'abc'), 'abc');
@@ -45,5 +40,10 @@ describe('trimCharsStart', function() {
     specify('should return an empty string', function() {
       assert.strictEqual(RA.trimCharsStart('-_', ''), '');
     });
+  });
+
+  it('should curry', function() {
+    assert.strictEqual(RA.trimCharsStart('_-', ''), '');
+    assert.strictEqual(RA.trimCharsStart('_-')(''), '');
   });
 });
