@@ -9,7 +9,7 @@ module.exports = {
   entry: [
     '@babel/polyfill',
     ...glob.sync('./test/*.js', {
-      ignore: ['./test/typescript.js', './test/mocha-bootstrap.js'],
+      ignore: ['./test/mocha-bootstrap.js'],
     }),
   ],
   output: {
