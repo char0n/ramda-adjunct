@@ -5,7 +5,7 @@ import * as RA from '../src';
 
 describe('isSymbol', function() {
   context('given a Symbol as value', function() {
-    it('should return true', function() {
+    specify('should return true', function() {
       assert.isTrue(RA.isSymbol(Symbol('any')));
       assert.isTrue(RA.isSymbol(Symbol(1)));
       assert.isTrue(RA.isSymbol(Symbol.iterator));
@@ -13,7 +13,7 @@ describe('isSymbol', function() {
   });
 
   context('given anything else as value', function() {
-    it('should return false', function() {
+    specify('should return false', function() {
       assert.isFalse(RA.isSymbol(undefined));
       assert.isFalse(RA.isSymbol(null));
       assert.isFalse(RA.isSymbol(() => {}));

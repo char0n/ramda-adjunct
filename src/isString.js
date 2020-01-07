@@ -1,4 +1,5 @@
 import _isString from 'ramda/src/internal/_isString';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
  * Checks if input value is `String`.
@@ -16,6 +17,6 @@ import _isString from 'ramda/src/internal/_isString';
  * RA.isString('abc'); //=> true
  * RA.isString(1); //=> false
  */
-const isString = _isString;
+const isString = curry1(_isString);
 
 export default isString;

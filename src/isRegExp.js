@@ -1,4 +1,5 @@
 import { type, identical, pipe } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
  * Checks if value is `RegExp` object.
@@ -17,6 +18,6 @@ import { type, identical, pipe } from 'ramda';
  * RA.isRegExp(/(?:)/); //=> true
  * RA.isRegExp(1); //=> false
  */
-const isRegExp = pipe(type, identical('RegExp'));
+const isRegExp = curry1(pipe(type, identical('RegExp')));
 
 export default isRegExp;

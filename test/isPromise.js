@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { contains } from 'ramda';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
@@ -41,7 +41,7 @@ describe('isPromise', function() {
   context('given value is an instance of native Promise', function() {
     const hasNativePromise =
       typeof Promise !== 'undefined' &&
-      contains('[native code]', Promise.toString());
+      R.contains('[native code]', Promise.toString());
 
     specify('should return true', function() {
       const resolvedP = Promise.resolve();
@@ -61,5 +61,11 @@ describe('isPromise', function() {
 
       assert.isFalse(RA.isPromise(func));
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isPromise = RA.isPromise(R.__);
+
+    assert.isFalse(isPromise(1));
   });
 });
