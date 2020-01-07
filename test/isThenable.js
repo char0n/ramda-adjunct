@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
@@ -56,5 +57,11 @@ describe('isThenable', function() {
 
       assert.isTrue(RA.isThenable(func));
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isThenable = RA.isThenable(R.__);
+
+    assert.isFalse(isThenable(1));
   });
 });
