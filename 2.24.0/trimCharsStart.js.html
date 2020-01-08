@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>compact.js - Documentation</title>
+    <title>trimCharsStart.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">compact.js</h1>
+    <h1 class="page-title">trimCharsStart.js</h1>
     
 
     
@@ -52,29 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { reject } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry, dropWhile, join, pipe, split } from 'ramda';
 
-import isFalsy from './isFalsy';
+import contained from './contained';
 
 /**
- * Creates an array with all falsy values removed.
- * The values false, null, 0, "", undefined, and NaN are falsy.
+ * Removes leading specified characters from string.
  *
- * @func compact
+ * @func trimCharsStart
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
- * @category List
- * @sig Filterable f => f a -> f a
- * @param {Array} list The array to compact
- * @return {Array} Returns the new array of filtered values
- * @see {@link RA.isFalsy|isFalsy}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.24.0|v2.24.0}
+ * @category String
+ * @sig String -> String
+ * @param {string} chars The characters to trim
+ * @param {string} value The characters to trim
+ * @return {string} Returns the trimmed string.
  * @example
  *
- * RA.compact([0, 1, false, 2, '', 3]); //=> [1, 2, 3]
+ * RA.trimCharsStart('_-', '-_-abc-_-'); //=> 'abc-_-'
  */
-const compact = reject(isFalsy);
 
-export default compact;
+const trimCharsStart = curry((chars, value) =>
+  pipe(split(''), dropWhile(contained(chars)), join(''))(value)
+);
+
+export default trimCharsStart;
 </code></pre>
         </article>
     </section>
