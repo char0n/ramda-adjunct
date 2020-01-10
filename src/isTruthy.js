@@ -1,3 +1,5 @@
+import curry1 from 'ramda/src/internal/_curry1';
+
 /**
  * In JavaScript, a `truthy` value is a value that is considered true
  * when evaluated in a Boolean context. All values are truthy unless
@@ -21,6 +23,6 @@
  * RA.isTruthy(new Date()); // => true
  * RA.isTruthy(Infinity); // => true
  */
-const isTruthy = Boolean;
+const isTruthy = curry1(Boolean);
 
 export default isTruthy;
