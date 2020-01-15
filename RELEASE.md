@@ -15,8 +15,7 @@ to semver rules.
 ## Edit README.md
 
 Edit `README.md` file ([API Documentation section](https://github.com/char0n/ramda-adjunct/blob/master/README.md#api-documentation)),
-[VERSIONS.md](./VERSIONS.md) file and add link to the version you're currently releasing. 
-Also add the link to release article from [ramda-adjunct medium publication](https://medium.com/ramda-adjunct).
+[VERSIONS.md](./VERSIONS.md) file and add link to the version you're currently releasing.
 
 ## Commit to git
 
@@ -25,11 +24,11 @@ Commit the above changes to git with following git message
 ```sh
  $ git commit -m "chore(release): cut the vX.Y.Z release"
  $ git push origin master
-``` 
+```
 
 ## Create git tag
 
-Tag the release commit 
+Tag the release commit
 
 ```sh
  $ git tag -a vY.Y.Z
@@ -40,7 +39,7 @@ Tag the release commit
 
 Go to [ramda-adjunct github repo](https://github.com/char0n/ramda-adjunct) and create the github release.
 Use a tag that you created in previous step as a release tag. For more information how to create
-github release, please refer to this [page](https://help.github.com/articles/creating-releases/).   
+github release, please refer to this [page](https://help.github.com/articles/creating-releases/).
 
 ## Publish to NPM
 
@@ -52,7 +51,7 @@ github release, please refer to this [page](https://help.github.com/articles/cre
 
 Read [this document](https://help.github.com/en/github/managing-packages-with-github-package-registry/configuring-npm-for-use-with-github-package-registry) to understand how to configure your npm to publish to Github Package Registry.
 
-Temporarily add the following entry into the `package.json` file. This modifications will set tell npm that the primary 
+Temporarily add the following entry into the `package.json` file. This modifications will set tell npm that the primary
 registry is Github Package Registry.
 
 ```json
@@ -77,14 +76,14 @@ Now publish to GitHub Package Registry:
 ```
 
 Go to the current version [github package](https://github.com/char0n/ramda-adjunct/packages) and paste
-the newly generated section from [CHANGELOG.md](./CHANGELOG.md) file into the description of the package. 
+the newly generated section from [CHANGELOG.md](./CHANGELOG.md) file into the description of the package.
 
 ## Bump the version
 
 Bump the `package.json` and `package-lock.json` version by incrementing **MAJOR**, **MINOR** or **PATCH** part of the semver version.
 
 ```sh
- $ git add package.json 
+ $ git add package.json
  $ git add package-lock.json
  $ git commit -m "chore: bump version to vX.Y.Z"
  $ git push origin master
@@ -93,7 +92,7 @@ Bump the `package.json` and `package-lock.json` version by incrementing **MAJOR*
 
 ## Edit redirector for gp-pages
 
-Go to [ramda-adjunct github repo](https://github.com/char0n/ramda-adjunct) and switch to 
+Go to [ramda-adjunct github repo](https://github.com/char0n/ramda-adjunct) and switch to
 **gh-pages** branch. Find `index.html` and edit it. Replace all references of previous version
 of ramda-adjunct with the currently released one. In commit message use suffix `[ci skip]`
 for `circleci` to skip the build triggered by this change.
