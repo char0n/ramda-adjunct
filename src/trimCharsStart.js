@@ -3,7 +3,7 @@ import { curry, dropWhile, join, pipe, split } from 'ramda';
 import contained from './contained';
 
 /**
- * Removes leading specified characters from string.
+ * Removes specified characters from the beginning of a string.
  *
  * @func trimCharsStart
  * @memberOf RA
@@ -11,7 +11,7 @@ import contained from './contained';
  * @category String
  * @sig String -> String
  * @param {string} chars The characters to trim
- * @param {string} value The characters to trim
+ * @param {string} value The string to trim
  * @return {string} Returns the trimmed string.
  * @example
  *
