@@ -5,7 +5,7 @@ import * as RA from '../src';
 
 describe('lensNotSatisfy', function() {
   context(
-    'given a data structure which is not satisfies the predicate',
+    'given a data structure which is not satisfying the predicate',
     function() {
       specify('should return true', function() {
         assert.isTrue(
@@ -17,7 +17,7 @@ describe('lensNotSatisfy', function() {
   );
 
   context(
-    'given a data structure which is satisfies the predicate',
+    'given a data structure which is satisfying the predicate',
     function() {
       specify('should return false', function() {
         assert.isFalse(
