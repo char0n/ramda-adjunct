@@ -29,7 +29,7 @@ describe('lensTraverse', function() {
   }
 
   if (!isRamdaFlSpec1Compatible) {
-    it('should operate on list of  primitives (numbers)', function() {
+    it('should operate on a list of primitives (numbers)', function() {
       const travFn = x => RA.Identity.of(x + 1);
       const result = R.over(RA.lensTraverse(RA.Identity.of), travFn, [2, 3]);
       const expected = RA.Identity.of([3, 4]);
@@ -74,7 +74,7 @@ describe('lensTraverse', function() {
   });
 
   if (!isRamdaFlSpec1Compatible) {
-    it('should compose', function() {
+    it('should be composable', function() {
       const result = R.over(
         R.compose(R.lensProp('prop'), RA.lensTraverse(RA.Identity.of)),
         R.map(R.add(1)),
@@ -90,24 +90,22 @@ describe('lensTraverse', function() {
     });
   }
 
-  context('view', function() {
-    if (!isRamdaFlSpec1Compatible) {
-      specify('should work on list of Applicables', function() {
-        const result = R.view(RA.lensTraverse(RA.Identity.of), [
-          RA.Identity.of(2),
-          RA.Identity.of(3),
-        ]);
-        const expected = RA.Identity.of([2, 3]);
+  if (!isRamdaFlSpec1Compatible) {
+    it('should work on list of Applicatives', function() {
+      const result = R.view(RA.lensTraverse(RA.Identity.of), [
+        RA.Identity.of(2),
+        RA.Identity.of(3),
+      ]);
+      const expected = RA.Identity.of([2, 3]);
 
-        assert.deepEqual(result, expected);
-      });
-    }
-
-    specify('should throw on list of non Applicables', function() {
-      const fn = R.view(RA.lensTraverse(RA.Identity.of));
-
-      assert.throws(() => fn([2, 3]));
+      assert.deepEqual(result, expected);
     });
+  }
+
+  it('should throw on list of non Applicatives', function() {
+    const fn = R.view(RA.lensTraverse(RA.Identity.of));
+
+    assert.throws(() => fn([2, 3]));
   });
 
   if (!isRamdaFlSpec1Compatible) {
@@ -119,6 +117,20 @@ describe('lensTraverse', function() {
       const expected = RA.Identity.of([2, 2]);
 
       assert.deepEqual(result, expected);
+    });
+  }
+
+  if (!isRamdaFlSpec1Compatible) {
+    it('should support placeholder to specify "gaps"', function() {
+      const lensTraverse = RA.lensTraverse(R.__);
+
+      const result = R.over(lensTraverse(RA.Identity.of), R.map(R.add(1)), [
+        RA.Identity.of(2),
+        RA.Identity.of(3),
+      ]);
+      const expected = RA.Identity.of([3, 4]);
+
+      assert.deepEqual(result.value, expected.value);
     });
   }
 });
