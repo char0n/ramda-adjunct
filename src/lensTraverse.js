@@ -1,4 +1,5 @@
 import { traverse, curry, pipe, prop } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 import Identity from './fantasy-land/Identity';
 
@@ -35,9 +36,10 @@ import Identity from './fantasy-land/Identity';
  *
  * R.set(maybeLens, Maybe.Just(1), [Maybe.just(2), Maybe.Just(3)]); // => Maybe.Just([1, 1])
  */
-const lensTraverse = of =>
+const lensTraverse = curry1(of =>
   curry((toFunctorFn, target) =>
     Identity.of(traverse(of, pipe(toFunctorFn, prop('value')), target))
-  );
+  )
+);
 
 export default lensTraverse;
