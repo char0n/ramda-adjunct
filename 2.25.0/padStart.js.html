@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isFinite.js - Documentation</title>
+    <title>padStart.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isFinite.js</h1>
+    <h1 class="page-title">padStart.js</h1>
     
 
     
@@ -52,44 +52,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { bind } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
-
-import isFunction from './isFunction';
-import polyfill from './internal/polyfills/Number.isFinite';
-
-export const isFinitePolyfill = curry1(polyfill);
+            <pre class="prettyprint source linenums"><code>import padCharsStart from './padCharsStart';
 
 /**
- * Checks whether the passed value is a finite `Number`.
+ * Pads string on the left side if it's shorter than length.
  *
- * @func isFinite
+ * @func padStart
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.7.0|v0.7.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isNotFinite|isNotFinite}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.25.0|v2.25.0}
+ * @category String
+ * @sig Number -> String -> String
+ * @param {number} targetLength The length of the resulting string once
+ * the current string has been padded
+ * @param {string} value String value to be padded
+ * @return {string} A new string of the specified length with the empty string
+ * applied to the beginning of the current string
+ * @see {@link RA.padCharsEnd|padCharsEnd}, {@link RA.padCharsStart|padCharsStart}, {@link RA.padEnd|padEnd}
  * @example
  *
- * RA.isFinite(Infinity); //=> false
- * RA.isFinite(NaN); //=> false
- * RA.isFinite(-Infinity); //=> false
- *
- * RA.isFinite(0); // true
- * RA.isFinite(2e64); // true
- *
- * RA.isFinite('0');  // => false
- *                    // would've been true with global isFinite('0')
- * RA.isFinite(null); // => false
- *                    // would've been true with global isFinite(null)
+ * RA.padStart(3, 'a'); // => '  a'
  */
-const _isFinite = isFunction(Number.isFinite)
-  ? curry1(bind(Number.isFinite, Number))
-  : isFinitePolyfill;
+const padStart = padCharsStart(' ');
 
-export default _isFinite;
+export default padStart;
 </code></pre>
         </article>
     </section>
