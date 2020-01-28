@@ -43,4 +43,16 @@ describe('liftF', function() {
       )
     );
   });
+
+  it('should support placeholder to specify "gaps"', async function() {
+    const liftF = RA.liftF(R.__);
+    const addF3PL = liftF(add3);
+
+    assert.isTrue(
+      R.equals(
+        addF3PL(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
+        Maybe.Some(3)
+      )
+    );
+  });
 });

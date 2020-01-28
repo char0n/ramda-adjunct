@@ -66,7 +66,7 @@ describe('liftFN', function() {
     );
   });
 
-  it('retain order of arguments', function() {
+  it('retains order of arguments', function() {
     assert.isTrue(
       R.equals(
         RA.liftFN(3, add3)(Maybe.Some('a'), Maybe.Some('b'), Maybe.Some('c')),
@@ -85,7 +85,7 @@ describe('liftFN', function() {
     );
   });
 
-  it('is curried', function() {
+  it('should be curried', function() {
     const f4 = RA.liftFN(4);
     assert.strictEqual(typeof f4, 'function');
     assert.isTrue(
