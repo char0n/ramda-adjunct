@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import * as RA from '../src';
 
 describe('padStart', function() {
-  specify('should pad string with spaces', function() {
+  it('should pad string with spaces', function() {
     assert.strictEqual(RA.padStart(3, 'a'), '  a');
   });
 
@@ -40,7 +40,7 @@ describe('padStart', function() {
     });
   });
 
-  specify('should curry', function() {
+  it('should curry', function() {
     assert.strictEqual(RA.padStart(5, 'abc'), '  abc');
     assert.strictEqual(RA.padStart(5)('abc'), '  abc');
   });
