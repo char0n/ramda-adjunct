@@ -179,7 +179,7 @@
     "prettier": "=1.19.1",
     "ramda": "=0.26.1",
     "ramda-fantasy": "=0.8.0",
-    "rimraf": "3.0.0",
+    "rimraf": "3.0.1",
     "sanctuary-show": "2.0.0",
     "sinon": "8.1.0",
     "terser-webpack-plugin": "2.3.2",
