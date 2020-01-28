@@ -1331,6 +1331,12 @@ declare namespace RamdaAdjunct {
         padCharsStart(padString: string, targetLength: number, value: string): string;
         padCharsStart(padString: string, targetLength: number): (value: string) => string;
         padCharsStart(padString: string): (targetLength: number, value: string) => string;
+
+        /**
+         * Pads string on the left side if it's shorter than length.
+         */
+        padStart(targetLength: number, value: string): string;
+        padStart(targetLength: number): (value: string) => string;
     }
 }
 

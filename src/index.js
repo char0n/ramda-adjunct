@@ -207,5 +207,6 @@ export { default as trimCharsStart } from './trimCharsStart';
 export { default as padCharsStart } from './padCharsStart';
 export { default as padCharsEnd } from './padCharsEnd';
 export { default as padEnd } from './padEnd';
+export { default as padStart } from './padStart';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
