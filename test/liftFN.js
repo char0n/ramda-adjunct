@@ -13,11 +13,11 @@ describe('liftFN', function() {
   const addN4 = RA.liftFN(4, addN);
   const addN5 = RA.liftFN(5, addN);
 
-  it('returns a function', function() {
+  it('should return a function', function() {
     assert.strictEqual(typeof RA.liftFN(3, add3), 'function');
   });
 
-  it('limits a variadic function to the specified arity', function() {
+  it('should limit a variadic function to the specified arity', function() {
     assert.isTrue(
       R.equals(
         addN3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
@@ -26,7 +26,7 @@ describe('liftFN', function() {
     );
   });
 
-  it('throws error on variadic function is more arguments than arity', function() {
+  it('should throw an error on variadic function which have more arguments than its arity', function() {
     assert.throws(
       addN3.bind(
         null,
@@ -39,7 +39,7 @@ describe('liftFN', function() {
     );
   });
 
-  it('can lift functions of any arity', function() {
+  it('should lift functions of any arity', function() {
     assert.isTrue(
       R.equals(
         addN3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
@@ -66,7 +66,7 @@ describe('liftFN', function() {
     );
   });
 
-  it('retains order of arguments', function() {
+  it('should retain order of arguments', function() {
     assert.isTrue(
       R.equals(
         RA.liftFN(3, add3)(Maybe.Some('a'), Maybe.Some('b'), Maybe.Some('c')),

@@ -13,11 +13,11 @@ describe('liftF', function() {
   const addF4 = RA.liftF(add4);
   const addF5 = RA.liftF(add5);
 
-  it('returns a function', function() {
+  it('should return a function', function() {
     assert.strictEqual(typeof RA.liftF(add3), 'function');
   });
 
-  it('can lift functions of any arity', function() {
+  it('should lift functions of any arity', function() {
     assert.isTrue(
       R.equals(
         addF3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
