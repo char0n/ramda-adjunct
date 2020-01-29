@@ -26,18 +26,23 @@ describe('liftFN', function() {
     );
   });
 
-  it('should throw an error on variadic function which have more arguments than its arity', function() {
-    assert.throws(
-      addN3.bind(
-        null,
-        Maybe.Some(1),
-        Maybe.Some(1),
-        Maybe.Some(1),
-        Maybe.Some(1)
-      ),
-      TypeError
-    );
-  });
+  context(
+    'given a variadic function with more arguments than its arity',
+    function() {
+      specify('should trow an error', function() {
+        assert.throws(
+          addN3.bind(
+            null,
+            Maybe.Some(1),
+            Maybe.Some(1),
+            Maybe.Some(1),
+            Maybe.Some(1)
+          ),
+          TypeError
+        );
+      });
+    }
+  );
 
   it('should lift functions of any arity', function() {
     assert.isTrue(
