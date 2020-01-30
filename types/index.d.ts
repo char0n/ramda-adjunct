@@ -655,9 +655,9 @@ declare namespace RamdaAdjunct {
         reduceIndexed<T, TResult, R extends T[]>(
             iterator: (acc: TResult, elem: T, key: number, list: R) => TResult,
         ): {
-                (acc: TResult): (list: R) => TResult;
-                (acc: TResult, list: R): TResult
-            };
+            (acc: TResult): (list: R) => TResult;
+            (acc: TResult, list: R): TResult
+        };
 
         /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
@@ -853,11 +853,11 @@ declare namespace RamdaAdjunct {
          */
         noneP<T>(iterable: Iterable<T | Promise<T>>): Promise<T[]>;
 
-       /**
-        * allSettledP returns a promise that is fulfilled with an array of promise state snapshots,
-        * but only after all the original promises have settled, i.e. become either fulfilled or rejected.
-        * We say that a promise is settled if it is not pending, i.e. if it is either fulfilled or rejected.
-        */
+        /**
+         * allSettledP returns a promise that is fulfilled with an array of promise state snapshots,
+         * but only after all the original promises have settled, i.e. become either fulfilled or rejected.
+         * We say that a promise is settled if it is not pending, i.e. if it is either fulfilled or rejected.
+         */
         allSettledP<T>(iterable: Iterable<T>): Promise<Array<SettledPromise<T>>>;
 
         /**
@@ -894,9 +894,9 @@ declare namespace RamdaAdjunct {
          */
         delayP: {
             (milliseconds: number): Promise<undefined>
-            <T>(options: {timeout: number, value: T}): Promise<T>
+            <T>(options: { timeout: number, value: T }): Promise<T>
             reject(milliseconds: number): Promise<undefined>
-            reject<T>(options: {timeout: number, value: T}): Promise<T>
+            reject<T>(options: { timeout: number, value: T }): Promise<T>
         };
 
         /**
@@ -1150,7 +1150,7 @@ declare namespace RamdaAdjunct {
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
-        compact(list: any[]): any[];
+        compact<T>(list: T[]): Array<NonNullable<T>>;
 
         /**
          * Returns a new list containing the contents of the given list, followed by the given
@@ -1167,10 +1167,10 @@ declare namespace RamdaAdjunct {
          *
          * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
          */
-         contained<T>(list: T[], val: T): boolean;
-         contained<T>(list: T[]): (val: T) => boolean;
-         included<T>(list: T[], val: T): boolean; // alias
-         included<T>(list: T[]): (val: T) => boolean; // alias
+        contained<T>(list: T[], val: T): boolean;
+        contained<T>(list: T[]): (val: T) => boolean;
+        included<T>(list: T[], val: T): boolean; // alias
+        included<T>(list: T[]): (val: T) => boolean; // alias
 
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,
