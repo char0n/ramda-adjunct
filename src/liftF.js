@@ -1,3 +1,5 @@
+import curry1 from 'ramda/src/internal/_curry1';
+
 import liftFN from './liftFN';
 
 /**
@@ -30,6 +32,6 @@ import liftFN from './liftFN';
  * madd3(Maybe.Some(10), Maybe.Some(15), Maybe.Some(17)); //=> Maybe.Some(42)
  * madd3(Maybe.Some(10), Maybe.Nothing(), Maybe.Some(17)); //=> Maybe.Nothing()
  */
-const liftF = fn => liftFN(fn.length, fn);
+const liftF = curry1(fn => liftFN(fn.length, fn));
 
 export default liftF;

@@ -13,11 +13,11 @@ describe('liftF', function() {
   const addF4 = RA.liftF(add4);
   const addF5 = RA.liftF(add5);
 
-  it('returns a function', function() {
+  it('should return a function', function() {
     assert.strictEqual(typeof RA.liftF(add3), 'function');
   });
 
-  it('can lift functions of any arity', function() {
+  it('should lift functions of any arity', function() {
     assert.isTrue(
       R.equals(
         addF3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
@@ -40,6 +40,18 @@ describe('liftF', function() {
           Maybe.Some(1)
         ),
         Maybe.Some(5)
+      )
+    );
+  });
+
+  it('should support placeholder to specify "gaps"', async function() {
+    const liftF = RA.liftF(R.__);
+    const addF3PL = liftF(add3);
+
+    assert.isTrue(
+      R.equals(
+        addF3PL(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
+        Maybe.Some(3)
       )
     );
   });
