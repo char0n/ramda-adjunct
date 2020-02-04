@@ -22,6 +22,7 @@ Edit `README.md` file ([API Documentation section](https://github.com/char0n/ram
 Commit the above changes to git with following git message
 
 ```sh
+ $ git add -A
  $ git commit -m "chore(release): cut the vX.Y.Z release"
  $ git push origin master
 ```

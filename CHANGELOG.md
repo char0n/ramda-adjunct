@@ -1,3 +1,15 @@
+<a name="2.25.0"></a>
+# [2.25.0](https://github.com/char0n/ramda-adjunct/compare/v2.24.0...v2.25.0) (2020-02-04)
+
+
+### Features
+
+* add padStart ([#1287](https://github.com/char0n/ramda-adjunct/issues/1287)) ([054e9aa](https://github.com/char0n/ramda-adjunct/commit/054e9aa)), closes [#1103](https://github.com/char0n/ramda-adjunct/issues/1103)
+* add support for ramda 0.27.0 ([#1304](https://github.com/char0n/ramda-adjunct/issues/1304)) ([78d776b](https://github.com/char0n/ramda-adjunct/commit/78d776b))
+* add trimCharsEnd ([11293cf](https://github.com/char0n/ramda-adjunct/commit/11293cf)), closes [#1136](https://github.com/char0n/ramda-adjunct/issues/1136)
+
+
+
 <a name="2.24.0"></a>
 # [2.24.0](https://github.com/char0n/ramda-adjunct/compare/v2.23.0...v2.24.0) (2020-01-15)
 
