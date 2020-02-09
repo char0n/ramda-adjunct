@@ -4,6 +4,14 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
+let throwsOnIncompatibleSemigroups = false;
+
+try {
+  R.concat([1], '1');
+} catch (e) {
+  throwsOnIncompatibleSemigroups = true;
+}
+
 describe('concatAll', function() {
   it('should concatenate arrays', function() {
     assert.sameOrderedMembers(RA.concatAll([[1], [2], [3]]), [1, 2, 3]);
@@ -29,14 +37,19 @@ describe('concatAll', function() {
     });
   });
 
-  /*
-  // fails on Ramda 0.21
   context('given foldable contains non-compatible semigroups', function() {
-    specify('should throw', function() {
-      assert.throws(() => RA.concatAll([[1], '1']), TypeError);
-    });
+    if (!throwsOnIncompatibleSemigroups) {
+      specify('should return concatenated semigroups', function() {
+        assert.deepEqual(RA.concatAll([[1], '1']), [1, '1']);
+      });
+    }
+
+    if (throwsOnIncompatibleSemigroups) {
+      specify('should throw', function() {
+        assert.throws(() => RA.concatAll([[1], '1']), TypeError);
+      });
+    }
   });
-  */
 
   context('given passed non-foldable', function() {
     specify('should throw', function() {
