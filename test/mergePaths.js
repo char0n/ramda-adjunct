@@ -14,25 +14,14 @@ describe('mergePaths', function() {
     expected = { fooinner2: 1, barinner: 2 };
   });
 
-  it('tests currying', function() {
-    assert.deepEqual(
-      RA.mergePaths([['foo', 'fooinner'], ['bar']], obj),
-      expected
-    );
-    assert.deepEqual(
-      RA.mergePaths([['foo', 'fooinner'], ['bar']])(obj),
-      expected
-    );
-  });
-
-  it('tests merging the property paths containing object', function() {
+  it('should merge the property paths containing object', function() {
     assert.deepEqual(
       RA.mergePaths([['foo', 'fooinner'], ['bar']], obj),
       expected
     );
   });
 
-  it('tests merging the property paths containing non-objects', function() {
+  it('should merge the property paths containing non-objects', function() {
     assert.deepEqual(
       RA.mergePaths([['foo', 'fooinner'], ['bar']], {
         foo: { fooinner: 1 },
@@ -58,7 +47,18 @@ describe('mergePaths', function() {
     );
   });
 
-  it('tests if no paths requested', function() {
+  it('should return an empty object if no paths requested', function() {
     assert.deepEqual(RA.mergePaths([], obj), {});
+  });
+
+  it('should be curried', function() {
+    assert.deepEqual(
+      RA.mergePaths([['foo', 'fooinner'], ['bar']], obj),
+      expected
+    );
+    assert.deepEqual(
+      RA.mergePaths([['foo', 'fooinner'], ['bar']])(obj),
+      expected
+    );
   });
 });

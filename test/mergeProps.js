@@ -14,16 +14,11 @@ describe('mergeProps', function() {
     expected = { fooinner: 1, barinner: 2 };
   });
 
-  it('tests currying', function() {
-    assert.deepEqual(RA.mergeProps(['foo', 'bar'], obj), expected);
-    assert.deepEqual(RA.mergeProps(['foo', 'bar'])(obj), expected);
-  });
-
-  it('tests merging the props containing objects', function() {
+  it('should merge the props containing objects', function() {
     assert.deepEqual(RA.mergeProps(['foo', 'bar'], obj), expected);
   });
 
-  it('tests merging the props containing non-objects', function() {
+  it('should merge the props containing non-objects', function() {
     assert.deepEqual(RA.mergeProps(['foo', 'bar'], { foo: 1, bar: 2 }), {});
     assert.deepEqual(RA.mergeProps(['foo', 'bar'], { foo: 'a', bar: 'b' }), {
       0: 'b',
@@ -34,7 +29,12 @@ describe('mergeProps', function() {
     );
   });
 
-  it('tests if no props requested', function() {
+  it('should return an empty object if no props requested', function() {
     assert.deepEqual(RA.mergeProps([], { foo: 1, bar: 2 }), {});
+  });
+
+  it('should be curried', function() {
+    assert.deepEqual(RA.mergeProps(['foo', 'bar'], obj), expected);
+    assert.deepEqual(RA.mergeProps(['foo', 'bar'])(obj), expected);
   });
 });
