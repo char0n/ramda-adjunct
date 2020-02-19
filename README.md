@@ -272,7 +272,7 @@ This project exists thanks to all the people who contribute. [[Contribute](CONTR
 
 ## Support us
 
-Although we love working on ramda-adjunct, we must invest our free time to make this library great. Support this project's evolution via [Open Collective](https://opencollective.com/ramda-adjunct).
+Although we love working on ramda-adjunct, we must invest our free time to make this library great. Support this project's evolution via [Open Collective](https://opencollective.com/ramda-adjunct) or [Github Sponsors](https://github.com/sponsors/char0n).
 
 [![Support via Open Collective](https://opencollective.com/ramda-adjunct/tiers/backer.svg?avatarHeight=36)](https://opencollective.com/ramda-adjunct/donate)
 
