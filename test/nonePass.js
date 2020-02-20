@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
@@ -8,7 +9,7 @@ describe('nonePass', function() {
   const lt20 = n => n < 20;
   const plusEq = (w, x, y, z) => w + x === y + z;
 
-  it('reports whether all predicates are satisfied by a given value', function() {
+  it('should report whether all predicates are satisfied by a given value', function() {
     const ok = RA.nonePass([odd, divBy3, lt20]);
     assert.isFalse(ok(9)); // all ps succeed
     assert.isFalse(ok(12)); // p1 fails
@@ -20,13 +21,19 @@ describe('nonePass', function() {
     assert.isTrue(ok(26)); // all ps fail
   });
 
-  it('returns true on empty predicate list', function() {
+  it('should return true on empty predicate list', function() {
     assert.isTrue(RA.nonePass([])(3));
   });
 
-  it('returns a curried function whose arity matches that of the highest-arity predicate', function() {
+  it('should return a curried function whose arity matches that of the highest-arity predicate', function() {
     assert.lengthOf(RA.nonePass([odd, divBy3, plusEq]), 4);
     assert.isTrue(RA.nonePass([odd, divBy3, plusEq])(26, 26, 26, 28));
     assert.isTrue(RA.nonePass([odd, divBy3, plusEq])(26)(26)(26)(28));
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const nonePass = RA.nonePass(R.__);
+
+    assert.isTrue(nonePass([odd, divBy3, plusEq])(26, 26, 26, 28));
   });
 });

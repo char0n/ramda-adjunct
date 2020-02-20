@@ -26,7 +26,7 @@ describe('nand', function() {
     assert.isTrue(RA.nand(null, undefined));
   });
 
-  it('should support currying', function() {
+  it('should be curried', function() {
     assert.isFalse(RA.nand(true, true));
     assert.isFalse(RA.nand(true)(true));
   });

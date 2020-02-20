@@ -42,13 +42,6 @@ describe('move', function() {
     });
   });
 
-  it('should support currying', function() {
-    const expected = ['a', 'c', 'd', 'b', 'e'];
-    assert.sameOrderedMembers(RA.move(1)(3, list), expected);
-    assert.sameOrderedMembers(RA.move(1, 3)(list), expected);
-    assert.sameOrderedMembers(RA.move(1)(3)(list), expected);
-  });
-
   context('given `fromIdx` is greater than maximum index', function() {
     specify('should place `undefined` in newIdx position', function() {
       const expected = ['a', 'b', undefined, 'c', 'd', 'e'];
@@ -68,5 +61,12 @@ describe('move', function() {
       ['c', 'd'],
     ];
     assert.sameDeepOrderedMembers(RA.move(2)(0, listOfLists), expected);
+  });
+
+  it('should be curried', function() {
+    const expected = ['a', 'c', 'd', 'b', 'e'];
+    assert.sameOrderedMembers(RA.move(1)(3, list), expected);
+    assert.sameOrderedMembers(RA.move(1, 3)(list), expected);
+    assert.sameOrderedMembers(RA.move(1)(3)(list), expected);
   });
 });
