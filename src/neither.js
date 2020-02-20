@@ -1,4 +1,5 @@
 import { compose, complement, either } from 'ramda';
+import curry2 from 'ramda/src/internal/_curry2';
 
 /* eslint-disable max-len */
 /**
@@ -33,6 +34,6 @@ import { compose, complement, either } from 'ramda';
  * f(9); //=> true
  */
 /* eslint-enable max-len */
-const neither = compose(complement, either);
+const neither = curry2(compose(complement, either));
 
 export default neither;
