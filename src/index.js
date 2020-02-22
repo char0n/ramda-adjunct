@@ -112,6 +112,7 @@ export { default as async } from './async';
 export { default as anyP } from './anyP';
 export { default as firstP } from './anyP'; // alias of anyP
 export { default as lastP } from './lastP';
+export { default as fNull } from './fNull';
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';
