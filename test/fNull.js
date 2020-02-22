@@ -42,13 +42,26 @@ describe('fNull', function() {
       }
     );
     specify(
-      'should call the function with the given argument and default argument',
+      'should call the function with the given argument and default argument when one of the argument in null',
       function() {
         const add = (a, b) => a + b;
 
         const safeAdd = RA.fNull(add, [1, 1]);
 
         const value = safeAdd(1, null);
+
+        assert.equal(value, 2);
+      }
+    );
+
+    specify(
+      'should call the function with the given argument and default argument when one of the argument in undefined',
+      function() {
+        const add = (a, b) => a + b;
+
+        const safeAdd = RA.fNull(add, [1, 1]);
+
+        const value = safeAdd(1, undefined);
 
         assert.equal(value, 2);
       }
