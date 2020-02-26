@@ -1,4 +1,4 @@
-import { complement, compose, allPass } from 'ramda';
+import { curry, complement, compose, allPass } from 'ramda';
 
 /**
  * Takes a list of predicates and returns a predicate that returns true for a given list of
@@ -27,6 +27,6 @@ import { complement, compose, allPass } from 'ramda';
  * f(11); //=> true
  * f(9); //=> true
  */
-const notAllPass = compose(complement, allPass);
+const notAllPass = curry(compose(complement, allPass));
 
 export default notAllPass;

@@ -16,7 +16,7 @@ const supportsFantasyLand = () => {
 describe('notBoth', function() {
   const isFantasyLandSupported = supportsFantasyLand();
 
-  it('combines two boolean-returning functions into one', function() {
+  it('should combine two boolean-returning functions into one', function() {
     const even = x => x % 2 === 0;
     const gt10 = x => x > 10;
     const f = RA.notBoth(even, gt10);
@@ -27,7 +27,7 @@ describe('notBoth', function() {
     assert.isFalse(f(14));
   });
 
-  it('accepts functions that take multiple parameters', function() {
+  it('should accept functions that take multiple parameters', function() {
     const between = (a, b, c) => a < b && b < c;
     const total20 = (a, b, c) => a + b + c === 20;
     const f = RA.notBoth(between, total20);
@@ -48,7 +48,7 @@ describe('notBoth', function() {
   });
 
   if (isFantasyLandSupported) {
-    it('accepts fantasy-land applicative functors', function() {
+    it('should accept fantasy-land applicative functors', function() {
       assert.isTrue(R.equals(RA.notBoth(Just(true), Just(true)), Just(false)));
       assert.isTrue(R.equals(RA.notBoth(Just(true), Just(false)), Just(true)));
       assert.isTrue(R.equals(RA.notBoth(Just(false), Just(true)), Just(true)));
@@ -60,4 +60,12 @@ describe('notBoth', function() {
       assert.isTrue(R.equals(RA.notBoth(Nothing(), Nothing()), Nothing()));
     });
   }
+
+  it('should be curried', function() {
+    const even = x => x % 2 === 0;
+    const gt10 = x => x > 10;
+    const f = RA.notBoth(even)(gt10);
+
+    assert.isTrue(f(8));
+  });
 });
