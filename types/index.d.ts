@@ -910,6 +910,15 @@ declare namespace RamdaAdjunct {
         then<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
 
         /**
+         * Composable shortcut for `Promise.then` that allows for success and failure call backs.
+         * The thenCatchP function returns a Promise. It takes three arguments: a callback function for the success of the Promise,
+         * a callback function for the failure of the Promise, and the promise instance itself.
+         */
+        thenCatchP<A, B>(onFulfilled: Function, onError: (error: any) => B | Promise<B>, promise: Promise<A>): Promise<A> | Promise<B>;
+        thenCatchP<A, B>(onFulfilled: Function, onError: (error: any) => B | Promise<B>): (promise: Promise<A>) => Promise<A> | Promise<B>;
+        thenCatchP<A, B>(onFulfilled: Function): (onError: (error: any) => B | Promise<B>) => (promise: Promise<A>) => Promise<A> | Promise<B>;
+
+        /**
          * Runs the given list of functions in order with the supplied object, then returns the object.
          * Also known as the normal order sequencing combinator.
          *
