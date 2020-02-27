@@ -60,7 +60,7 @@ describe('padCharsEnd', function() {
     });
   });
 
-  specify('should curry', function() {
+  specify('should be curried', function() {
     assert.strictEqual(RA.padCharsEnd('*', 5, 'abc'), 'abc**');
     assert.strictEqual(RA.padCharsEnd('*', 5)('abc'), 'abc**');
     assert.strictEqual(RA.padCharsEnd('*')(5, 'abc'), 'abc**');
@@ -133,7 +133,7 @@ describe('padCharsEnd', function() {
       });
     });
 
-    specify('should curry', function() {
+    specify('should be curried', function() {
       assert.strictEqual(padEndInvoker('*', 5, 'abc'), 'abc**');
       assert.strictEqual(padEndInvoker('*', 5)('abc'), 'abc**');
       assert.strictEqual(padEndInvoker('*')(5, 'abc'), 'abc**');
@@ -201,7 +201,7 @@ describe('padCharsEnd', function() {
       });
     });
 
-    specify('should curry', function() {
+    specify('should be curried', function() {
       assert.strictEqual(padEndPolyfill('*', 5, 'abc'), 'abc**');
       assert.strictEqual(padEndPolyfill('*', 5)('abc'), 'abc**');
       assert.strictEqual(padEndPolyfill('*')(5, 'abc'), 'abc**');

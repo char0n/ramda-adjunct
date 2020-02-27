@@ -9,12 +9,7 @@ describe('omitIndexes', function() {
     list = ['a', 'b', 'c', 'd'];
   });
 
-  it('tests currying', function() {
-    assert.sameOrderedMembers(RA.omitIndexes([], []), []);
-    assert.sameOrderedMembers(RA.omitIndexes([])([]), []);
-  });
-
-  it('tests omitting values from list by indexes', function() {
+  it('should omit values from list by indexes', function() {
     assert.sameOrderedMembers(RA.omitIndexes([0, 2], list), ['b', 'd']);
   });
 
@@ -55,5 +50,10 @@ describe('omitIndexes', function() {
     specify('should return empty array', function() {
       assert.sameOrderedMembers(RA.omitIndexes([], []), []);
     });
+  });
+
+  it('should be curried', function() {
+    assert.sameOrderedMembers(RA.omitIndexes([], []), []);
+    assert.sameOrderedMembers(RA.omitIndexes([])([]), []);
   });
 });

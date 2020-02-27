@@ -26,7 +26,7 @@ describe('nor', function() {
     assert.isTrue(RA.nor(null, undefined));
   });
 
-  it('should support currying', function() {
+  it('should be curried', function() {
     assert.isFalse(RA.nor(true, true));
     assert.isFalse(RA.nor(true)(true));
   });
