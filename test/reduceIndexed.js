@@ -12,7 +12,7 @@ describe('reduceIndexed', function() {
     assert.strictEqual(RA.reduceIndexed(mult, 1, [1, 2, 3, 4]), 24);
   });
 
-  it('should ispatch to objects that implement `reduce`', function() {
+  it('should dispatch to objects that implement `reduce`', function() {
     const obj = {
       x: [1, 2, 3],
       reduce: function fun() {
@@ -62,6 +62,9 @@ describe('reduceIndexed', function() {
   });
 
   it('should be curried', function() {
+    assert.strictEqual(RA.reduceIndexed(addition, 0, [1, 2, 3, 4]), 10);
+    assert.strictEqual(RA.reduceIndexed(addition)(0, [1, 2, 3, 4]), 10);
+    assert.strictEqual(RA.reduceIndexed(addition, 0)([1, 2, 3, 4]), 10);
     assert.strictEqual(RA.reduceIndexed(addition)(0)([1, 2, 3, 4]), 10);
   });
 });

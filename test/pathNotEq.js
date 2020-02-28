@@ -10,12 +10,16 @@ describe('pathNotEq', function() {
     obj = { a: { b: 1 } };
   });
 
-  it('should return true if given path values are not equal', function() {
-    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
+  context('given path values are not equal', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
+    });
   });
 
-  it('should return false if given path values are equal', function() {
-    assert.isFalse(RA.pathNotEq(['a', 'b'], 1, obj));
+  context('given path values are equal', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.pathNotEq(['a', 'b'], 1, obj));
+    });
   });
 
   it('should have R.equals semantics', function() {

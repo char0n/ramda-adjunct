@@ -10,12 +10,16 @@ describe('propNotEq', function() {
     obj = { a: 1, b: 2 };
   });
 
-  it('should return true if given props values are not equal', function() {
-    assert.isTrue(RA.propNotEq('a', 'foo', obj));
+  context('given props values are not equal', function() {
+    specify('should return true', function() {
+      assert.isTrue(RA.propNotEq('a', 'foo', obj));
+    });
   });
 
-  it('should return false if given props values are equal', function() {
-    assert.isFalse(RA.propNotEq('a', 1, obj));
+  context('given props values are equal', function() {
+    specify('should return false', function() {
+      assert.isFalse(RA.propNotEq('a', 1, obj));
+    });
   });
 
   it('should have R.equals semantics', function() {
