@@ -10,22 +10,15 @@ describe('pathNotEq', function() {
     obj = { a: { b: 1 } };
   });
 
-  it('should curry', function() {
-    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
-    assert.isTrue(RA.pathNotEq(['a', 'b'])('foo', obj));
-    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo')(obj));
-    assert.isTrue(RA.pathNotEq(['a', 'b'])('foo')(obj));
-  });
-
-  it('tests path value is not equal', function() {
+  it('should return true if given path values are not equal', function() {
     assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
   });
 
-  it('tests path value is equal', function() {
+  it('should return false if given path values are equal', function() {
     assert.isFalse(RA.pathNotEq(['a', 'b'], 1, obj));
   });
 
-  it('has R.equals semantics', function() {
+  it('should have R.equals semantics', function() {
     function Just(x) {
       this.value = x;
     }
@@ -77,7 +70,7 @@ describe('pathNotEq', function() {
     });
   });
 
-  it('should test example', function() {
+  it('should work in accordance with the documentation', function() {
     const user1 = { address: { zipCode: 90210 } };
     const user2 = { address: { zipCode: 55555 } };
     const user3 = { name: 'Bob' };
@@ -86,5 +79,12 @@ describe('pathNotEq', function() {
     const result = R.filter(isFamous, users); //= > [ user2, user3 ]
 
     assert.sameDeepOrderedMembers(result, [user2, user3]);
+  });
+
+  it('should be curried', function() {
+    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
+    assert.isTrue(RA.pathNotEq(['a', 'b'])('foo', obj));
+    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo')(obj));
+    assert.isTrue(RA.pathNotEq(['a', 'b'])('foo')(obj));
   });
 });

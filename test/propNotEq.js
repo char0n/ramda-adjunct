@@ -10,22 +10,15 @@ describe('propNotEq', function() {
     obj = { a: 1, b: 2 };
   });
 
-  it('tests currying', function() {
-    assert.isTrue(RA.propNotEq('a', 'foo', obj));
-    assert.isTrue(RA.propNotEq('a')('foo', obj));
-    assert.isTrue(RA.propNotEq('a', 'foo')(obj));
-    assert.isTrue(RA.propNotEq('a')('foo')(obj));
-  });
-
-  it('tests prop value is not equal', function() {
+  it('should return true if given props values are not equal', function() {
     assert.isTrue(RA.propNotEq('a', 'foo', obj));
   });
 
-  it('tests prop value is equal', function() {
+  it('should return false if given props values are equal', function() {
     assert.isFalse(RA.propNotEq('a', 1, obj));
   });
 
-  it('has R.equals semantics', function() {
+  it('should have R.equals semantics', function() {
     function Just(x) {
       this.value = x;
     }
@@ -69,5 +62,12 @@ describe('propNotEq', function() {
         assert.isTrue(RA.propNotEq(0, 'x', obj));
       });
     });
+  });
+
+  it('should be curried', function() {
+    assert.isTrue(RA.propNotEq('a', 'foo', obj));
+    assert.isTrue(RA.propNotEq('a')('foo', obj));
+    assert.isTrue(RA.propNotEq('a', 'foo')(obj));
+    assert.isTrue(RA.propNotEq('a')('foo')(obj));
   });
 });

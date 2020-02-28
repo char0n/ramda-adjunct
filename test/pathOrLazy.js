@@ -70,7 +70,7 @@ describe('pathOrLazy', function() {
     });
   });
 
-  it('should curry', function() {
+  it('should be curried', function() {
     const fn = () => 7;
     assert.strictEqual(RA.pathOrLazy(fn, ['a', 'b', 'd', 1], obj), 'y');
     assert.strictEqual(RA.pathOrLazy(fn)(['a', 'b', 'd', 1], obj), 'y');
