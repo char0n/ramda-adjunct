@@ -9,12 +9,7 @@ describe('pickIndexes', function() {
     list = ['a', 'b', 'c'];
   });
 
-  it('tests currying', function() {
-    assert.sameOrderedMembers(RA.pickIndexes([], []), []);
-    assert.sameOrderedMembers(RA.pickIndexes([])([]), []);
-  });
-
-  it('tests picking values from list by indexes', function() {
+  it('should support picking values from list by indexes', function() {
     assert.sameOrderedMembers(RA.pickIndexes([0, 2], list), ['a', 'c']);
   });
 
@@ -52,5 +47,10 @@ describe('pickIndexes', function() {
     specify('should return empty array', function() {
       assert.sameOrderedMembers(RA.pickIndexes([], []), []);
     });
+  });
+
+  it('should be curried', function() {
+    assert.sameOrderedMembers(RA.pickIndexes([], []), []);
+    assert.sameOrderedMembers(RA.pickIndexes([])([]), []);
   });
 });

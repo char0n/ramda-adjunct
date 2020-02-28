@@ -40,7 +40,7 @@ describe('padEnd', function() {
     });
   });
 
-  specify('should curry', function() {
+  specify('should be curried', function() {
     assert.strictEqual(RA.padEnd(5, 'abc'), 'abc  ');
     assert.strictEqual(RA.padEnd(5)('abc'), 'abc  ');
   });
