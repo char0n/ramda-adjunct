@@ -5,7 +5,7 @@ import { invoker } from 'ramda';
  * The thenCatchP function returns a Promise. It takes three arguments: a callback function for the success of the Promise,
  * a callback function for the failure of the Promise, and the promise instance itself.
  *
- * @func thenP
+ * @func thenCatchP
  * @memberOf RA
  * @aliases then
  * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
