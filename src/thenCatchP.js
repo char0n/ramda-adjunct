@@ -1,7 +1,7 @@
 import { invoker } from 'ramda';
 
 /**
- * Composable shortcut for `Promise.then` that allows for success and failure call backs.
+ * Composable shortcut for `Promise.then` that allows for success and failure callbacks.
  * The thenCatchP function returns a Promise. It takes three arguments: a callback function for the success of the Promise,
  * a callback function for the failure of the Promise, and the promise instance itself.
  *
