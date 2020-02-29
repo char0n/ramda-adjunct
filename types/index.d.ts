@@ -915,7 +915,7 @@ declare namespace RamdaAdjunct {
          * a callback function for the failure of the Promise, and the promise instance itself.
          */
         thenCatchP<A, B>(onFulfilled: Function, onRejected: (error: any) => B | Promise<B>, promise: Promise<A>): Promise<A> | Promise<B>;
-        thenCatchP<A, B>(onFulfilled: Function, onError: (error: any) => B | Promise<B>): (promise: Promise<A>) => Promise<A> | Promise<B>;
+        thenCatchP<A, B>(onFulfilled: Function, onRejected: (error: any) => B | Promise<B>): (promise: Promise<A>) => Promise<A> | Promise<B>;
         thenCatchP<A, B>(onFulfilled: Function): (onError: (error: any) => B | Promise<B>) => (promise: Promise<A>) => Promise<A> | Promise<B>;
 
         /**
