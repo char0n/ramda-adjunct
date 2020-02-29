@@ -5,7 +5,7 @@ import * as RA from '../src';
 describe('thenCatchP', function() {
   context('given applied on Promise', function() {
     specify(
-      'Should allow for success and error callbacks',
+      'should call onFulfilled callback',
       async function() {
         const promise = RA.resolveP(1);
         const expected = await RA.thenCatchP(R.add(1), R.always('danger!'), promise);
