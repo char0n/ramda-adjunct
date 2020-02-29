@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import * as RA from '../src';
 
 describe('thenCatchP', function() {
-  context('given applied on Promise', function() {
+  context('given fulfilled Promise', function() {
     specify(
       'should call onFulfilled callback',
       async function() {
