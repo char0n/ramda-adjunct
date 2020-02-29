@@ -916,7 +916,7 @@ declare namespace RamdaAdjunct {
          */
         thenCatchP<A, B>(onFulfilled: Function, onRejected: (error: any) => B | Promise<B>, promise: Promise<A>): Promise<A> | Promise<B>;
         thenCatchP<A, B>(onFulfilled: Function, onRejected: (error: any) => B | Promise<B>): (promise: Promise<A>) => Promise<A> | Promise<B>;
-        thenCatchP<A, B>(onFulfilled: Function): (onError: (error: any) => B | Promise<B>) => (promise: Promise<A>) => Promise<A> | Promise<B>;
+        thenCatchP<A, B>(onFulfilled: Function): (onRejected: (error: any) => B | Promise<B>) => (promise: Promise<A>) => Promise<A> | Promise<B>;
 
         /**
          * Runs the given list of functions in order with the supplied object, then returns the object.
