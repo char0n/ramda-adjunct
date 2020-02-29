@@ -7,7 +7,6 @@ import { invoker } from 'ramda';
  *
  * @func thenCatchP
  * @memberOf RA
- * @aliases then
  * @since {@link https://char0n.github.io/ramda-adjunct/2.8.0|v2.8.0}
  * @category Function
  * @sig (a -> Error b -> Promise c | c) -> Promise c | Error b
