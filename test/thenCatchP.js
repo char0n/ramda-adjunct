@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 import * as RA from '../src';
 
-describe('thenP', function() {
+describe('thenCatchP', function() {
   context('given applied on Promise', function() {
     specify(
       'Should allow for success and error callbacks',
