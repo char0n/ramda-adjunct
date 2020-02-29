@@ -9,7 +9,7 @@ import { invoker } from 'ramda';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.26.0|v2.26.0}
  * @category Function
- * @sig (a -> Error b -> Promise c | c) -> Promise c | Error b
+ * @sig (a -> b) -> (c -> d) -> Promise a -> Promise b | d
  * @param {Function} onFulfilled A Function called if the Promise is fulfilled. This function has one argument, the fulfillment value
  * @param {Function} onRejected A Function called if the Promise is rejected. This function has one argument, the error
  * @param {Promise} promise Any Promise or Thenable object
