@@ -1337,6 +1337,12 @@ declare namespace RamdaAdjunct {
          */
         padStart(targetLength: number, value: string): string;
         padStart(targetLength: number): (value: string) => string;
+
+        /**
+         * Sort list of objects by an array of properties
+         */
+        sortByProps(props: string[], list: object[]): object[];
+        sortByProps(props: string[]): (list: object[]) => object[];
     }
 }
 
