@@ -1,45 +1,30 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
 describe('fnull', function() {
   context('given function and default arguments', function() {
-    specify(
-      'should call the function with the given argument and default argument when one of the argument in null',
-      function() {
-        const add = (a, b) => a + b;
-
-        const safeAdd = RA.fnull(add, [1, 1]);
-
-        const value = safeAdd(1, null);
-
-        assert.equal(value, 2);
-      }
-    );
-
-    specify(
-      'should call the function with the given argument and default argument when one of the argument in undefined',
-      function() {
-        const add = (a, b) => a + b;
-
-        const safeAdd = RA.fnull(add, [1, 1]);
-
-        const value = safeAdd(1, undefined);
-
-        assert.equal(value, 2);
-      }
-    );
+    specify('should use argument or appropriate default argument', function() {
+      assert.strictEqual(RA.fnull(R.add, [1, 1])(1, 2), 3);
+      assert.strictEqual(RA.fnull(R.add, [1, 1])(null, 2), 3);
+      assert.strictEqual(RA.fnull(R.add, [1, 1])(2, null), 3);
+      assert.strictEqual(RA.fnull(R.add, [1, 1])(null, undefined), 2);
+    });
   });
 
-  it('should curry', async function() {
+  it('should curry', function() {
     const add = (a, b) => a + b;
 
-    const safeAdd = RA.fnull(add);
+    assert.strictEqual(RA.fnull(add, [1, 1])(1, 2), 3);
+    assert.strictEqual(RA.fnull(add)([1, 1])(1, 3), 4);
+  });
 
-    const safeAddWithDefaults = safeAdd([1, 1]);
+  it('should return curried function', function() {
+    const fn = RA.fnull(R.add, [1, 1]);
 
-    const value = safeAddWithDefaults(1, null);
-
-    assert.equal(value, 2);
+    assert.lengthOf(fn, 2);
+    assert.strictEqual(fn(1, 1), 2);
+    assert.strictEqual(fn(1)(1), 2);
   });
 });
