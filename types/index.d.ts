@@ -1142,7 +1142,7 @@ declare namespace RamdaAdjunct {
 
         /**
          * Returns a function which is called with the given arguments. If any of the given arguments are null or undefined,
-         * the corresponding default value for that argument is used instead
+         * the corresponding default value for that argument is used instead.
          */
         fnull(fn: Function, defaults: any[]): Function;
         fnull(fn: Function): (defaults: any[]) => Function;
