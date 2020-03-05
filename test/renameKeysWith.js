@@ -4,19 +4,19 @@ import { concat } from 'ramda';
 import * as RA from '../src';
 
 describe('renameKeysWith', function() {
-  it('tests renaming object keys', function() {
+  it('should rename object keys', function() {
     assert.deepEqual(RA.renameKeysWith(concat('a'), { key1: 1, key2: 2 }), {
       akey1: 1,
       akey2: 2,
     });
   });
 
-  it('tests renaming keys on nil', function() {
+  it('should return an empty object when renames keys on null and undefined', function() {
     assert.deepEqual(RA.renameKeysWith(concat('a'), null), {});
     assert.deepEqual(RA.renameKeysWith(concat('a'), undefined), {});
   });
 
-  it('tests currying', function() {
+  it('should be curried', function() {
     assert.deepEqual(RA.renameKeysWith(concat('a'))({ key1: 1, key2: 2 }), {
       akey1: 1,
       akey2: 2,
