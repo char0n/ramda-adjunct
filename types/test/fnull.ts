@@ -1,6 +1,6 @@
 import * as RA from 'ramda-adjunct';
 
-const fn = () => null;
+const fn = (v: any) => v;
 
 RA.fnull(fn)(['abc']); // $ExpectType Function
 RA.fnull(fn, ['a']); // $ExpectType Function
