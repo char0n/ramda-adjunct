@@ -1339,7 +1339,8 @@ declare namespace RamdaAdjunct {
         padStart(targetLength: number): (value: string) => string;
 
         /**
-         * Sort list of objects by an array of properties
+         * Sort a list of objects by a list of props (if first prop value is equivalent, sort by second, etc).
+
          */
         sortByProps(props: string[], list: object[]): object[];
         sortByProps(props: string[]): (list: object[]) => object[];
