@@ -20,30 +20,26 @@ describe('sortByProps', function() {
   };
   const people = [clara, bob, alice];
 
-  context('given an array of objects', function() {
-    specify('should curry', function() {
+  context('given a list of objects', function() {
+    it('should be curried', function() {
       assert.deepEqual(
         RA.sortByProps(['name'])(people),
         RA.sortByProps(['name'], people)
       );
     });
 
-    specify(
-      'should sort by property if property to sort by exists',
-      function() {
-        assert.deepEqual(RA.sortByProps(['name'])(people), [alice, bob, clara]);
-      }
-    );
+    context('given property to sort by does not exist', function() {
+      specify('should return original list', function() {
+        assert.deepEqual(RA.sortByProps(['p'], people), people);
+      });
+    });
 
-    specify(
-      'should return original list if property to sort by does not exist',
-      function() {
-        assert.deepEqual(RA.sortByProps(['p'])(people), people);
-      }
-    );
+    specify('should sort by existing property', function() {
+      assert.deepEqual(RA.sortByProps(['name'], people), [alice, bob, clara]);
+    });
 
     specify('should sort by multiple properties', function() {
-      assert.deepEqual(RA.sortByProps(['lastName', 'name'])(people), [
+      assert.deepEqual(RA.sortByProps(['lastName', 'name'], people), [
         clara,
         alice,
         bob,
@@ -51,7 +47,7 @@ describe('sortByProps', function() {
     });
 
     specify('should ignore properties that do not exist', function() {
-      assert.deepEqual(RA.sortByProps(['lastName', 'p', 'name'])(people), [
+      assert.deepEqual(RA.sortByProps(['lastName', 'p', 'name'], people), [
         clara,
         alice,
         bob,
@@ -59,17 +55,19 @@ describe('sortByProps', function() {
     });
   });
 
-  context('not given an array of objects', function() {
+  context('given a list of strings', function() {
     specify('', function() {
-      assert.deepEqual(RA.sortByProps(['name'])(['a', 'b', 'c']), [
+      assert.deepEqual(RA.sortByProps(['name'], ['a', 'b', 'c']), [
         'a',
         'b',
         'c',
       ]);
     });
+  });
 
-    specify('should return error', function() {
-      assert.deepEqual(RA.sortByProps(['name'])(true), []);
+  context('given an empty list', function() {
+    specify('should return an empty list', function() {
+      assert.deepEqual(RA.sortByProps(['name'], true), []);
     });
   });
 });
