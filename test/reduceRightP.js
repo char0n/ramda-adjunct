@@ -5,7 +5,7 @@ import sinon from 'sinon';
 import * as RA from '../src';
 
 describe('reduceRightP', function() {
-  it('folds simple functions over arrays with the supplied accumulator', function() {
+  it('should fold simple functions over arrays with the supplied accumulator', function() {
     const testAdd = RA.reduceRightP(R.add, 0, [1, 2, 3, 4]).then(actual =>
       assert.strictEqual(actual, 10)
     );
@@ -36,7 +36,7 @@ describe('reduceRightP', function() {
     return Promise.all([test1, test2]);
   });
 
-  it('returns the accumulator for an empty array', function() {
+  it('should return the accumulator for an empty array', function() {
     const testAdd = RA.reduceRightP(R.add, 0, []).then(actual =>
       assert.strictEqual(actual, 0)
     );
@@ -50,26 +50,7 @@ describe('reduceRightP', function() {
     return Promise.all([testAdd, testMultiply, testConcat]);
   });
 
-  it('is curried', function() {
-    const sum = RA.reduceRightP(R.add)(0);
-    const cat = RA.reduceRightP(R.concat)('');
-
-    const testSum = sum([1, 2, 3, 4]).then(actual =>
-      assert.strictEqual(actual, 10)
-    );
-    const testConcat = cat(['1', '2', '3', '4']).then(actual =>
-      assert.strictEqual(actual, '1234')
-    );
-
-    return Promise.all([testSum, testConcat]);
-  });
-
-  it('correctly reports the arity of curried versions', function() {
-    const sum = RA.reduceRightP(R.add, 0);
-    assert.strictEqual(sum.length, 1);
-  });
-
-  it('tests initial value for promise', function() {
+  it('should support an initial value for promise', function() {
     const testAdd = RA.reduceRightP(R.add, Promise.resolve(0), [
       1,
       2,
@@ -106,7 +87,7 @@ describe('reduceRightP', function() {
     });
   });
 
-  it('tests if initial value is undefined', function() {
+  it('should work with undefined initial value', function() {
     const add = sinon.spy();
 
     return RA.reduceRightP(add, undefined, [1])
@@ -114,7 +95,7 @@ describe('reduceRightP', function() {
       .then(() => assert.isFalse(add.called));
   });
 
-  it('tests if initial value is undefined (promise version)', function() {
+  it('should work with undefined initial value (promise version)', function() {
     const add = sinon.spy();
 
     return RA.reduceRightP(add, Promise.resolve(), [1])
@@ -122,19 +103,19 @@ describe('reduceRightP', function() {
       .then(() => assert.isFalse(add.called));
   });
 
-  it('tests iterator wrapped in the promise', function() {
+  it('should work with an iterator wrapped in the promise', function() {
     return RA.reduceRightP(R.add, 0, Promise.resolve([1, 2, 3])).then(actual =>
       assert.strictEqual(actual, 6)
     );
   });
 
-  it('tests iterator containing values and promises', function() {
+  it('should work with an iterator containing values and promises', function() {
     return RA.reduceRightP(R.add, 0, [1, Promise.resolve(2), 3]).then(actual =>
       assert.strictEqual(actual, 6)
     );
   });
 
-  it('tests iterator wrapped in promise containing values and promises', function() {
+  it('should work witn an iterator wrapped in promise containing values and promises', function() {
     return RA.reduceRightP(
       R.add,
       0,
@@ -142,7 +123,7 @@ describe('reduceRightP', function() {
     ).then(actual => assert.strictEqual(actual, 6));
   });
 
-  it('tests iterator function returning promises', function() {
+  it('should work with an iterator function returning promises', function() {
     return RA.reduceRightP(
       R.pipe(R.add, Promise.resolve.bind(Promise)),
       0,
@@ -150,7 +131,7 @@ describe('reduceRightP', function() {
     ).then(actual => assert.strictEqual(actual, 6));
   });
 
-  it('tests difference between reduceRightP reduceP', function() {
+  it('should work similar to reduceP', function() {
     const cat = RA.reduceP(R.concat)('');
     const catRight = RA.reduceRightP(R.concat)('');
     const catRightFlipped = RA.reduceRightP(R.flip(R.concat))('');
@@ -169,5 +150,24 @@ describe('reduceRightP', function() {
     ]).then(actual => assert.strictEqual(actual, '4321'));
 
     return Promise.all([testCat, testCatRight, testCatRightFlipped]);
+  });
+
+  it('should be curried', function() {
+    const sum = RA.reduceRightP(R.add)(0);
+    const cat = RA.reduceRightP(R.concat)('');
+
+    const testSum = sum([1, 2, 3, 4]).then(actual =>
+      assert.strictEqual(actual, 10)
+    );
+    const testConcat = cat(['1', '2', '3', '4']).then(actual =>
+      assert.strictEqual(actual, '1234')
+    );
+
+    return Promise.all([testSum, testConcat]);
+  });
+
+  it('should correctly report the arity of curried versions', function() {
+    const sum = RA.reduceRightP(R.add, 0);
+    assert.strictEqual(sum.length, 1);
   });
 });

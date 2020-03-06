@@ -5,7 +5,7 @@ import sinon from 'sinon';
 import * as RA from '../src';
 
 describe('reduceP', function() {
-  it('folds simple functions over arrays with the supplied accumulator', function() {
+  it('should fold simple functions over arrays with the supplied accumulator', function() {
     const testAdd = RA.reduceP(R.add, 0, [1, 2, 3, 4]).then(actual =>
       assert.strictEqual(actual, 10)
     );
@@ -16,7 +16,7 @@ describe('reduceP', function() {
     return Promise.all([testAdd, testMultiply]);
   });
 
-  it('dispatches to objects that implement `reduce`', function() {
+  it('should dispatch to objects that implement `reduce`', function() {
     const obj = {
       x: [1, 2, 3],
       reduce() {
@@ -33,7 +33,7 @@ describe('reduceP', function() {
     return Promise.all([test1, test2]);
   });
 
-  it('returns the accumulator for an empty array', function() {
+  it('should return the accumulator for an empty array', function() {
     const testAdd = RA.reduceP(R.add, 0, []).then(actual =>
       assert.strictEqual(actual, 0)
     );
@@ -47,26 +47,7 @@ describe('reduceP', function() {
     return Promise.all([testAdd, testMultiply, testConcat]);
   });
 
-  it('is curried', function() {
-    const sum = RA.reduceP(R.add)(0);
-    const cat = RA.reduceP(R.concat)('');
-
-    const testSum = sum([1, 2, 3, 4]).then(actual =>
-      assert.strictEqual(actual, 10)
-    );
-    const testConcat = cat(['1', '2', '3', '4']).then(actual =>
-      assert.strictEqual(actual, '1234')
-    );
-
-    return Promise.all([testSum, testConcat]);
-  });
-
-  it('correctly reports the arity of curried versions', function() {
-    const sum = RA.reduceP(R.add, 0);
-    assert.strictEqual(sum.length, 1);
-  });
-
-  it('tests initial value for promise', function() {
+  it('should support an initial value for promise', function() {
     const testAdd = RA.reduceP(R.add, Promise.resolve(0), [
       1,
       2,
@@ -103,7 +84,7 @@ describe('reduceP', function() {
     });
   });
 
-  it('tests if initial value is undefined', function() {
+  it('should work with undefined initial value', function() {
     const add = sinon.spy();
 
     return RA.reduceP(add, undefined, [1])
@@ -111,7 +92,7 @@ describe('reduceP', function() {
       .then(() => assert.isFalse(add.called));
   });
 
-  it('tests if initial value is undefined (promise version)', function() {
+  it('should work with undefined initial value (promise version)', function() {
     const add = sinon.spy();
 
     return RA.reduceP(add, Promise.resolve(), [1])
@@ -119,19 +100,19 @@ describe('reduceP', function() {
       .then(() => assert.isFalse(add.called));
   });
 
-  it('tests iterator wrapped in the promise', function() {
+  it('should work with an iterator wrapped in the promise', function() {
     return RA.reduceP(R.add, 0, Promise.resolve([1, 2, 3])).then(actual =>
       assert.strictEqual(actual, 6)
     );
   });
 
-  it('tests iterator containing values and promises', function() {
+  it('should work with an iterator containing values and promises', function() {
     return RA.reduceP(R.add, 0, [1, Promise.resolve(2), 3]).then(actual =>
       assert.strictEqual(actual, 6)
     );
   });
 
-  it('tests iterator wrapped in promise containing values and promises', function() {
+  it('should work with an iterator wrapped in promise containing values and promises', function() {
     return RA.reduceP(
       R.add,
       0,
@@ -139,7 +120,7 @@ describe('reduceP', function() {
     ).then(actual => assert.strictEqual(actual, 6));
   });
 
-  it('tests iterator function returning promises', function() {
+  it('should work with an iterator function returning promises', function() {
     return RA.reduceP(
       R.pipe(R.add, Promise.resolve.bind(Promise)),
       0,
@@ -147,7 +128,26 @@ describe('reduceP', function() {
     ).then(actual => assert.strictEqual(actual, 6));
   });
 
-  it('prefers the use of the iterator of an object over reduce (and handles short-circuits)', function() {
+  it('should prefer the use of the iterator of an object over reduce (and handles short-circuits)', function() {
     // no support for @@transducer protocol yet
+  });
+
+  it('should be curried', function() {
+    const sum = RA.reduceP(R.add)(0);
+    const cat = RA.reduceP(R.concat)('');
+
+    const testSum = sum([1, 2, 3, 4]).then(actual =>
+      assert.strictEqual(actual, 10)
+    );
+    const testConcat = cat(['1', '2', '3', '4']).then(actual =>
+      assert.strictEqual(actual, '1234')
+    );
+
+    return Promise.all([testSum, testConcat]);
+  });
+
+  it('should correctly report the arity of curried versions', function() {
+    const sum = RA.reduceP(R.add, 0);
+    assert.strictEqual(sum.length, 1);
   });
 });
