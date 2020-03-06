@@ -1141,6 +1141,13 @@ declare namespace RamdaAdjunct {
         argsPass<T>(combiningPredicate: (fn: (a: T) => boolean) => (list: T[]) => boolean): (predicates: Pred[]) => Pred;
 
         /**
+         * Returns a function which is called with the given arguments. If any of the given arguments are null or undefined,
+         * the corresponding default value for that argument is used instead.
+         */
+        fnull(fn: Function, defaults: any[]): Function;
+        fnull(fn: Function): (defaults: any[]) => Function;
+
+        /**
          * Accepts a function with any arity and returns a function with arity of zero.
          * The returned function ignores any arguments supplied to it.
          */
