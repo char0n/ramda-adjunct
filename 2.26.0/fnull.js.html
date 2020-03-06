@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>reduceP.js - Documentation</title>
+    <title>fnull.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">reduceP.js</h1>
+    <h1 class="page-title">fnull.js</h1>
     
 
     
@@ -52,102 +52,44 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curryN, reduce, length } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { isNil, curryN, curry, apply } from 'ramda';
 
-import isUndefined from './isUndefined';
-import resolveP from './resolveP';
-import allP from './allP';
+import defaultWhen from './defaultWhen';
+import mapIndexed from './mapIndexed';
 
-/* eslint-disable max-len */
 /**
- * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
- * which produces promises (or a mix of promises and values),
- * iterate over all the values in the `Iterable` into an array and
- * reduce the array to a value using the given iterator function.
+ * Returns a function which is called with the given arguments. If any of the given arguments are null or undefined,
+ * the corresponding default value for that argument is used instead.
  *
- * If the iterator function returns a promise, then the result of the promise is awaited,
- * before continuing with next iteration. If any promise in the array is rejected or a promise
- * returned by the iterator function is rejected, the result is rejected as well.
- *
- * If `initialValue` is `undefined` (or a promise that resolves to `undefined`) and
- * the `Iterable` contains only 1 item, the callback will not be called and
- * the `Iterable's` single item is returned. If the `Iterable` is empty, the callback
- * will not be called and `initialValue` is returned (which may be undefined).
- *
- * This function is basically equivalent to {@link http://bluebirdjs.com/docs/api/promise.reduce.html|bluebird.reduce}.
- *
- * @func reduceP
+ * @func fnull
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.13.0|v1.13.0}
- * @category List
- * @typedef MaybePromise = Promise.&lt;*> | *
- * @sig ((Promise a, MaybePromise b) -> Promise a) -> MaybePromise a -> MaybePromise [MaybePromise b] -> Promise a
- * @param {Function} fn The iterator function. Receives two values, the accumulator and the current element from the list
- * @param {*|Promise.&lt;*>} acc The accumulator value
- * @param {Array.&lt;*>|Promise.&lt;Array&lt;*|Promise.&lt;*>>>} list The list to iterate over
- * @return {Promise} The final, accumulated value
- * @see {@link http://ramdajs.com/docs/#reduce|R.reduce}, {@link RA.reduceRightP|reduceRightP}, {@link http://bluebirdjs.com/docs/api/promise.reduce.html|bluebird.reduce}
+ * @category Function
+ * @sig (a ... -> b) -> [c] -> a ... | c -> b
+ * @param {Function} function to be executed
+ * @param {Array} defaults default arguments
+ * @return {Function} will apply provided arguments or default ones
  * @example
  *
- * RA.reduceP(
- *   (total, fileName) => fs
- *     .readFileAsync(fileName, 'utf8')
- *     .then(contents => total + parseInt(contents, 10)),
- *   0,
- *   ['file1.txt', 'file2.txt', 'file3.txt']
- * ); // => Promise(10)
- *
- * RA.reduceP(
- *   (total, fileName) => fs
- *     .readFileAsync(fileName, 'utf8')
- *     .then(contents => total + parseInt(contents, 10)),
- *   Promise.resolve(0),
- *   ['file1.txt', 'file2.txt', 'file3.txt']
- * ); // => Promise(10)
- *
- * RA.reduceP(
- *   (total, fileName) => fs
- *     .readFileAsync(fileName, 'utf8')
- *     .then(contents => total + parseInt(contents, 10)),
- *   0,
- *   [Promise.resolve('file1.txt'), 'file2.txt', 'file3.txt']
- * ); // => Promise(10)
- *
- * RA.reduceP(
- *   (total, fileName) => fs
- *     .readFileAsync(fileName, 'utf8')
- *     .then(contents => total + parseInt(contents, 10)),
- *   0,
- *   Promise.resolve([Promise.resolve('file1.txt'), 'file2.txt', 'file3.txt'])
- * ); // => Promise(10)
- *
+ const addDefaults = RA.fnull((a, b) => a + b, [4, 5])
+ 
+ addDefaults(1, 2); // => 3
+ addDefaults(null, 2); // => 6
+ addDefaults(2, null); // => 7
+ addDefaults(undefined, undefined); // => 9 
  */
-/* esline-enable max-len */
-const reduceP = curryN(3, (fn, acc, list) =>
-  resolveP(list).then(iterable => {
-    const listLength = length(iterable);
 
-    if (listLength === 0) {
-      return acc;
-    }
-
-    const reducer = reduce((accP, currentValueP) =>
-      accP
-        .then(previousValue => allP([previousValue, currentValueP]))
-        .then(([previousValue, currentValue]) => {
-          if (isUndefined(previousValue) &amp;&amp; listLength === 1) {
-            return currentValue;
-          }
-
-          return fn(previousValue, currentValue);
-        })
+const fnull = curry((fn, defaults) => {
+  return curryN(fn.length, (...args) => {
+    const argsWithDefaults = mapIndexed(
+      (val, idx) => defaultWhen(isNil, defaults[idx], val),
+      args
     );
 
-    return reducer(resolveP(acc), iterable);
-  })
-);
+    return apply(fn, argsWithDefaults);
+  });
+});
 
-export default reduceP;
+export default fnull;
 </code></pre>
         </article>
     </section>
