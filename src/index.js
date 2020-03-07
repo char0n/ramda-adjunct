@@ -146,6 +146,7 @@ export { default as flattenDepth } from './flattenDepth';
 export { default as toArray } from './toArray';
 export { default as allUnique } from './allUnique';
 export { default as notAllUnique } from './notAllUnique';
+export { default as sortByProps } from './sortByProps';
 // Object
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
