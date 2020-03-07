@@ -9,7 +9,7 @@ import { reduce, either, curry, prop, sort, comparator, map, lt } from 'ramda';
  * @category List
  * @sig [k] -> [{k: v}] -> [{k: v}]
  * @param {Array.<string>} props A list of properties in the list param to sort by
- * @param {Array.<string>} list A list of objects to be sorted
+ * @param {Array.<object>} list A list of objects to be sorted
  * @return {Array.<object>} A new list sorted by the properties in the props param
  * @example
  *
