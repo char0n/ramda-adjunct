@@ -81,6 +81,7 @@ export { default as isSet } from './isSet';
 export { default as isSparseArray } from './isSparseArray';
 export { default as isSymbol } from './isSymbol';
 export { default as isSafeInteger } from './isSafeInteger';
+export { default as isIndexed } from './isIndexed';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
