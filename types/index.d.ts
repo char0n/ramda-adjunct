@@ -1350,6 +1350,12 @@ declare namespace RamdaAdjunct {
          */
         sortByProps(props: string[], list: object[]): object[];
         sortByProps(props: string[]): (list: object[]) => object[];
+
+        /**
+         * When given a number n and an array, returns an array containing every nth element
+         */
+        skipTake<T>(n: number, list: T[]): T[];
+        skipTake<T>(n: number): (list: T[]) => T[];
     }
 }
 
