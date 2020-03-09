@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>allUnique.js - Documentation</title>
+    <title>sortByProps.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">allUnique.js</h1>
+    <h1 class="page-title">sortByProps.js</h1>
     
 
     
@@ -52,31 +52,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { converge, length, uniq } from 'ramda';
-
-import lengthEq from './lengthEq';
+            <pre class="prettyprint source linenums"><code>import { reduce, either, curry, prop, sort, comparator, map, lt } from 'ramda';
 
 /**
- * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
+ * Sort a list of objects by a list of props (if first prop value is equivalent, sort by second, etc).
  *
- * @func allUnique
+ * @func sortByProps
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.22.0|v2.22.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.26.0|v2.26.0}
  * @category List
- * @sig [a] -> Boolean
- * @param {Array} list The list of values
- * @return {boolean}
- * @see {@link RA.notAllUnique|notAllUnique},  {@link https://ramdajs.com/docs/#equals|equals}
+ * @sig [k] -> [{k: v}] -> [{k: v}]
+ * @param {Array.&lt;string>} props A list of properties in the list param to sort by
+ * @param {Array.&lt;object>} list A list of objects to be sorted
+ * @return {Array.&lt;object>} A new list sorted by the properties in the props param
  * @example
  *
- * RA.allUnique([ 1, 2, 3, 4 ]); //=> true
- * RA.allUnique([ 1, 1, 2, 3 ]); //=> false
- * RA.allUnique([]); //=> true
- *
+ * sortByProps(['num'], [{num: 3}, {num: 2}, {num: 1}])
+ * //=> [{num: 1}, {num: 2} {num: 3}]
+ * sortByProps(['letter', 'num'], [{num: 3, letter: 'a'}, {num: 2, letter: 'a'} {num: 1, letter: 'z'}])
+ * //=> [ {num: 2, letter: 'a'}, {num: 3, letter: 'a'}, {num: 1, letter: 'z'}]
+ * sortByProps(['name', 'num'], [{num: 3}, {num: 2}, {num: 1}])
+ * //=> [{num: 1}, {num: 2}, {num: 3}]
  */
-const allUnique = converge(lengthEq, [length, uniq]);
 
-export default allUnique;
+const sortByProps = curry((props, list) => {
+  const firstTruthy = ([head, ...tail]) => reduce(either, head, tail);
+  const makeComparator = propName =>
+    comparator((a, b) => lt(prop(propName, a), prop(propName, b)));
+  return sort(firstTruthy(map(makeComparator, props)), list);
+});
+
+export default sortByProps;
 </code></pre>
         </article>
     </section>
