@@ -7,6 +7,7 @@ describe('isIndexed', function() {
     specify('should return true', function() {
       assert.isTrue(RA.isIndexed('test'));
       assert.isTrue(RA.isIndexed(Object('test')));
+      assert.isTrue(RA.isIndexed(''));
     });
   });
 
