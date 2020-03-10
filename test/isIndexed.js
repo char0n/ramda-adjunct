@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
@@ -26,5 +27,11 @@ describe('isIndexed', function() {
       assert.isFalse(RA.isIndexed({ 0: 1, length: 1 }));
       assert.isFalse(RA.isIndexed(1));
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function() {
+    const isIndexed = RA.isIndexed(R.__);
+
+    assert.isTrue(isIndexed([]));
   });
 });
