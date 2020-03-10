@@ -13,6 +13,7 @@ describe('isIndexed', function() {
 
   context('given array value', function() {
     specify('should return true', function() {
+      assert.isTrue(RA.isIndexed([]));
       assert.isTrue(RA.isIndexed([1, 2]));
     });
   });
