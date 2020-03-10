@@ -4,7 +4,7 @@ import isArray from './isArray';
 import isString from './isString';
 
 /**
- * Determine if input value is an indexed data type
+ * Determine if input value is an indexed data type.
  *
  * @func isIndexed
  * @memberOf RA
