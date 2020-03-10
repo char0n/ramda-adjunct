@@ -1351,7 +1351,9 @@ declare namespace RamdaAdjunct {
         sortByProps(props: string[], list: object[]): object[];
         sortByProps(props: string[]): (list: object[]) => object[];
 
-        /** Determine if input value is an indexed data type */
+        /**
+         * Determine if input value is an indexed data type.
+         */
         isIndexed(val: any): val is string | any[];
     }
 }
