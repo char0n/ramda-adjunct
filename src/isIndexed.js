@@ -8,6 +8,7 @@ import isString from './isString';
  *
  * @func isIndexed
  * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.26.0|v2.26.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
