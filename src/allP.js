@@ -1,5 +1,4 @@
-import { bind } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { bind, curryN } from 'ramda';
 
 /**
  * Composable shortcut for `Promise.all`.
@@ -23,6 +22,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.allP([Promise.resolve(1), Promise.resolve(2)]); //=> Promise([1, 2])
  * RA.allP([1, Promise.reject(2)]); //=> Promise(2)
  */
-const allP = curry1(bind(Promise.all, Promise));
+const allP = curryN(1, bind(Promise.all, Promise));
 
 export default allP;

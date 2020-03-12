@@ -1,10 +1,9 @@
-import { bind } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { bind, curryN } from 'ramda';
 
 import isFunction from './isFunction';
 import polyfill, { AggregatedError } from './internal/polyfills/Promise.any';
 
-export const anyPPolyfill = curry1(polyfill);
+export const anyPPolyfill = curryN(1, polyfill);
 export { AggregatedError };
 
 /**
@@ -28,7 +27,7 @@ export { AggregatedError };
  * ]); //=> Promise(1)
  */
 const anyP = isFunction(Promise.any)
-  ? curry1(bind(Promise.any, Promise))
+  ? curryN(1, bind(Promise.any, Promise))
   : anyPPolyfill;
 
 export default anyP;
