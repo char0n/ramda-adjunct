@@ -1,4 +1,5 @@
-import { bind, curryN } from 'ramda';
+import { bind } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
  * Returns the smallest integer greater than or equal to a given number.
@@ -23,6 +24,6 @@ import { bind, curryN } from 'ramda';
  * RA.ceil(null); //=> 0
  */
 
-const ceil = curryN(1, bind(Math.ceil, Math));
+const ceil = curry1(bind(Math.ceil, Math));
 
 export default ceil;

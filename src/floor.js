@@ -1,4 +1,5 @@
-import { bind, curryN } from 'ramda';
+import { bind } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 /**
  * Returns the largest integer less than or equal to a given number.
@@ -22,6 +23,6 @@ import { bind, curryN } from 'ramda';
  * RA.floor(null); //=> 0
  */
 
-const floor = curryN(1, bind(Math.floor, Math));
+const floor = curry1(bind(Math.floor, Math));
 
 export default floor;

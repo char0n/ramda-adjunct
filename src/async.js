@@ -1,4 +1,5 @@
 import { curryN, bind } from 'ramda';
+import curry1 from 'ramda/src/internal/_curry1';
 
 import resolveP from './resolveP';
 import rejectP from './rejectP';
@@ -29,7 +30,7 @@ import rejectP from './rejectP';
  * asyncFn(1, 2); //=> Promise(3)
  *
  */
-const async = curryN(1, generatorFn => {
+const async = curry1(generatorFn => {
   function asyncWrapper(...args) {
     const iterator = bind(generatorFn, this)(...args);
 
