@@ -1,5 +1,4 @@
-import { type, identical, pipe } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { type, identical, pipe, curryN } from 'ramda';
 
 /**
  * Checks if value is `Date` object.
@@ -17,6 +16,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isDate(new Date()); //=> true
  * RA.isDate('1997-07-16T19:20+01:00'); //=> false
  */
-const isDate = curry1(pipe(type, identical('Date')));
+const isDate = curryN(1, pipe(type, identical('Date')));
 
 export default isDate;
