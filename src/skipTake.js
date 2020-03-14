@@ -1,4 +1,13 @@
-import { curry, addIndex, filter } from 'ramda';
+import {
+  curry,
+  addIndex,
+  filter,
+  pipe,
+  modulo,
+  identical,
+  nthArg,
+  __,
+} from 'ramda';
 
 /**
  * When given a number n and an array, returns an array containing every nth element.
@@ -18,7 +27,7 @@ import { curry, addIndex, filter } from 'ramda';
  */
 
 const skipTake = curry((n, list) =>
-  addIndex(filter)(pipe(nthArg(1), modulo(R.__, n), identical(0)));
+  addIndex(filter)(pipe(nthArg(1), modulo(__, n), identical(0)))(list)
 );
 
 export default skipTake;
