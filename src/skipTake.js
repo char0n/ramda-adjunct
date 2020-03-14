@@ -6,6 +6,7 @@ import { curry, addIndex, filter } from 'ramda';
  * @func skipTake
  * @memberOf RA
  * @category List
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.26.0|v2.26.0}
  * @sig Number -> [a] -> [a]
  * @param {number} the nth element to extract
  * @param {Array} value the input array
