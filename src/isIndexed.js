@@ -1,5 +1,4 @@
-import { either } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { either, curryN } from 'ramda';
 
 import isArray from './isArray';
 import isString from './isString';
@@ -20,6 +19,6 @@ import isString from './isString';
  * RA.isIndexed('test') //=> true
  */
 
-const isIndexed = curry1(either(isString, isArray));
+const isIndexed = curryN(1, either(isString, isArray));
 
 export default isIndexed;

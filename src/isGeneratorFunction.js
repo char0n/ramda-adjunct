@@ -1,5 +1,12 @@
-import curry1 from 'ramda/src/internal/_curry1';
-import { type, is, F as stubFalse, either, identical, pipe } from 'ramda';
+import {
+  type,
+  is,
+  F as stubFalse,
+  either,
+  identical,
+  pipe,
+  curryN,
+} from 'ramda';
 
 let GeneratorFunction = null;
 let legacyCheck = null;
@@ -28,7 +35,8 @@ try {
  * RA.isGeneratorFunction(function test() { }); //=> false
  * RA.isGeneratorFunction(() => {}); //=> false
  */
-const isGeneratorFunction = curry1(
+const isGeneratorFunction = curryN(
+  1,
   either(pipe(type, identical('GeneratorFunction')), legacyCheck)
 );
 
