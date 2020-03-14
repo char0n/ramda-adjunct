@@ -17,7 +17,7 @@ import { curry, addIndex, filter } from 'ramda';
  * RA.skipTake(3, RA.range(0, 20)); //=> [0, 3, 6, 9, 12, 15, 18]
  */
 
-const skipTake = curry((n, v) =>
+const skipTake = curry((n, list) =>
   addIndex(filter)((_, idx) => idx % n === 0)(v)
 );
 
