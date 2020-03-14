@@ -42,7 +42,7 @@ describe('replaceAll', function() {
     });
   });
 
-  it('should curry', function() {
+  it('should be curried', function() {
     assert.strictEqual(RA.replaceAll('a', 'c', 'aba'), 'cbc');
     assert.strictEqual(RA.replaceAll('a')('c', 'aba'), 'cbc');
     assert.strictEqual(RA.replaceAll('a', 'c')('aba'), 'cbc');
@@ -110,7 +110,7 @@ describe('replaceAll', function() {
       assert.strictEqual(actual, expected);
     });
 
-    specify('should curry', function() {
+    specify('should be curried', function() {
       assert.strictEqual(replaceAllInvoker('a', 'c', 'aba'), 'cbc');
       assert.strictEqual(replaceAllInvoker('a')('c', 'aba'), 'cbc');
       assert.strictEqual(replaceAllInvoker('a', 'c')('aba'), 'cbc');
@@ -173,7 +173,7 @@ describe('replaceAll', function() {
       assert.strictEqual(actual, expected);
     });
 
-    specify('should curry', function() {
+    specify('should be curried', function() {
       assert.strictEqual(replaceAllPolyfill('a', 'c', 'aba'), 'cbc');
       assert.strictEqual(replaceAllPolyfill('a')('c', 'aba'), 'cbc');
       assert.strictEqual(replaceAllPolyfill('a', 'c')('aba'), 'cbc');
