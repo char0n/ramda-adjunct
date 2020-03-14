@@ -1,7 +1,7 @@
 import { curry, addIndex, filter } from 'ramda';
 
 /**
- * When given a number n and an array, returns an array containing every nth element
+ * When given a number n and an array, returns an array containing every nth element.
  *
  * @func skipTake
  * @memberOf RA
