@@ -1356,6 +1356,11 @@ declare namespace RamdaAdjunct {
          */
         skipTake<T>(n: number, list: T[]): T[];
         skipTake<T>(n: number): (list: T[]) => T[];
+
+        /**
+          * Determine if input value is an indexed data type.
+          */
+        isIndexed(val: any): val is string | any[];
     }
 }
 
