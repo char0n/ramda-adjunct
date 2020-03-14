@@ -1,5 +1,4 @@
-import { uniqWith, identical, pipe } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { uniqWith, identical, pipe, curryN } from 'ramda';
 
 import lengthLte from './lengthLte';
 
@@ -22,6 +21,6 @@ import lengthLte from './lengthLte';
  * RA.allIdentical([ {}, {} ]); //=> false
  * RA.allIdentical([ () => {}, () => {} ]); //=> false
  */
-const allIdentical = curry1(pipe(uniqWith(identical), lengthLte(1)));
+const allIdentical = curryN(1, pipe(uniqWith(identical), lengthLte(1)));
 
 export default allIdentical;
