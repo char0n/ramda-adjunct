@@ -18,7 +18,7 @@ import { curry, addIndex, filter } from 'ramda';
  */
 
 const skipTake = curry((n, list) =>
-  addIndex(filter)((_, idx) => idx % n === 0)(v)
+  addIndex(filter)(pipe(nthArg(1), modulo(R.__, n), identical(0)));
 );
 
 export default skipTake;
