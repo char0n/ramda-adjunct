@@ -1,5 +1,4 @@
-import { both, equals, length, pipe } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { both, equals, length, pipe, curryN } from 'ramda';
 
 import isArray from './isArray';
 
@@ -23,6 +22,6 @@ import isArray from './isArray';
  * RA.isPair({ 0: 0, 1: 1 }); // => false
  * RA.isPair({ foo: 0, bar: 0 }); // => false
  */
-const isPair = curry1(both(isArray, pipe(length, equals(2))));
+const isPair = curryN(1, both(isArray, pipe(length, equals(2))));
 
 export default isPair;

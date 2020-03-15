@@ -1,10 +1,9 @@
-import { bind } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { bind, curryN } from 'ramda';
 
 import isFunction from './isFunction';
 import polyfill from './internal/polyfills/Number.isSafeInteger';
 
-export const isSafeIntegerPolyfill = curry1(polyfill);
+export const isSafeIntegerPolyfill = curryN(1, polyfill);
 
 /**
  * Checks whether the passed value is a safe `integer`.
@@ -35,7 +34,7 @@ export const isSafeIntegerPolyfill = curry1(polyfill);
  */
 
 const isSafeInteger = isFunction(Number.isSafeInteger)
-  ? curry1(bind(Number.isSafeInteger, Number))
+  ? curryN(1, bind(Number.isSafeInteger, Number))
   : isSafeIntegerPolyfill;
 
 export default isSafeInteger;
