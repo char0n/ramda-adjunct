@@ -1,5 +1,4 @@
-import { type, identical, pipe } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { type, identical, pipe, curryN } from 'ramda';
 
 /**
  * Predicate for determining if a provided value is an instance of a Set.
@@ -20,6 +19,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isSet(new Object()); //=> false
  */
 
-const isSet = curry1(pipe(type, identical('Set')));
+const isSet = curryN(1, pipe(type, identical('Set')));
 
 export default isSet;
