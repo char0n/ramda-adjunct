@@ -1,5 +1,4 @@
-import { bind } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { bind, curryN } from 'ramda';
 
 /**
  * Returns the value of a number rounded to the nearest integer.
@@ -22,6 +21,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.round(-5.95); //=> -6
  */
 
-const round = curry1(bind(Math.round, Math));
+const round = curryN(1, bind(Math.round, Math));
 
 export default round;
