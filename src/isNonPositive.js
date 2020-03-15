@@ -1,5 +1,4 @@
-import { both, lte, flip } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { both, lte, flip, curryN } from 'ramda';
 
 import isNumber from './isNumber';
 
@@ -26,6 +25,6 @@ import isNumber from './isNumber';
  * RA.isNonPositive(Number.MAX_VALUE); // => false
  * RA.isNonPositive(NaN); // => false
  */
-const isNonPositive = curry1(both(isNumber, flip(lte)(0)));
+const isNonPositive = curryN(1, both(isNumber, flip(lte)(0)));
 
 export default isNonPositive;
