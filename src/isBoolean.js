@@ -1,5 +1,4 @@
-import { type, identical, pipe } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { type, identical, pipe, curryN } from 'ramda';
 
 /**
  * Checks if input value is `Boolean`.
@@ -18,6 +17,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isBoolean(true); //=> true
  * RA.isBoolean(null); //=> false
  */
-const isBoolean = curry1(pipe(type, identical('Boolean')));
+const isBoolean = curryN(1, pipe(type, identical('Boolean')));
 
 export default isBoolean;
