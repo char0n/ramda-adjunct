@@ -1,5 +1,4 @@
-import { bind, last, map } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { bind, last, map, curryN } from 'ramda';
 
 import allP from './allP';
 import lengthEq from './lengthEq';
@@ -30,7 +29,7 @@ import resolveP from './resolveP';
  *   delayP.reject(1000),
  * ]); //=> Promise(100)
  */
-const lastP = curry1(iterable => {
+const lastP = curryN(1, iterable => {
   const fulfilled = [];
   const rejected = [];
   const onFulfill = bind(fulfilled.push, fulfilled);
