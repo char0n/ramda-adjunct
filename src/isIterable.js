@@ -1,5 +1,4 @@
-import { hasIn } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { hasIn, curryN } from 'ramda';
 
 import isFunction from './isFunction';
 
@@ -25,7 +24,7 @@ import isFunction from './isFunction';
  * RA.isIterable(null); //=> false
  * RA.isIterable(undefined); //=> false
  */
-const isIterable = curry1(val => {
+const isIterable = curryN(1, val => {
   if (typeof Symbol === 'undefined') {
     return false;
   }

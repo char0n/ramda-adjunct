@@ -1,5 +1,4 @@
-import { type, identical, pipe } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { type, identical, pipe, curryN } from 'ramda';
 
 /**
  * Predicate for determining if a provided value is an instance of a Map.
@@ -21,6 +20,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isSet(new Object()); //=> false
  */
 
-const isMap = curry1(pipe(type, identical('Map')));
+const isMap = curryN(1, pipe(type, identical('Map')));
 
 export default isMap;
