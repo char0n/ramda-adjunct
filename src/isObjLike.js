@@ -1,5 +1,4 @@
-import { both } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { both, curryN } from 'ramda';
 
 import isNotNull from './isNotNull';
 import isOfTypeObject from './internal/isOfTypeObject';
@@ -26,6 +25,6 @@ import isOfTypeObject from './internal/isOfTypeObject';
  * RA.isObjLike(undefined); //=> false
  */
 /* eslint-enable max-len */
-const isObjLike = curry1(both(isNotNull, isOfTypeObject));
+const isObjLike = curryN(1, both(isNotNull, isOfTypeObject));
 
 export default isObjLike;
