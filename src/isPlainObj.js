@@ -1,6 +1,5 @@
 import _isObject from 'ramda/src/internal/_isObject';
-import { pipe, both, equals, toString, pathSatisfies } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { pipe, both, equals, toString, pathSatisfies, curryN } from 'ramda';
 
 import isNull from './isNull';
 import isObjLike from './isObjLike';
@@ -40,7 +39,7 @@ const hasObjectConstructor = pathSatisfies(
  * RA.isPlainObj(new Object()); //=> true
  */
 /* eslint-enable max-len */
-const isPlainObj = curry1(val => {
+const isPlainObj = curryN(1, val => {
   if (!isObjLike(val) || !_isObject(val)) {
     return false;
   }

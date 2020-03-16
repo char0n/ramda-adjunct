@@ -1,5 +1,4 @@
-import { both, pipe, toString, equals } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { both, pipe, toString, equals, curryN } from 'ramda';
 
 import isObj from './isObj';
 
@@ -25,7 +24,8 @@ import isObj from './isObj';
  * RA.isPromise(Promise.reject()); // => true
  * RA.isPromise({ then: () => 1 }); // => false
  */
-const isPromise = curry1(
+const isPromise = curryN(
+  1,
   both(isObj, pipe(toString, equals('[object Promise]')))
 );
 
