@@ -184,7 +184,7 @@
     "sanctuary-show": "2.0.0",
     "sinon": "9.0.1",
     "terser-webpack-plugin": "2.3.5",
-    "testem": "3.0.2",
+    "testem": "3.0.3",
     "tslint": "=5.14.0",
     "typescript": "=3.8.2",
     "webpack": "4.42.0",
