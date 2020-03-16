@@ -1,6 +1,5 @@
 import { assert } from 'chai';
 import { range } from 'ramda';
-import * as R from 'ramda';
 
 import * as RA from '../src';
 
@@ -32,10 +31,5 @@ describe('skipTake', function() {
   it('should be curried', function() {
     assert.deepEqual(RA.skipTake(2)([1, 2, 3, 4]), [1, 3]);
     assert.deepEqual(RA.skipTake(2, [1, 2, 3, 4]), [1, 3]);
-  });
-
-  it('should support placeholder to specify "gaps"', function() {
-    const skipTake = RA.skipTake(R.__);
-    assert.deepEqual(skipTake(2, [1, 2, 3, 4]), [1, 3]);
   });
 });
