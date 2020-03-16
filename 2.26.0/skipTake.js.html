@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isPositive.js - Documentation</title>
+    <title>skipTake.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isPositive.js</h1>
+    <h1 class="page-title">skipTake.js</h1>
     
 
     
@@ -52,32 +52,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both, lt } from 'ramda';
-
-import isNumber from './isNumber';
+            <pre class="prettyprint source linenums"><code>import {
+  curry,
+  addIndex,
+  filter,
+  pipe,
+  modulo,
+  identical,
+  nthArg,
+  __,
+} from 'ramda';
 
 /**
- * Checks if value is a positive `Number` primitive or object. Zero is not considered positive.
+ * When given a number n and an array, returns an array containing every nth element.
  *
- * @func isPositive
+ * @func skipTake
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.15.0|v1.15.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isNegative|isNegative}
+ * @category List
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.26.0|v2.26.0}
+ * @sig Number -> [a] -> [a]
+ * @param {number} the nth element to extract
+ * @param {Array} value the input array
+ * @return {Array} An array containing every nth element
  * @example
  *
- * RA.isPositive(1); // => true
- * RA.isPositive(Number.MAX_VALUE); // => true
- * RA.isPositive(-Infinity); // => false
- * RA.isPositive(NaN); // => false
- * RA.isPositive('5'); // => false
+ * RA.skipTake(2, [1,2,3,4]) //=> [1, 3]
+ * RA.skipTake(3, R.range(0, 20)); //=> [0, 3, 6, 9, 12, 15, 18]
  */
-const isPositive = both(isNumber, lt(0));
 
-export default isPositive;
+const skipTake = curry((n, list) =>
+  addIndex(filter)(pipe(nthArg(1), modulo(__, n), identical(0)))(list)
+);
+
+export default skipTake;
 </code></pre>
         </article>
     </section>
