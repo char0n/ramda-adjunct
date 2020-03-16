@@ -1,5 +1,4 @@
-import { invoker, both, pipe } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { invoker, both, pipe, curryN } from 'ramda';
 
 import isDate from './isDate';
 import isNotNaN from './isNotNaN';
@@ -22,6 +21,9 @@ import isNotNaN from './isNotNaN';
  * RA.isValidDate(new Date('a')); //=> false
  */
 /* eslint-enable max-len */
-const isValidDate = curry1(both(isDate, pipe(invoker(0, 'getTime'), isNotNaN)));
+const isValidDate = curryN(
+  1,
+  both(isDate, pipe(invoker(0, 'getTime'), isNotNaN))
+);
 
 export default isValidDate;

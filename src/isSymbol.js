@@ -1,5 +1,4 @@
-import { type } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { type, curryN } from 'ramda';
 
 /**
  * Checks if input value is a Symbol.
@@ -20,7 +19,7 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isSymbol(undefined); //=> false
  * RA.isSymbol(null); //=> false
  */
-const isSymbol = curry1(val => {
+const isSymbol = curryN(1, val => {
   return (
     typeof val === 'symbol' ||
     (typeof val === 'object' && type(val) === 'Symbol')

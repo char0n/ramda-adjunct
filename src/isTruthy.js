@@ -1,4 +1,4 @@
-import curry1 from 'ramda/src/internal/_curry1';
+import { curryN } from 'ramda';
 
 /**
  * In JavaScript, a `truthy` value is a value that is considered true
@@ -23,6 +23,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isTruthy(new Date()); // => true
  * RA.isTruthy(Infinity); // => true
  */
-const isTruthy = curry1(Boolean);
+const isTruthy = curryN(1, Boolean);
 
 export default isTruthy;
