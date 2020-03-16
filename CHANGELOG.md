@@ -1,3 +1,21 @@
+<a name="2.26.0"></a>
+# [2.26.0](https://github.com/char0n/ramda-adjunct/compare/v2.25.0...v2.26.0) (2020-03-16)
+
+
+### Bug Fixes
+
+* **mapIndexed:** make list argument Readonly ([#1336](https://github.com/char0n/ramda-adjunct/issues/1336)) ([5555ef3](https://github.com/char0n/ramda-adjunct/commit/5555ef3)), closes [#1330](https://github.com/char0n/ramda-adjunct/issues/1330)
+
+
+### Features
+
+* add fnull ([#1321](https://github.com/char0n/ramda-adjunct/issues/1321)) ([4d0e49a](https://github.com/char0n/ramda-adjunct/commit/4d0e49a)), closes [#1235](https://github.com/char0n/ramda-adjunct/issues/1235)
+* add isIndexed ([#1337](https://github.com/char0n/ramda-adjunct/issues/1337)) ([c4447db](https://github.com/char0n/ramda-adjunct/commit/c4447db)), closes [#1236](https://github.com/char0n/ramda-adjunct/issues/1236)
+* add skipTake ([#1338](https://github.com/char0n/ramda-adjunct/issues/1338)) ([10c4141](https://github.com/char0n/ramda-adjunct/commit/10c4141)), closes [#1237](https://github.com/char0n/ramda-adjunct/issues/1237)
+* add sortByProps ([#1323](https://github.com/char0n/ramda-adjunct/issues/1323)) ([7d93795](https://github.com/char0n/ramda-adjunct/commit/7d93795)), closes [#1242](https://github.com/char0n/ramda-adjunct/issues/1242)
+
+
+
 <a name="2.25.0"></a>
 # [2.25.0](https://github.com/char0n/ramda-adjunct/compare/v2.24.0...v2.25.0) (2020-02-04)
 
