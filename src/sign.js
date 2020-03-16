@@ -1,10 +1,9 @@
-import { bind } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { bind, curryN } from 'ramda';
 
 import isFunction from './isFunction';
 import polyfill from './internal/polyfills/Math.sign';
 
-export const signPolyfill = curry1(polyfill);
+export const signPolyfill = curryN(1, polyfill);
 
 /**
  * Returns the sign of a number, indicating whether the number is positive, negative or zero.
@@ -28,7 +27,7 @@ export const signPolyfill = curry1(polyfill);
  */
 
 const sign = isFunction(Math.sign)
-  ? curry1(bind(Math.sign, Math))
+  ? curryN(1, bind(Math.sign, Math))
   : signPolyfill;
 
 export default sign;
