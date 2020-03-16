@@ -1,5 +1,4 @@
-import { complement } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { complement, curryN } from 'ramda';
 
 import isFloat from './isFloat';
 
@@ -31,6 +30,6 @@ import isFloat from './isFloat';
  * RA.isNotFloat(false);     //=> true
  * RA.isNotFloat([1]);       //=> true
  */
-const isNotFloat = curry1(complement(isFloat));
+const isNotFloat = curryN(1, complement(isFloat));
 
 export default isNotFloat;

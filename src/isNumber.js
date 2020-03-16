@@ -1,5 +1,5 @@
 import _isNumber from 'ramda/src/internal/_isNumber';
-import curry1 from 'ramda/src/internal/_curry1';
+import { curryN } from 'ramda';
 
 /**
  * Checks if value is a `Number` primitive or object.
@@ -20,6 +20,6 @@ import curry1 from 'ramda/src/internal/_curry1';
  * RA.isNumber(NaN); // => true
  * RA.isNumber('5'); // => false
  */
-const isNumber = curry1(_isNumber);
+const isNumber = curryN(1, _isNumber);
 
 export default isNumber;
