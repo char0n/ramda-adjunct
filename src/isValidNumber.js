@@ -1,5 +1,4 @@
-import { either } from 'ramda';
-import curry1 from 'ramda/src/internal/_curry1';
+import { either, curryN } from 'ramda';
 
 import isFloat from './isFloat';
 import isInteger from './isInteger';
@@ -24,6 +23,6 @@ import isInteger from './isInteger';
  * RA.isValidNumber(Infinity); //=> false
  * RA.isValidNumber(-Infinity); //=> false
  */
-const isValidNumber = curry1(either(isInteger, isFloat));
+const isValidNumber = curryN(1, either(isInteger, isFloat));
 
 export default isValidNumber;
