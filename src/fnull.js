@@ -16,12 +16,12 @@ import mapIndexed from './mapIndexed';
  * @return {Function} will apply provided arguments or default ones
  * @example
  *
- const addDefaults = RA.fnull((a, b) => a + b, [4, 5])
- 
- addDefaults(1, 2); // => 3
- addDefaults(null, 2); // => 6
- addDefaults(2, null); // => 7
- addDefaults(undefined, undefined); // => 9 
+ * const addDefaults = RA.fnull((a, b) => a + b, [4, 5])
+ *
+ * addDefaults(1, 2); // => 3
+ * addDefaults(null, 2); // => 6
+ * addDefaults(2, null); // => 7
+ * addDefaults(undefined, undefined); // => 9
  */
 
 const fnull = curry((fn, defaults) => {
