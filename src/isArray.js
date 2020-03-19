@@ -1,5 +1,4 @@
-import { curryN } from 'ramda';
-import _isArray from 'ramda/src/internal/_isArray';
+import { curryN, pipe, type, identical } from 'ramda';
 
 import isFunction from './isFunction';
 
@@ -20,6 +19,9 @@ import isFunction from './isFunction';
  * RA.isArray(null); //=> false
  * RA.isArray({}); //=> false
  */
-const isArray = curryN(1, isFunction(Array.isArray) ? Array.isArray : _isArray);
+const isArray = curryN(
+  1,
+  isFunction(Array.isArray) ? Array.isArray : pipe(type, identical('Array'))
+);
 
 export default isArray;
