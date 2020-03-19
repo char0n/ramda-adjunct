@@ -1,5 +1,4 @@
-import _isString from 'ramda/src/internal/_isString';
-import { curryN } from 'ramda';
+import { curryN, pipe, type, identical } from 'ramda';
 
 /**
  * Checks if input value is `String`.
@@ -17,6 +16,6 @@ import { curryN } from 'ramda';
  * RA.isString('abc'); //=> true
  * RA.isString(1); //=> false
  */
-const isString = curryN(1, _isString);
+const isString = curryN(1, pipe(type, identical('String')));
 
 export default isString;
