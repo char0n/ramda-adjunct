@@ -14,13 +14,6 @@ describe('spreadPath', function() {
     };
   });
 
-  it('tests currying', function() {
-    const expected = { a: 1, c: 3, d: 4, b1: {} };
-
-    assert.deepEqual(RA.spreadPath(path, obj), expected);
-    assert.deepEqual(RA.spreadPath(path)(obj), expected);
-  });
-
   context('given path leads to non object', function() {
     specify('should return object without path', function() {
       obj = {
@@ -38,5 +31,12 @@ describe('spreadPath', function() {
         assert.deepEqual(RA.spreadPath(['does', 'not', 'exist'], obj), obj);
       }
     );
+  });
+
+  it('should be curried', function() {
+    const expected = { a: 1, c: 3, d: 4, b1: {} };
+
+    assert.deepEqual(RA.spreadPath(path, obj), expected);
+    assert.deepEqual(RA.spreadPath(path)(obj), expected);
   });
 });

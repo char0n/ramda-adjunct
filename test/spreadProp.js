@@ -14,11 +14,6 @@ describe('spreadProp', function() {
     };
   });
 
-  it('tests currying', function() {
-    assert.deepEqual(RA.spreadProp('prop', {}), {});
-    assert.deepEqual(RA.spreadProp('prop')({}), {});
-  });
-
   context("given prop doesn't exist", function() {
     specify(
       'should return object with identical structure as provided object',
@@ -64,5 +59,10 @@ describe('spreadProp', function() {
     };
 
     assert.deepEqual(RA.spreadProp(prop, obj), expected);
+  });
+
+  it('should be curried', function() {
+    assert.deepEqual(RA.spreadProp('prop', {}), {});
+    assert.deepEqual(RA.spreadProp('prop')({}), {});
   });
 });

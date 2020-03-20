@@ -25,7 +25,7 @@ describe('sortByProps', function() {
       assert.deepEqual(RA.sortByProps(['name'], people), [alice, bob, clara]);
     });
 
-    context('given propertly to srot by does not exist', function() {
+    context('given property to sort by does not exist', function() {
       specify('should return original list', function() {
         assert.deepEqual(RA.sortByProps(['p'], people), people);
       });

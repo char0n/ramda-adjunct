@@ -9,7 +9,7 @@ describe('subtractNum', function() {
     assert.isNaN(RA.subtractNum(3, 'foo'));
   });
 
-  it('should curry', function() {
+  it('should be curried', function() {
     assert.strictEqual(RA.subtractNum(3)(5), 2);
     assert.strictEqual(RA.subtractNum(3, 5), 2);
   });
