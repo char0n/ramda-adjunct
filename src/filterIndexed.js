@@ -22,7 +22,7 @@ import { addIndex, filter } from 'ramda';
  *
  * const isEven = n => n % 2 === 0;
  *
-* R.filterIndexed((val, idx) => isEven(idx), [1, 2, 3, 4]); //=> [1, 3]
+ * R.filterIndexed((val, idx) => isEven(idx), [1, 2, 3, 4]); //=> [1, 3]
  */
 
 const filterIndexed = addIndex(filter);
