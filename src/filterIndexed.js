@@ -20,9 +20,9 @@ import { addIndex, filter } from 'ramda';
  * @see {@link http://ramdajs.com/docs/#addIndex|R.addIndex}, {@link http://ramdajs.com/docs/#filter|R.filter}
  * @example
  *
-const isEven = n => n % 2 === 0;
-
-R.filterIndexed((val, idx) => isEven(idx), [1, 2, 3, 4]); //=> [1, 3]
+* const isEven = n => n % 2 === 0;
+ *
+* R.filterIndexed((val, idx) => isEven(idx), [1, 2, 3, 4]); //=> [1, 3]
  */
 
 const filterIndexed = addIndex(filter);
