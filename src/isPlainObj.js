@@ -1,10 +1,19 @@
-import _isObject from 'ramda/src/internal/_isObject';
-import { pipe, both, equals, toString, pathSatisfies, curryN } from 'ramda';
+import {
+  pipe,
+  type,
+  identical,
+  both,
+  equals,
+  toString,
+  pathSatisfies,
+  curryN,
+} from 'ramda';
 
 import isNull from './isNull';
 import isObjLike from './isObjLike';
 import isFunction from './isFunction';
 
+const isObject = pipe(type, identical('Object'));
 const isObjectConstructor = pipe(toString, equals(toString(Object)));
 const hasObjectConstructor = pathSatisfies(
   both(isFunction, isObjectConstructor),
@@ -40,7 +49,7 @@ const hasObjectConstructor = pathSatisfies(
  */
 /* eslint-enable max-len */
 const isPlainObj = curryN(1, val => {
-  if (!isObjLike(val) || !_isObject(val)) {
+  if (!isObjLike(val) || !isObject(val)) {
     return false;
   }
 
