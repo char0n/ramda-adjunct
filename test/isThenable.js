@@ -5,9 +5,9 @@ import * as RA from '../src';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-describe('isThenable', function() {
-  context('given value is not `thenable`', function() {
-    specify('should return false', function() {
+describe('isThenable', function () {
+  context('given value is not `thenable`', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isThenable(args));
       assert.isFalse(RA.isThenable([1, 2, 3]));
       assert.isFalse(RA.isThenable(true));
@@ -24,22 +24,22 @@ describe('isThenable', function() {
     });
   });
 
-  context('given value is thenable object', function() {
-    specify('should return true', function() {
+  context('given value is thenable object', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isThenable({ then: () => {} }));
     });
   });
 
-  context("given value contains then method on it's prototype", function() {
-    specify('should return true', function() {
+  context("given value contains then method on it's prototype", function () {
+    specify('should return true', function () {
       const objWithPrototype = Object.create({ then: () => {} });
 
       assert.isTrue(RA.isThenable(objWithPrototype));
     });
   });
 
-  context('given value is an instance of native Promise', function() {
-    specify('should return true', function() {
+  context('given value is an instance of native Promise', function () {
+    specify('should return true', function () {
       const resolvedP = Promise.resolve();
       const rejectedP = Promise.reject();
 
@@ -50,8 +50,8 @@ describe('isThenable', function() {
     });
   });
 
-  context('given value is a thenable function', function() {
-    specify('should return true', function() {
+  context('given value is a thenable function', function () {
+    specify('should return true', function () {
       const func = () => {};
       func.then = () => {};
 
@@ -59,7 +59,7 @@ describe('isThenable', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isThenable = RA.isThenable(R.__);
 
     assert.isFalse(isThenable(1));

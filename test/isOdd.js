@@ -7,9 +7,9 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isOdd', function() {
-  context('given an odd integer `Number`', function() {
-    specify('should return true', function() {
+describe('isOdd', function () {
+  context('given an odd integer `Number`', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isOdd(3));
       assert.isTrue(RA.isOdd(7));
       assert.isTrue(RA.isOdd(-3));
@@ -19,8 +19,8 @@ describe('isOdd', function() {
     });
   });
 
-  context('given an even integer `Number` or non-`Number`', function() {
-    specify('should return false', function() {
+  context('given an even integer `Number` or non-`Number`', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isOdd(0));
       assert.isFalse(RA.isOdd(4));
       assert.isFalse(RA.isOdd(Object(0)));
@@ -49,7 +49,7 @@ describe('isOdd', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isOdd = RA.isOdd(R.__);
 
     assert.isTrue(isOdd(7));

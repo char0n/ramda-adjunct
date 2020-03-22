@@ -2,9 +2,9 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('stubUndefined', function() {
-  context('given any input arguments', function() {
-    specify('should return `undefined`', function() {
+describe('stubUndefined', function () {
+  context('given any input arguments', function () {
+    specify('should return `undefined`', function () {
       assert.isUndefined(RA.stubUndefined());
       assert.isUndefined(RA.stubUndefined([1]));
       assert.isUndefined(RA.stubUndefined(new Array()));

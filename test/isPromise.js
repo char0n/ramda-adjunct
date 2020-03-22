@@ -5,9 +5,9 @@ import * as RA from '../src';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-describe('isPromise', function() {
-  context('given value is not a Promise', function() {
-    specify('should return false', function() {
+describe('isPromise', function () {
+  context('given value is not a Promise', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isPromise(args));
       assert.isFalse(RA.isPromise([1, 2, 3]));
       assert.isFalse(RA.isPromise(true));
@@ -24,26 +24,26 @@ describe('isPromise', function() {
     });
   });
 
-  context('given value is thenable object', function() {
-    specify('should return false', function() {
+  context('given value is thenable object', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isPromise({ then: () => {} }));
     });
   });
 
-  context("given value contains then method on it's prototype", function() {
-    specify('should return false', function() {
+  context("given value contains then method on it's prototype", function () {
+    specify('should return false', function () {
       const objWithPrototype = Object.create({ then: () => {} });
 
       assert.isFalse(RA.isPromise(objWithPrototype));
     });
   });
 
-  context('given value is an instance of native Promise', function() {
+  context('given value is an instance of native Promise', function () {
     const hasNativePromise =
       typeof Promise !== 'undefined' &&
       R.contains('[native code]', Promise.toString());
 
-    specify('should return true', function() {
+    specify('should return true', function () {
       const resolvedP = Promise.resolve();
       const rejectedP = Promise.reject();
 
@@ -54,8 +54,8 @@ describe('isPromise', function() {
     });
   });
 
-  context('given value is a thenable function', function() {
-    specify('should return false', function() {
+  context('given value is a thenable function', function () {
+    specify('should return false', function () {
       const func = () => {};
       func.then = () => {};
 
@@ -63,7 +63,7 @@ describe('isPromise', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isPromise = RA.isPromise(R.__);
 
     assert.isFalse(isPromise(1));

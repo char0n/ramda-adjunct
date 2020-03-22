@@ -4,16 +4,16 @@ import { assert } from 'chai';
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
 
-describe('isSet', function() {
-  context('given a set', function() {
-    specify('should return true', function() {
+describe('isSet', function () {
+  context('given a set', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isSet(new Set()));
       assert.isTrue(RA.isSet(new Set([1, 2])));
     });
   });
 
-  context('given not a set', function() {
-    specify('should return false', function() {
+  context('given not a set', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isSet('abc'));
       assert.isFalse(RA.isSet(Object('abc')));
       assert.isFalse(RA.isSet(new Date()));
@@ -26,7 +26,7 @@ describe('isSet', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isSet = RA.isSet(R.__);
 
     assert.isTrue(isSet(new Set()));

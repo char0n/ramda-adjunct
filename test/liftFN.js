@@ -8,16 +8,16 @@ import Identity from '../src/fantasy-land/Identity';
 const addN = (...args) => R.sum(args);
 const add3 = (a, b, c) => a + b + c;
 
-describe('liftFN', function() {
+describe('liftFN', function () {
   const addN3 = RA.liftFN(3, addN);
   const addN4 = RA.liftFN(4, addN);
   const addN5 = RA.liftFN(5, addN);
 
-  it('should return a function', function() {
+  it('should return a function', function () {
     assert.strictEqual(typeof RA.liftFN(3, add3), 'function');
   });
 
-  it('should limit a variadic function to the specified arity', function() {
+  it('should limit a variadic function to the specified arity', function () {
     assert.isTrue(
       R.equals(
         addN3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
@@ -28,8 +28,8 @@ describe('liftFN', function() {
 
   context(
     'given a variadic function with more arguments than its arity',
-    function() {
-      specify('should trow an error', function() {
+    function () {
+      specify('should trow an error', function () {
         assert.throws(
           addN3.bind(
             null,
@@ -44,7 +44,7 @@ describe('liftFN', function() {
     }
   );
 
-  it('should lift functions of any arity', function() {
+  it('should lift functions of any arity', function () {
     assert.isTrue(
       R.equals(
         addN3(Maybe.Some(1), Maybe.Some(1), Maybe.Some(1)),
@@ -71,7 +71,7 @@ describe('liftFN', function() {
     );
   });
 
-  it('should retain order of arguments', function() {
+  it('should retain order of arguments', function () {
     assert.isTrue(
       R.equals(
         RA.liftFN(3, add3)(Maybe.Some('a'), Maybe.Some('b'), Maybe.Some('c')),
@@ -90,7 +90,7 @@ describe('liftFN', function() {
     );
   });
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     const f4 = RA.liftFN(4);
     assert.strictEqual(typeof f4, 'function');
     assert.isTrue(

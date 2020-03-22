@@ -5,16 +5,16 @@ import * as RA from '../src';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isNotObj', function() {
-  context('given non object value', function() {
-    specify('should return true', function() {
+describe('isNotObj', function () {
+  context('given non object value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotObj(null));
       assert.isTrue(RA.isNotObj(undefined));
     });
   });
 
-  context('given object value', function() {
-    specify('should return false', function() {
+  context('given object value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotObj({}));
       assert.isFalse(RA.isNotObj(Object(false)));
       assert.isFalse(RA.isNotObj(Object.create(null)));
@@ -36,15 +36,15 @@ describe('isNotObj', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotObj = RA.isNotObj(R.__);
 
     assert.isTrue(isNotObj(null));
   });
 });
 
-describe('isNotObject', function() {
-  it('should be an alias for isNotObject', function() {
+describe('isNotObject', function () {
+  it('should be an alias for isNotObject', function () {
     assert.strictEqual(RA.isNotObj, RA.isNotObject);
   });
 });

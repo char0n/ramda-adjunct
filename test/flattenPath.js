@@ -2,11 +2,11 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('flattenPath', function() {
+describe('flattenPath', function () {
   let path;
   let obj;
 
-  beforeEach(function() {
+  beforeEach(function () {
     path = ['b1', 'b2'];
     obj = {
       a: 1,
@@ -14,10 +14,10 @@ describe('flattenPath', function() {
     };
   });
 
-  context('given path leads to non object', function() {
+  context('given path leads to non object', function () {
     specify(
       'should return object with identical structure as provided object',
-      function() {
+      function () {
         obj = {
           a: 1,
           b1: { b2: 999 },
@@ -27,16 +27,16 @@ describe('flattenPath', function() {
     );
   });
 
-  context("given path doesn't exist", function() {
+  context("given path doesn't exist", function () {
     specify(
       'should return object with identical structure as provided object',
-      function() {
+      function () {
         assert.deepEqual(RA.flattenPath(['does', 'not', 'exist'], obj), obj);
       }
     );
   });
 
-  it('should curry', function() {
+  it('should curry', function () {
     assert.deepEqual(RA.flattenPath([], {}), {});
     assert.deepEqual(RA.flattenPath([])({}), {});
   });

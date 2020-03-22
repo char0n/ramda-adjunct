@@ -6,9 +6,9 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import asyncFunc from './shared/asyncFunc';
 
-describe('isNotAsyncFunction', function() {
-  context('given async function', function() {
-    specify('should return false', function() {
+describe('isNotAsyncFunction', function () {
+  context('given async function', function () {
+    specify('should return false', function () {
       assert.strictEqual(
         RA.isNotAsyncFunction(asyncFunc),
         typeof asyncFunc !== 'function'
@@ -16,8 +16,8 @@ describe('isNotAsyncFunction', function() {
     });
   });
 
-  context('given non async function value', function() {
-    specify('should return true', function() {
+  context('given non async function value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotAsyncFunction(args));
       assert.isTrue(RA.isNotAsyncFunction([1, 2, 3]));
       assert.isTrue(RA.isNotAsyncFunction(true));
@@ -31,7 +31,7 @@ describe('isNotAsyncFunction', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotAsyncFunction = RA.isNotAsyncFunction(R.__);
 
     assert.isTrue(isNotAsyncFunction(-1));

@@ -61,7 +61,7 @@ const iteratorFn = curry((args, accumulator, fn) => {
   return isNotNil(result) ? reduced(result) : accumulator;
 });
 
-const dispatchImpl = functions => {
+const dispatchImpl = (functions) => {
   const arity = getMaxArity(functions);
 
   return curryN(arity, (...args) =>

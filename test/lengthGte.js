@@ -2,11 +2,11 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('lengthGte', function() {
+describe('lengthGte', function () {
   context(
     'given the length of a list is greater than or equal to the supplied length',
-    function() {
-      specify('should return true', function() {
+    function () {
+      specify('should return true', function () {
         assert.isTrue(RA.lengthGte(3, [1, 2, 3, 4]));
         assert.isTrue(RA.lengthGte(3, [1, 2, 3]));
         assert.isFalse(RA.lengthGte(3, [1, 2]));
@@ -17,8 +17,8 @@ describe('lengthGte', function() {
 
   context(
     'given the length of a string is greater than or equal to the supplied length',
-    function() {
-      specify('should return true', function() {
+    function () {
+      specify('should return true', function () {
         assert.isTrue(RA.lengthGte(3, 'abcd'));
         assert.isTrue(RA.lengthGte(3, 'abc'));
         assert.isFalse(RA.lengthGte(3, 'ab'));
@@ -27,8 +27,8 @@ describe('lengthGte', function() {
     }
   );
 
-  context("given a value doesn't have a length property", function() {
-    specify('should return false', function() {
+  context("given a value doesn't have a length property", function () {
+    specify('should return false', function () {
       assert.isFalse(RA.lengthGte(1, NaN));
       assert.isFalse(RA.lengthGte(1, undefined));
       assert.isFalse(RA.lengthGte(1, null));
@@ -39,7 +39,7 @@ describe('lengthGte', function() {
     });
   });
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     assert.isTrue(RA.lengthGte(1, [1]));
     assert.isTrue(RA.lengthGte(1)([1]));
   });

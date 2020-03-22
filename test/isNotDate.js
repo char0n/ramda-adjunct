@@ -5,15 +5,15 @@ import * as RA from '../src';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isNotDate', function() {
-  context('given date object', function() {
-    specify('should return false', function() {
+describe('isNotDate', function () {
+  context('given date object', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotDate(new Date()));
     });
   });
 
-  context('given non date object', function() {
-    specify('should return true', function() {
+  context('given non date object', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotDate(Date.now()));
       assert.isTrue(RA.isNotDate(args));
       assert.isTrue(RA.isNotDate([1, 2, 3]));
@@ -35,7 +35,7 @@ describe('isNotDate', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotDate = RA.isNotDate(R.__);
 
     assert.isTrue(isNotDate(-1));

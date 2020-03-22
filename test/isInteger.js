@@ -6,8 +6,8 @@ import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER'
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
 import { isIntegerPolyfill } from '../src/isInteger';
 
-describe('isInteger', function() {
-  it('should test value for an `integer`', function() {
+describe('isInteger', function () {
+  it('should test value for an `integer`', function () {
     assert.isTrue(RA.isInteger(0));
     assert.isTrue(RA.isInteger(1));
     assert.isTrue(RA.isInteger(-100000));
@@ -28,8 +28,8 @@ describe('isInteger', function() {
     assert.isFalse(RA.isInteger([1]));
   });
 
-  context('isIntegerPolyfill', function() {
-    specify('should test polyfill for an `integer', function() {
+  context('isIntegerPolyfill', function () {
+    specify('should test polyfill for an `integer', function () {
       assert.isTrue(isIntegerPolyfill(0));
       assert.isTrue(isIntegerPolyfill(1));
       assert.isTrue(isIntegerPolyfill(-100000));
@@ -49,20 +49,20 @@ describe('isInteger', function() {
       assert.isFalse(isIntegerPolyfill([1]));
     });
 
-    specify('should support placeholder to specify "gaps"', function() {
+    specify('should support placeholder to specify "gaps"', function () {
       const isIntegerPolyfillWithGap = isIntegerPolyfill(R.__);
 
       assert.isTrue(isIntegerPolyfillWithGap(1));
     });
   });
 
-  context('given a number that looks like a float number', function() {
-    specify('should treat the number as integer', function() {
+  context('given a number that looks like a float number', function () {
+    specify('should treat the number as integer', function () {
       assert.isTrue(RA.isInteger(1.0));
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isInteger = RA.isInteger(R.__);
 
     assert.isTrue(isInteger(1));

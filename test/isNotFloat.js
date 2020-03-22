@@ -5,9 +5,9 @@ import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
 
-describe('isNotFloat', function() {
-  context('given float number', function() {
-    specify('should return false', function() {
+describe('isNotFloat', function () {
+  context('given float number', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotFloat(0.1));
       assert.isFalse(RA.isNotFloat(Math.PI));
       // prettier-ignore
@@ -15,8 +15,8 @@ describe('isNotFloat', function() {
     });
   });
 
-  context('given non float number', function() {
-    specify('should return true', function() {
+  context('given non float number', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotFloat(0));
       assert.isTrue(RA.isNotFloat(1));
       assert.isTrue(RA.isNotFloat(-100000));
@@ -35,13 +35,13 @@ describe('isNotFloat', function() {
     });
   });
 
-  context('given a number that looks like a float number', function() {
-    specify('should treat the number as integer', function() {
+  context('given a number that looks like a float number', function () {
+    specify('should treat the number as integer', function () {
       assert.isTrue(RA.isNotFloat(1.0));
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotFloat = RA.isNotFloat(R.__);
 
     assert.isFalse(isNotFloat(1.2));

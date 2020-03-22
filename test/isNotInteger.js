@@ -5,8 +5,8 @@ import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
 
-describe('isNotInteger', function() {
-  it('should test value for an `integer`', function() {
+describe('isNotInteger', function () {
+  it('should test value for an `integer`', function () {
     assert.isFalse(RA.isNotInteger(0));
     assert.isFalse(RA.isNotInteger(1));
     assert.isFalse(RA.isNotInteger(-100000));
@@ -27,13 +27,13 @@ describe('isNotInteger', function() {
     assert.isTrue(RA.isNotInteger([1]));
   });
 
-  context('given a number that looks like a float number', function() {
-    specify('should treat the number as integer', function() {
+  context('given a number that looks like a float number', function () {
+    specify('should treat the number as integer', function () {
       assert.isFalse(RA.isNotInteger(1.0));
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotInteger = RA.isNotInteger(R.__);
 
     assert.isFalse(isNotInteger(1));

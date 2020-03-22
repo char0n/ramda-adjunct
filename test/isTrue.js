@@ -5,16 +5,16 @@ import * as RA from '../src';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-describe('isTrue', function() {
-  context('given a `true` primitive', function() {
-    specify('should return true', function() {
+describe('isTrue', function () {
+  context('given a `true` primitive', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isTrue(true));
       assert.isTrue(RA.isTrue(Boolean(true)));
     });
   });
 
-  context('given a non `true` value', function() {
-    specify('should return false', function() {
+  context('given a non `true` value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isTrue(false));
       assert.isFalse(RA.isTrue(Boolean(false)));
       assert.isFalse(RA.isTrue(new Boolean(true)));
@@ -46,7 +46,7 @@ describe('isTrue', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isTrue = RA.isTrue(R.__);
 
     assert.isTrue(isTrue(true));

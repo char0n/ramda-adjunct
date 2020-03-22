@@ -29,17 +29,14 @@ import resolveP from './resolveP';
  *   delayP.reject(1000),
  * ]); //=> Promise(100)
  */
-const lastP = curryN(1, iterable => {
+const lastP = curryN(1, (iterable) => {
   const fulfilled = [];
   const rejected = [];
   const onFulfill = bind(fulfilled.push, fulfilled);
   const onReject = bind(rejected.push, rejected);
 
   const listOfPromises = map(
-    p =>
-      resolveP(p)
-        .then(onFulfill)
-        .catch(onReject),
+    (p) => resolveP(p).then(onFulfill).catch(onReject),
     [...iterable]
   );
 

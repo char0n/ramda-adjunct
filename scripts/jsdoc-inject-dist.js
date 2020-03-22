@@ -36,7 +36,7 @@ glob(path.normalize(`${docsPath}/*.html`), null, (err, files) => {
     console.error(err);
   }
 
-  files.forEach(htmlFile => {
+  files.forEach((htmlFile) => {
     const html = fs.readFileSync(htmlFile, 'utf-8');
     const raHtmlFragment = `<script src="scripts/${raWebName}"></script>`;
     const ramdaHtmlFragment = `<script src="scripts/${ramdaName}"></script>`;

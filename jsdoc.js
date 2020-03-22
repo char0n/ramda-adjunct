@@ -1,7 +1,7 @@
 'use strict';
 
 /* eslint-disable no-param-reassign */
-exports.defineTags = dictionary => {
+exports.defineTags = (dictionary) => {
   dictionary.defineTag('sig', {
     mustHaveValue: true,
     canHaveType: false,

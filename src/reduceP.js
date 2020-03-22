@@ -70,7 +70,7 @@ import allP from './allP';
  */
 /* esline-enable max-len */
 const reduceP = curryN(3, (fn, acc, list) =>
-  resolveP(list).then(iterable => {
+  resolveP(list).then((iterable) => {
     const listLength = length(iterable);
 
     if (listLength === 0) {
@@ -79,7 +79,7 @@ const reduceP = curryN(3, (fn, acc, list) =>
 
     const reducer = reduce((accP, currentValueP) =>
       accP
-        .then(previousValue => allP([previousValue, currentValueP]))
+        .then((previousValue) => allP([previousValue, currentValueP]))
         .then(([previousValue, currentValue]) => {
           if (isUndefined(previousValue) && listLength === 1) {
             return currentValue;

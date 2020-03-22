@@ -7,9 +7,9 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isValidNumber', function() {
-  context('given a valid `Number`', function() {
-    specify('should return true', function() {
+describe('isValidNumber', function () {
+  context('given a valid `Number`', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isValidNumber(0));
       assert.isTrue(RA.isValidNumber(0.1));
       assert.isTrue(RA.isValidNumber(-0.1));
@@ -22,8 +22,8 @@ describe('isValidNumber', function() {
     });
   });
 
-  context('given an invalid `Number` or a non `Number`', function() {
-    specify('should return false', function() {
+  context('given an invalid `Number` or a non `Number`', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isValidNumber(NaN));
       assert.isFalse(RA.isValidNumber(Infinity));
       assert.isFalse(RA.isValidNumber(-Infinity));
@@ -47,7 +47,7 @@ describe('isValidNumber', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isValidNumber = RA.isValidNumber(R.__);
 
     assert.isTrue(isValidNumber(7));

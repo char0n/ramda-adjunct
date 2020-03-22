@@ -263,7 +263,7 @@ class Identity {
    * Identity.of(identity).contramap(a => divide2(add1(a))).get()(3); //=> 2
    */
   [contramap](fn) {
-    return this.constructor.of(value => this.value(fn(value)));
+    return this.constructor.of((value) => this.value(fn(value)));
   }
 
   contramap(fn) {

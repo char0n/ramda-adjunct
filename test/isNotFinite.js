@@ -4,8 +4,8 @@ import * as R from 'ramda';
 import * as RA from '../src';
 import { isFinitePolyfill } from '../src/isFinite';
 
-describe('isNotFinite', function() {
-  it('should test a value for complement of finite `Number`', function() {
+describe('isNotFinite', function () {
+  it('should test a value for complement of finite `Number`', function () {
     assert.isTrue(RA.isNotFinite(Infinity));
     assert.isTrue(RA.isNotFinite(NaN));
     assert.isTrue(RA.isNotFinite(-Infinity));
@@ -20,13 +20,13 @@ describe('isNotFinite', function() {
     assert.isTrue(RA.isNotFinite(null));
   });
 
-  context('isFinitePolyfill complement', function() {
-    context('given we create complement of the polyfill', function() {
+  context('isFinitePolyfill complement', function () {
+    context('given we create complement of the polyfill', function () {
       const polyfillC = R.complement(isFinitePolyfill);
 
       specify(
         'should test a value for complement of finite `Number`',
-        function() {
+        function () {
           assert.isTrue(polyfillC(Infinity));
           assert.isTrue(polyfillC(NaN));
           assert.isTrue(polyfillC(-Infinity));
@@ -42,7 +42,7 @@ describe('isNotFinite', function() {
         }
       );
 
-      specify('should support placeholder to specify "gaps"', function() {
+      specify('should support placeholder to specify "gaps"', function () {
         const isNotFinite = polyfillC(R.__);
 
         assert.isFalse(isNotFinite(-1));
@@ -50,7 +50,7 @@ describe('isNotFinite', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotFinite = RA.isNotFinite(R.__);
 
     assert.isFalse(isNotFinite(-1));

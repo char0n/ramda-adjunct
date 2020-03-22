@@ -6,8 +6,8 @@ import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 
-describe('isNotGeneratorFunction', function() {
-  it('should tests value for a `Generator Function`', function() {
+describe('isNotGeneratorFunction', function () {
+  it('should tests value for a `Generator Function`', function () {
     assert.strictEqual(
       RA.isNotGeneratorFunction(genFunc),
       typeof genFunc !== 'function'
@@ -25,7 +25,7 @@ describe('isNotGeneratorFunction', function() {
     assert.isTrue(RA.isNotGeneratorFunction(Symbol));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotGeneratorFunction = RA.isNotGeneratorFunction(R.__);
 
     assert.strictEqual(

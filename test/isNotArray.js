@@ -3,9 +3,9 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('isNotArray', function() {
-  context('given non array value', function() {
-    specify('should return true', function() {
+describe('isNotArray', function () {
+  context('given non array value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotArray(void 0));
       assert.isTrue(RA.isNotArray({}));
       assert.isTrue(RA.isNotArray(null));
@@ -18,8 +18,8 @@ describe('isNotArray', function() {
     });
   });
 
-  context('given array value', function() {
-    specify('should return false', function() {
+  context('given array value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotArray([]));
       assert.isFalse(RA.isNotArray([1]));
       assert.isFalse(RA.isNotArray(new Array()));
@@ -27,7 +27,7 @@ describe('isNotArray', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotArray = RA.isNotArray(R.__);
 
     assert.isTrue(isNotArray(-1));

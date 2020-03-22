@@ -12,7 +12,7 @@ const checkValue = (value, valueName) => {
   }
 };
 
-const checkSearchValue = searchValue => {
+const checkSearchValue = (searchValue) => {
   if (
     typeof searchValue !== 'string' &&
     !(searchValue instanceof String) &&

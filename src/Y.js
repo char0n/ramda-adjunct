@@ -25,6 +25,6 @@
  * factorial(5); //=> 120
  */
 
-const Y = le => (f => f(f))(g => le(x => g(g)(x)));
+const Y = (le) => ((f) => f(f))((g) => le((x) => g(g)(x)));
 
 export default Y;

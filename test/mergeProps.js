@@ -2,11 +2,11 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('mergeProps', function() {
+describe('mergeProps', function () {
   let obj;
   let expected;
 
-  beforeEach(function() {
+  beforeEach(function () {
     obj = {
       foo: { fooinner: 1 },
       bar: { barinner: 2 },
@@ -14,11 +14,11 @@ describe('mergeProps', function() {
     expected = { fooinner: 1, barinner: 2 };
   });
 
-  it('should merge the props containing objects', function() {
+  it('should merge the props containing objects', function () {
     assert.deepEqual(RA.mergeProps(['foo', 'bar'], obj), expected);
   });
 
-  it('should merge the props containing non-objects', function() {
+  it('should merge the props containing non-objects', function () {
     assert.deepEqual(RA.mergeProps(['foo', 'bar'], { foo: 1, bar: 2 }), {});
     assert.deepEqual(RA.mergeProps(['foo', 'bar'], { foo: 'a', bar: 'b' }), {
       0: 'b',
@@ -29,11 +29,11 @@ describe('mergeProps', function() {
     );
   });
 
-  it('should return an empty object if no props requested', function() {
+  it('should return an empty object if no props requested', function () {
     assert.deepEqual(RA.mergeProps([], { foo: 1, bar: 2 }), {});
   });
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     assert.deepEqual(RA.mergeProps(['foo', 'bar'], obj), expected);
     assert.deepEqual(RA.mergeProps(['foo', 'bar'])(obj), expected);
   });

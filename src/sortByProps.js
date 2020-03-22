@@ -23,7 +23,7 @@ import { reduce, either, curry, prop, sort, comparator, map, lt } from 'ramda';
 
 const sortByProps = curry((props, list) => {
   const firstTruthy = ([head, ...tail]) => reduce(either, head, tail);
-  const makeComparator = propName =>
+  const makeComparator = (propName) =>
     comparator((a, b) => lt(prop(propName, a), prop(propName, b)));
   return sort(firstTruthy(map(makeComparator, props)), list);
 });

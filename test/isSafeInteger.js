@@ -5,17 +5,17 @@ import * as RA from '../src';
 import { isSafeIntegerPolyfill } from '../src/isSafeInteger';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 
-describe('isSafeInteger', function() {
-  context('given a safe integer', function() {
-    specify('should return true', function() {
+describe('isSafeInteger', function () {
+  context('given a safe integer', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isSafeInteger(3));
       assert.isTrue(RA.isSafeInteger(MAX_SAFE_INTEGER));
       assert.isTrue(RA.isSafeInteger(3.0));
     });
   });
 
-  context('given not safe integer', function() {
-    specify('should return false', function() {
+  context('given not safe integer', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isSafeInteger(MAX_SAFE_INTEGER + 1));
       assert.isFalse(RA.isSafeInteger(NaN));
       assert.isFalse(RA.isSafeInteger(Infinity));
@@ -30,23 +30,23 @@ describe('isSafeInteger', function() {
     });
   });
 
-  specify('should support placeholder to specify "gaps"', function() {
+  specify('should support placeholder to specify "gaps"', function () {
     const isSafeInteger = RA.isSafeInteger(R.__);
 
     assert.isTrue(isSafeInteger(3));
   });
 
-  context('isSafeIntegerPolyfill', function() {
-    context('given a safe integer', function() {
-      specify('should return true', function() {
+  context('isSafeIntegerPolyfill', function () {
+    context('given a safe integer', function () {
+      specify('should return true', function () {
         assert.isTrue(isSafeIntegerPolyfill(3));
         assert.isTrue(isSafeIntegerPolyfill(MAX_SAFE_INTEGER));
         assert.isTrue(isSafeIntegerPolyfill(3.0));
       });
     });
 
-    context('given not safe integer', function() {
-      specify('should return false', function() {
+    context('given not safe integer', function () {
+      specify('should return false', function () {
         assert.isFalse(isSafeIntegerPolyfill(MAX_SAFE_INTEGER + 1));
         assert.isFalse(isSafeIntegerPolyfill(NaN));
         assert.isFalse(isSafeIntegerPolyfill(Infinity));
@@ -61,7 +61,7 @@ describe('isSafeInteger', function() {
       });
     });
 
-    specify('should support placeholder to specify "gaps"', function() {
+    specify('should support placeholder to specify "gaps"', function () {
       const isSafeInteger = isSafeIntegerPolyfill(R.__);
 
       assert.isTrue(isSafeInteger(3));

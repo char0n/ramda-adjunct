@@ -33,6 +33,6 @@ import { curry, map, tap } from 'ramda';
  */
 /* eslint-enable max-len */
 
-const seq = curry((fns, x) => tap(tx => map(fn => fn(tx))(fns))(x));
+const seq = curry((fns, x) => tap((tx) => map((fn) => fn(tx))(fns))(x));
 
 export default seq;

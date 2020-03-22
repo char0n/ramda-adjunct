@@ -13,12 +13,12 @@ const supportsFantasyLand = () => {
   }
 };
 
-describe('neither', function() {
+describe('neither', function () {
   const isFantasyLandSupported = supportsFantasyLand();
 
-  it('should combine two boolean-returning functions into one', function() {
-    const even = x => x % 2 === 0;
-    const gt10 = x => x > 10;
+  it('should combine two boolean-returning functions into one', function () {
+    const even = (x) => x % 2 === 0;
+    const gt10 = (x) => x > 10;
     const f = RA.neither(even, gt10);
 
     assert.isFalse(f(8));
@@ -27,7 +27,7 @@ describe('neither', function() {
     assert.isTrue(f(9));
   });
 
-  it('should accept functions that takes multiple parameters', function() {
+  it('should accept functions that takes multiple parameters', function () {
     const between = (a, b, c) => a < b && b < c;
     const total20 = (a, b, c) => a + b + c === 20;
     const f = RA.neither(between, total20);
@@ -38,8 +38,8 @@ describe('neither', function() {
     assert.isTrue(f(12, 2, 7));
   });
 
-  context('given the result of first function is true', function() {
-    specify('should not evaluate the second expression', function() {
+  context('given the result of first function is true', function () {
+    specify('should not evaluate the second expression', function () {
       const z = sinon.spy();
 
       RA.neither(R.T, z)();
@@ -48,7 +48,7 @@ describe('neither', function() {
   });
 
   if (isFantasyLandSupported) {
-    it('should accept fantasy-land applicative functors', function() {
+    it('should accept fantasy-land applicative functors', function () {
       assert.isTrue(R.equals(RA.neither(Just(true), Just(true)), Just(false)));
       assert.isTrue(R.equals(RA.neither(Just(true), Just(false)), Just(false)));
       assert.isTrue(R.equals(RA.neither(Just(false), Just(true)), Just(false)));
@@ -61,9 +61,9 @@ describe('neither', function() {
     });
   }
 
-  it('should be curried', function() {
-    const even = x => x % 2 === 0;
-    const gt10 = x => x > 10;
+  it('should be curried', function () {
+    const even = (x) => x % 2 === 0;
+    const gt10 = (x) => x > 10;
     const f = RA.neither(even)(gt10);
 
     assert.isFalse(f(8));

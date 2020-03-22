@@ -2,11 +2,11 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('mergePaths', function() {
+describe('mergePaths', function () {
   let obj;
   let expected;
 
-  beforeEach(function() {
+  beforeEach(function () {
     obj = {
       foo: { fooinner: { fooinner2: 1 } },
       bar: { barinner: 2 },
@@ -14,14 +14,14 @@ describe('mergePaths', function() {
     expected = { fooinner2: 1, barinner: 2 };
   });
 
-  it('should merge the property paths containing object', function() {
+  it('should merge the property paths containing object', function () {
     assert.deepEqual(
       RA.mergePaths([['foo', 'fooinner'], ['bar']], obj),
       expected
     );
   });
 
-  it('should merge the property paths containing non-objects', function() {
+  it('should merge the property paths containing non-objects', function () {
     assert.deepEqual(
       RA.mergePaths([['foo', 'fooinner'], ['bar']], {
         foo: { fooinner: 1 },
@@ -47,11 +47,11 @@ describe('mergePaths', function() {
     );
   });
 
-  it('should return an empty object if no paths requested', function() {
+  it('should return an empty object if no paths requested', function () {
     assert.deepEqual(RA.mergePaths([], obj), {});
   });
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     assert.deepEqual(
       RA.mergePaths([['foo', 'fooinner'], ['bar']], obj),
       expected

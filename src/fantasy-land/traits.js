@@ -14,7 +14,7 @@ export const functorTrait = {
 
 export const applyTrait = {
   [fl.ap](applyWithFn) {
-    return applyWithFn.map(fn => fn(this.value));
+    return applyWithFn.map((fn) => fn(this.value));
   },
 };
 

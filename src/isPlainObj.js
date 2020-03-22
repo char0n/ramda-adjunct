@@ -48,7 +48,7 @@ const hasObjectConstructor = pathSatisfies(
  * RA.isPlainObj(new Object()); //=> true
  */
 /* eslint-enable max-len */
-const isPlainObj = curryN(1, val => {
+const isPlainObj = curryN(1, (val) => {
   if (!isObjLike(val) || !isObject(val)) {
     return false;
   }

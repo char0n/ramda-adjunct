@@ -4,18 +4,18 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('curryRight', function() {
-  it('should curry a single value', function() {
-    const f = RA.curryRight(function(a, b, c, d) {
+describe('curryRight', function () {
+  it('should curry a single value', function () {
+    const f = RA.curryRight(function (a, b, c, d) {
       return (a + b * c) / d;
     }); // f(2, 6, 3, 10) == 2
     const g = f(10);
     assert.strictEqual(g(3, 6, 2), 2);
   });
 
-  it('should curry multiple values', function() {
+  it('should curry multiple values', function () {
     // f(2, 6, 3, 10) == 2
-    const f = RA.curryRight(function(a, b, c, d) {
+    const f = RA.curryRight(function (a, b, c, d) {
       return (a + b * c) / d;
     });
     const g = f(10, 3);
@@ -24,9 +24,9 @@ describe('curryRight', function() {
     assert.strictEqual(h(2), 2);
   });
 
-  it('should allow further currying of a curried function', function() {
+  it('should allow further currying of a curried function', function () {
     // f(2, 6, 3, 10) == 2
-    const f = RA.curryRight(function(a, b, c, d) {
+    const f = RA.curryRight(function (a, b, c, d) {
       return (a + b * c) / d;
     });
     const g = f(10);
@@ -36,8 +36,8 @@ describe('curryRight', function() {
     assert.strictEqual(g(3, 6)(2), 2);
   });
 
-  it('should properly report the length of the curried function', function() {
-    const f = RA.curryRight(function(a, b, c, d) {
+  it('should properly report the length of the curried function', function () {
+    const f = RA.curryRight(function (a, b, c, d) {
       return (a + b * c) / d;
     });
     assert.strictEqual(f.length, 4);
@@ -48,9 +48,9 @@ describe('curryRight', function() {
     assert.strictEqual(g(3, 6).length, 1);
   });
 
-  it('should preserve context', function() {
+  it('should preserve context', function () {
     const ctx = { x: 10 };
-    const f = function(a, b) {
+    const f = function (a, b) {
       return a + b * this.x;
     };
     const g = RA.curryRight(f);
@@ -59,8 +59,8 @@ describe('curryRight', function() {
     assert.strictEqual(g.call(ctx, 2).call(ctx, 4), 24);
   });
 
-  it('should support R.__ placeholder', function() {
-    const f = function(a, b, c) {
+  it('should support R.__ placeholder', function () {
+    const f = function (a, b, c) {
       return [a, b, c];
     };
     const g = RA.curryRight(f);
@@ -91,8 +91,8 @@ describe('curryRight', function() {
     assert.sameOrderedMembers(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
-  it('should support @@functional/placeholder', function() {
-    const f = function(a, b, c) {
+  it('should support @@functional/placeholder', function () {
+    const f = function (a, b, c) {
       return [a, b, c];
     };
     const g = RA.curryRight(f);
@@ -123,8 +123,8 @@ describe('curryRight', function() {
     assert.sameOrderedMembers(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
-  it('should forward extra arguments', function() {
-    const f = function(a, b, c) {
+  it('should forward extra arguments', function () {
+    const f = function (a, b, c) {
       void c;
       return Array.prototype.slice.call(arguments);
     };
@@ -139,7 +139,7 @@ describe('curryRight', function() {
 });
 
 /* eslint-disable max-len */
-describe('curryRight properties', function() {
+describe('curryRight properties', function () {
   jsv.property(
     'should curry multiple values',
     jsv.integer,

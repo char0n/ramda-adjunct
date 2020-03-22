@@ -2,7 +2,7 @@ import { curry, has } from 'ramda';
 
 import renameKeysWith from './renameKeysWith';
 
-const valueOrKey = keysMap => key => {
+const valueOrKey = (keysMap) => (key) => {
   if (has(key, keysMap)) {
     return keysMap[key];
   }

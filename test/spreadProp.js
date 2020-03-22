@@ -2,11 +2,11 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('spreadProp', function() {
+describe('spreadProp', function () {
   let prop;
   let obj;
 
-  beforeEach(function() {
+  beforeEach(function () {
     prop = 'b';
     obj = {
       a: 1,
@@ -14,17 +14,17 @@ describe('spreadProp', function() {
     };
   });
 
-  context("given prop doesn't exist", function() {
+  context("given prop doesn't exist", function () {
     specify(
       'should return object with identical structure as provided object',
-      function() {
+      function () {
         assert.deepEqual(RA.spreadProp('not_exist', obj), obj);
       }
     );
   });
 
-  context('given prop leads to non object', function() {
-    specify('should return object without prop', function() {
+  context('given prop leads to non object', function () {
+    specify('should return object without prop', function () {
       obj = {
         a: 1,
         b: 999,
@@ -34,8 +34,8 @@ describe('spreadProp', function() {
     });
   });
 
-  context('given prop leads to object with same prop name', function() {
-    specify('should override existing props on provided object', function() {
+  context('given prop leads to object with same prop name', function () {
+    specify('should override existing props on provided object', function () {
       obj = {
         a: 1,
         b: { b: 999, c: 3, d: 4 },
@@ -51,7 +51,7 @@ describe('spreadProp', function() {
     });
   });
 
-  it('should return object with spreaded prop', function() {
+  it('should return object with spreaded prop', function () {
     const expected = {
       a: 1,
       c: 3,
@@ -61,7 +61,7 @@ describe('spreadProp', function() {
     assert.deepEqual(RA.spreadProp(prop, obj), expected);
   });
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     assert.deepEqual(RA.spreadProp('prop', {}), {});
     assert.deepEqual(RA.spreadProp('prop')({}), {});
   });

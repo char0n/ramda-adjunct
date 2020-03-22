@@ -4,15 +4,15 @@ import * as R from 'ramda';
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
 
-describe('isPair', function() {
-  context('given a pair value', function() {
-    specify('should return true', function() {
+describe('isPair', function () {
+  context('given a pair value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isPair([0, 1]));
     });
   });
 
-  context('given a non pair value', function() {
-    specify('should return false', function() {
+  context('given a non pair value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isPair([]));
       assert.isFalse(RA.isPair([0]));
       assert.isFalse(RA.isPair([0, 1, 2]));
@@ -31,7 +31,7 @@ describe('isPair', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isPair = RA.isPair(R.__);
 
     assert.isTrue(isPair([0, 1]));

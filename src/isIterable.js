@@ -24,7 +24,7 @@ import isFunction from './isFunction';
  * RA.isIterable(null); //=> false
  * RA.isIterable(undefined); //=> false
  */
-const isIterable = curryN(1, val => {
+const isIterable = curryN(1, (val) => {
   if (typeof Symbol === 'undefined') {
     return false;
   }

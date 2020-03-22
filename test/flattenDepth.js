@@ -2,10 +2,10 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('flattenDepth', function() {
-  context('given a list that has nested elements', function() {
-    context('and the depth is positive integer number', function() {
-      specify('should flatten the list according the the depth', function() {
+describe('flattenDepth', function () {
+  context('given a list that has nested elements', function () {
+    context('and the depth is positive integer number', function () {
+      specify('should flatten the list according the the depth', function () {
         const depth = 2;
         const actual = [1, [2], [3, [4, 5], 6, [[[7], 8]]], 9, 10];
         const expected = [1, 2, 3, 4, 5, 6, [[7], 8], 9, 10];
@@ -14,8 +14,8 @@ describe('flattenDepth', function() {
       });
     });
 
-    context('and the depth is negative integer number', function() {
-      specify('should return shallow copy of the list', function() {
+    context('and the depth is negative integer number', function () {
+      specify('should return shallow copy of the list', function () {
         const depth = -2;
         const actual = [1, [2], [3, [4, 5], 6, [[[7], 8]]], 9, 10];
         const expected = RA.flattenDepth(depth, actual);
@@ -25,8 +25,8 @@ describe('flattenDepth', function() {
       });
     });
 
-    context('and the depth is 0', function() {
-      specify('should return shallow copy of the list', function() {
+    context('and the depth is 0', function () {
+      specify('should return shallow copy of the list', function () {
         const depth = 0;
         const actual = [1, [2], [3, [4, 5], 6, [[[7], 8]]], 9, 10];
         const expected = RA.flattenDepth(depth, actual);
@@ -36,8 +36,8 @@ describe('flattenDepth', function() {
       });
     });
 
-    context('and the depth is arbitrary positive integer number', function() {
-      specify('should flatten list', function() {
+    context('and the depth is arbitrary positive integer number', function () {
+      specify('should flatten list', function () {
         const list = [1, [2], [3, [4, 5], 6, [[[7], 8]]], 9, 10];
 
         assert.deepEqual(RA.flattenDepth(1, list), [
@@ -100,8 +100,8 @@ describe('flattenDepth', function() {
       });
     });
 
-    context('and the depth is positive float number', function() {
-      specify('should ceil depth to positive integer number', function() {
+    context('and the depth is positive float number', function () {
+      specify('should ceil depth to positive integer number', function () {
         const depth = 2.2;
         const actual = [1, [2], [3, [4, 5], 6, [[[7], 8]]], 9, 10];
         const expected = [1, 2, 3, 4, 5, 6, [7], 8, 9, 10];
@@ -110,8 +110,8 @@ describe('flattenDepth', function() {
       });
     });
 
-    context('and the depth is negative float number', function() {
-      specify('should return shallow copy of the list', function() {
+    context('and the depth is negative float number', function () {
+      specify('should return shallow copy of the list', function () {
         const depth = -2.2;
         const actual = [1, [2], [3, [4, 5], 6, [[[7], 8]]], 9, 10];
         const expected = RA.flattenDepth(depth, actual);
@@ -122,7 +122,7 @@ describe('flattenDepth', function() {
     });
   });
 
-  it('should curry', function() {
+  it('should curry', function () {
     assert.deepEqual(RA.flattenDepth(0, []), []);
     assert.deepEqual(RA.flattenDepth(0)([]), []);
   });

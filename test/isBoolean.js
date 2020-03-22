@@ -4,9 +4,9 @@ import * as R from 'ramda';
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
 
-describe('isBoolean', function() {
-  context('given boolean value', function() {
-    specify('should return true', function() {
+describe('isBoolean', function () {
+  context('given boolean value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isBoolean(true));
       assert.isTrue(RA.isBoolean(false));
       assert.isTrue(RA.isBoolean(Object(true)));
@@ -16,8 +16,8 @@ describe('isBoolean', function() {
     });
   });
 
-  context('given non-boolean value', function() {
-    specify('should return false', function() {
+  context('given non-boolean value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isBoolean([1, 2, 3]));
       assert.isFalse(RA.isBoolean(new Date()));
       assert.isFalse(RA.isBoolean(new Error()));
@@ -31,7 +31,7 @@ describe('isBoolean', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isBoolean = RA.isBoolean(R.__);
 
     assert.isTrue(isBoolean(true));

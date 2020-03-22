@@ -3,13 +3,13 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('curryRightN', function() {
+describe('curryRightN', function () {
   const source = (a, b, c, d) => {
     void d;
     return a * b * c;
   };
 
-  it('should accept an arity', function() {
+  it('should accept an arity', function () {
     const curried = RA.curryRightN(3, source);
     assert.strictEqual(curried(1)(2)(3), 6);
     assert.strictEqual(curried(1, 2)(3), 6);
@@ -17,7 +17,7 @@ describe('curryRightN', function() {
     assert.strictEqual(curried(1, 2, 3), 6);
   });
 
-  it('should support partial application/currying', function() {
+  it('should support partial application/currying', function () {
     const curryRight3 = RA.curryRightN(3);
     const curried = curryRight3(source);
     assert.strictEqual(curried.length, 3);
@@ -27,9 +27,9 @@ describe('curryRightN', function() {
     assert.strictEqual(curried(1, 2, 3), 6);
   });
 
-  it('should preserve context', function() {
+  it('should preserve context', function () {
     const ctx = { x: 10 };
-    const f = function(a, b) {
+    const f = function (a, b) {
       return a + b * this.x;
     };
     const g = RA.curryRightN(2, f);
@@ -38,8 +38,8 @@ describe('curryRightN', function() {
     assert.strictEqual(g.call(ctx, 2).call(ctx, 4), 24);
   });
 
-  it('should support R.__ placeholder', function() {
-    const f = function(...args) {
+  it('should support R.__ placeholder', function () {
+    const f = function (...args) {
       return args;
     };
     const g = RA.curryRightN(3, f);
@@ -70,8 +70,8 @@ describe('curryRightN', function() {
     assert.sameOrderedMembers(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
-  it('should support @@functional/placeholder', function() {
-    const f = function() {
+  it('should support @@functional/placeholder', function () {
+    const f = function () {
       return Array.prototype.slice.call(arguments);
     };
     const g = RA.curryRightN(3, f);
@@ -102,8 +102,8 @@ describe('curryRightN', function() {
     assert.sameOrderedMembers(g(_, _, _)(1, _, _)(_, _)(2, _)(_)(3), [3, 2, 1]);
   });
 
-  it('should forward extra arguments', function() {
-    const f = function() {
+  it('should forward extra arguments', function () {
+    const f = function () {
       return Array.prototype.slice.call(arguments);
     };
     const g = RA.curryRightN(3, f);
