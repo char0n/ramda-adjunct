@@ -186,7 +186,7 @@
     "terser-webpack-plugin": "2.3.5",
     "testem": "3.0.3",
     "tslint": "=5.14.0",
-    "typescript": "=3.8.2",
+    "typescript": "=3.8.3",
     "webpack": "4.42.0",
     "webpack-cli": "3.3.10"
   },
