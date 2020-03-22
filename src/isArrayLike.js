@@ -27,7 +27,7 @@ import isString from './isString';
  * RA.isArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> true
  */
 /* eslint-enable max-len */
-const isArrayLike = curryN(1, val => {
+const isArrayLike = curryN(1, (val) => {
   if (isArray(val)) {
     return true;
   }

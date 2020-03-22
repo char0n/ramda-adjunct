@@ -66,7 +66,7 @@ const flipArgs = pipe(reduceRight(concat, ''), equals('ba'))(['a', 'b']);
  */
 /* esline-enable max-len */
 const reduceRightP = curryN(3, (fn, acc, list) =>
-  resolveP(list).then(iterable => {
+  resolveP(list).then((iterable) => {
     const listLength = length(iterable);
 
     if (listLength === 0) {
@@ -84,7 +84,7 @@ const reduceRightP = curryN(3, (fn, acc, list) =>
       }
 
       return accP
-        .then(previousValue => allP([previousValue, currentValueP]))
+        .then((previousValue) => allP([previousValue, currentValueP]))
         .then(([previousValue, currentValue]) => {
           if (isUndefined(previousValue) && listLength === 1) {
             return currentValue;

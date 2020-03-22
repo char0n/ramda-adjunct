@@ -4,9 +4,9 @@ import { assert } from 'chai';
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
 
-describe('isMap', function() {
-  context('given a map', function() {
-    specify('should return true', function() {
+describe('isMap', function () {
+  context('given a map', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isMap(new Map()));
       assert.isTrue(
         RA.isMap(
@@ -19,8 +19,8 @@ describe('isMap', function() {
     });
   });
 
-  context('given not a map', function() {
-    specify('should return false', function() {
+  context('given not a map', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isMap('abc'));
       assert.isFalse(RA.isMap(Object('abc')));
       assert.isFalse(RA.isMap(Object()));
@@ -36,7 +36,7 @@ describe('isMap', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isMap = RA.isMap(R.__);
 
     assert.isTrue(isMap(new Map()));

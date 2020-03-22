@@ -2,11 +2,11 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('flattenProp', function() {
+describe('flattenProp', function () {
   let prop;
   let obj;
 
-  beforeEach(function() {
+  beforeEach(function () {
     prop = 'b';
     obj = {
       a: 1,
@@ -14,19 +14,19 @@ describe('flattenProp', function() {
     };
   });
 
-  context("given prop doesn't exist", function() {
+  context("given prop doesn't exist", function () {
     specify(
       'should return object with identical structure as provided object',
-      function() {
+      function () {
         assert.deepEqual(RA.flattenProp('not_exist', obj), obj);
       }
     );
   });
 
-  context('given prop leads to non object', function() {
+  context('given prop leads to non object', function () {
     specify(
       'should return object with identical structure as provided object',
-      function() {
+      function () {
         obj = {
           a: 1,
           b: 999,
@@ -36,8 +36,8 @@ describe('flattenProp', function() {
     );
   });
 
-  context('given prop leads to object with same prop name', function() {
-    specify('should override existing props on provided object', function() {
+  context('given prop leads to object with same prop name', function () {
+    specify('should override existing props on provided object', function () {
       obj = {
         a: 1,
         b: { b: 999, c: 3, d: 4 },
@@ -53,7 +53,7 @@ describe('flattenProp', function() {
     });
   });
 
-  it('should return object with flattened prop', function() {
+  it('should return object with flattened prop', function () {
     const expected = {
       a: 1,
       c: 3,
@@ -64,7 +64,7 @@ describe('flattenProp', function() {
     assert.deepEqual(RA.flattenProp(prop, obj), expected);
   });
 
-  it('should curry', function() {
+  it('should curry', function () {
     assert.deepEqual(RA.flattenProp('prop', {}), {});
     assert.deepEqual(RA.flattenProp('prop')({}), {});
   });

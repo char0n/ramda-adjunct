@@ -5,8 +5,8 @@ import * as RA from '../src';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isDate', function() {
-  it('should test value for a `Date`', function() {
+describe('isDate', function () {
+  it('should test value for a `Date`', function () {
     assert.isTrue(RA.isDate(new Date()));
 
     assert.isFalse(RA.isDate(Date.now()));
@@ -29,7 +29,7 @@ describe('isDate', function() {
     assert.isFalse(RA.isDate(undefined));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isDate = RA.isDate(R.__);
 
     assert.isTrue(isDate(new Date()));

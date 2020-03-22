@@ -5,9 +5,9 @@ import * as RA from '../src';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isNotRegExp', function() {
-  context('given a non-regexp value', function() {
-    specify('should return true', function() {
+describe('isNotRegExp', function () {
+  context('given a non-regexp value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotRegExp('a'));
       assert.isTrue(RA.isNotRegExp(1));
       assert.isTrue(RA.isNotRegExp([]));
@@ -17,7 +17,7 @@ describe('isNotRegExp', function() {
       assert.isTrue(RA.isNotRegExp(new Error()));
       assert.isTrue(RA.isNotRegExp(new Date()));
       assert.isTrue(RA.isNotRegExp(RA));
-      assert.isTrue(RA.isNotRegExp(function() {}));
+      assert.isTrue(RA.isNotRegExp(function () {}));
       assert.isTrue(RA.isNotRegExp(Object(0)));
       assert.isTrue(RA.isNotRegExp(Object('a')));
       assert.isTrue(RA.isNotRegExp(args));
@@ -31,14 +31,14 @@ describe('isNotRegExp', function() {
     });
   });
 
-  context('given a regexp value', function() {
-    specify('should return false', function() {
+  context('given a regexp value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotRegExp(new RegExp()));
       assert.isFalse(RA.isNotRegExp(/(?:)/));
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotRegExp = RA.isNotRegExp(R.__);
 
     assert.isTrue(isNotRegExp(null));

@@ -5,9 +5,9 @@ import * as RA from '../src';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-describe('isNotString', function() {
-  context('given a non-string value', function() {
-    specify('should return true', function() {
+describe('isNotString', function () {
+  context('given a non-string value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotString(args));
       assert.isTrue(RA.isNotString([1, 2, 3]));
       assert.isTrue(RA.isNotString(true));
@@ -24,14 +24,14 @@ describe('isNotString', function() {
     });
   });
 
-  context('given a string value', function() {
-    specify('should return false', function() {
+  context('given a string value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotString('abc'));
       assert.isFalse(RA.isNotString(Object('abc')));
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotString = RA.isNotString(R.__);
 
     assert.isTrue(isNotString(null));

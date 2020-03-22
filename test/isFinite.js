@@ -4,8 +4,8 @@ import * as R from 'ramda';
 import * as RA from '../src';
 import polyfill from '../src/internal/polyfills/Number.isFinite';
 
-describe('isFinite', function() {
-  it('should test value for a finite `Number`', function() {
+describe('isFinite', function () {
+  it('should test value for a finite `Number`', function () {
     assert.isFalse(RA.isFinite(Infinity));
     assert.isFalse(RA.isFinite(NaN));
     assert.isFalse(RA.isFinite(-Infinity));
@@ -23,7 +23,7 @@ describe('isFinite', function() {
     assert.isFalse(RA.isFinite(null));
   });
 
-  it('should test polyfill for a finite `Number', function() {
+  it('should test polyfill for a finite `Number', function () {
     assert.isFalse(polyfill(Infinity));
     assert.isFalse(polyfill(NaN));
     assert.isFalse(polyfill(-Infinity));
@@ -41,7 +41,7 @@ describe('isFinite', function() {
     assert.isFalse(polyfill(null));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isFinite = RA.isFinite(R.__);
 
     assert.isTrue(isFinite(1));

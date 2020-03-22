@@ -19,7 +19,7 @@ import { type, curryN } from 'ramda';
  * RA.isSymbol(undefined); //=> false
  * RA.isSymbol(null); //=> false
  */
-const isSymbol = curryN(1, val => {
+const isSymbol = curryN(1, (val) => {
   return (
     typeof val === 'symbol' ||
     (typeof val === 'object' && type(val) === 'Symbol')

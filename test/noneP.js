@@ -3,11 +3,11 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-const delay = (ms = 0) => new Promise(res => setTimeout(res, ms));
+const delay = (ms = 0) => new Promise((res) => setTimeout(res, ms));
 
-describe('noneP', function() {
-  context('given all promises reject', function() {
-    specify('should resolve with the reasons', async function() {
+describe('noneP', function () {
+  context('given all promises reject', function () {
+    specify('should resolve with the reasons', async function () {
       const reasons = await RA.noneP([
         RA.rejectP(1),
         RA.rejectP('b'),
@@ -18,8 +18,8 @@ describe('noneP', function() {
     });
   });
 
-  context('given one promise resolves', function() {
-    specify('should reject with the fulfillment value', async function() {
+  context('given one promise resolves', function () {
+    specify('should reject with the fulfillment value', async function () {
       const value = await RA.noneP([
         RA.rejectP(),
         RA.rejectP(),
@@ -30,10 +30,10 @@ describe('noneP', function() {
     });
   });
 
-  context('given multiple promises resolve', function() {
+  context('given multiple promises resolve', function () {
     specify(
       'should reject with the fulfillment value of the first resolved promise',
-      async function() {
+      async function () {
         const value = await RA.noneP([
           RA.rejectP(),
           delay(500).then(() => RA.resolveP('slow')),
@@ -45,10 +45,10 @@ describe('noneP', function() {
     );
   });
 
-  context('given all promises resolve', function() {
+  context('given all promises resolve', function () {
     specify(
       'should reject with the fulfillment value of the first resolved promise',
-      async function() {
+      async function () {
         const value = await RA.noneP([
           RA.resolveP(1),
           RA.resolveP(2),
@@ -60,8 +60,8 @@ describe('noneP', function() {
     );
   });
 
-  context('given a value that is not a promise', function() {
-    specify('should reject with the non-promise value', async function() {
+  context('given a value that is not a promise', function () {
+    specify('should reject with the non-promise value', async function () {
       const value = await RA.noneP([RA.rejectP(1), 2, RA.rejectP(3)]).then(
         RA.rejectP,
         R.identity
@@ -71,15 +71,15 @@ describe('noneP', function() {
     });
   });
 
-  context('given an empty list', function() {
-    specify('should resolve with empty reasons', async function() {
+  context('given an empty list', function () {
+    specify('should resolve with empty reasons', async function () {
       const value = await RA.noneP([]);
 
       assert.sameOrderedMembers(value, []);
     });
   });
 
-  it('should support placeholder to specify "gaps"', async function() {
+  it('should support placeholder to specify "gaps"', async function () {
     const noneP = RA.noneP(R.__);
     const p1 = RA.rejectP(1);
     const v2 = RA.rejectP(2);

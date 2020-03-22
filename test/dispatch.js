@@ -4,8 +4,8 @@ import sinon from 'sinon';
 
 import * as RA from '../src';
 
-describe('dispatch', function() {
-  it('should return first non-nil value', function() {
+describe('dispatch', function () {
+  it('should return first non-nil value', function () {
     const nullStub = sinon.stub().returns(null);
     const undefinedStub = sinon.stub().returns(undefined);
     const zeroStub = sinon.stub().returns(0);
@@ -25,13 +25,13 @@ describe('dispatch', function() {
     assert.isTrue(positiveNumberStub.notCalled);
   });
 
-  it('should return curried function with max arity', function() {
+  it('should return curried function with max arity', function () {
     const fn = RA.dispatch([R.divide, R.identity]);
 
     assert.strictEqual(fn.length, 2);
   });
 
-  it('should act as switch', function() {
+  it('should act as switch', function () {
     const isString = sinon.stub().returns(false);
     const stringDispatch = sinon.stub().returns(undefined);
     const isNumber = sinon.stub().returns(true);
@@ -54,9 +54,9 @@ describe('dispatch', function() {
     assert.isTrue(dateDispatch.notCalled);
   });
 
-  context('given dispatched function throws', function() {
-    context('the error', function() {
-      specify('should bubble up', function() {
+  context('given dispatched function throws', function () {
+    context('the error', function () {
+      specify('should bubble up', function () {
         const configuredDispatch = RA.dispatch([
           () => {
             throw new Error();
@@ -69,14 +69,14 @@ describe('dispatch', function() {
     });
   });
 
-  context('given empty array provided as input', function() {
-    specify('should return undefined', function() {
+  context('given empty array provided as input', function () {
+    specify('should return undefined', function () {
       assert.isUndefined(RA.dispatch([]));
     });
   });
 
-  context('given all dispatched functions returns nil', function() {
-    specify('should return undefined', function() {
+  context('given all dispatched functions returns nil', function () {
+    specify('should return undefined', function () {
       const configuredDispatch = RA.dispatch([RA.stubUndefined, RA.stubNull]);
 
       assert.isUndefined(configuredDispatch());
@@ -85,8 +85,8 @@ describe('dispatch', function() {
 
   context(
     'given all dispatched functions have implicit return statement',
-    function() {
-      specify('should return undefined', function() {
+    function () {
+      specify('should return undefined', function () {
         const configuredDispatch = RA.dispatch([() => {}, () => {}]);
 
         assert.isUndefined(configuredDispatch());
@@ -94,7 +94,7 @@ describe('dispatch', function() {
     }
   );
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const dispatch = RA.dispatch(R.__);
 
     assert.strictEqual(dispatch([RA.stubNull, R.always(1)])(), 1);

@@ -3,11 +3,11 @@ import { lens, lensIndex, lensPath, lensProp, path } from 'ramda';
 
 import * as RA from '../src';
 
-describe('lensEq', function() {
+describe('lensEq', function () {
   context(
     'given a data structure focused by the given lens equals provided value',
-    function() {
-      specify('should return true', function() {
+    function () {
+      specify('should return true', function () {
         assert.isTrue(RA.lensEq(lensIndex(1), 1, [0, 1]));
         assert.isTrue(
           RA.lensEq(lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } })
@@ -20,8 +20,8 @@ describe('lensEq', function() {
 
   context(
     'given a data structure focused by the given lens non equals provided value',
-    function() {
-      specify('should return false', function() {
+    function () {
+      specify('should return false', function () {
         assert.isFalse(RA.lensEq(lensIndex(0), 1, [0, 1]));
         assert.isFalse(
           RA.lensEq(lensPath(['b', 'a']), 'foo', { a: { b: 'foo' } })
@@ -32,7 +32,7 @@ describe('lensEq', function() {
     }
   );
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     assert.isTrue(RA.lensEq(lensIndex(1))(1)([0, 1]));
     assert.isTrue(RA.lensEq(lensIndex(1), 1)([0, 1]));
     assert.isTrue(RA.lensEq(lensIndex(1))(1, [0, 1]));

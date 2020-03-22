@@ -27,7 +27,7 @@ const noneP = curryN(
   1,
   pipe(
     map(resolveP),
-    map(p => p.then(rejectP, resolveP)),
+    map((p) => p.then(rejectP, resolveP)),
     allP
   )
 );

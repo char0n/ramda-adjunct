@@ -3,8 +3,8 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('appendFlipped', function() {
-  it('should add the element to the end of the list', function() {
+describe('appendFlipped', function () {
+  it('should add the element to the end of the list', function () {
     assert.sameOrderedMembers(RA.appendFlipped(['x', 'y'], 'z'), [
       'x',
       'y',
@@ -17,11 +17,11 @@ describe('appendFlipped', function() {
     ]);
   });
 
-  it('should work on empty list', function() {
+  it('should work on empty list', function () {
     assert.sameOrderedMembers(RA.appendFlipped([], 1), [1]);
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const appendFlipped = RA.appendFlipped(R.__);
 
     assert.sameOrderedMembers(appendFlipped([], 'test'), ['test']);

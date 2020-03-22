@@ -4,9 +4,9 @@ import { assert } from 'chai';
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
 
-describe('isNotBoolean', function() {
-  context('given non boolean value', function() {
-    specify('should return true', function() {
+describe('isNotBoolean', function () {
+  context('given non boolean value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotBoolean([1, 2, 3]));
       assert.isTrue(RA.isNotBoolean(new Date()));
       assert.isTrue(RA.isNotBoolean(new Error()));
@@ -20,23 +20,23 @@ describe('isNotBoolean', function() {
     });
   });
 
-  context('given boolean value', function() {
-    context('and the boolean value is primitive', function() {
-      specify('should return false', function() {
+  context('given boolean value', function () {
+    context('and the boolean value is primitive', function () {
+      specify('should return false', function () {
         assert.isFalse(RA.isNotBoolean(true));
         assert.isFalse(RA.isNotBoolean(false));
       });
     });
 
-    context('and the boolean value is box wrapper', function() {
-      specify('should return false', function() {
+    context('and the boolean value is box wrapper', function () {
+      specify('should return false', function () {
         assert.isFalse(RA.isNotBoolean(Object(true)));
         assert.isFalse(RA.isNotBoolean(Object(false)));
       });
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotBoolean = RA.isNotBoolean(R.__);
 
     assert.isTrue(isNotBoolean(-1));

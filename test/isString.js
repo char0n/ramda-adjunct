@@ -5,16 +5,16 @@ import * as RA from '../src';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-describe('isString', function() {
-  context('given a `String` value', function() {
-    specify('should return true', function() {
+describe('isString', function () {
+  context('given a `String` value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isString('abc'));
       assert.isTrue(RA.isString(Object('abc')));
     });
   });
 
-  context('given a non `String` value', function() {
-    specify('should return false', function() {
+  context('given a non `String` value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isString(args));
       assert.isFalse(RA.isString([1, 2, 3]));
       assert.isFalse(RA.isString(true));
@@ -31,7 +31,7 @@ describe('isString', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isString = RA.isString(R.__);
 
     assert.isFalse(isString(1));

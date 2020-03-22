@@ -5,9 +5,9 @@ import * as RA from '../src';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isNotValidDate', function() {
-  context('given a non-date value', function() {
-    specify('should return true', function() {
+describe('isNotValidDate', function () {
+  context('given a non-date value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotValidDate(new Date('a')));
       assert.isTrue(RA.isNotValidDate(Date.now()));
       assert.isTrue(RA.isNotValidDate(args));
@@ -30,21 +30,21 @@ describe('isNotValidDate', function() {
     });
   });
 
-  context('given a date value', function() {
-    specify('should return false', function() {
+  context('given a date value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotValidDate(new Date()));
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotValidDate = RA.isNotValidDate(R.__);
 
     assert.isTrue(isNotValidDate(null));
   });
 });
 
-describe('isInvalidDate', function() {
-  it('should be an alias for isNotValidDate', function() {
+describe('isInvalidDate', function () {
+  it('should be an alias for isNotValidDate', function () {
     assert.strictEqual(RA.isNotValidDate, RA.isInvalidDate);
   });
 });

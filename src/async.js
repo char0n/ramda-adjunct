@@ -29,18 +29,18 @@ import rejectP from './rejectP';
  * asyncFn(1, 2); //=> Promise(3)
  *
  */
-const async = curryN(1, generatorFn => {
+const async = curryN(1, (generatorFn) => {
   function asyncWrapper(...args) {
     const iterator = bind(generatorFn, this)(...args);
 
-    const handle = result => {
+    const handle = (result) => {
       const resolved = resolveP(result.value);
 
       return result.done
         ? resolved
         : resolved.then(
-            value => handle(iterator.next(value)),
-            error => handle(iterator.throw(error))
+            (value) => handle(iterator.next(value)),
+            (error) => handle(iterator.throw(error))
           );
     };
 

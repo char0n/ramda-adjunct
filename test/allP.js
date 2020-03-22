@@ -3,14 +3,14 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('allP', function() {
-  context('given no arguments', function() {
-    specify('should return reference to itself', function() {
+describe('allP', function () {
+  context('given no arguments', function () {
+    specify('should return reference to itself', function () {
       assert.strictEqual(RA.allP(), RA.allP);
     });
   });
 
-  it('should resolve list of thenable values', async function() {
+  it('should resolve list of thenable values', async function () {
     const p1 = RA.resolveP(1);
     const p2 = RA.resolveP(2);
     const actual = await RA.allP([p1, p2]);
@@ -18,7 +18,7 @@ describe('allP', function() {
     assert.deepEqual(actual, [1, 2]);
   });
 
-  it('should resolve list of mixed thenable and non-thenable values', async function() {
+  it('should resolve list of mixed thenable and non-thenable values', async function () {
     const p1 = RA.resolveP(1);
     const p2 = 2;
     const actual = await RA.allP([p1, p2]);
@@ -26,7 +26,7 @@ describe('allP', function() {
     assert.deepEqual(actual, [1, 2]);
   });
 
-  it('should resolve list of rejected thenable values', async function() {
+  it('should resolve list of rejected thenable values', async function () {
     const p1 = RA.resolveP(1);
     const p2 = RA.rejectP(2);
 
@@ -39,17 +39,17 @@ describe('allP', function() {
   });
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#Promise.all_fail-fast_behaviour
-  it('should have fail-fast behavior', async function() {
-    const p1 = new Promise(resolve => {
+  it('should have fail-fast behavior', async function () {
+    const p1 = new Promise((resolve) => {
       setTimeout(resolve, 10, 'one');
     });
-    const p2 = new Promise(resolve => {
+    const p2 = new Promise((resolve) => {
       setTimeout(resolve, 20, 'two');
     });
-    const p3 = new Promise(resolve => {
+    const p3 = new Promise((resolve) => {
       setTimeout(resolve, 30, 'three');
     });
-    const p4 = new Promise(resolve => {
+    const p4 = new Promise((resolve) => {
       setTimeout(resolve, 40, 'four');
     });
     const p5 = new Promise((resolve, reject) => {
@@ -65,8 +65,8 @@ describe('allP', function() {
     }
   });
 
-  context('given there are two rejections', function() {
-    specify('should reject with the first one', async function() {
+  context('given there are two rejections', function () {
+    specify('should reject with the first one', async function () {
       const p1 = RA.resolveP(1);
       const p2 = RA.rejectP(1);
       const p3 = RA.rejectP(2);
@@ -80,7 +80,7 @@ describe('allP', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', async function() {
+  it('should support placeholder to specify "gaps"', async function () {
     const allP = RA.allP(R.__);
 
     assert.deepEqual(await allP([1, 2, 3]), [1, 2, 3]);

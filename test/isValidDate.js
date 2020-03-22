@@ -5,15 +5,15 @@ import * as RA from '../src';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isValidDate', function() {
-  context('given a valid `Date`', function() {
-    specify('should return true', function() {
+describe('isValidDate', function () {
+  context('given a valid `Date`', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isValidDate(new Date()));
     });
   });
 
-  context('given an invalid `Date` or non `Date`', function() {
-    specify('should return false', function() {
+  context('given an invalid `Date` or non `Date`', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isValidDate(new Date('a')));
       assert.isFalse(RA.isValidDate(Date.now()));
       assert.isFalse(RA.isValidDate(args));
@@ -36,7 +36,7 @@ describe('isValidDate', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isValidDate = RA.isValidDate(R.__);
 
     assert.isTrue(isValidDate(new Date()));

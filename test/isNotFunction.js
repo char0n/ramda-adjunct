@@ -7,8 +7,8 @@ import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 import asyncFunc from './shared/asyncFunc';
 
-describe('isNotFunction', function() {
-  it('should test value for a `Function`', function() {
+describe('isNotFunction', function () {
+  it('should test value for a `Function`', function () {
     assert.strictEqual(
       RA.isNotFunction(genFunc),
       typeof genFunc !== 'function'
@@ -20,7 +20,7 @@ describe('isNotFunction', function() {
     assert.strictEqual(RA.isNotFunction(Symbol), typeof Symbol !== 'function');
 
     assert.isFalse(RA.isNotFunction(() => {}));
-    assert.isFalse(RA.isNotFunction(function() {}));
+    assert.isFalse(RA.isNotFunction(function () {}));
     assert.isFalse(RA.isNotFunction(Array.prototype.slice));
 
     assert.isTrue(RA.isNotFunction(args));
@@ -33,7 +33,7 @@ describe('isNotFunction', function() {
     assert.isTrue(RA.isNotFunction(/x/));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotFunction = RA.isNotFunction(R.__);
 
     assert.strictEqual(isNotFunction(genFunc), typeof genFunc !== 'function');

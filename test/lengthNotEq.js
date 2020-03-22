@@ -2,11 +2,11 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('lengthNotEq', function() {
+describe('lengthNotEq', function () {
   context(
     'given the length of a list is not equal to the supplied length',
-    function() {
-      specify('should return true', function() {
+    function () {
+      specify('should return true', function () {
         assert.isTrue(RA.lengthNotEq(3, [1, 2, 3, 4]));
         assert.isTrue(RA.lengthNotEq(3, [1, 2]));
         assert.isFalse(RA.lengthNotEq(3, [1, 2, 3]));
@@ -17,8 +17,8 @@ describe('lengthNotEq', function() {
 
   context(
     'given the length of a string is not equal to the supplied length',
-    function() {
-      specify('should return true', function() {
+    function () {
+      specify('should return true', function () {
         assert.isTrue(RA.lengthNotEq(3, 'abcd'));
         assert.isTrue(RA.lengthNotEq(3, 'ab'));
         assert.isFalse(RA.lengthNotEq(3, 'abc'));
@@ -27,8 +27,8 @@ describe('lengthNotEq', function() {
     }
   );
 
-  context("given a value doesn't have a length property", function() {
-    specify('should return true', function() {
+  context("given a value doesn't have a length property", function () {
+    specify('should return true', function () {
       assert.isTrue(RA.lengthNotEq(1, NaN));
       assert.isTrue(RA.lengthNotEq(1, undefined));
       assert.isTrue(RA.lengthNotEq(1, null));
@@ -39,7 +39,7 @@ describe('lengthNotEq', function() {
     });
   });
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     assert.isTrue(RA.lengthNotEq(1, [1, 2]));
     assert.isTrue(RA.lengthNotEq(1)([1, 2]));
   });

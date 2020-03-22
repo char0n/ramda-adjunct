@@ -2,11 +2,11 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('lengthLt', function() {
+describe('lengthLt', function () {
   context(
     'given the length of a list is less than the supplied length',
-    function() {
-      specify('should return true', function() {
+    function () {
+      specify('should return true', function () {
         assert.isTrue(RA.lengthLt(3, [1, 2]));
         assert.isFalse(RA.lengthLt(3, [1, 2, 3]));
         assert.isFalse(RA.lengthLt(0, []));
@@ -16,8 +16,8 @@ describe('lengthLt', function() {
 
   context(
     'given the length of a string is less than the supplied length',
-    function() {
-      specify('should return true', function() {
+    function () {
+      specify('should return true', function () {
         assert.isTrue(RA.lengthLt(3, 'ab'));
         assert.isFalse(RA.lengthLt(3, 'abc'));
         assert.isFalse(RA.lengthLt(0, ''));
@@ -25,8 +25,8 @@ describe('lengthLt', function() {
     }
   );
 
-  context("given a value doesn't have a length property", function() {
-    specify('should return false', function() {
+  context("given a value doesn't have a length property", function () {
+    specify('should return false', function () {
       assert.isFalse(RA.lengthLt(1, NaN));
       assert.isFalse(RA.lengthLt(1, undefined));
       assert.isFalse(RA.lengthLt(1, null));
@@ -37,7 +37,7 @@ describe('lengthLt', function() {
     });
   });
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     assert.isTrue(RA.lengthLt(2, [1]));
     assert.isTrue(RA.lengthLt(2)([1]));
   });

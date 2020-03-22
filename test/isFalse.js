@@ -5,8 +5,8 @@ import * as RA from '../src';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-describe('isFalse', function() {
-  it("should test value for 'false' primitive", function() {
+describe('isFalse', function () {
+  it("should test value for 'false' primitive", function () {
     assert.isTrue(RA.isFalse(false));
     assert.isTrue(RA.isFalse(Boolean(false)));
 
@@ -40,7 +40,7 @@ describe('isFalse', function() {
     }
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isFalse = RA.isFalse(R.__);
 
     assert.isTrue(isFalse(false));

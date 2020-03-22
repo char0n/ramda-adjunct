@@ -3,8 +3,8 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('zipObjWith', function() {
-  it('should zip a pair of lists into an object', function() {
+describe('zipObjWith', function () {
+  it('should zip a pair of lists into an object', function () {
     const keys = ['packageA', 'packageB', 'packageC'];
     const values = [
       { name: 'packageA', version: '1.0.9' },
@@ -24,8 +24,8 @@ describe('zipObjWith', function() {
     assert.deepEqual(actual, expected);
   });
 
-  context('given empty key/value lists', function() {
-    specify('should return an empty object', function() {
+  context('given empty key/value lists', function () {
+    specify('should return an empty object', function () {
       const fn = (v, k) => [k, v];
       const keys = [];
       const values = [];
@@ -35,8 +35,8 @@ describe('zipObjWith', function() {
     });
   });
 
-  context('given key/value lists of unequal length', function() {
-    specify('should truncate to the length of the shortest list', function() {
+  context('given key/value lists of unequal length', function () {
+    specify('should truncate to the length of the shortest list', function () {
       const fn = (v, k) => [k, v];
       const long = ['a', 'b', 'c'];
       const short = ['x', 'y'];
@@ -46,7 +46,7 @@ describe('zipObjWith', function() {
     });
   });
 
-  it('should curry', function() {
+  it('should curry', function () {
     const fn = (v, k) => [k, `${k}${v + 1}`];
     const keys = ['a', 'b', 'c', 'd'];
     const values = [1, 2, 3];

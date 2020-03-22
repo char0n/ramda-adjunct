@@ -3,9 +3,9 @@ import { lens, lensIndex, lensPath, lensProp, path } from 'ramda';
 
 import * as RA from '../src';
 
-describe('lensNotEq', function() {
-  context('given a value which is not equals a focus of the lens', function() {
-    specify('should return true', function() {
+describe('lensNotEq', function () {
+  context('given a value which is not equals a focus of the lens', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.lensNotEq(lensIndex(0), 1, [0, 1]));
       assert.isTrue(
         RA.lensNotEq(lensPath(['b', 'a']), 'foo', { a: { b: 'foo' } })
@@ -15,8 +15,8 @@ describe('lensNotEq', function() {
     });
   });
 
-  context('given a value which is equals a focus of the lens', function() {
-    specify('should return false', function() {
+  context('given a value which is equals a focus of the lens', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.lensNotEq(lensIndex(1), 1, [0, 1]));
       assert.isFalse(
         RA.lensNotEq(lensPath(['a', 'b']), 'foo', { a: { b: 'foo' } })
@@ -26,7 +26,7 @@ describe('lensNotEq', function() {
     });
   });
 
-  it('should be curried', function() {
+  it('should be curried', function () {
     assert.isFalse(RA.lensNotEq(lensIndex(1))(1)([0, 1]));
     assert.isFalse(RA.lensNotEq(lensIndex(1), 1)([0, 1]));
     assert.isFalse(RA.lensNotEq(lensIndex(1))(1, [0, 1]));

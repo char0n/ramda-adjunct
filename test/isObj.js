@@ -5,9 +5,9 @@ import * as RA from '../src';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isObj', function() {
-  context('given an object value', function() {
-    specify('should return true', function() {
+describe('isObj', function () {
+  context('given an object value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isObj({}));
       assert.isTrue(RA.isObj(Object(true)));
       assert.isTrue(RA.isObj(Object.create(null)));
@@ -29,22 +29,22 @@ describe('isObj', function() {
     });
   });
 
-  context('given a non-object value', function() {
-    specify('should return false', function() {
+  context('given a non-object value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isObj(null));
       assert.isFalse(RA.isObj(undefined));
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isObj = RA.isObj(R.__);
 
     assert.isTrue(isObj({}));
   });
 });
 
-describe('isObject', function() {
-  it('should be an alias for isObj', function() {
+describe('isObject', function () {
+  it('should be an alias for isObj', function () {
     assert.strictEqual(RA.isObj, RA.isObject);
   });
 });

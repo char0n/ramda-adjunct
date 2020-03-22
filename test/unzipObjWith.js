@@ -3,8 +3,8 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('unzipObjWith', function() {
-  it('should unzip an object into pair of lists', function() {
+describe('unzipObjWith', function () {
+  it('should unzip an object into pair of lists', function () {
     const fn = (value, key) => [key, { ...value, name: key }];
     const obj = {
       packageA: { version: '1.0.9' },
@@ -26,8 +26,8 @@ describe('unzipObjWith', function() {
     assert.deepEqual(actual, expected);
   });
 
-  context('given empty object', function() {
-    specify('should return a pair of empty arrays', function() {
+  context('given empty object', function () {
+    specify('should return a pair of empty arrays', function () {
       const fn = (value, key) => [key, value];
       const obj = {};
 
@@ -38,7 +38,7 @@ describe('unzipObjWith', function() {
     });
   });
 
-  it('should curry', function() {
+  it('should curry', function () {
     const fn = (v, k) => [`new${k.toUpperCase()}`, 2 * v];
     const obj = { a: 1, b: 2, c: 3 };
     const expected = [

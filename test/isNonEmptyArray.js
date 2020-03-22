@@ -3,16 +3,16 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe('isNonEmptyArray', function() {
-  context('given non empty Array', function() {
-    specify('should return true', function() {
+describe('isNonEmptyArray', function () {
+  context('given non empty Array', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNonEmptyArray([42]));
       assert.isTrue(RA.isNonEmptyArray(new Array('content')));
     });
   });
 
-  context('given empty Array or any other value', function() {
-    specify('should return false', function() {
+  context('given empty Array or any other value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNonEmptyArray([]));
       assert.isFalse(RA.isNonEmptyArray(new Array()));
       assert.isFalse(RA.isNonEmptyArray(new Array(42)));
@@ -29,7 +29,7 @@ describe('isNonEmptyArray', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNonEmptyArray = RA.isNonEmptyArray(R.__);
 
     assert.isTrue(isNonEmptyArray([1]));

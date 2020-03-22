@@ -3,11 +3,11 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('delayP', function() {
-  context('given number as argument', function() {
+describe('delayP', function () {
+  context('given number as argument', function () {
     specify(
       'should delay the resolution of the returned promise',
-      async function() {
+      async function () {
         const delayedValue = await RA.delayP(2);
 
         assert.isUndefined(delayedValue);
@@ -15,10 +15,10 @@ describe('delayP', function() {
     );
   });
 
-  context('given options object as argument', function() {
+  context('given options object as argument', function () {
     specify(
       'should delay the resolution with specific value',
-      async function() {
+      async function () {
         const delayedValue = await RA.delayP({
           timeout: 2,
           value: 'Hello there',
@@ -29,10 +29,10 @@ describe('delayP', function() {
     );
   });
 
-  context('given invalid options object', function() {
+  context('given invalid options object', function () {
     specify(
       'should delay the resolution of the returned promise',
-      async function() {
+      async function () {
         const delayedValue = await RA.delayP({
           time: 200,
           val: 'val',
@@ -43,18 +43,18 @@ describe('delayP', function() {
     );
   });
 
-  it('should curry', async function() {
+  it('should curry', async function () {
     const delayP = RA.delayP(R.__);
     const delayedValue = await delayP(0);
 
     assert.isUndefined(delayedValue);
   });
 
-  context('reject', function() {
-    context('given number as argument', function() {
+  context('reject', function () {
+    context('given number as argument', function () {
       specify(
         'should delay the rejection of the returned promise',
-        async function() {
+        async function () {
           try {
             await RA.delayP.reject(2);
             throw new Error('Promise should reject');
@@ -65,10 +65,10 @@ describe('delayP', function() {
       );
     });
 
-    context('given options object as argument', function() {
+    context('given options object as argument', function () {
       specify(
         'should delay the rejection with specific value',
-        async function() {
+        async function () {
           try {
             await RA.delayP.reject({ timeout: 2, value: 'Hello there' });
             throw new Error('Promise should reject');
@@ -79,10 +79,10 @@ describe('delayP', function() {
       );
     });
 
-    context('given invalid options object', function() {
+    context('given invalid options object', function () {
       specify(
         'should delay the resolution of the returned promise',
-        async function() {
+        async function () {
           try {
             await RA.delayP.reject({
               time: 200,
@@ -96,7 +96,7 @@ describe('delayP', function() {
       );
     });
 
-    specify('should curry', async function() {
+    specify('should curry', async function () {
       const reject = RA.delayP.reject(R.__);
       try {
         await reject(0);

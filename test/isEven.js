@@ -7,8 +7,8 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isEven', function() {
-  it('should test value for an even integer `Number`', function() {
+describe('isEven', function () {
+  it('should test value for an even integer `Number`', function () {
     assert.isTrue(RA.isEven(0));
     assert.isTrue(RA.isEven(4));
     assert.isFalse(RA.isEven(Object(4)));
@@ -45,7 +45,7 @@ describe('isEven', function() {
     assert.isFalse(RA.isOdd(undefined));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isEven = RA.isEven(R.__);
 
     assert.isTrue(isEven(2));

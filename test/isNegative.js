@@ -7,8 +7,8 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isNegative', function() {
-  it('should test value for a negative `Number`', function() {
+describe('isNegative', function () {
+  it('should test value for a negative `Number`', function () {
     assert.isFalse(RA.isNegative(0));
     assert.isTrue(RA.isNegative(-0.1));
     assert.isFalse(RA.isNegative(Object(0)));
@@ -40,7 +40,7 @@ describe('isNegative', function() {
     assert.isFalse(RA.isNegative(undefined));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNegative = RA.isNegative(R.__);
 
     assert.isTrue(isNegative(-1));

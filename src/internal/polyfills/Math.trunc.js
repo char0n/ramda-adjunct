@@ -1,6 +1,6 @@
 import isFinite from '../../isFinite';
 
-const truncPolyfill = v => {
+const truncPolyfill = (v) => {
   const numV = Number(v);
 
   if (!isFinite(numV)) {

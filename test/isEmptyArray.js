@@ -3,8 +3,8 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('isEmptyArray', function() {
-  it('should test value for an empty `Array`', function() {
+describe('isEmptyArray', function () {
+  it('should test value for an empty `Array`', function () {
     assert.isTrue(RA.isEmptyArray([]));
     assert.isTrue(RA.isEmptyArray(new Array()));
     assert.isTrue(RA.isEmptyArray(Array.prototype));
@@ -21,7 +21,7 @@ describe('isEmptyArray', function() {
     assert.isFalse(RA.isEmptyArray({ __proto__: Array.prototype }));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isEmptyArray = RA.isEmptyArray(R.__);
 
     assert.isTrue(isEmptyArray([]));

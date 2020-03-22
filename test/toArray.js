@@ -4,22 +4,22 @@ import * as R from 'ramda';
 import * as RA from '../src';
 import { fromPolyfill } from '../src/toArray';
 
-describe('toArray', function() {
-  const assertIsEmptyArray = val => {
+describe('toArray', function () {
+  const assertIsEmptyArray = (val) => {
     assert.isArray(val);
     assert.isEmpty(val);
   };
 
-  context('given an object', function() {
-    specify('should return values', function() {
+  context('given an object', function () {
+    specify('should return values', function () {
       const actual = RA.toArray({ foo: 1, bar: 2 });
 
       assert.sameOrderedMembers(actual, [1, 2]);
     });
   });
 
-  context('given an iterable', function() {
-    specify('should convert a map into an array of arrays', function() {
+  context('given an iterable', function () {
+    specify('should convert a map into an array of arrays', function () {
       const map = new Map();
       map.set('0', 'foo');
       map.set(1, 'bar');
@@ -32,7 +32,7 @@ describe('toArray', function() {
       ]);
     });
 
-    specify('should convert a set into an array', function() {
+    specify('should convert a set into an array', function () {
       const set = new Set([1, 2, 3]);
 
       const actual = RA.toArray(set);
@@ -40,7 +40,7 @@ describe('toArray', function() {
       assert.sameOrderedMembers(actual, [1, 2, 3]);
     });
 
-    specify('should convert an iterator into an array', function() {
+    specify('should convert an iterator into an array', function () {
       const object = { '0': 'a', length: 1 };
       object[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
@@ -49,7 +49,7 @@ describe('toArray', function() {
       assert.sameOrderedMembers(actual, ['a']);
     });
 
-    specify('should return shallow copy of array', function() {
+    specify('should return shallow copy of array', function () {
       const array = [1, 2];
       const actual = RA.toArray(array);
 
@@ -57,13 +57,13 @@ describe('toArray', function() {
       assert.notStrictEqual(actual, array);
     });
 
-    specify('should return string as array', function() {
+    specify('should return string as array', function () {
       assert.sameOrderedMembers(RA.toArray('abc'), ['a', 'b', 'c']);
     });
   });
 
-  context('given non object types', function() {
-    specify('should return an empty array', function() {
+  context('given non object types', function () {
+    specify('should return an empty array', function () {
       assertIsEmptyArray(RA.toArray(1));
       assertIsEmptyArray(RA.toArray(undefined));
       assertIsEmptyArray(RA.toArray(null));
@@ -71,23 +71,23 @@ describe('toArray', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const toArray = RA.toArray(R.__);
 
     assert.sameOrderedMembers(toArray([1, 2, 3]), [1, 2, 3]);
   });
 
-  context('fromPolyfill', function() {
-    context('given an object', function() {
-      specify('should return values', function() {
+  context('fromPolyfill', function () {
+    context('given an object', function () {
+      specify('should return values', function () {
         const actual = fromPolyfill({ foo: 1, bar: 2 });
 
         assertIsEmptyArray(actual);
       });
     });
 
-    context('given an iterable', function() {
-      specify('should convert a map into an array of arrays', function() {
+    context('given an iterable', function () {
+      specify('should convert a map into an array of arrays', function () {
         const map = new Map();
         map.set('0', 'foo');
         map.set(1, 'bar');
@@ -100,7 +100,7 @@ describe('toArray', function() {
         ]);
       });
 
-      specify('should convert a set into an array', function() {
+      specify('should convert a set into an array', function () {
         const set = new Set([1, 2, 3]);
 
         const actual = fromPolyfill(set);
@@ -108,7 +108,7 @@ describe('toArray', function() {
         assert.sameOrderedMembers(actual, [1, 2, 3]);
       });
 
-      specify('should convert an iterator into an array', function() {
+      specify('should convert an iterator into an array', function () {
         const object = { '0': 'a', length: 1 };
         object[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
@@ -117,7 +117,7 @@ describe('toArray', function() {
         assert.sameOrderedMembers(actual, ['a']);
       });
 
-      specify('should return shallow copy of array', function() {
+      specify('should return shallow copy of array', function () {
         const array = [1, 2];
         const actual = fromPolyfill(array);
 
@@ -125,13 +125,13 @@ describe('toArray', function() {
         assert.notStrictEqual(actual, array);
       });
 
-      specify('should return string as array', function() {
+      specify('should return string as array', function () {
         assert.sameOrderedMembers(fromPolyfill('abc'), ['a', 'b', 'c']);
       });
     });
 
-    context('given non object types', function() {
-      specify('should return an empty array', function() {
+    context('given non object types', function () {
+      specify('should return an empty array', function () {
         assertIsEmptyArray(RA.toArray(1));
         assertIsEmptyArray(RA.toArray(undefined));
         assertIsEmptyArray(RA.toArray(null));
@@ -139,7 +139,7 @@ describe('toArray', function() {
       });
     });
 
-    specify('should support placeholder to specify "gaps"', function() {
+    specify('should support placeholder to specify "gaps"', function () {
       const toArrayPolyfill = fromPolyfill(R.__);
 
       assert.sameOrderedMembers(toArrayPolyfill([1, 2, 3]), [1, 2, 3]);

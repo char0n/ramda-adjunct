@@ -5,9 +5,9 @@ import * as RA from '../src';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isNotObjLike', function() {
-  context('given a value with non object-like interface', function() {
-    specify('should return true', function() {
+describe('isNotObjLike', function () {
+  context('given a value with non object-like interface', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotObjLike(Array.prototype.slice));
       assert.isTrue(RA.isNotObjLike(null));
       assert.isTrue(RA.isNotObjLike(undefined));
@@ -18,8 +18,8 @@ describe('isNotObjLike', function() {
     });
   });
 
-  context('given a value with object-like interface', function() {
-    specify('should return false', function() {
+  context('given a value with object-like interface', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotObjLike({}));
       assert.isFalse(RA.isNotObjLike(Object(false)));
       assert.isFalse(RA.isNotObjLike(args));
@@ -35,15 +35,15 @@ describe('isNotObjLike', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotObjLike = RA.isNotObjLike(R.__);
 
     assert.isTrue(isNotObjLike(null));
   });
 });
 
-describe('isNotObjectLike', function() {
-  it('should be an alias for isNotObjLike', function() {
+describe('isNotObjectLike', function () {
+  it('should be an alias for isNotObjLike', function () {
     assert.strictEqual(RA.isNotObjLike, RA.isNotObjectLike);
   });
 });

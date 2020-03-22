@@ -8,7 +8,7 @@ import { curry, map } from 'ramda';
 // isomorphic :: ((a -> b), (b -> a)) -> Isomorphism
 //     Isomorphism = x -> y
 const isomorphic = (to, from) => {
-  const isomorphism = x => to(x);
+  const isomorphism = (x) => to(x);
   isomorphism.from = from;
   return isomorphism;
 };

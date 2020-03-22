@@ -7,9 +7,9 @@ import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER'
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
-describe('isPositive', function() {
-  context('given a positive `Number`', function() {
-    specify('should return true', function() {
+describe('isPositive', function () {
+  context('given a positive `Number`', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isPositive(0.1));
       assert.isTrue(RA.isPositive(Object(0.1)));
       assert.isTrue(RA.isPositive(Infinity));
@@ -19,8 +19,8 @@ describe('isPositive', function() {
     });
   });
 
-  context('given a non-positive `Number`', function() {
-    specify('should return false', function() {
+  context('given a non-positive `Number`', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isPositive(0));
       assert.isFalse(RA.isPositive(Object(0)));
       assert.isFalse(RA.isPositive(NaN));
@@ -29,8 +29,8 @@ describe('isPositive', function() {
     });
   });
 
-  context('given a non-`Number`', function() {
-    specify('should return false', function() {
+  context('given a non-`Number`', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isPositive(new Date()));
       assert.isFalse(RA.isPositive(args));
       assert.isFalse(RA.isPositive([1, 2, 3]));
@@ -51,7 +51,7 @@ describe('isPositive', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isPositive = RA.isPositive(R.__);
 
     assert.isTrue(isPositive(7));

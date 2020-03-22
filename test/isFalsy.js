@@ -5,9 +5,9 @@ import * as RA from '../src';
 import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
-describe('isFalsy', function() {
-  context('given falsy value', function() {
-    specify('should return true', function() {
+describe('isFalsy', function () {
+  context('given falsy value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isFalsy(false));
       assert.isTrue(RA.isFalsy(0));
       assert.isTrue(RA.isFalsy(-0));
@@ -18,8 +18,8 @@ describe('isFalsy', function() {
     });
   });
 
-  context('given truthy value', function() {
-    specify('should return false', function() {
+  context('given truthy value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isFalsy('abc'));
       assert.isFalse(RA.isFalsy(Object('abc')));
       assert.isFalse(RA.isFalsy(args));
@@ -37,7 +37,7 @@ describe('isFalsy', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isFalsy = RA.isFalsy(R.__);
 
     assert.isTrue(isFalsy(null));

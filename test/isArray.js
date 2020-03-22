@@ -3,8 +3,8 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('isArray', function() {
-  it('should test a value for `Array`', function() {
+describe('isArray', function () {
+  it('should test a value for `Array`', function () {
     assert.isTrue(RA.isArray([]));
     assert.isTrue(RA.isArray([1]));
     assert.isTrue(RA.isArray(new Array()));
@@ -21,7 +21,7 @@ describe('isArray', function() {
     assert.isFalse(RA.isArray({ __proto__: Array.prototype }));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isArray = RA.isArray(R.__);
 
     assert.isTrue(isArray([]));

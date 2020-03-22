@@ -4,9 +4,9 @@ import * as R from 'ramda';
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
 
-describe('isNotUndefined', function() {
-  context('given a non-undefined value', function() {
-    specify('should return true', function() {
+describe('isNotUndefined', function () {
+  context('given a non-undefined value', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNotUndefined(null));
       assert.isTrue(RA.isNotUndefined([]));
       assert.isTrue(RA.isNotUndefined({}));
@@ -19,14 +19,14 @@ describe('isNotUndefined', function() {
     });
   });
 
-  context('given an undefined value', function() {
-    specify('should return false', function() {
+  context('given an undefined value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNotUndefined(void 0));
       assert.isFalse(RA.isNotUndefined(undefined));
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNotUndefined = RA.isNotUndefined(R.__);
 
     assert.isTrue(isNotUndefined(null));

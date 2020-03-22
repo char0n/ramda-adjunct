@@ -3,15 +3,15 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('isNonEmptyString', function() {
-  context('given non empty string', function() {
-    specify('should return true', function() {
+describe('isNonEmptyString', function () {
+  context('given non empty string', function () {
+    specify('should return true', function () {
       assert.isTrue(RA.isNonEmptyString('non empty string'));
     });
   });
 
-  context('given empty string or any other value', function() {
-    specify('should return false', function() {
+  context('given empty string or any other value', function () {
+    specify('should return false', function () {
       assert.isFalse(RA.isNonEmptyString(''));
       assert.isFalse(RA.isNonEmptyString(new String('42')));
       assert.isFalse(RA.isNonEmptyString(new String('')));
@@ -28,7 +28,7 @@ describe('isNonEmptyString', function() {
     });
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isNonEmptyString = RA.isNonEmptyString(R.__);
 
     assert.isTrue(isNonEmptyString('non empty string'));

@@ -3,8 +3,8 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('isEmptyString', function() {
-  it('should test value for an empty `String`', function() {
+describe('isEmptyString', function () {
+  it('should test value for an empty `String`', function () {
     assert.isTrue(RA.isEmptyString(''));
 
     assert.isFalse(RA.isEmptyString('42'));
@@ -22,7 +22,7 @@ describe('isEmptyString', function() {
     assert.isFalse(RA.isEmptyString(false));
   });
 
-  it('should support placeholder to specify "gaps"', function() {
+  it('should support placeholder to specify "gaps"', function () {
     const isEmptyString = RA.isEmptyString(R.__);
 
     assert.isTrue(isEmptyString(''));
