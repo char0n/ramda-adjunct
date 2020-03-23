@@ -157,7 +157,7 @@
     "dtslint": "3.3.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.1.0",
-    "eslint-config-prettier": "6.10.0",
+    "eslint-config-prettier": "6.10.1",
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-mocha": "6.3.0",
     "eslint-plugin-prettier": "3.1.2",
