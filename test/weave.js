@@ -34,30 +34,24 @@ describe('weave', function () {
     assert.strictEqual(wbinaryReader(2)(3), 6);
   });
 
-  it('should support auto-currying on curried fixed function signature',
-    function () {
-      const wbinaryReader = RA.weave(curry(binaryReader), 1);
+  it('should support auto-currying on curried fixed function signature', function () {
+    const wbinaryReader = RA.weave(curry(binaryReader), 1);
 
-      assert.strictEqual(wbinaryReader(2, 3), 6);
-      assert.strictEqual(wbinaryReader(2)(3), 6);
-    }
-  );
+    assert.strictEqual(wbinaryReader(2, 3), 6);
+    assert.strictEqual(wbinaryReader(2)(3), 6);
+  });
 
-  it('should support auto-currying on variadic function signature',
-    function () {
-      const wvariadicReader = RA.weave(variadicReader, 1);
+  it('should support auto-currying on variadic function signature', function () {
+    const wvariadicReader = RA.weave(variadicReader, 1);
 
-      assert.strictEqual(wvariadicReader(1, 2, 3), 7);
-    }
-  );
+    assert.strictEqual(wvariadicReader(1, 2, 3), 7);
+  });
 
-  it('should support auto-currying on curried variadic function signature',
-    function () {
-      const wvariadicReader = RA.weave(curry(variadicReader), 1);
+  it('should support auto-currying on curried variadic function signature', function () {
+    const wvariadicReader = RA.weave(curry(variadicReader), 1);
 
-      assert.strictEqual(wvariadicReader(1, 2, 3), 7);
-    }
-  );
+    assert.strictEqual(wvariadicReader(1, 2, 3), 7);
+  });
 
   it('should support auto-currying on mixed function signature', function () {
     const wmixedReader = RA.weave(mixedReader, 1);
@@ -66,12 +60,10 @@ describe('weave', function () {
     assert.strictEqual(wmixedReader(2)(3, 4), 10);
   });
 
-  it('should support auto-currying on curried mixed function signature',
-    function () {
-      const wmixedReader = RA.weave(curry(mixedReader), 1);
+  it('should support auto-currying on curried mixed function signature', function () {
+    const wmixedReader = RA.weave(curry(mixedReader), 1);
 
-      assert.strictEqual(wmixedReader(2, 3, 4), 10);
-      assert.strictEqual(wmixedReader(2)(3, 4), 10);
-    }
-  );
+    assert.strictEqual(wmixedReader(2, 3, 4), 10);
+    assert.strictEqual(wmixedReader(2)(3, 4), 10);
+  });
 });
