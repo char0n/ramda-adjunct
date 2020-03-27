@@ -5,16 +5,13 @@ import * as RA from '../src';
 import { trimEndInvoker, trimEndPolyfill } from '../src/trimEnd';
 
 describe('trimEnd', function () {
-  specify('should remove whitespace from the end of a string', function () {
+  it('should remove whitespace from the end of a string', function () {
     assert.strictEqual(RA.trimEnd('abc   '), 'abc');
   });
 
-  specify(
-    'should not remove whitespace from the rest of the string',
-    function () {
-      assert.strictEqual(RA.trimEnd(' a b c'), ' a b c');
-    }
-  );
+  it('should not remove whitespace from the rest of the string', function () {
+    assert.strictEqual(RA.trimEnd(' a b c'), ' a b c');
+  });
 
   context('given an empty string', function () {
     specify('should return an empty string', function () {
@@ -28,7 +25,7 @@ describe('trimEnd', function () {
     });
   });
 
-  specify('should support placeholder to specify "gaps"', function () {
+  it('should support placeholder to specify "gaps"', function () {
     const trimEnd = RA.trimEnd(R.__);
 
     assert.strictEqual(trimEnd('abc   '), 'abc');

@@ -42,7 +42,7 @@ describe('trimCharsStart', function () {
     });
   });
 
-  it('should curry', function () {
+  it('should be curried', function () {
     assert.strictEqual(RA.trimCharsStart('_-', ''), '');
     assert.strictEqual(RA.trimCharsStart('_-')(''), '');
   });

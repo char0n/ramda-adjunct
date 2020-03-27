@@ -38,7 +38,7 @@ describe('unzipObjWith', function () {
     });
   });
 
-  it('should curry', function () {
+  it('should be curried', function () {
     const fn = (v, k) => [`new${k.toUpperCase()}`, 2 * v];
     const obj = { a: 1, b: 2, c: 3 };
     const expected = [
