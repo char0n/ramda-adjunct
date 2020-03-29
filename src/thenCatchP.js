@@ -19,7 +19,7 @@ import { invoker } from 'ramda';
  * @example
  *
  * const promise = Promise.resolve(1);
- * const add1 = v => v + 1;
+ * const add1 = x => x + 1;
  *
  * RA.thenCatchP(add1, console.error, promise); // => Promise(2)
  */
