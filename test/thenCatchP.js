@@ -3,9 +3,9 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-describe('thenCatchP', function() {
-  context('given fulfilled Promise', function() {
-    specify('should call "onFulfilled" callback', async function() {
+describe('thenCatchP', function () {
+  context('given fulfilled Promise', function () {
+    specify('should call "onFulfilled" callback', async function () {
       const promise = RA.resolveP(1);
       const expected = await RA.thenCatchP(
         R.add(1),
@@ -17,8 +17,8 @@ describe('thenCatchP', function() {
     });
   });
 
-  context('given rejected Promise', function() {
-    specify('should call "onRejected" callback', async function() {
+  context('given rejected Promise', function () {
+    specify('should call "onRejected" callback', async function () {
       const promise = RA.rejectP('a');
       const expected = await RA.thenCatchP(
         R.add(1),
@@ -30,7 +30,7 @@ describe('thenCatchP', function() {
     });
   });
 
-  it('should curry', async function() {
+  it('should curry', async function () {
     const promise = RA.resolveP(1);
     assert.strictEqual(
       await RA.thenCatchP(R.add(1), R.always('a'), promise),
