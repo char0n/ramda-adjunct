@@ -13,7 +13,7 @@ import { invoker } from 'ramda';
  * @param {Function} onFulfilled A Function called if the Promise is fulfilled. This function has one argument, the fulfillment value
  * @param {Function} onRejected A Function called if the Promise is rejected. This function has one argument, the error
  * @param {Promise} promise Any Promise or Thenable object
- * @return {Promise} A Promise in the pending status
+ * @return {Promise}
 
  * @see {@link RA.resolveP|resolveP}, {@link RA.rejectP|rejectP}, {@link RA.allP|allP}
  * @example
