@@ -7,7 +7,7 @@ import { invoker } from 'ramda';
  *
  * @func thenCatchP
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.26.0|v2.26.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.27.0|v2.27.0}
  * @category Function
  * @sig (a -> b) -> (c -> d) -> Promise a -> Promise b | d
  * @param {Function} onFulfilled A Function called if the Promise is fulfilled. This function has one argument, the fulfillment value
