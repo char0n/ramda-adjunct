@@ -8,10 +8,6 @@
     "module": "commonjs",
     "noEmit": true,
     "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "strictFunctionTypes": true,
     "baseUrl": "../types",
     "paths": {
       "ramda-adjunct": ["index.d.ts"]
