@@ -14,7 +14,6 @@ import { invoker } from 'ramda';
  * @param {Function} onRejected A Function called if the Promise is rejected. This function has one argument, the error
  * @param {Promise} promise Any Promise or Thenable object
  * @return {Promise}
-
  * @see {@link RA.resolveP|resolveP}, {@link RA.rejectP|rejectP}, {@link RA.allP|allP}
  * @example
  *
