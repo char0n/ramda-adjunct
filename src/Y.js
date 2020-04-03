@@ -1,3 +1,5 @@
+import { curryN } from 'ramda';
+
 /**
  * Y-combinator
  *
@@ -25,6 +27,6 @@
  * factorial(5); //=> 120
  */
 
-const Y = (le) => ((f) => f(f))((g) => le((x) => g(g)(x)));
+const Y = curryN(1, (le) => ((f) => f(f))((g) => le((x) => g(g)(x))));
 
 export default Y;
