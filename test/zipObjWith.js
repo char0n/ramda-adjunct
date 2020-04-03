@@ -46,7 +46,7 @@ describe('zipObjWith', function () {
     });
   });
 
-  it('should curry', function () {
+  it('should be curried', function () {
     const fn = (v, k) => [k, `${k}${v + 1}`];
     const keys = ['a', 'b', 'c', 'd'];
     const values = [1, 2, 3];
