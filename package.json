@@ -177,7 +177,7 @@
     "mocha-multi-reporters": "1.1.7",
     "monet": "0.9.1",
     "nyc": "15.0.1",
-    "prettier": "=2.0.3",
+    "prettier": "=2.0.4",
     "ramda": "0.27.0",
     "ramda-fantasy": "=0.8.0",
     "rimraf": "3.0.2",
