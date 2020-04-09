@@ -182,7 +182,7 @@
     "ramda-fantasy": "=0.8.0",
     "rimraf": "3.0.2",
     "sanctuary-show": "2.0.0",
-    "sinon": "9.0.1",
+    "sinon": "9.0.2",
     "terser-webpack-plugin": "2.3.5",
     "testem": "3.0.3",
     "tslint": "=6.1.1",
