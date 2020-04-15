@@ -12,15 +12,15 @@ describe('isBigInt', function () {
   context('given a big integer value', function () {
     specify('should return true', function () {
       assert.isTrue(RA.isBigInt(BigInt(9007199254740991)));
+      assert.isTrue(RA.isBigInt(BigInt(-9007199254740991)));
       assert.isTrue(RA.isBigInt(BigInt('9007199254740991')));
-      assert.isTrue(RA.isBigInt(-9007199254740991n));
-      assert.isTrue(RA.isBigInt(-9007199254740991n));
-      assert.isTrue(RA.isBigInt(10n));
-      assert.isTrue(RA.isBigInt(-10n));
-      assert.isTrue(RA.isBigInt(0n));
-      assert.isTrue(RA.isBigInt(-0n));
+      assert.isTrue(RA.isBigInt(BigInt(10)));
+      assert.isTrue(RA.isBigInt(BigInt(-10)));
+      assert.isTrue(RA.isBigInt(BigInt(0)));
+      assert.isTrue(RA.isBigInt(BigInt(-0)));
       assert.isTrue(RA.isBigInt(BigInt(MAX_SAFE_INTEGER)));
       assert.isTrue(RA.isBigInt(BigInt(MIN_SAFE_INTEGER)));
+      assert.isTrue(RA.isBigInt(BigInt(Number.MAX_VALUE)));
       assert.isTrue(RA.isBigInt(BigInt('0x1fffffffffffff')));
       assert.isTrue(
         RA.isBigInt(
