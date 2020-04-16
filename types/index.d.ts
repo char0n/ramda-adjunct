@@ -45,7 +45,7 @@ declare namespace RamdaAdjunct {
         /**
          * Invokes the method at path of object with given arguments.
          */
-        invokeArgs(pathToMethod: Array<string>, args: any[], obj: object): any;
+        invokeArgs(pathToMethod: string[], args: any[], obj: object): any;
 
         /**
          * Checks if input value is `Array`.
