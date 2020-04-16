@@ -28,7 +28,7 @@ const invokeArgs = curryN(3, (pathToMethod, args, obj) => {
     }
 
     return fullPath.apply(obj, args);
-  } catch {
+  } catch(e) {
     return undefined;
   }
 });
