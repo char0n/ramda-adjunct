@@ -5,11 +5,11 @@ import * as RA from '../src';
 describe('invokeArgs', function () {
   const testObj = {
     innerObj: {
-      method: function (a, b, c) {
+      method(a, b, c) {
         return a + b + c;
       },
     },
-    method: function (a, b, c) {
+    method(a, b, c) {
       return a + b + c;
     },
     notAMethod: 'Hello',
