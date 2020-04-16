@@ -23,7 +23,7 @@ const invokeArgs = curryN(3, (pathToMethod, args, obj) => {
   let fullPath = obj;
 
   try {
-    for (let i = 0; i < pathToMethod.length; i = i + 1) {
+    for (let i = 0; i < pathToMethod.length; i += 1) {
       fullPath = fullPath[pathToMethod[i]];
     }
 
