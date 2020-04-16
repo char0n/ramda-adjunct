@@ -28,7 +28,9 @@ describe('invokeArgs', function () {
   });
 
   it('should be safe', function () {
-    assert.isUndefined(RA.invokeArgs(['nonexistentMethod'], [-1], Math));
+    assert.isUndefined(
+      RA.invokeArgs(['path', 'to', 'non-existent', 'method'], [-1], Math)
+    );
     assert.isUndefined(RA.invokeArgs(['unknown'], [1, 2, 3], testObj));
     assert.isUndefined(RA.invokeArgs(['notAMethod'], [1, 2, 3], testObj));
     assert.isUndefined(RA.invokeArgs([], [1, 2, 3], testObj));
