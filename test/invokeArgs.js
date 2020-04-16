@@ -1,4 +1,3 @@
-import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
