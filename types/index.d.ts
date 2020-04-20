@@ -42,12 +42,7 @@ declare namespace RamdaAdjunct {
     type DictPred<T> = (value: T, key: string) => boolean;
 
     interface Static {
-        /**
-         * Invokes the method at path of object with given arguments.
-         */
-        invokeArgs(pathToMethod: string[], args: Array<string | number>, obj: object): any;
-
-        /**
+         /**
          * Checks if input value is `Array`.
          */
         isArray(val: any): val is any[];
@@ -1375,6 +1370,13 @@ declare namespace RamdaAdjunct {
          * Determine if input value is an indexed data type.
          */
         isIndexed(val: any): val is string | any[];
+
+        /**
+         * Invokes the method at path of object with given arguments.
+         */
+        invokeArgs(pathToMethod: string[], args: Array<string | number>, obj: object): any;
+        invokeArgs(pathToMethod: string[], args: Array<string | number>): (obj: object) => any;
+        invokeArgs(pathToMethod: string[]): (args: Array<string | number>, obj: object) => any;
     }
 }
 

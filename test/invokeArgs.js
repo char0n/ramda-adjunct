@@ -12,6 +12,9 @@ describe('invokeArgs', function () {
     method(a, b, c) {
       return a + b + c;
     },
+    methodWithoutArgs() {
+      return 1;
+    },
     notAMethod: 'Hello',
   };
 
@@ -25,6 +28,7 @@ describe('invokeArgs', function () {
       6
     );
     assert.strictEqual(RA.invokeArgs([], [1, 2], testFunc), 3);
+    assert.strictEqual(RA.invokeArgs(['methodWithoutArgs'], [], testObj), 1);
   });
 
   it('should be safe', function () {

@@ -1,5 +1,9 @@
 import { curryN } from 'ramda';
 
+import isNotArray from './isNotArray';
+import isNotObj from './isNotObj';
+import isNotFunction from './isNotFunction';
+
 /**
  * Invokes the method at path of object with given arguments.
  *
@@ -19,17 +23,31 @@ import { curryN } from 'ramda';
  */
 
 const invokeArgs = curryN(3, (pathToMethod, args, obj) => {
+  if (isNotArray(pathToMethod)) return undefined;
+  if (isNotArray(args)) return undefined;
+  if (isNotObj(obj)) return undefined;
+  /**
+   * If we need these test cases:
+   *  assert.strictEqual(RA.invokeArgs([], [1, 2], testFunc), 3);
+   *  assert.strictEqual(RA.invokeArgs(['methodWithoutArgs'], [], testObj), 1);
+   * then arrays 'pathToMethod' and 'args' can be empty, so we don't need isEmptyArray
+   */
   let fullPath = obj;
 
-  try {
-    for (let i = 0; i < pathToMethod.length; i += 1) {
-      fullPath = fullPath[pathToMethod[i]];
-    }
-
-    return fullPath.apply(obj, args);
-  } catch (e) {
-    return undefined;
+  for (let i = 0; i < pathToMethod.length; i += 1) {
+    fullPath = fullPath[pathToMethod[i]];
+    if (isNotObj(fullPath)) return undefined;
   }
+
+  if (isNotFunction(fullPath)) return undefined;
+
+  /**
+   * if we are here then we have a valid function/method to run
+   * We don't need rethrow, because if it throws here then this is a
+   * function/method implementation detaild which are outside of our control
+   */
+
+  return fullPath.apply(obj, args);
 });
 
 export default invokeArgs;
