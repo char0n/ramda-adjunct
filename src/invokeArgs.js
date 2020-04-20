@@ -2,7 +2,7 @@ import { curryN } from 'ramda';
 
 import isNotArray from './isNotArray';
 import isNotObj from './isNotObj';
-import isFunction from './isFunction';
+import isNotFunction from './isNotFunction';
 
 /**
  * Invokes the method at path of object with given arguments.
@@ -49,7 +49,9 @@ const invokeArgs = curryN(3, (pathToMethod, args, obj) => {
    * function/method implementation detaild which are outside of our control
    */
 
-  if (isFunction(fullPath)) return fullPath.apply(obj, args);
+  if (isNotFunction(fullPath)) return undefined;
+
+  return fullPath.apply(obj, args);
 });
 
 export default invokeArgs;
