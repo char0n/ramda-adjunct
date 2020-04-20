@@ -42,7 +42,7 @@ declare namespace RamdaAdjunct {
     type DictPred<T> = (value: T, key: string) => boolean;
 
     interface Static {
-         /**
+        /**
          * Checks if input value is `Array`.
          */
         isArray(val: any): val is any[];
