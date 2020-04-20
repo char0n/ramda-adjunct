@@ -23,20 +23,20 @@ import isNotFunction from './isNotFunction';
  */
 
 const invokeArgs = curryN(3, (pathToMethod, args, obj) => {
-  if (isNotArray(pathToMethod)) return undefined;
-  if (isNotArray(args)) return undefined;
-  if (isNotObj(obj)) return undefined;
+  if (isNotArray(pathToMethod) || isNotArray(args)) return undefined;
+
   /**
    * If we need these test cases:
    *  assert.strictEqual(RA.invokeArgs([], [1, 2], testFunc), 3);
    *  assert.strictEqual(RA.invokeArgs(['methodWithoutArgs'], [], testObj), 1);
    * then arrays 'pathToMethod' and 'args' can be empty, so we don't need isEmptyArray
    */
+  
   let fullPath = obj;
 
   for (let i = 0; i < pathToMethod.length; i += 1) {
-    fullPath = fullPath[pathToMethod[i]];
     if (isNotObj(fullPath)) return undefined;
+    fullPath = fullPath[pathToMethod[i]];
   }
 
   if (isNotFunction(fullPath)) return undefined;
