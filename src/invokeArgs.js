@@ -22,8 +22,12 @@ import isFunction from './isFunction';
  * RA.invokeArgs(['path', 'to', 'non-existent', 'method'], [-1], Math); //=> undefined
  */
 
+const checkArgs = (pathToMethod, args) => {
+  return isNotArray(pathToMethod) || isNotArray(args);
+};
+
 const invokeArgs = curryN(3, (pathToMethod, args, obj) => {
-  if (isNotArray(pathToMethod) || isNotArray(args)) return undefined;
+  if (checkArgs(pathToMethod, args)) return undefined;
 
   /**
    * If we need these test cases:
@@ -39,7 +43,7 @@ const invokeArgs = curryN(3, (pathToMethod, args, obj) => {
     fullPath = fullPath[pathToMethod[i]];
   }
 
-    /**
+  /**
    * if we are here then we have a valid function/method to run
    * We don't need rethrow, because if it throws here then this is a
    * function/method implementation detaild which are outside of our control
