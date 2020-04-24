@@ -154,6 +154,7 @@ export { default as skipTake } from './skipTake';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
+export { default as makeFlat } from './makeFlat';
 export { default as mergeRight } from './mergeRight';
 export { default as mergeLeft } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
