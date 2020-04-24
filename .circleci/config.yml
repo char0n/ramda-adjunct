@@ -25,32 +25,6 @@ jobs:
       - store_artifacts:
           path: ./es
 
-  test_node_8:
-    docker:
-      - image: circleci/node:8-browsers-legacy
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run test
-      - run: npm run test:ramda
-      - run: npm run test:types
-
-  test_node_9:
-    docker:
-      - image: circleci/node:9
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run test
-      - run: npm run test:ramda
-      - run: npm run test:types
-
   test_node_10:
     docker:
       - image: circleci/node:10-browsers-legacy
@@ -135,12 +109,6 @@ workflows:
   build_test_docs:
     jobs:
       - build
-      - test_node_8:
-          requires:
-            - build
-      - test_node_9:
-          requires:
-            - build
       - test_node_10:
           requires:
             - build
@@ -152,8 +120,6 @@ workflows:
             - build
       - code_coverage:
           requires:
-            - test_node_8
-            - test_node_9
             - test_node_10
             - test_node_11
             - test_node_12

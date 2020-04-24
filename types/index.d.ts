@@ -50,7 +50,7 @@ declare namespace RamdaAdjunct {
         /**
          * Checks whether the passed value is iterable.
          */
-        isIterable(val: any): boolean;
+        isIterable<T>(val: any): val is Iterable<T>;
 
         /**
          * Checks if input value is an empty `Array`.
