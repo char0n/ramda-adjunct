@@ -4,7 +4,7 @@ import * as R from 'ramda';
 import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
-import BigInt from './internal/polyfills/BigInt';
+import BigInt from './shared/BigInt';
 import args from './shared/arguments';
 import Symbol from './shared/Symbol';
 
