@@ -1,7 +1,7 @@
 import { curryN } from 'ramda';
 
 /**
- * Checks if value is a Big Integer.
+ * Checks if value is a BigInt.
  *
  * @func isBigInt
  * @memberOf RA
@@ -18,6 +18,6 @@ import { curryN } from 'ramda';
  * RA.isBigInt(10n); // => true
  * RA.isBigInt(BitInt(9007199254740991)); // => true
  */
-const isBigInt = curryN(1, (val) => typeof val === 'bigint');
+const isBigInt = curryN(1, pipe(type, identical('BigInt')));
 
 export default isBigInt;

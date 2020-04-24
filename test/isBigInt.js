@@ -72,6 +72,6 @@ describe('isBigInt', function () {
   it('should support placeholder to specify "gaps"', function () {
     const isBigInt = RA.isBigInt(R.__);
 
-    assert.isTrue(isBigInt(BigInt(10)));
+    assert.isFalse(isBigInt(1));
   });
 });
