@@ -326,7 +326,7 @@ declare namespace RamdaAdjunct {
         isNotInteger(val: any): boolean;
 
         /**
-         * Checks whether the passed value is a `bigint`.
+         * Checks if value is a BigInt.
          */
         isBigInt(val: any): boolean;
 
