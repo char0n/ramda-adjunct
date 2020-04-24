@@ -1,7 +1,7 @@
 import { curryN } from 'ramda';
 
 /**
- * Checks if value is a Big Integer.
+ * Checks if value is a BigInt.
  *
  * @func isBigInt
  * @memberOf RA
