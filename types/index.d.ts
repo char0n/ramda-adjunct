@@ -41,6 +41,8 @@ declare namespace RamdaAdjunct {
 
     type DictPred<T> = (value: T, key: string) => boolean;
 
+    type NotFunction<T> = Exclude<T, Function>;
+
     interface Static {
         /**
          * Checks if input value is `Array`.
@@ -1321,6 +1323,12 @@ declare namespace RamdaAdjunct {
          */
         trimCharsStart(chars: string, value: string): string;
         trimCharsStart(chars: string): (value: string) => string;
+
+        /**
+         * Repeatedly calls the return value of a function,
+         * until it is no longer a function.
+         */
+        trampoline<T, U>(func: ((...arg: U[]) => NotFunction<T>) | ((...arg: U[]) => NotFunction<T> | Function), ...args: U[]): NotFunction<T>;
 
         /**
          * The function pads the current string with a given string

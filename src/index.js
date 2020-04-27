@@ -115,6 +115,7 @@ export { default as anyP } from './anyP';
 export { default as firstP } from './anyP'; // alias of anyP
 export { default as lastP } from './lastP';
 export { default as fnull } from './fnull';
+export { default as trampoline } from './trampoline';
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';
