@@ -41,7 +41,7 @@ declare namespace RamdaAdjunct {
 
     type DictPred<T> = (value: T, key: string) => boolean;
 
-    type NotFunction<T> = Exclude<T, Function>;
+    type NotFunction = Exclude<any, Function>;
 
     interface Static {
         /**
@@ -1328,7 +1328,7 @@ declare namespace RamdaAdjunct {
          * Repeatedly calls the return value of a function,
          * until it is no longer a function.
          */
-        trampoline<T, U>(func: ((...arg: U[]) => NotFunction<T>) | ((...arg: U[]) => NotFunction<T> | Function), ...args: U[]): NotFunction<T>;
+        trampoline(func: Function, ...args: any[]): NotFunction;
 
         /**
          * The function pads the current string with a given string
