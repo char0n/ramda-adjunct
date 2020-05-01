@@ -61,6 +61,7 @@ export { default as isFinite } from './isFinite';
 export { default as isNotFinite } from './isNotFinite';
 export { default as isInteger } from './isInteger';
 export { default as isNotInteger } from './isNotInteger';
+export { default as isBigInt } from './isBigInt';
 export { default as isFloat } from './isFloat';
 export { default as isNotFloat } from './isNotFloat';
 export { default as isValidNumber } from './isValidNumber';
