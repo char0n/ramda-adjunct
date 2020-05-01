@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>delayP.js - Documentation</title>
+    <title>isBigInt.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">delayP.js</h1>
+    <h1 class="page-title">isBigInt.js</h1>
     
 
     
@@ -52,51 +52,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curry, propOr, partial, nth } from 'ramda';
-
-import isNonNegative from './isNonNegative';
-import isInteger from './isInteger';
+            <pre class="prettyprint source linenums"><code>import { type, pipe, identical, curryN } from 'ramda';
 
 /**
- * Creates a promise which resolves/rejects after the specified milliseconds.
+ * Checks if value is a BigInt.
  *
- * @func delayP
+ * @func isBigInt
  * @memberOf RA
- * @category Function
- * @sig Number -> Promise Undefined
- * @sig {timeout: Number, value: a} -> Promise a
- * @param {number|Object} milliseconds number of milliseconds or options object
- * @return {Promise} A Promise that is resolved/rejected with the given value (if provided) after the specified delay
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {boolean}
  * @example
  *
- * RA.delayP(200); //=> Promise(undefined)
- * RA.delayP({ timeout: 1000, value: 'hello world' }); //=> Promise('hello world')
- * RA.delayP.reject(100); //=> Promise(undefined)
- * RA.delayP.reject({ timeout: 100, value: new Error('error') }); //=> Promise(Error('error'))
+ * RA.isBigInt(5); // => false
+ * RA.isBigInt(Number.MAX_VALUE); // => false
+ * RA.isBigInt(-Infinity); // => false
+ * RA.isBigInt(10); // => false
+ * RA.isBigInt(10n); // => true
+ * RA.isBigInt(BitInt(9007199254740991)); // => true
  */
+const isBigInt = curryN(1, pipe(type, identical('BigInt')));
 
-const makeDelay = curry((settleFnPicker, opts) => {
-  let timeout;
-  let value;
-
-  if (isInteger(opts) &amp;&amp; isNonNegative(opts)) {
-    timeout = opts;
-  } else {
-    timeout = propOr(0, 'timeout', opts);
-    value = propOr(value, 'value', opts);
-  }
-
-  return new Promise((...args) => {
-    const settleFn = settleFnPicker(args);
-
-    setTimeout(partial(settleFn, [value]), timeout);
-  });
-});
-
-const delayP = makeDelay(nth(0));
-delayP.reject = makeDelay(nth(1));
-
-export default delayP;
+export default isBigInt;
 </code></pre>
         </article>
     </section>
