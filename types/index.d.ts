@@ -1396,8 +1396,8 @@ declare namespace RamdaAdjunct {
         /** 
          * Checks it two lists have any element in common.
          */
-        overlaps<T>(list1: readonly T[], list2: readonly T[]): boolean;
-        overlaps<T>(list1: readonly T[]): (list2: readonly T[]) => boolean;
+        overlaps<T>(list1: T[], list2: T[]): boolean;
+        overlaps<T>(list1: T[]): (list2: T[]) => boolean;
     }
 }
 
