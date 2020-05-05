@@ -37,13 +37,17 @@ describe('overlaps', function () {
     });
   });
 
-  it('should support currying', function () {
-    let overlaps = RA.overlaps(R.__);
+  it('should support placeholder to specify "gaps"', function () {
+    const overlaps = RA.overlaps(R.__);
 
     assert.isTrue(overlaps([1], [1, 2]));
+    assert.isFalse(overlaps([1], [2]));
+  });
 
-    overlaps = RA.overlaps([1]);
+  it('should support currying', function () {
+    const overlaps = RA.overlaps([1]);
 
     assert.isTrue(overlaps([1, 2]));
+    assert.isFalse(overlaps([2]));
   });
 });
