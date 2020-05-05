@@ -1392,6 +1392,12 @@ declare namespace RamdaAdjunct {
         invokeArgs(pathToMethod: string[], args: Array<string | number>, obj: object): any;
         invokeArgs(pathToMethod: string[], args: Array<string | number>): (obj: object) => any;
         invokeArgs(pathToMethod: string[]): (args: Array<string | number>, obj: object) => any;
+        
+        /** 
+         * Checks it two lists have any element in common.
+         */
+        overlaps<T>(list1: readonly T[], list2: readonly T[]): boolean;
+        overlaps<T>(list1: readonly T[]): (list2: readonly T[]) => boolean;
     }
 }
 
