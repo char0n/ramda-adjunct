@@ -1,4 +1,4 @@
-import _isArrayLike from './isArrayLike';
+import isArrayLike from '../isArrayLike';
 
 /**
  * `makeFlat` is a helper function that returns a one-level or fully recursive
@@ -14,17 +14,16 @@ import _isArrayLike from './isArrayLike';
  * @sig Bool -> List -> List
  *
  */
-export default function makeFlat(recursive) {
+const makeFlat = (recursive) => {
   return function flatt(list) {
     let value;
     let jlen;
     let j;
     const result = [];
     let idx = 0;
-    const ilen = list.length;
 
-    while (idx < ilen) {
-      if (_isArrayLike(list[idx])) {
+    while (idx < list.length) {
+      if (isArrayLike(list[idx])) {
         value = recursive ? flatt(list[idx]) : list[idx];
         j = 0;
         jlen = value.length;
@@ -39,4 +38,6 @@ export default function makeFlat(recursive) {
     }
     return result;
   };
-}
+};
+
+export default makeFlat;
