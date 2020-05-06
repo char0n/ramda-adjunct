@@ -1,6 +1,7 @@
-import { curryN, path, apply } from 'ramda';
+import { curryN, path, apply, init, bind } from 'ramda';
 
 import isNotFunction from './isNotFunction';
+import isEmptyArray from './isEmptyArray';
 
 /**
  * Invokes the method at path of object with given arguments.
@@ -20,11 +21,16 @@ import isNotFunction from './isNotFunction';
  * RA.invokeArgs(['path', 'to', 'non-existent', 'method'], [-1], Math); //=> undefined
  */
 
-const invokeArgs = curryN(3, (pathToMethod, args, obj) => {
-  const method = path(pathToMethod, obj);
-  if (isNotFunction(method)) return undefined;
+const invokeArgs = curryN(3, (mpath, args, obj) => {
+  const method = path(mpath, obj);
+  const context = path(init(mpath), obj);
 
-  return apply(method, args);
+  if (isNotFunction(method)) return undefined;
+  if (isEmptyArray(mpath)) return undefined;
+
+  const boundMethod = bind(method, context);
+
+  return apply(boundMethod, args);
 });
 
 export default invokeArgs;
