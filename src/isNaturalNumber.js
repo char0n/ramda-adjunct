@@ -23,4 +23,3 @@ import isNegative from './isNegative';
 const isNaturalNumber = curryN(1, both(isInteger, complement(isNegative)));
 
 export default isNaturalNumber;
- 
