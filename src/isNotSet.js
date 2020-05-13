@@ -11,7 +11,7 @@ import isSet from './isSet';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isSet|isSet}}
+ * @see {@link RA.isSet|isSet}
  * @example
  *
  * RA.isNotSet(new Map()); //=> true
