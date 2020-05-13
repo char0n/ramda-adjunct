@@ -11,7 +11,7 @@ import isMap from './isMap';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isMap|isMap}}
+ * @see {@link RA.isMap|isMap}
  * @example
  *
  * RA.isNotMap(new Map()); //=> false
