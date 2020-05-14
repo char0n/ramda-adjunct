@@ -153,6 +153,7 @@ export { default as allUnique } from './allUnique';
 export { default as notAllUnique } from './notAllUnique';
 export { default as sortByProps } from './sortByProps';
 export { default as skipTake } from './skipTake';
+export { default as rangeStep } from './rangeStep';
 // Object
 export { default as invokeArgs } from './invokeArgs';
 export { default as paths } from './paths';
