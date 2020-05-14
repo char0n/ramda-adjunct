@@ -398,6 +398,11 @@ declare namespace RamdaAdjunct {
         isSet(val: any): val is Set<any>;
 
         /**
+         * Checks if value is complement of `Set` object.
+         */
+        isNotSet(val: any): boolean;
+
+        /**
          * Checks if value is complement of `RegExp` object.
          */
         isNotRegExp(val: any): boolean;
