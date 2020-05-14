@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isPromise.js - Documentation</title>
+    <title>invokeArgs.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isPromise.js</h1>
+    <h1 class="page-title">invokeArgs.js</h1>
     
 
     
@@ -52,38 +52,42 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both, pipe, toString, equals, curryN } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curryN, path, apply, init, bind } from 'ramda';
 
-import isObj from './isObj';
+import isNotFunction from './isNotFunction';
+import isEmptyArray from './isEmptyArray';
 
 /**
- * Checks if input value is a native `Promise`.
- * The Promise object represents the eventual completion (or failure)
- * of an asynchronous operation, and its resulting value.
+ * Invokes the method at path of object with given arguments.
  *
- * @func isPromise
+ * @func invokeArgs
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.1.0|v2.1.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link https://promisesaplus.com/|Promises/A+}, {@link RA.isThenable|isThenable}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.27.0|v2.27.0}
+ * @category Object
+ * @sig Array -> Array -> Object -> *
+ * @param {Array.&lt;string|number>} path The path of the method to invoke
+ * @param {Array} args The arguments to invoke the method with
+ * @param {Object} obj The object to query
+ * @return {*}
  * @example
  *
- * RA.isPromise(null); // => false
- * RA.isPromise(undefined); // => false
- * RA.isPromise([]); // => false
- * RA.isPromise(Promise.resolve()); // => true
- * RA.isPromise(Promise.reject()); // => true
- * RA.isPromise({ then: () => 1 }); // => false
+ * RA.invokeArgs(['abs'], [-1], Math); //=> 1
+ * RA.invokeArgs(['path', 'to', 'non-existent', 'method'], [-1], Math); //=> undefined
  */
-const isPromise = curryN(
-  1,
-  both(isObj, pipe(toString, equals('[object Promise]')))
-);
 
-export default isPromise;
+const invokeArgs = curryN(3, (mpath, args, obj) => {
+  const method = path(mpath, obj);
+  const context = path(init(mpath), obj);
+
+  if (isNotFunction(method)) return undefined;
+  if (isEmptyArray(mpath)) return undefined;
+
+  const boundMethod = bind(method, context);
+
+  return apply(boundMethod, args);
+});
+
+export default invokeArgs;
 </code></pre>
         </article>
     </section>
