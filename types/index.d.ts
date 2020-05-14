@@ -1395,14 +1395,18 @@ declare namespace RamdaAdjunct {
 
         /**
          * Creates a list ranging from `start` to `stop` according to a given `step`.
-         * The first item in the list is `start`. The following items are obtained by adding `step`
+         * The list tries to begin at `start`. The following items are obtained by adding `step`
          * to the previous item. The list stops when an item greater than `stop` (for a non-negative `step`;
-         *  or smaller than it, for a negative one) is reached; this last item is not added to the list.
+         * or smaller than it, for a negative one) is reached; this last item is not added to the list.
          * In mathematical terms (for s ≥ 0), `rangeStep(a, b, s)` is equivalent to
          * { x: a ≤ x ≤ b; (x - a) = k * s; k ∈ ℕ; a, b, s ∈ ℝ }.
          *
+         * If `step` does not allow for moving towards `stop` from `start`, it returns an empty list, e.g.
+         * RA.rangeStep(0, 1, -1) => []
+         * RA.rangeStep(0, -1, 1) => []
+         *
          * When `step` is equal to 1 and `start` ≤ `stop`, Ramda.range returns the same result as rangeStep,
-         *  except for the last item, e.g.
+         * except for the last item, e.g.
          * R.range(0, 3) => [0, 1, 2]
          * RA.rangeStep(0, 3, 1) => [0, 1, 2, 3].
          */

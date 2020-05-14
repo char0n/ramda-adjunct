@@ -8,8 +8,8 @@ import * as R from 'ramda';
  * @memberOf RA
  * @category List
  * @sig Number -> Number -> Number -> []Number
- * @param {number} start First element of the list
- * @param {number} stop Element at which the range stops
+ * @param {number} start [Possibly] First element of the list
+ * @param {number} stop Element after which the range stops
  * @param {number} step Difference between adjacent elements of the list
  * @return {number[]} A list of numbers ranging from start
  * to stop according to the given step
@@ -20,6 +20,7 @@ import * as R from 'ramda';
  * RA.rangeStep(2, 8, 2);   // => [2, 4, 6, 8]
  * RA.rangeStep(0, 10, 3);  // => [0, 3, 6, 9]
  * RA.rangeStep(3, -3, -2); // => [3, 1, -1, -3]
+ * RA.rangeStep(0, 0, 1); // => [0]
  */
 const nonNegativeOrDefault = curry((value, dft) => (value >= 0 ? value : dft));
 
