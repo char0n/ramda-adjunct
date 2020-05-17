@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>trunc.js - Documentation</title>
+    <title>internal/makeFlat.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">trunc.js</h1>
+    <h1 class="page-title">internal/makeFlat.js</h1>
     
 
     
@@ -52,39 +52,49 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { bind, curryN } from 'ramda';
-
-import polyfill from './internal/polyfills/Math.trunc';
-import isFunction from './isFunction';
-
-export const truncPolyfill = curryN(1, polyfill);
+            <pre class="prettyprint source linenums"><code>import isArrayLike from '../isArrayLike';
 
 /**
- * Returns the integer part of a number by removing any fractional digits.
+ * `makeFlat` is a helper function that returns a one-level or fully recursive
+ * function based on the flag passed in.
  *
- * @func trunc
+ * @func makeFlat
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.15.0|v2.15.0}
- * @category Math
- * @sig Number | String -> Number
- * @param {number|string} number The number to trunc
- * @return {number} The integer part of the given number
- * @example
  *
- * RA.trunc(13.37); //=> 13
- * RA.trunc(42.84); //=> 42
- * RA.trunc(0.123); //=>  0
- * RA.trunc(-0.123); //=> -0
- * RA.trunc('-1.123'); //=> -1
- * RA.trunc(NaN); //=> NaN
- * RA.trunc('foo'); //=> NaN
+ * @category List
+ * @param {!bool} = should recursively flatten
+ * @param {!Array} = the nested list to be flattened
+ * @return {!Array} = the flattened list
+ * @sig Bool -> List -> List
+ *
  */
+const makeFlat = (recursive) => {
+  return function flatt(list) {
+    let value;
+    let jlen;
+    let j;
+    const result = [];
+    let idx = 0;
 
-const trunc = isFunction(Math.trunc)
-  ? curryN(1, bind(Math.trunc, Math))
-  : truncPolyfill;
+    while (idx &lt; list.length) {
+      if (isArrayLike(list[idx])) {
+        value = recursive ? flatt(list[idx]) : list[idx];
+        j = 0;
+        jlen = value.length;
+        while (j &lt; jlen) {
+          result[result.length] = value[j];
+          j += 1;
+        }
+      } else {
+        result[result.length] = list[idx];
+      }
+      idx += 1;
+    }
+    return result;
+  };
+};
 
-export default trunc;
+export default makeFlat;
 </code></pre>
         </article>
     </section>
