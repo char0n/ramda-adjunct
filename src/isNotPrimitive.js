@@ -10,7 +10,7 @@ import isPrimitive from './isPrimitive';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isObj|isObj}
+ * @see {@link RA.isObj|isObj}, {@link RA.isPrimitive|isPrimitive}
  * @example
  *
  * RA.isNotPrimitive(new String("string")); //=> true
