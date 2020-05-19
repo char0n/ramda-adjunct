@@ -63,6 +63,16 @@ declare namespace RamdaAdjunct {
         isBoolean(val: any): val is boolean;
 
         /**
+         * Checks if input value is a primitive.
+         */
+        isPrimitive(val: any): boolean;
+
+        /**
+         * Checks if input value is a not primitive.
+         */
+        isNotPrimitive(val: any): boolean;
+
+        /**
          * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
          */
         isNilOrEmpty(val: any): boolean;
