@@ -85,6 +85,8 @@ export { default as isSparseArray } from './isSparseArray';
 export { default as isSymbol } from './isSymbol';
 export { default as isSafeInteger } from './isSafeInteger';
 export { default as isIndexed } from './isIndexed';
+export { default as isPrimitive } from './isPrimitive';
+export { default as isNotPrimitive } from './isNotPrimitive';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
