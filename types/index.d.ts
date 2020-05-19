@@ -1304,6 +1304,12 @@ declare namespace RamdaAdjunct {
         toArray<T>(iterable: Iterable<T> | T): any[];
 
         /**
+         * Converts value to a number.
+         * It returns `NaN` whenever the global `Number` function would return `NaN` or throw an error.
+         */
+        toNumber(val: any): number;
+
+        /**
          * Returns true if all items in the list are unique. `R.equals` is used to determine equality.
          */
         allUnique<T>(list: T[]): boolean;
