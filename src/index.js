@@ -143,6 +143,7 @@ export { default as lengthLte } from './lengthLte';
 export { default as lengthEq } from './lengthEq';
 export { default as lengthNotEq } from './lengthNotEq';
 export { default as allEqual } from './allEqual';
+export { default as notAllEqual } from './notAllEqual';
 export { default as repeatStr } from './repeatStr';
 export { default as allIdentical } from './allIdentical';
 export { default as allIdenticalTo } from './allIdenticalTo';
