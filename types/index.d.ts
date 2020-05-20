@@ -1010,6 +1010,12 @@ declare namespace RamdaAdjunct {
         allEqual<T>(list: T[]): boolean;
 
         /**
+         * Returns true if the list is not empty,
+         * and not all items in the list are equivalent using `R.equals` for equality comparisons.
+         */
+        notAllEqual<T>(list: T[]): boolean;
+
+        /**
          * Constructs and returns a new string which contains the specified
          * number of copies of the string on which it was called, concatenated together.
          */
