@@ -1392,6 +1392,12 @@ declare namespace RamdaAdjunct {
         invokeArgs(pathToMethod: string[], args: Array<string | number>, obj: object): any;
         invokeArgs(pathToMethod: string[], args: Array<string | number>): (obj: object) => any;
         invokeArgs(pathToMethod: string[]): (args: Array<string | number>, obj: object) => any;
+
+        /**
+         * Exposes the predicate function to each index of input list.
+         */
+        filterIndexed<T>(predicate: Function, list: T[]): T[];
+        filterIndexed<T>(predicate: Function): (list: T[]) => T[];
     }
 }
 
