@@ -32,7 +32,7 @@ Commit the above changes to git with following git message
 Tag the release commit
 
 ```sh
- $ git tag -a vY.Y.Z
+ $ git tag -a vX.Y.Z
  $ git push --tags
 ```
 
