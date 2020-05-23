@@ -1,3 +1,22 @@
+<a name="2.27.0"></a>
+# [2.27.0](https://github.com/char0n/ramda-adjunct/compare/v2.26.0...v2.27.0) (2020-05-23)
+
+
+### Bug Fixes
+
+* **iterable:** convert isIterable into a type guard function ([#1414](https://github.com/char0n/ramda-adjunct/issues/1414)) ([57cfab2](https://github.com/char0n/ramda-adjunct/commit/57cfab2)), closes [#1412](https://github.com/char0n/ramda-adjunct/issues/1412)
+
+
+### Features
+
+* **type:** add isNotSet ([#1434](https://github.com/char0n/ramda-adjunct/issues/1434)) ([9ecfaa7](https://github.com/char0n/ramda-adjunct/commit/9ecfaa7)), closes [#1123](https://github.com/char0n/ramda-adjunct/issues/1123)
+* add isNotMap ([#1433](https://github.com/char0n/ramda-adjunct/issues/1433)) ([3378238](https://github.com/char0n/ramda-adjunct/commit/3378238)), closes [#1122](https://github.com/char0n/ramda-adjunct/issues/1122)
+* **object:** add invokeArgs ([#1409](https://github.com/char0n/ramda-adjunct/issues/1409)) ([ea725f1](https://github.com/char0n/ramda-adjunct/commit/ea725f1)), closes [#1239](https://github.com/char0n/ramda-adjunct/issues/1239)
+* add isBigInt ([#1406](https://github.com/char0n/ramda-adjunct/issues/1406)) ([67dfe1e](https://github.com/char0n/ramda-adjunct/commit/67dfe1e)), closes [#1253](https://github.com/char0n/ramda-adjunct/issues/1253)
+* add thenCatchP ([#1322](https://github.com/char0n/ramda-adjunct/issues/1322)) ([54256f3](https://github.com/char0n/ramda-adjunct/commit/54256f3)), closes [#1233](https://github.com/char0n/ramda-adjunct/issues/1233)
+
+
+
 <a name="2.26.0"></a>
 # [2.26.0](https://github.com/char0n/ramda-adjunct/compare/v2.25.0...v2.26.0) (2020-03-16)
 
