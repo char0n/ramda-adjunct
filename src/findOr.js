@@ -11,8 +11,7 @@ import { pipe, curry, find, defaultTo } from 'ramda';
  * @category List
  * @sig  a -> (b -> Boolean) -> [b] -> b | a
  * @param {*} defaultValue The default value
- * @param {Function} fn The predicate function used to determine if the element is the
- *        desired one.
+ * @param {Function} fn The predicate function used to determine if the element is the desired one.
  * @param {Array} list The array to consider.
  * @return {*} The element found, or the default value if not found, or NaN, null, or undefined was found.
  * @see {@link http://ramdajs.com/docs/#defaultTo|R.defaultTo}
