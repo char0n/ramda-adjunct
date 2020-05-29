@@ -1085,6 +1085,13 @@ declare namespace RamdaAdjunct {
         defaultWhen(predicate: Function): <DefVal, Val>(defaultVal: DefVal) => (val: Val) => DefVal | Val;
 
         /**
+         * Returns a value from a list when the given predicate returns true.
+         * If the predicate does not match, or the value found is null, undefined, or NaN
+         * then the provided default value is returned.
+         */
+        findOr<DefVal, T>(defaultVal: DefVal, predicate: (element: T) => boolean, list: ReadonlyArray<T>): T | DefVal;
+
+        /**
          * Y-combinator
          *
          * The Y combinator is an interesting function which only works with functional languages,
