@@ -204,6 +204,7 @@ export { default as floor } from './floor';
 export { default as trunc } from './trunc';
 export { default as sign } from './sign';
 export { default as subtractNum } from './subtractNum';
+export { default as toUinteger32 } from './toUinteger32';
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
