@@ -18,6 +18,7 @@ import { curryN } from 'ramda';
  * RA.toUinteger32(-1); //=> 4294967295
  * RA.toUinteger32(-1.5); //=> 4294967295
  * RA.toUinteger32(0); //=> 0
+ * RA.toUinteger32(new Object()); //=> 0
  */
 
 /* eslint no-bitwise: ["error", { "allow": [">>>"] }] */
