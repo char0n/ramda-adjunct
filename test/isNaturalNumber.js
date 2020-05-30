@@ -11,6 +11,8 @@ describe('isNaturalNumber', function () {
       assert.isTrue(RA.isNaturalNumber(0));
       assert.isTrue(RA.isNaturalNumber(1));
       assert.isTrue(RA.isNaturalNumber(MAX_SAFE_INTEGER));
+      assert.isTrue(RA.isNaturalNumber(+0));
+      assert.isTrue(RA.isNaturalNumber(-0));
     });
   });
 

@@ -263,6 +263,7 @@ declare namespace RamdaAdjunct {
 
         /**
          * Checks whether the passed value is a NaturalNumber.
+         * Natural numbers correspond to all non-negative integers and 0.
          */
         isNaturalNumber(val: any): boolean;
 

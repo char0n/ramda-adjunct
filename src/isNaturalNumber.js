@@ -5,9 +5,11 @@ import isNegative from './isNegative';
 
 /**
  * Checks if value is a isNaturalNumber.
+ * Natural numbers correspond to all non-negative integers and 0.
  *
  * @func isNaturalNumber
  * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.28.0|v2.28.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
