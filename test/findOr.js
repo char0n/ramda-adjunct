@@ -55,17 +55,12 @@ describe('findOr', function () {
   });
 
   context('given a list that does not contain the value to find', function () {
-    context('and that value is truthy', function () {
-      specify('should return the default value', function () {
-        const defaultValue = 'default';
-        const list = [1, 2, 3];
-        const predicate = (val) => val === 4;
+    specify('should return the default value', function () {
+      const defaultValue = 'default';
+      const list = [1, 2, 3];
+      const predicate = (val) => val === 4;
 
-        assert.deepEqual(
-          RA.findOr(defaultValue, predicate, list),
-          defaultValue
-        );
-      });
+      assert.deepEqual(RA.findOr(defaultValue, predicate, list), defaultValue);
     });
   });
 });
