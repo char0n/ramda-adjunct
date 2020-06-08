@@ -205,7 +205,7 @@ export { default as trunc } from './trunc';
 export { default as sign } from './sign';
 export { default as subtractNum } from './subtractNum';
 export { default as toUinteger32 } from './toUinteger32';
-export { default as toUint32 } from './toUinteger32';
+export { default as toUint32 } from './toUinteger32'; // alias of to toUinteger32
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
