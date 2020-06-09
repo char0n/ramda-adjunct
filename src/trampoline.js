@@ -10,7 +10,7 @@ import isFunction from './isFunction';
  * @sig ... -> Any
  * @param  {Function} fn
  * @param  {Array} args The arguments to call fn with
- * @return {*} Exclude<any, Function>
+ * @return {*} The result that is not a function
  * @example
  *
  * function evenOline(n) {
