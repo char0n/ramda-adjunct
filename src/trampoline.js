@@ -8,7 +8,7 @@ import isFunction from './isFunction';
  * @memberOf RA
  * @category Function
  * @sig ... -> Any
- * @param  {function} func
+ * @param  {Function} fn
  * @param  {} ...args
  * @return {*} Exclude<any, Function>
  * @example
