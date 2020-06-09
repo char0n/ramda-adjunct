@@ -1329,6 +1329,7 @@ declare namespace RamdaAdjunct {
          * until it is no longer a function.
          */
         trampoline(func: Function, ...args: any[]): NotFunction;
+        trampoline(func: Function): (...args: any[]) => NotFunction;
 
         /**
          * The function pads the current string with a given string

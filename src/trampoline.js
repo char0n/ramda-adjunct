@@ -1,3 +1,5 @@
+import { curryN } from 'ramda';
+
 import isFunction from './isFunction';
 
 /**
@@ -14,27 +16,26 @@ import isFunction from './isFunction';
  * @return {*} The result that is not a function
  * @example
  *
- * function evenOline(n) {
- *   if (n === 0)
- *     return true;
- *   else
- *     return R.partial(oddOline, [Math.abs(n) - 1]);
- * }
+ * const evenOline = (n) => {
+ *  if (n === 0) {
+ *   return true;
+ *  }
+ *  return R.partial(oddOline, [Math.abs(n) - 1]);
+ * };
  *
- * function oddOline(n) {
- *   if (n === 0)
- *     return false;
- *   else
- *     return R.partial(evenOline, [Math.abs(n) - 1]);
- * }
+ * const oddOline = (n) => {
+ *  if (n === 0) {
+ *    return false;
+ *  }
+ *  return R.partial(evenOline, [Math.abs(n) - 1]);
+ * };
  *
  * RA.trampoline(oddOline, 3); //=> true
  * RA.trampoline(evenOline, 200000); //=> true
  * RA.trampoline(oddOline, 300000); //=> false
  * RA.trampoline(evenOline, 200000000); //=> true
  */
-
-const trampoline = (func, ...args) => {
+const trampoline = curryN(2, (func, ...args) => {
   let result = func(...args);
 
   while (isFunction(result)) {
@@ -42,6 +43,6 @@ const trampoline = (func, ...args) => {
   }
 
   return result;
-};
+});
 
 export default trampoline;
