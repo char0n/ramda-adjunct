@@ -8,7 +8,7 @@ import isFunction from './isFunction';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.28.0|v2.28.0}
  * @category Function
- * @sig ... -> Any
+ * @sig (*... -> a) -> [*] -> a
  * @param  {Function} fn
  * @param  {Array} args The arguments to call fn with
  * @return {*} The result that is not a function
