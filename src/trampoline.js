@@ -2,7 +2,7 @@ import isFunction from './isFunction';
 
 /**
  * A function that repeatedly calls the return value of a function,
- *  until it is no longer a function.
+ * until it is no longer a function.
  *
  * @func trampoline
  * @memberOf RA
