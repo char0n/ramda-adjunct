@@ -1,9 +1,9 @@
 import { curry, invoker, flip } from 'ramda';
 
-import polyfill from './internal/polyfills/String.padEnd';
+import ponyfill from './internal/ponyfills/String.padEnd';
 import isFunction from './isFunction';
 
-export const padEndPolyfill = curry(polyfill);
+export const padEndPonyfill = curry(ponyfill);
 
 export const padEndInvoker = flip(invoker(2, 'padEnd'));
 
@@ -32,6 +32,6 @@ export const padEndInvoker = flip(invoker(2, 'padEnd'));
  */
 const padCharsEnd = isFunction(String.prototype.padEnd)
   ? padEndInvoker
-  : padEndPolyfill;
+  : padEndPonyfill;
 
 export default padCharsEnd;
