@@ -9,7 +9,7 @@ import isFunction from './isFunction';
  * @category Function
  * @sig ... -> Any
  * @param  {Function} fn
- * @param  {} ...args
+ * @param  {Array} args The arguments to call fn with
  * @return {*} Exclude<any, Function>
  * @example
  *
