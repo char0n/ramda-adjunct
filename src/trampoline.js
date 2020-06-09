@@ -6,6 +6,7 @@ import isFunction from './isFunction';
  *
  * @func trampoline
  * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.28.0|v2.28.0}
  * @category Function
  * @sig ... -> Any
  * @param  {Function} fn
