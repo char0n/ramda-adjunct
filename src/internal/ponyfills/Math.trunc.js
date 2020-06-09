@@ -1,6 +1,6 @@
 import isFinite from '../../isFinite';
 
-const truncPolyfill = (v) => {
+const truncPonyfill = (v) => {
   const numV = Number(v);
 
   if (!isFinite(numV)) {
@@ -11,4 +11,4 @@ const truncPolyfill = (v) => {
   return numV - (numV % 1) || (numV < 0 ? -0 : numV === 0 ? numV : 0);
 };
 
-export default truncPolyfill;
+export default truncPonyfill;

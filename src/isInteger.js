@@ -1,9 +1,9 @@
 import { bind, curryN } from 'ramda';
 
 import isFunction from './isFunction';
-import polyfill from './internal/polyfills/Number.isInteger';
+import ponyfill from './internal/ponyfills/Number.isInteger';
 
-export const isIntegerPolyfill = curryN(1, polyfill);
+export const isIntegerPonyfill = curryN(1, ponyfill);
 
 /**
  * Checks whether the passed value is an `integer`.
@@ -35,6 +35,6 @@ export const isIntegerPolyfill = curryN(1, polyfill);
  */
 const isInteger = isFunction(Number.isInteger)
   ? curryN(1, bind(Number.isInteger, Number))
-  : isIntegerPolyfill;
+  : isIntegerPonyfill;
 
 export default isInteger;

@@ -2,8 +2,8 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import { isSafeIntegerPolyfill } from '../src/isSafeInteger';
-import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
+import { isSafeIntegerPonyfill } from '../src/isSafeInteger';
+import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
 
 describe('isSafeInteger', function () {
   context('given a safe integer', function () {
@@ -36,33 +36,33 @@ describe('isSafeInteger', function () {
     assert.isTrue(isSafeInteger(3));
   });
 
-  context('isSafeIntegerPolyfill', function () {
+  context('isSafeIntegerPonyfill', function () {
     context('given a safe integer', function () {
       specify('should return true', function () {
-        assert.isTrue(isSafeIntegerPolyfill(3));
-        assert.isTrue(isSafeIntegerPolyfill(MAX_SAFE_INTEGER));
-        assert.isTrue(isSafeIntegerPolyfill(3.0));
+        assert.isTrue(isSafeIntegerPonyfill(3));
+        assert.isTrue(isSafeIntegerPonyfill(MAX_SAFE_INTEGER));
+        assert.isTrue(isSafeIntegerPonyfill(3.0));
       });
     });
 
     context('given not safe integer', function () {
       specify('should return false', function () {
-        assert.isFalse(isSafeIntegerPolyfill(MAX_SAFE_INTEGER + 1));
-        assert.isFalse(isSafeIntegerPolyfill(NaN));
-        assert.isFalse(isSafeIntegerPolyfill(Infinity));
-        assert.isFalse(isSafeIntegerPolyfill('3'));
-        assert.isFalse(isSafeIntegerPolyfill(3.1));
-        assert.isFalse(isSafeIntegerPolyfill('string'));
-        assert.isFalse(isSafeIntegerPolyfill(null));
-        assert.isFalse(isSafeIntegerPolyfill(undefined));
-        assert.isFalse(isSafeIntegerPolyfill({}));
-        assert.isFalse(isSafeIntegerPolyfill(() => {}));
-        assert.isFalse(isSafeIntegerPolyfill(true));
+        assert.isFalse(isSafeIntegerPonyfill(MAX_SAFE_INTEGER + 1));
+        assert.isFalse(isSafeIntegerPonyfill(NaN));
+        assert.isFalse(isSafeIntegerPonyfill(Infinity));
+        assert.isFalse(isSafeIntegerPonyfill('3'));
+        assert.isFalse(isSafeIntegerPonyfill(3.1));
+        assert.isFalse(isSafeIntegerPonyfill('string'));
+        assert.isFalse(isSafeIntegerPonyfill(null));
+        assert.isFalse(isSafeIntegerPonyfill(undefined));
+        assert.isFalse(isSafeIntegerPonyfill({}));
+        assert.isFalse(isSafeIntegerPonyfill(() => {}));
+        assert.isFalse(isSafeIntegerPonyfill(true));
       });
     });
 
     specify('should support placeholder to specify "gaps"', function () {
-      const isSafeInteger = isSafeIntegerPolyfill(R.__);
+      const isSafeInteger = isSafeIntegerPonyfill(R.__);
 
       assert.isTrue(isSafeInteger(3));
     });

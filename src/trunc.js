@@ -1,9 +1,9 @@
 import { bind, curryN } from 'ramda';
 
-import polyfill from './internal/polyfills/Math.trunc';
+import ponyfill from './internal/ponyfills/Math.trunc';
 import isFunction from './isFunction';
 
-export const truncPolyfill = curryN(1, polyfill);
+export const truncPonyfill = curryN(1, ponyfill);
 
 /**
  * Returns the integer part of a number by removing any fractional digits.
@@ -28,6 +28,6 @@ export const truncPolyfill = curryN(1, polyfill);
 
 const trunc = isFunction(Math.trunc)
   ? curryN(1, bind(Math.trunc, Math))
-  : truncPolyfill;
+  : truncPonyfill;
 
 export default trunc;

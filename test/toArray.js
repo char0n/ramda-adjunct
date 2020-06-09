@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import { fromPolyfill } from '../src/toArray';
+import { fromPonyfill } from '../src/toArray';
 
 describe('toArray', function () {
   const assertIsEmptyArray = (val) => {
@@ -77,10 +77,10 @@ describe('toArray', function () {
     assert.sameOrderedMembers(toArray([1, 2, 3]), [1, 2, 3]);
   });
 
-  context('fromPolyfill', function () {
+  context('fromPonyfill', function () {
     context('given an object', function () {
       specify('should return values', function () {
-        const actual = fromPolyfill({ foo: 1, bar: 2 });
+        const actual = fromPonyfill({ foo: 1, bar: 2 });
 
         assertIsEmptyArray(actual);
       });
@@ -92,7 +92,7 @@ describe('toArray', function () {
         map.set('0', 'foo');
         map.set(1, 'bar');
 
-        const actual = fromPolyfill(map);
+        const actual = fromPonyfill(map);
 
         assert.sameDeepOrderedMembers(actual, [
           ['0', 'foo'],
@@ -103,7 +103,7 @@ describe('toArray', function () {
       specify('should convert a set into an array', function () {
         const set = new Set([1, 2, 3]);
 
-        const actual = fromPolyfill(set);
+        const actual = fromPonyfill(set);
 
         assert.sameOrderedMembers(actual, [1, 2, 3]);
       });
@@ -112,21 +112,21 @@ describe('toArray', function () {
         const object = { '0': 'a', length: 1 };
         object[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
-        const actual = fromPolyfill(object);
+        const actual = fromPonyfill(object);
 
         assert.sameOrderedMembers(actual, ['a']);
       });
 
       specify('should return shallow copy of array', function () {
         const array = [1, 2];
-        const actual = fromPolyfill(array);
+        const actual = fromPonyfill(array);
 
         assert.sameOrderedMembers(actual, [1, 2]);
         assert.notStrictEqual(actual, array);
       });
 
       specify('should return string as array', function () {
-        assert.sameOrderedMembers(fromPolyfill('abc'), ['a', 'b', 'c']);
+        assert.sameOrderedMembers(fromPonyfill('abc'), ['a', 'b', 'c']);
       });
     });
 
@@ -140,9 +140,9 @@ describe('toArray', function () {
     });
 
     specify('should support placeholder to specify "gaps"', function () {
-      const toArrayPolyfill = fromPolyfill(R.__);
+      const toArrayPonyfill = fromPonyfill(R.__);
 
-      assert.sameOrderedMembers(toArrayPolyfill([1, 2, 3]), [1, 2, 3]);
+      assert.sameOrderedMembers(toArrayPonyfill([1, 2, 3]), [1, 2, 3]);
     });
   });
 });
