@@ -154,7 +154,7 @@
     "codecov": "3.7.0",
     "conventional-changelog-cli": "2.0.34",
     "docdash": "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
-    "dtslint": "=3.6.10",
+    "dtslint": "=3.6.12",
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.1.0",
     "eslint-config-prettier": "6.11.0",
