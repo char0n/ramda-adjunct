@@ -50,7 +50,7 @@ describe('toInteger32', function () {
   it('should support placeholder to specify "gaps"', function () {
     const toInteger32 = RA.toInteger32(R.__);
 
-    assert.strictEqual(f0(1.2), 1);
+    assert.strictEqual(toInteger32(1.2), 1);
   });
 
   describe('toInt32', function () {
