@@ -9,7 +9,7 @@ import { curryN } from 'ramda';
  * @category Math
  * @sig Number -> Number
  * @param {number} number A number
- * @return {number} A 32-bit integer number
+ * @return {number} A signed 32-bit integer number
  * @see {@link RA.toUInteger32|toUInteger32}, {@link http://speakingjs.com/es5/ch11.html#integers_via_bitwise_operators}
  * @example
  *
