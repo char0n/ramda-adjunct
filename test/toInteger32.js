@@ -21,7 +21,7 @@ describe('toInteger32', function () {
     });
   });
 
-  context('given an integer -1 modulo 23^2', function () {
+  context('given an integer 23^2 - 1', function () {
     specify('should return -1', function () {
       const initialValue = 2 ** 32 - 1;
       assert.strictEqual(RA.toInteger32(initialValue), -1);
