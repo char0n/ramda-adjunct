@@ -48,7 +48,7 @@ describe('toInteger32', function () {
   });
 
   it('should support placeholder to specify "gaps"', function () {
-    const f0 = RA.toInteger32(R.__);
+    const toInteger32 = RA.toInteger32(R.__);
 
     assert.strictEqual(f0(1.2), 1);
   });
