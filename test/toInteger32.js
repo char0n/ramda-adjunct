@@ -52,10 +52,10 @@ describe('toInteger32', function () {
 
     assert.strictEqual(toInteger32(1.2), 1);
   });
+});
 
-  describe('toInt32', function () {
-    it('should be alias of seq', function () {
-      assert.strictEqual(RA.toInt32, RA.toInteger32);
-    });
+describe('toInt32', function () {
+  it('should be alias of toInteger32', function () {
+    assert.strictEqual(RA.toInt32, RA.toInteger32);
   });
 });
