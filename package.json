@@ -172,7 +172,7 @@
     "jsverify": "0.8.4",
     "license-cli": "1.1.6",
     "lint-staged": "10.2.9",
-    "mocha": "7.2.0",
+    "mocha": "8.0.1",
     "mocha-junit-reporter": "2.0.0",
     "mocha-multi-reporters": "1.1.7",
     "monet": "0.9.1",
