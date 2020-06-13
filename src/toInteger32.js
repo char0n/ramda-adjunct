@@ -10,7 +10,7 @@ import { curryN } from 'ramda';
  * @sig Number -> Number
  * @param {number} number A number
  * @return {number} A 32-bit integer number
- * @see {@link http://speakingjs.com/es5/ch11.html#integers_via_bitwise_operators}
+ * @see {@link RA.toUInteger32|toUInteger32}, {@link http://speakingjs.com/es5/ch11.html#integers_via_bitwise_operators}
  * @example
  *
  * RA.toInteger32(2 ** 35); // => 0
