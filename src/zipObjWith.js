@@ -17,7 +17,7 @@ import { apply, curryN, fromPairs, map, pipe, zip } from 'ramda';
  * @see {@link https://ramdajs.com/docs/#zipObj|zipObj}, {@link RA.unzipObjWith|unzipObjWith}
  * @example
  *
- * RA.zipObjWith((value, key) => [key, `${key}${value + 1}`]), ['a', 'b', 'c'], [1, 2, 3]);
+ * RA.zipObjWith((value, key) => [key, `${key}${value + 1}`], ['a', 'b', 'c'], [1, 2, 3]);
  *  // => { a: 'a2', b: 'b3', c: 'c4' }
  */
 const zipObjWith = curryN(3, (fn, keys, values) =>

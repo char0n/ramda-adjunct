@@ -4,7 +4,7 @@ import isTruthy from './isTruthy';
 
 /**
  * A falsy value is a value that translates to false when evaluated in a Boolean context.
- * Falsy values are `false`, `0`, `""`, `null`, `undefined`, and `NaN`.
+ * Falsy values are `false`, `0`, `0n`, `''`, `null`, `undefined` and `NaN`.
  *
  * @func isFalsy
  * @memberOf RA

@@ -4,7 +4,7 @@ import * as RA from 'ramda-adjunct';
  * Helpers.
  */
 
-const combiningPredicate = <T>(predicateFn: Function) => (iterable: T[]): boolean =>
+const combiningPredicate = <T>(predicateFn: Function) => (iterable: readonly T[]): boolean =>
     iterable.reduce((acc: boolean, val: T) => acc && predicateFn(val), true);
 
 const nonBoolPredicate = (val: string): string => val;

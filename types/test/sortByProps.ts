@@ -15,12 +15,19 @@ const clara = {
   age: 314.159,
   lastName: 'Kris',
 };
-const people = [clara, bob, alice];
+const immutablePeople = [clara, bob, alice] as const;
+const mutablePeople = [clara, bob];
+const immutableProps = ['lastName', 'name'] as const;
+const mutableProps = ['age'];
 
-RA.sortByProps(['name'])(people); // $ExpectType object[]
-RA.sortByProps(['p'])(people); // $ExpectType object[]
-RA.sortByProps(['lastName', 'name'])(people); // $ExpectType object[]
-RA.sortByProps(['lastName', 'p', 'name'])(people); // $ExpectType object[]
+// tslint:disable:max-line-length
+RA.sortByProps(mutableProps)(immutablePeople); // $ExpectType ({ name: string; age: number; lastName: string; } | { name: string; age: number; lastName: string; } | { name: string; age: number; lastName: string; })[]
+RA.sortByProps(['p'])(immutablePeople); // $ExpectType ({ name: string; age: number; lastName: string; } | { name: string; age: number; lastName: string; } | { name: string; age: number; lastName: string; })[]
+RA.sortByProps(immutableProps, immutablePeople); // $ExpectType ({ name: string; age: number; lastName: string; } | { name: string; age: number; lastName: string; } | { name: string; age: number; lastName: string; })[]
+RA.sortByProps(immutableProps)(mutablePeople); // $ExpectType { name: string; age: number; lastName: string; }[]
+RA.sortByProps(mutableProps)(mutablePeople); // $ExpectType { name: string; age: number; lastName: string; }[]
+// tslint:enable:max-line-length
 
 RA.sortByProps(['name'])(123); // $ExpectError
-RA.sortByProps(123)(people); // $ExpectError
+RA.sortByProps(['lastName', 'p', 'name'], mutablePeople); // $ExpectError
+RA.sortByProps(123)(immutablePeople); // $ExpectError

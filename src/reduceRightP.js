@@ -9,7 +9,7 @@ const flipArgs = pipe(reduceRight(concat, ''), equals('ba'))(['a', 'b']);
 
 /* eslint-disable max-len */
 /**
- * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
+ * Given an `Iterable` (arrays are `Iterable`), or a promise of an `Iterable`,
  * which produces promises (or a mix of promises and values),
  * iterate over all the values in the `Iterable` into an array and
  * reduce the array to a value using the given iterator function.

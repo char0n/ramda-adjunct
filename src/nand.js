@@ -10,7 +10,7 @@ import { and, complement } from 'ramda';
  * @sig a -> b -> Boolean
  * @param {*} a
  * @param {*} b
- * @return {Boolean} false if both arguments are truesy
+ * @return {Boolean} false if both arguments are truthy
  * @example
  *
  * RA.nand(true, true); //=> false

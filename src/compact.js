@@ -4,7 +4,7 @@ import isFalsy from './isFalsy';
 
 /**
  * Creates an array with all falsy values removed.
- * The values false, null, 0, "", undefined, and NaN are falsy.
+ * Falsy values are `false`, `0`, `0n`, `''`, `null`, `undefined` and `NaN`.
  *
  * @func compact
  * @memberOf RA
