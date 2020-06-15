@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isEmptyString.js - Documentation</title>
+    <title>toInteger32.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isEmptyString.js</h1>
+    <h1 class="page-title">toInteger32.js</h1>
     
 
     
@@ -52,34 +52,28 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
-
+            <pre class="prettyprint source linenums"><code>import { curryN } from 'ramda';
 /**
- * Checks if input value is an empty `String`.
+ * Converts double-precision 64-bit binary format IEEE 754 to signed 32 bit integer number.
  *
- * @func isEmptyString
+ * @func toInteger32
+ * @aliases toInt32
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.4.0|v2.4.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isNotEmptyString|isNotEmptyString}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.28.0|v2.28.0}
+ * @category Math
+ * @sig Number -> Number
+ * @param {number} number A number
+ * @return {number} A signed 32-bit integer number
+ * @see {@link RA.toUInteger32|toUInteger32}, {@link http://speakingjs.com/es5/ch11.html#integers_via_bitwise_operators}
  * @example
  *
- * RA.isEmptyString(''); // => true
- * RA.isEmptyString('42'); // => false
- * RA.isEmptyString(new String('42')); // => false
- * RA.isEmptyString(new String('')); // => false
- * RA.isEmptyString([42]); // => false
- * RA.isEmptyString({}); // => false
- * RA.isEmptyString(null); // => false
- * RA.isEmptyString(undefined); // => false
- * RA.isEmptyString(42); // => false
+ * RA.toInteger32(2 ** 35); // => 0
+ * RA.toInteger32(2 ** 30); // => 1073741824
  */
-const isEmptyString = equals('');
+// eslint-disable-next-line no-bitwise
+const toInteger32 = curryN(1, (val) => val >> 0);
 
-export default isEmptyString;
+export default toInteger32;
 </code></pre>
         </article>
     </section>
