@@ -183,7 +183,7 @@
     "rimraf": "3.0.2",
     "sanctuary-show": "2.0.0",
     "sinon": "9.0.2",
-    "terser-webpack-plugin": "3.0.3",
+    "terser-webpack-plugin": "3.0.4",
     "testem": "=3.0.4",
     "tslint": "=6.1.2",
     "typescript": "=3.9.5",
