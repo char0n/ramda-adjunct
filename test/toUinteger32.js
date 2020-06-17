@@ -4,7 +4,7 @@ import * as RA from '../src';
 
 describe('toUinteger32', function () {
   context('given a floating point number', function () {
-    specify('should drop decimal values', function () {
+    specify('should drop fraction', function () {
       assert.strictEqual(RA.toUinteger32(123.456), 123);
       assert.strictEqual(RA.toUinteger32(0.123456), 0);
 
