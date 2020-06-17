@@ -11,6 +11,7 @@ import { curryN } from 'ramda';
  * @sig Number -> Number
  * @param {number} val Value to be converted.
  * @return {number}
+ * @see {@link RA.toInteger32|toInteger32}, {@link http://speakingjs.com/es5/ch11.html#integers_via_bitwise_operators}
  * @example
  *
  * RA.toUinteger32(1.5); //=> 1
