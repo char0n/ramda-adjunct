@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
@@ -31,21 +32,21 @@ describe('toUinteger32', function () {
 
   context('given a non `number` type value', function () {
     specify('should return an unsigned (non-negative) integer', function () {
-      assert.isAtLeast(RA.toUinteger32(true), 0);
-      assert.isAtLeast(RA.toUinteger32([1, 2, 3]), 0);
-      assert.isAtLeast(RA.toUinteger32(Array.prototype.slice), 0);
-      assert.isAtLeast(RA.toUinteger32({}), 0);
-      assert.isAtLeast(RA.toUinteger32(/x/), 0);
-      assert.isAtLeast(RA.toUinteger32(null), 0);
-      assert.isAtLeast(RA.toUinteger32(NaN), 0);
+      assert.strictEqual(RA.toUinteger32(true), 1);
+      assert.strictEqual(RA.toUinteger32([1, 2, 3]), 0);
+      assert.strictEqual(RA.toUinteger32(Array.prototype.slice), 0);
+      assert.strictEqual(RA.toUinteger32({}), 0);
+      assert.strictEqual(RA.toUinteger32(/x/), 0);
+      assert.strictEqual(RA.toUinteger32(null), 0);
+      assert.strictEqual(RA.toUinteger32(NaN), 0);
 
-      assert.isAtLeast(RA.toUint32(true), 0);
-      assert.isAtLeast(RA.toUint32([1, 2, 3]), 0);
-      assert.isAtLeast(RA.toUint32(Array.prototype.slice), 0);
-      assert.isAtLeast(RA.toUint32({}), 0);
-      assert.isAtLeast(RA.toUint32(/x/), 0);
-      assert.isAtLeast(RA.toUint32(null), 0);
-      assert.isAtLeast(RA.toUint32(NaN), 0);
+      assert.strictEqual(RA.toUint32(true), 1);
+      assert.strictEqual(RA.toUint32([1, 2, 3]), 0);
+      assert.strictEqual(RA.toUint32(Array.prototype.slice), 0);
+      assert.strictEqual(RA.toUint32({}), 0);
+      assert.strictEqual(RA.toUint32(/x/), 0);
+      assert.strictEqual(RA.toUint32(null), 0);
+      assert.strictEqual(RA.toUint32(NaN), 0);
     });
   });
 
@@ -69,5 +70,11 @@ describe('toUinteger32', function () {
       assert.strictEqual(RA.toUint32(Number.POSITIVE_INFINITY), 0);
       assert.strictEqual(RA.toUint32(Number.NEGATIVE_INFINITY), 0);
     });
+  });
+
+  it('should support placeholder to specify "gaps"', function () {
+    const toUint32 = RA.toUint32(R.__);
+
+    assert.strictEqual(toUint32(Infinity), 0);
   });
 });
