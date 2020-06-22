@@ -144,7 +144,7 @@
     "@babel/polyfill": "7.10.1",
     "@babel/preset-env": "7.10.2",
     "@babel/register": "7.10.1",
-    "@commitlint/cli": "8.3.5",
+    "@commitlint/cli": "9.0.1",
     "@commitlint/config-conventional": "8.3.4",
     "babel-loader": "8.1.0",
     "babel-plugin-annotate-pure-calls": "0.4.0",
