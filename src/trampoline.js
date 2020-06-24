@@ -30,12 +30,12 @@ import isFunction from './isFunction';
  *  return R.partial(evenOline, [Math.abs(n) - 1]);
  * };
  *
- * RA.trampoline(oddOline, 3); //=> true
- * RA.trampoline(evenOline, 200000); //=> true
- * RA.trampoline(oddOline, 300000); //=> false
- * RA.trampoline(evenOline, 200000000); //=> true
+ * RA.trampoline(oddOline, [3]); //=> true
+ * RA.trampoline(evenOline, [200000]); //=> true
+ * RA.trampoline(oddOline, [300000]); //=> false
+ * RA.trampoline(evenOline, [200000000]); //=> true
  */
-const trampoline = curryN(2, (func, ...args) => {
+const trampoline = curryN(2, (func, args) => {
   let result = func(...args);
 
   while (isFunction(result)) {
