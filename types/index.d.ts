@@ -1328,8 +1328,8 @@ declare namespace RamdaAdjunct {
          * Repeatedly calls the return value of a function,
          * until it is no longer a function.
          */
-        trampoline(func: Function, ...args: any[]): NotFunction;
-        trampoline(func: Function): (...args: any[]) => NotFunction;
+        trampoline(func: Function, args: any[]): NotFunction;
+        trampoline(func: Function): (args: any[]) => NotFunction;
 
         /**
          * The function pads the current string with a given string
