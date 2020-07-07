@@ -1,9 +1,9 @@
 import { bind, curryN } from 'ramda';
 
 import isFunction from './isFunction';
-import polyfill from './internal/polyfills/Promise.allSettled';
+import ponyfill from './internal/ponyfills/Promise.allSettled';
 
-export const allSettledPPolyfill = curryN(1, polyfill);
+export const allSettledPPonyfill = curryN(1, ponyfill);
 
 /**
  * Returns a promise that is fulfilled with an array of promise state snapshots,
@@ -29,6 +29,6 @@ export const allSettledPPolyfill = curryN(1, polyfill);
  */
 const allSettledP = isFunction(Promise.allSettled)
   ? curryN(1, bind(Promise.allSettled, Promise))
-  : allSettledPPolyfill;
+  : allSettledPPonyfill;
 
 export default allSettledP;
