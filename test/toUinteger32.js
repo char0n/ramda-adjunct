@@ -78,3 +78,9 @@ describe('toUinteger32', function () {
     assert.strictEqual(toUinteger32(Infinity), 0);
   });
 });
+
+describe('isUint32', function () {
+  it('should be an alias for toUinteger32', function () {
+    assert.strictEqual(RA.isUint32, RA.toUinteger32);
+  });
+});
