@@ -75,6 +75,6 @@ describe('toUinteger32', function () {
   it('should support placeholder to specify "gaps"', function () {
     const toUinteger32 = RA.toUinteger32(R.__);
 
-    assert.strictEqual(toUint32(Infinity), 0);
+    assert.strictEqual(toUinteger32(Infinity), 0);
   });
 });
