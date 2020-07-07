@@ -1,6 +1,7 @@
 import * as RA from 'ramda-adjunct';
 
 RA.toUinteger32(1); // $ExpectType number
+RA.toUinteger32(-1); // $ExpectType number
 RA.toUinteger32(Infinity); // $ExpectType number
 RA.toUinteger32(+Infinity); // $ExpectType number
 RA.toUinteger32(-Infinity); // $ExpectType number
