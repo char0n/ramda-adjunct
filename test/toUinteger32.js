@@ -79,7 +79,7 @@ describe('toUinteger32', function () {
   });
 });
 
-describe('isUint32', function () {
+describe('toUint32', function () {
   it('should be an alias for toUinteger32', function () {
     assert.strictEqual(RA.toUint32, RA.toUinteger32);
   });
