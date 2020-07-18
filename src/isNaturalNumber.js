@@ -4,7 +4,7 @@ import isInteger from './isInteger';
 import isNegative from './isNegative';
 
 /**
- * Checks if value is a isNaturalNumber.
+ * Checks if value is a natural number.
  * Natural numbers correspond to all non-negative integers and 0.
  *
  * @func isNaturalNumber
