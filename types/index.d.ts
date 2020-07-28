@@ -1398,6 +1398,12 @@ declare namespace RamdaAdjunct {
          */
         toInteger32(n: number): number;
         toInt32(n: number): number; // alias
+
+        /**
+         * Converts double-precision 64-bit binary format IEEE 754 to unsigned 32 bit integer number.
+         */
+        toUinteger32(val: number): number;
+        toUint32(val: number): number; // alias
     }
 }
 
