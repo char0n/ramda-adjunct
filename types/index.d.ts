@@ -863,6 +863,15 @@ declare namespace RamdaAdjunct {
         allP<T>(iterable: Iterable<T>): Promise<T[]>;
 
         /**
+         * Composable shortcut for `Promise.race`.
+         *
+         * The `raceP` function receives a list (or an iterable) of Promises (or other
+         * non-pending values), and returns a single Promise, which is resolved/rejected with
+         * the first resolved or rejected value from the input.
+         */
+        raceP<T>(iterable: Iterable<T>): Promise<T>;
+
+        /**
          * Returns a Promise that is resolved with an array of reasons when all of the provided Promises reject, or rejected when any Promise is resolved.
          * This pattern is like allP, but fulfillments and rejections are transposed - rejections become the fulfillment values and vice versa.
          */
