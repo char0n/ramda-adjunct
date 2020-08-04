@@ -43,7 +43,7 @@ describe('raceP', function () {
   });
 
   context('given more than one value/promise that settles', function () {
-    specify('should settle with the first one', async function () {
+    specify('should settle with the first one to settle', async function () {
       const promises = [
         new Promise((res) => setTimeout(() => res(1), 10)),
         new Promise((res) => setTimeout(() => res(2), 5)),
