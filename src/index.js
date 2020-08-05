@@ -154,6 +154,7 @@ export { default as notAllUnique } from './notAllUnique';
 export { default as sortByProps } from './sortByProps';
 export { default as skipTake } from './skipTake';
 // Object
+export { default as invoke } from './invoke';
 export { default as invokeArgs } from './invokeArgs';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
