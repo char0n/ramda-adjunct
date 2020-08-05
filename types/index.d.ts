@@ -1130,6 +1130,12 @@ declare namespace RamdaAdjunct {
         nor(a: any): (b: any) => Boolean;
 
         /**
+         * Returns true if both arguments are falsy or truthy; false otherwise.
+         */
+        xnor(a: any, b: any): Boolean;
+        xnor(a: any): (b: any) => Boolean;
+
+        /**
          * Takes a list of predicates and returns a predicate that returns true for a given list of
          * arguments if one or more of the provided predicates is not satisfied by those arguments.
          * It is the complement of Ramda's allPass.
