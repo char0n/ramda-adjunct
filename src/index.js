@@ -198,6 +198,7 @@ export { default as argsPass } from './argsPass';
 export { default as dropArgs } from './dropArgs';
 // Math
 export { default as round } from './round';
+export { default as roundTo } from './roundTo';
 export { default as ceil } from './ceil';
 export { default as divideNum } from './divideNum';
 export { default as floor } from './floor';
