@@ -336,7 +336,7 @@ declare namespace RamdaAdjunct {
         isBigInt(val: any): boolean;
 
         /**
-         * Checks if value is a sentinel value (i.e. -1, indicates failure).
+         * Checks if value is a sentinel value (i.e. -1 or '-1', indicates failure).
          */
         isSentinelValue(val: any): boolean;
 
