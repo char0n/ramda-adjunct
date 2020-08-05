@@ -1234,6 +1234,12 @@ declare namespace RamdaAdjunct {
         round(val: number): number;
 
         /**
+         * Returns the value of a number rounded to the nearest integer.
+         */
+        roundTo(base: number, value: number): number;
+        roundTo(base: number): (value: number) => number;
+
+        /**
          * Subtracts its first argument from its second argument.
          */
         subtractNum(subtrahend: number, minuend: number): number;
