@@ -336,6 +336,11 @@ declare namespace RamdaAdjunct {
         isBigInt(val: any): boolean;
 
         /**
+         * Checks if value is a sentinel value (i.e. -1, indicates failure).
+         */
+        isSentinelValue(val: any): boolean;
+
+        /**
          * Checks whether the passed value is a `float`.
          */
         isFloat(val: any): val is number;
