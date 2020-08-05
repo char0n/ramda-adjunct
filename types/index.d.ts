@@ -1394,6 +1394,12 @@ declare namespace RamdaAdjunct {
         invokeArgs(pathToMethod: string[]): (args: Array<string | number>, obj: object) => any;
 
         /**
+         * Invokes the method at path of object with no arguments.
+         */
+        invoke(pathToMethod: string[], obj: object): any;
+        invoke(pathToMethod: string[]): (obj: object) => any;
+
+        /**
          * Converts double-precision 64-bit binary format IEEE 754 to signed 32 bit integer number.
          */
         toInteger32(n: number): number;
