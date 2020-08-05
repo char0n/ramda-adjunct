@@ -223,3 +223,4 @@ export { default as padEnd } from './padEnd';
 export { default as padStart } from './padStart';
 // Types
 export { default as Identity } from './fantasy-land/Identity';
+export { default as isSentinelValue } from './isSentinelValue';
