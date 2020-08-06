@@ -550,6 +550,14 @@ declare namespace RamdaAdjunct {
 
         /**
          * Creates a new object with the own properties of the provided object, but the
+         * keys copied according to the keysMap object as `{oldKey: newKey}`.
+         * When some key is not found in the keysMap, then it's passed as-is.
+         */
+        copyKeys(keysMap: Dictionary<string>, obj: object): object;
+        copyKeys(keysMap: Dictionary<string>): (obj: object) => object;
+
+        /**
+         * Creates a new object with the own properties of the provided object, but the
          * keys renamed according to logic of renaming function.
          */
         renameKeysWith(renameFn: (key: string) => string, obj: object): object;
