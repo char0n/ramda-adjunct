@@ -35,6 +35,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test
+      - run: npm run test:web
       - run: npm run test:ramda
       - run: npm run test:types
 
@@ -48,6 +49,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test
+      - run: npm run test:web
       - run: npm run test:ramda
       - run: npm run test:types
 
@@ -61,6 +63,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test
+      - run: npm run test:web
       - run: npm run test:ramda
       - run: npm run test:types
 

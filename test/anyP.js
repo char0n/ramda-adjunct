@@ -2,7 +2,10 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import { anyPPonyfill, AggregatedError } from '../src/anyP';
+import {
+  anyPPonyfill,
+  AggregatedError as AggregateErrorPonyfill,
+} from '../src/anyP';
 
 describe('anyP', function () {
   context('given list of fulfilled promises', function () {
@@ -32,7 +35,6 @@ describe('anyP', function () {
           throw new Error('resolving should fail');
         } catch (e) {
           assert.notStrictEqual(e.message, 'resolving should fail');
-          assert.instanceOf(e, AggregatedError);
           assert.deepEqual(e.errors, expected);
         }
       }
@@ -124,7 +126,7 @@ describe('anyP', function () {
             throw new Error('resolving should fail');
           } catch (e) {
             assert.notStrictEqual(e.message, 'resolving should fail');
-            assert.instanceOf(e, AggregatedError);
+            assert.instanceOf(e, AggregateErrorPonyfill);
             assert.deepEqual(e.errors, expected);
           }
         }
