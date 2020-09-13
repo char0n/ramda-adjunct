@@ -14,7 +14,7 @@
     "cookbook",
     "functional"
   ],
-  "version": "2.28.0",
+  "version": "2.29.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
   "license": "BSD-3-Clause",
   "repository": {
@@ -131,7 +131,7 @@
       }
     },
     "build:umd": "webpack --config webpack.config.js --progress",
-    "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run test:web && npm run build && npm run docs",
+    "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run build && npm run docs",
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
   "readme": "README.md",
