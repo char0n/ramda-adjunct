@@ -1,7 +1,8 @@
 # API Documentation
 
  [LATEST](https://char0n.github.io/ramda-adjunct),
- [2.26.0](https://char0n.github.io/ramda-adjunct/2.25.0),
+ [2.27.0](https://char0n.github.io/ramda-adjunct/2.27.0),
+ [2.26.0](https://char0n.github.io/ramda-adjunct/2.26.0),
  [2.25.0](https://char0n.github.io/ramda-adjunct/2.25.0),
  [2.24.0](https://char0n.github.io/ramda-adjunct/2.24.0),
  [2.23.0](https://char0n.github.io/ramda-adjunct/2.23.0),

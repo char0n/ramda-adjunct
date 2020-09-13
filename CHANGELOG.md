@@ -1,3 +1,14 @@
+# [2.28.0](https://github.com/char0n/ramda-adjunct/compare/v2.27.0...v2.28.0) (2020-09-13)
+
+
+### Features
+
+* add support for ramda@0.27.1 ([5699402](https://github.com/char0n/ramda-adjunct/commit/56994024c1a4b20c9bbed207c6d39b12b50a3fcc)), closes [#1577](https://github.com/char0n/ramda-adjunct/issues/1577)
+* **Math:** add toInteger32 ([#1463](https://github.com/char0n/ramda-adjunct/issues/1463)) ([1f39b34](https://github.com/char0n/ramda-adjunct/commit/1f39b34972b2eb5cd80ca9440cb6768cf4977980)), closes [#783](https://github.com/char0n/ramda-adjunct/issues/783)
+* **Math:** add toUinteger32 ([cdbdd3c](https://github.com/char0n/ramda-adjunct/commit/cdbdd3c44b549e2d97e0ae122463cb8c8120ea83)), closes [#1278](https://github.com/char0n/ramda-adjunct/issues/1278)
+
+
+
 <a name="2.27.0"></a>
 # [2.27.0](https://github.com/char0n/ramda-adjunct/compare/v2.26.0...v2.27.0) (2020-05-23)
 
