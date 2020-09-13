@@ -41,7 +41,7 @@ describe('toArray', function () {
     });
 
     specify('should convert an iterator into an array', function () {
-      const object = { '0': 'a', length: 1 };
+      const object = { 0: 'a', length: 1 };
       object[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
       const actual = RA.toArray(object);
@@ -109,7 +109,7 @@ describe('toArray', function () {
       });
 
       specify('should convert an iterator into an array', function () {
-        const object = { '0': 'a', length: 1 };
+        const object = { 0: 'a', length: 1 };
         object[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
         const actual = fromPonyfill(object);
