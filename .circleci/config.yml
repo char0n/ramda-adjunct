@@ -38,19 +38,6 @@ jobs:
       - run: npm run test:ramda
       - run: npm run test:types
 
-  test_node_11:
-    docker:
-      - image: circleci/node:11-browsers-legacy
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run test
-      - run: npm run test:ramda
-      - run: npm run test:types
-
   test_node_12:
     docker:
       - image: circleci/node:12-browsers-legacy
@@ -64,19 +51,6 @@ jobs:
       - run: npm run test:ramda
       - run: npm run test:types
 
-  test_node_13:
-    docker:
-      - image: circleci/node:13-browsers-legacy
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run test
-      - run: npm run test:ramda
-      - run: npm run test:types
-  
   test_node_14:
     docker:
       - image: circleci/node:14-browsers-legacy
@@ -138,13 +112,7 @@ workflows:
       - test_node_10:
           requires:
             - build
-      - test_node_11:
-          requires:
-            - build
       - test_node_12:
-          requires:
-            - build
-      - test_node_13:
           requires:
             - build
       - test_node_14:
@@ -153,9 +121,7 @@ workflows:
       - code_coverage:
           requires:
             - test_node_10
-            - test_node_11
             - test_node_12
-            - test_node_13
             - test_node_14
           filters:
             branches:
