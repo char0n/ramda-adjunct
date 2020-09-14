@@ -179,7 +179,7 @@
     "monet": "0.9.1",
     "nyc": "15.1.0",
     "prettier": "=2.1.1",
-    "ramda": "0.27.0",
+    "ramda": "0.27.1",
     "ramda-fantasy": "=0.8.0",
     "rimraf": "3.0.2",
     "sanctuary-show": "2.0.0",
