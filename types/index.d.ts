@@ -262,6 +262,12 @@ declare namespace RamdaAdjunct {
         isNaN(val: any): val is typeof NaN;
 
         /**
+         * Checks if value is a natural number.
+         * Natural numbers correspond to all non-negative integers and 0.
+         */
+        isNaturalNumber(val: any): boolean;
+
+        /**
          * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
          */
         isNotNaN(val: any): boolean;
