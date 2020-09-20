@@ -2,8 +2,8 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
-import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
+import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
+import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
 
 describe('isNaturalNumber', function () {
   context('given natural number', function () {
