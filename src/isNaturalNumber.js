@@ -9,7 +9,7 @@ import isNegative from './isNegative';
  *
  * @func isNaturalNumber
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.28.0|v2.28.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
