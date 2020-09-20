@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isUndefined.js - Documentation</title>
+    <title>isNaturalNumber.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isUndefined.js</h1>
+    <h1 class="page-title">isNaturalNumber.js</h1>
     
 
     
@@ -52,30 +52,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { equals } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { both, complement, curryN } from 'ramda';
 
-import stubUndefined from './stubUndefined';
+import isInteger from './isInteger';
+import isNegative from './isNegative';
 
 /**
- * Checks if input value is `undefined`.
+ * Checks if value is a natural number.
+ * Natural numbers correspond to all non-negative integers and 0.
  *
- * @func isUndefined
+ * @func isNaturalNumber
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.0.1|v0.0.1}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isNotUndefined|isNotUndefined}
  * @example
  *
- * RA.isUndefined(1); //=> false
- * RA.isUndefined(undefined); //=> true
- * RA.isUndefined(null); //=> false
+ * RA.isNaturalNumber(5); // => true
+ * RA.isNaturalNumber(Number.MAX_VALUE); // => true
+ * RA.isNaturalNumber(0); // => true
+ * RA.isNaturalNumber(-1); // => false
+ * RA.isNaturalNumber(0.9); // => false
  */
-const isUndefined = equals(stubUndefined());
 
-export default isUndefined;
+const isNaturalNumber = curryN(1, both(isInteger, complement(isNegative)));
+
+export default isNaturalNumber;
 </code></pre>
         </article>
     </section>
