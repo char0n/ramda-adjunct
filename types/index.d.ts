@@ -1184,10 +1184,11 @@ declare namespace RamdaAdjunct {
         dropArgs(fn: Function): Function;
 
         /**
-         * Creates an array with all falsy values removed.
+         * Creates an array or an object with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
         compact<T>(list: T[]): Array<NonNullable<T>>;
+        compact<T>(record: Dictionary<T>): Dictionary<NonNullable<T>>;
 
         /**
          * Returns a new list containing the contents of the given list, followed by the given
