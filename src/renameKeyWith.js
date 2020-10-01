@@ -1,13 +1,13 @@
-import { curry, isNil, omit, pick } from 'ramda';
+import { curry, equals, when } from 'ramda';
 
 import renameKeysWith from './renameKeysWith';
-import mergeRight from './mergeRight';
 
 /**
  * Creates a new object with the own properties of the provided object, but the
  * key `key` renamed according to logic of renaming function.
  *
- * If the new key name already existed in the object, it will be overwritten.
+ * Keep in mind that in case the new key name already existed on the object,
+ * the behaviour is undefined and the result may vary between various JS engines!
  *
  * @func renameKeyWith
  * @memberOf RA
@@ -24,9 +24,7 @@ import mergeRight from './mergeRight';
  * RA.renameKeyWith(R.concat('a'), 'A', { A: 1 }) //=> { aA: 1 }
  */
 const renameKeyWith = curry((fn, key, obj) =>
-  isNil(obj)
-    ? {}
-    : mergeRight(renameKeysWith(fn, pick(key, obj)), omit(key, obj))
+  renameKeysWith(when(equals(key), fn), obj)
 );
 
 export default renameKeyWith;
