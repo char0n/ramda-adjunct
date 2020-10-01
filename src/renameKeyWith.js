@@ -7,8 +7,7 @@ import mergeRight from './mergeRight';
  * Creates a new object with the own properties of the provided object, but the
  * key `key` renamed according to logic of renaming function.
  *
- * Keep in mind that in the case of keys conflict is behaviour undefined and
- * the result may vary between various JS engines!
+ * If the new key name already existed in the object, it will be overwritten.
  *
  * @func renameKeyWith
  * @memberOf RA
