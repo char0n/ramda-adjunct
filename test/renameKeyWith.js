@@ -22,6 +22,12 @@ describe('renameKeyWith', function () {
     assert.deepEqual(RA.renameKeyWith(concat('a'), 'A', undefined), {});
   });
 
+  it('should return the original object when renaming a non-existant key', function () {
+    assert.deepEqual(RA.renameKeyWith(concat('a'), 'B', { A: 1 }), {
+      A: 1,
+    });
+  });
+
   it('should be curried', function () {
     assert.deepEqual(RA.renameKeyWith(concat('a'))('A')({ A: 1 }), {
       aA: 1,
