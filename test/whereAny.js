@@ -39,16 +39,16 @@ describe('whereAny', function () {
       pred({
         a: 'foo',
         b: null,
-        x: null,
-        y: null,
+        x: 9,
+        y: 21,
       })
     );
     assert.isTrue(
       pred({
         a: null,
-        b: 'bar',
-        x: null,
-        y: null,
+        b: 'baz',
+        x: 9,
+        y: 21,
       })
     );
     assert.isTrue(
@@ -56,14 +56,14 @@ describe('whereAny', function () {
         a: null,
         b: null,
         x: 11,
-        y: null,
+        y: 21,
       })
     );
     assert.isTrue(
       pred({
         a: null,
         b: null,
-        x: null,
+        x: 9,
         y: 19,
       })
     );
@@ -80,9 +80,9 @@ describe('whereAny', function () {
     assert.isFalse(
       pred({
         a: null,
-        b: null,
-        x: null,
-        y: null,
+        b: 'bar',
+        x: 9,
+        y: 21,
       })
     );
   });
