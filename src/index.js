@@ -174,6 +174,7 @@ export { default as spreadProp } from './spreadProp';
 export { default as spreadPath } from './spreadPath';
 export { default as flattenProp } from './flattenProp';
 export { default as flattenPath } from './flattenPath';
+export { default as whereAny } from './whereAny';
 export { default as unzipObjWith } from './unzipObjWith';
 export { default as zipObjWith } from './zipObjWith';
 // Relation
