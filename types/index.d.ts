@@ -562,6 +562,26 @@ declare namespace RamdaAdjunct {
         renameKeysWith(renameFn: (key: string) => string): (obj: object) => object;
 
         /**
+         * Creates a new object with the own properties of the provided object, but the
+         * key `key` renamed according to logic of renaming function.
+         */
+        renameKeyWith(
+            renameFn: (key: string) => string,
+            key: string,
+            obj: object
+        ): object;
+        renameKeyWith(
+            renameFn: (key: string) => string,
+            key: string
+        ): (obj: object) => object;
+        renameKeyWith(
+            renameFn: (key: string) => string
+        ): {
+            (key: string, obj: object): object;
+            (key: string): (obj: object) => object;
+        };
+
+        /**
          * Create a new object with the own properties of the second object merged with
          * the own properties of the first object. If a key exists in both objects,
          * the value from the first object will be used. *
