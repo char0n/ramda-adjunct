@@ -8,17 +8,17 @@ describe('whereAny', function () {
     assert.isDefined(RA.whereAny);
   });
 
+  it('should return false if argument is not an object', function () {
+    const pred = RA.whereAny({});
+
+    assert.isFalse(pred(undefined));
+    assert.isFalse(pred(null));
+    assert.isFalse(pred(42));
+    assert.isFalse(pred(''));
+    assert.isFalse(pred('42'));
+  });
+
   describe('when spec is empty object', function () {
-    it('should return false if argument is not an object', function () {
-      const pred = RA.whereAny({});
-
-      assert.isFalse(pred(undefined));
-      assert.isFalse(pred(null));
-      assert.isFalse(pred(42));
-      assert.isFalse(pred(''));
-      assert.isFalse(pred('42'));
-    });
-
     it('should return true if argument is an object', function () {
       const pred = RA.whereAny({});
 
