@@ -542,8 +542,8 @@ declare namespace RamdaAdjunct {
             (either: Catamorphism<V1 | V2>,
             ) => T1 | T2;
         cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1): {
-            (rightFn: (rightValue: V2) => T1, either: Catamorphism<V1 | V2>): T1 | T2;
-            (rightFn: (rightValue: V2) => T1): (either: Catamorphism<V1 | V2>) => T1 | T2
+            (rightFn: (rightValue: V2) => T2, either: Catamorphism<V1 | V2>): T1 | T2;
+            (rightFn: (rightValue: V2) => T2): (either: Catamorphism<V1 | V2>) => T1 | T2
         };
 
         /**
@@ -1187,8 +1187,8 @@ declare namespace RamdaAdjunct {
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
-        compact<T>(list: T[]): Array<NonNullable<T>>;
-        compact<T>(record: Dictionary<T>): Dictionary<NonNullable<T>>;
+        compact<T>(list: T[]): Array<Exclude<NonNullable<T>, false | '' | 0>>;
+        compact<T>(record: Dictionary<T>): Dictionary<Exclude<NonNullable<T>, false | '' | 0>>;
 
         /**
          * Returns a new list containing the contents of the given list, followed by the given
