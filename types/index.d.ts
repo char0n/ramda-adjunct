@@ -542,8 +542,8 @@ declare namespace RamdaAdjunct {
             (either: Catamorphism<V1 | V2>,
             ) => T1 | T2;
         cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1): {
-            (rightFn: (rightValue: V2) => T1, either: Catamorphism<V1 | V2>): T1 | T2;
-            (rightFn: (rightValue: V2) => T1): (either: Catamorphism<V1 | V2>) => T1 | T2
+            (rightFn: (rightValue: V2) => T2, either: Catamorphism<V1 | V2>): T1 | T2;
+            (rightFn: (rightValue: V2) => T2): (either: Catamorphism<V1 | V2>) => T1 | T2
         };
 
         /**

@@ -15,3 +15,4 @@ RA.compact([new TestObject(), false, 0, null, NaN, undefined, '']); // $ExpectTy
 RA.compact(new TestObject()); // $ExpectError
 RA.compact('string'); // $ExpectError
 RA.compact(1); // $ExpectError
+RA.compact({}); // $ExpectError

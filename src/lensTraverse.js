@@ -8,7 +8,7 @@ import Identity from './fantasy-land/Identity';
  *
  * When executed, it maps an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning
  * function over a [Traversable](https://github.com/fantasyland/fantasy-land#traversable),
- * then uses [`sequence`](#sequence) to transform the resulting Traversable of Applicative
+ * then uses [`sequence`](https://ramdajs.com/docs/#sequence) to transform the resulting Traversable of Applicative
  * into an Applicative of Traversable.
  *
  * Dispatches to the `traverse` method of the third argument, if present.
