@@ -1187,7 +1187,7 @@ declare namespace RamdaAdjunct {
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
-        compact<T>(list: T[]): Array<NonNullable<T>>;
+        compact<T>(list: T[]): Array<Exclude<NonNullable<T>, false | '' | 0>>;
 
         /**
          * Returns a new list containing the contents of the given list, followed by the given
