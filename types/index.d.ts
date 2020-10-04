@@ -921,6 +921,14 @@ declare namespace RamdaAdjunct {
         };
 
         /**
+         * Composable shortcut for `Promise.catch`.
+         * The catchP function returns a Promise. It takes two arguments: a callback function for the rejections of the Promise
+         * and the promise instance itself.
+         */
+        catchP<A, B = unknown>(onRejected: (error: any) => B | Promise<B>, promise: Promise<A>): Promise<A | B>;
+        catchP<A, B = unknown>(onRejected: (error: any) => B | Promise<B>): (promise: Promise<A>) => Promise<A | B>;
+
+        /**
          * Composable shortcut for `Promise.then`.
          * The thenP function returns a Promise. It takes two arguments: a callback function for the success of the Promise
          * and the promise instance itself.
