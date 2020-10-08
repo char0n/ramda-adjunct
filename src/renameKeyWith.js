@@ -13,7 +13,7 @@ import renameKeysWith from './renameKeysWith';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
  * @category Object
- * @sig (k -> k) -> k -> {k: v} -> {k: v
+ * @sig (k -> k) -> k -> {k: v} -> {k: v}
  * @param {Function} fn Function that renames the keys
  * @param {!string} key Key to rename
  * @param {!Object} obj Provided object
