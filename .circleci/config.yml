@@ -61,9 +61,6 @@ jobs:
   code_coverage:
     docker:
       - image: circleci/node:14
-    filters:
-      branches:
-        only: master
     steps:
       - checkout
       - run: npm install
@@ -84,9 +81,6 @@ jobs:
     environment:
       GH_NAME: char0n
       GH_EMAIL: vladimir.gorej@gmail.com
-    filters:
-      branches:
-        only: master
     steps:
       - checkout
       - run: npm install
