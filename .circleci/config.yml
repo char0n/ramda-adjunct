@@ -1,4 +1,6 @@
-version: 2
+version: '2.1'
+orbs:
+  snyk: snyk/snyk@0.0.12
 
 jobs:
   build:
@@ -18,6 +20,7 @@ jobs:
           no_output_timeout: '45m'
           name: 'Check FOSSA Build/Scan'
       - run: npm run build
+      - snyk/scan
       - store_artifacts:
           path: ./dist
       - store_artifacts:
