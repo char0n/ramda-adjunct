@@ -1,4 +1,4 @@
-version: '2.1'
+version: 2.1
 orbs:
   snyk: snyk/snyk@0.0.12
 
@@ -6,9 +6,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:14
-    filters:
-      branches:
-        ignore: gh-pages
     steps:
       - checkout
       - run: npm install
@@ -20,20 +17,17 @@ jobs:
           no_output_timeout: '45m'
           name: 'Check FOSSA Build/Scan'
       - run: npm run build
-      - snyk/scan
       - store_artifacts:
           path: ./dist
       - store_artifacts:
           path: ./lib
       - store_artifacts:
           path: ./es
+      - snyk/scan
 
   test_node_10:
     docker:
       - image: circleci/node:10-browsers-legacy
-    filters:
-      branches:
-        ignore: gh-pages
     steps:
       - checkout
       - run: npm install
@@ -45,9 +39,6 @@ jobs:
   test_node_12:
     docker:
       - image: circleci/node:12-browsers-legacy
-    filters:
-      branches:
-        ignore: gh-pages
     steps:
       - checkout
       - run: npm install
@@ -59,9 +50,6 @@ jobs:
   test_node_14:
     docker:
       - image: circleci/node:14-browsers-legacy
-    filters:
-      branches:
-        ignore: gh-pages
     steps:
       - checkout
       - run: npm install
@@ -114,7 +102,10 @@ workflows:
   version: 2
   build_test_docs:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              ignore: gh-pages
       - test_node_10:
           requires:
             - build
