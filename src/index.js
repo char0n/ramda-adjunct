@@ -86,6 +86,7 @@ export { default as isSymbol } from './isSymbol';
 export { default as isSafeInteger } from './isSafeInteger';
 export { default as isIndexed } from './isIndexed';
 export { default as toNumber } from './toNumber';
+export { default as isNaturalNumber } from './isNaturalNumber';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
@@ -159,6 +160,7 @@ export { default as invokeArgs } from './invokeArgs';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
+export { default as renameKeyWith } from './renameKeyWith';
 export { default as mergeRight } from './mergeRight';
 export { default as mergeLeft } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
