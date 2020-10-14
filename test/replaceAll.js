@@ -36,10 +36,11 @@ describe('replaceAll', function () {
     assert.strictEqual(actual, expected);
   });
 
-  context('given searchValue is a non-global RegExp', function () {
-    specify('should throw Error', function () {
-      assert.throws(() => RA.replaceAll(/a/, 'c', 'abc'), TypeError);
-    });
+  it('should properly process special characters', function () {
+    const expected = 'foo$$$bar';
+    const actual = RA.replaceAll('.', '$$$$$', 'foo.bar');
+
+    assert.strictEqual(actual, expected);
   });
 
   it('should be curried', function () {
@@ -119,12 +120,6 @@ describe('replaceAll', function () {
   });
 
   context('replaceAllPonyfill', function () {
-    context('given searchValue is a non-global RegExp', function () {
-      specify('should throw Error', function () {
-        assert.throws(() => replaceAllPonyfill(/a/, 'c', 'abc'), TypeError);
-      });
-    });
-
     specify('should support global RegExp searchValue', function () {
       const value = 'xxx';
       const actual = replaceAllPonyfill(/x/g, 'v', value);

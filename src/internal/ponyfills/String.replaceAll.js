@@ -1,3 +1,8 @@
+import { replace } from 'ramda';
+
+import isRegExp from '../../isRegExp';
+import escapeRegExp from '../../escapeRegExp';
+
 const checkArguments = (searchValue, replaceValue, str) => {
   if (str == null || searchValue == null || replaceValue == null) {
     throw TypeError('Input values must not be `null` or `undefined`');
@@ -23,19 +28,12 @@ const checkSearchValue = (searchValue) => {
 };
 
 const returnResult = (searchValue, replaceValue, str) => {
-  // searchValue is an empty string
-  if (searchValue === '') return str.replace(/(?:)/g, replaceValue);
+  const re = new RegExp(
+    isRegExp(searchValue) ? searchValue : escapeRegExp(searchValue),
+    'g'
+  );
 
-  // searchValue is a global regexp
-  if (searchValue instanceof RegExp) {
-    if (searchValue.flags.indexOf('g') === -1) {
-      throw TypeError('`.replaceAll` does not allow non-global regexes');
-    }
-    return str.replace(searchValue, replaceValue);
-  }
-
-  // common case
-  return str.split(searchValue).join(replaceValue);
+  return replace(re, replaceValue, str);
 };
 
 const replaceAll = (searchValue, replaceValue, str) => {
