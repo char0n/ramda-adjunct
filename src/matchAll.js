@@ -17,15 +17,15 @@ export const matchAllInvoker = curryN(2, (reg, str) => [...str.matchAll(reg)]);
  * @sig String -> String -> String
  * @param {string} searchValue The substring or a global RegExp to match
  * @param {string} str The String to do the search
- * @return {string[]} Array with found substrings + 3 props: index, groups, input
+ * @return {string[][]} Arrays of found substrings + index, groups, input
  * @throws {TypeError} When invalid arguments provided
  * @see {@link https://github.com/tc39/proposal-string-matchall|TC39 proposal}
  * @example
  *
  * RA.matchAll('ac', 'ac ab ac ab');
- * //=> [['ac'], ['ac'], ['ac']] (Arrays with "index", "input", "groups" props
+ * //=> [['ac'], ['ac'], ['ac']] (Arrays with "index", "input", "groups" props)
  * RA.matchAll(/x/g, 'xxx');
- * //=> [['x'], ['x'], ['x']] (Arrays with "index", "input", "groups" props
+ * //=> [['x'], ['x'], ['x']] (Arrays with "index", "input", "groups" props)
  */
 
 const matchAll = isFunction(String.prototype.matchAll)

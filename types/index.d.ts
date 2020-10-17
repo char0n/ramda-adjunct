@@ -1309,6 +1309,12 @@ declare namespace RamdaAdjunct {
         };
 
         /**
+         * find several substring in a string, based on a pattern
+         */
+        matchAll(searchValue: string | RegExp, str: string): string[][];
+        matchAll(searchValue: string | RegExp): (str: string) => string[][];
+
+        /**
          * Escapes the RegExp special characters.
          */
         escapeRegExp(val: string): string;
