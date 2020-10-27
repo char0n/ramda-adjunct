@@ -15,6 +15,7 @@ on:
       - unlabeled
       - unlocked
 
+
 jobs:
   merge-me:
     name: Merge me!
