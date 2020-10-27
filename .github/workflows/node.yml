@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Lint code
-        run: npm lint
+        run: npm run lint
       - name: Build
         run: npm run build
       - name: Upload build artifacts
