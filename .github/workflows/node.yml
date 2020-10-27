@@ -62,17 +62,24 @@ jobs:
     name: License Compliance
     runs-on: ubuntu-latest
     needs: [build]
-    strategy:
-      matrix:
-        node-version: [ 14.x ]
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
       - name: Run FOSSA scan and upload build data
         uses: fossa-contrib/fossa-action@v1
         with:
           fossa-api-key: ${{ secrets.FOSSA_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  merge-me:
+    name: Merge me!
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    needs: [ build, test, fossa ]
+    steps:
+      - name: Merge me!
+        uses: ridedott/merge-me-action@master
+        with:
+          GITHUB_LOGIN: dependabot[bot]
+          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
+          MERGE_METHOD: SQUASH
+          PRESET: DEPENDABOT_MINOR
