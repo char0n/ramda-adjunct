@@ -29,6 +29,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SWAGGER_BOT_GITHUB_TOKEN }}
       - name: Merge me!
+        if: steps.waitforstatuschecks.outputs.status == 'success'
         uses: ridedott/merge-me-action@master
         with:
           GITHUB_LOGIN: dependabot[bot]
