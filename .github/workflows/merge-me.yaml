@@ -24,7 +24,7 @@ jobs:
         id: waitforstatuschecks
         uses: WyriHaximus/github-action-wait-for-status@v1
         with:
-          ignoreActions: merge-me
+          ignoreActions: Merge me!
           checkInterval: 13
         env:
           GITHUB_TOKEN: ${{ secrets.SWAGGER_BOT_GITHUB_TOKEN }}
