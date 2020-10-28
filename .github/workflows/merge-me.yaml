@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: 'Wait for status checks'
         id: waitforstatuschecks
-        uses: WyriHaximus/github-action-wait-for-status@v2
+        uses: WyriHaximus/github-action-wait-for-status@v1
         with:
           ignoreActions: merge-me
           checkInterval: 13
