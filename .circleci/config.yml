@@ -1,0 +1,141 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run lint
+      - run:
+          command: |
+            ./node_modules/.bin/license-cli auth ccf8289006445461c967cb7874f84a8a
+#            ./node_modules/.bin/license-cli scan -r $CIRCLE_SHA1
+          no_output_timeout: '45m'
+          name: 'Check FOSSA Build/Scan'
+      - run: npm run build
+      - store_artifacts:
+          path: ./dist
+      - store_artifacts:
+          path: ./lib
+      - store_artifacts:
+          path: ./es
+
+  test_node_10:
+    docker:
+      - image: circleci/node:10-browsers-legacy
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:web
+      - run: npm run test:ramda
+      - run: npm run test:types
+
+  test_node_12:
+    docker:
+      - image: circleci/node:12-browsers-legacy
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:web
+      - run: npm run test:ramda
+      - run: npm run test:types
+
+  test_node_14:
+    docker:
+      - image: circleci/node:14-browsers-legacy
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:web
+      - run: npm run test:ramda
+      - run: npm run test:types
+
+  code_coverage:
+    docker:
+      - image: circleci/node:14
+    filters:
+      branches:
+        only: master
+    steps:
+      - checkout
+      - run: npm install
+      - run:
+          name: Code coverage
+          command: npm run coverage
+          environment:
+            MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+      - run: ./node_modules/.bin/codecov
+      - store_artifacts:
+          path: ./coverage
+      - store_artifacts:
+          path: ./test-results.xml
+
+  docs:
+    docker:
+      - image: circleci/node:14
+    environment:
+      GH_NAME: char0n
+      GH_EMAIL: vladimir.gorej@gmail.com
+    filters:
+      branches:
+        only: master
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build:umd
+      - run: npm run docs
+      - run: chmod -R +x ./scripts
+      - run: ./scripts/deploy-ghpages.sh docs/ramda-adjunct
+      - store_artifacts:
+          path: ./docs
+
+
+workflows:
+  version: 2
+  build_test_docs:
+    jobs:
+      - build
+      - test_node_10:
+          requires:
+            - build
+      - test_node_12:
+          requires:
+            - build
+      - test_node_14:
+          requires:
+            - build
+      - code_coverage:
+          requires:
+            - test_node_10
+            - test_node_12
+            - test_node_14
+          filters:
+            branches:
+              only: master
+      - docs:
+          requires:
+            - code_coverage
+          filters:
+            branches:
+              only: master
+
+notify:
+  webhooks:
+   - url: https://webhooks.gitter.im/e/4ab4df02852bdd010b3c
