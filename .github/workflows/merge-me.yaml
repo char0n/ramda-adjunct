@@ -27,12 +27,12 @@ jobs:
           ignoreActions: Merge me!
           checkInterval: 13
         env:
-          GITHUB_TOKEN: ${{ secrets.SWAGGER_BOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
       - name: Merge me!
         if: steps.waitforstatuschecks.outputs.status == 'success'
         uses: ridedott/merge-me-action@master
         with:
           GITHUB_LOGIN: dependabot[bot]
-          GITHUB_TOKEN: ${{ secrets.SWAGGER_BOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
           MERGE_METHOD: SQUASH
           PRESET: DEPENDABOT_MINOR
