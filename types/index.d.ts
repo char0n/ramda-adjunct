@@ -14,6 +14,10 @@ declare namespace RamdaAdjunct {
         reduce<Acc>(fn: (acc: Acc, val: T) => Acc, initAcc: Acc): Acc;
     }
 
+    interface Filterable<T> {
+        filter(fn: (t: T) => Boolean): Filterable<T>;
+    }
+
     interface Semigroup {
         // https://www.typescriptlang.org/docs/handbook/advanced-types.html#polymorphic-this-types
         concat(other: this): this;
@@ -704,6 +708,28 @@ declare namespace RamdaAdjunct {
             (acc: TResult): (list: R) => TResult;
             (acc: TResult, list: R): TResult
         };
+
+        /**
+         * {@link http://ramdajs.com/docs/#filter|R.filter} function that more closely resembles `Array.prototype.filter`.
+         * It takes two new parameters to its callback function: the current index, and the entire list.
+         *
+         * `filterIndexed` implementation is simple: `
+         *  const filterIndexed = R.addIndex(R.filter);
+         * `
+         */
+        filterIndexed<T>(iterator: (elem: T, idx: number, list: T[]) => Boolean, list: ReadonlyArray<T>): T[];
+        filterIndexed<T>(iterator: (elem: T, idx: number, list: T[]) => Boolean): (list: ReadonlyArray<T>) => T[];
+        filterIndexed<T>(
+            iterator: (elem: T, idx: number, list: Dictionary<T>) => Boolean,
+            list: Dictionary<T>,
+        ): Dictionary<T>;
+        filterIndexed<T>(
+            iterator: (elem: T, idx: number, list: Dictionary<T>) => Boolean,
+        ): (list: Dictionary<T>) => Dictionary<T>;
+        filterIndexed<T>(iterator: (elem: T, idx: number, list: Filterable<T>) => Boolean, list: Filterable<T>): Filterable<T>;
+        filterIndexed<T>(iterator: (elem: T, idx: number, list: Filterable<T>) => Boolean): (list: Filterable<T>) => Filterable<Boolean>;
+        filterIndexed(iterator: (char: string, idx: number, str: string) => Boolean, str: string): string[];
+        filterIndexed(iterator: (char: string, idx: number, str: string) => Boolean): (str: string) => string[];
 
         /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
