@@ -95,7 +95,8 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is complement of `null` or `undefined`.
          */
-        isNotNil(val: any): boolean;
+        /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type here */
+        isNotNil<T>(val: T | null | undefined): val is T;
 
         /**
          * Checks if input value is complement of `null`.
