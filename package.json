@@ -140,7 +140,7 @@
   },
   "devDependencies": {
     "@babel/cli": "7.12.7",
-    "@babel/core": "7.12.3",
+    "@babel/core": "7.12.7",
     "@babel/plugin-transform-modules-commonjs": "7.12.1",
     "@babel/polyfill": "7.12.1",
     "@babel/preset-env": "7.12.7",
