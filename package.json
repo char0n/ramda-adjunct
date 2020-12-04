@@ -161,7 +161,7 @@
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-mocha": "8.0.0",
-    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-prettier": "3.2.0",
     "eslint-plugin-ramda": "2.5.1",
     "fantasy-land": "4.1.0",
     "fantasy-laws": "=1.2.0",
