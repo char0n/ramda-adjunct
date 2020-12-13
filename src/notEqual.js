@@ -15,6 +15,7 @@ import { complement, equals, curryN } from 'ramda';
  * @param {*} a
  * @param {*} b
  * @return {Boolean} 
+ * @see {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
  * RA.notEqual(1, 1); //=> false
