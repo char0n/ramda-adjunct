@@ -7,12 +7,14 @@ import { complement, equals, curryN } from 'ramda';
  * Dispatches symmetrically to the `equals` methods of both arguments, if
  * present.
  *
- * @func
+ * @func notEqual
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
  * @category Relation
  * @sig a -> b -> Boolean
  * @param {*} a
  * @param {*} b
- * @return {Boolean}
+ * @return {Boolean} 
  * @example
  *
  * RA.notEqual(1, 1); //=> false
@@ -23,6 +25,6 @@ import { complement, equals, curryN } from 'ramda';
  * const b = {}; b.v = b;
  * RA.notEqual(a, b); //=> false
  */
-const notEqual = curryN(2, complement(equals));
+const notEqual = complement(equals);
 
 export default notEqual;
