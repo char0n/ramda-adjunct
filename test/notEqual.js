@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import * as R from 'ramda';
 
 import * as RA from '../src';
 
