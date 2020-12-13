@@ -2,9 +2,9 @@ import { both, converge, equals, identity } from 'ramda';
 
 import isFinite from '../../isFinite';
 
-const isIntegerPolyfill = both(
+const isIntegerPonyfill = both(
   isFinite,
   converge(equals, [Math.floor, identity])
 );
 
-export default isIntegerPolyfill;
+export default isIntegerPonyfill;

@@ -3,6 +3,6 @@ import { both } from 'ramda';
 import isNumber from '../../isNumber';
 
 // eslint-disable-next-line no-restricted-globals
-const isNaNPolyfill = both(isNumber, isNaN);
+const isNaNPonyfill = both(isNumber, isNaN);
 
-export default isNaNPolyfill;
+export default isNaNPonyfill;

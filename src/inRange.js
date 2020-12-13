@@ -18,9 +18,9 @@ const inRangeImp = ifElse(
  * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|v2.7.0}
  * @category Relation
  * @sig Number -> Number -> Number -> Boolean
- * @param {Number} low Start of the range
- * @param {Number} high The end of the range
- * @param {Number} value The value to test
+ * @param {number} low Start of the range
+ * @param {number} high The end of the range
+ * @param {number} value The value to test
  * @return {boolean}
  * @throws {Error} When `low` is greater than or equal to `high`
  * @example

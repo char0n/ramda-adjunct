@@ -66,7 +66,6 @@ class Identity {
   /**
    * Private constructor. Use {@link RA.Identity.of|Identity.of} instead.
    *
-   * @private
    * @param {*} value
    * @return {RA.Identity}
    */

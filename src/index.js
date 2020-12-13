@@ -85,6 +85,7 @@ export { default as isSparseArray } from './isSparseArray';
 export { default as isSymbol } from './isSymbol';
 export { default as isSafeInteger } from './isSafeInteger';
 export { default as isIndexed } from './isIndexed';
+export { default as isNaturalNumber } from './isNaturalNumber';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
@@ -158,6 +159,7 @@ export { default as invokeArgs } from './invokeArgs';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
+export { default as renameKeyWith } from './renameKeyWith';
 export { default as mergeRight } from './mergeRight';
 export { default as mergeLeft } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
@@ -205,6 +207,10 @@ export { default as floor } from './floor';
 export { default as trunc } from './trunc';
 export { default as sign } from './sign';
 export { default as subtractNum } from './subtractNum';
+export { default as toInteger32 } from './toInteger32';
+export { default as toInt32 } from './toInteger32'; // alias of toInteger32
+export { default as toUinteger32 } from './toUinteger32';
+export { default as toUint32 } from './toUinteger32'; // alias of to toUinteger32
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';

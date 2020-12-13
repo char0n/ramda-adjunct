@@ -8,6 +8,7 @@ import isSet from './isSet';
  * @func isNotSet
  * @memberOf RA
  * @category Type
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.27.0|v2.27.0}
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}

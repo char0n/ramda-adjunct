@@ -1,9 +1,9 @@
 import { curryN, invoker } from 'ramda';
 
 import isFunction from './isFunction';
-import polyfill from './internal/polyfills/String.replaceAll';
+import ponyfill from './internal/ponyfills/String.replaceAll';
 
-export const replaceAllPolyfill = curryN(3, polyfill);
+export const replaceAllPonyfill = curryN(3, ponyfill);
 
 export const replaceAllInvoker = invoker(2, 'replaceAll');
 
@@ -31,6 +31,6 @@ export const replaceAllInvoker = invoker(2, 'replaceAll');
 
 const replaceAll = isFunction(String.prototype.replaceAll)
   ? replaceAllInvoker
-  : replaceAllPolyfill;
+  : replaceAllPonyfill;
 
 export default replaceAll;
