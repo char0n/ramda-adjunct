@@ -37,9 +37,10 @@ describe('replaceAll', function () {
   });
 
   it('should properly process special characters', function () {
-    const expected = 'foo$$$bar';
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_string_as_a_parameter
     const actual = RA.replaceAll('.', '$$$$$', 'foo.bar');
-
+    const expected = 'foo$$$bar';
+    
     assert.strictEqual(actual, expected);
   });
 
