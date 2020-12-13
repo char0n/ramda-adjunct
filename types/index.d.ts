@@ -1036,6 +1036,16 @@ declare namespace RamdaAdjunct {
         allEqual<T>(list: T[]): boolean;
 
         /**
+         * Returns `true` if its arguments are not equivalent, `false` otherwise. Handles
+         * cyclical data structures.
+         *
+         * Dispatches symmetrically to the `equals` methods of both arguments, if
+         * present.
+         */
+        notEqual(a: any, b: any): boolean;
+        notEqual(a: any): (b: any) => boolean;
+
+        /**
          * Constructs and returns a new string which contains the specified
          * number of copies of the string on which it was called, concatenated together.
          */
