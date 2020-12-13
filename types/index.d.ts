@@ -1012,6 +1012,9 @@ declare namespace RamdaAdjunct {
         /**
          * Returns `true` if its arguments are not equivalent, `false` otherwise. Handles
          * cyclical data structures.
+         *
+         * Dispatches symmetrically to the `equals` methods of both arguments, if
+         * present.
          */
         notEqual(a: any, b: any): boolean;
         notEqual(a: any): (b: any) => boolean;
