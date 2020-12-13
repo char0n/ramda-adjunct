@@ -1,3 +1,20 @@
+# [2.29.0](https://github.com/char0n/ramda-adjunct/compare/v2.28.0...v2.29.0) (2020-12-13)
+
+
+### Bug Fixes
+
+* **compact:** remove other falsy values from type ([#1603](https://github.com/char0n/ramda-adjunct/issues/1603)) ([31651bc](https://github.com/char0n/ramda-adjunct/commit/31651bca82e2e365daf35ea65f084ea8cd3dbb2c)), closes [#1602](https://github.com/char0n/ramda-adjunct/issues/1602)
+* **replaceAll:** add support for special replacement patterns ([#1627](https://github.com/char0n/ramda-adjunct/issues/1627)) ([1f862a1](https://github.com/char0n/ramda-adjunct/commit/1f862a14d924e5f46e7f80f6ae60030fc8cf854c)), closes [#1573](https://github.com/char0n/ramda-adjunct/issues/1573)
+
+
+### Features
+
+* **object:** add renameKeyWith ([#1612](https://github.com/char0n/ramda-adjunct/issues/1612)) ([6aa00ce](https://github.com/char0n/ramda-adjunct/commit/6aa00ce7d093a9f65eba2eec380bea24209774bf)), closes [#1228](https://github.com/char0n/ramda-adjunct/issues/1228)
+* **relation:** add notEqual ([#1459](https://github.com/char0n/ramda-adjunct/issues/1459)) ([4eb9ada](https://github.com/char0n/ramda-adjunct/commit/4eb9adab2d5e271a8fa3ae2859feeeb8af84874a)), closes [#102](https://github.com/char0n/ramda-adjunct/issues/102)
+* **type:** isNaturalNumber ([#1450](https://github.com/char0n/ramda-adjunct/issues/1450)) ([ba6bb12](https://github.com/char0n/ramda-adjunct/commit/ba6bb129476426a880e1d029929fafa924cfbc06)), closes [#1440](https://github.com/char0n/ramda-adjunct/issues/1440)
+
+
+
 # [2.28.0](https://github.com/char0n/ramda-adjunct/compare/v2.27.0...v2.28.0) (2020-09-13)
 
 
@@ -278,7 +295,7 @@
 
 ### Bug Fixes
 
-* **renameKeysWith**: use lenses instead of adjust to support ramda@0.26.0 ([43839f3](https://github.com/char0n/ramda-adjunct/commit/43839f3)) 
+* **renameKeysWith**: use lenses instead of adjust to support ramda@0.26.0 ([43839f3](https://github.com/char0n/ramda-adjunct/commit/43839f3))
 
 ### Features
 
@@ -288,7 +305,7 @@
 * deprecate `mergeRight`; add new alias to `mergeRight` as `mergeLeft`; ramda@0.26.0 contains it as `R.mergeLeft` ([7849c62](https://github.com/char0n/ramda-adjunct/commit/7849c62))
 * deprecate `thenP`; ramda@0.26.0 contains it as `R.then` ([a4c3475](https://github.com/char0n/ramda-adjunct/commit/a4c3475))
 * add alias `then` to `thenP` ([3ebd1ee](https://github.com/char0n/ramda-adjunct/commit/3ebd1ee))
- 
+
 
 <a name="2.11.0"></a>
 # [2.11.0](https://github.com/char0n/ramda-adjunct/compare/v2.10.0...v2.11.0) (2018-10-28)
