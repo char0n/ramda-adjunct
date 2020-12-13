@@ -27,22 +27,18 @@ const checkSearchValue = (searchValue) => {
   }
 };
 
-const returnResult = (searchValue, replaceValue, str) => {
-  const re = new RegExp(
-    isRegExp(searchValue) ? searchValue : escapeRegExp(searchValue),
-    'g'
-  );
-
-  return replace(re, replaceValue, str);
-};
-
 const replaceAll = (searchValue, replaceValue, str) => {
   checkArguments(searchValue, replaceValue, str);
   checkValue(str, 'str');
   checkValue(replaceValue, 'replaceValue');
   checkSearchValue(searchValue);
 
-  return returnResult(searchValue, replaceValue, str);
+  const regexp = new RegExp(
+    isRegExp(searchValue) ? searchValue : escapeRegExp(searchValue),
+    'g'
+  );
+
+  return replace(regexp, replaceValue, str);
 };
 
 export default replaceAll;
