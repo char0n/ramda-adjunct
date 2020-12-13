@@ -40,7 +40,6 @@ describe('replaceAll', function () {
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_string_as_a_parameter
     const actual = RA.replaceAll('.', '$$$$$', 'foo.bar');
     const expected = 'foo$$$bar';
-    
     assert.strictEqual(actual, expected);
   });
 
