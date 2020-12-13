@@ -4,7 +4,7 @@ import * as R from 'ramda';
 import * as RA from '../src';
 
 describe('notEqual', function () {
-  context('when given two non-equivalent values', function () {
+  context('given two non-equivalent values', function () {
     specify('should return true', function () {
       assert.isTrue(RA.notEqual(1, '1'));
       assert.isTrue(RA.notEqual(1, 2));
@@ -21,7 +21,7 @@ describe('notEqual', function () {
     });
   });
 
-  context('when given two equivalent values', function () {
+  context('given two equivalent values', function () {
     specify('should return false', function () {
       assert.isFalse(RA.notEqual(1, 1));
       assert.isFalse(RA.notEqual('1', '1'));
@@ -42,21 +42,7 @@ describe('notEqual', function () {
   });
 
   it('should support currying', function () {
-    const notEqualTo1 = RA.notEqual(1);
-
-    assert.isFalse(notEqualTo1(1));
-    assert.isTrue(notEqualTo1('1'));
-  });
-
-  it('should support placeholder to specify "gaps"', function () {
-    let notEqual = RA.notEqual(R.__, 1);
-
-    assert.isFalse(notEqual(1));
-    assert.isTrue(notEqual('1'));
-
-    notEqual = RA.notEqual(1, R.__);
-
-    assert.isFalse(notEqual(1));
-    assert.isTrue(notEqual('1'));
+    assert.isFalse(RA.notEqual(1, 1));
+    assert.isFalse(RA.notEqual(1)(1));
   });
 });
