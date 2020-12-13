@@ -1,4 +1,4 @@
-import { complement, equals, curryN } from 'ramda';
+import { complement, equals } from 'ramda';
 
 /**
  * Returns `true` if its arguments are not equivalent, `false` otherwise. Handles
@@ -14,7 +14,7 @@ import { complement, equals, curryN } from 'ramda';
  * @sig a -> b -> Boolean
  * @param {*} a
  * @param {*} b
- * @return {Boolean} 
+ * @return {Boolean}
  * @see {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
