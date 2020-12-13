@@ -14,7 +14,7 @@
     "cookbook",
     "functional"
   ],
-  "version": "2.29.0",
+  "version": "2.30.0",
   "homepage": "https://github.com/char0n/ramda-adjunct",
   "license": "BSD-3-Clause",
   "repository": {
