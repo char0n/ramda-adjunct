@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotNil.js - Documentation</title>
+    <title>notEqual.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotNil.js</h1>
+    <h1 class="page-title">notEqual.js</h1>
     
 
     
@@ -52,29 +52,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { isNil, complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { complement, equals } from 'ramda';
 
 /**
- * Checks if input value is complement of `null` or `undefined`.
+ * Returns `true` if its arguments are not equivalent, `false` otherwise. Handles
+ * cyclical data structures.
  *
- * @func isNotNil
+ * Dispatches symmetrically to the `equals` methods of both arguments, if
+ * present.
+ *
+ * @func notEqual
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.3.0|v0.3.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link http://ramdajs.com/docs/#isNil|R.isNil}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
+ * @category Relation
+ * @sig a -> b -> Boolean
+ * @param {*} a
+ * @param {*} b
+ * @return {Boolean}
+ * @see {@link https://ramdajs.com/docs/#equals|equals}
  * @example
  *
- * RA.isNotNil(null); //=> false
- * RA.isNotNil(undefined); //=> false
- * RA.isNotNil(0); //=> true
- * RA.isNotNil([]); //=> true
+ * RA.notEqual(1, 1); //=> false
+ * RA.notEqual(1, '1'); //=> true
+ * RA.notEqual([1, 2, 3], [1, 2, 3]); //=> false
+ *
+ * const a = {}; a.v = a;
+ * const b = {}; b.v = b;
+ * RA.notEqual(a, b); //=> false
  */
-const isNotNil = complement(isNil);
+const notEqual = complement(equals);
 
-export default isNotNil;
+export default notEqual;
 </code></pre>
         </article>
     </section>
