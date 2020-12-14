@@ -160,6 +160,7 @@ export { default as invokeArgs } from './invokeArgs';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
+export { default as renameKeyWith } from './renameKeyWith';
 export { default as mergeRight } from './mergeRight';
 export { default as mergeLeft } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
@@ -187,6 +188,7 @@ export { default as lensIso } from './lensIso';
 export { default as propNotEq } from './propNotEq';
 export { default as pathNotEq } from './pathNotEq';
 export { default as inRange } from './inRange';
+export { default as notEqual } from './notEqual';
 // Logic
 export { default as isNotEmpty } from './isNotEmpty';
 export { default as defaultWhen } from './defaultWhen';

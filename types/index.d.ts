@@ -562,6 +562,26 @@ declare namespace RamdaAdjunct {
         renameKeysWith(renameFn: (key: string) => string): (obj: object) => object;
 
         /**
+         * Creates a new object with the own properties of the provided object, but the
+         * key `key` renamed according to logic of renaming function.
+         */
+        renameKeyWith(
+            renameFn: (key: string) => string,
+            key: string,
+            obj: object
+        ): object;
+        renameKeyWith(
+            renameFn: (key: string) => string,
+            key: string
+        ): (obj: object) => object;
+        renameKeyWith(
+            renameFn: (key: string) => string
+        ): {
+            (key: string, obj: object): object;
+            (key: string): (obj: object) => object;
+        };
+
+        /**
          * Create a new object with the own properties of the second object merged with
          * the own properties of the first object. If a key exists in both objects,
          * the value from the first object will be used. *
@@ -1022,6 +1042,16 @@ declare namespace RamdaAdjunct {
          *  Returns true if all items in the list are equivalent using `R.equals` for equality comparisons.
          */
         allEqual<T>(list: T[]): boolean;
+
+        /**
+         * Returns `true` if its arguments are not equivalent, `false` otherwise. Handles
+         * cyclical data structures.
+         *
+         * Dispatches symmetrically to the `equals` methods of both arguments, if
+         * present.
+         */
+        notEqual(a: any, b: any): boolean;
+        notEqual(a: any): (b: any) => boolean;
 
         /**
          * Constructs and returns a new string which contains the specified

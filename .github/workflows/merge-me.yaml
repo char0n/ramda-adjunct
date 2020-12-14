@@ -1,0 +1,38 @@
+name: Merge me!
+
+on:
+  check_suite:
+    types:
+      - completed
+  pull_request:
+    types:
+      - edited
+      - labeled
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
+      - unlabeled
+      - unlocked
+jobs:
+  merge-me:
+    name: Merge me!
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Wait for status checks'
+        id: waitforstatuschecks
+        uses: WyriHaximus/github-action-wait-for-status@v1
+        with:
+          ignoreActions: Merge me!
+          checkInterval: 13
+        env:
+          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
+      - name: Merge me!
+        if: steps.waitforstatuschecks.outputs.status == 'success'
+        uses: ridedott/merge-me-action@master
+        with:
+          GITHUB_LOGIN: dependabot[bot]
+          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
+          MERGE_METHOD: SQUASH
+          PRESET: DEPENDABOT_MINOR
