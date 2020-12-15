@@ -1,7 +1,7 @@
 import { type, identical, pipe, curryN } from 'ramda';
 
 /**
- * Checks if value is an `Error` object.
+ * Checks if value is an Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, or URIError object.
  *
  * @func isError
  * @category Type
