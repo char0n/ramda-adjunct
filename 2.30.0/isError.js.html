@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotAsyncFunction.js - Documentation</title>
+    <title>isError.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotAsyncFunction.js</h1>
+    <h1 class="page-title">isError.js</h1>
     
 
     
@@ -52,33 +52,27 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { type, identical, pipe, curryN } from 'ramda';
 
-import isAsyncFunction from './isAsyncFunction';
-
-/* eslint-disable max-len */
 /**
- * Checks if input value is complement of `Async Function`
+ * Checks if `value` is an `Error`, `EvalError`, `RangeError`, `ReferenceError`, `SyntaxError`, `TypeError` or `URIError` object.
  *
- * @func isNotAsyncFunction
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
+ * @func isError
  * @category Type
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.30.0|v2.30.0}
  * @sig * -> Boolean
  * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isFunction|isFunction}, {@link RA.isAsyncFunction|isAsyncFunction}, {@link RA.isGeneratorFunction|isGeneratorFunction}
+ * @return {boolean} Returns `true` if value is an error object, `false` otherwise
  * @example
  *
- * RA.isNotAsyncFunction(async function test() { }); //=> false
- * RA.isNotAsyncFunction(null); //=> true
- * RA.isNotAsyncFunction(function test() { }); //=> true
- * RA.isNotAsyncFunction(() => {}); //=> true
+ * RA.isError(new Error()); //=> true
+ * RA.isError(Error); //=> false
+ * RA.isError(1); // => false
  */
-/* eslint-enable max-len */
-const isNotAsyncFunction = complement(isAsyncFunction);
+const isError = curryN(1, pipe(type, identical('Error')));
 
-export default isNotAsyncFunction;
+export default isError;
 </code></pre>
         </article>
     </section>
