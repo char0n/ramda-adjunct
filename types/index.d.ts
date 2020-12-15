@@ -384,7 +384,7 @@ declare namespace RamdaAdjunct {
         isEven(val: any): boolean;
 
         /**
-         * Checks if value is an Error.
+         * Checks if `value` is an `Error`, `EvalError`, `RangeError`, `ReferenceError`, `SyntaxError`, `TypeError` or `URIError` object.
          */
         isError(val: any): val is Error;
 
