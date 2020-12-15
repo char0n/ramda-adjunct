@@ -19,7 +19,7 @@ import ap from './internal/ap';
  * @since {@link https://char0n.github.io/ramda-adjunct/1.2.0|v1.2.0}
  * @category Function
  * @sig Apply a => Number -> (a... -> a) -> (a... -> a)
- * @param {Number} arity The arity of the lifter function
+ * @param {number} arity The arity of the lifter function
  * @param {Function} fn The function to lift into higher context
  * @return {Function} The lifted function
  * @see {@link http://ramdajs.com/docs/#lift|R.lift}, {@link http://ramdajs.com/docs/#ap|R.ap}

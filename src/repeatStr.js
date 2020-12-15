@@ -1,9 +1,9 @@
 import { curry, invoker, flip } from 'ramda';
 
-import polyfill from './internal/polyfills/String.repeat';
+import ponyfill from './internal/ponyfills/String.repeat';
 import isFunction from './isFunction';
 
-export const repeatStrPolyfill = curry(polyfill);
+export const repeatStrPonyfill = curry(ponyfill);
 
 export const repeatStrInvoker = flip(invoker(1, 'repeat'));
 
@@ -25,6 +25,6 @@ export const repeatStrInvoker = flip(invoker(1, 'repeat'));
  */
 const repeatStr = isFunction(String.prototype.repeat)
   ? repeatStrInvoker
-  : repeatStrPolyfill;
+  : repeatStrPonyfill;
 
 export default repeatStr;

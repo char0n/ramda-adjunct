@@ -262,6 +262,12 @@ declare namespace RamdaAdjunct {
         isNaN(val: any): val is typeof NaN;
 
         /**
+         * Checks if value is a natural number.
+         * Natural numbers correspond to all non-negative integers and 0.
+         */
+        isNaturalNumber(val: any): boolean;
+
+        /**
          * Checks whether the passed value is complement of `NaN` and its type is not `Number`.
          */
         isNotNaN(val: any): boolean;
@@ -541,8 +547,8 @@ declare namespace RamdaAdjunct {
             (either: Catamorphism<V1 | V2>,
             ) => T1 | T2;
         cata<V1, V2, T1, T2>(leftFn: (leftValue: V1) => T1): {
-            (rightFn: (rightValue: V2) => T1, either: Catamorphism<V1 | V2>): T1 | T2;
-            (rightFn: (rightValue: V2) => T1): (either: Catamorphism<V1 | V2>) => T1 | T2
+            (rightFn: (rightValue: V2) => T2, either: Catamorphism<V1 | V2>): T1 | T2;
+            (rightFn: (rightValue: V2) => T2): (either: Catamorphism<V1 | V2>) => T1 | T2
         };
 
         /**
@@ -559,6 +565,26 @@ declare namespace RamdaAdjunct {
          */
         renameKeysWith(renameFn: (key: string) => string, obj: object): object;
         renameKeysWith(renameFn: (key: string) => string): (obj: object) => object;
+
+        /**
+         * Creates a new object with the own properties of the provided object, but the
+         * key `key` renamed according to logic of renaming function.
+         */
+        renameKeyWith(
+            renameFn: (key: string) => string,
+            key: string,
+            obj: object
+        ): object;
+        renameKeyWith(
+            renameFn: (key: string) => string,
+            key: string
+        ): (obj: object) => object;
+        renameKeyWith(
+            renameFn: (key: string) => string
+        ): {
+            (key: string, obj: object): object;
+            (key: string): (obj: object) => object;
+        };
 
         /**
          * Create a new object with the own properties of the second object merged with
@@ -1015,6 +1041,16 @@ declare namespace RamdaAdjunct {
         allEqual<T>(list: T[]): boolean;
 
         /**
+         * Returns `true` if its arguments are not equivalent, `false` otherwise. Handles
+         * cyclical data structures.
+         *
+         * Dispatches symmetrically to the `equals` methods of both arguments, if
+         * present.
+         */
+        notEqual(a: any, b: any): boolean;
+        notEqual(a: any): (b: any) => boolean;
+
+        /**
          * Constructs and returns a new string which contains the specified
          * number of copies of the string on which it was called, concatenated together.
          */
@@ -1186,7 +1222,7 @@ declare namespace RamdaAdjunct {
          * Creates an array with all falsy values removed.
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
-        compact<T>(list: T[]): Array<NonNullable<T>>;
+        compact<T>(list: T[]): Array<Exclude<NonNullable<T>, false | '' | 0>>;
 
         /**
          * Returns a new list containing the contents of the given list, followed by the given
@@ -1397,6 +1433,18 @@ declare namespace RamdaAdjunct {
         invokeArgs(pathToMethod: string[], args: Array<string | number>, obj: object): any;
         invokeArgs(pathToMethod: string[], args: Array<string | number>): (obj: object) => any;
         invokeArgs(pathToMethod: string[]): (args: Array<string | number>, obj: object) => any;
+
+        /**
+         * Converts double-precision 64-bit binary format IEEE 754 to signed 32 bit integer number.
+         */
+        toInteger32(n: number): number;
+        toInt32(n: number): number; // alias
+
+        /**
+         * Converts double-precision 64-bit binary format IEEE 754 to unsigned 32 bit integer number.
+         */
+        toUinteger32(val: number): number;
+        toUint32(val: number): number; // alias
     }
 }
 
