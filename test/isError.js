@@ -15,6 +15,13 @@ describe('isError', function () {
       assert.isTrue(RA.isError(new URIError()));
     });
   });
+  
+  context('given error subclass', function () {
+    specify('should return true', function() {
+      class ErrorSubclass extends Error { }
+      assert.isTrue(RA.isError(new ErrorSubclass()));
+    });
+  });
 
   context('given a non-error value', function () {
     specify('should return false', function () {
