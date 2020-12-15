@@ -5,15 +5,16 @@ import { type, identical, pipe, curryN } from 'ramda';
  *
  * @func isError
  * @category Type
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.30.0|v2.30.0}
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isError|isError}
  * @example
  *
  * RA.isError(new Error()); //=> true
- * RA.isError(true); //=> false
- * RA.isError(1); //=> false
+ * RA.isError(Error); //=> false
+ * RA.isError(1); // => false
  */
 const isError = curryN(1, pipe(type, identical('Error')));
 
