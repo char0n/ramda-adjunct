@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>escapeRegExp.js - Documentation</title>
+    <title>rangeStep.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">escapeRegExp.js</h1>
+    <h1 class="page-title">rangeStep.js</h1>
     
 
     
@@ -52,28 +52,43 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { when, replace } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curryN, map, range, always } from 'ramda';
 
-import isString from './isString';
+import floor from './floor';
 
 /**
- * Escapes the RegExp special characters.
+ * Creates an array of numbers (positive and/or negative) progressing from start up to, but not including, end.
  *
- * @func escapeRegExp
+ * `Note`: JavaScript follows the IEEE-754 standard for resolving floating-point values which can produce unexpected results.
+ *
+ * @func rangeStep
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.21.0|v2.21.0}
- * @category String
- * @sig String -> String
- * @param {string} val the value to escape
- * @return {string}
- * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping|MDN Regular Expressions Escaping}
+ * @category List
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.30.0|v2.30.0}
+ * @sig Number -> Number -> Number -> [Number]
+ * @param {number} step The value to increment or decrement by
+ * @param {number} from The start of the range
+ * @param {number} to The end of the range
+ * @return {number[]} Returns the range of numbers
+ * @see {@link http://ramdajs.com/docs/#range|R.range}
  * @example
  *
- * RA.escapeRegExp('[ramda-adjunct](https://github.com/char0n/ramda-adjunct)'); //=> '\[ramda\-adjunct\]\(https://github\.com/char0n/ramda\-adjunct\)'
+ * RA.rangeStep(1, 0, 4); // => [0, 1 ,2, 3]
+ * RA.rangeStep(-1, 0, -4); // => [0, -1, -2, -3]
+ * RA.rangeStep(1, 1, 5); // => [1, 2, 3, 4]
+ * RA.rangeStep(5, 0, 20); // => [0, 5, 10, 15]
+ * RA.rangeStep(-1, 0, -4); // => [0, -1, -2, -3]
+ * RA.rangeStep(0, 1, 4); // => [1, 1, 1]
+ * RA.rangeStep(1, 0, 0); // => []
  */
-const escapeRegExp = when(isString, replace(/[.*+?^${}()|[\]\\-]/g, '\\$&amp;'));
+const rangeStep = curryN(3, (step, from, to) => {
+  const callback = step === 0 ? always(from) : (n) => from + step * n;
+  const rangeEnd = step === 0 ? to - from : floor((to - from) / step);
 
-export default escapeRegExp;
+  return map(callback, range(0, rangeEnd));
+});
+
+export default rangeStep;
 </code></pre>
         </article>
     </section>
