@@ -1445,6 +1445,18 @@ declare namespace RamdaAdjunct {
          */
         toUinteger32(val: number): number;
         toUint32(val: number): number; // alias
+
+        /**
+         * Creates an array of numbers (positive and/or negative) progressing from start up to, but not including, end.
+         *
+         * `Note`: JavaScript follows the IEEE-754 standard for resolving floating-point values which can produce unexpected results.
+         */
+        rangeStep(step: number, from: number, to: number): number[];
+        rangeStep(step: number, from: number): (to: number) => number[];
+        rangeStep(step: number): {
+            (from: number, to: number): number[];
+            (from: number): (to: number) => number[];
+        };
     }
 }
 
