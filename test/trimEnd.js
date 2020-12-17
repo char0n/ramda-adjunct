@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import { trimEndInvoker, trimEndPolyfill } from '../src/trimEnd';
+import { trimEndInvoker, trimEndPonyfill } from '../src/trimEnd';
 
 describe('trimEnd', function () {
   it('should remove whitespace from the end of a string', function () {
@@ -68,32 +68,32 @@ describe('trimEnd', function () {
     });
   });
 
-  context('trimEndPolyfill', function () {
+  context('trimEndPonyfill', function () {
     specify('should remove whitespace from the end of a string', function () {
-      assert.strictEqual(trimEndPolyfill('abc   '), 'abc');
+      assert.strictEqual(trimEndPonyfill('abc   '), 'abc');
     });
 
     specify(
       'should not remove whitespace from the rest of the string',
       function () {
-        assert.strictEqual(trimEndPolyfill(' a b c'), ' a b c');
+        assert.strictEqual(trimEndPonyfill(' a b c'), ' a b c');
       }
     );
 
     context('given an empty string', function () {
       specify('should return an empty string', function () {
-        assert.strictEqual(trimEndPolyfill(''), '');
+        assert.strictEqual(trimEndPonyfill(''), '');
       });
     });
 
     context('given an string with whitespaces only', function () {
       specify('should return an empty string', function () {
-        assert.strictEqual(trimEndPolyfill('   '), '');
+        assert.strictEqual(trimEndPonyfill('   '), '');
       });
     });
 
     specify('should support placeholder to specify "gaps"', function () {
-      const trimEnd = trimEndPolyfill(R.__);
+      const trimEnd = trimEndPonyfill(R.__);
 
       assert.strictEqual(trimEnd('abc   '), 'abc');
     });

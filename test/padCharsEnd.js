@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import { padEndInvoker, padEndPolyfill } from '../src/padCharsEnd';
+import { padEndInvoker, padEndPonyfill } from '../src/padCharsEnd';
 
 describe('padCharsEnd', function () {
   specify('should pad string with given padString', function () {
@@ -144,20 +144,20 @@ describe('padCharsEnd', function () {
     });
   });
 
-  context('padEndPolyfill', function () {
+  context('padEndPonyfill', function () {
     specify('should pad string with given padString', function () {
-      assert.strictEqual(padEndPolyfill('-', 3, 'a'), 'a--');
+      assert.strictEqual(padEndPonyfill('-', 3, 'a'), 'a--');
     });
 
     context('given targetLength as 0', function () {
       specify('should return original string', function () {
-        assert.strictEqual(padEndPolyfill('$', 0, 'abc'), 'abc');
+        assert.strictEqual(padEndPonyfill('$', 0, 'abc'), 'abc');
       });
     });
 
     context('given targetLength less than string length', function () {
       specify('should return original string', function () {
-        assert.strictEqual(padEndPolyfill('$', 1, 'abc'), 'abc');
+        assert.strictEqual(padEndPonyfill('$', 1, 'abc'), 'abc');
       });
     });
 
@@ -165,15 +165,15 @@ describe('padCharsEnd', function () {
       'given targetLength less than equal to padString length',
       function () {
         specify('should trim padString', function () {
-          assert.strictEqual(padEndPolyfill('123456', 6, 'abc'), 'abc123');
-          assert.strictEqual(padEndPolyfill('123456', 5, 'abc'), 'abc12');
+          assert.strictEqual(padEndPonyfill('123456', 6, 'abc'), 'abc123');
+          assert.strictEqual(padEndPonyfill('123456', 5, 'abc'), 'abc12');
         });
       }
     );
 
     context('given targetLength supplied as float', function () {
       specify('should convert targetLength to integer', function () {
-        assert.strictEqual(padEndPolyfill('$', 7.5, 'abc'), 'abc$$$$');
+        assert.strictEqual(padEndPonyfill('$', 7.5, 'abc'), 'abc$$$$');
       });
     });
 
@@ -181,34 +181,34 @@ describe('padCharsEnd', function () {
       'given targetLength is a value coercible to valid integer number',
       function () {
         specify('should return padded string', function () {
-          assert.strictEqual(padEndPolyfill('*', '5', 'abc'), 'abc**');
+          assert.strictEqual(padEndPonyfill('*', '5', 'abc'), 'abc**');
         });
       }
     );
 
     context('given targeLength is a negative number', function () {
       specify('should return original string', function () {
-        assert.strictEqual(padEndPolyfill('$', -10, 'abc'), 'abc');
+        assert.strictEqual(padEndPonyfill('$', -10, 'abc'), 'abc');
       });
     });
 
     context('given padString set to undefined', function () {
       specify('should return string padded with spaces', function () {
-        assert.strictEqual(padEndPolyfill(undefined, 5, '200'), '200  ');
+        assert.strictEqual(padEndPonyfill(undefined, 5, '200'), '200  ');
       });
     });
 
     context('given null padString', function () {
       specify('should convert null to string type', function () {
-        assert.strictEqual(padEndPolyfill(null, 5, 'abc'), 'abcnu');
+        assert.strictEqual(padEndPonyfill(null, 5, 'abc'), 'abcnu');
       });
     });
 
     specify('should be curried', function () {
-      assert.strictEqual(padEndPolyfill('*', 5, 'abc'), 'abc**');
-      assert.strictEqual(padEndPolyfill('*', 5)('abc'), 'abc**');
-      assert.strictEqual(padEndPolyfill('*')(5, 'abc'), 'abc**');
-      assert.strictEqual(padEndPolyfill('*')(5)('abc'), 'abc**');
+      assert.strictEqual(padEndPonyfill('*', 5, 'abc'), 'abc**');
+      assert.strictEqual(padEndPonyfill('*', 5)('abc'), 'abc**');
+      assert.strictEqual(padEndPonyfill('*')(5, 'abc'), 'abc**');
+      assert.strictEqual(padEndPonyfill('*')(5)('abc'), 'abc**');
     });
   });
 });

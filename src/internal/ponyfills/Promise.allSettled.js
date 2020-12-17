@@ -6,7 +6,7 @@ import resolveP from '../../resolveP';
 const onFulfill = (value) => ({ status: 'fulfilled', value });
 const onReject = (reason) => ({ status: 'rejected', reason });
 
-const allSettledPolyfill = (iterable) => {
+const allSettledPonyfill = (iterable) => {
   const array = map((p) => resolveP(p).then(onFulfill).catch(onReject), [
     ...iterable,
   ]);
@@ -14,4 +14,4 @@ const allSettledPolyfill = (iterable) => {
   return allP(array);
 };
 
-export default allSettledPolyfill;
+export default allSettledPonyfill;

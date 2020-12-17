@@ -10,7 +10,7 @@ export class AggregatedError extends Error {
   }
 }
 
-const anyPolyfill = (iterable) => {
+const anyPonyfill = (iterable) => {
   const exceptions = [];
 
   return new Promise((resolve, reject) => {
@@ -26,4 +26,4 @@ const anyPolyfill = (iterable) => {
   });
 };
 
-export default anyPolyfill;
+export default anyPonyfill;

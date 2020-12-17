@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import polyfill from '../src/internal/polyfills/Number.isFinite';
+import ponyfill from '../src/internal/ponyfills/Number.isFinite';
 
 describe('isFinite', function () {
   it('should test value for a finite `Number`', function () {
@@ -23,22 +23,22 @@ describe('isFinite', function () {
     assert.isFalse(RA.isFinite(null));
   });
 
-  it('should test polyfill for a finite `Number', function () {
-    assert.isFalse(polyfill(Infinity));
-    assert.isFalse(polyfill(NaN));
-    assert.isFalse(polyfill(-Infinity));
+  it('should test ponyfill for a finite `Number', function () {
+    assert.isFalse(ponyfill(Infinity));
+    assert.isFalse(ponyfill(NaN));
+    assert.isFalse(ponyfill(-Infinity));
 
-    assert.isTrue(polyfill(0));
-    assert.isTrue(polyfill(-0));
-    assert.isTrue(polyfill(2e64));
-    assert.isTrue(polyfill(324234));
-    assert.isTrue(polyfill(1.2342));
+    assert.isTrue(ponyfill(0));
+    assert.isTrue(ponyfill(-0));
+    assert.isTrue(ponyfill(2e64));
+    assert.isTrue(ponyfill(324234));
+    assert.isTrue(ponyfill(1.2342));
 
     // Would've been true with global isFinite('0').
-    assert.isFalse(polyfill('0'));
+    assert.isFalse(ponyfill('0'));
 
     // Would've been true with global isFinite(null).
-    assert.isFalse(polyfill(null));
+    assert.isFalse(ponyfill(null));
   });
 
   it('should support placeholder to specify "gaps"', function () {
