@@ -20,7 +20,7 @@ import floor from './floor';
  * @example
  *
  * RA.rangeStep(1, 0, 4); // => [0, 1 ,2, 3]
- * RA.rangeStep(-1, -4, 0); // => [0, -1, -2, -3]
+ * RA.rangeStep(-1, 0, -4); // => [0, -1, -2, -3]
  * RA.rangeStep(1, 1, 5); // => [1, 2, 3, 4]
  * RA.rangeStep(5, 0, 20); // => [0, 5, 10, 15]
  * RA.rangeStep(-1, 0, -4); // => [0, -1, -2, -3]
