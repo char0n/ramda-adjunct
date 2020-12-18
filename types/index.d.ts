@@ -1430,9 +1430,9 @@ declare namespace RamdaAdjunct {
         /**
          * Invokes the method at path of object with given arguments.
          */
-        invokeArgs(pathToMethod: string[], args: Array<any>, obj: object): any;
-        invokeArgs(pathToMethod: string[], args: Array<string | number>): (obj: object) => any;
-        invokeArgs(pathToMethod: string[]): (args: Array<string | number>, obj: object) => any;
+        invokeArgs(pathToMethod: string[], args: any[], obj: object): any;
+        invokeArgs(pathToMethod: string[], args: any[]): (obj: object) => any;
+        invokeArgs(pathToMethod: string[]): (args: any[], obj: object) => any;
 
         /**
          * Converts double-precision 64-bit binary format IEEE 754 to signed 32 bit integer number.
