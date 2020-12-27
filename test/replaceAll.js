@@ -38,8 +38,9 @@ describe('replaceAll', function () {
 
   it('should properly process special characters', function () {
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_string_as_a_parameter
+    // https://github.com/zloirock/core-js/issues/900
     const actual = RA.replaceAll('.', '$$$$$', 'foo.bar');
-    const expected = 'foo$$$bar';
+    const expected = 'foo.bar'.replaceAll('.', '$$$$$');
     assert.strictEqual(actual, expected);
   });
 
