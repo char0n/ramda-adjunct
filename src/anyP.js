@@ -1,9 +1,9 @@
 import { bind, curryN } from 'ramda';
 
 import isFunction from './isFunction';
-import polyfill, { AggregatedError } from './internal/polyfills/Promise.any';
+import ponyfill, { AggregatedError } from './internal/ponyfills/Promise.any';
 
-export const anyPPolyfill = curryN(1, polyfill);
+export const anyPPonyfill = curryN(1, ponyfill);
 export { AggregatedError };
 
 /**
@@ -28,6 +28,6 @@ export { AggregatedError };
  */
 const anyP = isFunction(Promise.any)
   ? curryN(1, bind(Promise.any, Promise))
-  : anyPPolyfill;
+  : anyPPonyfill;
 
 export default anyP;

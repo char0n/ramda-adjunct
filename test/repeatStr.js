@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import { repeatStrInvoker, repeatStrPolyfill } from '../src/repeatStr';
+import { repeatStrInvoker, repeatStrPonyfill } from '../src/repeatStr';
 
 describe('repeatStr', function () {
   specify('should repeat string n times', function () {
@@ -108,53 +108,53 @@ describe('repeatStr', function () {
     });
   });
 
-  context('repeatStrPolyfill', function () {
+  context('repeatStrPonyfill', function () {
     specify('should repeat string n times', function () {
-      assert.strictEqual(repeatStrPolyfill('abc', 3), 'abcabcabc');
+      assert.strictEqual(repeatStrPonyfill('abc', 3), 'abcabcabc');
     });
 
     context('given count 0', function () {
       specify('should return empty string', function () {
-        assert.strictEqual(repeatStrPolyfill('abc', 0), '');
+        assert.strictEqual(repeatStrPonyfill('abc', 0), '');
       });
     });
 
     context('given count 1', function () {
       specify('should return original string', function () {
-        assert.strictEqual(repeatStrPolyfill('abc', 1), 'abc');
+        assert.strictEqual(repeatStrPonyfill('abc', 1), 'abc');
       });
     });
 
     context('given count supplied as float', function () {
       specify('should convert count to integer', function () {
-        assert.strictEqual(repeatStrPolyfill('abc', 3.5), 'abcabcabc');
+        assert.strictEqual(repeatStrPonyfill('abc', 3.5), 'abcabcabc');
       });
     });
 
     context('given count is negative number', function () {
       specify('should throw RangeError', function () {
-        assert.throws(() => repeatStrPolyfill('abc', -1), RangeError);
+        assert.throws(() => repeatStrPonyfill('abc', -1), RangeError);
       });
     });
 
     context('given count is Infinity', function () {
       specify('should throw RangeError', function () {
-        assert.throws(() => repeatStrPolyfill('abc', 1 / 0), RangeError);
+        assert.throws(() => repeatStrPonyfill('abc', 1 / 0), RangeError);
       });
     });
 
     context('given count is not a number', function () {
       specify('should return empty string', function () {
-        assert.strictEqual(repeatStrPolyfill('abc', 'a'), '');
-        assert.strictEqual(repeatStrPolyfill('abc', null), '');
-        assert.strictEqual(repeatStrPolyfill('abc', undefined), '');
-        assert.strictEqual(repeatStrPolyfill('abc', NaN), '');
+        assert.strictEqual(repeatStrPonyfill('abc', 'a'), '');
+        assert.strictEqual(repeatStrPonyfill('abc', null), '');
+        assert.strictEqual(repeatStrPonyfill('abc', undefined), '');
+        assert.strictEqual(repeatStrPonyfill('abc', NaN), '');
       });
     });
 
     specify('should be curried', function () {
-      assert.strictEqual(repeatStrPolyfill('abc', 3.5), 'abcabcabc');
-      assert.strictEqual(repeatStrPolyfill('abc')(3.5), 'abcabcabc');
+      assert.strictEqual(repeatStrPonyfill('abc', 3.5), 'abcabcabc');
+      assert.strictEqual(repeatStrPonyfill('abc')(3.5), 'abcabcabc');
     });
   });
 });

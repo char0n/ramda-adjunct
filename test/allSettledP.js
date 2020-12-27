@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import { allSettledPPolyfill } from '../src/allSettledP';
+import { allSettledPPonyfill } from '../src/allSettledP';
 
 describe('allSettledP', function () {
   context('given list of fulfilled promises', function () {
@@ -113,7 +113,7 @@ describe('allSettledP', function () {
     assert.deepEqual(await allSettledP(actual), expected);
   });
 
-  context('allSettledPPolyfill', function () {
+  context('allSettledPPonyfill', function () {
     context('given list of fulfilled promises', function () {
       specify('should return list of fulfilled values', async function () {
         const p1 = RA.resolveP(1);
@@ -126,7 +126,7 @@ describe('allSettledP', function () {
           { status: 'fulfilled', value: 3 },
         ];
 
-        assert.deepEqual(await allSettledPPolyfill(actual), expected);
+        assert.deepEqual(await allSettledPPonyfill(actual), expected);
       });
     });
 
@@ -142,7 +142,7 @@ describe('allSettledP', function () {
           { status: 'rejected', reason: 3 },
         ];
 
-        assert.deepEqual(await allSettledPPolyfill(actual), expected);
+        assert.deepEqual(await allSettledPPonyfill(actual), expected);
       });
     });
 
@@ -160,7 +160,7 @@ describe('allSettledP', function () {
             { status: 'rejected', reason: 3 },
           ];
 
-          assert.deepEqual(await allSettledPPolyfill(actual), expected);
+          assert.deepEqual(await allSettledPPonyfill(actual), expected);
         }
       );
     });
@@ -177,7 +177,7 @@ describe('allSettledP', function () {
           { status: 'fulfilled', value: 3 },
         ];
 
-        assert.deepEqual(await allSettledPPolyfill(actual), expected);
+        assert.deepEqual(await allSettledPPonyfill(actual), expected);
       });
     });
 
@@ -193,7 +193,7 @@ describe('allSettledP', function () {
           { status: 'fulfilled', value: 3 },
         ];
 
-        assert.deepEqual(await allSettledPPolyfill(actual), expected);
+        assert.deepEqual(await allSettledPPonyfill(actual), expected);
       });
     });
 
@@ -203,12 +203,12 @@ describe('allSettledP', function () {
         const actual = list.map(RA.resolveP);
         const expected = list.map((value) => ({ status: 'fulfilled', value }));
 
-        assert.deepEqual(await allSettledPPolyfill(actual), expected);
+        assert.deepEqual(await allSettledPPonyfill(actual), expected);
       });
     });
 
     it('should support placeholder to specify "gaps"', async function () {
-      const allSettledP = allSettledPPolyfill(R.__);
+      const allSettledP = allSettledPPonyfill(R.__);
       const p1 = RA.resolveP(1);
       const v2 = 2;
       const p3 = RA.resolveP(3);

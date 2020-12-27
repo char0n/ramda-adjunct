@@ -3,7 +3,7 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
-import { signPolyfill } from '../src/sign';
+import { signPonyfill } from '../src/sign';
 
 describe('sign', function () {
   it('should return proper sign result', function () {
@@ -85,7 +85,7 @@ describe('sign', function () {
     assert.strictEqual(sign(0.9), 1);
   });
 
-  context('signPolyfill', function () {
+  context('signPonyfill', function () {
     before(function () {
       if (RA.isNotFunction(Math.sign)) {
         this.skip();
@@ -93,43 +93,43 @@ describe('sign', function () {
     });
 
     specify('should return proper sign result', function () {
-      assert.strictEqual(signPolyfill(3), 1);
-      assert.strictEqual(signPolyfill(3.3), 1);
-      assert.strictEqual(signPolyfill(-3), -1);
-      assert.strictEqual(signPolyfill(-3.3), -1);
-      assert.strictEqual(signPolyfill(0), 0);
-      assert.strictEqual(signPolyfill(-0), -0);
+      assert.strictEqual(signPonyfill(3), 1);
+      assert.strictEqual(signPonyfill(3.3), 1);
+      assert.strictEqual(signPonyfill(-3), -1);
+      assert.strictEqual(signPonyfill(-3.3), -1);
+      assert.strictEqual(signPonyfill(0), 0);
+      assert.strictEqual(signPonyfill(-0), -0);
     });
 
     context('given number in string', function () {
       specify('should return proper sign', function () {
-        assert.strictEqual(signPolyfill('-1.123'), -1);
-        assert.strictEqual(signPolyfill('1.123'), 1);
+        assert.strictEqual(signPonyfill('-1.123'), -1);
+        assert.strictEqual(signPonyfill('1.123'), 1);
       });
     });
 
     context('given integer number', function () {
       specify('should return original integer number', function () {
-        assert.strictEqual(signPolyfill(0), 0);
-        assert.strictEqual(signPolyfill(1), 1);
-        assert.strictEqual(signPolyfill(-1), -1);
+        assert.strictEqual(signPonyfill(0), 0);
+        assert.strictEqual(signPonyfill(1), 1);
+        assert.strictEqual(signPonyfill(-1), -1);
       });
     });
 
     context('given value that is not a number', function () {
       specify('should return NaN', function () {
-        assert.isNaN(signPolyfill(undefined));
-        assert.isNaN(signPolyfill(NaN));
-        assert.isNaN(signPolyfill({}));
-        assert.isNaN(signPolyfill(/a/));
-        assert.isNaN(signPolyfill('test'));
-        assert.isNaN(signPolyfill(new Error()));
+        assert.isNaN(signPonyfill(undefined));
+        assert.isNaN(signPonyfill(NaN));
+        assert.isNaN(signPonyfill({}));
+        assert.isNaN(signPonyfill(/a/));
+        assert.isNaN(signPonyfill('test'));
+        assert.isNaN(signPonyfill(new Error()));
       });
     });
 
     context('given null', function () {
       specify('should return 0', function () {
-        assert.strictEqual(signPolyfill(null), 0);
+        assert.strictEqual(signPonyfill(null), 0);
       });
     });
 
@@ -144,7 +144,7 @@ describe('sign', function () {
         }
 
         if (shouldThrow) {
-          assert.throw(() => signPolyfill(Symbol('')));
+          assert.throw(() => signPonyfill(Symbol('')));
         }
       });
     });
@@ -153,15 +153,15 @@ describe('sign', function () {
       specify(
         'should return the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC',
         function () {
-          assert.strictEqual(signPolyfill(new Date(2)), 1);
+          assert.strictEqual(signPonyfill(new Date(2)), 1);
         }
       );
     });
 
     context('given Infinity value', function () {
       specify('should return proper sign', function () {
-        assert.strictEqual(signPolyfill(Infinity), 1);
-        assert.strictEqual(signPolyfill(-Infinity), -1);
+        assert.strictEqual(signPonyfill(Infinity), 1);
+        assert.strictEqual(signPonyfill(-Infinity), -1);
       });
     });
 

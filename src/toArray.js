@@ -2,11 +2,11 @@ import { ifElse, values, curryN } from 'ramda';
 
 import isIterable from './isIterable';
 import isFunction from './isFunction';
-import polyfill from './internal/polyfills/Array.from';
+import ponyfill from './internal/ponyfills/Array.from';
 
-export const fromPolyfill = curryN(1, polyfill);
+export const fromPonyfill = curryN(1, ponyfill);
 
-const fromArray = isFunction(Array.from) ? curryN(1, Array.from) : fromPolyfill;
+const fromArray = isFunction(Array.from) ? curryN(1, Array.from) : fromPonyfill;
 
 /**
  * Converts value to an array.

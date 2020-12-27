@@ -139,7 +139,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 ## API Documentation
 
  [LATEST](https://char0n.github.io/ramda-adjunct),
- [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.25.0),
+ [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.28.0),
  [ALL VERSIONS](./VERSIONS.md)
 
 ## Wrote about us
@@ -160,6 +160,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 - [Using JavaScript Generators to yield Promises](https://www.linkedin.com/pulse/using-javascript-generators-yield-promises-vladim%C3%ADr-gorej/)
 - [Integrating React Native navigators](https://blog.inspeerity.com/react-native/integrating-react-native-navigators/)
 - [Ramda Adjunct Changelog articles](https://medium.com/ramda-adjunct)
+- [Ramda and React](https://hint.io/blog/react-and-ramda)
 
 ## Contributing
 

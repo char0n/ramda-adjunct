@@ -1,11 +1,11 @@
 import { flip, invoker, curry } from 'ramda';
 
 import isFunction from './isFunction';
-import polyfill from './internal/polyfills/String.padStart';
+import ponyfill from './internal/ponyfills/String.padStart';
 
 export const padStartInvoker = flip(invoker(2, 'padStart'));
 
-export const padStartPolyfill = curry(polyfill);
+export const padStartPonyfill = curry(ponyfill);
 
 /**
  * The function pads the current string with a given string
@@ -30,6 +30,6 @@ export const padStartPolyfill = curry(polyfill);
  */
 const padCharsStart = isFunction(String.prototype.padStart)
   ? padStartInvoker
-  : padStartPolyfill;
+  : padStartPonyfill;
 
 export default padCharsStart;
