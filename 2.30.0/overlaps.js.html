@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>concatRight.js - Documentation</title>
+    <title>overlaps.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">concatRight.js</h1>
+    <h1 class="page-title">overlaps.js</h1>
     
 
     
@@ -52,36 +52,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { concat, flip } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { pipe, intersection, isEmpty, curryN } from 'ramda';
+
+import isNotEmpty from './isNotEmpty';
 
 /**
- * Returns the result of concatenating the given lists or strings.
+ * Returns true if two lists have at least one element common to both lists.
  *
- * Note: R.concat expects both arguments to be of the same type, unlike
- * the native Array.prototype.concat method.
- * It will throw an error if you concat an Array with a non-Array value.
- * Dispatches to the concat method of the second argument, if present.
- *
- * @func concatRight
+ * @func overlaps
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.11.0|v1.11.0}
- * @category List
- * @sig [a] -> [a] -> [a]
- * @sig String -> String -> String
- * @param {Array|String} firstList The first list
- * @param {Array|String} secondList The second list
- * @return {Array|String} A list consisting of the elements of `secondList`
- * followed by the elements of `firstList`.
- * @see {@link http://ramdajs.com/docs/#concat|R.concat}
+ * @category Relation
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.30.0|v2.30.0}
+ * @sig [a] -> [a] -> Boolean
+ * @param {Array} list1 The first list
+ * @param {Array} list2 The second list
+ * @return {boolean} True if two lists have at least one element common to both lists
  * @example
  *
- * RA.concatRight('ABC', 'DEF'); //=> 'DEFABC'
- * RA.concatRight([4, 5, 6], [1, 2, 3]); //=> [1, 2, 3, 4, 5, 6]
- * RA.concatRight([], []); //=> []
+ * RA.overlaps(['-v', '--verbose'], ['node', 'script.js', '-v']); //=> true
+ * RA.overlaps(['-v', '--verbose'], []); //=> false
+ * RA.overlaps([1, 2, 3], [3, 4, 5]); //=> true
+ * RA.overlaps([1, 2, 3], [4, 5]); //=> false
  */
-const concatRight = flip(concat);
 
-export default concatRight;
+const overlaps = curryN(2, (list1, list2) => {
+  if (isEmpty(list1)) {
+    return true;
+  }
+
+  return pipe(intersection, isNotEmpty)(list1, list2);
+});
+
+export default overlaps;
 </code></pre>
         </article>
     </section>
