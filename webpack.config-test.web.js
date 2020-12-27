@@ -8,7 +8,8 @@ module.exports = {
   mode: 'production',
   target: 'web',
   entry: [
-    '@babel/polyfill',
+    'core-js/stable',
+    'regenerator-runtime/runtime',
     ...glob.sync('./test/*.js', {
       ignore: ['./test/mocha-bootstrap.js'],
     }),
@@ -38,22 +39,7 @@ module.exports = {
         test: /\.(js)$/,
         loader: 'babel-loader',
         options: {
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                forceAllTransforms: true,
-              },
-            ],
-          ],
-          plugins: [
-            [
-              '@babel/plugin-transform-modules-commonjs',
-              {
-                loose: true,
-              },
-            ],
-          ],
+          presets: ['@babel/preset-env'],
         },
       },
     ],

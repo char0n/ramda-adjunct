@@ -1,6 +1,7 @@
 'use strict';
 
-require('@babel/polyfill');
+require('core-js/stable');
+require('regenerator-runtime/runtime');
 require('@babel/register')({
   // ignore: [/node_modules\/(?!(chai-as-promised))/],
 });
