@@ -22,7 +22,6 @@ import { addIndex, filter } from 'ramda';
  *
  * const isValueGtIndex = (val, idx) => val > idx;
  * RA.filterIndexed(isValueGtIndex, [5, 4, 3, 2, 1, 0]);
- * // [5, 4, 3]
  */
 const filterIndexed = addIndex(filter);
 
