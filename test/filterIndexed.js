@@ -58,13 +58,9 @@ describe('filterIndexed', function () {
     });
 
     it('should throw a TypeError on null and undefined', function () {
-      assert.throws(() => {
-        return RA.filterIndexed(isEven, null);
-      }, TypeError);
+      assert.throws(() => RA.filterIndexed(isEven, null), TypeError);
 
-      assert.throws(() => {
-        return RA.filterIndexed(isEven, undefined);
-      }, TypeError);
+      assert.throws(() => RA.filterIndexed(isEven, undefined), TypeError);
     });
 
     it('should support transducer-style composition', function () {
