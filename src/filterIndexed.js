@@ -10,7 +10,7 @@ import { addIndex, filter } from 'ramda';
  *
  * @func filterIndexed
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.30.0|v2.30.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.31.0|v2.31.0}
  * @category List
  * @typedef Idx = Number
  * @sig Filterable f => ((a, Idx, f a) -> Boolean) -> f a -> f a
