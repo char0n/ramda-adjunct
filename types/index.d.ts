@@ -1483,6 +1483,12 @@ declare namespace RamdaAdjunct {
             (from: number, to: number): number[];
             (from: number): (to: number) => number[];
         };
+
+        /**
+         * Returns true if two lists have at least one element common to both lists.
+         */
+        overlaps<T>(list1: T[], list2: T[]): boolean;
+        overlaps<T>(list1: T[]): (list2: T[]) => boolean;
     }
 }
 

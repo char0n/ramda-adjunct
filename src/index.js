@@ -191,6 +191,7 @@ export { default as propNotEq } from './propNotEq';
 export { default as pathNotEq } from './pathNotEq';
 export { default as inRange } from './inRange';
 export { default as notEqual } from './notEqual';
+export { default as overlaps } from './overlaps';
 // Logic
 export { default as isNotEmpty } from './isNotEmpty';
 export { default as defaultWhen } from './defaultWhen';

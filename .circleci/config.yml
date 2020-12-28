@@ -27,7 +27,7 @@ jobs:
 
   test_node_10:
     docker:
-      - image: circleci/node:10-browsers-legacy
+      - image: circleci/node:10-browsers
     filters:
       branches:
         ignore: gh-pages
@@ -41,7 +41,7 @@ jobs:
 
   test_node_12:
     docker:
-      - image: circleci/node:12-browsers-legacy
+      - image: circleci/node:12-browsers
     filters:
       branches:
         ignore: gh-pages
@@ -55,7 +55,7 @@ jobs:
 
   test_node_14:
     docker:
-      - image: circleci/node:14-browsers-legacy
+      - image: circleci/node:14-browsers
     filters:
       branches:
         ignore: gh-pages

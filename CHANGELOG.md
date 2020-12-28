@@ -1,3 +1,19 @@
+# [2.30.0](https://github.com/char0n/ramda-adjunct/compare/v2.29.0...v2.30.0) (2020-12-27)
+
+
+### Bug Fixes
+
+* **invokeArgs:** update TypeScript signature ([#1710](https://github.com/char0n/ramda-adjunct/issues/1710)) ([775d282](https://github.com/char0n/ramda-adjunct/commit/775d2825c4cbed2118a0cbaad2c13587090a49b1)), closes [#1707](https://github.com/char0n/ramda-adjunct/issues/1707)
+
+
+### Features
+
+* **list:** add rangeStep ([#1708](https://github.com/char0n/ramda-adjunct/issues/1708)) ([82c0368](https://github.com/char0n/ramda-adjunct/commit/82c0368008ee5ed90e28baf1a91ad74b91ba7072)), closes [#1477](https://github.com/char0n/ramda-adjunct/issues/1477) [#1230](https://github.com/char0n/ramda-adjunct/issues/1230)
+* **relation:** add overlaps ([2ea5355](https://github.com/char0n/ramda-adjunct/commit/2ea5355608a9016c96de39a87d48f21016bef330)), closes [#1229](https://github.com/char0n/ramda-adjunct/issues/1229)
+* **type:** add isError ([#1449](https://github.com/char0n/ramda-adjunct/issues/1449)) ([adf25c2](https://github.com/char0n/ramda-adjunct/commit/adf25c2a0aa79bf53df66f4bd9720b5039dfd185)), closes [#206](https://github.com/char0n/ramda-adjunct/issues/206)
+
+
+
 # [2.29.0](https://github.com/char0n/ramda-adjunct/compare/v2.28.0...v2.29.0) (2020-12-13)
 
 
