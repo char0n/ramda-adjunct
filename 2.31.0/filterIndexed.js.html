@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotValidNumber.js - Documentation</title>
+    <title>filterIndexed.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotValidNumber.js</h1>
+    <h1 class="page-title">filterIndexed.js</h1>
     
 
     
@@ -52,33 +52,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
-
-import isValidNumber from './isValidNumber';
+            <pre class="prettyprint source linenums"><code>import { addIndex, filter } from 'ramda';
 
 /**
- * Checks if value is not a valid `Number`. A valid `Number` is a number that is not `NaN`,
- * `Infinity` or `-Infinity`.
+ * {@link http://ramdajs.com/docs/#filter|R.filter} function that more closely resembles `Array.prototype.filter`.
+ * It takes two new parameters to its callback function: the current index, and the entire list.
  *
- * @func isNotValidNumber
+ * `filterIndexed` implementation is simple: `
+ *  const filterIndexed = R.addIndex(R.filter);
+ * `
+ *
+ * @func filterIndexed
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.2.0|v2.2.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isValidNumber|isValidNumber}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.31.0|v2.31.0}
+ * @category List
+ * @typedef Idx = Number
+ * @sig Filterable f => ((a, Idx, f a) -> Boolean) -> f a -> f a
+ * @param {Function} pred The predicate function
+ * @param {Array} list The collection to filter
+ * @return {Array} Filterable
+ * @see {@link http://ramdajs.com/docs/#addIndex|R.addIndex}, {@link http://ramdajs.com/docs/#filter|R.filter}
  * @example
  *
- * RA.isNotValidNumber(1); //=> false
- * RA.isNotValidNumber(''); //=> true
- * RA.isNotValidNumber(NaN); //=> true
- * RA.isNotValidNumber(Infinity); //=> true
- * RA.isNotValidNumber(-Infinity); //=> true
+ * const isValueGtIndex = (val, idx) => val > idx;
+ * RA.filterIndexed(isValueGtIndex, [5, 4, 3, 2, 1, 0]); //=> [5, 4, 3]
  */
-const isNotValidNumber = complement(isValidNumber);
+const filterIndexed = addIndex(filter);
 
-export default isNotValidNumber;
+export default filterIndexed;
 </code></pre>
         </article>
     </section>
