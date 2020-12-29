@@ -123,6 +123,7 @@ export { default as fnull } from './fnull';
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';
+export { default as filterIndexed } from './filterIndexed';
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 export { default as ensureArray } from './ensureArray';
