@@ -125,15 +125,15 @@ _Do you want to find out more about why this library exists ? Read this [**artic
 
 ## Requirements
 
- - ramda >= 0.19.0 <= 0.26.1
+ - ramda >= 0.19.0
  - node >= 0.10.48
 
-Ramda Adjunct is being automatically tested against node version >=8 <=11.
+Ramda Adjunct is being automatically tested against all LTS and Current Node.js versions.
 
 ### Legacy builds
 
 We are building our npm distributions using Webpack/Babel to support legacy versions of node starting from 0.10.48.
-Although all tests are run against node version >=8 <=11, we rely on Webpack/Babel to transpile ramda-adjunct into legacy ES5.
+Although all tests are run against all LTS and Current Node.js versions, we rely on Webpack/Babel to transpile ramda-adjunct into legacy ES5.
 It is also possible that our ES5 distributions run on node versions older than 0.10.48 as long as they support ES5.
 
 ## API Documentation
