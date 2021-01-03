@@ -44,6 +44,8 @@ declare namespace RamdaAdjunct {
     interface Dictionary<T> { [key: string]: T; }
 
     type DictPred<T> = (value: T, key: string) => boolean;
+    /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type */
+    type Primitive = string | number | bigint | boolean | undefined | null | symbol;
 
     interface Static {
         /**
@@ -65,6 +67,18 @@ declare namespace RamdaAdjunct {
          * Checks if input value is `Boolean`.
          */
         isBoolean(val: any): val is boolean;
+
+        /**
+         * Checks if input value is a primitive.
+         */
+        /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type */
+        isPrimitive<T>(val: T | Primitive): val is Primitive;
+
+        /**
+         * Checks if input value is a not primitive.
+         */
+        /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type */
+        isNotPrimitive<T>(val: T | Primitive): val is T;
 
         /**
          * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
