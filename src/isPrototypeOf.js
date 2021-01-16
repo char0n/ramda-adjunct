@@ -8,7 +8,7 @@ import { curry } from 'ramda';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.31.0|v2.31.0}
  * @sig * -> Boolean
- * @param {Object} type The [object] prototype to test
+ * @param {Object} type The prototype that we're searching for
  * @param {Object} object The object to test
  * @return {boolean}
  * @see {@link Object.prorotype.isPrototypeOf}
