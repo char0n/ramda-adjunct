@@ -67,7 +67,7 @@ declare namespace RamdaAdjunct {
         isBoolean(val: any): val is boolean;
 
         /**
-         * Checks if `type`'s `prototype` property is in the prototype chain of `object`.
+         * Checks if an object exists in another object's prototype chain.
          */
         isPrototypeOf(type: object, object: object): boolean;
         isPrototypeOf(type: object): (object: object) => boolean;
