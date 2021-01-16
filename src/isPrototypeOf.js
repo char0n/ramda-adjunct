@@ -1,7 +1,8 @@
 import { curry } from 'ramda';
+import { invokeArgs } from '../src';
 
 /**
- * Checks if `type`'s `prototype` property is in the prototype chain of `object`.
+ * Checks if an object exists in another object's prototype chain.
  *
  * @func isPrototypeOf
  * @category Object
@@ -28,8 +29,7 @@ import { curry } from 'ramda';
  * RA.isPrototypeOf(Object, baz); // => true
  */
 const isPrototypeOf = curry((type, object) =>
-  // eslint-disable-next-line no-prototype-builtins
-  type.prototype.isPrototypeOf(object)
+  Boolean(invokeArgs(['prototype', 'isPrototypeOf'], [object], type))
 );
 
 export default isPrototypeOf;
