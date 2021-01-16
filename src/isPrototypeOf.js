@@ -1,5 +1,6 @@
 import { curry } from 'ramda';
-import { invokeArgs } from '../src';
+
+import invokeArgs from '../src/invokeArgs';
 
 /**
  * Checks if an object exists in another object's prototype chain.
