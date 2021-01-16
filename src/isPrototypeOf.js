@@ -5,6 +5,7 @@ import { curry } from 'ramda';
  *
  * @func isPrototypeOf
  * @category Object
+ * @memberOf RA
  * @sig * -> Boolean
  * @param {Object} type The [object] prototype to test
  * @param {Object} object The object to test
