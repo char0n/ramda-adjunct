@@ -11,7 +11,7 @@ import { curry } from 'ramda';
  * @param {Object} type The prototype that we're searching for
  * @param {Object} object The object whose prototype chain will be searched
  * @return {boolean}
- * @see {@link Object.prorotype.isPrototypeOf}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf|Object.prorotype.isPrototypeOf}
  * @example
  * function Foo() {}
  * function Bar() {}
