@@ -57,23 +57,13 @@ describe('isPrototypeOf', function () {
       assert.isFalse(RA.isPrototypeOf(Baz, bar));
     });
   });
-
-  it('should support currying', function () {
-    const isArray = RA.isPrototypeOf(Array);
-
-    assert.isTrue(isArray([]));
-    assert.isFalse(isArray(() => {}));
+  
+  it('should be safe', function() {
+    assert.isFalse(RA.isPrototypeOf(null, {}));
   });
 
-  it('should support placeholder to specify "gaps"', function () {
-    let isPrototypeOf = RA.isPrototypeOf(R.__, []);
-
-    assert.isTrue(isPrototypeOf(Array));
-    assert.isFalse(isPrototypeOf(Function));
-
-    isPrototypeOf = RA.isPrototypeOf(Array, R.__);
-
-    assert.isTrue(isPrototypeOf([]));
-    assert.isFalse(isPrototypeOf(() => {}));
+  it('should support currying', function () {
+    assert.isTrue(RA.isPrototypeOf(Array, []));
+    assert.isTrue(RA.isPrototypeOf(Array)([]));
   });
 });
