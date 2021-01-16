@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>flattenProp.js - Documentation</title>
+    <title>isPrototypeOf.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">flattenProp.js</h1>
+    <h1 class="page-title">isPrototypeOf.js</h1>
     
 
     
@@ -52,34 +52,42 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { of, curry } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry } from 'ramda';
 
-import flattenPath from './flattenPath';
+import invokeArgs from './invokeArgs';
 
 /**
- * Flattens a property so that its fields are spread out into the provided object.
- * It's like {@link RA.spreadProp|spreadProp}, but preserves object under the property path.
+ * Checks if an object exists in another object's prototype chain.
  *
- * @func flattenProp
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.19.0|v1.19.0}
+ * @func isPrototypeOf
  * @category Object
- * @typedef Idx = String | Int
- * @sig [Idx] -> {k: v} -> {k: v}
- * @param {!string|number} prop The property to flatten
- * @param {!Object} obj The provided object
- * @return {!Object} The flattened object
- * @see {@link RA.flattenPath|flattenPath}, {@link RA.spreadProp|spreadProp}
+ * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.31.0|v2.31.0}
+ * @sig * -> Boolean
+ * @param {Object} type The prototype that we're searching for
+ * @param {Object} object The object whose prototype chain will be searched
+ * @return {boolean}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf|Object.prorotype.isPrototypeOf}
  * @example
+ * function Foo() {}
+ * function Bar() {}
+ * function Baz() {}
  *
- * RA.flattenProp(
- *   'b',
- *   { a: 1, b: { c: 3, d: 4 } }
- * ); // => { a: 1, c: 3, d: 4, b: { c: 3, d: 4 } };
+ * Bar.prototype = Object.create(Foo.prototype);
+ * Baz.prototype = Object.create(Bar.prototype);
+ *
+ * const baz = new Baz();
+ *
+ * RA.isPrototypeOf(Baz, baz); // => true
+ * RA.isPrototypeOf(Bar, baz); // => true
+ * RA.isPrototypeOf(Foo, baz); // => true
+ * RA.isPrototypeOf(Object, baz); // => true
  */
-const flattenProp = curry((prop, obj) => flattenPath(of(prop), obj));
+const isPrototypeOf = curry((type, object) =>
+  Boolean(invokeArgs(['prototype', 'isPrototypeOf'], [object], type))
+);
 
-export default flattenProp;
+export default isPrototypeOf;
 </code></pre>
         </article>
     </section>
