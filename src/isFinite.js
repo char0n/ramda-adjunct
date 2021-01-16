@@ -1,9 +1,9 @@
 import { bind, curryN } from 'ramda';
 
 import isFunction from './isFunction';
-import polyfill from './internal/polyfills/Number.isFinite';
+import ponyfill from './internal/ponyfills/Number.isFinite';
 
-export const isFinitePolyfill = curryN(1, polyfill);
+export const isFinitePonyfill = curryN(1, ponyfill);
 
 /**
  * Checks whether the passed value is a finite `Number`.
@@ -32,6 +32,6 @@ export const isFinitePolyfill = curryN(1, polyfill);
  */
 const _isFinite = isFunction(Number.isFinite)
   ? curryN(1, bind(Number.isFinite, Number))
-  : isFinitePolyfill;
+  : isFinitePonyfill;
 
 export default _isFinite;

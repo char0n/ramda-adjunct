@@ -9,7 +9,7 @@ Generate new version `CHANGELOG.md` file by running
 ```
 
 After changelog is generated, please review it and make sure it contains only
-relevant information. Adhere to semver and bump the `package.json` accordingly
+relevant information. Adhere to semver and bump the `package.json` and `package-lock.json` accordingly
 to semver rules.
 
 ## Edit README.md
@@ -32,7 +32,7 @@ Commit the above changes to git with following git message
 Tag the release commit
 
 ```sh
- $ git tag -a vY.Y.Z
+ $ git tag -a vX.Y.Z
  $ git push --tags
 ```
 

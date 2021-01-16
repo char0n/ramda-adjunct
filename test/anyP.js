@@ -2,7 +2,10 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import { anyPPolyfill, AggregatedError } from '../src/anyP';
+import {
+  anyPPonyfill,
+  AggregatedError as AggregateErrorPonyfill,
+} from '../src/anyP';
 
 describe('anyP', function () {
   context('given list of fulfilled promises', function () {
@@ -32,7 +35,6 @@ describe('anyP', function () {
           throw new Error('resolving should fail');
         } catch (e) {
           assert.notStrictEqual(e.message, 'resolving should fail');
-          assert.instanceOf(e, AggregatedError);
           assert.deepEqual(e.errors, expected);
         }
       }
@@ -96,7 +98,7 @@ describe('anyP', function () {
     assert.strictEqual(await anyP(actual), expected);
   });
 
-  context('anyPPolyfill', function () {
+  context('anyPPonyfill', function () {
     context('given list of fulfilled promises', function () {
       specify('should return first of fulfilled values', async function () {
         const p1 = RA.resolveP(1);
@@ -105,7 +107,7 @@ describe('anyP', function () {
         const actual = [p1, p2, p3];
         const expected = 1;
 
-        assert.strictEqual(await anyPPolyfill(actual), expected);
+        assert.strictEqual(await anyPPonyfill(actual), expected);
       });
     });
 
@@ -120,11 +122,11 @@ describe('anyP', function () {
           const expected = [1, 2, 3];
 
           try {
-            await anyPPolyfill(actual);
+            await anyPPonyfill(actual);
             throw new Error('resolving should fail');
           } catch (e) {
             assert.notStrictEqual(e.message, 'resolving should fail');
-            assert.instanceOf(e, AggregatedError);
+            assert.instanceOf(e, AggregateErrorPonyfill);
             assert.deepEqual(e.errors, expected);
           }
         }
@@ -139,7 +141,7 @@ describe('anyP', function () {
         const actual = [p1, p2, p3];
         const expected = 2;
 
-        assert.strictEqual(await anyPPolyfill(actual), expected);
+        assert.strictEqual(await anyPPonyfill(actual), expected);
       });
     });
 
@@ -151,7 +153,7 @@ describe('anyP', function () {
         const actual = [v1, v2, v3];
         const expected = 1;
 
-        assert.strictEqual(await anyPPolyfill(actual), expected);
+        assert.strictEqual(await anyPPonyfill(actual), expected);
       });
     });
 
@@ -163,7 +165,7 @@ describe('anyP', function () {
         const actual = [p1, v2, p3];
         const expected = 1;
 
-        assert.strictEqual(await anyPPolyfill(actual), expected);
+        assert.strictEqual(await anyPPonyfill(actual), expected);
       });
     });
 
@@ -173,12 +175,12 @@ describe('anyP', function () {
         const actual = list.map(RA.resolveP);
         const expected = list[0];
 
-        assert.strictEqual(await anyPPolyfill(actual), expected);
+        assert.strictEqual(await anyPPonyfill(actual), expected);
       });
     });
 
     it('should support placeholder to specify "gaps"', async function () {
-      const anyP = anyPPolyfill(R.__);
+      const anyP = anyPPonyfill(R.__);
       const p1 = RA.resolveP(1);
       const v2 = 2;
       const p3 = RA.resolveP(3);

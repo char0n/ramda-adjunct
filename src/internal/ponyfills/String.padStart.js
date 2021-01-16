@@ -2,7 +2,7 @@ import isFunction from '../../isFunction';
 import isNotUndefined from '../../isNotUndefined';
 import repeat from './String.repeat';
 
-const padStartPolyfill = (padString, targetLength, value) => {
+const padStartPonyfill = (padString, targetLength, value) => {
   // eslint-disable-next-line no-bitwise
   let finalLength = targetLength >> 0; // truncate if number, or convert non-number to 0;
   let finalPadString = String(isNotUndefined(padString) ? padString : ' ');
@@ -24,4 +24,4 @@ const padStartPolyfill = (padString, targetLength, value) => {
   return finalPadString.slice(0, finalLength) + String(value);
 };
 
-export default padStartPolyfill;
+export default padStartPonyfill;

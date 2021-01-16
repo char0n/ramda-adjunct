@@ -1,9 +1,9 @@
 import { invoker } from 'ramda';
 
-import polyfill from './internal/polyfills/String.trimEnd';
+import ponyfill from './internal/ponyfills/String.trimEnd';
 import isFunction from './isFunction';
 
-export const trimEndPolyfill = polyfill;
+export const trimEndPonyfill = ponyfill;
 
 export const trimEndInvoker = invoker(0, 'trimEnd');
 
@@ -25,6 +25,6 @@ export const trimEndInvoker = invoker(0, 'trimEnd');
 
 const trimEnd = isFunction(String.prototype.trimEnd)
   ? trimEndInvoker
-  : trimEndPolyfill;
+  : trimEndPonyfill;
 
 export default trimEnd;
