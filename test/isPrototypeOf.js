@@ -1,6 +1,5 @@
 /* eslint-disable no-prototype-builtins */
 import { assert } from 'chai';
-import * as R from 'ramda';
 
 import * as RA from '../src';
 
@@ -57,8 +56,8 @@ describe('isPrototypeOf', function () {
       assert.isFalse(RA.isPrototypeOf(Baz, bar));
     });
   });
-  
-  it('should be safe', function() {
+
+  it('should be safe', function () {
     assert.isFalse(RA.isPrototypeOf(null, {}));
   });
 
