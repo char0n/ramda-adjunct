@@ -11,4 +11,4 @@ RA.isPrototypeOf(RegExp, /my regex/gi); // $ExpectType boolean
 RA.isPrototypeOf(Object)({}); // $ExpectType boolean
 RA.isPrototypeOf(Array)([]); // $ExpectType boolean
 
-RA.isPrototypeOf(null, {}); // $ExceptError
+RA.isPrototypeOf(null, {}); // $ExpectError
