@@ -216,6 +216,8 @@ export { default as toInteger32 } from './toInteger32';
 export { default as toInt32 } from './toInteger32'; // alias of toInteger32
 export { default as toUinteger32 } from './toUinteger32';
 export { default as toUint32 } from './toUinteger32'; // alias of to toUinteger32
+export { default as clamp } from './clamp';
+
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';
