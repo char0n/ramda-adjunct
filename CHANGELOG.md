@@ -1,3 +1,10 @@
+# [2.31.1](https://github.com/char0n/ramda-adjunct/compare/v2.31.0...v2.31.1) (2021-02-21)
+
+### Bug Fixes
+
+* **deps**: remove postinstall husky script ([61f3fde](https://github.com/char0n/ramda-adjunct/commit/61f3fde46e3c65df0f67b217621fa9532141a2fa)), closes [#1773](https://github.com/char0n/ramda-adjunct/issues/1773)
+
+
 # [2.31.0](https://github.com/char0n/ramda-adjunct/compare/v2.30.0...v2.31.0) (2021-02-21)
 
 
