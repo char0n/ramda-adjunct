@@ -1467,7 +1467,7 @@ declare namespace RamdaAdjunct {
         invokeArgs(pathToMethod: string[]): (args: any[], obj: object) => any;
 
         /**
-         * Invokes the method at path of object with no arguments.
+         * Invokes the method at path of object.
          */
         invoke(pathToMethod: string[], obj: object): any;
         invoke(pathToMethod: string[]): (obj: object) => any;
