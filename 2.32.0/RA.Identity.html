@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Identity - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/search.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/ramda.min.js"></script>
+    <script src="scripts/RA.web.min.js"></script>
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<header>
+    <a href="index.html"><strong>Ramda Adjunct 2.32.0</strong></a><ul><li><a href="https://npm.runkit.com/ramda-adjunct">Try</a></li><li><a href="https://char0n.github.io/ramda-adjunct/">Latest Docs</a></li><li><a href="https://github.com/char0n/ramda-adjunct">GitHub</a></li><li><a href="https://gitter.im/ramda-adjunct/Lobby">Discuss</a></li></ul>
+</header>
+
+<nav>
+    <div id="filter">
+        <input name="search" type="search" placeholder="Filter" />
+    </div>
+    <h3>Classes</h3><ul><li><a href="RA.Identity.html">Identity</a></li></ul><h3></h3><ul><li><a href="RA.html">RA</a><ul class='methods'><li data-type='method'><a href="RA.html#.allEqual">allEqual<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.allEqualTo">allEqualTo<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.allIdentical">allIdentical<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.allIdenticalTo">allIdenticalTo<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.allP">allP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.allSettledP">allSettledP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.allUnique">allUnique<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.anyP">anyP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.appendFlipped">appendFlipped<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.argsPass">argsPass<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.async">async<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.cata">cata<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.ceil">ceil<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.compact">compact<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.concatAll">concatAll<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.concatRight">concatRight<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.contained">contained<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.curryRight">curryRight<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.curryRightN">curryRightN<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.defaultWhen">defaultWhen<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.delayP">delayP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.dispatch">dispatch<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.divideNum">divideNum<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.dropArgs">dropArgs<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.ensureArray">ensureArray<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.escapeRegExp">escapeRegExp<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.filterIndexed">filterIndexed<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.flattenDepth">flattenDepth<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.flattenPath">flattenPath<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.flattenProp">flattenProp<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.floor">floor<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.fnull">fnull<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.hasPath">hasPath<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.inRange">inRange<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.invoke">invoke<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.invokeArgs">invokeArgs<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.isArray">isArray<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isArrayLike">isArrayLike<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isAsyncFunction">isAsyncFunction<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isBigInt">isBigInt<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isBoolean">isBoolean<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isDate">isDate<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isEmptyArray">isEmptyArray<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isEmptyString">isEmptyString<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isError">isError<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isEven">isEven<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isFalse">isFalse<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isFalsy">isFalsy<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isFinite">isFinite<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isFloat">isFloat<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isFunction">isFunction<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isGeneratorFunction">isGeneratorFunction<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isIndexed">isIndexed<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isInteger">isInteger<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isIterable">isIterable<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isMap">isMap<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNaN">isNaN<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNaturalNumber">isNaturalNumber<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNegative">isNegative<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNegativeZero">isNegativeZero<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNilOrEmpty">isNilOrEmpty<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNonEmptyArray">isNonEmptyArray<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNonEmptyString">isNonEmptyString<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNonNegative">isNonNegative<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNonPositive">isNonPositive<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotArray">isNotArray<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotArrayLike">isNotArrayLike<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotAsyncFunction">isNotAsyncFunction<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotBoolean">isNotBoolean<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotDate">isNotDate<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotEmpty">isNotEmpty<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.isNotFinite">isNotFinite<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotFloat">isNotFloat<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotFunction">isNotFunction<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotGeneratorFunction">isNotGeneratorFunction<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotInteger">isNotInteger<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotMap">isNotMap<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotNaN">isNotNaN<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotNil">isNotNil<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotNilOrEmpty">isNotNilOrEmpty<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotNull">isNotNull<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotNumber">isNotNumber<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotObj">isNotObj<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotObjLike">isNotObjLike<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotPair">isNotPair<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotPlainObj">isNotPlainObj<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotRegExp">isNotRegExp<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotSet">isNotSet<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotString">isNotString<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotUndefined">isNotUndefined<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotValidDate">isNotValidDate<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNotValidNumber">isNotValidNumber<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNull">isNull<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isNumber">isNumber<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isObj">isObj<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isObjLike">isObjLike<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isOdd">isOdd<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isPair">isPair<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isPlainObj">isPlainObj<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isPositive">isPositive<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isPositiveZero">isPositiveZero<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isPromise">isPromise<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isPrototypeOf">isPrototypeOf<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.isRegExp">isRegExp<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isSafeInteger">isSafeInteger<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isSet">isSet<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isSparseArray">isSparseArray<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isString">isString<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isSymbol">isSymbol<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isThenable">isThenable<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isTrue">isTrue<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isTruthy">isTruthy<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isUndefined">isUndefined<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isValidDate">isValidDate<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.isValidNumber">isValidNumber<span data-category="List" class="label label-category">Type</span> </a></li><li data-type='method'><a href="RA.html#.lastP">lastP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.lengthEq">lengthEq<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.lengthGt">lengthGt<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.lengthGte">lengthGte<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.lengthLt">lengthLt<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.lengthLte">lengthLte<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.lengthNotEq">lengthNotEq<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.lensEq">lensEq<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.lensIso">lensIso<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.lensNotEq">lensNotEq<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.lensNotSatisfy">lensNotSatisfy<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.lensSatisfies">lensSatisfies<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.lensTraverse">lensTraverse<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.liftF">liftF<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.liftFN">liftFN<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.list">list<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.makeFlat">makeFlat<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.mapIndexed">mapIndexed<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.mergePath">mergePath<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.mergePaths">mergePaths<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.mergeProp">mergeProp<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.mergeProps">mergeProps<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.mergeRight">mergeRight<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.move">move<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.nand">nand<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.neither">neither<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.noneP">noneP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.nonePass">nonePass<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.noop">noop<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.nor">nor<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.notAllPass">notAllPass<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.notAllUnique">notAllUnique<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.notBoth">notBoth<span data-category="List" class="label label-category">Logic</span> </a></li><li data-type='method'><a href="RA.html#.notEqual">notEqual<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.omitBy">omitBy<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.omitIndexes">omitIndexes<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.overlaps">overlaps<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.padCharsEnd">padCharsEnd<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.padCharsStart">padCharsStart<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.padEnd">padEnd<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.padStart">padStart<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.pathNotEq">pathNotEq<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.pathOrLazy">pathOrLazy<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.paths">paths<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.pickIndexes">pickIndexes<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.propNotEq">propNotEq<span data-category="List" class="label label-category">Relation</span> </a></li><li data-type='method'><a href="RA.html#.rangeStep">rangeStep<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.reduceIndexed">reduceIndexed<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.reduceP">reduceP<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.reduceRightP">reduceRightP<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.rejectP">rejectP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.renameKeys">renameKeys<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.renameKeysWith">renameKeysWith<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.renameKeyWith">renameKeyWith<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.repeatStr">repeatStr<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.replaceAll">replaceAll<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.resolveP">resolveP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.round">round<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.seq">seq<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.sign">sign<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.skipTake">skipTake<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.sliceFrom">sliceFrom<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.sliceTo">sliceTo<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.sortByProps">sortByProps<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.spreadPath">spreadPath<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.spreadProp">spreadProp<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.stubArray">stubArray<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.stubNull">stubNull<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.stubObj">stubObj<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.stubString">stubString<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.stubUndefined">stubUndefined<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.subtractNum">subtractNum<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.thenCatchP">thenCatchP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.thenP">thenP<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.toArray">toArray<span data-category="List" class="label label-category">List</span> </a></li><li data-type='method'><a href="RA.html#.toInteger32">toInteger32<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.toUinteger32">toUinteger32<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.trimCharsEnd">trimCharsEnd<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.trimCharsStart">trimCharsStart<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.trimEnd">trimEnd<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.trimStart">trimStart<span data-category="List" class="label label-category">String</span> </a></li><li data-type='method'><a href="RA.html#.trunc">trunc<span data-category="List" class="label label-category">Math</span> </a></li><li data-type='method'><a href="RA.html#.unzipObjWith">unzipObjWith<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.viewOr">viewOr<span data-category="List" class="label label-category">Object</span> </a></li><li data-type='method'><a href="RA.html#.weave">weave<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.weaveLazy">weaveLazy<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.Y">Y<span data-category="List" class="label label-category">Function</span> </a></li><li data-type='method'><a href="RA.html#.zipObjWith">zipObjWith<span data-category="List" class="label label-category">Object</span> </a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Identity</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="RA.html">RA</a>.</span>
+        
+        Identity
+        </h2>
+        
+            <div class="class-description"><p>The simplest <a href="https://github.com/fantasyland/fantasy-land">fantasy-land</a>
+compatible monad which attaches no information to values.</p>
+<p>The Identity type is a very simple type that has no interesting side effects and
+is effectively just a container of some value. So why does it exist ?
+The Identity type is often used as the base monad of a monad
+transformer when no other behaviour is required.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+    <div id="Identity" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>new Identity<span class="signature">(value)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/1.8.0">v1.8.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="implements">Implements:</dt>
+    <dd class="implements"><ul>
+        
+            <li><a href="https://github.com/fantasyland/fantasy-land#apply">Apply</a>,
+<a href="https://github.com/fantasyland/fantasy-land#applicative">Applicative</a>,
+<a href="https://github.com/fantasyland/fantasy-land#functor">Functor</a>,
+<a href="https://github.com/fantasyland/fantasy-land#setoid">Setoid</a>,
+<a href="https://github.com/fantasyland/fantasy-land#semigroup">Semigroup</a>,
+<a href="https://github.com/fantasyland/fantasy-land#chain">Chain</a>,
+<a href="https://github.com/fantasyland/fantasy-land#monad">Monad</a>,
+<a href="https://github.com/fantasyland/fantasy-land#ord">Ord</a>,
+<a href="https://github.com/fantasyland/fantasy-land#monoid">Monoid*</a>,
+<a href="https://github.com/fantasyland/fantasy-land#contravariant">Contravariant</a></li>
+        
+    </ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Private constructor. Use <a href="RA.Identity.html#.of"><code>Identity.of</code></a> instead.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".@@type"><span class="type-signature">(static) </span>@@type<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line62">line 62</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+    <div id=".of" class="section-id"></div>
+    <h4 class="name"><span class="type-signature">(static) </span>of<span class="signature">(value)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>of :: Applicative f => a -> f a</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#applicative">Applicative</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1); //=> Identity(1)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="ap" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>ap<span class="signature">(applyWithFn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line101">line 101</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>ap :: Apply f => f a ~> f (a -> b) -> f b</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#apply">Apply</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+const b = Identity.of(1).map(a => b => a + b);
+
+a.ap(b); //=> Identity(2)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>applyWithFn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="chain" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>chain<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line192">line 192</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>chain :: Chain m => m a ~> (a -> m b) -> m b</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#chain">Chain</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+const fn = val => Identity.of(val + 1);
+
+a.chain(fn).chain(fn); //=> Identity(3)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Function returning the value of the same <a href="https://github.com/fantasyland/fantasy-land#semigroup">Chain</a></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="concat" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>concat<span class="signature">(semigroup)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line171">line 171</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>concat :: Semigroup a => a ~> a -> a</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#semigroup">Semigroup</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+const b = Identity.of(1);
+a.concat(b); //=> 2
+
+const c = Identity.of('c');
+const d = Identity.of('d');
+c.concat(d); //=> 'cd'
+
+const e = Identity.of(['e']);
+const f = Identity.of(['f']);
+e.concat(f); //=> ['e', 'f']</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>semigroup</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="contramap" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>contramap<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line264">line 264</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>contramap :: Contravariant f => f a ~> (b -> a) -> f b</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#contravariant">Contravariant</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const identity = a => a;
+const add1 = a => a + 1;
+const divide2 = a => a / 2;
+
+Identity.of(divide2).contramap(add1).get()(3); //=> 2
+Identity.of(identity).contramap(divide2).contramap(add1).get()(3); //=> 2
+Identity.of(identity).contramap(a => divide2(add1(a))).get()(3); //=> 2</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="empty" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>empty<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line240">line 240</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>empty :: Monoid m => () -> m</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#monoid">Monoid*</a> specification.
+Partial implementation of Monoid specification. <code>empty</code> method on instance only, returning
+identity value of the wrapped type. Using <code>R.empty</code> under the hood.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of('test');
+const i = a.empty();
+
+a.concat(i); //=> Identity('string');
+i.concat(a); //=> Identity('string');</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="equals" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>equals<span class="signature">(setoid)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line143">line 143</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>equals :: Setoid a => a ~> a -> Boolean</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#setoid">Setoid</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+const b = Identity.of(1);
+const c = Identity.of(2);
+
+a.equals(b); //=> true
+a.equals(c); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>setoid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="get" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>get<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line84">line 84</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Catamorphism for a value.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+a.get(); //=> 1</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="lte" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>lte<span class="signature">(ord)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line216">line 216</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>lte :: Ord a => a ~> a -> Boolean</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#ord">Ord</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+const b = Identity.of(1);
+const c = Identity.of(2);
+
+a.lte(b); //=> true
+a.lte(c); //=> true
+c.lte(a); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ord</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="map" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>map<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line120">line 120</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>map :: Functor f => f a ~> (a -> b) -> f b</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#functor">Functor</a> specification.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+a.map(a => a + 1); //=> Identity(2)</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Sun Feb 21 2021 11:23:09 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
