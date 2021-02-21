@@ -1,12 +1,13 @@
-import * as R from 'ramda';
+import { __ } from 'ramda';
 
 import invokeArgs from './invokeArgs';
 
 /**
- * Invokes the method at path of object with no arguments.
+ * Invokes the method at path of object.
  *
  * @func invoke
  * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.31.0|v2.31.0}
  * @category Object
  * @sig Array -> Object -> *
  * @param {Array.<string|number>} path The path of the method to invoke
@@ -14,9 +15,8 @@ import invokeArgs from './invokeArgs';
  * @return {*}
  * @example
  *
- * RA.invokeArgs(['abs'], Math); //=> NaN
- * RA.invokeArgs(['path', 'to', 'non-existent', 'method'], Math); //=> undefined
+ * RA.invoke(['random'], Math); //=> 0.5113253820009047
  */
-const invoke = invokeArgs(R.__, [], R.__);
+const invoke = invokeArgs(__, [], __);
 
 export default invoke;
