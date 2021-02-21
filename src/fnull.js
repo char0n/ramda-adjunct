@@ -24,15 +24,15 @@ import mapIndexed from './mapIndexed';
  * addDefaults(undefined, undefined); // => 9
  */
 
-const fnull = curry((fn, defaults) => {
-  return curryN(fn.length, (...args) => {
+const fnull = curry((fn, defaults) =>
+  curryN(fn.length, (...args) => {
     const argsWithDefaults = mapIndexed(
       (val, idx) => defaultWhen(isNil, defaults[idx], val),
       args
     );
 
     return apply(fn, argsWithDefaults);
-  });
-});
+  })
+);
 
 export default fnull;
