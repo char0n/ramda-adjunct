@@ -63,7 +63,6 @@
   "jsnext:main": "./es/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "postinstall": "husky install",
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
     "lint:fix": "better-npm-run lint:fix",
