@@ -3,6 +3,7 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 import BigInt from './shared/BigInt';
+import Symbol from './shared/Symbol';
 
 describe('isPrimitive', function () {
   context('given a primitive value', function () {
