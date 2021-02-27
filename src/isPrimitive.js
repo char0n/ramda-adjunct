@@ -10,7 +10,7 @@ import isNull from './isNull';
 import isSymbol from './isSymbol';
 
 /**
- * Checks if value is a primitive.
+ * Checks if value is a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
  * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Primitive_values
  * for definition of what sub-types comprise a primitive.
  *
