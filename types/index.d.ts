@@ -80,6 +80,12 @@ declare namespace RamdaAdjunct {
         /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type */
         isNotPrimitive<T>(val: T | Primitive): val is T;
 
+        /** 
+         * Checks if an object exists in another object's prototype chain.
+         */
+        isPrototypeOf(type: object, object: object): boolean;
+        isPrototypeOf(type: object): (object: object) => boolean;
+
         /**
          * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
          */
@@ -1473,6 +1479,12 @@ declare namespace RamdaAdjunct {
         invokeArgs(pathToMethod: string[], args: any[], obj: object): any;
         invokeArgs(pathToMethod: string[], args: any[]): (obj: object) => any;
         invokeArgs(pathToMethod: string[]): (args: any[], obj: object) => any;
+
+        /**
+         * Invokes the method at path of object.
+         */
+        invoke(pathToMethod: string[], obj: object): any;
+        invoke(pathToMethod: string[]): (obj: object) => any;
 
         /**
          * Converts double-precision 64-bit binary format IEEE 754 to signed 32 bit integer number.

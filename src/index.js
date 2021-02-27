@@ -160,6 +160,7 @@ export { default as sortByProps } from './sortByProps';
 export { default as skipTake } from './skipTake';
 export { default as rangeStep } from './rangeStep';
 // Object
+export { default as invoke } from './invoke';
 export { default as invokeArgs } from './invokeArgs';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
@@ -182,6 +183,7 @@ export { default as flattenProp } from './flattenProp';
 export { default as flattenPath } from './flattenPath';
 export { default as unzipObjWith } from './unzipObjWith';
 export { default as zipObjWith } from './zipObjWith';
+export { default as isPrototypeOf } from './isPrototypeOf';
 // Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';

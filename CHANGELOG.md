@@ -1,3 +1,21 @@
+# [2.31.1](https://github.com/char0n/ramda-adjunct/compare/v2.31.0...v2.31.1) (2021-02-21)
+
+### Bug Fixes
+
+* **deps**: remove postinstall husky script ([61f3fde](https://github.com/char0n/ramda-adjunct/commit/61f3fde46e3c65df0f67b217621fa9532141a2fa)), closes [#1773](https://github.com/char0n/ramda-adjunct/issues/1773)
+
+
+# [2.31.0](https://github.com/char0n/ramda-adjunct/compare/v2.30.0...v2.31.0) (2021-02-21)
+
+
+### Features
+
+* **list:** add filterIndexed ([#1713](https://github.com/char0n/ramda-adjunct/issues/1713)) ([d3cfc63](https://github.com/char0n/ramda-adjunct/commit/d3cfc6325e13324ca6e54c10de016a522362511e)), closes [#1346](https://github.com/char0n/ramda-adjunct/issues/1346)
+* **object:** add isPrototypeOf ([#1456](https://github.com/char0n/ramda-adjunct/issues/1456)) ([314be55](https://github.com/char0n/ramda-adjunct/commit/314be550cebf30719d418c68e8687108122d9af8)), closes [#787](https://github.com/char0n/ramda-adjunct/issues/787)
+* **object:** add invoke ([#1554](https://github.com/char0n/ramda-adjunct/issues/1554)) ([e90ce3c](https://github.com/char0n/ramda-adjunct/commit/e90ce3cc714052d0e24dc2b592d43c77a8348eb9)), closes [#81](https://github.com/char0n/ramda-adjunct/issues/81)
+
+
+
 # [2.30.0](https://github.com/char0n/ramda-adjunct/compare/v2.29.0...v2.30.0) (2020-12-27)
 
 
