@@ -44,7 +44,6 @@ declare namespace RamdaAdjunct {
     interface Dictionary<T> { [key: string]: T; }
 
     type DictPred<T> = (value: T, key: string) => boolean;
-    /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type */
     type Primitive = string | number | bigint | boolean | undefined | null | symbol;
 
     interface Static {
@@ -71,13 +70,11 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if value is a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
          */
-        /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type */
         isPrimitive<T>(val: T | Primitive): val is Primitive;
 
         /**
          * Checks if value is not a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
          */
-        /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type */
         isNotPrimitive<T>(val: T | Primitive): val is T;
 
         /** 
