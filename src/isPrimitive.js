@@ -19,7 +19,7 @@ import isSymbol from './isSymbol';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isNotObj|isNotObj}
+ * @see {@link RA.isNotPrimitive|isNotPrimitive}, {@link RA.isPrimitive|isPrimitive}, {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values|MDN Primitive values}, {@link https://developer.mozilla.org/en-US/docs/Glossary/Primitive|MDN Primitive}
  * @example
  *
  * RA.isPrimitive("string"); //=> true
