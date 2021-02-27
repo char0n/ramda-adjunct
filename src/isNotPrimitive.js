@@ -3,7 +3,7 @@ import { complement, curryN } from 'ramda';
 import isPrimitive from './isPrimitive';
 
 /**
- * Checks if value is not a primitive.
+ * Checks if value is not a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
  *
  * @func isNotPrimitive
  * @category Type
