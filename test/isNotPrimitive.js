@@ -37,6 +37,5 @@ describe('isNotPrimitive', function () {
     const isNotPrimitive = RA.isNotPrimitive(R.__);
 
     assert.isFalse(isNotPrimitive(1));
-    assert.isTrue(isNotPrimitive({}));
   });
 });
