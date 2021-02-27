@@ -69,7 +69,7 @@ declare namespace RamdaAdjunct {
         isBoolean(val: any): val is boolean;
 
         /**
-         * Checks if input value is a primitive.
+         * Checks if value is a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
          */
         /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type */
         isPrimitive<T>(val: T | Primitive): val is Primitive;
