@@ -157,7 +157,7 @@
     "core-js": "=3.9.0",
     "docdash": "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
     "dtslint": "=4.0.7",
-    "eslint": "7.20.0",
+    "eslint": "7.21.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-prettier": "=8.1.0",
     "eslint-plugin-import": "2.22.1",
