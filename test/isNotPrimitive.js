@@ -15,7 +15,7 @@ describe('isNotPrimitive', function () {
       assert.isFalse(RA.isNotPrimitive(undefined));
       if (Symbol !== undefined) {
         assert.isFalse(RA.isNotPrimitive(Symbol.for('')));
-      }   
+      }
       if (BigInt !== undefined) {
         assert.isFalse(RA.isNotPrimitive(BigInt(1234)));
       }
