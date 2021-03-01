@@ -79,7 +79,7 @@ declare namespace RamdaAdjunct {
          */
         isNotPrimitive<T>(val: T | Primitive): val is T;
 
-        /** 
+        /**
          * Checks if an object exists in another object's prototype chain.
          */
         isPrototypeOf(type: object, object: object): boolean;
