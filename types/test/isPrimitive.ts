@@ -11,7 +11,7 @@ RA.isPrimitive({}); // $ExpectType boolean
 RA.isPrimitive(() => {}); // $ExpectType boolean
 RA.isPrimitive(new Set()); // $ExpectType boolean
 
-// Test type narrowing
+// test type narrowing
 interface SomeObj {
   a: string;
 }
