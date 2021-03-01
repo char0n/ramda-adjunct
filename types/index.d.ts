@@ -44,6 +44,7 @@ declare namespace RamdaAdjunct {
     interface Dictionary<T> { [key: string]: T; }
 
     type DictPred<T> = (value: T, key: string) => boolean;
+    type Primitive = string | number | bigint | boolean | undefined | null | symbol;
 
     interface Static {
         /**
@@ -65,6 +66,18 @@ declare namespace RamdaAdjunct {
          * Checks if input value is `Boolean`.
          */
         isBoolean(val: any): val is boolean;
+
+        /**
+         * Checks if value is a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
+         * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Primitive_values
+         * for definition of what sub-types comprise a primitive.
+         */
+        isPrimitive<T>(val: T | Primitive): val is Primitive;
+
+        /**
+         * Checks if value is not a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
+         */
+        isNotPrimitive<T>(val: T | Primitive): val is T;
 
         /**
          * Checks if an object exists in another object's prototype chain.

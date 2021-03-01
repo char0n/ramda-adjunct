@@ -20,7 +20,8 @@
       "interface-name": [true, "never-prefix"],
       "ban-types": [true, ["Object", "Use {} instead."], ["String"], ["Number"]],
       "member-ordering": false,
-      "no-namespace": false
+      "no-namespace": false,
+      "no-null-undefined-union null": false
     },
     "rulesDirectory": []
 }
