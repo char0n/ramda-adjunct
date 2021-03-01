@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNegative.js - Documentation</title>
+    <title>Global - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,46 +42,492 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNegative.js</h1>
+    <h1 class="page-title">Global</h1>
     
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>import { both, gt, curryN } from 'ramda';
+        <h2>
+        
+        </h2>
+        
+    
+</header>
 
-import isNumber from './isNumber';
+<article>
+    <div class="container-overview">
+    
+        
 
-/**
- * Checks if value is a negative `Number` primitive or object. Zero is not considered neither
- * positive or negative.
- *
- * @func isNegative
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.15.0|v1.15.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isPositive|isPositive}
- * @example
- *
- * RA.isNegative(-1); // => true
- * RA.isNegative(Number.MIN_VALUE); // => false
- * RA.isNegative(+Infinity); // => false
- * RA.isNegative(NaN); // => false
- * RA.isNegative('5'); // => false
- */
-const isNegative = curryN(1, both(isNumber, gt(0)));
+<dl class="details">
 
-export default isNegative;
-</code></pre>
-        </article>
-    </section>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+        
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+    <div id="isNotPrimitive" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>isNotPrimitive<span class="signature">(val)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isNotPrimitive.js.html">isNotPrimitive.js</a>, <a href="isNotPrimitive.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/2.32.0">v2.32.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><code>isPrimitive</code>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values">MDN Primitive values</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">MDN Primitive</a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if value is not a primitive data type. There are 6 primitive data types: <code>string</code>, <code>number</code>, <code>bigint</code>, <code>boolean</code>, <code>undefined</code>, <code>symbol</code> and a special case of <code>null</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isNotPrimitive(new String("string")); //=> true
+RA.isNotPrimitive(new Number(1)); //=> true
+RA.isNotPrimitive("string"); //=> false
+RA.isNotPrimitive(1); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+    <div id="isPrimitive" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>isPrimitive<span class="signature">(val)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="isPrimitive.js.html">isPrimitive.js</a>, <a href="isPrimitive.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><a href="https://char0n.github.io/ramda-adjunct/2.32.0">v2.32.0</a></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-sig">Signature:</dt>
+    <dd class="tag-sig">
+        <ul>
+            
+              <li><code>* -> Boolean</code></li>
+            
+        </ul>
+    </dd>
+    
+    
+
+    
+
+    
+
+    
+    <dt class="tag-category">Category:</dt>
+    <dd class="tag-category">
+        <ul><li><i>Type</i></li></ul>
+    </dd>
+    
+
+    
+    <dt class="tag-see">See also:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><code>isNotPrimitive</code>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values">MDN Primitive values</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">MDN Primitive</a></li>
+            </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Checks if value is a primitive data type. There are 6 primitive data types: <code>string</code>, <code>number</code>, <code>bigint</code>, <code>boolean</code>, <code>undefined</code>, <code>symbol</code> and a special case of <code>null</code>.
+See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Primitive_values
+for definition of what sub-types comprise a primitive.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>RA.isPrimitive("string"); //=> true
+RA.isPrimitive(1); //=> true
+RA.isPrimitive(new String("string")); //=> false
+RA.isPrimitive(new Number(1)); //=> false</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to test</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 

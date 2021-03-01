@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNegative.js - Documentation</title>
+    <title>isNotPrimitive.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNegative.js</h1>
+    <h1 class="page-title">isNotPrimitive.js</h1>
     
 
     
@@ -52,33 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { both, gt, curryN } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { complement, curryN } from 'ramda';
 
-import isNumber from './isNumber';
+import isPrimitive from './isPrimitive';
 
 /**
- * Checks if value is a negative `Number` primitive or object. Zero is not considered neither
- * positive or negative.
+ * Checks if value is not a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
  *
- * @func isNegative
- * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/1.15.0|v1.15.0}
+ * @func isNotPrimitive
  * @category Type
  * @sig * -> Boolean
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.32.0|v2.32.0}
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isPositive|isPositive}
+ * @see {@link RA.isPrimitive|isPrimitive}, {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values|MDN Primitive values}, {@link https://developer.mozilla.org/en-US/docs/Glossary/Primitive|MDN Primitive}
  * @example
  *
- * RA.isNegative(-1); // => true
- * RA.isNegative(Number.MIN_VALUE); // => false
- * RA.isNegative(+Infinity); // => false
- * RA.isNegative(NaN); // => false
- * RA.isNegative('5'); // => false
+ * RA.isNotPrimitive(new String("string")); //=> true
+ * RA.isNotPrimitive(new Number(1)); //=> true
+ * RA.isNotPrimitive("string"); //=> false
+ * RA.isNotPrimitive(1); //=> false
  */
-const isNegative = curryN(1, both(isNumber, gt(0)));
 
-export default isNegative;
+const isNotPrimitive = curryN(1, complement(isPrimitive));
+
+export default isNotPrimitive;
 </code></pre>
         </article>
     </section>
