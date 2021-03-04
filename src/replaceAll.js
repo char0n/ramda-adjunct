@@ -28,7 +28,6 @@ export const replaceAllInvoker = invoker(2, 'replaceAll');
  * RA.replaceAll(/x/g, 'v', 'xxx'); //=> 'vvv'
  * RA.replaceAll(/x/, 'v', 'xxx'); //=> TypeError
  */
-
 const replaceAll = isFunction(String.prototype.replaceAll)
   ? replaceAllInvoker
   : replaceAllPonyfill;
