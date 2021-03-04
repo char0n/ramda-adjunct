@@ -4,7 +4,7 @@ interface Test {
   a: number | undefined;
   b: number | null;
   /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type here */
-  c: number | null| undefined;
+  c: number | null | undefined;
 }
 
 const obj: Test = {a: 1, b: 1, c: 1};
