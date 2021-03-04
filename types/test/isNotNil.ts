@@ -20,3 +20,8 @@ if (RA.isNotNil(obj.b)) {
 if (RA.isNotNil(obj.c)) {
   obj.c; // $ExpectType number
 }
+
+RA.isNotNil('string'); // $ExpectType boolean
+RA.isNotNil(1); // $ExpectType boolean
+RA.isNotNil([]); // $ExpectType boolean
+RA.isNotNil({}); // $ExpectType boolean
