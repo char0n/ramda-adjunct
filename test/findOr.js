@@ -63,4 +63,14 @@ describe('findOr', function () {
       assert.strictEqual(RA.findOr(defaultValue, predicate, list), defaultValue);
     });
   });
+  
+  it('should curry', function () {
+    const fn = val => val === 1;
+    const list = [1, 2, 3, 4];
+    
+    assert.strictEqual(RA.findOr(4, fn, list), 4);
+    assert.strictEqual(RA.findOr(4)(fn, list), 4);
+    assert.strictEqual(RA.findOr(4, fn)(list), 4);
+    assert.strictEqual(RA.findOr(4)(fn)(list), 4);
+  });
 });
