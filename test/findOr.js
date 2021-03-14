@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import * as RA from '../src';
 
 describe('findOr', function () {
-  context('given a list that has the value to find', function () {
+  context('given a list with a matching value', function () {
     context('and that value is truthy', function () {
       specify('should return the found value', function () {
         const defaultValue = 'default';
