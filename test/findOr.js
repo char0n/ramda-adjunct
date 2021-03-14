@@ -33,7 +33,7 @@ describe('findOr', function () {
         const list = [1, 2, 3, null];
         const predicate = (val) => val === null;
 
-        assert.deepEqual(
+        assert.strictEqual(
           RA.findOr(defaultValue, predicate, list),
           defaultValue
         );
