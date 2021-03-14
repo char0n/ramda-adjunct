@@ -54,7 +54,7 @@ describe('findOr', function () {
     });
   });
 
-  context('given a list that does not contain the value to find', function () {
+  context('given a list without a matching value', function () {
     specify('should return the default value', function () {
       const defaultValue = 'default';
       const list = [1, 2, 3];
