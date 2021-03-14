@@ -10,7 +10,7 @@ describe('findOr', function () {
         const list = [1, 2, 3];
         const predicate = (val) => val === 1;
 
-        assert.deepEqual(RA.findOr(defaultValue, predicate, list), 1);
+        assert.strictEqual(RA.findOr(defaultValue, predicate, list), 1);
       });
     });
 
