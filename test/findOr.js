@@ -20,7 +20,7 @@ describe('findOr', function () {
         const list = [1, 2, 3, NaN];
         const predicate = (val) => RA.isNaN(val);
 
-        assert.deepEqual(
+        assert.strictEqual(
           RA.findOr(defaultValue, predicate, list),
           defaultValue
         );
