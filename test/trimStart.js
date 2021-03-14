@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import { trimStartInvoker, trimStartPolyfill } from '../src/trimStart';
+import { trimStartInvoker, trimStartPonyfill } from '../src/trimStart';
 
 describe('trimStart', function () {
   it('should remove whitespace from the beginning of a string', function () {
@@ -71,35 +71,35 @@ describe('trimStart', function () {
     });
   });
 
-  context('trimStartPolyfill', function () {
+  context('trimStartPonyfill', function () {
     specify(
       'should remove whitespace from the beginning of a string',
       function () {
-        assert.strictEqual(trimStartPolyfill('  abc'), 'abc');
+        assert.strictEqual(trimStartPonyfill('  abc'), 'abc');
       }
     );
 
     specify(
       'should not remove whitespace from the rest of the string',
       function () {
-        assert.strictEqual(trimStartPolyfill('a b c '), 'a b c ');
+        assert.strictEqual(trimStartPonyfill('a b c '), 'a b c ');
       }
     );
 
     context('given an empty string', function () {
       specify('should return an empty string', function () {
-        assert.strictEqual(trimStartPolyfill(''), '');
+        assert.strictEqual(trimStartPonyfill(''), '');
       });
     });
 
     context('given an string with whitespaces only', function () {
       specify('should return an empty string', function () {
-        assert.strictEqual(trimStartPolyfill('   '), '');
+        assert.strictEqual(trimStartPonyfill('   '), '');
       });
     });
 
     specify('should support placeholder to specify "gaps"', function () {
-      const trimStart = trimStartPolyfill(R.__);
+      const trimStart = trimStartPonyfill(R.__);
 
       assert.strictEqual(trimStart('  abc'), 'abc');
     });

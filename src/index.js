@@ -85,6 +85,10 @@ export { default as isSparseArray } from './isSparseArray';
 export { default as isSymbol } from './isSymbol';
 export { default as isSafeInteger } from './isSafeInteger';
 export { default as isIndexed } from './isIndexed';
+export { default as isError } from './isError';
+export { default as isNaturalNumber } from './isNaturalNumber';
+export { default as isPrimitive } from './isPrimitive';
+export { default as isNotPrimitive } from './isNotPrimitive';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
@@ -121,6 +125,7 @@ export { default as fnull } from './fnull';
 // List
 export { default as mapIndexed } from './mapIndexed';
 export { default as reduceIndexed } from './reduceIndexed';
+export { default as filterIndexed } from './filterIndexed';
 export { default as pickIndexes } from './pickIndexes';
 export { default as list } from './list';
 export { default as ensureArray } from './ensureArray';
@@ -153,12 +158,15 @@ export { default as allUnique } from './allUnique';
 export { default as notAllUnique } from './notAllUnique';
 export { default as sortByProps } from './sortByProps';
 export { default as skipTake } from './skipTake';
+export { default as rangeStep } from './rangeStep';
 export { default as findOr } from './findOr';
 // Object
+export { default as invoke } from './invoke';
 export { default as invokeArgs } from './invokeArgs';
 export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
+export { default as renameKeyWith } from './renameKeyWith';
 export { default as mergeRight } from './mergeRight';
 export { default as mergeLeft } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
@@ -176,6 +184,7 @@ export { default as flattenProp } from './flattenProp';
 export { default as flattenPath } from './flattenPath';
 export { default as unzipObjWith } from './unzipObjWith';
 export { default as zipObjWith } from './zipObjWith';
+export { default as isPrototypeOf } from './isPrototypeOf';
 // Relation
 export { default as lensEq } from './lensEq';
 export { default as lensNotEq } from './lensNotEq';
@@ -186,6 +195,8 @@ export { default as lensIso } from './lensIso';
 export { default as propNotEq } from './propNotEq';
 export { default as pathNotEq } from './pathNotEq';
 export { default as inRange } from './inRange';
+export { default as notEqual } from './notEqual';
+export { default as overlaps } from './overlaps';
 // Logic
 export { default as isNotEmpty } from './isNotEmpty';
 export { default as defaultWhen } from './defaultWhen';
@@ -205,6 +216,10 @@ export { default as floor } from './floor';
 export { default as trunc } from './trunc';
 export { default as sign } from './sign';
 export { default as subtractNum } from './subtractNum';
+export { default as toInteger32 } from './toInteger32';
+export { default as toInt32 } from './toInteger32'; // alias of toInteger32
+export { default as toUinteger32 } from './toUinteger32';
+export { default as toUint32 } from './toUinteger32'; // alias of to toUinteger32
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';

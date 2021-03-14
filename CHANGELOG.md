@@ -1,3 +1,65 @@
+# [2.31.1](https://github.com/char0n/ramda-adjunct/compare/v2.31.0...v2.31.1) (2021-02-21)
+
+### Bug Fixes
+
+* **deps**: remove postinstall husky script ([61f3fde](https://github.com/char0n/ramda-adjunct/commit/61f3fde46e3c65df0f67b217621fa9532141a2fa)), closes [#1773](https://github.com/char0n/ramda-adjunct/issues/1773)
+
+
+# [2.31.0](https://github.com/char0n/ramda-adjunct/compare/v2.30.0...v2.31.0) (2021-02-21)
+
+
+### Features
+
+* **list:** add filterIndexed ([#1713](https://github.com/char0n/ramda-adjunct/issues/1713)) ([d3cfc63](https://github.com/char0n/ramda-adjunct/commit/d3cfc6325e13324ca6e54c10de016a522362511e)), closes [#1346](https://github.com/char0n/ramda-adjunct/issues/1346)
+* **object:** add isPrototypeOf ([#1456](https://github.com/char0n/ramda-adjunct/issues/1456)) ([314be55](https://github.com/char0n/ramda-adjunct/commit/314be550cebf30719d418c68e8687108122d9af8)), closes [#787](https://github.com/char0n/ramda-adjunct/issues/787)
+* **object:** add invoke ([#1554](https://github.com/char0n/ramda-adjunct/issues/1554)) ([e90ce3c](https://github.com/char0n/ramda-adjunct/commit/e90ce3cc714052d0e24dc2b592d43c77a8348eb9)), closes [#81](https://github.com/char0n/ramda-adjunct/issues/81)
+
+
+
+# [2.30.0](https://github.com/char0n/ramda-adjunct/compare/v2.29.0...v2.30.0) (2020-12-27)
+
+
+### Bug Fixes
+
+* **invokeArgs:** update TypeScript signature ([#1710](https://github.com/char0n/ramda-adjunct/issues/1710)) ([775d282](https://github.com/char0n/ramda-adjunct/commit/775d2825c4cbed2118a0cbaad2c13587090a49b1)), closes [#1707](https://github.com/char0n/ramda-adjunct/issues/1707)
+
+
+### Features
+
+* **list:** add rangeStep ([#1708](https://github.com/char0n/ramda-adjunct/issues/1708)) ([82c0368](https://github.com/char0n/ramda-adjunct/commit/82c0368008ee5ed90e28baf1a91ad74b91ba7072)), closes [#1477](https://github.com/char0n/ramda-adjunct/issues/1477) [#1230](https://github.com/char0n/ramda-adjunct/issues/1230)
+* **relation:** add overlaps ([2ea5355](https://github.com/char0n/ramda-adjunct/commit/2ea5355608a9016c96de39a87d48f21016bef330)), closes [#1229](https://github.com/char0n/ramda-adjunct/issues/1229)
+* **type:** add isError ([#1449](https://github.com/char0n/ramda-adjunct/issues/1449)) ([adf25c2](https://github.com/char0n/ramda-adjunct/commit/adf25c2a0aa79bf53df66f4bd9720b5039dfd185)), closes [#206](https://github.com/char0n/ramda-adjunct/issues/206)
+
+
+
+# [2.29.0](https://github.com/char0n/ramda-adjunct/compare/v2.28.0...v2.29.0) (2020-12-13)
+
+
+### Bug Fixes
+
+* **compact:** remove other falsy values from type ([#1603](https://github.com/char0n/ramda-adjunct/issues/1603)) ([31651bc](https://github.com/char0n/ramda-adjunct/commit/31651bca82e2e365daf35ea65f084ea8cd3dbb2c)), closes [#1602](https://github.com/char0n/ramda-adjunct/issues/1602)
+* **replaceAll:** add support for special replacement patterns ([#1627](https://github.com/char0n/ramda-adjunct/issues/1627)) ([1f862a1](https://github.com/char0n/ramda-adjunct/commit/1f862a14d924e5f46e7f80f6ae60030fc8cf854c)), closes [#1573](https://github.com/char0n/ramda-adjunct/issues/1573)
+
+
+### Features
+
+* **object:** add renameKeyWith ([#1612](https://github.com/char0n/ramda-adjunct/issues/1612)) ([6aa00ce](https://github.com/char0n/ramda-adjunct/commit/6aa00ce7d093a9f65eba2eec380bea24209774bf)), closes [#1228](https://github.com/char0n/ramda-adjunct/issues/1228)
+* **relation:** add notEqual ([#1459](https://github.com/char0n/ramda-adjunct/issues/1459)) ([4eb9ada](https://github.com/char0n/ramda-adjunct/commit/4eb9adab2d5e271a8fa3ae2859feeeb8af84874a)), closes [#102](https://github.com/char0n/ramda-adjunct/issues/102)
+* **type:** isNaturalNumber ([#1450](https://github.com/char0n/ramda-adjunct/issues/1450)) ([ba6bb12](https://github.com/char0n/ramda-adjunct/commit/ba6bb129476426a880e1d029929fafa924cfbc06)), closes [#1440](https://github.com/char0n/ramda-adjunct/issues/1440)
+
+
+
+# [2.28.0](https://github.com/char0n/ramda-adjunct/compare/v2.27.0...v2.28.0) (2020-09-13)
+
+
+### Features
+
+* add support for ramda@0.27.1 ([5699402](https://github.com/char0n/ramda-adjunct/commit/56994024c1a4b20c9bbed207c6d39b12b50a3fcc)), closes [#1577](https://github.com/char0n/ramda-adjunct/issues/1577)
+* **Math:** add toInteger32 ([#1463](https://github.com/char0n/ramda-adjunct/issues/1463)) ([1f39b34](https://github.com/char0n/ramda-adjunct/commit/1f39b34972b2eb5cd80ca9440cb6768cf4977980)), closes [#783](https://github.com/char0n/ramda-adjunct/issues/783)
+* **Math:** add toUinteger32 ([cdbdd3c](https://github.com/char0n/ramda-adjunct/commit/cdbdd3c44b549e2d97e0ae122463cb8c8120ea83)), closes [#1278](https://github.com/char0n/ramda-adjunct/issues/1278)
+
+
+
 <a name="2.27.0"></a>
 # [2.27.0](https://github.com/char0n/ramda-adjunct/compare/v2.26.0...v2.27.0) (2020-05-23)
 
@@ -267,7 +329,7 @@
 
 ### Bug Fixes
 
-* **renameKeysWith**: use lenses instead of adjust to support ramda@0.26.0 ([43839f3](https://github.com/char0n/ramda-adjunct/commit/43839f3)) 
+* **renameKeysWith**: use lenses instead of adjust to support ramda@0.26.0 ([43839f3](https://github.com/char0n/ramda-adjunct/commit/43839f3))
 
 ### Features
 
@@ -277,7 +339,7 @@
 * deprecate `mergeRight`; add new alias to `mergeRight` as `mergeLeft`; ramda@0.26.0 contains it as `R.mergeLeft` ([7849c62](https://github.com/char0n/ramda-adjunct/commit/7849c62))
 * deprecate `thenP`; ramda@0.26.0 contains it as `R.then` ([a4c3475](https://github.com/char0n/ramda-adjunct/commit/a4c3475))
 * add alias `then` to `thenP` ([3ebd1ee](https://github.com/char0n/ramda-adjunct/commit/3ebd1ee))
- 
+
 
 <a name="2.11.0"></a>
 # [2.11.0](https://github.com/char0n/ramda-adjunct/compare/v2.10.0...v2.11.0) (2018-10-28)

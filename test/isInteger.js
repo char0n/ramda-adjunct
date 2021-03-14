@@ -2,9 +2,9 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import MAX_SAFE_INTEGER from '../src/internal/polyfills/Number.MAX_SAFE_INTEGER';
-import MIN_SAFE_INTEGER from '../src/internal/polyfills/Number.MIN_SAFE_INTEGER';
-import { isIntegerPolyfill } from '../src/isInteger';
+import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
+import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
+import { isIntegerPonyfill } from '../src/isInteger';
 
 describe('isInteger', function () {
   it('should test value for an `integer`', function () {
@@ -28,31 +28,31 @@ describe('isInteger', function () {
     assert.isFalse(RA.isInteger([1]));
   });
 
-  context('isIntegerPolyfill', function () {
-    specify('should test polyfill for an `integer', function () {
-      assert.isTrue(isIntegerPolyfill(0));
-      assert.isTrue(isIntegerPolyfill(1));
-      assert.isTrue(isIntegerPolyfill(-100000));
-      assert.isTrue(isIntegerPolyfill(MAX_SAFE_INTEGER));
-      assert.isTrue(isIntegerPolyfill(MIN_SAFE_INTEGER));
+  context('isIntegerPonyfill', function () {
+    specify('should test ponyfill for an `integer', function () {
+      assert.isTrue(isIntegerPonyfill(0));
+      assert.isTrue(isIntegerPonyfill(1));
+      assert.isTrue(isIntegerPonyfill(-100000));
+      assert.isTrue(isIntegerPonyfill(MAX_SAFE_INTEGER));
+      assert.isTrue(isIntegerPonyfill(MIN_SAFE_INTEGER));
 
-      assert.isFalse(isIntegerPolyfill(0.1));
-      assert.isFalse(isIntegerPolyfill(Math.PI));
-      assert.isFalse(isIntegerPolyfill(5.56789));
+      assert.isFalse(isIntegerPonyfill(0.1));
+      assert.isFalse(isIntegerPonyfill(Math.PI));
+      assert.isFalse(isIntegerPonyfill(5.56789));
 
-      assert.isFalse(isIntegerPolyfill(NaN));
-      assert.isFalse(isIntegerPolyfill(Infinity));
-      assert.isFalse(isIntegerPolyfill(-Infinity));
-      assert.isFalse(isIntegerPolyfill('10'));
-      assert.isFalse(isIntegerPolyfill(true));
-      assert.isFalse(isIntegerPolyfill(false));
-      assert.isFalse(isIntegerPolyfill([1]));
+      assert.isFalse(isIntegerPonyfill(NaN));
+      assert.isFalse(isIntegerPonyfill(Infinity));
+      assert.isFalse(isIntegerPonyfill(-Infinity));
+      assert.isFalse(isIntegerPonyfill('10'));
+      assert.isFalse(isIntegerPonyfill(true));
+      assert.isFalse(isIntegerPonyfill(false));
+      assert.isFalse(isIntegerPonyfill([1]));
     });
 
     specify('should support placeholder to specify "gaps"', function () {
-      const isIntegerPolyfillWithGap = isIntegerPolyfill(R.__);
+      const isIntegerPonyfillWithGap = isIntegerPonyfill(R.__);
 
-      assert.isTrue(isIntegerPolyfillWithGap(1));
+      assert.isTrue(isIntegerPonyfillWithGap(1));
     });
   });
 

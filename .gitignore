@@ -6,6 +6,7 @@
 /npm-debug.log
 /coverage
 /tmp-test-bundle.js
+/tmp-test-bundle.js.LICENSE.txt
 /test-results.xml
 /es
 /lib

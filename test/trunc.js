@@ -3,7 +3,7 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 import Symbol from './shared/Symbol';
-import { truncPolyfill } from '../src/trunc';
+import { truncPonyfill } from '../src/trunc';
 
 describe('trunc', function () {
   it('should truncate fractional digits', function () {
@@ -82,7 +82,7 @@ describe('trunc', function () {
     assert.strictEqual(trunc(0.9), 0);
   });
 
-  context('truncPolyfill', function () {
+  context('truncPonyfill', function () {
     before(function () {
       if (RA.isNotFunction(Math.trunc)) {
         this.skip();
@@ -90,40 +90,40 @@ describe('trunc', function () {
     });
 
     specify('should truncate fractional digits', function () {
-      assert.strictEqual(truncPolyfill(13.37), 13);
-      assert.strictEqual(truncPolyfill(42.84), 42);
-      assert.strictEqual(truncPolyfill(0.123), 0);
-      assert.strictEqual(truncPolyfill(-0.123), -0);
+      assert.strictEqual(truncPonyfill(13.37), 13);
+      assert.strictEqual(truncPonyfill(42.84), 42);
+      assert.strictEqual(truncPonyfill(0.123), 0);
+      assert.strictEqual(truncPonyfill(-0.123), -0);
     });
 
     context('given number in string', function () {
       specify('should truncate fractional digits', function () {
-        assert.strictEqual(truncPolyfill('-1.123'), -1);
+        assert.strictEqual(truncPonyfill('-1.123'), -1);
       });
     });
 
     context('given integer number', function () {
       specify('should return original integer number', function () {
-        assert.strictEqual(truncPolyfill(0), 0);
-        assert.strictEqual(truncPolyfill(1), 1);
-        assert.strictEqual(truncPolyfill(-1), -1);
+        assert.strictEqual(truncPonyfill(0), 0);
+        assert.strictEqual(truncPonyfill(1), 1);
+        assert.strictEqual(truncPonyfill(-1), -1);
       });
     });
 
     context('given value that is not a number', function () {
       specify('should return NaN', function () {
-        assert.isNaN(truncPolyfill(undefined));
-        assert.isNaN(truncPolyfill(NaN));
-        assert.isNaN(truncPolyfill({}));
-        assert.isNaN(truncPolyfill(/a/));
-        assert.isNaN(truncPolyfill('test'));
-        assert.isNaN(truncPolyfill(new Error()));
+        assert.isNaN(truncPonyfill(undefined));
+        assert.isNaN(truncPonyfill(NaN));
+        assert.isNaN(truncPonyfill({}));
+        assert.isNaN(truncPonyfill(/a/));
+        assert.isNaN(truncPonyfill('test'));
+        assert.isNaN(truncPonyfill(new Error()));
       });
     });
 
     context('given null', function () {
       specify('should return 0', function () {
-        assert.strictEqual(truncPolyfill(null), 0);
+        assert.strictEqual(truncPonyfill(null), 0);
       });
     });
 
@@ -138,7 +138,7 @@ describe('trunc', function () {
         }
 
         if (shouldThrow) {
-          assert.throw(() => truncPolyfill(Symbol('')));
+          assert.throw(() => truncPonyfill(Symbol('')));
         }
       });
     });
@@ -147,20 +147,20 @@ describe('trunc', function () {
       specify(
         'should return the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC',
         function () {
-          assert.strictEqual(truncPolyfill(new Date(2)), 2);
+          assert.strictEqual(truncPonyfill(new Date(2)), 2);
         }
       );
     });
 
     context('given Infinity value', function () {
       specify('should return untouched Infinity value', function () {
-        assert.strictEqual(truncPolyfill(Infinity), Infinity);
-        assert.strictEqual(truncPolyfill(-Infinity), -Infinity);
+        assert.strictEqual(truncPonyfill(Infinity), Infinity);
+        assert.strictEqual(truncPonyfill(-Infinity), -Infinity);
       });
     });
 
     specify('should support placeholder to specify "gaps"', function () {
-      const trunc = truncPolyfill(R.__);
+      const trunc = truncPonyfill(R.__);
 
       assert.strictEqual(trunc(0.9), 0);
     });

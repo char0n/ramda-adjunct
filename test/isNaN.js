@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import { isNaNPolyfill } from '../src/isNaN';
+import { isNaNPonyfill } from '../src/isNaN';
 
 describe('isNaN', function () {
   it('should test value for a `NaN`', function () {
@@ -31,29 +31,29 @@ describe('isNaN', function () {
     assert.isTrue(isNaN(NaN));
   });
 
-  context('isNaNPolyfill', function () {
-    specify('should test polyfill for a `NaN', function () {
-      assert.isTrue(isNaNPolyfill(NaN));
-      assert.isTrue(isNaNPolyfill(Number.NaN));
-      assert.isTrue(isNaNPolyfill(0 / 0));
+  context('isNaNPonyfill', function () {
+    specify('should test ponyfill for a `NaN', function () {
+      assert.isTrue(isNaNPonyfill(NaN));
+      assert.isTrue(isNaNPonyfill(Number.NaN));
+      assert.isTrue(isNaNPonyfill(0 / 0));
 
       // e.g. these would have been true with global isNaN().
-      assert.isFalse(isNaNPolyfill('NaN'));
-      assert.isFalse(isNaNPolyfill(undefined));
-      assert.isFalse(isNaNPolyfill({}));
-      assert.isFalse(isNaNPolyfill('blabla'));
+      assert.isFalse(isNaNPonyfill('NaN'));
+      assert.isFalse(isNaNPonyfill(undefined));
+      assert.isFalse(isNaNPonyfill({}));
+      assert.isFalse(isNaNPonyfill('blabla'));
 
-      assert.isFalse(isNaNPolyfill(true));
-      assert.isFalse(isNaNPolyfill(null));
-      assert.isFalse(isNaNPolyfill(37));
-      assert.isFalse(isNaNPolyfill('37'));
-      assert.isFalse(isNaNPolyfill('37.37'));
-      assert.isFalse(isNaNPolyfill(''));
-      assert.isFalse(isNaNPolyfill(' '));
+      assert.isFalse(isNaNPonyfill(true));
+      assert.isFalse(isNaNPonyfill(null));
+      assert.isFalse(isNaNPonyfill(37));
+      assert.isFalse(isNaNPonyfill('37'));
+      assert.isFalse(isNaNPonyfill('37.37'));
+      assert.isFalse(isNaNPonyfill(''));
+      assert.isFalse(isNaNPonyfill(' '));
     });
 
     specify('should support placeholder to specify "gaps"', function () {
-      const isNaN = isNaNPolyfill(R.__);
+      const isNaN = isNaNPonyfill(R.__);
 
       assert.isTrue(isNaN(NaN));
     });
