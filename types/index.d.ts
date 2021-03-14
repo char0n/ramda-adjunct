@@ -1085,11 +1085,14 @@ declare namespace RamdaAdjunct {
         defaultWhen(predicate: Function): <DefVal, Val>(defaultVal: DefVal) => (val: Val) => DefVal | Val;
 
         /**
-         * Returns a value from a list when the given predicate returns true.
-         * If the predicate does not match, or the value found is null, undefined, or NaN
-         * then the provided default value is returned.
+         * Returns the first element of the list which matches the predicate.
+         * Returns default value if no element matches or matched element is `null`, `undefined` or `NaN`.
+         * Dispatches to the find method of the second argument, if present.
+         * Acts as a transducer if a transformer is given in list position.
          */
         findOr<DefVal, T>(defaultVal: DefVal, predicate: (element: T) => boolean, list: ReadonlyArray<T>): T | DefVal;
+        findOr<DefVal, T>(defaultVal: DefVal, predicate: (element: T) => boolean): (list: ReadonlyArray<T>) => T | DefVal;
+        findOr<DefVal>(defaultVal: DefVal): <T>(predicate: (element: T) => boolean) => (list: ReadonlyArray<T>) => T | DefVal;
 
         /**
          * Y-combinator
