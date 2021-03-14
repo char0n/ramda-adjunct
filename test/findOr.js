@@ -4,7 +4,7 @@ import * as RA from '../src';
 
 describe('findOr', function () {
   context('given a list with a matching value', function () {
-    context('and that value is truthy', function () {
+    context('and that value is not Nil nor NaN', function () {
       specify('should return the found value', function () {
         const defaultValue = 'default';
         const list = [1, 2, 3];
