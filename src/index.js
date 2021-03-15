@@ -159,6 +159,7 @@ export { default as notAllUnique } from './notAllUnique';
 export { default as sortByProps } from './sortByProps';
 export { default as skipTake } from './skipTake';
 export { default as rangeStep } from './rangeStep';
+export { default as findOr } from './findOr';
 // Object
 export { default as invoke } from './invoke';
 export { default as invokeArgs } from './invokeArgs';
