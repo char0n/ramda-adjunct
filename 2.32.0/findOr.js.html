@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotEmpty.js - Documentation</title>
+    <title>findOr.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotEmpty.js</h1>
+    <h1 class="page-title">findOr.js</h1>
     
 
     
@@ -52,32 +52,36 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement, isEmpty } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { pipe, curry, find, defaultTo } from 'ramda';
 
 /**
- * Returns true if the given value is not its type's empty value; `false` otherwise.
+ * Returns the first element of the list which matches the predicate.
+ * Returns default value if no element matches or matched element is `null`, `undefined` or `NaN`.
+ * Dispatches to the find method of the second argument, if present.
+ * Acts as a transducer if a transformer is given in list position.
  *
- * @func isNotEmpty
+ * @func findOr
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.4.0|v0.4.0}
- * @category Logic
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link http://ramdajs.com/docs/#isEmpty|R.isEmpty}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.32.0|v2.32.0}
+ * @category List
+ * @sig  a -> (b -> Boolean) -> [b] -> b | a
+ * @param {*} defaultValue The default value
+ * @param {Function} fn The predicate function used to determine if the element is the desired one.
+ * @param {Array} list The array to consider.
+ * @return {*} The element found, or the default value.
+ * @see {@link http://ramdajs.com/docs/#defaultTo|R.defaultTo}, {@link http://ramdajs.com/docs/#find|R.find}
  * @example
  *
- * RA.isNotEmpty([1, 2, 3]); //=> true
- * RA.isNotEmpty([]); //=> false
- * RA.isNotEmpty(''); //=> false
- * RA.isNotEmpty(null); //=> true
- * RA.isNotEmpty(undefined): //=> true
- * RA.isNotEmpty({}); //=> false
- * RA.isNotEmpty({length: 0}); //=> true
+ * RA.findOr(1, isUndefined, [1, 2, undefined]); // => 1
+ * RA.findOr(1, val => val === 2, [1, 2, undefined]); // => 2
+ * RA.findOr(1, val => val === 3, [1, 2, undefined]); // => 1
  */
-const isNotEmpty = complement(isEmpty);
 
-export default isNotEmpty;
+const findOr = curry((defaultVal, fn, list) =>
+  pipe(find(fn), defaultTo(defaultVal))(list)
+);
+
+export default findOr;
 </code></pre>
         </article>
     </section>
