@@ -68,7 +68,7 @@ describe('findOr', function () {
   });
 
   it('should curry', function () {
-    const fn = (val) => val === 1;
+    const fn = (val) => val === 4;
     const list = [1, 2, 3, 4];
 
     assert.strictEqual(RA.findOr(4, fn, list), 4);
