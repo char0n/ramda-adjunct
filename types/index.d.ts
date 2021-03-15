@@ -1179,7 +1179,10 @@ declare namespace RamdaAdjunct {
          */
         findOr<DefVal, T>(defaultVal: DefVal, predicate: (element: T) => boolean, list: ReadonlyArray<T>): T | DefVal;
         findOr<DefVal, T>(defaultVal: DefVal, predicate: (element: T) => boolean): (list: ReadonlyArray<T>) => T | DefVal;
-        findOr<DefVal>(defaultVal: DefVal): <T>(predicate: (element: T) => boolean) => (list: ReadonlyArray<T>) => T | DefVal;
+        findOr<DefVal, T>(defaultVal: DefVal): {
+            (predicate: (element: T) => boolean, list: ReadonlyArray<T>): T | DefVal;
+            (predicate: (element: T) => boolean): (list: ReadonlyArray<T>) => T | DefVal;
+        };
 
         /**
          * Y-combinator
