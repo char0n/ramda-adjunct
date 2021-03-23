@@ -186,7 +186,7 @@
     "regenerator-runtime": "=0.13.7",
     "rimraf": "3.0.2",
     "sanctuary-show": "2.0.0",
-    "sinon": "9.2.4",
+    "sinon": "10.0.0",
     "terser-webpack-plugin": "5.1.1",
     "testem": "=3.3.0",
     "tslint": "=6.1.3",
