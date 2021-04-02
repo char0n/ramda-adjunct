@@ -61,6 +61,8 @@ export { default as isNotNaN } from './isNotNaN';
 export { default as isFinite } from './isFinite';
 export { default as isNotFinite } from './isNotFinite';
 export { default as isInteger } from './isInteger';
+export { default as isInteger32 } from './isInteger32';
+export { default as isInt32 } from './isInteger32'; // alias of isInteger32
 export { default as isNotInteger } from './isNotInteger';
 export { default as isBigInt } from './isBigInt';
 export { default as isFloat } from './isFloat';

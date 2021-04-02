@@ -356,6 +356,11 @@ declare namespace RamdaAdjunct {
         isInteger(val: any): val is number;
 
         /**
+         * Checks whether the passed value is a signed 32 bit `integer`.
+         */
+        isInteger32(val: any): boolean;
+
+        /**
          * Checks whether the passed value is complement of `integer`.
          */
         isNotInteger(val: any): boolean;
