@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
@@ -32,5 +33,10 @@ describe('isInteger32', function () {
     assert.isFalse(RA.isInteger32(false));
     assert.isFalse(RA.isInteger32([]));
     assert.isFalse(RA.isInteger32({}));
+  });
+
+  it('should support placeholder to specify "gaps"', function () {
+    const isInteger32 = RA.isInteger32(R.__);
+    assert.isTrue(isInteger32(0));
   });
 });
