@@ -1,3 +1,19 @@
+# [2.32.0](https://github.com/char0n/ramda-adjunct/compare/v2.31.1...v2.32.0) (2021-04-10)
+
+
+### Bug Fixes
+
+* **isNotNil:** utilize type narrowing ([#1672](https://github.com/char0n/ramda-adjunct/issues/1672)) ([353a6db](https://github.com/char0n/ramda-adjunct/commit/353a6dbb5039d8a1f72b97c4c20471e2a4bb3cd8))
+
+
+### Features
+
+* **list:** add findOr ([#1479](https://github.com/char0n/ramda-adjunct/issues/1479)) ([e9d321a](https://github.com/char0n/ramda-adjunct/commit/e9d321aef8bf1200d9b5e3bccd59f787eb8f31f5)), closes [#372](https://github.com/char0n/ramda-adjunct/issues/372)
+* **type:** add isInteger32 ([#1826](https://github.com/char0n/ramda-adjunct/issues/1826)) ([fe8331e](https://github.com/char0n/ramda-adjunct/commit/fe8331ea6d63aa8db8302f6730f11fa7d840df00)), closes [#1282](https://github.com/char0n/ramda-adjunct/issues/1282)
+* **type:** add isPrimitive/isNotPrimitive ([#1722](https://github.com/char0n/ramda-adjunct/issues/1722)) ([901006a](https://github.com/char0n/ramda-adjunct/commit/901006a36c39a378b544e63c14a7c86d80bfba6f)), closes [#786](https://github.com/char0n/ramda-adjunct/issues/786)
+
+
+
 # [2.31.1](https://github.com/char0n/ramda-adjunct/compare/v2.31.0...v2.31.1) (2021-02-21)
 
 ### Bug Fixes
