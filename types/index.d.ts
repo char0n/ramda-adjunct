@@ -456,6 +456,11 @@ declare namespace RamdaAdjunct {
         isSparseArray(val: any): boolean;
 
         /**
+         * Checks whether the passed value is a sentinel value.
+         */
+        isSentinelValue(val: any): boolean;
+
+        /**
          * A function that returns `undefined`.
          */
         stubUndefined(): undefined;
