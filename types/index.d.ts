@@ -456,7 +456,7 @@ declare namespace RamdaAdjunct {
         isSparseArray(val: any): boolean;
 
         /**
-         * Checks whether the passed value is 
+         * Checks whether the passed value is
          * {@link https://github.com/getify/You-Dont-Know-JS/blob/9959fc904d584bbf0b02cf41c192f74ff4238581/types-grammar/ch4.md#the-curious-case-of-the-|a sentinel value}.
          */
         isSentinelValue(val: any): boolean;
