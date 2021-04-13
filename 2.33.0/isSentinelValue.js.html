@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>internal/makeFlat.js - Documentation</title>
+    <title>isSentinelValue.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">internal/makeFlat.js</h1>
+    <h1 class="page-title">isSentinelValue.js</h1>
     
 
     
@@ -52,48 +52,32 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isArrayLike from '../isArrayLike';
+            <pre class="prettyprint source linenums"><code>import { curryN } from 'ramda';
+
+import isInteger32 from './isInteger32';
 
 /**
- * `makeFlat` is a helper function that returns a one-level or fully recursive
- * function based on the flag passed in.
+ * Checks whether the passed value is {@link https://github.com/getify/You-Dont-Know-JS/blob/9959fc904d584bbf0b02cf41c192f74ff4238581/types-grammar/ch4.md#the-curious-case-of-the-|a sentinel value}.
  *
- * @func makeFlat
+ * @func isSentinelValue
  * @memberOf RA
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.33.0|v2.33.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {boolean}
+ * @example
  *
- * @category List
- * @param {!bool} = should recursively flatten
- * @param {!Array} = the nested list to be flattened
- * @return {!Array} = the flattened list
- * @sig Bool -> List -> List
+ * RA.isSentinelValue(-1); //=> true
  *
+ * RA.isSentinelValue('-1'); //=> false
+ * RA.isSentinelValue(1); //=> false
+ * RA.isSentinelValue([-1]); //=> false
  */
-const makeFlat = (recursive) =>
-  function flatt(list) {
-    let value;
-    let jlen;
-    let j;
-    const result = [];
-    let idx = 0;
+// eslint-disable-next-line no-bitwise
+const isSentinelValue = curryN(1, (val) => isInteger32(val) &amp;&amp; ~val === 0);
 
-    while (idx &lt; list.length) {
-      if (isArrayLike(list[idx])) {
-        value = recursive ? flatt(list[idx]) : list[idx];
-        j = 0;
-        jlen = value.length;
-        while (j &lt; jlen) {
-          result[result.length] = value[j];
-          j += 1;
-        }
-      } else {
-        result[result.length] = list[idx];
-      }
-      idx += 1;
-    }
-    return result;
-  };
-
-export default makeFlat;
+export default isSentinelValue;
 </code></pre>
         </article>
     </section>
