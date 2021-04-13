@@ -3,7 +3,7 @@ import { curryN } from 'ramda';
 import isInteger32 from './isInteger32';
 
 /**
- * Checks whether the passed value is a sentinel value.
+ * Checks whether the passed value is {@link https://github.com/getify/You-Dont-Know-JS/blob/9959fc904d584bbf0b02cf41c192f74ff4238581/types-grammar/ch4.md#the-curious-case-of-the-|a sentinel value}.
  *
  * @func isSentinelValue
  * @memberOf RA
@@ -12,7 +12,6 @@ import isInteger32 from './isInteger32';
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link RA.isSentinelValue|isSentinelValue}
  * @example
  *
  * RA.isSentinelValue(-1); //=> true
@@ -21,6 +20,7 @@ import isInteger32 from './isInteger32';
  * RA.isSentinelValue(1); //=> false
  * RA.isSentinelValue([-1]); //=> false
  */
-const isSentinelValue = curryN(1, (val) => isInteger32(val) && val === -1);
+// eslint-disable-next-line no-bitwise
+const isSentinelValue = curryN(1, (val) => isInteger32(val) && ~val === 0);
 
 export default isSentinelValue;
