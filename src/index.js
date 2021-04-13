@@ -91,6 +91,7 @@ export { default as isError } from './isError';
 export { default as isNaturalNumber } from './isNaturalNumber';
 export { default as isPrimitive } from './isPrimitive';
 export { default as isNotPrimitive } from './isNotPrimitive';
+export { default as isSentinelValue } from './isSentinelValue';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
