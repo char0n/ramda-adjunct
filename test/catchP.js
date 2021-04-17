@@ -30,10 +30,6 @@ describe('catchP', function () {
     });
   });
 
-  it('should have arity of 2', function () {
-    assert.strictEqual(RA.catchP.length, 2);
-  });
-
   it('should be curried', async function () {
     assert.strictEqual(await RA.catchP(R.identity, RA.rejectP(1)), 1);
     assert.strictEqual(await RA.catchP(R.identity)(RA.rejectP(1)), 1);
