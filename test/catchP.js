@@ -6,7 +6,7 @@ import * as RA from '../src';
 describe('catchP', function () {
   context('given applied on Promise', function () {
     specify(
-      'should call then method with onRejected function',
+      'should call catch method with onRejected function',
       async function () {
         const promise = RA.rejectP(1);
         const expected = await RA.catchP(R.add(1), promise);
