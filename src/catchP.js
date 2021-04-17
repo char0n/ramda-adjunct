@@ -12,7 +12,7 @@ import { invoker } from 'ramda';
  * @sig (a -> Promise b | b) -> Promise b
  * @param {Function} onRejected A Function called if the Promise is rejected. This function has one argument, the rejection reason.
  * @param {Promise} promise Any Promise
- * @return {Promise} A Promise in the pending status
+ * @return {Promise} Returns a Promise with dealt rejected cases
  *
  * @example
  *
