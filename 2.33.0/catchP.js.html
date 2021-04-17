@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>compact.js - Documentation</title>
+    <title>catchP.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">compact.js</h1>
+    <h1 class="page-title">catchP.js</h1>
     
 
     
@@ -52,29 +52,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { reject } from 'ramda';
-
-import isFalsy from './isFalsy';
+            <pre class="prettyprint source linenums"><code>import { invoker } from 'ramda';
 
 /**
- * Creates an array with all falsy values removed.
- * The values false, null, 0, "", undefined, and NaN are falsy.
+ * Composable shortcut for `Promise.catch`.
+ * The catchP function returns a Promise. It takes two arguments: a callback function for the failure of the Promise
+ * and the promise instance itself.
  *
- * @func compact
+ * @func catchP
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
- * @category List
- * @sig Filterable f => f a -> f a
- * @param {Array} list The array to compact
- * @return {Array} Returns the new array of filtered values
- * @see {@link RA.isFalsy|isFalsy}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
+ * @category Function
+ * @sig (a -> Promise b | b) -> Promise b
+ * @param {Function} onRejected A Function called if the Promise is rejected. This function has one argument, the rejection reason.
+ * @param {Promise} promise Any Promise
+ * @return {Promise} Returns a Promise with dealt rejected cases
+ * @see {@link RA.thenP|thenP}, {@link RA.resolveP|resolveP}, {@link RA.rejectP|rejectP}, {@link RA.allP|allP}
+ *
  * @example
  *
- * RA.compact([0, 1, false, 2, '', 3]); //=> [1, 2, 3]
+ * RA.catchP(() => 'b', Promise.resolve('a')); //=> Promise('a')
+ * RA.catchP(() => 'b', Promise.reject('a')); //=> Promise('b')
  */
-const compact = reject(isFalsy);
+const catchP = invoker(1, 'catch');
 
-export default compact;
+export default catchP;
 </code></pre>
         </article>
     </section>
