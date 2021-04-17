@@ -14,6 +14,10 @@ declare namespace RamdaAdjunct {
         reduce<Acc>(fn: (acc: Acc, val: T) => Acc, initAcc: Acc): Acc;
     }
 
+    interface Filterable<T> {
+        filter(fn: (t: T) => Boolean): Filterable<T>;
+    }
+
     interface Semigroup {
         // https://www.typescriptlang.org/docs/handbook/advanced-types.html#polymorphic-this-types
         concat(other: this): this;
@@ -40,6 +44,7 @@ declare namespace RamdaAdjunct {
     interface Dictionary<T> { [key: string]: T; }
 
     type DictPred<T> = (value: T, key: string) => boolean;
+    type Primitive = string | number | bigint | boolean | undefined | null | symbol;
 
     interface Static {
         /**
@@ -61,6 +66,24 @@ declare namespace RamdaAdjunct {
          * Checks if input value is `Boolean`.
          */
         isBoolean(val: any): val is boolean;
+
+        /**
+         * Checks if value is a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
+         * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Primitive_values
+         * for definition of what sub-types comprise a primitive.
+         */
+        isPrimitive<T>(val: T | Primitive): val is Primitive;
+
+        /**
+         * Checks if value is not a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.
+         */
+        isNotPrimitive<T>(val: T | Primitive): val is T;
+
+        /**
+         * Checks if an object exists in another object's prototype chain.
+         */
+        isPrototypeOf(type: object, object: object): boolean;
+        isPrototypeOf(type: object): (object: object) => boolean;
 
         /**
          * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
@@ -95,7 +118,8 @@ declare namespace RamdaAdjunct {
         /**
          * Checks if input value is complement of `null` or `undefined`.
          */
-        isNotNil(val: any): boolean;
+        /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type here */
+        isNotNil<T>(val: T | null | undefined): val is T;
 
         /**
          * Checks if input value is complement of `null`.
@@ -332,6 +356,11 @@ declare namespace RamdaAdjunct {
         isInteger(val: any): val is number;
 
         /**
+         * Checks whether the passed value is a signed 32 bit `integer`.
+         */
+        isInteger32(val: any): boolean;
+
+        /**
          * Checks whether the passed value is complement of `integer`.
          */
         isNotInteger(val: any): boolean;
@@ -384,6 +413,11 @@ declare namespace RamdaAdjunct {
         isEven(val: any): boolean;
 
         /**
+         * Checks if `value` is an `Error`, `EvalError`, `RangeError`, `ReferenceError`, `SyntaxError`, `TypeError` or `URIError` object.
+         */
+        isError(val: any): val is Error;
+
+        /**
          * Checks if input value is a pair.
          */
         isPair(val: any): val is any[];
@@ -420,6 +454,12 @@ declare namespace RamdaAdjunct {
          * but rather that the slots don't exist.
          */
         isSparseArray(val: any): boolean;
+
+        /**
+         * Checks whether the passed value is
+         * {@link https://github.com/getify/You-Dont-Know-JS/blob/9959fc904d584bbf0b02cf41c192f74ff4238581/types-grammar/ch4.md#the-curious-case-of-the-|a sentinel value}.
+         */
+        isSentinelValue(val: any): boolean;
 
         /**
          * A function that returns `undefined`.
@@ -699,6 +739,28 @@ declare namespace RamdaAdjunct {
             (acc: TResult): (list: R) => TResult;
             (acc: TResult, list: R): TResult
         };
+
+        /**
+         * {@link http://ramdajs.com/docs/#filter|R.filter} function that more closely resembles `Array.prototype.filter`.
+         * It takes two new parameters to its callback function: the current index, and the entire list.
+         *
+         * `filterIndexed` implementation is simple: `
+         *  const filterIndexed = R.addIndex(R.filter);
+         * `
+         */
+        filterIndexed<T>(iterator: (elem: T, idx: number, list: T[]) => Boolean, list: ReadonlyArray<T>): T[];
+        filterIndexed<T>(iterator: (elem: T, idx: number, list: T[]) => Boolean): (list: ReadonlyArray<T>) => T[];
+        filterIndexed<T>(
+            iterator: (elem: T, idx: number, list: Dictionary<T>) => Boolean,
+            list: Dictionary<T>,
+        ): Dictionary<T>;
+        filterIndexed<T>(
+            iterator: (elem: T, idx: number, list: Dictionary<T>) => Boolean,
+        ): (list: Dictionary<T>) => Dictionary<T>;
+        filterIndexed<T>(iterator: (elem: T, idx: number, list: Filterable<T>) => Boolean, list: Filterable<T>): Filterable<T>;
+        filterIndexed<T>(iterator: (elem: T, idx: number, list: Filterable<T>) => Boolean): (list: Filterable<T>) => Filterable<Boolean>;
+        filterIndexed(iterator: (char: string, idx: number, str: string) => Boolean, str: string): string[];
+        filterIndexed(iterator: (char: string, idx: number, str: string) => Boolean): (str: string) => string[];
 
         /**
          * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
@@ -1129,6 +1191,19 @@ declare namespace RamdaAdjunct {
         defaultWhen(predicate: Function): <DefVal, Val>(defaultVal: DefVal) => (val: Val) => DefVal | Val;
 
         /**
+         * Returns the first element of the list which matches the predicate.
+         * Returns default value if no element matches or matched element is `null`, `undefined` or `NaN`.
+         * Dispatches to the find method of the second argument, if present.
+         * Acts as a transducer if a transformer is given in list position.
+         */
+        findOr<DefVal, T>(defaultVal: DefVal, predicate: (element: T) => boolean, list: ReadonlyArray<T>): T | DefVal;
+        findOr<DefVal, T>(defaultVal: DefVal, predicate: (element: T) => boolean): (list: ReadonlyArray<T>) => T | DefVal;
+        findOr<DefVal, T>(defaultVal: DefVal): {
+            (predicate: (element: T) => boolean, list: ReadonlyArray<T>): T | DefVal;
+            (predicate: (element: T) => boolean): (list: ReadonlyArray<T>) => T | DefVal;
+        };
+
+        /**
          * Y-combinator
          *
          * The Y combinator is an interesting function which only works with functional languages,
@@ -1433,9 +1508,15 @@ declare namespace RamdaAdjunct {
         /**
          * Invokes the method at path of object with given arguments.
          */
-        invokeArgs(pathToMethod: string[], args: Array<string | number>, obj: object): any;
-        invokeArgs(pathToMethod: string[], args: Array<string | number>): (obj: object) => any;
-        invokeArgs(pathToMethod: string[]): (args: Array<string | number>, obj: object) => any;
+        invokeArgs(pathToMethod: string[], args: any[], obj: object): any;
+        invokeArgs(pathToMethod: string[], args: any[]): (obj: object) => any;
+        invokeArgs(pathToMethod: string[]): (args: any[], obj: object) => any;
+
+        /**
+         * Invokes the method at path of object.
+         */
+        invoke(pathToMethod: string[], obj: object): any;
+        invoke(pathToMethod: string[]): (obj: object) => any;
 
         /**
          * Converts double-precision 64-bit binary format IEEE 754 to signed 32 bit integer number.
@@ -1448,6 +1529,24 @@ declare namespace RamdaAdjunct {
          */
         toUinteger32(val: number): number;
         toUint32(val: number): number; // alias
+
+        /**
+         * Creates an array of numbers (positive and/or negative) progressing from start up to, but not including, end.
+         *
+         * `Note`: JavaScript follows the IEEE-754 standard for resolving floating-point values which can produce unexpected results.
+         */
+        rangeStep(step: number, from: number, to: number): number[];
+        rangeStep(step: number, from: number): (to: number) => number[];
+        rangeStep(step: number): {
+            (from: number, to: number): number[];
+            (from: number): (to: number) => number[];
+        };
+
+        /**
+         * Returns true if two lists have at least one element common to both lists.
+         */
+        overlaps<T>(list1: T[], list2: T[]): boolean;
+        overlaps<T>(list1: T[]): (list2: T[]) => boolean;
     }
 }
 

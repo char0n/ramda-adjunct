@@ -1,3 +1,53 @@
+# [2.32.0](https://github.com/char0n/ramda-adjunct/compare/v2.31.1...v2.32.0) (2021-04-10)
+
+
+### Bug Fixes
+
+* **isNotNil:** utilize type narrowing ([#1672](https://github.com/char0n/ramda-adjunct/issues/1672)) ([353a6db](https://github.com/char0n/ramda-adjunct/commit/353a6dbb5039d8a1f72b97c4c20471e2a4bb3cd8))
+
+
+### Features
+
+* **list:** add findOr ([#1479](https://github.com/char0n/ramda-adjunct/issues/1479)) ([e9d321a](https://github.com/char0n/ramda-adjunct/commit/e9d321aef8bf1200d9b5e3bccd59f787eb8f31f5)), closes [#372](https://github.com/char0n/ramda-adjunct/issues/372)
+* **type:** add isInteger32 ([#1826](https://github.com/char0n/ramda-adjunct/issues/1826)) ([fe8331e](https://github.com/char0n/ramda-adjunct/commit/fe8331ea6d63aa8db8302f6730f11fa7d840df00)), closes [#1282](https://github.com/char0n/ramda-adjunct/issues/1282)
+* **type:** add isPrimitive/isNotPrimitive ([#1722](https://github.com/char0n/ramda-adjunct/issues/1722)) ([901006a](https://github.com/char0n/ramda-adjunct/commit/901006a36c39a378b544e63c14a7c86d80bfba6f)), closes [#786](https://github.com/char0n/ramda-adjunct/issues/786)
+
+
+
+# [2.31.1](https://github.com/char0n/ramda-adjunct/compare/v2.31.0...v2.31.1) (2021-02-21)
+
+### Bug Fixes
+
+* **deps**: remove postinstall husky script ([61f3fde](https://github.com/char0n/ramda-adjunct/commit/61f3fde46e3c65df0f67b217621fa9532141a2fa)), closes [#1773](https://github.com/char0n/ramda-adjunct/issues/1773)
+
+
+# [2.31.0](https://github.com/char0n/ramda-adjunct/compare/v2.30.0...v2.31.0) (2021-02-21)
+
+
+### Features
+
+* **list:** add filterIndexed ([#1713](https://github.com/char0n/ramda-adjunct/issues/1713)) ([d3cfc63](https://github.com/char0n/ramda-adjunct/commit/d3cfc6325e13324ca6e54c10de016a522362511e)), closes [#1346](https://github.com/char0n/ramda-adjunct/issues/1346)
+* **object:** add isPrototypeOf ([#1456](https://github.com/char0n/ramda-adjunct/issues/1456)) ([314be55](https://github.com/char0n/ramda-adjunct/commit/314be550cebf30719d418c68e8687108122d9af8)), closes [#787](https://github.com/char0n/ramda-adjunct/issues/787)
+* **object:** add invoke ([#1554](https://github.com/char0n/ramda-adjunct/issues/1554)) ([e90ce3c](https://github.com/char0n/ramda-adjunct/commit/e90ce3cc714052d0e24dc2b592d43c77a8348eb9)), closes [#81](https://github.com/char0n/ramda-adjunct/issues/81)
+
+
+
+# [2.30.0](https://github.com/char0n/ramda-adjunct/compare/v2.29.0...v2.30.0) (2020-12-27)
+
+
+### Bug Fixes
+
+* **invokeArgs:** update TypeScript signature ([#1710](https://github.com/char0n/ramda-adjunct/issues/1710)) ([775d282](https://github.com/char0n/ramda-adjunct/commit/775d2825c4cbed2118a0cbaad2c13587090a49b1)), closes [#1707](https://github.com/char0n/ramda-adjunct/issues/1707)
+
+
+### Features
+
+* **list:** add rangeStep ([#1708](https://github.com/char0n/ramda-adjunct/issues/1708)) ([82c0368](https://github.com/char0n/ramda-adjunct/commit/82c0368008ee5ed90e28baf1a91ad74b91ba7072)), closes [#1477](https://github.com/char0n/ramda-adjunct/issues/1477) [#1230](https://github.com/char0n/ramda-adjunct/issues/1230)
+* **relation:** add overlaps ([2ea5355](https://github.com/char0n/ramda-adjunct/commit/2ea5355608a9016c96de39a87d48f21016bef330)), closes [#1229](https://github.com/char0n/ramda-adjunct/issues/1229)
+* **type:** add isError ([#1449](https://github.com/char0n/ramda-adjunct/issues/1449)) ([adf25c2](https://github.com/char0n/ramda-adjunct/commit/adf25c2a0aa79bf53df66f4bd9720b5039dfd185)), closes [#206](https://github.com/char0n/ramda-adjunct/issues/206)
+
+
+
 # [2.29.0](https://github.com/char0n/ramda-adjunct/compare/v2.28.0...v2.29.0) (2020-12-13)
 
 

@@ -139,6 +139,10 @@ const raWeb = {
   externals: {
     ramda: 'R',
   },
+  performance: {
+    maxEntrypointSize: 400000,
+    maxAssetSize: 400000,
+  },
   module: {
     rules: [
       {
@@ -221,6 +225,10 @@ const raWebStandalone = {
     filename: 'RA.web.standalone.js',
     libraryTarget: 'umd',
     library: 'RA',
+  },
+  performance: {
+    maxEntrypointSize: 950000,
+    maxAssetSize: 950000,
   },
   module: {
     rules: [

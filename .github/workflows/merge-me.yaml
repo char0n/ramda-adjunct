@@ -1,19 +1,8 @@
 name: Merge me!
 
 on:
-  check_suite:
-    types:
-      - completed
-  pull_request:
-    types:
-      - edited
-      - labeled
-      - opened
-      - ready_for_review
-      - reopened
-      - synchronize
-      - unlabeled
-      - unlocked
+  pull_request_target:
+
 jobs:
   merge-me:
     name: Merge me!
@@ -27,12 +16,10 @@ jobs:
           ignoreActions: Merge me!
           checkInterval: 13
         env:
-          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Merge me!
         if: steps.waitforstatuschecks.outputs.status == 'success'
-        uses: ridedott/merge-me-action@master
+        uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
-          GITHUB_LOGIN: dependabot[bot]
-          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
-          MERGE_METHOD: SQUASH
-          PRESET: DEPENDABOT_MINOR
+          target: minor
+          github-token: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
