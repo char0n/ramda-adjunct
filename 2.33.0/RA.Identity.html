@@ -91,7 +91,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line39">line 39</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -158,7 +158,7 @@ transformer when no other behaviour is required.</p></div>
 
 
 <div class="description">
-    <p>Private constructor. Use <a href="RA.Identity.html#.of"><code>Identity.of</code></a> instead.</p>
+    <p>Private constructor. Use <code>Identity.of</code> instead.</p>
 </div>
 
 
@@ -281,7 +281,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line62">line 62</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line59">line 59</a>
     </li></ul></dd>
     
 
@@ -345,8 +345,8 @@ transformer when no other behaviour is required.</p></div>
             
 
     
-    <div id=".of" class="section-id"></div>
-    <h4 class="name"><span class="type-signature">(static) </span>of<span class="signature">(value)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+    <div id="fl.ap" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fl.ap<span class="signature">(applyWithFn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
     
 
@@ -358,181 +358,7 @@ transformer when no other behaviour is required.</p></div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line51">line 51</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-sig">Signature:</dt>
-    <dd class="tag-sig">
-        <ul>
-            
-              <li><code>of :: Applicative f => a -> f a</code></li>
-            
-        </ul>
-    </dd>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Fantasy land <a href="https://github.com/fantasyland/fantasy-land#applicative">Applicative</a> specification.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>const a = Identity.of(1); //=> Identity(1)</code></pre>
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="RA.Identity.html">RA.Identity</a></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-    <div id="ap" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>ap<span class="signature">(applyWithFn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line101">line 101</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line98">line 98</a>
     </li></ul></dd>
     
 
@@ -696,8 +522,8 @@ a.ap(b); //=> Identity(2)</code></pre>
             
 
     
-    <div id="chain" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>chain<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+    <div id="fl.chain" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fl.chain<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
     
 
@@ -709,7 +535,7 @@ a.ap(b); //=> Identity(2)</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line192">line 192</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line189">line 189</a>
     </li></ul></dd>
     
 
@@ -873,8 +699,8 @@ a.chain(fn).chain(fn); //=> Identity(3)</code></pre>
             
 
     
-    <div id="concat" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>concat<span class="signature">(semigroup)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+    <div id="fl.concat" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fl.concat<span class="signature">(semigroup)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
     
 
@@ -886,7 +712,7 @@ a.chain(fn).chain(fn); //=> Identity(3)</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line171">line 171</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line168">line 168</a>
     </li></ul></dd>
     
 
@@ -1057,8 +883,8 @@ e.concat(f); //=> ['e', 'f']</code></pre>
             
 
     
-    <div id="contramap" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>contramap<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+    <div id="fl.contramap" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fl.contramap<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
     
 
@@ -1070,7 +896,7 @@ e.concat(f); //=> ['e', 'f']</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line264">line 264</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line261">line 261</a>
     </li></ul></dd>
     
 
@@ -1237,8 +1063,8 @@ Identity.of(identity).contramap(a => divide2(add1(a))).get()(3); //=> 2</code></
             
 
     
-    <div id="empty" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>empty<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+    <div id="fl.empty" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fl.empty<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
     
 
@@ -1250,7 +1076,7 @@ Identity.of(identity).contramap(a => divide2(add1(a))).get()(3); //=> 2</code></
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line240">line 240</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line237">line 237</a>
     </li></ul></dd>
     
 
@@ -1368,8 +1194,8 @@ i.concat(a); //=> Identity('string');</code></pre>
             
 
     
-    <div id="equals" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>equals<span class="signature">(setoid)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    <div id="fl.equals" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fl.equals<span class="signature">(setoid)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
     
 
@@ -1381,7 +1207,7 @@ i.concat(a); //=> Identity('string');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line143">line 143</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line140">line 140</a>
     </li></ul></dd>
     
 
@@ -1547,8 +1373,8 @@ a.equals(c); //=> false</code></pre>
             
 
     
-    <div id="get" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>get<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <div id="fl.lte" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fl.lte<span class="signature">(ord)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
 
     
 
@@ -1560,123 +1386,7 @@ a.equals(c); //=> false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line84">line 84</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>Catamorphism for a value.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>const a = Identity.of(1);
-a.get(); //=> 1</code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl class="param-type">
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">*</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-        
-            
-
-    
-    <div id="lte" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>lte<span class="signature">(ord)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-
-    
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line216">line 216</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line213">line 213</a>
     </li></ul></dd>
     
 
@@ -1843,8 +1553,8 @@ c.lte(a); //=> false</code></pre>
             
 
     
-    <div id="map" class="section-id"></div>
-    <h4 class="name"><span class="type-signature"></span>map<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
+    <div id="fl.map" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>fl.map<span class="signature">(fn)</span><span class="type-signature"> &rarr; {<a href="RA.Identity.html">RA.Identity</a>}</span></h4>
 
     
 
@@ -1856,7 +1566,7 @@ c.lte(a); //=> false</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line120">line 120</a>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -2015,6 +1725,122 @@ a.map(a => a + 1); //=> Identity(2)</code></pre>
 
 
         
+            
+
+    
+    <div id="get" class="section-id"></div>
+    <h4 class="name"><span class="type-signature"></span>get<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="fantasy-land_Identity.js.html">fantasy-land/Identity.js</a>, <a href="fantasy-land_Identity.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Catamorphism for a value.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const a = Identity.of(1);
+a.get(); //=> 1</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
     
 
     
@@ -2032,7 +1858,7 @@ a.map(a => a + 1); //=> Identity(2)</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue May 04 2021 09:09:19 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Tue May 04 2021 13:21:42 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
