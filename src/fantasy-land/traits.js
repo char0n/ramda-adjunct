@@ -4,7 +4,7 @@ import isString from '../isString';
 import isNumber from '../isNumber';
 import isFunction from '../isFunction';
 import { isSameType } from './util';
-import fl from './mapping';
+import * as fl from './mapping';
 
 export const functorTrait = {
   [fl.map](fn) {

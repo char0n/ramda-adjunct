@@ -1,6 +1,6 @@
 import { empty as emptyR } from 'ramda';
 
-import fl from './mapping';
+import * as fl from './mapping';
 import {
   applyTrait,
   functorTrait,
@@ -9,9 +9,6 @@ import {
   chainTrait,
   ordTrait,
 } from './traits';
-
-// we do this here for jsdocs generate properly
-const { of, ap, map, equals, concat, chain, lte, empty, contramap } = fl;
 
 /**
  * The simplest {@link https://github.com/fantasyland/fantasy-land|fantasy-land}
@@ -48,7 +45,7 @@ class Identity {
    *
    * const a = Identity.of(1); //=> Identity(1)
    */
-  static [of](value) {
+  static [fl.of](value) {
     return new Identity(value);
   }
 
@@ -98,12 +95,12 @@ class Identity {
    *
    * a.ap(b); //=> Identity(2)
    */
-  [ap](applyWithFn) {
-    return applyTrait[ap].call(this, applyWithFn);
+  [fl.ap](applyWithFn) {
+    return applyTrait[fl.ap].call(this, applyWithFn);
   }
 
   ap(applyWithFn) {
-    return this[ap](applyWithFn);
+    return this[fl.ap](applyWithFn);
   }
 
   /**
@@ -117,12 +114,12 @@ class Identity {
    * const a = Identity.of(1);
    * a.map(a => a + 1); //=> Identity(2)
    */
-  [map](fn) {
-    return functorTrait[map].call(this, fn);
+  [fl.map](fn) {
+    return functorTrait[fl.map].call(this, fn);
   }
 
   map(fn) {
-    return this[map](fn);
+    return this[fl.map](fn);
   }
 
   /**
@@ -140,12 +137,12 @@ class Identity {
    * a.equals(b); //=> true
    * a.equals(c); //=> false
    */
-  [equals](setoid) {
-    return setoidTrait[equals].call(this, setoid);
+  [fl.equals](setoid) {
+    return setoidTrait[fl.equals].call(this, setoid);
   }
 
   equals(setoid) {
-    return this[equals](setoid);
+    return this[fl.equals](setoid);
   }
 
   /**
@@ -168,12 +165,12 @@ class Identity {
    * const f = Identity.of(['f']);
    * e.concat(f); //=> ['e', 'f']
    */
-  [concat](semigroup) {
-    return semigroupTrait[concat].call(this, semigroup);
+  [fl.concat](semigroup) {
+    return semigroupTrait[fl.concat].call(this, semigroup);
   }
 
   concat(semigroup) {
-    return this[concat](semigroup);
+    return this[fl.concat](semigroup);
   }
 
   /**
@@ -189,12 +186,12 @@ class Identity {
    *
    * a.chain(fn).chain(fn); //=> Identity(3)
    */
-  [chain](fn) {
-    return chainTrait[chain].call(this, fn);
+  [fl.chain](fn) {
+    return chainTrait[fl.chain].call(this, fn);
   }
 
   chain(fn) {
-    return this[chain](fn);
+    return this[fl.chain](fn);
   }
 
   /**
@@ -213,12 +210,12 @@ class Identity {
    * a.lte(c); //=> true
    * c.lte(a); //=> false
    */
-  [lte](ord) {
-    return ordTrait[lte].call(this, ord);
+  [fl.lte](ord) {
+    return ordTrait[fl.lte].call(this, ord);
   }
 
   lte(ord) {
-    return this[lte](ord);
+    return this[fl.lte](ord);
   }
 
   /**
@@ -237,12 +234,12 @@ class Identity {
    * a.concat(i); //=> Identity('string');
    * i.concat(a); //=> Identity('string');
    */
-  [empty]() {
+  [fl.empty]() {
     return this.constructor.of(emptyR(this.value));
   }
 
   empty() {
-    return this[empty]();
+    return this[fl.empty]();
   }
 
   /**
@@ -261,12 +258,12 @@ class Identity {
    * Identity.of(identity).contramap(divide2).contramap(add1).get()(3); //=> 2
    * Identity.of(identity).contramap(a => divide2(add1(a))).get()(3); //=> 2
    */
-  [contramap](fn) {
+  [fl.contramap](fn) {
     return this.constructor.of((value) => this.value(fn(value)));
   }
 
   contramap(fn) {
-    return this[contramap](fn);
+    return this[fl.contramap](fn);
   }
 }
 

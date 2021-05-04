@@ -1,7 +1,7 @@
 import { ap as apR, curryN, pathSatisfies, both, either } from 'ramda';
 
 import isFunction from '../isFunction';
-import fl from '../fantasy-land/mapping';
+import * as fl from '../fantasy-land/mapping';
 
 const isFunctor = either(
   pathSatisfies(isFunction, ['map']),
