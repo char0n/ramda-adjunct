@@ -16,12 +16,10 @@ describe('mapIndexed', function () {
     const intoArray = R.into([]);
 
     it('should map simple functions over arrays', function () {
-      assert.sameOrderedMembers(RA.mapIndexed(times2, [1, 2, 3, 4]), [
-        2,
-        4,
-        6,
-        8,
-      ]);
+      assert.sameOrderedMembers(
+        RA.mapIndexed(times2, [1, 2, 3, 4]),
+        [2, 4, 6, 8]
+      );
     });
 
     it('should map simple functions into arrays', function () {

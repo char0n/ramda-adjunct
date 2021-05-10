@@ -9,12 +9,9 @@ describe('reduceRightP', function () {
     const testAdd = RA.reduceRightP(R.add, 0, [1, 2, 3, 4]).then((actual) =>
       assert.strictEqual(actual, 10)
     );
-    const testMultiply = RA.reduceRightP(R.multiply, 1, [
-      1,
-      2,
-      3,
-      4,
-    ]).then((actual) => assert.strictEqual(actual, 24));
+    const testMultiply = RA.reduceRightP(R.multiply, 1, [1, 2, 3, 4]).then(
+      (actual) => assert.strictEqual(actual, 24)
+    );
 
     return Promise.all([testAdd, testMultiply]);
   });
@@ -51,18 +48,16 @@ describe('reduceRightP', function () {
   });
 
   it('should support an initial value for promise', function () {
-    const testAdd = RA.reduceRightP(R.add, Promise.resolve(0), [
-      1,
-      2,
-      3,
-      4,
-    ]).then((actual) => assert.strictEqual(actual, 10));
-    const testMultiply = RA.reduceRightP(R.multiply, Promise.resolve(1), [
-      1,
-      2,
-      3,
-      4,
-    ]).then((actual) => assert.strictEqual(actual, 24));
+    const testAdd = RA.reduceRightP(
+      R.add,
+      Promise.resolve(0),
+      [1, 2, 3, 4]
+    ).then((actual) => assert.strictEqual(actual, 10));
+    const testMultiply = RA.reduceRightP(
+      R.multiply,
+      Promise.resolve(1),
+      [1, 2, 3, 4]
+    ).then((actual) => assert.strictEqual(actual, 24));
 
     return Promise.all([testAdd, testMultiply]);
   });
@@ -104,19 +99,15 @@ describe('reduceRightP', function () {
   });
 
   it('should work with an iterator wrapped in the promise', function () {
-    return RA.reduceRightP(
-      R.add,
-      0,
-      Promise.resolve([1, 2, 3])
-    ).then((actual) => assert.strictEqual(actual, 6));
+    return RA.reduceRightP(R.add, 0, Promise.resolve([1, 2, 3])).then(
+      (actual) => assert.strictEqual(actual, 6)
+    );
   });
 
   it('should work with an iterator containing values and promises', function () {
-    return RA.reduceRightP(R.add, 0, [
-      1,
-      Promise.resolve(2),
-      3,
-    ]).then((actual) => assert.strictEqual(actual, 6));
+    return RA.reduceRightP(R.add, 0, [1, Promise.resolve(2), 3]).then(
+      (actual) => assert.strictEqual(actual, 6)
+    );
   });
 
   it('should work witn an iterator wrapped in promise containing values and promises', function () {
@@ -146,12 +137,9 @@ describe('reduceRightP', function () {
     const testCatRight = catRight(['1', '2', '3', '4']).then((actual) =>
       assert.strictEqual(actual, '1234')
     );
-    const testCatRightFlipped = catRightFlipped([
-      '1',
-      '2',
-      '3',
-      '4',
-    ]).then((actual) => assert.strictEqual(actual, '4321'));
+    const testCatRightFlipped = catRightFlipped(['1', '2', '3', '4']).then(
+      (actual) => assert.strictEqual(actual, '4321')
+    );
 
     return Promise.all([testCat, testCatRight, testCatRightFlipped]);
   });

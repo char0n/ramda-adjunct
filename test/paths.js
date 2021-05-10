@@ -16,11 +16,10 @@ describe('paths', function () {
   });
 
   it('should preserve order', function () {
-    assert.sameOrderedMembers(RA.paths([['f'], ['a', 'b', 'c'], ['e']], obj), [
-      6,
-      1,
-      5,
-    ]);
+    assert.sameOrderedMembers(
+      RA.paths([['f'], ['a', 'b', 'c'], ['e']], obj),
+      [6, 1, 5]
+    );
   });
 
   context('given non-existent paths', function () {
