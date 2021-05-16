@@ -78,11 +78,13 @@ jobs:
         run: npm ci
         env:
           DISABLE_OPENCOLLECTIVE: true
+      - name: Code coverage
+        run: npm run coverage
       - name: Upload coverage report to codecov.io
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/lcov.info
+          directory: ./coverage
           flags: unittests
           fail_ci_if_error: true
           verbose: true
