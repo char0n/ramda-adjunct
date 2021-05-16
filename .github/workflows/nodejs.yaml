@@ -71,7 +71,7 @@ jobs:
         run: npm ci
         env:
           DISABLE_OPENCOLLECTIVE: true
-      - run: ./node_modules/.bin/codecov
+      - run: ./node_modules/.bin/codecov --disable=gcov
         env:
           CODECOV_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload coverage artifacts
