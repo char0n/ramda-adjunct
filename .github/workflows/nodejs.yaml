@@ -79,8 +79,8 @@ jobs:
         env:
           DISABLE_OPENCOLLECTIVE: true
       - run: ./node_modules/.bin/codecov
-        with:
-          env: CODECOV_TOKEN=${{ secrets.GITHUB_TOKEN }}
+        env:
+          CODECOV_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload coverage artifacts
         uses: actions/upload-artifact@v2
         with:
