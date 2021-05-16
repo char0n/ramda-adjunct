@@ -83,10 +83,16 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload coverage artifacts
-        uses: actions/upload-artifact@v2
+        uses: codecov/codecov-action@v1
         with:
-          name: coverage
-          path: |
-            ./coverage
-            ./test-results.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          fail_ci_if_error: true
+          verbose: true
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: coverage
+#          path: |
+#            ./coverage
+#            ./test-results.xml
 
