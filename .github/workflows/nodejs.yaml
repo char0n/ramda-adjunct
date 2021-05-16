@@ -73,7 +73,7 @@ jobs:
           DISABLE_OPENCOLLECTIVE: true
       - run: ./node_modules/.bin/codecov --disable=gcov
         env:
-          CODECOV_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload coverage artifacts
         uses: actions/upload-artifact@v2
         with:
