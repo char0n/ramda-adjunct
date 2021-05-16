@@ -4,13 +4,9 @@
   "after_tests": "npm run test:bundle-clean",
   "test_page": "./test/mocha-testem.mustache",
   "launch_in_ci": [
-    "Chrome",
     "Firefox"
   ],
   "browser_args": {
-    "Chrome": [
-      "--headless"
-    ],
     "Firefox": [
       "--headless"
     ]
