@@ -78,21 +78,18 @@ jobs:
         run: npm ci
         env:
           DISABLE_OPENCOLLECTIVE: true
-      - run: npm run coverage
-      - run: ./node_modules/.bin/codecov --disable=gcov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      - name: Upload coverage artifacts
+      - name: Upload coverage report to codecov.io
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
           fail_ci_if_error: true
           verbose: true
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: coverage
-#          path: |
-#            ./coverage
-#            ./test-results.xml
+      - name: Upload coverage artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: |
+            ./coverage
+            ./test-results.xml
 
