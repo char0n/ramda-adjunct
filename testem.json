@@ -2,5 +2,13 @@
   "framework": "mocha",
   "before_tests": "npm run test:bundle-create",
   "after_tests": "npm run test:bundle-clean",
-  "test_page": "./test/mocha-testem.mustache"
+  "test_page": "./test/mocha-testem.mustache",
+  "launch_in_ci": [
+    "Firefox"
+  ],
+  "browser_args": {
+    "Firefox": [
+      "--headless"
+    ]
+  }
 }
