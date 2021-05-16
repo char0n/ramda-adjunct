@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:16
     filters:
       branches:
         ignore: gh-pages
@@ -24,20 +24,6 @@ jobs:
           path: ./lib
       - store_artifacts:
           path: ./es
-
-  test_node_10:
-    docker:
-      - image: circleci/node:10-browsers
-    filters:
-      branches:
-        ignore: gh-pages
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run test
-      - run: npm run test:web
-      - run: npm run test:ramda
-      - run: npm run test:types
 
   test_node_12:
     docker:
@@ -67,9 +53,23 @@ jobs:
       - run: npm run test:ramda
       - run: npm run test:types
 
+  test_node_16:
+    docker:
+      - image: circleci/node:16-browsers
+    filters:
+      branches:
+        ignore: gh-pages
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run test:web
+      - run: npm run test:ramda
+      - run: npm run test:types
+
   code_coverage:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:16
     filters:
       branches:
         only: master
@@ -89,7 +89,7 @@ jobs:
 
   docs:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:16
     environment:
       GH_NAME: char0n
       GH_EMAIL: vladimir.gorej@gmail.com
@@ -112,20 +112,20 @@ workflows:
   build_test_docs:
     jobs:
       - build
-      - test_node_10:
-          requires:
-            - build
       - test_node_12:
           requires:
             - build
       - test_node_14:
           requires:
             - build
+      - test_node_16:
+          requires:
+            - build
       - code_coverage:
           requires:
-            - test_node_10
             - test_node_12
             - test_node_14
+            - test_node_16
           filters:
             branches:
               only: master
