@@ -96,7 +96,7 @@ Bump the `package.json` and `package-lock.json` version by incrementing **MAJOR*
 Go to [ramda-adjunct github repo](https://github.com/char0n/ramda-adjunct) and switch to
 **gh-pages** branch. Find `index.html` and edit it. Replace all references of previous version
 of ramda-adjunct with the currently released one. In commit message use suffix `[ci skip]`
-for `circleci` to skip the build triggered by this change.
+for `GitHub Actions` to skip the build triggered by this change.
 
 
 **Note**

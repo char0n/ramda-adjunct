@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/char0n/ramda-adjunct.svg?style=svg)](https://circleci.com/gh/char0n/ramda-adjunct)
+![Node.js workflow](https://github.com/char0n/ramda-adjunct/actions/workflows/nodejs.yaml/badge.svg)
 [![codecov](https://codecov.io/gh/char0n/ramda-adjunct/branch/master/graph/badge.svg)](https://codecov.io/gh/char0n/ramda-adjunct)
 [![jsdoc](https://img.shields.io/badge/docs-100%25-green.svg)](https://char0n.github.io/ramda-adjunct/)
 [![npmversion](https://badge.fury.io/js/ramda-adjunct.svg)](https://www.npmjs.com/package/ramda-adjunct)
@@ -231,7 +231,7 @@ The command will create three types of bundles.
 
 `dist/RA.web.standalone.js` - ES5 compliant bundle, running in browsers. It has `ramda.js` pre-bundled.
 
-You can always find fresh build files in circle-ci [artifacts](https://circleci.com/gh/char0n/ramda-adjunct).
+You can always find fresh build files in exposed as artifacts of GitHub Actions.
 
 
 ## Tree shaking support
