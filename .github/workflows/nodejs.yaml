@@ -57,7 +57,45 @@ jobs:
 #      - run: npm run test:ramda
 #      - run: npm run test:types
 
-  code_coverage:
+#  code_coverage:
+#    runs-on: ubuntu-latest
+#    needs: [build]
+#
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Use Node.js 16
+#        uses: actions/setup-node@v2
+#        with:
+#          node-version: '16'
+#      - name: Cache Node Modules
+#        id: cache-node-modules
+#        uses: actions/cache@v2
+#        with:
+#          path: node_modules
+#          key: node-modules-${{ hashFiles('package-lock.json') }}
+#      - name: Install dependencies
+#        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+#        run: npm ci
+#        env:
+#          DISABLE_OPENCOLLECTIVE: true
+#      - name: Code coverage
+#        run: npm run coverage
+#      - name: Upload coverage report to codecov.io
+#        uses: codecov/codecov-action@v1
+#        with:
+#          directory: ./coverage
+#          flags: unittests
+#          fail_ci_if_error: true
+#          verbose: true
+#      - name: Upload coverage artifacts
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: coverage
+#          path: |
+#            ./coverage
+#            ./test-results.xml
+
+  docs:
     runs-on: ubuntu-latest
 #    needs: [build]
 
@@ -78,20 +116,17 @@ jobs:
         run: npm ci
         env:
           DISABLE_OPENCOLLECTIVE: true
-      - name: Code coverage
-        run: npm run coverage
-      - name: Upload coverage report to codecov.io
-        uses: codecov/codecov-action@v1
+      - run: npm run build:umd
+      - run: npm run docs
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          directory: ./coverage
-          flags: unittests
-          fail_ci_if_error: true
-          verbose: true
-      - name: Upload coverage artifacts
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: docs/ramda-adjunct # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+      - name: Upload docs artifact
         uses: actions/upload-artifact@v2
         with:
-          name: coverage
-          path: |
-            ./coverage
-            ./test-results.xml
-
+          name: docs
+          path: ./docs
