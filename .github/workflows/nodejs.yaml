@@ -7,97 +7,103 @@ on:
     branches: [ master ]
 
 jobs:
-#  build:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Use Node.js 16
-#        uses: actions/setup-node@v2
-#        with:
-#          node-version: '16'
-#      - name: Cache Node Modules
-#        id: cache-node-modules
-#        uses: actions/cache@v2
-#        with:
-#          path: node_modules
-#          key: node-modules-${{ hashFiles('package-lock.json') }}
-#      - name: Install dependencies
-#        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-#        run: npm ci
-#        env:
-#          DISABLE_OPENCOLLECTIVE: true
-#      - run: npm run lint
-#      - run: npm run build
-#
-#  test:
-#    runs-on: ubuntu-latest
-#
-#    needs: [build]
-#
-#    strategy:
-#      matrix:
-#        node-version: [12.x, 14.x, 16.x]
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Cache Node Modules
-#        id: cache-node-modules
-#        uses: actions/cache@v2
-#        with:
-#          path: node_modules
-#          key: node-modules-${{ hashFiles('package-lock.json') }}
-#      - name: Install dependencies
-#        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-#        run: npm ci
-#        env:
-#          DISABLE_OPENCOLLECTIVE: true
-#      - run: npm run test
-#      - run: npm run test:web
-#      - run: npm run test:ramda
-#      - run: npm run test:types
+  build:
+    runs-on: ubuntu-latest
 
-#  code_coverage:
-#    runs-on: ubuntu-latest
-#    needs: [build]
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Use Node.js 16
-#        uses: actions/setup-node@v2
-#        with:
-#          node-version: '16'
-#      - name: Cache Node Modules
-#        id: cache-node-modules
-#        uses: actions/cache@v2
-#        with:
-#          path: node_modules
-#          key: node-modules-${{ hashFiles('package-lock.json') }}
-#      - name: Install dependencies
-#        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-#        run: npm ci
-#        env:
-#          DISABLE_OPENCOLLECTIVE: true
-#      - name: Code coverage
-#        run: npm run coverage
-#      - name: Upload coverage report to codecov.io
-#        uses: codecov/codecov-action@v1
-#        with:
-#          directory: ./coverage
-#          flags: unittests
-#          fail_ci_if_error: true
-#          verbose: true
-#      - name: Upload coverage artifacts
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: coverage
-#          path: |
-#            ./coverage
-#            ./test-results.xml
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+        env:
+          DISABLE_OPENCOLLECTIVE: true
+      - run: npm run lint
+      - run: npm run build
+
+  test:
+    runs-on: ubuntu-latest
+
+    needs: [build]
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+        env:
+          DISABLE_OPENCOLLECTIVE: true
+      - run: npm run test
+      - run: npm run test:web
+      - run: npm run test:ramda
+      - run: npm run test:types
+
+  code_coverage:
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
+        env:
+          DISABLE_OPENCOLLECTIVE: true
+      - name: Code coverage
+        run: npm run coverage
+      - name: Upload coverage report to codecov.io
+        if: github.ref == 'refs/heads/master'
+        uses: codecov/codecov-action@v1
+        with:
+          directory: ./coverage
+          flags: unittests
+          fail_ci_if_error: true
+          verbose: true
+      - name: Upload coverage artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: |
+            ./coverage
+            ./test-results.xml
 
   docs:
     runs-on: ubuntu-latest
-#    needs: [build]
+    needs: [build]
+    if: github.ref == 'refs/heads/master'
 
     steps:
       - uses: actions/checkout@v2
