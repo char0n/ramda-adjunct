@@ -3,7 +3,7 @@
   "before_tests": "npm run test:bundle-create",
   "after_tests": "npm run test:bundle-clean",
   "test_page": "./test/mocha-testem.mustache",
-  "launchers": [
+  "launch_in_ci": [
     "Chrome",
     "Firefox"
   ]
