@@ -59,7 +59,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Cache Node Modules
         # cache only on >=npm@7 due to lockfileVersion@2
-        if: startsWith(matrix.node-version, '12') || startsWith(matrix.node-version, '14')
+        if: startsWith(matrix.node-version, '16')
         id: cache-node-modules
         uses: actions/cache@v2
         with:
