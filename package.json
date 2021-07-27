@@ -145,7 +145,7 @@
     "@babel/preset-env": "=7.14.8",
     "@babel/register": "7.14.5",
     "@commitlint/cli": "=13.1.0",
-    "@commitlint/config-conventional": "=12.1.4",
+    "@commitlint/config-conventional": "=13.1.0",
     "assert": "=2.0.0",
     "babel-loader": "8.2.2",
     "babel-plugin-annotate-pure-calls": "0.4.0",
