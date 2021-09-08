@@ -1,4 +1,4 @@
-import { curry } from 'ramda';
+import { curry, cond, equals } from 'ramda';
 
 /**
  * Adds a value to a map if the map does not already have something at key otherwise updates an existing value at key.
@@ -20,36 +20,37 @@ import { curry } from 'ramda';
  * //=> {key: 'initial value'}
  */
 
- const upsert = curry((key, update, insert, collection) => {
-   const type = Object.prototype.toString.call(collection);
-   switch (type) {
-     case "[object Array]":
-       if (collection[key]) {
-         collection[key] = update();
-       } else {
-         collection[key] = insert();
-       }
-       return collection;
-       break;
-     case "[object Object]":
-       if (collection[key]) {
-         collection[key] = update();
-       } else {
-         collection[key] = insert();
-       }
-       return collection;
-       break;
-     case "[object Map]":
-       if (collection.get(key)) {
-         collection.set(key, update());
-       } else {
-         collection.set(key, insert());
-       }
-       return collection;
-       break;
-     default:
-       return;
+ const emplace = curry((_, key, update, insert, collection) => {
+   if (collection[key]) {
+     collection[key] = update();
+   } else {
+     collection[key] = insert();
    }
- });
+   return collection;
+ })
+
+ const emplaceMap = curry((_, key, update, insert, collection) => {
+   if (collection.get(key)) {
+     collection.set(key, update());
+   } else {
+     collection.set(key, insert());
+   }
+   return collection;
+ })
+
+ const polymorphicDispatch = cond([
+   [equals("[object Array]"),   emplace],
+   [equals("[object Object]"),   emplace],
+   [equals("[object Map]"),   emplaceMap],
+ ]);
+
+ const upsert = curry((key, update, insert, collection) =>
+     polymorphicDispatch(Object.prototype.toString.call(collection))(
+         key,
+         update,
+         insert,
+         collection
+     )
+ );
 
 export default upsert;
