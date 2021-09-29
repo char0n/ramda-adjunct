@@ -1,4 +1,4 @@
-![Node.js workflow](https://github.com/char0n/ramda-adjunct/actions/workflows/nodejs.yaml/badge.svg)
+[![Node.js workflow](https://github.com/char0n/ramda-adjunct/actions/workflows/nodejs.yaml/badge.svg)](https://github.com/char0n/ramda-adjunct/actions)
 [![codecov](https://codecov.io/gh/char0n/ramda-adjunct/branch/master/graph/badge.svg)](https://codecov.io/gh/char0n/ramda-adjunct)
 [![jsdoc](https://img.shields.io/badge/docs-100%25-green.svg)](https://char0n.github.io/ramda-adjunct/)
 [![npmversion](https://badge.fury.io/js/ramda-adjunct.svg)](https://www.npmjs.com/package/ramda-adjunct)
