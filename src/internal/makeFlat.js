@@ -14,8 +14,8 @@ import isArrayLike from '../isArrayLike';
  * @sig Bool -> List -> List
  *
  */
-const makeFlat = (recursive) => {
-  return function flatt(list) {
+const makeFlat = (recursive) =>
+  function flatt(list) {
     let value;
     let jlen;
     let j;
@@ -38,6 +38,5 @@ const makeFlat = (recursive) => {
     }
     return result;
   };
-};
 
 export default makeFlat;

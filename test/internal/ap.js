@@ -17,13 +17,9 @@ describe('ap', function () {
   });
 
   it('tests for non Apply spec', function () {
-    assert.sameOrderedMembers(_ap([R.multiply(2), R.add(3)], [1, 2, 3]), [
-      2,
-      4,
-      6,
-      4,
-      5,
-      6,
-    ]);
+    assert.sameOrderedMembers(
+      _ap([R.multiply(2), R.add(3)], [1, 2, 3]),
+      [2, 4, 6, 4, 5, 6]
+    );
   });
 });

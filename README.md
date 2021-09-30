@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/char0n/ramda-adjunct.svg?style=svg)](https://circleci.com/gh/char0n/ramda-adjunct)
+[![Node.js workflow](https://github.com/char0n/ramda-adjunct/actions/workflows/nodejs.yaml/badge.svg)](https://github.com/char0n/ramda-adjunct/actions)
 [![codecov](https://codecov.io/gh/char0n/ramda-adjunct/branch/master/graph/badge.svg)](https://codecov.io/gh/char0n/ramda-adjunct)
 [![jsdoc](https://img.shields.io/badge/docs-100%25-green.svg)](https://char0n.github.io/ramda-adjunct/)
 [![npmversion](https://badge.fury.io/js/ramda-adjunct.svg)](https://www.npmjs.com/package/ramda-adjunct)
@@ -125,21 +125,21 @@ _Do you want to find out more about why this library exists ? Read this [**artic
 
 ## Requirements
 
- - ramda >= 0.19.0 <= 0.26.1
+ - ramda >= 0.19.0
  - node >= 0.10.48
 
-Ramda Adjunct is being automatically tested against node version >=8 <=11.
+Ramda Adjunct is being automatically tested against all LTS and Current Node.js versions.
 
 ### Legacy builds
 
 We are building our npm distributions using Webpack/Babel to support legacy versions of node starting from 0.10.48.
-Although all tests are run against node version >=8 <=11, we rely on Webpack/Babel to transpile ramda-adjunct into legacy ES5.
+Although all tests are run against all LTS and Current Node.js versions, we rely on Webpack/Babel to transpile ramda-adjunct into legacy ES5.
 It is also possible that our ES5 distributions run on node versions older than 0.10.48 as long as they support ES5.
 
 ## API Documentation
 
  [LATEST](https://char0n.github.io/ramda-adjunct),
- [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.26.0),
+ [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.33.0),
  [ALL VERSIONS](./VERSIONS.md)
 
 ## Wrote about us
@@ -160,6 +160,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 - [Using JavaScript Generators to yield Promises](https://www.linkedin.com/pulse/using-javascript-generators-yield-promises-vladim%C3%ADr-gorej/)
 - [Integrating React Native navigators](https://blog.inspeerity.com/react-native/integrating-react-native-navigators/)
 - [Ramda Adjunct Changelog articles](https://medium.com/ramda-adjunct)
+- [Ramda and React](https://hint.io/blog/react-and-ramda)
 
 ## Contributing
 
@@ -230,7 +231,7 @@ The command will create three types of bundles.
 
 `dist/RA.web.standalone.js` - ES5 compliant bundle, running in browsers. It has `ramda.js` pre-bundled.
 
-You can always find fresh build files in circle-ci [artifacts](https://circleci.com/gh/char0n/ramda-adjunct).
+You can always find fresh build files in exposed as artifacts of GitHub Actions.
 
 
 ## Tree shaking support

@@ -1,24 +1,20 @@
-const mapping = Object.freeze({
-  equals: 'fantasy-land/equals',
-  lte: 'fantasy-land/lte',
-  compose: 'fantasy-land/compose',
-  id: 'fantasy-land/id',
-  concat: 'fantasy-land/concat',
-  empty: 'fantasy-land/empty',
-  map: 'fantasy-land/map',
-  contramap: 'fantasy-land/contramap',
-  ap: 'fantasy-land/ap',
-  of: 'fantasy-land/of',
-  alt: 'fantasy-land/alt',
-  zero: 'fantasy-land/zero',
-  reduce: 'fantasy-land/reduce',
-  traverse: 'fantasy-land/traverse',
-  chain: 'fantasy-land/chain',
-  chainRec: 'fantasy-land/chainRec',
-  extend: 'fantasy-land/extend',
-  extract: 'fantasy-land/extract',
-  bimap: 'fantasy-land/bimap',
-  promap: 'fantasy-land/promap',
-});
-
-export default mapping;
+export const equals = 'fantasy-land/equals';
+export const lte = 'fantasy-land/lte';
+export const compose = 'fantasy-land/compose';
+export const id = 'fantasy-land/id';
+export const concat = 'fantasy-land/concat';
+export const empty = 'fantasy-land/empty';
+export const map = 'fantasy-land/map';
+export const contramap = 'fantasy-land/contramap';
+export const ap = 'fantasy-land/ap';
+export const of = 'fantasy-land/of';
+export const alt = 'fantasy-land/alt';
+export const zero = 'fantasy-land/zero';
+export const reduce = 'fantasy-land/reduce';
+export const traverse = 'fantasy-land/traverse';
+export const chain = 'fantasy-land/chain';
+export const chainRec = 'fantasy-land/chainRec';
+export const extend = 'fantasy-land/extend';
+export const extract = 'fantasy-land/extract';
+export const bimap = 'fantasy-land/bimap';
+export const promap = 'fantasy-land/promap';
