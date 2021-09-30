@@ -19,12 +19,12 @@ import { curryN, identical, partial, pathOr, unary, when } from 'ramda';
  * RA.pathOrLazy(() => 'N/A', ['a', 'b'], {a: {b: 2}}); //=> 2
  * RA.pathOrLazy(() => 'N/A', ['a', 'b'], {c: {b: 2}}); //=> "N/A"
  */
-const pathOrLazy = curryN(3, function pathOrLazy(defaultFn, path, obj) {
-  return when(
+const pathOrLazy = curryN(3, (defaultFn, path, obj) =>
+  when(
     identical(defaultFn),
     partial(unary(defaultFn), [obj]),
     pathOr(defaultFn, path, obj)
-  );
-});
+  )
+);
 
 export default pathOrLazy;

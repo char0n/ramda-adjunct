@@ -9,12 +9,9 @@ describe('reduceP', function () {
     const testAdd = RA.reduceP(R.add, 0, [1, 2, 3, 4]).then((actual) =>
       assert.strictEqual(actual, 10)
     );
-    const testMultiply = RA.reduceP(R.multiply, 1, [
-      1,
-      2,
-      3,
-      4,
-    ]).then((actual) => assert.strictEqual(actual, 24));
+    const testMultiply = RA.reduceP(R.multiply, 1, [1, 2, 3, 4]).then(
+      (actual) => assert.strictEqual(actual, 24)
+    );
 
     return Promise.all([testAdd, testMultiply]);
   });
@@ -51,18 +48,14 @@ describe('reduceP', function () {
   });
 
   it('should support an initial value for promise', function () {
-    const testAdd = RA.reduceP(R.add, Promise.resolve(0), [
-      1,
-      2,
-      3,
-      4,
-    ]).then((actual) => assert.strictEqual(actual, 10));
-    const testMultiply = RA.reduceP(R.multiply, Promise.resolve(1), [
-      1,
-      2,
-      3,
-      4,
-    ]).then((actual) => assert.strictEqual(actual, 24));
+    const testAdd = RA.reduceP(R.add, Promise.resolve(0), [1, 2, 3, 4]).then(
+      (actual) => assert.strictEqual(actual, 10)
+    );
+    const testMultiply = RA.reduceP(
+      R.multiply,
+      Promise.resolve(1),
+      [1, 2, 3, 4]
+    ).then((actual) => assert.strictEqual(actual, 24));
 
     return Promise.all([testAdd, testMultiply]);
   });

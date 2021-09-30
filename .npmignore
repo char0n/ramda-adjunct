@@ -18,13 +18,11 @@
 /.npmignore
 /.npmrc
 /.nycrc
-/.circleci
 /.codeclimate.yml
 /.commitlintrc.json
 /.prettierignore
 /.prettierrc
 /codecov.yml
-/circle.yml
 /jsdoc.js
 /jsdoc.json
 /tmp-test-bundle.js
@@ -44,4 +42,6 @@
 /ramda-adjunct-*.*.*.tgz
 /VERSIONS.md
 .eslintrc
+/.mocharc.js
+/.husky
 
