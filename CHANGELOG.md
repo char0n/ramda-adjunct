@@ -3,7 +3,6 @@
 
 ### Features
 
-* **function:** add catchP ([#1616](https://github.com/char0n/ramda-adjunct/issues/1616)) ([d6d1e78](https://github.com/char0n/ramda-adjunct/commit/d6d1e7825d16130ba916448355f06bad1f2bf0d9)), closes [#1232](https://github.com/char0n/ramda-adjunct/issues/1232)
 * **type:** add isSentinelValue ([#1848](https://github.com/char0n/ramda-adjunct/issues/1848)) ([c48ce9e](https://github.com/char0n/ramda-adjunct/commit/c48ce9e2ab752006c25d385e830f3317bde5110c)), closes [#793](https://github.com/char0n/ramda-adjunct/issues/793)
 
 
