@@ -1,11 +1,8 @@
 # [2.34.0](https://github.com/char0n/ramda-adjunct/compare/v2.32.0...v2.34.0) (2021-09-29)
 
+### Other changes
 
-### Features
-
-* **type:** add isSentinelValue ([#1848](https://github.com/char0n/ramda-adjunct/issues/1848)) ([c48ce9e](https://github.com/char0n/ramda-adjunct/commit/c48ce9e2ab752006c25d385e830f3317bde5110c)), closes [#793](https://github.com/char0n/ramda-adjunct/issues/793)
-
-
+The transpiled code has been regenerated with versions of babel transpiler libraries.
 
 # [2.33.0](https://github.com/char0n/ramda-adjunct/compare/v2.32.0...v2.33.0) (2021-05-22)
 
