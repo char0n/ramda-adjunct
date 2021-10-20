@@ -147,7 +147,7 @@
     "@commitlint/cli": "=13.2.1",
     "@commitlint/config-conventional": "=13.2.0",
     "assert": "=2.0.0",
-    "babel-loader": "8.2.2",
+    "babel-loader": "8.2.3",
     "babel-plugin-annotate-pure-calls": "0.4.0",
     "babel-plugin-istanbul": "6.1.1",
     "better-npm-run": "0.1.1",
