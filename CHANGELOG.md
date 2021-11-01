@@ -1,3 +1,12 @@
+# [2.35.0](https://github.com/char0n/ramda-adjunct/compare/v2.34.0...v2.35.0) (2021-11-01)
+
+
+### Features
+
+* add copyKeys ([#1558](https://github.com/char0n/ramda-adjunct/issues/1558)) ([cf9727c](https://github.com/char0n/ramda-adjunct/commit/cf9727c08658e74597d330146c4bfc26d3b6949b)), closes [#516](https://github.com/char0n/ramda-adjunct/issues/516)
+
+
+
 # [2.34.0](https://github.com/char0n/ramda-adjunct/compare/v2.32.0...v2.34.0) (2021-09-29)
 
 ### Other changes
