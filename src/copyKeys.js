@@ -5,7 +5,7 @@ import renameKeys from './renameKeys';
 /**
  * Creates a new object with the own properties of the provided object, and the
  * keys copied according to the keysMap object as `{oldKey: newKey}`.
- * When some key is not found in the keysMap, then it's passed as-is.
+ * When no key from the keysMap is found, then a shallow clone of an object is returned.
  *
  * Keep in mind that in the case of keys conflict is behaviour undefined and
  * the result may vary between various JS engines!
