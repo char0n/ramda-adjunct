@@ -17,18 +17,30 @@ describe('copyKeys', function () {
       }
     );
   });
+  
+  context('given non existing keys', function () {
+    specify('should ignore them', function () {
+      assert.deepEqual(RA.copyKeys({ nonExistingKey: 'key2' }, { key1: 1 }), {
+        key1: 1,
+      });      
+    });  
+    
+    specify('should create shallow clone', function () {
+      const obj = { key1: 1 };
+      
+      assert.notStrictEqual(RA.copyKeys({ nonExistingKey: 'key2' }, obj), obj);      
+    });  
+  });  
 
-  it('should ignore non existing keys', function () {
-    assert.deepEqual(RA.copyKeys({ nonExistingKey: 'key2' }, { key1: 1 }), {
-      key1: 1,
+  context('given non object value', function () {
+    specify('should return empty object', function () {
+      assert.deepEqual(RA.copyKeys({ key1: 'key2' }, null), {});
+      assert.deepEqual(RA.copyKeys({ key1: 'key2' }, undefined), {});
+      assert.deepEqual(RA.copyKeys({ key1: 'key2' }, ''), {});
+      assert.deepEqual(RA.copyKeys({ key1: 'key2' }, 3), {});
     });
-  });
-
-  it('should return an empty object when it copies keys on null and undefined', function () {
-    assert.deepEqual(RA.copyKeys({ key1: 'key2' }, null), {});
-    assert.deepEqual(RA.copyKeys({ key1: 'key2' }, undefined), {});
-  });
-
+  });  
+  
   it('should be curried', function () {
     assert.deepEqual(
       RA.copyKeys({ key1: 'key2', key2: 'key3' }, { key1: 1, key2: 2 }),
