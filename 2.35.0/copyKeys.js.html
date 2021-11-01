@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>isNotObjLike.js - Documentation</title>
+    <title>copyKeys.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">isNotObjLike.js</h1>
+    <h1 class="page-title">copyKeys.js</h1>
     
 
     
@@ -52,35 +52,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curryN } from 'ramda';
 
-import isObjLike from './isObjLike';
+import renameKeys from './renameKeys';
 
-/* eslint-disable max-len */
 /**
- * Checks if value is not object-like. A value is object-like if it's not null and has a typeof result of "object".
+ * Creates a new object with the own properties of the provided object, and the
+ * keys copied according to the keysMap object as `{oldKey: newKey}`.
+ * When no key from the keysMap is found, then a shallow clone of an object is returned.
  *
- * @func isNotObjLike
- * @aliases isNotObjectLike
+ * Keep in mind that in the case of keys conflict is behaviour undefined and
+ * the result may vary between various JS engines!
+ *
+ * @func copyKeys
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/0.5.0|v0.5.0}
- * @category Type
- * @sig * -> Boolean
- * @param {*} val The value to test
- * @return {boolean}
- * @see {@link RA.isObjLike|isObjLike}, {@link RA.isObj|isObj}, {@link RA.isPlainObj|isPlainObj}
+ * @category Object
+ * @sig {a: b} -> {a: *} -> {b: *}
+ * @param {!Object} keysMap
+ * @param {!Object} obj
+ * @return {!Object} New object with copied keys
+ * @see {@link RA.renameKeys|renameKeys}
  * @example
  *
- * RA.isNotObjLike({}); //=> false
- * RA.isNotObjLike([]); //=> false
- * RA.isNotObjLike(() => {}); //=> true
- * RA.isNotObjLike(null); //=> true
- * RA.isNotObjLike(undefined); //=> true
+ * copyKeys({ a: 'b' }, { a: true }); //=> { a: true, b: true }
+ * copyKeys({ a: 'b' }, { a: true, b: false }); //=> { a: true, b: true }
  */
-/* eslint-enable max-len */
-const isNotObjLike = complement(isObjLike);
+const copyKeys = curryN(2, (keysMap, obj) => ({
+  ...obj,
+  ...renameKeys(keysMap, obj),
+}));
 
-export default isNotObjLike;
+export default copyKeys;
 </code></pre>
         </article>
     </section>
