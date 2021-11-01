@@ -171,6 +171,7 @@ export { default as paths } from './paths';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as renameKeyWith } from './renameKeyWith';
+export { default as copyKeys } from './copyKeys';
 export { default as mergeRight } from './mergeRight';
 export { default as mergeLeft } from './mergeRight';
 export { default as resetToDefault } from './mergeRight';
