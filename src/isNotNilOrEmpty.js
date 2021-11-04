@@ -3,7 +3,7 @@ import { complement } from 'ramda';
 import isNilOrEmpty from './isNilOrEmpty';
 
 /**
- * Returns `true` if the given value is its type's empty value, `null` or `undefined`.
+ * Returns `false` if the given value is its type's empty value, `null` or `undefined`.
  *
  * @func isNotNilOrEmpty
  * @memberOf RA
