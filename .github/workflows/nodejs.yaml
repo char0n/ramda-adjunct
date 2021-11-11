@@ -15,7 +15,7 @@ jobs:
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: 16
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -49,16 +49,14 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [12, 14, 16]
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup node
+      - name: Setup node 16
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
-      - name: Update npm to latest version
-        run: npm install -g npm@latest
+          node-version: 16
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -70,6 +68,10 @@ jobs:
         run: npm ci
         env:
           DISABLE_OPENCOLLECTIVE: true
+      - name: Setup node ${{ matrix.node }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
       - run: npm run test
       - run: npm run test:web
       - run: npm run test:ramda
@@ -84,7 +86,7 @@ jobs:
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: 16
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -124,7 +126,7 @@ jobs:
       - name: Use Node.js 16
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: 16
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
