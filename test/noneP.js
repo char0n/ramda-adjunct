@@ -3,7 +3,10 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-const delay = (ms = 0) => new Promise((res) => setTimeout(res, ms));
+const delay = (ms = 0) =>
+  new Promise((res) => {
+    setTimeout(res, ms);
+  });
 
 describe('noneP', function () {
   context('given all promises reject', function () {

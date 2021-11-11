@@ -8,10 +8,16 @@ describe('lastP', function () {
     specify(
       'should return the result of the last fulfilled promise',
       async function () {
-        const p1 = new Promise((resolve) => setTimeout(resolve, 20, 'one'));
-        const p2 = new Promise((resolve) => setTimeout(resolve, 40, 'two'));
+        const p1 = new Promise((resolve) => {
+          setTimeout(resolve, 20, 'one');
+        });
+        const p2 = new Promise((resolve) => {
+          setTimeout(resolve, 40, 'two');
+        });
         const p3 = RA.resolveP(3);
-        const p4 = new Promise((resolve) => setTimeout(resolve, 10, 'four'));
+        const p4 = new Promise((resolve) => {
+          setTimeout(resolve, 10, 'four');
+        });
         const iterable = [p1, p2, p3, p4];
         const slowest = 'two';
 
@@ -42,7 +48,9 @@ describe('lastP', function () {
     specify(
       'should return the result of the last fulfilled promise',
       async function () {
-        const p1 = new Promise((resolve) => setTimeout(resolve, 20, 1));
+        const p1 = new Promise((resolve) => {
+          setTimeout(resolve, 20, 1);
+        });
         const p2 = RA.rejectP(2);
         const p3 = RA.resolveP(3);
         const p4 = RA.rejectP(4);
@@ -73,7 +81,10 @@ describe('lastP', function () {
       const iterable = list.map(
         R.ifElse(
           R.equals(slowest),
-          () => new Promise((resolve) => setTimeout(resolve, 10, slowest)),
+          () =>
+            new Promise((resolve) => {
+              setTimeout(resolve, 10, slowest);
+            }),
           RA.resolveP
         )
       );
@@ -93,10 +104,16 @@ describe('lastP', function () {
     specify('should return the last value', async function () {
       const myCustomIterable = {
         *[Symbol.iterator]() {
-          yield new Promise((resolve) => setTimeout(resolve, 20, 'one'));
-          yield new Promise((resolve) => setTimeout(resolve, 40, 'two'));
+          yield new Promise((resolve) => {
+            setTimeout(resolve, 20, 'one');
+          });
+          yield new Promise((resolve) => {
+            setTimeout(resolve, 40, 'two');
+          });
           yield RA.resolveP(3);
-          yield new Promise((resolve) => setTimeout(resolve, 10, 'four'));
+          yield new Promise((resolve) => {
+            setTimeout(resolve, 10, 'four');
+          });
         },
       };
       const slowest = 'two';

@@ -3,7 +3,7 @@ import { map } from 'ramda';
 import resolveP from '../../resolveP';
 
 export class AggregatedError extends Error {
-  constructor(errors = [], message) {
+  constructor(errors = [], message = '') {
     super(message);
 
     this.errors = errors;
