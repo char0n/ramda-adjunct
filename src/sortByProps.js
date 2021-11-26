@@ -1,4 +1,4 @@
-import { reduce, either, curry, prop, sort, comparator, map, lt } from 'ramda';
+import { comparator, curry, either, lt, map, prop, reduce, sort } from 'ramda';
 
 /**
  * Sort a list of objects by a list of props (if first prop value is equivalent, sort by second, etc).
