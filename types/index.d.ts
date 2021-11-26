@@ -1539,6 +1539,12 @@ declare namespace RamdaAdjunct {
         toUint32(val: number): number; // alias
 
         /**
+         * Converts value to a number.
+         * It returns `NaN` whenever the global `Number` function would return `NaN`.
+         */
+        toNumber(val: any): number;
+
+        /**
          * Creates an array of numbers (positive and/or negative) progressing from start up to, but not including, end.
          *
          * `Note`: JavaScript follows the IEEE-754 standard for resolving floating-point values which can produce unexpected results.
