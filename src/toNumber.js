@@ -7,15 +7,17 @@ import isCoercible from './internal/isCoercible';
  *
  * @func toNumber
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.36.0|v2.36.0}
+ * @category Type
  * @param {*} val The value to convert
  * @return {Number}
  * @example
  *
- * toNumber('1'); //=> 1
- * toNumber('abc'); //=> NaN
- * toNumber(Symbol.for('test')); //=> NaN
- * toNumber(Object.create(null)); //=> NaN
+ * RA.toNumber(3.2); //=> 3.2
+ * RA.toNumber(Number.MIN_VALUE); //=> 5e-324
+ * RA.toNumber(Infinity); //=> Infinity
+ * RA.toNumber('3.2'); //=> 3.2
+ * RA.toNumber(Symbol('3.2')); //=> NaN
  */
 const toNumber = ifElse(isCoercible, Number, always(NaN));
 
