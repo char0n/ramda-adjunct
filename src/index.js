@@ -164,6 +164,7 @@ export { default as sortByProps } from './sortByProps';
 export { default as skipTake } from './skipTake';
 export { default as rangeStep } from './rangeStep';
 export { default as findOr } from './findOr';
+export { default as presence } from './presence';
 // Object
 export { default as invoke } from './invoke';
 export { default as invokeArgs } from './invokeArgs';
