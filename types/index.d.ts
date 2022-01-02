@@ -1539,7 +1539,7 @@ declare namespace RamdaAdjunct {
         toUint32(val: number): number; // alias
 
         /**
-         * It returns `NaN` whenever the global `Number` function would return `NaN`.
+         * Converts value to a number.
          */
         toNumber(val: any): number;
 
