@@ -17,7 +17,7 @@ describe('toNumber', function () {
   });
 
   context('given a bigint value', function () {
-    specify('should return the number', function () {
+    specify('should return a number', function () {
       assert.strictEqual(
         RA.toNumber(BigInt(9007199254740991)),
         9007199254740991
