@@ -64,33 +64,46 @@ describe('toNumber', function () {
   });
 
   context('given an object', function () {
-    specify('should return NaN', function () {
-      assert.isNaN(RA.toNumber(Object.create(null)));
-      assert.isNaN(RA.toNumber({}));
+    context('and defined as object literal', function () {
+      specify('should return NaN', function () {
+        assert.isNaN(RA.toNumber({}));
+      });
     });
-    specify('should return the number', function () {
-      const obj0 = {
-        toString() {
-          return 1;
-        },
-      };
 
-      const obj1 = {
-        valueOf() {
-          return 2;
-        },
-      };
+    context('and defined as object with no prototype', function () {
+      specify('should return NaN', function () {
+        assert.isNaN(RA.toNumber(Object.create(null)));
+      });
+    });
 
-      assert.strictEqual(RA.toNumber(obj0), 1);
-      assert.strictEqual(RA.toNumber(obj1), 2);
+    context('and defined with toString method', function () {
+      specify('should use result of toString method for coercion', function () {
+        const obj = {
+          toString() {
+            return '1';
+          },
+        };
+
+        assert.strictEqual(RA.toNumber(obj), 1);
+      });
+    });
+
+    context('and defined with valueOf method', function () {
+      specify('should use result of valueOf method for coercion', function () {
+        const obj = {
+          valueOf() {
+            return '2';
+          },
+        };
+
+        assert.strictEqual(RA.toNumber(obj), 2);
+      });
     });
   });
 
-  context('given a placeholder', function () {
-    specify('should return the number', function () {
-      const toNumber = RA.toNumber(R.__);
+  it('should support placeholder to specify "gaps"', function () {
+    const toNumber = RA.toNumber(R.__);
 
-      assert.strictEqual(toNumber(3.2), 3.2);
-    });
+    assert.strictEqual(toNumber(3.2), 3.2);
   });
 });
