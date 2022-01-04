@@ -33,16 +33,12 @@ import * as RA from '.';
  * RA.isBlank(false); //=> true
  */
 const regExRule = /^\s+|\s+|\\t\\n/g;
-const isBlank = (val) => {
-  if (
+const isBlank = (val) =>
+  !!(
     R.isEmpty(val) ||
     (RA.isString(val) && R.match(regExRule, val)) ||
     RA.isUndefined(val) ||
     RA.isFalse(val)
-  ) {
-    return true;
-  }
-  return false;
-};
+  );
 
 export default isBlank;
