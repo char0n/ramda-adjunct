@@ -1,28 +1,29 @@
 import * as R from 'ramda';
 
 /**
- * Check if value is empty or undefined then returns null, otherwise, returns itself.
+ * Returns the receiver if it’s present, otherwise returns `null`.
  *
  * @func presence
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
- * @category Object
- * @sig k -> null | k
- * @param {k} val The value to test
- * @return {null | k}
+ * @since {@link https://char0n.github.io/ramda-adjunct/2.36.0|v2.36.0}
+ * @category Logic
+ * @sig a -> a | null
+ * @see {@link http://ramdajs.com/docs/#isEmpty|R.isEmpty}
+ * @param {*} val The value to test
+ * @return {*}
  * @example
  *
- * presence({ foo: 'foo' }) // { foo: 'foo' }
- * presence({}) // null
- * presence(false) // null
- * presence(true) // true
- * presence('') // null
- * presence('foo') // foo
- * presence([]) // null
- * presence([1, 2, 3]) // [1, 2, 3]
- * presence(undefined) // null
- * presence(0) // 0
- * presence(null) // null
+ * RA.presence({ foo: 'foo' }) // { foo: 'foo' }
+ * RA.presence({}) // null
+ * RA.presence(false) // null
+ * RA.presence(true) // true
+ * RA.presence('') // null
+ * RA.presence('foo') // foo
+ * RA.presence([]) // null
+ * RA.presence([1, 2, 3]) // [1, 2, 3]
+ * RA.presence(undefined) // null
+ * RA.presence(0) // 0
+ * RA.presence(null) // null
  */
 
 const presence = R.cond([

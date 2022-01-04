@@ -5,89 +5,89 @@ import * as RA from '../src';
 describe.only('presence', function () {
   context('given an object', function () {
     specify('should return the object', function () {
-      const foo = { foo: 'foo' };
+      const val = { val: 'val' };
 
-      assert.strictEqual(RA.presence(foo), foo);
+      assert.strictEqual(RA.presence(val), val);
     });
   });
 
   context('given an empty object', function () {
     specify('should return null', function () {
-      const foo = {};
+      const val = {};
 
-      assert.strictEqual(RA.presence(foo), null);
+      assert.strictEqual(RA.presence(val), null);
     });
   });
 
   context('given a boolean with value false', function () {
     specify('should return null', function () {
-      const foo = false;
+      const val = false;
 
-      assert.strictEqual(RA.presence(foo), null);
+      assert.strictEqual(RA.presence(val), null);
     });
   });
 
   context('given a boolean with value true', function () {
     specify('should return boolean true', function () {
-      const foo = true;
+      const val = true;
 
-      assert.strictEqual(RA.presence(foo), foo);
+      assert.strictEqual(RA.presence(val), val);
     });
   });
 
   context('given an empty string', function () {
     specify('should return null', function () {
-      const foo = '';
+      const val = '';
 
-      assert.strictEqual(RA.presence(foo), null);
+      assert.strictEqual(RA.presence(val), null);
     });
   });
 
   context('given a string', function () {
     specify('should return the correct string', function () {
-      const foo = 'foo';
+      const val = 'val';
 
-      assert.strictEqual(RA.presence(foo), foo);
+      assert.strictEqual(RA.presence(val), val);
     });
   });
 
   context('given an empty array', function () {
     specify('should return null', function () {
-      const foo = [];
+      const val = [];
 
-      assert.strictEqual(RA.presence(foo), null);
+      assert.strictEqual(RA.presence(val), null);
     });
   });
 
   context('given an array with values', function () {
     specify('should return the array', function () {
-      const foo = [1, 2, 3];
+      const val = [1, 2, 3];
 
-      assert.strictEqual(RA.presence(foo), foo);
+      assert.strictEqual(RA.presence(val), val);
     });
   });
 
   context('given an undefined', function () {
     specify('should return null', function () {
-      const foo = undefined;
+      const val = undefined;
 
-      assert.strictEqual(RA.presence(foo), null);
+      assert.strictEqual(RA.presence(val), null);
     });
   });
 
   context('given a number', function () {
     specify('should return number', function () {
-      const foo = 0;
+      const val = 0;
 
-      assert.strictEqual(RA.presence(foo), foo);
+      assert.strictEqual(RA.presence(val), val);
     });
   });
 
   context('given a null', function () {
     specify('should return null', function () {
-      const foo = null;
+      const val = null;
 
-      assert.strictEqual(RA.presence(foo), foo);
+      assert.strictEqual(RA.presence(val), val);
     });
   });
 });
