@@ -1,6 +1,6 @@
 import { curry, dropWhile, join, pipe, split } from 'ramda';
 
-import contained from './contained';
+import included from './included';
 
 /**
  * Removes specified characters from the beginning of a string.
@@ -19,7 +19,7 @@ import contained from './contained';
  */
 
 const trimCharsStart = curry((chars, value) =>
-  pipe(split(''), dropWhile(contained(chars)), join(''))(value)
+  pipe(split(''), dropWhile(included(chars)), join(''))(value)
 );
 
 export default trimCharsStart;

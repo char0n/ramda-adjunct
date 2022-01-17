@@ -630,19 +630,6 @@ declare namespace RamdaAdjunct {
         };
 
         /**
-         * Create a new object with the own properties of the second object merged with
-         * the own properties of the first object. If a key exists in both objects,
-         * the value from the first object will be used. *
-         * Putting it simply: it sets properties only if they don't exist.
-         */
-        mergeRight(source: object, destination: object): object;
-        mergeRight(source: object): (destination: object) => object;
-        mergeLeft(source: object, destination: object): object; // alias
-        mergeLeft(source: object): (destination: object) => object; // alias
-        resetToDefault(defaultOptions: object, options: object): object; // alias of mergeRight
-        resetToDefault(defaultOptions: object): (options: object) => object; // alias of mergeRight
-
-        /**
          * Functional equivalent of merging object properties with object spread.
          */
         mergeProps(ps: string[], obj: object): object;
