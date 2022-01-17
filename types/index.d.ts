@@ -889,12 +889,6 @@ declare namespace RamdaAdjunct {
         };
 
         /**
-         * Returns whether or not an object has an own property with the specified name at a given path.
-         */
-        hasPath(path: Array<string | number>, obj: object): boolean;
-        hasPath(path: Array<string | number>): (obj: object) => boolean;
-
-        /**
          * Spreads object under property path onto provided object.
          */
         spreadPath(path: Array<string | number>, obj: object): object;
