@@ -1323,12 +1323,10 @@ declare namespace RamdaAdjunct {
          * to at least one element of the given list or false otherwise.
          * Given list can be a string.
          *
-         * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
+         * Like {@link http://ramdajs.com/docs/#contains|R.includes} but with argument order reversed.
          */
-        contained<T>(list: T[], val: T): boolean;
-        contained<T>(list: T[]): (val: T) => boolean;
-        included<T>(list: T[], val: T): boolean; // alias
-        included<T>(list: T[]): (val: T) => boolean; // alias
+        included<T>(list: T[], val: T): boolean;
+        included<T>(list: T[]): (val: T) => boolean;
 
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,
