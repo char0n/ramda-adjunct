@@ -1,11 +1,11 @@
-import { flip, contains } from 'ramda';
+import { flip, includes } from 'ramda';
 
 /**
  * Returns true if the specified value is equal, in R.equals terms,
  * to at least one element of the given list or false otherwise.
  * Given list can be a string.
  *
- * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
+ * Like {@link http://ramdajs.com/docs/#includes|R.includes} but with argument order reversed.
  *
  * @func contained
  * @aliases included
@@ -17,7 +17,7 @@ import { flip, contains } from 'ramda';
  * @param {Array|String} list The list to consider
  * @param {*} a The item to compare against
  * @return {boolean} Returns Boolean `true` if an equivalent item is in the list or `false` otherwise
- * @see {@link http://ramdajs.com/docs/#contains|R.contains}
+ * @see {@link http://ramdajs.com/docs/#includes|R.includes}
  * @example
  *
  * RA.contained([1, 2, 3], 3); //=> true
@@ -25,6 +25,6 @@ import { flip, contains } from 'ramda';
  * RA.contained([{ name: 'Fred' }], { name: 'Fred' }); //=> true
  * RA.contained([[42]], [42]); //=> true
  */
-const contained = flip(contains);
+const contained = flip(includes);
 
 export default contained;
