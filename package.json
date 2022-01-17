@@ -93,7 +93,7 @@
       }
     },
     "test:web": "testem ci",
-    "test:ramda": "bnr test:ramda0.27.1 && bnr test:ramda0.27.0 && bnr test:ramda0.26.1 && bnr test:ramda0.26.0 && bnr test:ramda0.25.0 && bnr test:ramda0.24.1 && bnr test:ramda0.24.0 && bnr test:ramda0.23.0 && bnr test:ramda0.22.1 && bnr test:ramda0.22.0 && bnr test:ramda0.21.0 && bnr test:ramda0.20.1 && bnr test:ramda0.20.0 && bnr test:ramda0.19.1 && bnr test:ramda0.19.0",
+    "test:ramda": "bnr test:ramda0.27.2 && bnr test:ramda0.27.1 && bnr test:ramda0.27.0 && bnr test:ramda0.26.1 && bnr test:ramda0.26.0 && bnr test:ramda0.25.0 && bnr test:ramda0.24.1 && bnr test:ramda0.24.0 && bnr test:ramda0.23.0 && bnr test:ramda0.22.1 && bnr test:ramda0.22.0 && bnr test:ramda0.21.0 && bnr test:ramda0.20.1 && bnr test:ramda0.20.0 && bnr test:ramda0.19.1 && bnr test:ramda0.19.0",
     "test:ramda0.19.0": "npm install ramda@0.19.0 && npm test",
     "test:ramda0.19.1": "npm install ramda@0.19.1 && npm test",
     "test:ramda0.20.0": "npm install ramda@0.20.0 && npm test",
@@ -109,6 +109,7 @@
     "test:ramda0.26.1": "npm install ramda@0.26.1 && npm test",
     "test:ramda0.27.0": "npm install ramda@0.27.0 && npm test",
     "test:ramda0.27.1": "npm install ramda@0.27.1 && npm test",
+    "test:ramda0.27.2": "npm install ramda@0.27.1 && npm test",
     "test:bundle-create": "webpack --config webpack.config-test.web.js --progress",
     "test:bundle-clean": "rimraf tmp-test-bundle.js",
     "coverage": {
@@ -136,7 +137,7 @@
   },
   "readme": "README.md",
   "peerDependencies": {
-    "ramda": ">= 0.19.0 <= 0.27.1"
+    "ramda": ">= 0.19.0 <= 0.27.2"
   },
   "devDependencies": {
     "@babel/cli": "7.16.8",
