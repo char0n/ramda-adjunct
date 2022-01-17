@@ -178,7 +178,6 @@ export { default as mergePath } from './mergePath';
 export { default as omitBy } from './omitBy';
 export { default as pathOrLazy } from './pathOrLazy';
 export { default as viewOr } from './viewOr';
-export { default as hasPath } from './hasPath';
 export { default as spreadProp } from './spreadProp';
 export { default as spreadPath } from './spreadPath';
 export { default as flattenProp } from './flattenProp';
