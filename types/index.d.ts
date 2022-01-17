@@ -1000,16 +1000,6 @@ declare namespace RamdaAdjunct {
         catchP<A, B = unknown>(onRejected: (error: any) => B | Promise<B>): (promise: Promise<A>) => Promise<A | B>;
 
         /**
-         * Composable shortcut for `Promise.then`.
-         * The thenP function returns a Promise. It takes two arguments: a callback function for the success of the Promise
-         * and the promise instance itself.
-         */
-        thenP<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
-        thenP<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
-        then<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
-        then<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
-
-        /**
          * Composable shortcut for `Promise.then` that allows for success and failure call backs.
          * The thenCatchP function returns a Promise. It takes three arguments: a callback function for the success of the Promise,
          * a callback function for the failure of the Promise, and the promise instance itself.

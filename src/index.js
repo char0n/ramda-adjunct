@@ -29,7 +29,7 @@ export { default as isNotAsyncFunction } from './isNotAsyncFunction';
 export { default as isFunction } from './isFunction';
 export { default as isNotFunction } from './isNotFunction';
 export { default as isObj } from './isObj';
-export { default as isObject } from './isObj'; // alias of isObject
+export { default as isObject } from './isObj'; // alias of isObj
 export { default as isNotObj } from './isNotObj';
 export { default as isNotObject } from './isNotObj'; // alias of isNotObj
 export { default as isObjLike } from './isObjLike';
@@ -39,7 +39,7 @@ export { default as isNotObjectLike } from './isNotObjLike'; // alias of isNotOb
 export { default as isPlainObj } from './isPlainObj';
 export { default as isPlainObject } from './isPlainObj';
 export { default as isNotPlainObj } from './isNotPlainObj';
-export { default as isNotPlainObject } from './isNotPlainObj'; // alias of isNotPlainObject
+export { default as isNotPlainObject } from './isNotPlainObj'; // alias of isNotPlainObj
 export { default as isDate } from './isDate';
 export { default as isNotDate } from './isNotDate';
 export { default as isValidDate } from './isValidDate';
@@ -113,8 +113,6 @@ export { default as noneP } from './noneP';
 export { default as resolveP } from './resolveP';
 export { default as rejectP } from './rejectP';
 export { default as delayP } from './delayP';
-export { default as thenP } from './thenP';
-export { default as then } from './thenP'; // eslint-disable-line no-restricted-exports
 export { default as thenCatchP } from './thenCatchP';
 export { default as allSettledP } from './allSettledP';
 export { default as Y } from './Y';
