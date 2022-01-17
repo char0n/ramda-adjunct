@@ -1,3 +1,33 @@
+# [3.0.0](https://github.com/char0n/ramda-adjunct/compare/v2.36.0...v3.0.0) (2022-01-17)
+
+
+### Breaking changes
+
+Version 3.0.0 adds support for [ramda@0.28.0](https://github.com/ramda/ramda/releases/tag/v0.28.0) which removed bunch of function from its API.
+This means that ramda-adjunct needed to react with breaking change release which currently
+supports only ramda@0.28.0.
+
+Some functions in ramda-adjunct API were deprecated for a long time, and we decided to remove them in 3.0.0 release:
+
+- **then, thenP** - replaceable by [R.andThen](https://ramdajs.com/docs/#andThen)
+- **hasPath** - replaceable by [R.hasPath](https://ramdajs.com/docs/#hasPath)
+- **mergeRight, mergeLeft, resetToDefaults**: - replaceable by [R.mergeLeft](https://ramdajs.com/docs/#mergeLeft)
+- **contained** - replaceable by [RA.included](https://char0n.github.io/ramda-adjunct/3.0.0/RA.html#.included)
+
+### Bug Fixes
+
+* **function:** remove then ([4e5516b](https://github.com/char0n/ramda-adjunct/commit/4e5516b7e5bf8c41f3979ae604b3e331b406ea25)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+* **object:** remove hasPath ([8cc0c8f](https://github.com/char0n/ramda-adjunct/commit/8cc0c8f7859618b5ef3bc00816ed05622841a871)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+* **object:** remove mergeRight ([06a3338](https://github.com/char0n/ramda-adjunct/commit/06a3338923072c6a4ae3e5c62bc109793d76537b)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+
+
+### Features
+
+* add support for ramda@0.28.0 ([20acd56](https://github.com/char0n/ramda-adjunct/commit/20acd562a24759b42ec4f8ae2f3f90af95de25b0)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+* **list:** add included ([4bfafe0](https://github.com/char0n/ramda-adjunct/commit/4bfafe0593ee2d34b51eb8b5768f8618bee17f5a)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+
+
+
 # [2.36.0](https://github.com/char0n/ramda-adjunct/compare/v2.35.0...v2.36.0) (2022-01-17)
 
 

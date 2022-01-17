@@ -120,7 +120,6 @@
     "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run build && npm run docs",
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
-  "readme": "README.md",
   "peerDependencies": {
     "ramda": ">= 0.28.0 <= 0.28.0"
   },
