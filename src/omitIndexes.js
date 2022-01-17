@@ -1,8 +1,8 @@
-import { contains, curry, addIndex, reject } from 'ramda';
+import { includes, curry, addIndex, reject } from 'ramda';
 
 // helpers
 const rejectIndexed = addIndex(reject);
-const containsIndex = curry((indexes, val, index) => contains(index, indexes));
+const includesIndex = curry((indexes, val, index) => includes(index, indexes));
 
 /**
  * Returns a partial copy of an array omitting the indexes specified.
@@ -21,7 +21,7 @@ const containsIndex = curry((indexes, val, index) => contains(index, indexes));
  * RA.omitIndexes([-1, 1, 3], ['a', 'b', 'c', 'd']); //=> ['a', 'c']
  */
 const omitIndexes = curry((indexes, list) =>
-  rejectIndexed(containsIndex(indexes), list)
+  rejectIndexed(includesIndex(indexes), list)
 );
 
 export default omitIndexes;
