@@ -1,3 +1,13 @@
+# [2.36.0](https://github.com/char0n/ramda-adjunct/compare/v2.35.0...v2.36.0) (2022-01-17)
+
+
+### Features
+
+* add support for ramda@0.27.2 ([39e22e1](https://github.com/char0n/ramda-adjunct/commit/39e22e1485410a7bf99a212b9c9a1d2b7ea3237f)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+* **type:** add toNumber ([#2103](https://github.com/char0n/ramda-adjunct/issues/2103)) ([d06abbf](https://github.com/char0n/ramda-adjunct/commit/d06abbfbf3b4700d78f368479404c8347785f295)), closes [#788](https://github.com/char0n/ramda-adjunct/issues/788)
+
+
+
 # [2.35.0](https://github.com/char0n/ramda-adjunct/compare/v2.34.0...v2.35.0) (2021-11-01)
 
 
