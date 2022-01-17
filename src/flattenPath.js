@@ -1,4 +1,4 @@
-import { pathOr, curry, merge } from 'ramda';
+import { pathOr, curry, mergeRight } from 'ramda';
 
 /**
  * Flattens a property path so that its fields are spread out into the provided object.
@@ -21,6 +21,8 @@ import { pathOr, curry, merge } from 'ramda';
  *   { a: 1, b1: { b2: { c: 3, d: 4 } } }
  * ); // => { a: 1, c: 3, d: 4, b1: { b2: { c: 3, d: 4 } } };
  */
-const flattenPath = curry((path, obj) => merge(obj, pathOr({}, path, obj)));
+const flattenPath = curry((path, obj) =>
+  mergeRight(obj, pathOr({}, path, obj))
+);
 
 export default flattenPath;
