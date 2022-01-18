@@ -11,7 +11,7 @@ describe('isBlank', function () {
     });
 
     specify('should return false', function () {
-      assert.isTrue(RA.isBlank('value'));
+      assert.isFalse(RA.isBlank('value'));
     });
   });
 

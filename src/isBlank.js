@@ -1,22 +1,18 @@
-import * as R from 'ramda';
+import { isEmpty, anyPass, test } from 'ramda';
 
-import * as RA from '.';
-
+import isUndefined from './isUndefined';
+import isFalse from './isFalse';
 /**
  * Checks if input value is `Blank`.
  *
  * @func isBlank
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.36.0|v2.36.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/3.1.0|v3.1.0}
  * @category Type
  * @sig * -> Boolean
  * @param {*} val The value to test
  * @return {boolean}
- * @see {@link R.isEmpty|isEmpty}
- * @see {@link R.match|match}
- * @see {@link RA.isString|isString}
- * @see {@link RA.isUndefined|isUndefined}
- * @see {@link RA.isFalse|isFalse}
+ * @see {@link https://blog.appsignal.com/2018/09/11/differences-between-nil-empty-blank-and-present.html|Differences Between #nil?, #empty?, #blank?, and #present?}
  * @example
  *
  * RA.isBlank(''); //=> true
@@ -32,13 +28,6 @@ import * as RA from '.';
  * RA.isBlank(true); //=> false
  * RA.isBlank(false); //=> true
  */
-const regExRule = /^\s+|\s+|\\t\\n/g;
-const isBlank = (val) =>
-  !!(
-    R.isEmpty(val) ||
-    (RA.isString(val) && R.match(regExRule, val)) ||
-    RA.isUndefined(val) ||
-    RA.isFalse(val)
-  );
+const isBlank = anyPass([isFalse, isUndefined, isEmpty, test(/^\s+$/gm)]);
 
 export default isBlank;
