@@ -129,7 +129,7 @@
     "@babel/plugin-transform-modules-commonjs": "7.16.8",
     "@babel/preset-env": "=7.16.8",
     "@babel/register": "7.16.9",
-    "@commitlint/cli": "=16.0.2",
+    "@commitlint/cli": "=16.0.3",
     "@commitlint/config-conventional": "=16.0.0",
     "assert": "=2.0.0",
     "babel-loader": "8.2.3",
