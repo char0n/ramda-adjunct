@@ -1,6 +1,4 @@
-import { curry, over, lensPath } from 'ramda';
-
-import mergeRight from './mergeRight';
+import { curry, over, lensPath, mergeLeft } from 'ramda';
 
 /**
  * Create a new object with the own properties of the object under the `path`
@@ -26,7 +24,7 @@ import mergeRight from './mergeRight';
  * ); //=> { outer: { inner: { foo: 3, bar: 4 } }
  */
 const mergePath = curry((path, source, obj) =>
-  over(lensPath(path), mergeRight(source), obj)
+  over(lensPath(path), mergeLeft(source), obj)
 );
 
 export default mergePath;
