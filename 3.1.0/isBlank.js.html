@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>nonePass.js - Documentation</title>
+    <title>isBlank.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -42,7 +42,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">nonePass.js</h1>
+    <h1 class="page-title">isBlank.js</h1>
     
 
     
@@ -52,38 +52,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { complement, compose, anyPass, curryN } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { isEmpty, anyPass, test } from 'ramda';
 
+import isUndefined from './isUndefined';
+import isFalse from './isFalse';
 /**
- * Takes a list of predicates and returns a predicate that returns true for a given list of
- * arguments if none of the provided predicates are satisfied by those arguments. It is the
- * complement of Ramda's anyPass.
+ * Checks if input value is `Blank`.
  *
- * The function returned is a curried function whose arity matches that of the
- * highest-arity predicate.
- *
- * @func nonePass
+ * @func isBlank
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.5.0|v2.5.0}
- * @category Logic
- * @sig [(*... -> Boolean)] -> (*... -> Boolean)
- * @param {Array} predicates An array of predicates to check
- * @return {Function} The combined predicate
- * @see {@link http://ramdajs.com/docs/#anyPass|R.anyPass}
+ * @since {@link https://char0n.github.io/ramda-adjunct/3.1.0|v3.1.0}
+ * @category Type
+ * @sig * -> Boolean
+ * @param {*} val The value to test
+ * @return {boolean}
+ * @see {@link https://blog.appsignal.com/2018/09/11/differences-between-nil-empty-blank-and-present.html|Differences Between #nil?, #empty?, #blank?, and #present?}
  * @example
  *
- * const gt10 = R.gt(R.__, 10)
- * const even = (x) => x % 2 === 0;
- * const f = RA.nonePass([gt10, even]);
- *
- * f(12); //=> false
- * f(8); //=> false
- * f(11); //=> false
- * f(9); //=> true
+ * RA.isBlank(''); //=> true
+ * RA.isBlank('   '); //=> true
+ * RA.isBlank('\t\n'); //=> true
+ * RA.isBlank('value'); //=> false
+ * RA.isBlank({}); //=> true
+ * RA.isBlank({ foo: 'foo' }); //=> false
+ * RA.isBlank([]); //=> true
+ * RA.isBlank([1, 2, 3]); //=> false
+ * RA.isBlank(null); //=> false
+ * RA.isBlank(undefined); //=> false
+ * RA.isBlank(true); //=> false
+ * RA.isBlank(false); //=> true
  */
-const nonePass = curryN(1, compose(complement, anyPass));
+const isBlank = anyPass([isFalse, isUndefined, isEmpty, test(/^\s+$/gm)]);
 
-export default nonePass;
+export default isBlank;
 </code></pre>
         </article>
     </section>
