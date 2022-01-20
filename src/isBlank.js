@@ -1,9 +1,9 @@
-import { isEmpty, anyPass, test } from 'ramda';
+import { isEmpty, isNil, anyPass, test } from 'ramda';
 
-import isUndefined from './isUndefined';
 import isFalse from './isFalse';
 /**
- * Checks if input value is `Blank`.
+ * Returns `true` if the given value is its type's empty value, `false`, `undefined`
+ * as well as strings containing only whitespace characters; `false` otherwise.
  *
  * @func isBlank
  * @memberOf RA
@@ -18,16 +18,16 @@ import isFalse from './isFalse';
  * RA.isBlank(''); //=> true
  * RA.isBlank('   '); //=> true
  * RA.isBlank('\t\n'); //=> true
- * RA.isBlank('value'); //=> false
  * RA.isBlank({}); //=> true
- * RA.isBlank({ foo: 'foo' }); //=> false
+ * RA.isBlank(null); //=> true
+ * RA.isBlank(undefined); //=> true
  * RA.isBlank([]); //=> true
- * RA.isBlank([1, 2, 3]); //=> false
- * RA.isBlank(null); //=> false
- * RA.isBlank(undefined); //=> false
- * RA.isBlank(true); //=> false
  * RA.isBlank(false); //=> true
+ * RA.isBlank('value'); //=> false
+ * RA.isBlank({ foo: 'foo' }); //=> false
+ * RA.isBlank([1, 2, 3]); //=> false
+ * RA.isBlank(true); //=> false
  */
-const isBlank = anyPass([isFalse, isUndefined, isEmpty, test(/^\s+$/gm)]);
+const isBlank = anyPass([isFalse, isNil, isEmpty, test(/^\s+$/gm)]);
 
 export default isBlank;

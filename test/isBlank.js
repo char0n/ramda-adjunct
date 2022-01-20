@@ -1,59 +1,28 @@
 import { assert } from 'chai';
+import * as R from 'ramda';
 
 import * as RA from '../src';
 
 describe('isBlank', function () {
-  context('given string value', function () {
-    specify('should return true', function () {
-      assert.isTrue(RA.isBlank(''));
-      assert.isTrue(RA.isBlank('  '));
-      assert.isTrue(RA.isBlank('\t\n'));
-    });
+  it('should test value for a `Blank`', function () {
+    assert.isTrue(RA.isBlank(''));
+    assert.isTrue(RA.isBlank('   '));
+    assert.isTrue(RA.isBlank('\t\n'));
+    assert.isTrue(RA.isBlank({}));
+    assert.isTrue(RA.isBlank(null));
+    assert.isTrue(RA.isBlank(undefined));
+    assert.isTrue(RA.isBlank([]));
+    assert.isTrue(RA.isBlank(false));
 
-    specify('should return false', function () {
-      assert.isFalse(RA.isBlank('value'));
-    });
+    assert.isFalse(RA.isBlank('value'));
+    assert.isFalse(RA.isBlank({ foo: 'foo' }));
+    assert.isFalse(RA.isBlank([1, 2, 3]));
+    assert.isFalse(RA.isBlank(true));
   });
 
-  context('given object value', function () {
-    specify('should return true', function () {
-      assert.isTrue(RA.isBlank({}));
-    });
+  it('should support placeholder to specify "gaps"', function () {
+    const isBlank = RA.isBlank(R.__);
 
-    specify('should return false', function () {
-      assert.isFalse(RA.isBlank({ foo: 'foo' }));
-    });
-  });
-
-  context('given array value', function () {
-    specify('should return true', function () {
-      assert.isTrue(RA.isBlank([]));
-    });
-
-    specify('should return false', function () {
-      assert.isFalse(RA.isBlank([1, 2, 3]));
-    });
-  });
-
-  context('given null value', function () {
-    specify('should return false', function () {
-      assert.isFalse(RA.isBlank(null));
-    });
-  });
-
-  context('given undefined value', function () {
-    specify('should return true', function () {
-      assert.isTrue(RA.isBlank(undefined));
-    });
-  });
-
-  context('given boolean value', function () {
-    specify('should return true', function () {
-      assert.isTrue(RA.isBlank(false));
-    });
-
-    specify('should return false', function () {
-      assert.isFalse(RA.isBlank(true));
-    });
+    assert.isTrue(isBlank(''));
   });
 });

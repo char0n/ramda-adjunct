@@ -371,6 +371,12 @@ declare namespace RamdaAdjunct {
         isBigInt(val: any): boolean;
 
         /**
+         * Returns `true` if the given value is its type's empty value, `false`, `undefined`
+         * as well as strings containing only whitespace characters; `false` otherwise.
+         */
+        isBlank(val: any): boolean;
+
+        /**
          * Checks whether the passed value is a `float`.
          */
         isFloat(val: any): val is number;
