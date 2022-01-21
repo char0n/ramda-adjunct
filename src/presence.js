@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-import { isBlank } from '.';
+import isBlank from './internal/isBlank';
 
 /**
  * Returns the receiver if it’s present, otherwise returns `null`.

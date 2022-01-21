@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import { isBlank } from '../src';
+import { isBlank } from '../../src';
 
 describe('isBlank', function () {
   it('should test value for a `Blank`', function () {
