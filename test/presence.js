@@ -2,10 +2,10 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 
-describe.only('presence', function () {
+describe('presence', function () {
   context('given an object', function () {
     specify('should return the object', function () {
-      const val = { val: 'val' };
+      const val = { foo: 'foo' };
 
       assert.strictEqual(RA.presence(val), val);
     });
@@ -37,9 +37,9 @@ describe.only('presence', function () {
 
   context('given an empty string', function () {
     specify('should return null', function () {
-      const val = '';
-
-      assert.strictEqual(RA.presence(val), null);
+      assert.strictEqual(RA.presence(''), null);
+      assert.strictEqual(RA.presence('   '), null);
+      assert.strictEqual(RA.presence('\t\n'), null);
     });
   });
 
