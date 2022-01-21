@@ -92,7 +92,7 @@ export { default as isNaturalNumber } from './isNaturalNumber';
 export { default as isPrimitive } from './isPrimitive';
 export { default as isNotPrimitive } from './isNotPrimitive';
 export { default as isSentinelValue } from './isSentinelValue';
-export { default as isBlank } from './isBlank';
+export { default as isBlank } from './internal/isBlank';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
@@ -162,7 +162,6 @@ export { default as sortByProps } from './sortByProps';
 export { default as skipTake } from './skipTake';
 export { default as rangeStep } from './rangeStep';
 export { default as findOr } from './findOr';
-export { default as presence } from './presence';
 // Object
 export { default as invoke } from './invoke';
 export { default as invokeArgs } from './invokeArgs';
@@ -198,6 +197,7 @@ export { default as inRange } from './inRange';
 export { default as notEqual } from './notEqual';
 export { default as overlaps } from './overlaps';
 // Logic
+export { default as presence } from './presence';
 export { default as isNotEmpty } from './isNotEmpty';
 export { default as defaultWhen } from './defaultWhen';
 export { default as notBoth } from './notBoth';

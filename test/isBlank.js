@@ -1,28 +1,28 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
+import { isBlank } from '../src';
 
 describe('isBlank', function () {
   it('should test value for a `Blank`', function () {
-    assert.isTrue(RA.isBlank(''));
-    assert.isTrue(RA.isBlank('   '));
-    assert.isTrue(RA.isBlank('\t\n'));
-    assert.isTrue(RA.isBlank({}));
-    assert.isTrue(RA.isBlank(null));
-    assert.isTrue(RA.isBlank(undefined));
-    assert.isTrue(RA.isBlank([]));
-    assert.isTrue(RA.isBlank(false));
+    assert.isTrue(isBlank(''));
+    assert.isTrue(isBlank('   '));
+    assert.isTrue(isBlank('\t\n'));
+    assert.isTrue(isBlank({}));
+    assert.isTrue(isBlank(null));
+    assert.isTrue(isBlank(undefined));
+    assert.isTrue(isBlank([]));
+    assert.isTrue(isBlank(false));
 
-    assert.isFalse(RA.isBlank('value'));
-    assert.isFalse(RA.isBlank({ foo: 'foo' }));
-    assert.isFalse(RA.isBlank([1, 2, 3]));
-    assert.isFalse(RA.isBlank(true));
+    assert.isFalse(isBlank('value'));
+    assert.isFalse(isBlank({ foo: 'foo' }));
+    assert.isFalse(isBlank([1, 2, 3]));
+    assert.isFalse(isBlank(true));
   });
 
   it('should support placeholder to specify "gaps"', function () {
-    const isBlank = RA.isBlank(R.__);
+    const _isBlank = isBlank(R.__);
 
-    assert.isTrue(isBlank(''));
+    assert.isTrue(_isBlank(''));
   });
 });
