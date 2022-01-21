@@ -158,7 +158,7 @@
     "jsdoc": "=3.6.7",
     "jsverify": "0.8.4",
     "license-cli": "1.1.6",
-    "lint-staged": "12.2.1",
+    "lint-staged": "12.2.2",
     "mocha": "=9.1.4",
     "mocha-junit-reporter": "2.0.2",
     "mocha-multi-reporters": "1.5.1",
