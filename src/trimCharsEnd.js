@@ -1,6 +1,6 @@
 import { curry, dropLastWhile, join, pipe, split } from 'ramda';
 
-import contained from './contained';
+import included from './included';
 
 /**
  * Removes specified characters from the end of a string.
@@ -19,7 +19,7 @@ import contained from './contained';
  */
 
 const trimCharsEnd = curry((chars, value) =>
-  pipe(split(''), dropLastWhile(contained(chars)), join(''))(value)
+  pipe(split(''), dropLastWhile(included(chars)), join(''))(value)
 );
 
 export default trimCharsEnd;

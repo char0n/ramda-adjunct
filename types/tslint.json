@@ -5,6 +5,7 @@
     ],
     "jsRules": {},
     "rules": {
+      "no-null-undefined-union": [false],
       "prefer-readonly": [false],
       "await-promise": [false],
       "no-for-in-array": [false],

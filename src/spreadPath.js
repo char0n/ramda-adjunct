@@ -1,4 +1,4 @@
-import { curryN, converge, merge, dissocPath, pathOr } from 'ramda';
+import { curryN, converge, mergeRight, dissocPath, pathOr } from 'ramda';
 
 /**
  * Spreads object under property path onto provided object.
@@ -21,6 +21,6 @@ import { curryN, converge, merge, dissocPath, pathOr } from 'ramda';
  *   { a: 1, b1: { b2: { c: 3, d: 4 } } }
  * ); // => { a: 1, c: 3, d: 4, b1: {} };
  */
-const spreadPath = curryN(2, converge(merge, [dissocPath, pathOr({})]));
+const spreadPath = curryN(2, converge(mergeRight, [dissocPath, pathOr({})]));
 
 export default spreadPath;
