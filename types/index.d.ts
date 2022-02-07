@@ -371,6 +371,12 @@ declare namespace RamdaAdjunct {
         isBigInt(val: any): boolean;
 
         /**
+         * Returns `true` if the given value is its type's empty value, `false`, `undefined`
+         * as well as strings containing only whitespace characters; `false` otherwise.
+         */
+        isBlank(val: any): boolean;
+
+        /**
          * Checks whether the passed value is a `float`.
          */
         isFloat(val: any): val is number;
@@ -628,19 +634,6 @@ declare namespace RamdaAdjunct {
             (key: string, obj: object): object;
             (key: string): (obj: object) => object;
         };
-
-        /**
-         * Create a new object with the own properties of the second object merged with
-         * the own properties of the first object. If a key exists in both objects,
-         * the value from the first object will be used. *
-         * Putting it simply: it sets properties only if they don't exist.
-         */
-        mergeRight(source: object, destination: object): object;
-        mergeRight(source: object): (destination: object) => object;
-        mergeLeft(source: object, destination: object): object; // alias
-        mergeLeft(source: object): (destination: object) => object; // alias
-        resetToDefault(defaultOptions: object, options: object): object; // alias of mergeRight
-        resetToDefault(defaultOptions: object): (options: object) => object; // alias of mergeRight
 
         /**
          * Functional equivalent of merging object properties with object spread.
@@ -902,12 +895,6 @@ declare namespace RamdaAdjunct {
         };
 
         /**
-         * Returns whether or not an object has an own property with the specified name at a given path.
-         */
-        hasPath(path: Array<string | number>, obj: object): boolean;
-        hasPath(path: Array<string | number>): (obj: object) => boolean;
-
-        /**
          * Spreads object under property path onto provided object.
          */
         spreadPath(path: Array<string | number>, obj: object): object;
@@ -1017,16 +1004,6 @@ declare namespace RamdaAdjunct {
          */
         catchP<A, B = unknown>(onRejected: (error: any) => B | Promise<B>, promise: Promise<A>): Promise<A | B>;
         catchP<A, B = unknown>(onRejected: (error: any) => B | Promise<B>): (promise: Promise<A>) => Promise<A | B>;
-
-        /**
-         * Composable shortcut for `Promise.then`.
-         * The thenP function returns a Promise. It takes two arguments: a callback function for the success of the Promise
-         * and the promise instance itself.
-         */
-        thenP<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
-        thenP<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
-        then<T>(onFulfilled: Function, thenable: Promise<T>): Promise<T>;
-        then<T>(onFulfilled: Function): (thenable: Promise<T>) => Promise<T>;
 
         /**
          * Composable shortcut for `Promise.then` that allows for success and failure call backs.
@@ -1323,12 +1300,10 @@ declare namespace RamdaAdjunct {
          * to at least one element of the given list or false otherwise.
          * Given list can be a string.
          *
-         * Like {@link http://ramdajs.com/docs/#contains|R.contains} but with argument order reversed.
+         * Like {@link http://ramdajs.com/docs/#contains|R.includes} but with argument order reversed.
          */
-        contained<T>(list: T[], val: T): boolean;
-        contained<T>(list: T[]): (val: T) => boolean;
-        included<T>(list: T[], val: T): boolean; // alias
-        included<T>(list: T[]): (val: T) => boolean; // alias
+        included<T>(list: T[], val: T): boolean;
+        included<T>(list: T[]): (val: T) => boolean;
 
         /**
          * Can be used as a way to compose multiple invokers together to form polymorphic functions,
@@ -1537,6 +1512,11 @@ declare namespace RamdaAdjunct {
          */
         toUinteger32(val: number): number;
         toUint32(val: number): number; // alias
+
+        /**
+         * Converts value to a number.
+         */
+        toNumber(val: any): number;
 
         /**
          * Creates an array of numbers (positive and/or negative) progressing from start up to, but not including, end.

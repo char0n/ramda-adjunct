@@ -41,7 +41,7 @@ describe('isPromise', function () {
   context('given value is an instance of native Promise', function () {
     const hasNativePromise =
       typeof Promise !== 'undefined' &&
-      R.contains('[native code]', Promise.toString());
+      R.includes('[native code]', Promise.toString());
 
     specify('should return true', function () {
       const resolvedP = Promise.resolve();

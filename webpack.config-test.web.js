@@ -25,12 +25,12 @@ module.exports = {
   resolve: {
     fallback: {
       assert: require.resolve('assert'),
-      process: require.resolve('process/browser'),
+      process: require.resolve('process/browser.js'),
     },
   },
   plugins: [
     new webpack.ProvidePlugin({
-      process: 'process/browser',
+      process: 'process/browser.js',
     }),
   ],
   module: {
