@@ -4,14 +4,14 @@ const pathToAscendSort = pipe(path, ascend);
 const mapPathsToAscendSort = map(pathToAscendSort);
 
 /**
- * Sort a list of objects by a list of paths (if first prop value is equivalent, sort by second, etc).
+ * Sort a list of objects by a list of paths (if first path value is equivalent, sort by second, etc).
  *
- * @func sortByPath
+ * @func sortByPaths
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
  * @category List
  * @sig [[k]] -> [{k: v}] -> [{k: v}]
- * @param {Array.<string>} paths A list of paths in the list param to sort by
+ * @param {Array.<Array.<string>>} paths A list of paths in the list param to sort by
  * @param {Array.<object>} list A list of objects to be sorted
  * @return {Array.<object>} A new list sorted by the paths in the props param
  * @example
@@ -49,6 +49,6 @@ const mapPathsToAscendSort = map(pathToAscendSort);
  * ], people) // [bob, clara, alice]
  */
 
-const sortByPath = useWith(sortWith, [mapPathsToAscendSort, identity]);
+const sortByPaths = useWith(sortWith, [mapPathsToAscendSort, identity]);
 
-export default sortByPath;
+export default sortByPaths;

@@ -2,10 +2,10 @@ import * as RA from '../src';
 
 import { assert } from 'chai';
 
-describe.only('sortByPath', function () {
+describe.only('sortByPaths', function () {
   context('when has a list of tuples', function () {
     it('returns the list sorted', function () {
-      const sortByFirstItem = RA.sortByPath([[0]]);
+      const sortByFirstItem = RA.sortByPaths([[0]]);
       const pairs = [
         [-1, 1],
         [-2, 2],
@@ -18,17 +18,34 @@ describe.only('sortByPath', function () {
         [-1, 1],
       ]);
     });
+
+    context('and sorting with an empty list', function () {
+      it('returns the original list', function () {
+        const sortByFirstItem = RA.sortByPaths([]);
+        const pairs = [
+          [-1, 1],
+          [-2, 2],
+          [-3, 3],
+        ];
+
+        assert.deepEqual(sortByFirstItem(pairs), [
+          [-1, 1],
+          [-2, 2],
+          [-3, 3],
+        ]);
+      });
+    });
   });
 
   context('when has a list of object', function () {
     it('returns the list sorted', function () {
-      const sortByAddress = RA.sortByPath([['address', 'street']]);
+      const sortByAddress = RA.sortByPaths([['address', 'streetNumber']]);
       const alice = {
         name: 'ALICE',
         age: 101,
         address: {
           street: 'Czech street',
-          street: 31,
+          streetNumber: 31,
         },
       };
       const bob = {
@@ -36,7 +53,7 @@ describe.only('sortByPath', function () {
         age: -10,
         address: {
           street: 'Slovak street',
-          street: 32,
+          streetNumber: 32,
         },
       };
       const clara = {
@@ -44,7 +61,7 @@ describe.only('sortByPath', function () {
         age: 314.159,
         address: {
           street: 'Polish street',
-          street: 33,
+          streetNumber: 33,
         },
       };
       const people = [clara, bob, alice];
@@ -54,7 +71,7 @@ describe.only('sortByPath', function () {
 
     context('and passing multiples sorts', function () {
       it('returns the list sorted', function () {
-        const sortByAddress = RA.sortByPath([['address', 'street'], ['age']]);
+        const sortByAddress = RA.sortByPaths([['address', 'street'], ['age']]);
         const alice = {
           name: 'Alice',
           age: 60,
@@ -79,6 +96,36 @@ describe.only('sortByPath', function () {
         const people = [clara, bob, alice];
 
         assert.deepEqual(sortByAddress(people), [bob, alice, clara]);
+      });
+    });
+
+    context('and sorting with an empty list', function () {
+      it('returns the list sorted', function () {
+        const sortByAddress = RA.sortByPaths([]);
+        const alice = {
+          name: 'Alice',
+          age: 60,
+          address: {
+            street: 31,
+          },
+        };
+        const bob = {
+          name: 'Bob',
+          age: 22,
+          address: {
+            street: 31,
+          },
+        };
+        const clara = {
+          name: 'Clara',
+          age: 18,
+          address: {
+            street: 32,
+          },
+        };
+        const people = [clara, bob, alice];
+
+        assert.deepEqual(sortByAddress(people), [clara, bob, alice]);
       });
     });
   });
