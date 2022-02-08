@@ -8,12 +8,12 @@ const mapPathsToAscendSort = map(pathToAscendSort);
  *
  * @func sortByPaths
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.29.0|v2.29.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/3.1.0|v3.1.0}
  * @category List
  * @sig [[k]] -> [{k: v}] -> [{k: v}]
  * @param {Array.<Array.<string>>} paths A list of paths in the list param to sort by
  * @param {Array.<object>} list A list of objects to be sorted
- * @return {Array.<object>} A new list sorted by the paths in the props param
+ * @return {Array.<object>} A new list sorted by the paths in the paths param
  * @example
  *
  * const alice = {
@@ -39,14 +39,15 @@ const mapPathsToAscendSort = map(pathToAscendSort);
  * };
  * const people = [clara, bob, alice]
  *
- * sortByProps([
+ * RA.sortByPaths([
  *   ['address', 'street'],
  *   ['address', 'zipCode'],
- * ], people) // [bob, alice, clara]
- * sortByProps([
+ * ], people); // => [bob, alice, clara]
+ *
+ * RA.sortByPaths([
  *   ['address', 'zipCode'],
  *   ['address', 'street'],
- * ], people) // [bob, clara, alice]
+ * ], people); // => [bob, clara, alice]
  */
 
 const sortByPaths = useWith(sortWith, [mapPathsToAscendSort, identity]);
