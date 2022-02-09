@@ -1484,6 +1484,12 @@ declare namespace RamdaAdjunct {
         skipTake<T>(n: number): (list: T[]) => T[];
 
         /**
+         * Sort a list of objects by a list of paths (if first path value is equivalent, sort by second, etc).
+         */
+        sortByPaths(props: string[][], list: object[]): object[];
+        sortByPaths(props: string[][]): (list: object[]) => object[];
+
+        /**
          * Determine if input value is an indexed data type.
          */
         isIndexed(val: any): val is string | any[];
