@@ -1,3 +1,13 @@
+# [3.1.0](https://github.com/char0n/ramda-adjunct/compare/v3.0.0...v3.1.0) (2022-04-24)
+
+
+### Features
+
+* **isBlank:** implemented isBlank function ([#2141](https://github.com/char0n/ramda-adjunct/issues/2141)) ([e8cf553](https://github.com/char0n/ramda-adjunct/commit/e8cf553d9ef4daa950a3358d18241356a7089fff))
+* **list:** add sortByPaths ([#2104](https://github.com/char0n/ramda-adjunct/issues/2104)) ([3d59189](https://github.com/char0n/ramda-adjunct/commit/3d591897d1c564a3c18cacc569c1d29cf351315c)), closes [#1240](https://github.com/char0n/ramda-adjunct/issues/1240)
+
+
+
 # [3.0.0](https://github.com/char0n/ramda-adjunct/compare/v2.36.0...v3.0.0) (2022-01-17)
 
 
