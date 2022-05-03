@@ -139,7 +139,7 @@
     "chai": "4.3.6",
     "codecov": "3.8.3",
     "conventional-changelog-cli": "2.2.2",
-    "core-js": "=3.22.3",
+    "core-js": "=3.22.4",
     "docdash": "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
     "dtslint": "=4.2.1",
     "eslint": "=8.14.0",
