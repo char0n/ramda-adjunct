@@ -223,6 +223,7 @@ export { default as toUint32 } from './toUinteger32'; // alias of to toUinteger3
 export { default as toNumber } from './toNumber';
 // String
 export { default as replaceAll } from './replaceAll';
+export { default as matchAll } from './matchAll';
 export { default as escapeRegExp } from './escapeRegExp';
 export { default as trimStart } from './trimStart';
 export { default as trimLeft } from './trimStart'; // alias of trimStart
