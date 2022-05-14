@@ -1286,6 +1286,9 @@ declare namespace RamdaAdjunct {
          * The values false, null, 0, "", undefined, and NaN are falsy.
          */
         compact<T>(list: T[]): Array<Exclude<NonNullable<T>, false | '' | 0>>;
+        compact<T extends object>(record: T): { 
+          [K in keyof T]: Exclude<NonNullable<T[K]>, false | '' | 0> 
+        };
 
         /**
          * Returns a new list containing the contents of the given list, followed by the given
