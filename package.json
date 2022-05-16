@@ -153,7 +153,7 @@
     "fantasy-laws": "=2.0.1",
     "folktale": "=2.3.2",
     "glob": "=8.0.3",
-    "husky": "7.0.4",
+    "husky": "8.0.1",
     "istanbul": "=0.4.5",
     "jsdoc": "=3.6.10",
     "jsverify": "0.8.4",
