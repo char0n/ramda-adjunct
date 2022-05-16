@@ -361,6 +361,12 @@ declare namespace RamdaAdjunct {
         isInteger32(val: any): boolean;
 
         /**
+         * Checks whether the passed value is an unsigned 32 bit integer number.
+         */
+        isUinteger32(val: any): boolean;
+        isUint32(val: any): boolean; // alias
+
+        /**
          * Checks whether the passed value is complement of `integer`.
          */
         isNotInteger(val: any): boolean;

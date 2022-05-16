@@ -63,6 +63,8 @@ export { default as isNotFinite } from './isNotFinite';
 export { default as isInteger } from './isInteger';
 export { default as isInteger32 } from './isInteger32';
 export { default as isInt32 } from './isInteger32'; // alias of isInteger32
+export { default as isUinteger32 } from './isUinteger32';
+export { default as isUint32 } from './isUinteger32'; // alias of isUinteger32
 export { default as isNotInteger } from './isNotInteger';
 export { default as isBigInt } from './isBigInt';
 export { default as isFloat } from './isFloat';
