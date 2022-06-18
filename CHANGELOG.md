@@ -1,3 +1,12 @@
+# [3.2.0](https://github.com/char0n/ramda-adjunct/compare/v3.1.0...v3.2.0) (2022-06-18)
+
+
+### Features
+
+* **type:** add isUinteger32 ([#2257](https://github.com/char0n/ramda-adjunct/issues/2257)) ([965147e](https://github.com/char0n/ramda-adjunct/commit/965147e836df98fe0fa83851d41c1268503c73e4)), closes [#1281](https://github.com/char0n/ramda-adjunct/issues/1281)
+
+
+
 # [3.1.0](https://github.com/char0n/ramda-adjunct/compare/v3.0.0...v3.1.0) (2022-04-24)
 
 

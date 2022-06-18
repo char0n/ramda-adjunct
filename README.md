@@ -137,7 +137,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 ## API Documentation
 
  [LATEST](https://char0n.github.io/ramda-adjunct),
- [PREVIOUS](https://char0n.github.io/ramda-adjunct/3.0.0),
+ [PREVIOUS](https://char0n.github.io/ramda-adjunct/3.1.0),
  [ALL VERSIONS](./VERSIONS.md)
 
 ## Wrote about us
