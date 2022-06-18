@@ -28,10 +28,10 @@ jobs:
         env:
           DISABLE_OPENCOLLECTIVE: true
       - run: npm run lint
-      - name: Run FOSSA scan and upload build data
-        uses: fossa-contrib/fossa-action@v1
-        with:
-          fossa-api-key: ccf8289006445461c967cb7874f84a8a
+#      - name: Run FOSSA scan and upload build data
+#        uses: fossa-contrib/fossa-action@v1
+#        with:
+#          fossa-api-key: ccf8289006445461c967cb7874f84a8a
       - run: npm run build
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
