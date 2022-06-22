@@ -1601,7 +1601,7 @@ export function divideNum(divisor: number): (dividend: number) => number;
 /**
  * Identity type.
  */
-export type Identity = Function;
+export const Identity: Function;
 
 /**
  * Converts value to an array.
