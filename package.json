@@ -124,12 +124,12 @@
     "ramda": ">= 0.28.0 <= 0.28.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.18.9",
+    "@babel/cli": "7.18.10",
     "@babel/core": "=7.19.1",
     "@babel/plugin-transform-modules-commonjs": "=7.18.6",
     "@babel/preset-env": "=7.19.1",
     "@babel/register": "7.18.9",
-    "@commitlint/cli": "=17.0.3",
+    "@commitlint/cli": "=17.1.2",
     "@commitlint/config-conventional": "=17.1.0",
     "assert": "=2.0.0",
     "babel-loader": "=8.2.5",
@@ -139,7 +139,7 @@
     "chai": "4.3.6",
     "codecov": "3.8.3",
     "conventional-changelog-cli": "2.2.2",
-    "core-js": "=3.23.5",
+    "core-js": "=3.25.1",
     "docdash": "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
     "dtslint": "=4.2.1",
     "eslint": "=8.23.1",
