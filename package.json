@@ -70,7 +70,7 @@
     "test": "better-npm-run test",
     "test:web": "better-npm-run test:web",
     "test:ramda": "bnr test:ramda",
-    "test:types": "dtslint ./types",
+    "test:types": "dtslint --installAll ./types",
     "test:bundle-create": "better-npm-run test:bundle-create",
     "test:bundle-clean": "better-npm-run test:bundle-clean",
     "coverage": "better-npm-run coverage",
