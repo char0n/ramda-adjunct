@@ -1,3 +1,12 @@
+# [3.3.0](https://github.com/char0n/ramda-adjunct/compare/v3.2.0...v3.3.0) (2022-09-18)
+
+
+### Features
+
+* **types:** simplify types and declare named exports ([#2307](https://github.com/char0n/ramda-adjunct/issues/2307)) ([1b46e44](https://github.com/char0n/ramda-adjunct/commit/1b46e44fcc563ecb062ab4928d3c9e295287e064)), closes [#2306](https://github.com/char0n/ramda-adjunct/issues/2306) [#1467](https://github.com/char0n/ramda-adjunct/issues/1467)
+
+
+
 # [3.2.0](https://github.com/char0n/ramda-adjunct/compare/v3.1.0...v3.2.0) (2022-06-18)
 
 
