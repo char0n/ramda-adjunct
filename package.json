@@ -130,7 +130,7 @@
     "@babel/preset-env": "=7.19.1",
     "@babel/register": "7.18.9",
     "@commitlint/cli": "=17.0.3",
-    "@commitlint/config-conventional": "=17.0.3",
+    "@commitlint/config-conventional": "=17.1.0",
     "assert": "=2.0.0",
     "babel-loader": "=8.2.5",
     "babel-plugin-annotate-pure-calls": "0.4.0",
