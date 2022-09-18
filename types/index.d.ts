@@ -606,10 +606,13 @@ export function cata<V1, V2, T1, T2>(
  * keys renamed according to the keysMap object as `{oldKey: newKey}`.
  * When some key is not found in the keysMap, then it's passed as-is.
  */
-export function renameKeys(keysMap: Dictionary<string>, obj: object): object;
-export function renameKeys(
-  keysMap: Dictionary<string>
-): (obj: object) => object;
+type PickRenameMulti<R extends { [K: string]: string }, T extends { [s in keyof R]: any }> = {
+    [P in keyof T as P extends keyof R ? R[P] : P] : T[P];
+};
+export function renameKeys<MAP extends Dictionary<string>, OBJ extends { readonly [s in keyof MAP]: any }>(keysMap: MAP, obj: OBJ): PickRenameMulti<MAP, OBJ>;
+export function renameKeys<MAP extends Dictionary<string>>(
+  keysMap: MAP
+): <OBJ extends { readonly [s in keyof MAP]: any }>(obj: OBJ) => PickRenameMulti<MAP, OBJ>;
 
 /**
  * Creates a new object with the own properties of the provided object, and the
