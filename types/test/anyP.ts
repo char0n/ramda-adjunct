@@ -8,8 +8,10 @@ RA.anyP([1, 'a']); // $ExpectType Promise<string | number>
 RA.anyP([]); // $ExpectType Promise<never>
 RA.anyP(customIterable); // $ExpectType Promise<number>
 
-RA.anyP({}); // $ExpectError
-RA.anyP(1); // $ExpectError
+// @ts-expect-error
+RA.anyP({});
+// @ts-expect-error
+RA.anyP(1);
 
 // alias
 RA.firstP([1, 2]); // $ExpectType Promise<number>
@@ -18,5 +20,7 @@ RA.firstP([1, 'a']); // $ExpectType Promise<string | number>
 RA.firstP([]); // $ExpectType Promise<never>
 RA.firstP(customIterable); // $ExpectType Promise<number>
 
-RA.firstP({}); // $ExpectError
-RA.firstP(1); // $ExpectError
+// @ts-expect-error
+RA.firstP({});
+// @ts-expect-error
+RA.firstP(1);

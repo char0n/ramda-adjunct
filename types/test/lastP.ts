@@ -8,5 +8,7 @@ RA.lastP([1, 'a']); // $ExpectType Promise<string | number>
 RA.lastP([]); // $ExpectType Promise<never>
 RA.lastP(customIterable); // $ExpectType Promise<number>
 
-RA.lastP({}); // $ExpectError
-RA.lastP(1); // $ExpectError
+// @ts-expect-error
+RA.lastP({});
+// @ts-expect-error
+RA.lastP(1);

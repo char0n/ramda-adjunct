@@ -23,4 +23,5 @@ const result4 = RA.cata<string, string, number, boolean>(() => 1)(() => true)({
 });
 result4; // $ExpectType number | boolean
 
-RA.cata(1, true, {}); // $ExpectError
+// @ts-expect-error
+RA.cata(1, true, {});

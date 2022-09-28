@@ -17,10 +17,16 @@ RA.toUint32(Number.MAX_VALUE); // $ExpectType number
 RA.toUint32(Number.MIN_VALUE); // $ExpectType number
 RA.toUint32(NaN); // $ExpectType number
 
-RA.toUinteger32({}); // $ExpectError
-RA.toUinteger32([]); // $ExpectError
-RA.toUinteger32('a'); // $ExpectError
+// @ts-expect-error
+RA.toUinteger32({});
+// @ts-expect-error
+RA.toUinteger32([]);
+// @ts-expect-error
+RA.toUinteger32('a');
 
-RA.toUint32({}); // $ExpectError
-RA.toUint32([]); // $ExpectError
-RA.toUint32('a'); // $ExpectError
+// @ts-expect-error
+RA.toUint32({});
+// @ts-expect-error
+RA.toUint32([]);
+// @ts-expect-error
+RA.toUint32('a');

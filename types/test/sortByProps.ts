@@ -22,5 +22,7 @@ RA.sortByProps(['p'])(people); // $ExpectType object[]
 RA.sortByProps(['lastName', 'name'])(people); // $ExpectType object[]
 RA.sortByProps(['lastName', 'p', 'name'])(people); // $ExpectType object[]
 
-RA.sortByProps(['name'])(123); // $ExpectError
-RA.sortByProps(123)(people); // $ExpectError
+// @ts-expect-error
+RA.sortByProps(['name'])(123);
+// @ts-expect-error
+RA.sortByProps(123)(people);

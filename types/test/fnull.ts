@@ -1,13 +1,18 @@
 import * as RA from 'ramda-adjunct';
 
-const fn = (v: any) => v;
+const fn = (v: unknown) => v;
 
 RA.fnull(fn)(['abc']); // $ExpectType Function
 RA.fnull(fn, ['a']); // $ExpectType Function
 RA.fnull(fn, ['hello']); // $ExpectType Function
 
-RA.fnull(fn, 'afsd'); // $ExpectError
-RA.fnull('12', 54); // $ExpectError
-RA.fnull(null, 'a'); // $ExpectError
-RA.fnull(undefined, 12); // $ExpectError
-RA.fnull(undefined, 'abc'); // $ExpectError
+// @ts-expect-error
+RA.fnull(fn, 'afsd');
+// @ts-expect-error
+RA.fnull('12', 54);
+// @ts-expect-error
+RA.fnull(null, 'a');
+// @ts-expect-error
+RA.fnull(undefined, 12);
+// @ts-expect-error
+RA.fnull(undefined, 'abc');

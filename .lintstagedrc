@@ -1,4 +1,4 @@
 {
   "*.js": "eslint",
-  "*.ts": "tslint --project types/tsconfig.json -c types/tslint.json"
+  "*.ts": "eslint --no-ignore --no-eslintrc -c ./types/.eslintrc.js"
 }

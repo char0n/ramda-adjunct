@@ -7,6 +7,9 @@ RA.notAllUnique(['a', 'b', 'c', 'd']); // $ExpectType boolean
 RA.notAllUnique([1, 'b', 2, 'd']); // $ExpectType boolean
 RA.notAllUnique([]); // $ExpectType boolean
 
-RA.notAllUnique(1); // $ExpectError
-RA.notAllUnique({}); // $ExpectError
-RA.notAllUnique(customIterable); // $ExpectError
+// @ts-expect-error
+RA.notAllUnique(1);
+// @ts-expect-error
+RA.notAllUnique({});
+// @ts-expect-error
+RA.notAllUnique(customIterable);
