@@ -4,8 +4,13 @@ RA.skipTake(2, [1, 2, 3, 4]); // $ExpectType number[]
 RA.skipTake<number>(2)([1, 2, 3, 4]); // $ExpectType number[]
 RA.skipTake<number>(2)([1, 2, 3, 4]); // $ExpectType number[]
 
-RA.skipTake(0, 'asd'); // $ExpectError
-RA.skipTake('12', []); // $ExpectError
-RA.skipTake(null, []); // $ExpectError
-RA.skipTake(undefined, []); // $ExpectError
-RA.skipTake(undefined, []); // $ExpectError
+// @ts-expect-error
+RA.skipTake(0, 'asd');
+// @ts-expect-error
+RA.skipTake('12', []);
+// @ts-expect-error
+RA.skipTake(null, []);
+// @ts-expect-error
+RA.skipTake(undefined, []);
+// @ts-expect-error
+RA.skipTake(undefined, []);

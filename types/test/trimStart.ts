@@ -3,18 +3,28 @@ import * as RA from 'ramda-adjunct';
 RA.trimStart('abc'); // $ExpectType string
 RA.trimStart(''); // $ExpectType string
 
-RA.trimStart(1); // $ExpectError
-RA.trimStart({}); // $ExpectError
-RA.trimStart(null); // $ExpectError
-RA.trimStart(undefined); // $ExpectError
-RA.trimStart([]); // $ExpectError
+// @ts-expect-error
+RA.trimStart(1);
+// @ts-expect-error
+RA.trimStart({});
+// @ts-expect-error
+RA.trimStart(null);
+// @ts-expect-error
+RA.trimStart(undefined);
+// @ts-expect-error
+RA.trimStart([]);
 
 // alias
 RA.trimLeft('abc'); // $ExpectType string
 RA.trimLeft(''); // $ExpectType string
 
-RA.trimLeft(1); // $ExpectError
-RA.trimLeft({}); // $ExpectError
-RA.trimLeft(null); // $ExpectError
-RA.trimLeft(undefined); // $ExpectError
-RA.trimLeft([]); // $ExpectError
+// @ts-expect-error
+RA.trimLeft(1);
+// @ts-expect-error
+RA.trimLeft({});
+// @ts-expect-error
+RA.trimLeft(null);
+// @ts-expect-error
+RA.trimLeft(undefined);
+// @ts-expect-error
+RA.trimLeft([]);

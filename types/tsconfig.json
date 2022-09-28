@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
+    "types": [],
+    "forceConsistentCasingInFileNames": true,
     "typeRoots" : [
       "./src"
     ],
-    "target": "es5",
+    "target": "es6",
     "lib": ["es6"],
     "module": "commonjs",
     "noEmit": true,
     "strict": true,
-    "baseUrl": "../types",
+    "baseUrl": ".",
     "paths": {
-      "ramda-adjunct": ["index.d.ts"]
+      "ramda-adjunct": ["./index.d.ts"]
     }
   }
 }

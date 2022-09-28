@@ -3,10 +3,15 @@ import * as RA from 'ramda-adjunct';
 RA.escapeRegExp('abc'); // $ExpectType string
 RA.escapeRegExp(''); // $ExpectType string
 
-// tslint:disable-next-line:no-construct
-RA.escapeRegExp(new String('')); // $ExpectError
-RA.escapeRegExp(1); // $ExpectError
-RA.escapeRegExp({}); // $ExpectError
-RA.escapeRegExp(null); // $ExpectError
-RA.escapeRegExp(undefined); // $ExpectError
-RA.escapeRegExp([]); // $ExpectError
+// @ts-expect-error
+RA.escapeRegExp(new String('')); // tslint:disable-line:no-construct
+// @ts-expect-error
+RA.escapeRegExp(1);
+// @ts-expect-error
+RA.escapeRegExp({});
+// @ts-expect-error
+RA.escapeRegExp(null);
+// @ts-expect-error
+RA.escapeRegExp(undefined);
+// @ts-expect-error
+RA.escapeRegExp([]);

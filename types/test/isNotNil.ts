@@ -7,7 +7,7 @@ interface Test {
   c: number | null | undefined;
 }
 
-const obj: Test = {a: 1, b: 1, c: 1};
+const obj: Test = { a: 1, b: 1, c: 1 };
 
 if (RA.isNotNil(obj.a)) {
   obj.a; // $ExpectType number

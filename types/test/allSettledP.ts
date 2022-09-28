@@ -9,5 +9,7 @@ RA.allSettledP([]); // $ExpectType Promise<SettledPromise<never>[]>
 RA.allSettledP(customIterable); // $ExpectType Promise<SettledPromise<number>[]>
 RA.allSettledP('abc'); // $ExpectType Promise<SettledPromise<string>[]>
 
-RA.allSettledP({}); // $ExpectError
-RA.allSettledP(1); // $ExpectError
+// @ts-expect-error
+RA.allSettledP({});
+// @ts-expect-error
+RA.allSettledP(1);

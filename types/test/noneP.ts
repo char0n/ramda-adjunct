@@ -10,5 +10,7 @@ RA.noneP([]); // $ExpectType Promise<never[]>
 RA.noneP(customIterable); // $ExpectType Promise<number[]>
 RA.noneP('abc'); // $ExpectType Promise<string[]>
 
-RA.noneP({}); // $ExpectError
-RA.noneP(1); // $ExpectError
+// @ts-expect-error
+RA.noneP({});
+// @ts-expect-error
+RA.noneP(1);

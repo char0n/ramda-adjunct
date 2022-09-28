@@ -5,7 +5,7 @@ RA.isSparseArray(new Array(3)); // $ExpectType boolean
 RA.isSparseArray([1, , 3]); // $ExpectType boolean
 
 RA.isSparseArray([1, 2, 3]); // $ExpectType boolean
-RA.isSparseArray(new Array()); // $ExpectType boolean
+RA.isSparseArray([]); // $ExpectType boolean
 RA.isSparseArray(new Array(0)); // $ExpectType boolean
 
 RA.isSparseArray(new Date()); // $ExpectType boolean

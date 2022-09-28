@@ -1,4 +1,4 @@
-// TypeScript Version: 2.4
+// Minimum TypeScript Version: 2.4
 
 interface Functor<T> {
   map<U>(fn: (t: T) => U): Functor<U>;
