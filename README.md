@@ -123,7 +123,7 @@ _Do you want to find out more about why this library exists ? Read this [**artic
 
 ## Requirements
 
- - ramda >= 0.19.0
+ - ramda >= 0.28.0
  - node >= 0.10.48
 
 Ramda Adjunct is being automatically tested against all LTS and Current Node.js versions.
@@ -137,7 +137,7 @@ It is also possible that our ES5 distributions run on node versions older than 0
 ## API Documentation
 
  [LATEST](https://char0n.github.io/ramda-adjunct),
- [PREVIOUS](https://char0n.github.io/ramda-adjunct/2.34.0),
+ [PREVIOUS](https://char0n.github.io/ramda-adjunct/3.2.0),
  [ALL VERSIONS](./VERSIONS.md)
 
 ## Wrote about us

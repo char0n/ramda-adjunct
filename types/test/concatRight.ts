@@ -5,6 +5,9 @@ RA.concatRight('ab')('cd'); // $ExpectType string
 RA.concatRight([1, 2], [3, 4]); // $ExpectType number[]
 RA.concatRight([1, 2])([3, 4]); // $ExpectType number[]
 
-RA.concatRight(1, 2); // $ExpectError
-RA.concatRight({}, {}); // $ExpectError
-RA.concatRight('ab', [1, 2]); // $ExpectError
+// @ts-expect-error
+RA.concatRight(1, 2);
+// @ts-expect-error
+RA.concatRight({}, {});
+// @ts-expect-error
+RA.concatRight('ab', [1, 2]);

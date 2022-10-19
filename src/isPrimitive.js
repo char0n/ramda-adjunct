@@ -15,6 +15,7 @@ import isSymbol from './isSymbol';
  * for definition of what sub-types comprise a primitive.
  *
  * @func isPrimitive
+ * @memberOf RA
  * @category Type
  * @sig * -> Boolean
  * @since {@link https://char0n.github.io/ramda-adjunct/2.32.0|v2.32.0}

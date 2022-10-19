@@ -1,6 +1,9 @@
 import * as RA from 'ramda-adjunct';
 
-const always = <A>(x: A) => () => x;
+const always =
+  <A>(x: A) =>
+  () =>
+    x;
 
 const promise = RA.rejectP(1);
 

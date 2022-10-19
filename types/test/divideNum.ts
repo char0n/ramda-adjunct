@@ -12,11 +12,19 @@ RA.divideNum(0)(2.0); // $ExpectType number
 RA.divideNum(0.0)(2.0); // $ExpectType number
 RA.divideNum(-0.0)(2.0); // $ExpectType number
 
-RA.divideNum('a', 'b'); // $ExpectError
-RA.divideNum('a')('b'); // $ExpectError
-RA.divideNum(1, undefined); // $ExpectError
-RA.divideNum(1)(undefined); // $ExpectError
-RA.divideNum(1, {}); // $ExpectError
-RA.divideNum(1)({}); // $ExpectError
-RA.divideNum({}, 1); // $ExpectError
-RA.divideNum({})(1); // $ExpectError
+// @ts-expect-error
+RA.divideNum('a', 'b');
+// @ts-expect-error
+RA.divideNum('a')('b');
+// @ts-expect-error
+RA.divideNum(1, undefined);
+// @ts-expect-error
+RA.divideNum(1)(undefined);
+// @ts-expect-error
+RA.divideNum(1, {});
+// @ts-expect-error
+RA.divideNum(1)({});
+// @ts-expect-error
+RA.divideNum({}, 1);
+// @ts-expect-error
+RA.divideNum({})(1);

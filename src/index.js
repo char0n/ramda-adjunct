@@ -29,7 +29,7 @@ export { default as isNotAsyncFunction } from './isNotAsyncFunction';
 export { default as isFunction } from './isFunction';
 export { default as isNotFunction } from './isNotFunction';
 export { default as isObj } from './isObj';
-export { default as isObject } from './isObj'; // alias of isObject
+export { default as isObject } from './isObj'; // alias of isObj
 export { default as isNotObj } from './isNotObj';
 export { default as isNotObject } from './isNotObj'; // alias of isNotObj
 export { default as isObjLike } from './isObjLike';
@@ -39,7 +39,7 @@ export { default as isNotObjectLike } from './isNotObjLike'; // alias of isNotOb
 export { default as isPlainObj } from './isPlainObj';
 export { default as isPlainObject } from './isPlainObj';
 export { default as isNotPlainObj } from './isNotPlainObj';
-export { default as isNotPlainObject } from './isNotPlainObj'; // alias of isNotPlainObject
+export { default as isNotPlainObject } from './isNotPlainObj'; // alias of isNotPlainObj
 export { default as isDate } from './isDate';
 export { default as isNotDate } from './isNotDate';
 export { default as isValidDate } from './isValidDate';
@@ -63,6 +63,8 @@ export { default as isNotFinite } from './isNotFinite';
 export { default as isInteger } from './isInteger';
 export { default as isInteger32 } from './isInteger32';
 export { default as isInt32 } from './isInteger32'; // alias of isInteger32
+export { default as isUinteger32 } from './isUinteger32';
+export { default as isUint32 } from './isUinteger32'; // alias of isUinteger32
 export { default as isNotInteger } from './isNotInteger';
 export { default as isBigInt } from './isBigInt';
 export { default as isFloat } from './isFloat';
@@ -92,6 +94,7 @@ export { default as isNaturalNumber } from './isNaturalNumber';
 export { default as isPrimitive } from './isPrimitive';
 export { default as isNotPrimitive } from './isNotPrimitive';
 export { default as isSentinelValue } from './isSentinelValue';
+export { default as isBlank } from './isBlank';
 // Function
 export { default as stubUndefined } from './stubUndefined';
 export { default as stubNull } from './stubNull';
@@ -113,8 +116,6 @@ export { default as noneP } from './noneP';
 export { default as resolveP } from './resolveP';
 export { default as rejectP } from './rejectP';
 export { default as delayP } from './delayP';
-export { default as thenP } from './thenP';
-export { default as then } from './thenP'; // eslint-disable-line no-restricted-exports
 export { default as thenCatchP } from './thenCatchP';
 export { default as allSettledP } from './allSettledP';
 export { default as Y } from './Y';
@@ -142,8 +143,7 @@ export { default as sliceTo } from './sliceTo';
 export { default as omitIndexes } from './omitIndexes';
 export { default as compact } from './compact';
 export { default as appendFlipped } from './appendFlipped';
-export { default as contained } from './contained';
-export { default as included } from './contained';
+export { default as included } from './included';
 export { default as move } from './move';
 export { default as lengthGt } from './lengthGt';
 export { default as lengthLt } from './lengthLt';
@@ -162,6 +162,7 @@ export { default as allUnique } from './allUnique';
 export { default as notAllUnique } from './notAllUnique';
 export { default as sortByProps } from './sortByProps';
 export { default as sortByProp } from './sortByProp';
+export { default as sortByPaths } from './sortByPaths';
 export { default as skipTake } from './skipTake';
 export { default as rangeStep } from './rangeStep';
 export { default as findOr } from './findOr';
@@ -173,9 +174,6 @@ export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as renameKeyWith } from './renameKeyWith';
 export { default as copyKeys } from './copyKeys';
-export { default as mergeRight } from './mergeRight';
-export { default as mergeLeft } from './mergeRight';
-export { default as resetToDefault } from './mergeRight';
 export { default as mergeProps } from './mergeProps';
 export { default as mergePaths } from './mergePaths';
 export { default as mergeProp } from './mergeProp';
@@ -183,7 +181,6 @@ export { default as mergePath } from './mergePath';
 export { default as omitBy } from './omitBy';
 export { default as pathOrLazy } from './pathOrLazy';
 export { default as viewOr } from './viewOr';
-export { default as hasPath } from './hasPath';
 export { default as spreadProp } from './spreadProp';
 export { default as spreadPath } from './spreadPath';
 export { default as flattenProp } from './flattenProp';
@@ -226,6 +223,7 @@ export { default as toInteger32 } from './toInteger32';
 export { default as toInt32 } from './toInteger32'; // alias of toInteger32
 export { default as toUinteger32 } from './toUinteger32';
 export { default as toUint32 } from './toUinteger32'; // alias of to toUinteger32
+export { default as toNumber } from './toNumber';
 // String
 export { default as replaceAll } from './replaceAll';
 export { default as escapeRegExp } from './escapeRegExp';

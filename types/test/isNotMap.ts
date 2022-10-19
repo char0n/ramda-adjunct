@@ -1,7 +1,13 @@
 import * as RA from 'ramda-adjunct';
 
 RA.isNotMap(new Map()); // $ExpectType boolean
-RA.isNotMap(new Map([[1, 2], [2, 1]])); // $ExpectType boolean
+// $ExpectType boolean
+RA.isNotMap(
+  new Map([
+    [1, 2],
+    [2, 1],
+  ])
+);
 RA.isNotMap(new Set()); // $ExpectType boolean
 RA.isNotMap(new Set([1, 2])); // $ExpectType boolean
 RA.isNotMap(+0); // $ExpectType boolean

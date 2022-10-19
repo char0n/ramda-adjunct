@@ -1,3 +1,71 @@
+# [3.3.0](https://github.com/char0n/ramda-adjunct/compare/v3.2.0...v3.3.0) (2022-09-18)
+
+
+### Features
+
+* **types:** simplify types and declare named exports ([#2307](https://github.com/char0n/ramda-adjunct/issues/2307)) ([1b46e44](https://github.com/char0n/ramda-adjunct/commit/1b46e44fcc563ecb062ab4928d3c9e295287e064)), closes [#2306](https://github.com/char0n/ramda-adjunct/issues/2306) [#1467](https://github.com/char0n/ramda-adjunct/issues/1467)
+
+
+
+# [3.2.0](https://github.com/char0n/ramda-adjunct/compare/v3.1.0...v3.2.0) (2022-06-18)
+
+
+### Features
+
+* **type:** add isUinteger32 ([#2257](https://github.com/char0n/ramda-adjunct/issues/2257)) ([965147e](https://github.com/char0n/ramda-adjunct/commit/965147e836df98fe0fa83851d41c1268503c73e4)), closes [#1281](https://github.com/char0n/ramda-adjunct/issues/1281)
+
+
+
+# [3.1.0](https://github.com/char0n/ramda-adjunct/compare/v3.0.0...v3.1.0) (2022-04-24)
+
+
+### Features
+
+* **isBlank:** implemented isBlank function ([#2141](https://github.com/char0n/ramda-adjunct/issues/2141)) ([e8cf553](https://github.com/char0n/ramda-adjunct/commit/e8cf553d9ef4daa950a3358d18241356a7089fff))
+* **list:** add sortByPaths ([#2104](https://github.com/char0n/ramda-adjunct/issues/2104)) ([3d59189](https://github.com/char0n/ramda-adjunct/commit/3d591897d1c564a3c18cacc569c1d29cf351315c)), closes [#1240](https://github.com/char0n/ramda-adjunct/issues/1240)
+
+
+
+# [3.0.0](https://github.com/char0n/ramda-adjunct/compare/v2.36.0...v3.0.0) (2022-01-17)
+
+
+### Breaking changes
+
+Version 3.0.0 adds support for [ramda@0.28.0](https://github.com/ramda/ramda/releases/tag/v0.28.0) which removed bunch of function from its API.
+This means that ramda-adjunct needed to react with breaking change release which currently
+supports only ramda@0.28.0.
+
+Some functions in ramda-adjunct API were deprecated for a long time, and we decided to remove them in 3.0.0 release:
+
+- **then, thenP** - replaceable by [R.andThen](https://ramdajs.com/docs/#andThen)
+- **hasPath** - replaceable by [R.hasPath](https://ramdajs.com/docs/#hasPath)
+- **mergeRight, mergeLeft, resetToDefaults**: - replaceable by [R.mergeLeft](https://ramdajs.com/docs/#mergeLeft)
+- **contained** - replaceable by [RA.included](https://char0n.github.io/ramda-adjunct/3.0.0/RA.html#.included)
+
+### Bug Fixes
+
+* **function:** remove then ([4e5516b](https://github.com/char0n/ramda-adjunct/commit/4e5516b7e5bf8c41f3979ae604b3e331b406ea25)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+* **object:** remove hasPath ([8cc0c8f](https://github.com/char0n/ramda-adjunct/commit/8cc0c8f7859618b5ef3bc00816ed05622841a871)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+* **object:** remove mergeRight ([06a3338](https://github.com/char0n/ramda-adjunct/commit/06a3338923072c6a4ae3e5c62bc109793d76537b)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+
+
+### Features
+
+* add support for ramda@0.28.0 ([20acd56](https://github.com/char0n/ramda-adjunct/commit/20acd562a24759b42ec4f8ae2f3f90af95de25b0)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+* **list:** add included ([4bfafe0](https://github.com/char0n/ramda-adjunct/commit/4bfafe0593ee2d34b51eb8b5768f8618bee17f5a)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+
+
+
+# [2.36.0](https://github.com/char0n/ramda-adjunct/compare/v2.35.0...v2.36.0) (2022-01-17)
+
+
+### Features
+
+* add support for ramda@0.27.2 ([39e22e1](https://github.com/char0n/ramda-adjunct/commit/39e22e1485410a7bf99a212b9c9a1d2b7ea3237f)), closes [#2152](https://github.com/char0n/ramda-adjunct/issues/2152)
+* **type:** add toNumber ([#2103](https://github.com/char0n/ramda-adjunct/issues/2103)) ([d06abbf](https://github.com/char0n/ramda-adjunct/commit/d06abbfbf3b4700d78f368479404c8347785f295)), closes [#788](https://github.com/char0n/ramda-adjunct/issues/788)
+
+
+
 # [2.35.0](https://github.com/char0n/ramda-adjunct/compare/v2.34.0...v2.35.0) (2021-11-01)
 
 

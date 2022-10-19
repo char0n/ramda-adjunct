@@ -1,6 +1,9 @@
 import * as RA from 'ramda-adjunct';
 
-const always = <A>(x: A) => () => x;
+const always =
+  <A>(x: A) =>
+  () =>
+    x;
 const add1 = (x: number) => x + 1;
 
 const promise = Promise.resolve(1);

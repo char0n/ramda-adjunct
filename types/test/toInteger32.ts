@@ -5,9 +5,13 @@ RA.toInteger32(Infinity); // $ExpectType number
 RA.toInteger32(-Infinity); // $ExpectType number
 RA.toInteger32(+Infinity); // $ExpectType number
 RA.toInteger32(NaN); // $ExpectType number
-RA.toInteger32({}); // $ExpectError
-RA.toInteger32('s'); // $ExpectError
-RA.toInteger32([]); // $ExpectError
+// @ts-expect-error
+RA.toInteger32({});
+// @ts-expect-error
+RA.toInteger32('s');
+// @ts-expect-error
+RA.toInteger32([]);
 
 RA.toInt32(1); // $ExpectType number
-RA.toInt32('s'); // $ExpectError
+// @ts-expect-error
+RA.toInt32('s');

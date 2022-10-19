@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 16
+      - name: Use Node.js 18
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -28,10 +28,10 @@ jobs:
         env:
           DISABLE_OPENCOLLECTIVE: true
       - run: npm run lint
-      - name: Run FOSSA scan and upload build data
-        uses: fossa-contrib/fossa-action@v1
-        with:
-          fossa-api-key: ccf8289006445461c967cb7874f84a8a
+#      - name: Run FOSSA scan and upload build data
+#        uses: fossa-contrib/fossa-action@v1
+#        with:
+#          fossa-api-key: ccf8289006445461c967cb7874f84a8a
       - run: npm run build
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
@@ -49,14 +49,14 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12, 14, 16]
+        node-version: [14, 16, 18]
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup node 16
+      - name: Setup node 18
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -83,10 +83,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 16
+      - name: Use Node.js 18
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -123,10 +123,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 16
+      - name: Use Node.js 18
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -141,7 +141,7 @@ jobs:
       - run: npm run build:umd
       - run: npm run docs
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: docs/ramda-adjunct # The folder the action should deploy.
