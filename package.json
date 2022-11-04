@@ -127,7 +127,7 @@
     "@babel/cli": "7.19.3",
     "@babel/core": "=7.20.2",
     "@babel/plugin-transform-modules-commonjs": "=7.19.6",
-    "@babel/preset-env": "=7.19.4",
+    "@babel/preset-env": "=7.20.2",
     "@babel/register": "7.18.9",
     "@commitlint/cli": "=17.2.0",
     "@commitlint/config-conventional": "=17.2.0",
