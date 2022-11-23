@@ -119,7 +119,7 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     needs: [build, test, code_coverage]
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.actor != 'dependabot[bot]'
 
     steps:
       - uses: actions/checkout@v2
