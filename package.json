@@ -178,7 +178,8 @@
     "testem": "=3.10.0",
     "typescript": "=4.9.3",
     "webpack": "=5.75.0",
-    "webpack-cli": "5.0.0"
+    "webpack-cli": "5.0.0",
+    "taffydb": "npm:@jsdoc/salty@0.2.1"
   },
   "browserslist": "> 0.25%, ie 10, ie 11, not op_mini all",
   "tonicExampleFilename": "tonicExample.js",
