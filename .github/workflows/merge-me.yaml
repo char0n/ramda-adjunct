@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Merge me!
         if: steps.waitforstatuschecks.outputs.status == 'success'
-        uses: ahmadnassri/action-dependabot-auto-merge@v2
+        uses: ahmadnassri/action-dependabot-auto-merge@v2.6.0
         with:
           target: minor
           github-token: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
