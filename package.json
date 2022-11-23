@@ -129,7 +129,7 @@
     "@babel/plugin-transform-modules-commonjs": "=7.19.6",
     "@babel/preset-env": "=7.20.2",
     "@babel/register": "7.18.9",
-    "@commitlint/cli": "=17.2.0",
+    "@commitlint/cli": "=17.3.0",
     "@commitlint/config-conventional": "=17.2.0",
     "@typescript-eslint/eslint-plugin": "=5.43.0",
     "@typescript-eslint/parser": "=5.43.0",
