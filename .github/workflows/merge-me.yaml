@@ -32,11 +32,14 @@ jobs:
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
-      # Finally, this sets the PR to allow auto-merging for patch and minor
-      # updates if all checks pass
-      - name: Enable auto-merge for Dependabot PRs
+      # Finally, tell dependabot to merge the PR if all checks are successful
+      - name: Instruct dependabot to squash & merge
         if: ${{ steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major' }}
-        run: gh pr merge --auto --squash "$PR_URL"
+        uses: mshick/add-pr-comment@v2
+        with:
+          repo-token: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
+          allow-repeats: true
+          message: |
+            @dependabot squash and merge
         env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
