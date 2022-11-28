@@ -173,7 +173,7 @@
     "regenerator-runtime": "=0.13.11",
     "rimraf": "3.0.2",
     "sanctuary-show": "3.0.0",
-    "sinon": "=14.0.2",
+    "sinon": "=15.0.0",
     "terser-webpack-plugin": "5.3.6",
     "testem": "=3.10.0",
     "typescript": "=4.9.3",
