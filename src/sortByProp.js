@@ -7,7 +7,7 @@ import sortByProps from './sortByProps';
  *
  * @func sortByProp
  * @memberOf RA
- * @since {@link https://char0n.github.io/ramda-adjunct/2.36.0|v2.36.0}
+ * @since {@link https://char0n.github.io/ramda-adjunct/3.4.0|v3.4.0}
  * @category List
  * @sig k -> [{k: v}] -> [{k: v}]
  * @param {Array.<string>} prop The property in the list param to sort by
@@ -15,10 +15,12 @@ import sortByProps from './sortByProps';
  * @return {Array.<object>} A new list sorted by the property in the prop param
  * @example
  *
+ * // sorting list of tuples
  * const sortByFirstItem = sortByProp(0);
  * const listOfTuples = [[-1, 1], [-2, 2], [-3, 3]];
- * sortByFirstItem(listOfTuples) // [[-3, 3], [-2, 2], [-1, 1]]
+ * sortByFirstItem(listOfTuples); // => [[-3, 3], [-2, 2], [-1, 1]]
  *
+ * // sorting list of objects
  * const sortByName = sortByProp('name');
  * const alice = {
  *   name: 'ALICE',
@@ -33,7 +35,7 @@ import sortByProps from './sortByProps';
  *   age: 314.159,
  * };
  * const people = [clara, bob, alice];
- * sortByName(people) // [alice, bob, clara]
+ * sortByName(people); // => [alice, bob, clara]
  */
 
 const addValueInAnArray = append(__, []);
