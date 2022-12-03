@@ -1704,6 +1704,14 @@ export function padStart(targetLength: number, value: string): string;
 export function padStart(targetLength: number): (value: string) => string;
 
 /**
+ * Sort a list of objects by a property.
+ */
+export function sortByProp<T>(prop: string | number, list: readonly T[]): T[];
+export function sortByProp(
+  prop: string | number
+): <T>(list: readonly T[]) => T[];
+
+/**
  * Sort a list of objects by a list of props (if first prop value is equivalent, sort by second, etc).
  */
 export function sortByProps(props: string[], list: object[]): object[];
