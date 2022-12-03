@@ -1,3 +1,17 @@
+# [3.4.0](https://github.com/char0n/ramda-adjunct/compare/v3.3.0...v3.4.0) (2022-12-03)
+
+
+### Bug Fixes
+
+* **isGeneratorFunction:** remove legacy predicate ([#2431](https://github.com/char0n/ramda-adjunct/issues/2431)) ([c576212](https://github.com/char0n/ramda-adjunct/commit/c5762124b47b738b45545fbece1099d2a870ccd4))
+
+
+### Features
+
+* **list:** add sortByProp ([#2384](https://github.com/char0n/ramda-adjunct/issues/2384)) ([61c2e9d](https://github.com/char0n/ramda-adjunct/commit/61c2e9de8bdfcbf941a91ea270688b1c434fdc61)), closes [#1241](https://github.com/char0n/ramda-adjunct/issues/1241)
+
+
+
 # [3.3.0](https://github.com/char0n/ramda-adjunct/compare/v3.2.0...v3.3.0) (2022-09-18)
 
 
