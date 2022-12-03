@@ -1,21 +1,4 @@
-import {
-  type,
-  is,
-  F as stubFalse,
-  either,
-  identical,
-  pipe,
-  curryN,
-} from 'ramda';
-
-let GeneratorFunction = null;
-let legacyCheck = null;
-try {
-  GeneratorFunction = new Function('return function* () {}')().constructor; // eslint-disable-line no-new-func
-  legacyCheck = is(GeneratorFunction);
-} catch (e) {
-  legacyCheck = stubFalse;
-}
+import { type, identical, pipe, curryN } from 'ramda';
 
 /**
  * Checks if input value is `Generator Function`.
@@ -37,7 +20,7 @@ try {
  */
 const isGeneratorFunction = curryN(
   1,
-  either(pipe(type, identical('GeneratorFunction')), legacyCheck)
+  pipe(type, identical('GeneratorFunction'))
 );
 
 export default isGeneratorFunction;
