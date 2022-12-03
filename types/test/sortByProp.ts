@@ -17,9 +17,9 @@ const clara = {
 };
 const people = [clara, bob, alice];
 
-RA.sortByProp('name')(people); // $ExpectType object[]
-RA.sortByProp('p')(people); // $ExpectType object[]
-// $ExpectType object[]
+RA.sortByProp('name')(people); // $ExpectType { name: string; age: number; lastName: string; }[]
+RA.sortByProp('p')(people); // $ExpectType { name: string; age: number; lastName: string; }[]
+// $ExpectType number[][]
 RA.sortByProp(0)([
   [1, 2],
   [3, 4],
