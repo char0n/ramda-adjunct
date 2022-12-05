@@ -151,7 +151,7 @@
     "eslint-plugin-mocha": "=10.1.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-ramda": "2.5.1",
-    "fantasy-land": "5.0.0",
+    "fantasy-land": "5.0.1",
     "fantasy-laws": "=2.0.1",
     "folktale": "=2.3.2",
     "glob": "=8.0.3",
