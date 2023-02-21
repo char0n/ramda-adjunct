@@ -157,7 +157,7 @@
     "glob": "=8.1.0",
     "husky": "8.0.3",
     "istanbul": "=0.4.5",
-    "jsdoc": "=4.0.1",
+    "jsdoc": "=4.0.2",
     "jsverify": "0.8.4",
     "license-cli": "1.1.6",
     "lint-staged": "13.1.2",
