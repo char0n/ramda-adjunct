@@ -10,9 +10,11 @@ module.exports = {
   entry: [
     'core-js/stable',
     'regenerator-runtime/runtime',
-    ...glob.sync('./test/*.js', {
-      ignore: ['./test/mocha-bootstrap.js'],
-    }),
+    ...glob
+      .globSync('./test/*.js', {
+        ignore: ['./test/mocha-bootstrap.js'],
+      })
+      .map((filePath) => `./${filePath}`),
   ],
   output: {
     path: path.resolve('.'),
