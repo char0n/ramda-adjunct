@@ -154,7 +154,7 @@
     "fantasy-land": "5.0.1",
     "fantasy-laws": "=2.0.1",
     "folktale": "=2.3.2",
-    "glob": "=9.3.0",
+    "glob": "=9.3.1",
     "husky": "8.0.3",
     "istanbul": "=0.4.5",
     "jsdoc": "=4.0.2",
