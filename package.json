@@ -168,7 +168,7 @@
     "nyc": "15.1.0",
     "prettier": "=2.8.7",
     "process": "=0.11.10",
-    "ramda": "=0.28.0",
+    "ramda": "=0.29.0",
     "ramda-fantasy": "=0.8.0",
     "regenerator-runtime": "=0.13.11",
     "rimraf": "4.4.1",
