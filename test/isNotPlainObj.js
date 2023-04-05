@@ -4,7 +4,6 @@ import * as R from 'ramda';
 import * as RA from '../src';
 import element from './shared/element';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 class Bar {
   constructor() {
@@ -71,9 +70,7 @@ describe('isNotPlainObj', function () {
 
   context('given a symbol value', function () {
     specify('should return true', function () {
-      if (Symbol !== 'undefined') {
-        assert.isTrue(RA.isNotPlainObj(Symbol.for('symbol')));
-      }
+      assert.isTrue(RA.isNotPlainObj(Symbol.for('symbol')));
     });
   });
 

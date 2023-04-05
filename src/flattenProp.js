@@ -23,6 +23,6 @@ import flattenPath from './flattenPath';
  *   { a: 1, b: { c: 3, d: 4 } }
  * ); // => { a: 1, c: 3, d: 4, b: { c: 3, d: 4 } };
  */
-const flattenProp = curry((prop, obj) => flattenPath(of(prop), obj));
+const flattenProp = curry((prop, obj) => flattenPath(of(Array, prop), obj));
 
 export default flattenProp;

@@ -25,6 +25,6 @@ import mergePath from './mergePath';
  *  { outer: { foo: 2 } }
  * ); //=> { outer: { foo: 3, bar: 4 } };
  */
-const mergeProp = curry((p, subj, obj) => mergePath(of(p), subj, obj));
+const mergeProp = curry((p, subj, obj) => mergePath(of(Array, p), subj, obj));
 
 export default mergeProp;

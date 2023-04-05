@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isValidDate', function () {
   context('given a valid `Date`', function () {
@@ -26,11 +25,7 @@ describe('isValidDate', function () {
       assert.isFalse(RA.isValidDate(Object(0)));
       assert.isFalse(RA.isValidDate(/x/));
       assert.isFalse(RA.isValidDate(Object('a')));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isValidDate(Symbol));
-      }
-
+      assert.isFalse(RA.isValidDate(Symbol));
       assert.isFalse(RA.isValidDate(null));
       assert.isFalse(RA.isValidDate(undefined));
     });

@@ -20,6 +20,6 @@ import spreadPath from './spreadPath';
  *
  * RA.spreadProp('b', { a: 1, b: { c: 3, d: 4 } }); // => { a: 1, c: 3, d: 4 };
  */
-const spreadProp = curry((prop, obj) => spreadPath(of(prop), obj));
+const spreadProp = curry((prop, obj) => spreadPath(of(Array, prop), obj));
 
 export default spreadProp;

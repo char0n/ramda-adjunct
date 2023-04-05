@@ -28,7 +28,7 @@ describe('lensNotSatisfy', function () {
         );
         assert.isFalse(
           RA.lensNotSatisfy(
-            pathEq(['foo', 'bar'], 42),
+            pathEq(42, ['foo', 'bar']),
             lensPath(['o1', 'o2']),
             {
               o1: { o2: { foo: { bar: 42 } } },

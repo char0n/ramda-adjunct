@@ -5,7 +5,6 @@ import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isValidNumber', function () {
   context('given a valid `Number`', function () {
@@ -37,11 +36,7 @@ describe('isValidNumber', function () {
       assert.isFalse(RA.isValidNumber({ a: 1 }));
       assert.isFalse(RA.isValidNumber(/x/));
       assert.isFalse(RA.isValidNumber(Object('a')));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isValidNumber(Symbol));
-      }
-
+      assert.isFalse(RA.isValidNumber(Symbol));
       assert.isFalse(RA.isValidNumber(null));
       assert.isFalse(RA.isValidNumber(undefined));
     });

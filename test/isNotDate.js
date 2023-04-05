@@ -3,7 +3,6 @@ import { assert } from 'chai';
 
 import * as RA from '../src';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isNotDate', function () {
   context('given date object', function () {
@@ -25,11 +24,7 @@ describe('isNotDate', function () {
       assert.isTrue(RA.isNotDate(Object(0)));
       assert.isTrue(RA.isNotDate(/x/));
       assert.isTrue(RA.isNotDate(Object('a')));
-
-      if (RA.isNotUndefined(Symbol)) {
-        assert.isTrue(RA.isNotDate(Symbol));
-      }
-
+      assert.isTrue(RA.isNotDate(Symbol));
       assert.isTrue(RA.isNotDate(null));
       assert.isTrue(RA.isNotDate(undefined));
     });

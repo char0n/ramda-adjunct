@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isPromise', function () {
@@ -17,10 +16,7 @@ describe('isPromise', function () {
       assert.isFalse(RA.isPromise({ 0: 1, length: 1 }));
       assert.isFalse(RA.isPromise(1));
       assert.isFalse(RA.isPromise(/x/));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isPromise(Symbol));
-      }
+      assert.isFalse(RA.isPromise(Symbol));
     });
   });
 

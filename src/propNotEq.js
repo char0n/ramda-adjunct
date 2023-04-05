@@ -8,9 +8,9 @@ import { propEq, complement } from 'ramda';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/2.3.0|v2.3.0}
  * @category Relation
- * @sig  String -> a -> Object -> Boolean
- * @param {String} name The property to pick
+ * @sig  a -> String -> Object -> Boolean
  * @param {a} val The value to compare to
+ * @param {String} name The property to pick
  * @param {Object} object The object, that presumably contains value under the property
  * @return {boolean} Comparison result
  * @see {@link http://ramdajs.com/docs/#propEq|R.propEq}
@@ -21,7 +21,7 @@ import { propEq, complement } from 'ramda';
  * const rusty = { name: 'Rusty', age: 10, hair: 'brown' };
  * const alois = { name: 'Alois', age: 15, disposition: 'surly' };
  * const kids = [abby, fred, rusty, alois];
- * const hasNotBrownHair = RA.propNotEq('hair', 'brown');
+ * const hasNotBrownHair = RA.propNotEq('brown', 'hair');
  *
  * R.filter(hasNotBrownHair, kids); //=> [abby, alois]
  */

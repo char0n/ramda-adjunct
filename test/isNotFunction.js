@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 import genFunc from './shared/genFunc';
 import asyncFunc from './shared/asyncFunc';
@@ -17,7 +16,7 @@ describe('isNotFunction', function () {
       RA.isNotFunction(asyncFunc),
       typeof asyncFunc !== 'function'
     );
-    assert.strictEqual(RA.isNotFunction(Symbol), typeof Symbol !== 'function');
+    assert.isFalse(RA.isNotFunction(Symbol));
 
     assert.isFalse(RA.isNotFunction(() => {}));
     assert.isFalse(RA.isNotFunction(function () {}));

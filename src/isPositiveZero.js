@@ -1,4 +1,4 @@
-import { identical } from 'ramda';
+import { identical, curryN } from 'ramda';
 
 /**
  * Checks if value is a positive zero (+0).
@@ -18,6 +18,6 @@ import { identical } from 'ramda';
  * RA.isPositiveZero(-0); //=> false
  * RA.isPositiveZero(null); //=> false
  */
-const isPositiveZero = identical(+0);
+const isPositiveZero = curryN(1, identical(+0));
 
 export default isPositiveZero;

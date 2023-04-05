@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isTrue', function () {
@@ -39,10 +38,7 @@ describe('isTrue', function () {
       assert.isFalse(RA.isTrue(null));
       assert.isFalse(RA.isTrue(undefined));
       assert.isFalse(RA.isTrue(NaN));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isTrue(Symbol));
-      }
+      assert.isFalse(RA.isTrue(Symbol));
     });
   });
 

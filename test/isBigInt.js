@@ -6,7 +6,6 @@ import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER'
 import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
 import BigInt from './shared/BigInt';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isBigInt', function () {
   if (BigInt !== undefined) {
@@ -61,11 +60,7 @@ describe('isBigInt', function () {
       assert.isFalse(RA.isBigInt(NaN));
       assert.isFalse(RA.isBigInt(Object(0)));
       assert.isFalse(RA.isBigInt(Object(0.1)));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isBigInt(Symbol));
-      }
-
+      assert.isFalse(RA.isBigInt(Symbol));
       assert.isFalse(RA.isBigInt(null));
       assert.isFalse(RA.isBigInt(undefined));
     });

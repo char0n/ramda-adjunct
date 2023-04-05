@@ -2,7 +2,6 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 
 describe('isNotBoolean', function () {
   context('given non boolean value', function () {

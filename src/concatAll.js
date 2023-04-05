@@ -24,7 +24,8 @@ const leftIdentitySemigroup = { concat: identity };
  *
  * concatAll([[1], [2], [3]]); //=> [1, 2, 3]
  * concatAll(['1', '2', '3']); //=> '123'
- * concatAll([]); //=> undefined;
+ * concatAll([]); //=> undefined
+ * concatAll(null); //=> undefined
  */
 const concatAll = pipe(
   reduce(concat, leftIdentitySemigroup),

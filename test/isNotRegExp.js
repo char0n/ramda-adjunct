@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isNotRegExp', function () {
   context('given a non-regexp value', function () {
@@ -21,11 +20,7 @@ describe('isNotRegExp', function () {
       assert.isTrue(RA.isNotRegExp(Object(0)));
       assert.isTrue(RA.isNotRegExp(Object('a')));
       assert.isTrue(RA.isNotRegExp(args));
-
-      if (Symbol !== 'undefined') {
-        assert.isTrue(RA.isNotRegExp(Symbol));
-      }
-
+      assert.isTrue(RA.isNotRegExp(Symbol));
       assert.isTrue(RA.isNotRegExp(null));
       assert.isTrue(RA.isNotRegExp(undefined));
     });

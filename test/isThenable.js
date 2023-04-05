@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isThenable', function () {
@@ -17,10 +16,7 @@ describe('isThenable', function () {
       assert.isFalse(RA.isThenable({ 0: 1, length: 1 }));
       assert.isFalse(RA.isThenable(1));
       assert.isFalse(RA.isThenable(/x/));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isThenable(Symbol));
-      }
+      assert.isFalse(RA.isThenable(Symbol));
     });
   });
 

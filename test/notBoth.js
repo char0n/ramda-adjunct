@@ -5,17 +5,7 @@ import sinon from 'sinon';
 
 import * as RA from '../src';
 
-const supportsFantasyLand = () => {
-  try {
-    return RA.notBoth(Just(true), Just(true)).equals(Just(false));
-  } catch (e) {
-    return false;
-  }
-};
-
 describe('notBoth', function () {
-  const isFantasyLandSupported = supportsFantasyLand();
-
   it('should combine two boolean-returning functions into one', function () {
     const even = (x) => x % 2 === 0;
     const gt10 = (x) => x > 10;
@@ -47,19 +37,17 @@ describe('notBoth', function () {
     });
   });
 
-  if (isFantasyLandSupported) {
-    it('should accept fantasy-land applicative functors', function () {
-      assert.isTrue(R.equals(RA.notBoth(Just(true), Just(true)), Just(false)));
-      assert.isTrue(R.equals(RA.notBoth(Just(true), Just(false)), Just(true)));
-      assert.isTrue(R.equals(RA.notBoth(Just(false), Just(true)), Just(true)));
-      assert.isTrue(R.equals(RA.notBoth(Just(false), Just(false)), Just(true)));
-      assert.isTrue(R.equals(RA.notBoth(Just(true), Nothing()), Nothing()));
-      assert.isTrue(R.equals(RA.notBoth(Nothing(), Just(true)), Nothing()));
-      assert.isTrue(R.equals(RA.notBoth(Nothing(), Just(false)), Nothing()));
-      assert.isTrue(R.equals(RA.notBoth(Just(false), Nothing()), Nothing()));
-      assert.isTrue(R.equals(RA.notBoth(Nothing(), Nothing()), Nothing()));
-    });
-  }
+  it('should accept fantasy-land applicative functors', function () {
+    assert.isTrue(R.equals(RA.notBoth(Just(true), Just(true)), Just(false)));
+    assert.isTrue(R.equals(RA.notBoth(Just(true), Just(false)), Just(true)));
+    assert.isTrue(R.equals(RA.notBoth(Just(false), Just(true)), Just(true)));
+    assert.isTrue(R.equals(RA.notBoth(Just(false), Just(false)), Just(true)));
+    assert.isTrue(R.equals(RA.notBoth(Just(true), Nothing()), Nothing()));
+    assert.isTrue(R.equals(RA.notBoth(Nothing(), Just(true)), Nothing()));
+    assert.isTrue(R.equals(RA.notBoth(Nothing(), Just(false)), Nothing()));
+    assert.isTrue(R.equals(RA.notBoth(Just(false), Nothing()), Nothing()));
+    assert.isTrue(R.equals(RA.notBoth(Nothing(), Nothing()), Nothing()));
+  });
 
   it('should be curried', function () {
     const even = (x) => x % 2 === 0;

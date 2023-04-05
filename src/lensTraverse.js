@@ -18,8 +18,10 @@ import Identity from './fantasy-land/Identity';
  * @since {@link https://char0n.github.io/ramda-adjunct/2.7.0|2.7.0}
  * @category Relation
  * @typedef Lens s a = Functor f => (a -> f a) -> s -> f s
+ * @sig fantasy-land/of :: TypeRep f => f ~> a → f a
  * @sig Applicative f => (a -> f a) -> Lens s a
- * @param {!function} of The Applicative-returning function
+ * @sig Applicative f => TypeRep f -> Lens s a
+ * @param {!Object|!Function} TypeRepresentative with an `of` or `fantasy-land/of` method
  * @return {!function} The Traversable lens
  * @see {@link http://ramdajs.com/docs/#lens|R.lens}, {@link http://ramdajs.com/docs/#traverse|R.traverse}
  *
@@ -35,10 +37,20 @@ import Identity from './fantasy-land/Identity';
  *
  * R.set(maybeLens, Maybe.Just(1), [Maybe.just(2), Maybe.Just(3)]); // => Maybe.Just([1, 1])
  */
-const lensTraverse = curryN(1, (of) =>
-  curry((toFunctorFn, target) =>
-    Identity.of(traverse(of, pipe(toFunctorFn, prop('value')), target))
-  )
-);
+/* eslint-disable no-nested-ternary */
+const lensTraverse = curryN(1, (F) => {
+  const of =
+    typeof F['fantasy-land/of'] === 'function'
+      ? F['fantasy-land/of']
+      : typeof F.of === 'function'
+      ? F.of
+      : F;
+  const TypeRep = { 'fantasy-land/of': of };
+
+  return curry((toFunctorFn, target) =>
+    Identity.of(traverse(TypeRep, pipe(toFunctorFn, prop('value')), target))
+  );
+});
+/* eslint-enable */
 
 export default lensTraverse;

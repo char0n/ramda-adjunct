@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isDate', function () {
   it('should test value for a `Date`', function () {
@@ -20,11 +19,7 @@ describe('isDate', function () {
     assert.isFalse(RA.isDate(Object(0)));
     assert.isFalse(RA.isDate(/x/));
     assert.isFalse(RA.isDate(Object('a')));
-
-    if (Symbol !== 'undefined') {
-      assert.isFalse(RA.isDate(Symbol));
-    }
-
+    assert.isFalse(RA.isDate(Symbol));
     assert.isFalse(RA.isDate(null));
     assert.isFalse(RA.isDate(undefined));
   });

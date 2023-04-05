@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 
 describe('isBoolean', function () {
   context('given boolean value', function () {

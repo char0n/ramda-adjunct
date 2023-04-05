@@ -3,12 +3,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-// https://github.com/ramda/ramda/pull/1992
-const hasFunctionReferenceEqualityBug = (() => {
-  const f = () => {};
-  return R.uniq([f, f, f]).length !== 1;
-})();
-
 describe('allEqual', function () {
   context('given all items are equal', function () {
     specify('should return true', function () {
@@ -34,14 +28,12 @@ describe('allEqual', function () {
     });
   });
 
-  if (!hasFunctionReferenceEqualityBug) {
-    context('given items are reference to function', function () {
-      specify('should return true', function () {
-        const f = () => {};
-        assert.isTrue(RA.allEqual([f, f, f]));
-      });
+  context('given items are reference to function', function () {
+    specify('should return true', function () {
+      const f = () => {};
+      assert.isTrue(RA.allEqual([f, f, f]));
     });
-  }
+  });
 
   context('given empty list provided', function () {
     specify('should return true', function () {

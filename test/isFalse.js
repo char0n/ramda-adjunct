@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isFalse', function () {
@@ -34,10 +33,7 @@ describe('isFalse', function () {
     assert.isFalse(RA.isFalse(null));
     assert.isFalse(RA.isFalse(undefined));
     assert.isFalse(RA.isFalse(NaN));
-
-    if (Symbol !== 'undefined') {
-      assert.isFalse(RA.isFalse(Symbol));
-    }
+    assert.isFalse(RA.isFalse(Symbol));
   });
 
   it('should support placeholder to specify "gaps"', function () {

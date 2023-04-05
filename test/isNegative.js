@@ -5,7 +5,6 @@ import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isNegative', function () {
   it('should test value for a negative `Number`', function () {
@@ -31,11 +30,7 @@ describe('isNegative', function () {
     assert.isFalse(RA.isNegative({ a: 1 }));
     assert.isFalse(RA.isNegative(/x/));
     assert.isFalse(RA.isNegative(Object('a')));
-
-    if (Symbol !== 'undefined') {
-      assert.isFalse(RA.isNegative(Symbol));
-    }
-
+    assert.isFalse(RA.isNegative(Symbol));
     assert.isFalse(RA.isNegative(null));
     assert.isFalse(RA.isNegative(undefined));
   });

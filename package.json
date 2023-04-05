@@ -93,8 +93,8 @@
       }
     },
     "test:web": "testem ci",
-    "test:ramda": "bnr test:ramda0.28.0",
-    "test:ramda0.28.0": "npm install ramda@0.28.0 && npm test",
+    "test:ramda": "bnr test:ramda0.29.0",
+    "test:ramda0.29.0": "npm install ramda@0.29.0 && npm test",
     "test:bundle-create": "webpack --config webpack.config-test.web.js --progress",
     "test:bundle-clean": "rimraf tmp-test-bundle.js",
     "coverage": {
@@ -121,7 +121,7 @@
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
   "peerDependencies": {
-    "ramda": ">= 0.28.0 <= 0.28.0"
+    "ramda": ">= 0.29.0"
   },
   "devDependencies": {
     "@babel/cli": "7.21.0",
@@ -168,7 +168,7 @@
     "nyc": "15.1.0",
     "prettier": "=2.8.7",
     "process": "=0.11.10",
-    "ramda": "=0.28.0",
+    "ramda": "=0.29.0",
     "ramda-fantasy": "=0.8.0",
     "regenerator-runtime": "=0.13.11",
     "rimraf": "4.4.1",
