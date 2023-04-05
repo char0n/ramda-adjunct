@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 
 describe('isNotUndefined', function () {
   context('given a non-undefined value', function () {
@@ -12,10 +11,7 @@ describe('isNotUndefined', function () {
       assert.isTrue(RA.isNotUndefined({}));
       assert.isTrue(RA.isNotUndefined(0));
       assert.isTrue(RA.isNotUndefined(''));
-
-      if (Symbol !== 'undefined') {
-        assert.isTrue(RA.isNotUndefined(Symbol));
-      }
+      assert.isTrue(RA.isNotUndefined(Symbol));
     });
   });
 

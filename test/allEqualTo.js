@@ -1,13 +1,6 @@
 import { assert } from 'chai';
-import * as R from 'ramda';
 
 import * as RA from '../src';
-
-// https://github.com/ramda/ramda/pull/1992
-const hasFunctionReferenceEqualityBug = (() => {
-  const f = () => {};
-  return R.uniq([f, f, f]).length !== 1;
-})();
 
 describe('allEqualTo', function () {
   context('given all items are equal', function () {
@@ -36,24 +29,22 @@ describe('allEqualTo', function () {
     });
   });
 
-  if (!hasFunctionReferenceEqualityBug) {
-    context('given items are reference to function', function () {
-      specify('should return true', function () {
-        const f = () => {};
-        assert.isTrue(RA.allEqualTo(f, [f, f, f]));
-      });
+  context('given items are reference to function', function () {
+    specify('should return true', function () {
+      const f = () => {};
+      assert.isTrue(RA.allEqualTo(f, [f, f, f]));
     });
+  });
 
-    context(
-      'given items are same functions without the same reference',
-      function () {
-        specify('should return false', function () {
-          const getF = () => () => {};
-          assert.isFalse(RA.allEqualTo(getF(), [getF(), getF(), getF()]));
-        });
-      }
-    );
-  }
+  context(
+    'given items are same functions without the same reference',
+    function () {
+      specify('should return false', function () {
+        const getF = () => () => {};
+        assert.isFalse(RA.allEqualTo(getF(), [getF(), getF(), getF()]));
+      });
+    }
+  );
 
   context('given empty list provided', function () {
     specify('should return true', function () {

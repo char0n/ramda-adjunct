@@ -2,7 +2,6 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 
 describe('round', function () {
   it('should round float to nearest integer', function () {
@@ -42,17 +41,7 @@ describe('round', function () {
 
   context('given Symbol value', function () {
     specify('should throw TypeError', function () {
-      let shouldThrow;
-      try {
-        Math.round(Symbol(''));
-        shouldThrow = false;
-      } catch (e) {
-        shouldThrow = true;
-      }
-
-      if (shouldThrow) {
-        assert.throw(() => RA.round(Symbol('')));
-      }
+      assert.throw(() => RA.round(Symbol('')));
     });
   });
 

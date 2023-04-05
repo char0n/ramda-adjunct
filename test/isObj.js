@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isObj', function () {
   context('given an object value', function () {
@@ -22,10 +21,7 @@ describe('isObj', function () {
       assert.isTrue(RA.isObj(Object(0)));
       assert.isTrue(RA.isObj(/x/));
       assert.isTrue(RA.isObj(Object('a')));
-
-      if (Symbol !== 'undefined') {
-        assert.isTrue(RA.isObj(Symbol));
-      }
+      assert.isTrue(RA.isObj(Symbol));
     });
   });
 

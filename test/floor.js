@@ -2,7 +2,6 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 
 describe('floor', function () {
   it('should floor float to nearest integer', function () {
@@ -42,17 +41,7 @@ describe('floor', function () {
 
   context('given Symbol value', function () {
     specify('should throw TypeError', function () {
-      let shouldThrow;
-      try {
-        Math.floor(Symbol(''));
-        shouldThrow = false;
-      } catch (e) {
-        shouldThrow = true;
-      }
-
-      if (shouldThrow) {
-        assert.throw(() => RA.floor(Symbol('')));
-      }
+      assert.throw(() => RA.floor(Symbol('')));
     });
   });
 

@@ -19,6 +19,6 @@ import isNotArray from './isNotArray';
  * RA.ensureArray(42); //=> [42]
  * RA.ensureArray([42]); //=> [42]
  */
-const ensureArray = when(isNotArray, of);
+const ensureArray = when(isNotArray, of(Array));
 
 export default ensureArray;

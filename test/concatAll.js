@@ -4,14 +4,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 
-let throwsOnIncompatibleSemigroups = false;
-
-try {
-  R.concat([1], '1');
-} catch (e) {
-  throwsOnIncompatibleSemigroups = true;
-}
-
 describe('concatAll', function () {
   it('should concatenate arrays', function () {
     assert.sameOrderedMembers(RA.concatAll([[1], [2], [3]]), [1, 2, 3]);
@@ -26,7 +18,7 @@ describe('concatAll', function () {
   });
 
   context('given foldable is empty', function () {
-    specify('should returns undefined', function () {
+    specify('should return undefined', function () {
       assert.isUndefined(RA.concatAll([]));
     });
   });
@@ -38,22 +30,14 @@ describe('concatAll', function () {
   });
 
   context('given foldable contains non-compatible semigroups', function () {
-    if (!throwsOnIncompatibleSemigroups) {
-      specify('should return concatenated semigroups', function () {
-        assert.deepEqual(RA.concatAll([[1], '1']), [1, '1']);
-      });
-    }
-
-    if (throwsOnIncompatibleSemigroups) {
-      specify('should throw', function () {
-        assert.throws(() => RA.concatAll([[1], '1']), TypeError);
-      });
-    }
+    specify('should throw', function () {
+      assert.throws(() => RA.concatAll([[1], '1']), TypeError);
+    });
   });
 
   context('given passed non-foldable', function () {
-    specify('should throw', function () {
-      assert.throws(() => RA.concatAll(null), TypeError);
+    specify('should return undefined', function () {
+      assert.isUndefined(RA.concatAll(null));
     });
   });
 

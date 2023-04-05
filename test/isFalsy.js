@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isFalsy', function () {
@@ -30,7 +29,7 @@ describe('isFalsy', function () {
       assert.isFalse(RA.isFalsy({ 0: 1, length: 1 }));
       assert.isFalse(RA.isFalsy(1));
       assert.isFalse(RA.isFalsy(/x/));
-      assert.strictEqual(RA.isFalsy(Symbol), RA.isUndefined(Symbol));
+      assert.isFalse(RA.isFalsy(Symbol));
       assert.isFalse(RA.isFalsy({}));
       assert.isFalse(RA.isFalsy([]));
       assert.isFalse(RA.isFalsy(Infinity));

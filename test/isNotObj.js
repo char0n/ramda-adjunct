@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isNotObj', function () {
   context('given non object value', function () {
@@ -29,10 +28,7 @@ describe('isNotObj', function () {
       assert.isFalse(RA.isNotObj(Object(0)));
       assert.isFalse(RA.isNotObj(/x/));
       assert.isFalse(RA.isNotObj(Object('a')));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isNotObj(Symbol));
-      }
+      assert.isFalse(RA.isNotObj(Symbol));
     });
   });
 

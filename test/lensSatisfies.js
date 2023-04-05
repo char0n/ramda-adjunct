@@ -13,7 +13,7 @@ describe('lensSatisfies', function () {
         );
         assert.isTrue(RA.lensSatisfies((x) => x > 0, lensIndex(1), [0, 1, 2]));
         assert.isTrue(
-          RA.lensSatisfies(pathEq(['foo', 'bar'], 42), lensPath(['o1', 'o2']), {
+          RA.lensSatisfies(pathEq(42, ['foo', 'bar']), lensPath(['o1', 'o2']), {
             o1: { o2: { foo: { bar: 42 } } },
           })
         );

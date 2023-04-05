@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 
 describe('isPair', function () {
   context('given a pair value', function () {
@@ -24,10 +23,7 @@ describe('isPair', function () {
       assert.isFalse(RA.isPair(new Date()));
       assert.isFalse(RA.isPair({ 0: 0, 1: 1 }));
       assert.isFalse(RA.isPair({ foo: 0, bar: 1 }));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isPair(Symbol));
-      }
+      assert.isFalse(RA.isPair(Symbol));
     });
   });
 

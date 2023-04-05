@@ -2,7 +2,6 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 
 describe('ceil', function () {
   it('should ceil float to nearest integer', function () {

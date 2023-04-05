@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isNotObjLike', function () {
   context('given a value with non object-like interface', function () {
@@ -11,10 +10,7 @@ describe('isNotObjLike', function () {
       assert.isTrue(RA.isNotObjLike(Array.prototype.slice));
       assert.isTrue(RA.isNotObjLike(null));
       assert.isTrue(RA.isNotObjLike(undefined));
-
-      if (Symbol !== 'undefined') {
-        assert.isTrue(RA.isNotObjLike(Symbol));
-      }
+      assert.isTrue(RA.isNotObjLike(Symbol));
     });
   });
 

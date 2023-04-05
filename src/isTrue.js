@@ -1,4 +1,4 @@
-import { identical } from 'ramda';
+import { identical, curryN } from 'ramda';
 
 /**
  * Checks if input value is the Boolean primitive `true`. Will return false for Boolean objects
@@ -22,6 +22,6 @@ import { identical } from 'ramda';
  * RA.isTrue(new Boolean(true)); // => false
  */
 
-const isTrue = identical(true);
+const isTrue = curryN(1, identical(true));
 
 export default isTrue;

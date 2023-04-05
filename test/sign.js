@@ -2,7 +2,6 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import { signPonyfill } from '../src/sign';
 
 describe('sign', function () {
@@ -49,17 +48,7 @@ describe('sign', function () {
 
   context('given Symbol value', function () {
     specify('should throw TypeError', function () {
-      let shouldThrow;
-      try {
-        Math.sign(Symbol(''));
-        shouldThrow = false;
-      } catch (e) {
-        shouldThrow = true;
-      }
-
-      if (shouldThrow) {
-        assert.throw(() => RA.sign(Symbol('')));
-      }
+      assert.throw(() => RA.sign(Symbol('')));
     });
   });
 

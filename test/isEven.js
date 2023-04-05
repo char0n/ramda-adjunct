@@ -5,7 +5,6 @@ import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isEven', function () {
   it('should test value for an even integer `Number`', function () {
@@ -36,11 +35,7 @@ describe('isEven', function () {
     assert.isFalse(RA.isEven({ a: 1 }));
     assert.isFalse(RA.isEven(/x/));
     assert.isFalse(RA.isEven(Object('a')));
-
-    if (Symbol !== 'undefined') {
-      assert.isFalse(RA.isEven(Symbol));
-    }
-
+    assert.isFalse(RA.isEven(Symbol));
     assert.isFalse(RA.isOdd(null));
     assert.isFalse(RA.isOdd(undefined));
   });

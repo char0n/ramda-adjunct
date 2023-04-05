@@ -3,7 +3,6 @@ import * as R from 'ramda';
 
 import * as RA from '../src';
 import BigInt from './shared/BigInt';
-import Symbol from './shared/Symbol';
 
 describe('isNotPrimitive', function () {
   context('given a primitive value', function () {
@@ -13,12 +12,8 @@ describe('isNotPrimitive', function () {
       assert.isFalse(RA.isNotPrimitive(true));
       assert.isFalse(RA.isNotPrimitive(null));
       assert.isFalse(RA.isNotPrimitive(undefined));
-      if (Symbol !== undefined) {
-        assert.isFalse(RA.isNotPrimitive(Symbol.for('')));
-      }
-      if (BigInt !== undefined) {
-        assert.isFalse(RA.isNotPrimitive(BigInt(1234)));
-      }
+      assert.isFalse(RA.isNotPrimitive(Symbol.for('')));
+      assert.isFalse(RA.isNotPrimitive(BigInt(1234)));
     });
   });
 

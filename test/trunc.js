@@ -2,7 +2,6 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import { truncPonyfill } from '../src/trunc';
 
 describe('trunc', function () {
@@ -46,17 +45,7 @@ describe('trunc', function () {
 
   context('given Symbol value', function () {
     specify('should throw TypeError', function () {
-      let shouldThrow;
-      try {
-        Math.trunc(Symbol(''));
-        shouldThrow = false;
-      } catch (e) {
-        shouldThrow = true;
-      }
-
-      if (shouldThrow) {
-        assert.throw(() => RA.trunc(Symbol('')));
-      }
+      assert.throw(() => RA.trunc(Symbol('')));
     });
   });
 
@@ -129,17 +118,7 @@ describe('trunc', function () {
 
     context('given Symbol value', function () {
       specify('should throw TypeError', function () {
-        let shouldThrow;
-        try {
-          Math.trunc(Symbol(''));
-          shouldThrow = false;
-        } catch (e) {
-          shouldThrow = true;
-        }
-
-        if (shouldThrow) {
-          assert.throw(() => truncPonyfill(Symbol('')));
-        }
+        assert.throw(() => truncPonyfill(Symbol('')));
       });
     });
 

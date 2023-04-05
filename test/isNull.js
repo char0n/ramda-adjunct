@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 
 describe('isNull', function () {
   context('given a null value', function () {
@@ -18,10 +17,7 @@ describe('isNull', function () {
       assert.isFalse(RA.isNull({}));
       assert.isFalse(RA.isNull(0));
       assert.isFalse(RA.isNull(''));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isNull(Symbol));
-      }
+      assert.isFalse(RA.isNull(Symbol));
     });
   });
 

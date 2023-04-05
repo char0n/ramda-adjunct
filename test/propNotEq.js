@@ -12,13 +12,13 @@ describe('propNotEq', function () {
 
   context('given props values are not equal', function () {
     specify('should return true', function () {
-      assert.isTrue(RA.propNotEq('a', 'foo', obj));
+      assert.isTrue(RA.propNotEq('foo', 'a', obj));
     });
   });
 
   context('given props values are equal', function () {
     specify('should return false', function () {
-      assert.isFalse(RA.propNotEq('a', 1, obj));
+      assert.isFalse(RA.propNotEq(1, 'a', obj));
     });
   });
 
@@ -30,17 +30,17 @@ describe('propNotEq', function () {
       return x instanceof Just && R.equals(x.value, this.value);
     };
 
-    assert.isTrue(RA.propNotEq('value', 0, { value: -0 }));
-    assert.isTrue(RA.propNotEq('value', -0, { value: 0 }));
-    assert.isFalse(RA.propNotEq('value', NaN, { value: NaN }));
+    assert.isTrue(RA.propNotEq(0, 'value', { value: -0 }));
+    assert.isTrue(RA.propNotEq(-0, 'value', { value: 0 }));
+    assert.isFalse(RA.propNotEq(NaN, 'value', { value: NaN }));
     assert.isFalse(
-      RA.propNotEq('value', new Just([42]), { value: new Just([42]) })
+      RA.propNotEq(new Just([42]), 'value', { value: new Just([42]) })
     );
   });
 
   context('given there is no prop bar', function () {
     specify('should return true', function () {
-      assert.isTrue(RA.propNotEq('bar', 'foo', obj));
+      assert.isTrue(RA.propNotEq('foo', 'bar', obj));
     });
   });
 
@@ -52,7 +52,7 @@ describe('propNotEq', function () {
       });
 
       specify('should return false', function () {
-        assert.isFalse(RA.propNotEq(0, 'a', obj));
+        assert.isFalse(RA.propNotEq('a', 0, obj));
       });
     });
 
@@ -63,15 +63,15 @@ describe('propNotEq', function () {
       });
 
       specify('should return true', function () {
-        assert.isTrue(RA.propNotEq(0, 'x', obj));
+        assert.isTrue(RA.propNotEq('x', 0, obj));
       });
     });
   });
 
   it('should be curried', function () {
-    assert.isTrue(RA.propNotEq('a', 'foo', obj));
-    assert.isTrue(RA.propNotEq('a')('foo', obj));
-    assert.isTrue(RA.propNotEq('a', 'foo')(obj));
-    assert.isTrue(RA.propNotEq('a')('foo')(obj));
+    assert.isTrue(RA.propNotEq('foo', 'a', obj));
+    assert.isTrue(RA.propNotEq('foo')('a', obj));
+    assert.isTrue(RA.propNotEq('foo', 'a')(obj));
+    assert.isTrue(RA.propNotEq('foo')('a')(obj));
   });
 });

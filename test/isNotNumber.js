@@ -5,7 +5,6 @@ import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isNotNumber', function () {
   context('given non number value', function () {
@@ -21,11 +20,7 @@ describe('isNotNumber', function () {
       assert.isTrue(RA.isNotNumber(/x/));
       assert.isTrue(RA.isNotNumber(Object('a')));
       assert.isTrue(RA.isNotNumber('123'));
-
-      if (Symbol !== 'undefined') {
-        assert.isTrue(RA.isNotNumber(Symbol));
-      }
-
+      assert.isTrue(RA.isNotNumber(Symbol));
       assert.isTrue(RA.isNotNumber(null));
       assert.isTrue(RA.isNotNumber(undefined));
     });

@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isNotString', function () {
@@ -17,10 +16,7 @@ describe('isNotString', function () {
       assert.isTrue(RA.isNotString({ 0: 1, length: 1 }));
       assert.isTrue(RA.isNotString(1));
       assert.isTrue(RA.isNotString(/x/));
-
-      if (Symbol !== 'undefined') {
-        assert.isTrue(RA.isNotString(Symbol));
-      }
+      assert.isTrue(RA.isNotString(Symbol));
     });
   });
 

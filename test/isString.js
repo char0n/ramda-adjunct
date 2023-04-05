@@ -2,7 +2,6 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 
 import * as RA from '../src';
-import Symbol from './shared/Symbol';
 import args from './shared/arguments';
 
 describe('isString', function () {
@@ -24,10 +23,7 @@ describe('isString', function () {
       assert.isFalse(RA.isString({ 0: 1, length: 1 }));
       assert.isFalse(RA.isString(1));
       assert.isFalse(RA.isString(/x/));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isString(Symbol));
-      }
+      assert.isFalse(RA.isString(Symbol));
     });
   });
 

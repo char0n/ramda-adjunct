@@ -12,13 +12,13 @@ describe('pathNotEq', function () {
 
   context('given path values are not equal', function () {
     specify('should return true', function () {
-      assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
+      assert.isTrue(RA.pathNotEq('foo', ['a', 'b'], obj));
     });
   });
 
   context('given path values are equal', function () {
     specify('should return false', function () {
-      assert.isFalse(RA.pathNotEq(['a', 'b'], 1, obj));
+      assert.isFalse(RA.pathNotEq(1, ['a', 'b'], obj));
     });
   });
 
@@ -30,17 +30,17 @@ describe('pathNotEq', function () {
       return x instanceof Just && R.equals(x.value, this.value);
     };
 
-    assert.isTrue(RA.pathNotEq(['a', 'b'], 0, { a: { b: -0 } }));
-    assert.isTrue(RA.pathNotEq(['a', 'b'], -0, { a: { b: 0 } }));
-    assert.isFalse(RA.pathNotEq(['a', 'b'], NaN, { a: { b: NaN } }));
+    assert.isTrue(RA.pathNotEq(0, ['a', 'b'], { a: { b: -0 } }));
+    assert.isTrue(RA.pathNotEq(-0, ['a', 'b'], { a: { b: 0 } }));
+    assert.isFalse(RA.pathNotEq(NaN, ['a', 'b'], { a: { b: NaN } }));
     assert.isFalse(
-      RA.pathNotEq(['a', 'b'], new Just([42]), { a: { b: new Just([42]) } })
+      RA.pathNotEq(new Just([42]), ['a', 'b'], { a: { b: new Just([42]) } })
     );
   });
 
   context('given there is no path', function () {
     specify('should return true', function () {
-      assert.isTrue(RA.pathNotEq(['bar', 'baz'], 'foo', obj));
+      assert.isTrue(RA.pathNotEq('foo', ['bar', 'baz'], obj));
     });
   });
 
@@ -55,7 +55,7 @@ describe('pathNotEq', function () {
       });
 
       specify('should return false', function () {
-        assert.isFalse(RA.pathNotEq([0, 1], 'b', obj));
+        assert.isFalse(RA.pathNotEq('b', [0, 1], obj));
       });
     });
 
@@ -69,7 +69,7 @@ describe('pathNotEq', function () {
       });
 
       specify('should return true', function () {
-        assert.isTrue(RA.pathNotEq([999, 999], 'x', obj));
+        assert.isTrue(RA.pathNotEq('x', [999, 999], obj));
       });
     });
   });
@@ -79,16 +79,16 @@ describe('pathNotEq', function () {
     const user2 = { address: { zipCode: 55555 } };
     const user3 = { name: 'Bob' };
     const users = [user1, user2, user3];
-    const isFamous = RA.pathNotEq(['address', 'zipCode'], 90210);
+    const isFamous = RA.pathNotEq(90210, ['address', 'zipCode']);
     const result = R.filter(isFamous, users); //= > [ user2, user3 ]
 
     assert.sameDeepOrderedMembers(result, [user2, user3]);
   });
 
   it('should be curried', function () {
-    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo', obj));
-    assert.isTrue(RA.pathNotEq(['a', 'b'])('foo', obj));
-    assert.isTrue(RA.pathNotEq(['a', 'b'], 'foo')(obj));
-    assert.isTrue(RA.pathNotEq(['a', 'b'])('foo')(obj));
+    assert.isTrue(RA.pathNotEq('foo', obj, ['a', 'b']));
+    assert.isTrue(RA.pathNotEq('foo', obj)(['a', 'b']));
+    assert.isTrue(RA.pathNotEq('foo', ['a', 'b'])(obj));
+    assert.isTrue(RA.pathNotEq('foo')(['a', 'b'])(obj));
   });
 });

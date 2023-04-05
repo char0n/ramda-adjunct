@@ -5,7 +5,6 @@ import * as RA from '../src';
 import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
 import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
 import args from './shared/arguments';
-import Symbol from './shared/Symbol';
 
 describe('isPositive', function () {
   context('given a positive `Number`', function () {
@@ -41,11 +40,7 @@ describe('isPositive', function () {
       assert.isFalse(RA.isPositive({ a: 1 }));
       assert.isFalse(RA.isPositive(/x/));
       assert.isFalse(RA.isPositive(Object('a')));
-
-      if (Symbol !== 'undefined') {
-        assert.isFalse(RA.isPositive(Symbol));
-      }
-
+      assert.isFalse(RA.isPositive(Symbol));
       assert.isFalse(RA.isPositive(null));
       assert.isFalse(RA.isPositive(undefined));
     });
