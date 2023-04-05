@@ -1,3 +1,17 @@
+# [4.0.0](https://github.com/char0n/ramda-adjunct/compare/v3.4.0...v4.0.0) (2023-04-05)
+
+
+### Features
+
+* add support for ramda@0.29.0 ([#2568](https://github.com/char0n/ramda-adjunct/issues/2568)) ([05def8d](https://github.com/char0n/ramda-adjunct/commit/05def8d60fd9c71c4e4f8d9345b7b80ffa6dd6f7)), closes [#2567](https://github.com/char0n/ramda-adjunct/issues/2567)
+
+### Breaking changes
+
+* pathNotEq changed parameter order to reflect the order in ramda@0.29.0
+* propNotEq changed parameter order to reflect the order in ramda@0.29.0
+
+
+
 # [3.4.0](https://github.com/char0n/ramda-adjunct/compare/v3.3.0...v3.4.0) (2022-12-03)
 
 

@@ -31,19 +31,21 @@ fs.writeFileSync(ramdaDocsPath, fs.readFileSync(ramdaDistPath));
 fs.writeFileSync(raWebDocsPath, fs.readFileSync(raWebDistPath));
 
 // Append RA into docs templates.
-glob(path.normalize(`${docsPath}/*.html`), null, (err, files) => {
-  if (err !== null) {
-    console.error(err);
-  }
+(async () => {
+  try {
+    const files = await glob(path.normalize(`${docsPath}/*.html`));
 
-  files.forEach((htmlFile) => {
-    const html = fs.readFileSync(htmlFile, 'utf-8');
-    const raHtmlFragment = `<script src="scripts/${raWebName}"></script>`;
-    const ramdaHtmlFragment = `<script src="scripts/${ramdaName}"></script>`;
-    const htmlWithRamdaAndRA = html.replace(
-      '</head>',
-      `    ${ramdaHtmlFragment}\n    ${raHtmlFragment}\n</head>`
-    );
-    fs.writeFileSync(htmlFile, htmlWithRamdaAndRA);
-  });
-});
+    files.forEach((htmlFile) => {
+      const html = fs.readFileSync(htmlFile, 'utf-8');
+      const raHtmlFragment = `<script src="scripts/${raWebName}"></script>`;
+      const ramdaHtmlFragment = `<script src="scripts/${ramdaName}"></script>`;
+      const htmlWithRamdaAndRA = html.replace(
+        '</head>',
+        `    ${ramdaHtmlFragment}\n    ${raHtmlFragment}\n</head>`
+      );
+      fs.writeFileSync(htmlFile, htmlWithRamdaAndRA);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+})();
