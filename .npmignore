@@ -17,6 +17,7 @@
 /.gitignore
 /.npmignore
 /.npmrc
+/.nvmrc
 /.nycrc
 /.codeclimate.yml
 /.commitlintrc.json
@@ -44,4 +45,5 @@
 .eslintrc
 /.mocharc.js
 /.husky
+/tmp-test-bundle.js.LICENSE.txt
 
