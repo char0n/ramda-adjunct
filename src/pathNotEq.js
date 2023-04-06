@@ -22,7 +22,7 @@ import { pathEq, complement } from 'ramda';
  * const user2 = { address: { zipCode: 55555 } };
  * const user3 = { name: 'Bob' };
  * const users = [ user1, user2, user3 ];
- * const isFamous = R.pathNotEq(90210, ['address', 'zipCode']);
+ * const isFamous = RA.pathNotEq(90210, ['address', 'zipCode']);
  * R.filter(isFamous, users); //=> [ user2, user3 ]
  */
 /* eslint-enable max-len */
