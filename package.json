@@ -174,7 +174,7 @@
     "rimraf": "5.0.0",
     "sanctuary-show": "3.0.0",
     "sinon": "=15.0.4",
-    "terser-webpack-plugin": "5.3.7",
+    "terser-webpack-plugin": "5.3.8",
     "testem": "=3.10.1",
     "typescript": "=4.9.5",
     "webpack": "=5.82.0",
