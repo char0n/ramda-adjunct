@@ -623,6 +623,27 @@ export function renameKeys<MAP extends Dictionary<string>>(
 ) => PickRenameMulti<MAP, OBJ>;
 
 /**
+ * Creates a new object with the own properties of the provided object, but a
+ * single key is renamed according to the currentKey as `'oldKey'` and newKey as `'newKey'`.
+ * When some key is not found in the currentKey, then it's passed as-is.
+ */
+
+function renameKey<
+  KEYS extends keyof OBJ,
+  OBJ extends { readonly [s in KEYS]: any }
+>(currentKey: KEYS, newKey: string): (obj: OBJ) => OBJ;
+
+function renameKey<
+  KEYS extends keyof OBJ,
+  OBJ extends { readonly [s in KEYS]: any }
+>(currentKey: KEYS): (newKey: string) => (obj: OBJ) => OBJ;
+
+function renameKey<
+  KEYS extends keyof OBJ,
+  OBJ extends { readonly [s in KEYS]: any }
+>(currentKey: KEYS, newKey: string, obj: OBJ): OBJ;
+
+/**
  * Creates a new object with the own properties of the provided object, and the
  * keys copied according to the keysMap object as `{oldKey: newKey}`.
  * When no key from the keysMap is found, then a shallow clone of an object is returned.
