@@ -170,6 +170,7 @@ export { default as findOr } from './findOr';
 export { default as invoke } from './invoke';
 export { default as invokeArgs } from './invokeArgs';
 export { default as paths } from './paths';
+export { default as renameKey } from './renameKey';
 export { default as renameKeys } from './renameKeys';
 export { default as renameKeysWith } from './renameKeysWith';
 export { default as renameKeyWith } from './renameKeyWith';
