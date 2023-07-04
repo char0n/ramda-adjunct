@@ -124,7 +124,7 @@
     "ramda": ">= 0.29.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.22.5",
+    "@babel/cli": "7.22.6",
     "@babel/core": "=7.22.5",
     "@babel/plugin-transform-modules-commonjs": "=7.22.5",
     "@babel/preset-env": "=7.22.6",
