@@ -622,26 +622,33 @@ export function renameKeys<MAP extends Dictionary<string>>(
   obj: OBJ
 ) => PickRenameMulti<MAP, OBJ>;
 
+
+type Keyable = string | number | symbol
+type RenameObjectKey<
+  OKey extends keyof OBJ,
+  OBJ extends { readonly [s in OKey]: any },
+  NKey extends Keyable,
+> = Omit<OBJ, OKey> & Record<NKey, OBJ[OKey]>
+
 /**
  * Creates a new object with the own properties of the provided object, but a
- * single key is renamed according to the currentKey as `'oldKey'` and newKey as `'newKey'`.
- * When some key is not found in the currentKey, then it's passed as-is.
+ * single key is renamed from `oldKey` to `newKey`.
  */
-
 function renameKey<
-  KEYS extends keyof OBJ,
-  OBJ extends { readonly [s in KEYS]: any }
->(currentKey: KEYS, newKey: string): (obj: OBJ) => OBJ;
-
+  OKey extends Keyable,
+>(oldKey: OKey):
+  <NKey extends Keyable>(newKey: NKey) =>
+  <OBJ extends { readonly [s in OKey]: any }>(obj: OBJ) => RenameObjectKey<OKey, OBJ, NKey>;
 function renameKey<
-  KEYS extends keyof OBJ,
-  OBJ extends { readonly [s in KEYS]: any }
->(currentKey: KEYS): (newKey: string) => (obj: OBJ) => OBJ;
-
+  OKey extends Keyable,
+  NKey extends Keyable,
+>(oldKey: OKey, newKey: NKey):
+  <OBJ extends { readonly [s in OKey]: any }>(obj: OBJ) => RenameObjectKey<OKey, OBJ, NKey>;
 function renameKey<
-  KEYS extends keyof OBJ,
-  OBJ extends { readonly [s in KEYS]: any }
->(currentKey: KEYS, newKey: string, obj: OBJ): OBJ;
+  OKey extends keyof OBJ,
+  OBJ extends { readonly [s in OKey]: any },
+  NKey extends Keyable,
+>(oldKey: OKey, newKey: NKey, obj: OBJ): RenameObjectKey<OKey, OBJ, NKey>
 
 /**
  * Creates a new object with the own properties of the provided object, and the
