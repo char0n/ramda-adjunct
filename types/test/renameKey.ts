@@ -5,7 +5,7 @@ import * as RA from 'ramda-adjunct';
 // Object with string as key
 RA.renameKey('A', 'B', { A: 1, C: 4 }).B; // $ExpectType number
 RA.renameKey('A')('B')({ A: 1, C: '123', D: 123 }).B // $ExpectType number
-RA.renameKey('A', 'B')({ A: 1, C: 4, D: 123 }); // $ExpectType number
+RA.renameKey('A', 'B')({ A: 1, C: 4, D: 123 }).B; // $ExpectType number
 
 // Object with number as key
 RA.renameKey(1, 99, { 1: 'one', 2: 'two', 3: 'three' })[99]; // $ExpectType string
