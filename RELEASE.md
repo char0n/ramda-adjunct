@@ -48,7 +48,7 @@ github release, please refer to this [page](https://help.github.com/articles/cre
  $ npm publish
 ```
 
-## Publish to Github Package Registry
+## Publish to GitHub Package Registry
 
 Read [this document](https://help.github.com/en/github/managing-packages-with-github-package-registry/configuring-npm-for-use-with-github-package-registry) to understand how to configure your npm to publish to Github Package Registry.
 
