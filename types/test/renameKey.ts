@@ -2,7 +2,7 @@ import * as RA from 'ramda-adjunct';
 
 /* eslint-disable no-unused-expressions */
 
-// Object with string as key
+// object with string as key
 RA.renameKey('A', 'B', { A: 1, C: 4 }).B; // $ExpectType number
 RA.renameKey('A')('B')({ A: 1, C: '123', D: 123 }).B // $ExpectType number
 RA.renameKey('A', 'B')({ A: 1, C: 4, D: 123 }).B; // $ExpectType number
