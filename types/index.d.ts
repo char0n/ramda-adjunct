@@ -622,6 +622,34 @@ export function renameKeys<MAP extends Dictionary<string>>(
   obj: OBJ
 ) => PickRenameMulti<MAP, OBJ>;
 
+
+type Keyable = string | number | symbol
+type RenameObjectKey<
+  OKey extends keyof OBJ,
+  OBJ extends { readonly [s in OKey]: any },
+  NKey extends Keyable,
+> = Omit<OBJ, OKey> & Record<NKey, OBJ[OKey]>
+
+/**
+ * Creates a new object with the own properties of the provided object, but a
+ * single key is renamed from `oldKey` to `newKey`.
+ */
+function renameKey<
+  OKey extends Keyable,
+>(oldKey: OKey):
+  <NKey extends Keyable>(newKey: NKey) =>
+  <OBJ extends { readonly [s in OKey]: any }>(obj: OBJ) => RenameObjectKey<OKey, OBJ, NKey>;
+function renameKey<
+  OKey extends Keyable,
+  NKey extends Keyable,
+>(oldKey: OKey, newKey: NKey):
+  <OBJ extends { readonly [s in OKey]: any }>(obj: OBJ) => RenameObjectKey<OKey, OBJ, NKey>;
+function renameKey<
+  OKey extends keyof OBJ,
+  OBJ extends { readonly [s in OKey]: any },
+  NKey extends Keyable,
+>(oldKey: OKey, newKey: NKey, obj: OBJ): RenameObjectKey<OKey, OBJ, NKey>
+
 /**
  * Creates a new object with the own properties of the provided object, and the
  * keys copied according to the keysMap object as `{oldKey: newKey}`.
