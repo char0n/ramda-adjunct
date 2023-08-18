@@ -1,6 +1,6 @@
 import * as RA from 'ramda-adjunct';
 
-/* eslint-disable  no-unused-expressions */
+/* eslint-disable no-unused-expressions */
 
 // Object with string as key
 RA.renameKey('A', 'B', { A: 1, C: 4 }).B; // $ExpectType number
