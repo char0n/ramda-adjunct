@@ -2,7 +2,7 @@
 
 const path = require('path');
 const fs = require('fs');
-const glob = require('glob');
+const { glob } = require('glob');
 
 const pkg = require(path.join(__dirname, '..', 'package.json')); // eslint-disable-line import/no-dynamic-require
 
