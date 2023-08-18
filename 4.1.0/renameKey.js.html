@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>delayP.js - Documentation</title>
+    <title>renameKey.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -40,7 +40,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">delayP.js</h1>
+    <h1 class="page-title">renameKey.js</h1>
     
 
     
@@ -50,51 +50,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { curry, propOr, partial, nth } from 'ramda';
+            <pre class="prettyprint source linenums"><code>import { curry } from 'ramda';
 
-import isNonNegative from './isNonNegative';
-import isInteger from './isInteger';
+import renameKeys from './renameKeys';
 
 /**
- * Creates a promise which resolves/rejects after the specified milliseconds.
+ * Creates a new object with the own properties of the provided object, but a
+ * single key is renamed from `oldKey` to `newKey`.
  *
- * @func delayP
+ * Keep in mind that in the case of keys conflict is behavior undefined and
+ * the result may vary between various JS engines!
+ *
+ * @func renameKey
  * @memberOf RA
- * @category Function
- * @sig Number -> Promise Undefined
- * @sig {timeout: Number, value: a} -> Promise a
- * @param {number|Object} milliseconds number of milliseconds or options object
- * @return {Promise} A Promise that is resolved/rejected with the given value (if provided) after the specified delay
+ * @since {@link https://char0n.github.io/ramda-adjunct/4.1.0|v4.1.0}
+ * @category Object
+ * @sig (String a, String b) => a -> b ->  {a: *} -> {b: *}
+ * @param {!string} oldKey
+ * @param {!string} newKey
+ * @param {!Object} obj
+ * @return {!Object} New object with renamed key
+ * @see {@link https://github.com/ramda/ramda/wiki/Cookbook#rename-key-of-an-object|Ramda Cookbook}, {@link RA.renameKeyWith|renameKeyWith}
  * @example
  *
- * RA.delayP(200); //=> Promise(undefined)
- * RA.delayP({ timeout: 1000, value: 'hello world' }); //=> Promise('hello world')
- * RA.delayP.reject(100); //=> Promise(undefined)
- * RA.delayP.reject({ timeout: 100, value: new Error('error') }); //=> Promise(Error('error'))
+ * const input = { firstName: 'Elisia', age: 22, type: 'human' };
+ *
+ * RA.renameKey('firstName', 'name')(input);
+ * //=> { name: 'Elisia', age: 22, type: 'human' }
  */
+const renameKey = curry((oldKey, newKey, obj) =>
+  renameKeys({ [oldKey]: newKey }, obj)
+);
 
-const makeDelay = curry((settleFnPicker, opts) => {
-  let timeout;
-  let value;
-
-  if (isInteger(opts) &amp;&amp; isNonNegative(opts)) {
-    timeout = opts;
-  } else {
-    timeout = propOr(0, 'timeout', opts);
-    value = propOr(value, 'value', opts);
-  }
-
-  return new Promise((...args) => {
-    const settleFn = settleFnPicker(args);
-
-    setTimeout(partial(settleFn, [value]), timeout);
-  });
-});
-
-const delayP = makeDelay(nth(0));
-delayP.reject = makeDelay(nth(1));
-
-export default delayP;
+export default renameKey;
 </code></pre>
         </article>
     </section>
