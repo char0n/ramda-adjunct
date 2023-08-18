@@ -10,7 +10,7 @@ RA.renameKey('A', 'B')({ A: 1, C: 4, D: 123 }).B; // $ExpectType number
 // object with number as key
 RA.renameKey(1, 99, { 1: 'one', 2: 'two', 3: 'three' })[99]; // $ExpectType string
 
-// Object with symbol as key
+// object with symbol as key
 const symbol = Symbol('hello')
 
 RA.renameKey(symbol, 'B', { [symbol]: 1, B: 2, C: 3 }).B; // $ExpectType number
