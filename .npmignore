@@ -35,6 +35,8 @@
 /types/tslint.json
 /types/tsconfig.json
 /types/test
+/types/.eslintrc.js
+/types/dtslint.eslint.js
 /RELEASE.md
 /CODE_OF_CONDUCT.md
 /CONTRIBUTING.md
