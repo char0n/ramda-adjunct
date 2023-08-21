@@ -780,11 +780,11 @@ export function curryRight(fn: Function): Function;
  * It takes two new parameters to its callback function: the current index, and the entire list.
  */
 export function mapIndexed<T, U>(
-  iterator: (elem: T, key: number, _list: T[]) => U,
-  _list: ReadonlyArray<T>
+  iterator: (elem: T, key: number, list: T[]) => U,
+  list: ReadonlyArray<T>
 ): U[];
 export function mapIndexed<T, U>(
-  iterator: (elem: T, key: number, _list: T[]) => U
+  iterator: (elem: T, key: number, list: T[]) => U
 ): (list: ReadonlyArray<T>) => U[];
 export function mapIndexed<T, U>(
   iterator: (elem: T, key: number, list: Dictionary<T>) => U,
