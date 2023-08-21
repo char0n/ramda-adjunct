@@ -1,4 +1,5 @@
 // Minimum TypeScript Version: 2.4
+/* eslint-disable no-shadow */
 
 interface Functor<T> {
   map<U>(fn: (t: T) => U): Functor<U>;
@@ -507,7 +508,7 @@ export function pickIndexes<T>(indexes: number[], list: T[]): T[];
 export function pickIndexes(indexes: number[]): <T>(list: T[]) => T[];
 
 /**
- * Creates a list from from arguments.
+ * Creates a list from arguments.
  */
 export function list(...items: any[]): any[];
 
@@ -608,13 +609,13 @@ export function cata<V1, V2, T1, T2>(
  */
 type PickRenameMulti<
   R extends { [K: string]: string },
-  T extends { [s in keyof R]: any }
+  T extends { [s in keyof R]: any },
 > = {
   [P in keyof T as P extends keyof R ? R[P] : P]: T[P];
 };
 export function renameKeys<
   MAP extends Dictionary<string>,
-  OBJ extends { readonly [s in keyof MAP]: any }
+  OBJ extends { readonly [s in keyof MAP]: any },
 >(keysMap: MAP, obj: OBJ): PickRenameMulti<MAP, OBJ>;
 export function renameKeys<MAP extends Dictionary<string>>(
   keysMap: MAP
@@ -622,33 +623,34 @@ export function renameKeys<MAP extends Dictionary<string>>(
   obj: OBJ
 ) => PickRenameMulti<MAP, OBJ>;
 
-
-type Keyable = string | number | symbol
+type Keyable = string | number | symbol;
 type RenameObjectKey<
-  OKey extends keyof OBJ,
+  OKey extends keyof OBJ, // eslint-disable-line no-use-before-define
   OBJ extends { readonly [s in OKey]: any },
   NKey extends Keyable,
-> = Omit<OBJ, OKey> & Record<NKey, OBJ[OKey]>
-
+> = Omit<OBJ, OKey> & Record<NKey, OBJ[OKey]>;
 /**
  * Creates a new object with the own properties of the provided object, but a
  * single key is renamed from `oldKey` to `newKey`.
  */
-function renameKey<
-  OKey extends Keyable,
->(oldKey: OKey):
-  <NKey extends Keyable>(newKey: NKey) =>
-  <OBJ extends { readonly [s in OKey]: any }>(obj: OBJ) => RenameObjectKey<OKey, OBJ, NKey>;
-function renameKey<
-  OKey extends Keyable,
-  NKey extends Keyable,
->(oldKey: OKey, newKey: NKey):
-  <OBJ extends { readonly [s in OKey]: any }>(obj: OBJ) => RenameObjectKey<OKey, OBJ, NKey>;
-function renameKey<
-  OKey extends keyof OBJ,
+export function renameKey<OKey extends Keyable>(
+  oldKey: OKey
+): <NKey extends Keyable>(
+  newKey: NKey
+) => <OBJ extends { readonly [s in OKey]: any }>(
+  obj: OBJ
+) => RenameObjectKey<OKey, OBJ, NKey>;
+export function renameKey<OKey extends Keyable, NKey extends Keyable>(
+  oldKey: OKey,
+  newKey: NKey
+): <OBJ extends { readonly [s in OKey]: any }>(
+  obj: OBJ
+) => RenameObjectKey<OKey, OBJ, NKey>;
+export function renameKey<
+  OKey extends keyof OBJ, // eslint-disable-line no-use-before-define
   OBJ extends { readonly [s in OKey]: any },
   NKey extends Keyable,
->(oldKey: OKey, newKey: NKey, obj: OBJ): RenameObjectKey<OKey, OBJ, NKey>
+>(oldKey: OKey, newKey: NKey, obj: OBJ): RenameObjectKey<OKey, OBJ, NKey>;
 
 /**
  * Creates a new object with the own properties of the provided object, and the
@@ -778,11 +780,11 @@ export function curryRight(fn: Function): Function;
  * It takes two new parameters to its callback function: the current index, and the entire list.
  */
 export function mapIndexed<T, U>(
-  iterator: (elem: T, key: number, list: T[]) => U,
-  list: ReadonlyArray<T>
+  iterator: (elem: T, key: number, _list: T[]) => U,
+  _list: ReadonlyArray<T>
 ): U[];
 export function mapIndexed<T, U>(
-  iterator: (elem: T, key: number, list: T[]) => U
+  iterator: (elem: T, key: number, _list: T[]) => U
 ): (list: ReadonlyArray<T>) => U[];
 export function mapIndexed<T, U>(
   iterator: (elem: T, key: number, list: Dictionary<T>) => U,
