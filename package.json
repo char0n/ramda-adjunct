@@ -125,7 +125,7 @@
   },
   "devDependencies": {
     "@babel/cli": "7.22.10",
-    "@babel/core": "=7.22.11",
+    "@babel/core": "=7.22.15",
     "@babel/plugin-transform-modules-commonjs": "=7.22.11",
     "@babel/preset-env": "=7.22.15",
     "@babel/register": "7.22.5",
