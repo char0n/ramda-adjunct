@@ -131,7 +131,7 @@
     "@babel/register": "7.22.15",
     "@commitlint/cli": "=17.7.2",
     "@commitlint/config-conventional": "=17.7.0",
-    "@typescript-eslint/eslint-plugin": "=6.7.4",
+    "@typescript-eslint/eslint-plugin": "=6.7.5",
     "@typescript-eslint/parser": "=6.7.5",
     "assert": "=2.1.0",
     "babel-loader": "=9.1.3",
