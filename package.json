@@ -147,7 +147,7 @@
     "eslint-config-airbnb-base": "=15.0.0",
     "eslint-config-prettier": "=9.0.0",
     "eslint-plugin-dtslint": "=3.0.2",
-    "eslint-plugin-import": "=2.28.1",
+    "eslint-plugin-import": "=2.29.0",
     "eslint-plugin-mocha": "=10.2.0",
     "eslint-plugin-prettier": "5.0.1",
     "eslint-plugin-ramda": "2.5.1",
