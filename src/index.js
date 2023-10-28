@@ -187,6 +187,7 @@ export { default as spreadPath } from './spreadPath';
 export { default as flattenProp } from './flattenProp';
 export { default as flattenPath } from './flattenPath';
 export { default as unzipObjWith } from './unzipObjWith';
+export { default as upsert } from './upsert';
 export { default as zipObjWith } from './zipObjWith';
 export { default as isPrototypeOf } from './isPrototypeOf';
 // Relation
