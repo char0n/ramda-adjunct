@@ -132,7 +132,7 @@
     "@commitlint/cli": "=17.8.0",
     "@commitlint/config-conventional": "=17.8.0",
     "@typescript-eslint/eslint-plugin": "=6.13.1",
-    "@typescript-eslint/parser": "=6.13.0",
+    "@typescript-eslint/parser": "=6.13.1",
     "assert": "=2.1.0",
     "babel-loader": "=9.1.3",
     "babel-plugin-annotate-pure-calls": "0.4.0",
