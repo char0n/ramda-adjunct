@@ -169,7 +169,7 @@
     "process": "=0.11.10",
     "ramda": "=0.29.1",
     "ramda-fantasy": "=0.8.0",
-    "regenerator-runtime": "=0.14.0",
+    "regenerator-runtime": "=0.14.1",
     "rimraf": "5.0.5",
     "sanctuary-show": "3.0.0",
     "sinon": "=16.1.3",
