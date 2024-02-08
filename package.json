@@ -138,7 +138,7 @@
     "babel-plugin-annotate-pure-calls": "0.4.0",
     "babel-plugin-istanbul": "6.1.1",
     "better-npm-run": "0.1.1",
-    "chai": "4.3.10",
+    "chai": "5.0.3",
     "codecov": "3.8.3",
     "conventional-changelog-cli": "3.0.0",
     "core-js": "=3.35.1",
