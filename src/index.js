@@ -10,6 +10,7 @@ export { default as isNotNull } from './isNotNull';
 export { default as isNotNil } from './isNotNil';
 export { default as isArray } from './isArray';
 export { default as isIterable } from './isIterable';
+export { default as isAsyncIterable } from './isAsyncIterable';
 export { default as isEmptyArray } from './isEmptyArray';
 export { default as isNotArray } from './isNotArray';
 export { default as isNonEmptyArray } from './isNonEmptyArray';
