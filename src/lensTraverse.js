@@ -43,8 +43,8 @@ const lensTraverse = curryN(1, (F) => {
     typeof F['fantasy-land/of'] === 'function'
       ? F['fantasy-land/of']
       : typeof F.of === 'function'
-      ? F.of
-      : F;
+        ? F.of
+        : F;
   const TypeRep = { 'fantasy-land/of': of };
 
   return curry((toFunctorFn, target) =>
