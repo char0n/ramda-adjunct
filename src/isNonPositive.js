@@ -1,6 +1,6 @@
 import { both, lte, flip, curryN } from 'ramda';
 
-import isNumber from './isNumber';
+import isNumber from './isNumber.js';
 
 /**
  * Checks if value is a non-positive `Number` primitive or object. This includes all negative

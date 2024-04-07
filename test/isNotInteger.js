@@ -1,9 +1,9 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
-import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
+import * as RA from '../src/index.js';
+import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER.js';
+import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER.js';
 
 describe('isNotInteger', function () {
   it('should test value for an `integer`', function () {

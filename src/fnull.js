@@ -1,7 +1,7 @@
 import { isNil, curryN, curry, apply } from 'ramda';
 
-import defaultWhen from './defaultWhen';
-import mapIndexed from './mapIndexed';
+import defaultWhen from './defaultWhen.js';
+import mapIndexed from './mapIndexed.js';
 
 /**
  * Returns a function which is called with the given arguments. If any of the given arguments are null or undefined,

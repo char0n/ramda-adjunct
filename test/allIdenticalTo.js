@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('allIdenticalTo', function () {
   context('given all items are identical', function () {

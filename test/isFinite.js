@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import ponyfill from '../src/internal/ponyfills/Number.isFinite';
+import * as RA from '../src/index.js';
+import ponyfill from '../src/internal/ponyfills/Number.isFinite.js';
 
 describe('isFinite', function () {
   it('should test value for a finite `Number`', function () {

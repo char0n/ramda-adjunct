@@ -1,6 +1,6 @@
 import { curryN } from 'ramda';
 
-import liftFN from './liftFN';
+import liftFN from './liftFN.js';
 
 /**
  * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy

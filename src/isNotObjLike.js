@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isObjLike from './isObjLike';
+import isObjLike from './isObjLike.js';
 
 /* eslint-disable max-len */
 /**

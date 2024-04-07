@@ -1,6 +1,6 @@
 import { isEmpty, isNil, anyPass, test } from 'ramda';
 
-import isFalse from './isFalse';
+import isFalse from './isFalse.js';
 /**
  * Returns `true` if the given value is its type's empty value, `false`, `undefined`
  * as well as strings containing only whitespace characters; `false` otherwise.

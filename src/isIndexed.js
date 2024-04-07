@@ -1,7 +1,7 @@
 import { either, curryN } from 'ramda';
 
-import isArray from './isArray';
-import isString from './isString';
+import isArray from './isArray.js';
+import isString from './isString.js';
 
 /**
  * Determine if input value is an indexed data type.

@@ -1,9 +1,9 @@
 import { bind } from 'ramda';
 
-import isIterable from '../../isIterable';
-import isNotUndefined from '../../isNotUndefined';
-import isNotNil from '../../isNotNil';
-import isNotFunction from '../../isNotFunction';
+import isIterable from '../../isIterable.js';
+import isNotUndefined from '../../isNotUndefined.js';
+import isNotNil from '../../isNotNil.js';
+import isNotFunction from '../../isNotFunction.js';
 
 const copyArray = (items, mapFn, thisArg) => {
   const boundMapFn = isNotUndefined(thisArg) ? bind(mapFn, thisArg) : mapFn;

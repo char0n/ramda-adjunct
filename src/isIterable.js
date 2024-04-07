@@ -1,6 +1,6 @@
 import { hasIn, curryN } from 'ramda';
 
-import isFunction from './isFunction';
+import isFunction from './isFunction.js';
 
 /**
  * Checks whether the passed value is iterable.

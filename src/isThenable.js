@@ -1,6 +1,6 @@
 import { pathSatisfies } from 'ramda';
 
-import isFunction from './isFunction';
+import isFunction from './isFunction.js';
 
 /**
  * Checks if input value is a `thenable`.

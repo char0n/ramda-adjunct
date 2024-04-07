@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import sinon from 'sinon';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('pathOrLazy', function () {
   const obj = {

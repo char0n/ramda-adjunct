@@ -1,7 +1,7 @@
 import { both, complement, curryN } from 'ramda';
 
-import isInteger from './isInteger';
-import isOdd from './isOdd';
+import isInteger from './isInteger.js';
+import isOdd from './isOdd.js';
 
 /**
  * Checks if value is even integer number.

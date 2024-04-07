@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import { trimEndInvoker, trimEndPonyfill } from '../src/trimEnd';
+import * as RA from '../src/index.js';
+import { trimEndInvoker, trimEndPonyfill } from '../src/trimEnd.js';
 
 describe('trimEnd', function () {
   it('should remove whitespace from the end of a string', function () {

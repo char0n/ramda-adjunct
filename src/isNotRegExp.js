@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isRegExp from './isRegExp';
+import isRegExp from './isRegExp.js';
 
 /**
  * Checks if value is complement of `RegExp` object.

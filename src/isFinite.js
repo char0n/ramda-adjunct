@@ -1,7 +1,7 @@
 import { bind, curryN } from 'ramda';
 
-import isFunction from './isFunction';
-import ponyfill from './internal/ponyfills/Number.isFinite';
+import isFunction from './isFunction.js';
+import ponyfill from './internal/ponyfills/Number.isFinite.js';
 
 export const isFinitePonyfill = curryN(1, ponyfill);
 

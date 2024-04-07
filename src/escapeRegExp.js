@@ -1,6 +1,6 @@
 import { when, replace } from 'ramda';
 
-import isString from './isString';
+import isString from './isString.js';
 
 /**
  * Escapes the RegExp special characters.

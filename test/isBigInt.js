@@ -1,11 +1,11 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
-import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
-import BigInt from './shared/BigInt';
-import args from './shared/arguments';
+import * as RA from '../src/index.js';
+import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER.js';
+import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER.js';
+import BigInt from './shared/BigInt.js';
+import args from './shared/arguments.js';
 
 describe('isBigInt', function () {
   if (BigInt !== undefined) {

@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import BigInt from './shared/BigInt';
+import * as RA from '../src/index.js';
+import BigInt from './shared/BigInt.js';
 
 describe('isPrimitive', function () {
   context('given a primitive value', function () {

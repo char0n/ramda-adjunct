@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import args from './shared/arguments';
+import * as RA from '../src/index.js';
+import args from './shared/arguments.js';
 
 describe('isString', function () {
   context('given a `String` value', function () {

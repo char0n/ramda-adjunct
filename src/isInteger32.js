@@ -1,6 +1,6 @@
 import { curryN } from 'ramda';
 
-import toInteger32 from './toInteger32';
+import toInteger32 from './toInteger32.js';
 
 /**
  * Checks whether the passed value is a signed 32 bit integer.

@@ -1,6 +1,6 @@
 import { both, pipe, modulo, flip, equals, complement, curryN } from 'ramda';
 
-import isInteger from './isInteger';
+import isInteger from './isInteger.js';
 
 /**
  * Checks if value is odd integer number.

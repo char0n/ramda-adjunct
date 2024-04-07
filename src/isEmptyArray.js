@@ -1,6 +1,6 @@
 import { both, isEmpty } from 'ramda';
 
-import isArray from './isArray';
+import isArray from './isArray.js';
 
 /**
  * Checks if input value is an empty `Array`.

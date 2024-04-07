@@ -1,7 +1,7 @@
 import { curry, propOr, partial, nth } from 'ramda';
 
-import isNonNegative from './isNonNegative';
-import isInteger from './isInteger';
+import isNonNegative from './isNonNegative.js';
+import isInteger from './isInteger.js';
 
 /**
  * Creates a promise which resolves/rejects after the specified milliseconds.

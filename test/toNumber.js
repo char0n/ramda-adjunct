@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import BigInt from './shared/BigInt';
-import * as RA from '../src';
+import BigInt from './shared/BigInt.js';
+import * as RA from '../src/index.js';
 
 describe('toNumber', function () {
   context('given a number', function () {

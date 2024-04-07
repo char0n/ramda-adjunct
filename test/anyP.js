@@ -1,11 +1,11 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 import {
   anyPPonyfill,
   AggregatedError as AggregateErrorPonyfill,
-} from '../src/anyP';
+} from '../src/anyP.js';
 
 describe('anyP', function () {
   context('given list of fulfilled promises', function () {

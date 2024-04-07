@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import jsv from 'jsverify';
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('curryRight', function () {
   it('should curry a single value', function () {

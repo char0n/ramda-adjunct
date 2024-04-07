@@ -1,6 +1,6 @@
 import { traverse, curry, pipe, prop, curryN } from 'ramda';
 
-import Identity from './fantasy-land/Identity';
+import Identity from './fantasy-land/Identity.js';
 
 /**
  * Creates a [Traversable](https://github.com/fantasyland/fantasy-land#traversable) lens

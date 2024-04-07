@@ -1,6 +1,6 @@
 import { empty as emptyR } from 'ramda';
 
-import * as fl from './mapping';
+import * as fl from './mapping.js';
 import {
   applyTrait,
   functorTrait,
@@ -8,7 +8,7 @@ import {
   semigroupTrait,
   chainTrait,
   ordTrait,
-} from './traits';
+} from './traits.js';
 
 /**
  * The simplest {@link https://github.com/fantasyland/fantasy-land|fantasy-land}

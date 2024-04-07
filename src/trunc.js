@@ -1,7 +1,7 @@
 import { bind, curryN } from 'ramda';
 
-import ponyfill from './internal/ponyfills/Math.trunc';
-import isFunction from './isFunction';
+import ponyfill from './internal/ponyfills/Math.trunc.js';
+import isFunction from './isFunction.js';
 
 export const truncPonyfill = curryN(1, ponyfill);
 

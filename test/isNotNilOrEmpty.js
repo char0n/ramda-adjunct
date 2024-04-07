@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('isNotNilOrEmpty', function () {
   it('should test value for `null` or `undefined`', function () {

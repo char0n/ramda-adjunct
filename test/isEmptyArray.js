@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('isEmptyArray', function () {
   it('should test value for an empty `Array`', function () {

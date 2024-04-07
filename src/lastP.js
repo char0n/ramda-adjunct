@@ -1,10 +1,10 @@
 import { bind, last, map, curryN } from 'ramda';
 
-import allP from './allP';
-import lengthEq from './lengthEq';
-import lengthGte from './lengthGte';
-import rejectP from './rejectP';
-import resolveP from './resolveP';
+import allP from './allP.js';
+import lengthEq from './lengthEq.js';
+import lengthGte from './lengthGte.js';
+import rejectP from './rejectP.js';
+import resolveP from './resolveP.js';
 
 /**
  * Returns a promise that is fulfilled by the last given promise to be fulfilled,

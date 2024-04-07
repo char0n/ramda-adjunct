@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('curryRightN', function () {
   const source = (a, b, c, d) => {

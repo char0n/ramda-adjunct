@@ -1,6 +1,6 @@
 import { complement, equals } from 'ramda';
 
-import compareLength from './internal/compareLength';
+import compareLength from './internal/compareLength.js';
 
 /**
  * Returns `true` if the supplied list or string has a length not equal to `valueLength`.

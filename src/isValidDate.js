@@ -1,7 +1,7 @@
 import { invoker, both, pipe, curryN } from 'ramda';
 
-import isDate from './isDate';
-import isNotNaN from './isNotNaN';
+import isDate from './isDate.js';
+import isNotNaN from './isNotNaN.js';
 
 /* eslint-disable max-len */
 /**

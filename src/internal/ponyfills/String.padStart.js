@@ -1,6 +1,6 @@
-import isFunction from '../../isFunction';
-import isNotUndefined from '../../isNotUndefined';
-import repeat from './String.repeat';
+import isFunction from '../../isFunction.js';
+import isNotUndefined from '../../isNotUndefined.js';
+import repeat from './String.repeat.js';
 
 const padStartPonyfill = (padString, targetLength, value) => {
   // eslint-disable-next-line no-bitwise

@@ -1,6 +1,6 @@
 import { curry } from 'ramda';
 
-import _makeFlat from './internal/makeFlat';
+import _makeFlat from './internal/makeFlat.js';
 
 const flatten1 = _makeFlat(false);
 

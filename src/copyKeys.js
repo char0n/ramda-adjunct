@@ -1,6 +1,6 @@
 import { curryN } from 'ramda';
 
-import renameKeys from './renameKeys';
+import renameKeys from './renameKeys.js';
 
 /**
  * Creates a new object with the own properties of the provided object, and the

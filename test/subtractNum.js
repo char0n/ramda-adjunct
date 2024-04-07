@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('subtractNum', function () {
   it('should subtract the first number from the second number', function () {

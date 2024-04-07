@@ -1,9 +1,9 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
-import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
+import * as RA from '../src/index.js';
+import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER.js';
+import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER.js';
 
 describe('isUinteger32', function () {
   it('should return true for positive 32 bit integers', function () {

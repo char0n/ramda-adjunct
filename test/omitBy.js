@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('omitBy', function () {
   const obj = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 };

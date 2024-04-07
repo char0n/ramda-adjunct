@@ -1,7 +1,7 @@
 import { curryN, path, apply, init, bind } from 'ramda';
 
-import isNotFunction from './isNotFunction';
-import isEmptyArray from './isEmptyArray';
+import isNotFunction from './isNotFunction.js';
+import isEmptyArray from './isEmptyArray.js';
 
 /**
  * Invokes the method at path of object with given arguments.

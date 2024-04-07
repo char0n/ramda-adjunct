@@ -1,10 +1,10 @@
 import { equals, pathSatisfies } from 'ramda';
 
-import isString from '../isString';
-import isNumber from '../isNumber';
-import isFunction from '../isFunction';
-import { isSameType } from './util';
-import * as fl from './mapping';
+import isString from '../isString.js';
+import isNumber from '../isNumber.js';
+import isFunction from '../isFunction.js';
+import { isSameType } from './util.js';
+import * as fl from './mapping.js';
 
 export const functorTrait = {
   [fl.map](fn) {

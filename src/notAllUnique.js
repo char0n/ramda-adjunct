@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import allUnique from './allUnique';
+import allUnique from './allUnique.js';
 
 /**
  * Returns true if at least one item of the list is repeated. `R.equals` is used to determine equality.

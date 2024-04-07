@@ -1,6 +1,6 @@
 import { curry, head, slice, reduce, curryN, map } from 'ramda';
 
-import ap from './internal/ap';
+import ap from './internal/ap.js';
 
 /**
  * "lifts" a function to be the specified arity, so that it may "map over" objects that satisfy

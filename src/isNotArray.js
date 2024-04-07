@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isArray from './isArray';
+import isArray from './isArray.js';
 
 /**
  * Checks if input value is complement of `Array`

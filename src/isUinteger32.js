@@ -1,6 +1,6 @@
 import { curryN } from 'ramda';
 
-import toUinteger32 from './toUinteger32';
+import toUinteger32 from './toUinteger32.js';
 
 /**
  * Checks whether the passed value is an unsigned 32 bit integer.

@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isValidNumber from './isValidNumber';
+import isValidNumber from './isValidNumber.js';
 
 /**
  * Checks if value is not a valid `Number`. A valid `Number` is a number that is not `NaN`,

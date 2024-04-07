@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isMap from './isMap';
+import isMap from './isMap.js';
 
 /**
  * Checks if value is complement of `Map` object.

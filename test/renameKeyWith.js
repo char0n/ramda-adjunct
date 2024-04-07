@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { concat } from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('renameKeyWith', function () {
   it('should rename object keys', function () {

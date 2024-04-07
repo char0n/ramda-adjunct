@@ -1,9 +1,9 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import { isSafeIntegerPonyfill } from '../src/isSafeInteger';
-import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
+import * as RA from '../src/index.js';
+import { isSafeIntegerPonyfill } from '../src/isSafeInteger.js';
+import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER.js';
 
 describe('isSafeInteger', function () {
   context('given a safe integer', function () {

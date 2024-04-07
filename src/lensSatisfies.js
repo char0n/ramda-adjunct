@@ -1,6 +1,6 @@
 import { view, curryN, pipe } from 'ramda';
 
-import isTrue from './isTrue';
+import isTrue from './isTrue.js';
 
 /**
  * Returns `true` if data structure focused by the given lens satisfies the predicate.

@@ -1,6 +1,6 @@
 import { converge, length, uniq } from 'ramda';
 
-import lengthEq from './lengthEq';
+import lengthEq from './lengthEq.js';
 
 /**
  * Returns true if all items in the list are unique. `R.equals` is used to determine equality.

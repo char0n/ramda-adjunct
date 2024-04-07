@@ -1,7 +1,7 @@
 import { bind, curryN } from 'ramda';
 
-import isFunction from './isFunction';
-import ponyfill, { AggregatedError } from './internal/ponyfills/Promise.any';
+import isFunction from './isFunction.js';
+import ponyfill, { AggregatedError } from './internal/ponyfills/Promise.any.js';
 
 export const anyPPonyfill = curryN(1, ponyfill);
 export { AggregatedError };

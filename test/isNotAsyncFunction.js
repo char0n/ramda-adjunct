@@ -1,9 +1,9 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import args from './shared/arguments';
-import asyncFunc from './shared/asyncFunc';
+import * as RA from '../src/index.js';
+import args from './shared/arguments.js';
+import asyncFunc from './shared/asyncFunc.js';
 
 describe('isNotAsyncFunction', function () {
   context('given async function', function () {

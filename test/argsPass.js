@@ -2,7 +2,7 @@ import { stub } from 'sinon';
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('argsPass', function () {
   let p1False;

@@ -1,8 +1,8 @@
 import { curryN, reduce, length } from 'ramda';
 
-import isUndefined from './isUndefined';
-import resolveP from './resolveP';
-import allP from './allP';
+import isUndefined from './isUndefined.js';
+import resolveP from './resolveP.js';
+import allP from './allP.js';
 
 /* eslint-disable max-len */
 /**

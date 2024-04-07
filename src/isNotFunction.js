@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isFunction from './isFunction';
+import isFunction from './isFunction.js';
 
 /* eslint-disable max-len */
 /**

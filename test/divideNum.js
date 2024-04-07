@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('divideNum', function () {
   it('should divide the second number by the first number', function () {

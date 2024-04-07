@@ -1,7 +1,7 @@
 import { curryN, bind } from 'ramda';
 
-import resolveP from './resolveP';
-import rejectP from './rejectP';
+import resolveP from './resolveP.js';
+import rejectP from './rejectP.js';
 
 /**
  * Takes a generator function and returns an async function.

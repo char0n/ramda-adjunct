@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isSet from './isSet';
+import isSet from './isSet.js';
 
 /**
  * Checks if value is complement of `Set` object.

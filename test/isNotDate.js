@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import args from './shared/arguments';
+import * as RA from '../src/index.js';
+import args from './shared/arguments.js';
 
 describe('isNotDate', function () {
   context('given date object', function () {

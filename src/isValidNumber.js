@@ -1,7 +1,7 @@
 import { either, curryN } from 'ramda';
 
-import isFloat from './isFloat';
-import isInteger from './isInteger';
+import isFloat from './isFloat.js';
+import isInteger from './isInteger.js';
 
 /**
  * Checks if value is a valid `Number`. A valid `Number` is a number that is not `NaN`, `Infinity`

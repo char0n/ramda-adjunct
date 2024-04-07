@@ -1,8 +1,8 @@
 import { both, either, curryN } from 'ramda';
 
-import isNotNull from './isNotNull';
-import isFunction from './isFunction';
-import isOfTypeObject from './internal/isOfTypeObject';
+import isNotNull from './isNotNull.js';
+import isFunction from './isFunction.js';
+import isOfTypeObject from './internal/isOfTypeObject.js';
 
 /* eslint-disable max-len */
 /**

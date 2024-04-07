@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import * as R from 'ramda';
 import sinon from 'sinon';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('reduceP', function () {
   it('should fold simple functions over arrays with the supplied accumulator', function () {

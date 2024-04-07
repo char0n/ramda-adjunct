@@ -1,6 +1,6 @@
 import { curryN, pipe, mergeAll } from 'ramda';
 
-import paths from './paths';
+import paths from './paths.js';
 
 /**
  * Merge objects under corresponding paths.

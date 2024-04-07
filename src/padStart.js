@@ -1,4 +1,4 @@
-import padCharsStart from './padCharsStart';
+import padCharsStart from './padCharsStart.js';
 
 /**
  * Pads string on the left side if it's shorter than length.

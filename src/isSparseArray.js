@@ -8,7 +8,7 @@ import {
   length,
 } from 'ramda';
 
-import isArray from './isArray';
+import isArray from './isArray.js';
 
 /**
  * Checks if input value is a sparse Array.

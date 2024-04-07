@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import _isNaN from './isNaN';
+import _isNaN from './isNaN.js';
 
 /**
  * Checks whether the passed value is complement of `NaN` and its type is not `Number`.

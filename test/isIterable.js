@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('isIterable', function () {
   // TODO(vladimir.gorej@gmail.com): BigInt64Array and BigUint64Array should be added to this list once they are supported by RA's node version

@@ -1,8 +1,8 @@
 import { ifElse, values, curryN } from 'ramda';
 
-import isIterable from './isIterable';
-import isFunction from './isFunction';
-import ponyfill from './internal/ponyfills/Array.from';
+import isIterable from './isIterable.js';
+import isFunction from './isFunction.js';
+import ponyfill from './internal/ponyfills/Array.from.js';
 
 export const fromPonyfill = curryN(1, ponyfill);
 

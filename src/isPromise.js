@@ -1,6 +1,6 @@
 import { both, pipe, toString, equals, curryN } from 'ramda';
 
-import isObj from './isObj';
+import isObj from './isObj.js';
 
 /**
  * Checks if input value is a native `Promise`.

@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isNull from './isNull';
+import isNull from './isNull.js';
 
 /**
  * Checks if input value is complement of `null`.

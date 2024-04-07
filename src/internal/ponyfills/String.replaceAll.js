@@ -1,7 +1,7 @@
 import { replace } from 'ramda';
 
-import isRegExp from '../../isRegExp';
-import escapeRegExp from '../../escapeRegExp';
+import isRegExp from '../../isRegExp.js';
+import escapeRegExp from '../../escapeRegExp.js';
 
 const checkArguments = (searchValue, replaceValue, str) => {
   if (str == null || searchValue == null || replaceValue == null) {

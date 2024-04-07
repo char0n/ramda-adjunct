@@ -1,13 +1,13 @@
 import { both, anyPass } from 'ramda';
 
-import isNotObj from './isNotObj';
-import isString from './isString';
-import isNumber from './isNumber';
-import isBigInt from './isBigInt';
-import isBoolean from './isBoolean';
-import isUndefined from './isUndefined';
-import isNull from './isNull';
-import isSymbol from './isSymbol';
+import isNotObj from './isNotObj.js';
+import isString from './isString.js';
+import isNumber from './isNumber.js';
+import isBigInt from './isBigInt.js';
+import isBoolean from './isBoolean.js';
+import isUndefined from './isUndefined.js';
+import isNull from './isNull.js';
+import isSymbol from './isSymbol.js';
 
 /**
  * Checks if value is a primitive data type. There are 6 primitive data types: `string`, `number`, `bigint`, `boolean`, `undefined`, `symbol` and a special case of `null`.

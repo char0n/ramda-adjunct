@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isPair from './isPair';
+import isPair from './isPair.js';
 
 /**
  * Checks if input value is complement of a pair.

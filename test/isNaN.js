@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import { isNaNPonyfill } from '../src/isNaN';
+import * as RA from '../src/index.js';
+import { isNaNPonyfill } from '../src/isNaN.js';
 
 describe('isNaN', function () {
   it('should test value for a `NaN`', function () {

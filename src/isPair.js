@@ -1,6 +1,6 @@
 import { both, equals, length, pipe, curryN } from 'ramda';
 
-import isArray from './isArray';
+import isArray from './isArray.js';
 
 /**
  * Checks if input value is a pair.

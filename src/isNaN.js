@@ -1,7 +1,7 @@
 import { curryN } from 'ramda';
 
-import isFunction from './isFunction';
-import ponyfill from './internal/ponyfills/Number.isNaN';
+import isFunction from './isFunction.js';
+import ponyfill from './internal/ponyfills/Number.isNaN.js';
 
 export const isNaNPonyfill = curryN(1, ponyfill);
 

@@ -1,6 +1,6 @@
 import { complement, curryN } from 'ramda';
 
-import isFloat from './isFloat';
+import isFloat from './isFloat.js';
 
 /**
  * Checks whether the passed value is complement of a `float`.

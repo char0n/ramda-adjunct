@@ -1,7 +1,7 @@
 import { curryN, invoker } from 'ramda';
 
-import isFunction from './isFunction';
-import ponyfill from './internal/ponyfills/String.replaceAll';
+import isFunction from './isFunction.js';
+import ponyfill from './internal/ponyfills/String.replaceAll.js';
 
 export const replaceAllPonyfill = curryN(3, ponyfill);
 

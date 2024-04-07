@@ -1,9 +1,9 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import args from './shared/arguments';
-import genFunc from './shared/genFunc';
+import * as RA from '../src/index.js';
+import args from './shared/arguments.js';
+import genFunc from './shared/genFunc.js';
 
 describe('isNotGeneratorFunction', function () {
   it('should tests value for a `Generator Function`', function () {

@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { range } from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('skipTake', function () {
   context('given array as input', function () {

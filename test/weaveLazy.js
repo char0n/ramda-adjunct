@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import { sum, curry, always } from 'ramda';
 import { Reader as reader } from 'monet';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('weaveLazy', function () {
   const unaryReader = (a) => reader((config) => config + a);

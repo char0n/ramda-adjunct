@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import { truncPonyfill } from '../src/trunc';
+import * as RA from '../src/index.js';
+import { truncPonyfill } from '../src/trunc.js';
 
 describe('trunc', function () {
   it('should truncate fractional digits', function () {
