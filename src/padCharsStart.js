@@ -1,7 +1,7 @@
 import { flip, invoker, curry } from 'ramda';
 
-import isFunction from './isFunction';
-import ponyfill from './internal/ponyfills/String.padStart';
+import isFunction from './isFunction.js';
+import ponyfill from './internal/ponyfills/String.padStart.js';
 
 export const padStartInvoker = flip(invoker(2, 'padStart'));
 

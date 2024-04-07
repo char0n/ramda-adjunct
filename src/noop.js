@@ -1,6 +1,6 @@
 import { always } from 'ramda';
 
-import stubUndefined from './stubUndefined';
+import stubUndefined from './stubUndefined.js';
 
 /**
  * A function that performs no operations.

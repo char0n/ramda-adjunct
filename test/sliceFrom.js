@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('sliceFrom', function () {
   it('should retrieve the proper sublist of a list', function () {

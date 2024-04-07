@@ -1,6 +1,6 @@
 import { of, curry } from 'ramda';
 
-import spreadPath from './spreadPath';
+import spreadPath from './spreadPath.js';
 
 /**
  * Spreads object under property onto provided object.

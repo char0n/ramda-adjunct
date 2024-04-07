@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('trimCharsStart', function () {
   it('should remove all occurences of a trim character', function () {

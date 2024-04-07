@@ -1,6 +1,6 @@
 import { pipe, uniq, curryN } from 'ramda';
 
-import lengthLte from './lengthLte';
+import lengthLte from './lengthLte.js';
 
 // Original idea for this function was conceived by https://github.com/jackmellis
 // in https://github.com/char0n/ramda-adjunct/pull/513.

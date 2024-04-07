@@ -1,7 +1,7 @@
 import { bind, curryN } from 'ramda';
 
-import isFunction from './isFunction';
-import ponyfill from './internal/ponyfills/Number.isSafeInteger';
+import isFunction from './isFunction.js';
+import ponyfill from './internal/ponyfills/Number.isSafeInteger.js';
 
 export const isSafeIntegerPonyfill = curryN(1, ponyfill);
 

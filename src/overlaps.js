@@ -1,6 +1,6 @@
 import { pipe, intersection, isEmpty, curryN } from 'ramda';
 
-import isNotEmpty from './isNotEmpty';
+import isNotEmpty from './isNotEmpty.js';
 
 /**
  * Returns true if two lists have at least one element common to both lists.

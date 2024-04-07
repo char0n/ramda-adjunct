@@ -47,9 +47,9 @@ import {
  * ]);
  * fnSwitch(1); //=> 2
  */
-import isNotNil from './isNotNil';
-import isNonEmptyArray from './isNonEmptyArray';
-import stubUndefined from './stubUndefined';
+import isNotNil from './isNotNil.js';
+import isNonEmptyArray from './isNonEmptyArray.js';
+import stubUndefined from './stubUndefined.js';
 
 const byArity = comparator((a, b) => a.length > b.length);
 

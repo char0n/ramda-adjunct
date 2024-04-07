@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import { allSettledPPonyfill } from '../src/allSettledP';
+import * as RA from '../src/index.js';
+import { allSettledPPonyfill } from '../src/allSettledP.js';
 
 describe('allSettledP', function () {
   context('given list of fulfilled promises', function () {

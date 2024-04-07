@@ -1,7 +1,7 @@
 import { anyPass, type, pipe, identical } from 'ramda';
 
-import isGeneratorFunction from './isGeneratorFunction';
-import isAsyncFunction from './isAsyncFunction';
+import isGeneratorFunction from './isGeneratorFunction.js';
+import isAsyncFunction from './isAsyncFunction.js';
 
 /**
  * Checks if input value is `Function`.

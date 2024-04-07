@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 import { Maybe } from 'monet';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('lensTraverse', function () {
   it('should operate on a list of Applicatives', function () {

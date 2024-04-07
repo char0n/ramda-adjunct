@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import lensSatisfies from './lensSatisfies';
+import lensSatisfies from './lensSatisfies.js';
 
 /**
  * Returns `true` if data structure focused by the given lens doesn't satisfy the predicate.

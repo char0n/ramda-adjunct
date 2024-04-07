@@ -6,7 +6,7 @@ import fl from 'fantasy-land';
 import laws from 'fantasy-laws';
 import jsv from 'jsverify';
 
-import * as RA from '../../src';
+import * as RA from '../../src/index.js';
 
 describe('Identity', function () {
   const IdentityArb = (arbitrary) =>

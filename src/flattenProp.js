@@ -1,6 +1,6 @@
 import { of, curry } from 'ramda';
 
-import flattenPath from './flattenPath';
+import flattenPath from './flattenPath.js';
 
 /**
  * Flattens a property so that its fields are spread out into the provided object.

@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isDate from './isDate';
+import isDate from './isDate.js';
 
 /**
  * Checks if value is complement of `Date` object.

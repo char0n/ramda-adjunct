@@ -1,7 +1,7 @@
 import { bind, curryN } from 'ramda';
 
-import isFunction from './isFunction';
-import ponyfill from './internal/ponyfills/Math.sign';
+import isFunction from './isFunction.js';
+import ponyfill from './internal/ponyfills/Math.sign.js';
 
 export const signPonyfill = curryN(1, ponyfill);
 

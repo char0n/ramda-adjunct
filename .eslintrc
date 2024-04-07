@@ -28,6 +28,13 @@
       ],
       "newlines-between": "always"
     }],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "ignorePackages": true
+      }
+    ],
     "quotes": ["error", "single", { "avoidEscape": true }],
     "ramda/always-simplification": ["error"],
     "ramda/compose-simplification": ["error"],

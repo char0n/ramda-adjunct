@@ -1,7 +1,7 @@
 import { map } from 'ramda';
 
-import allP from '../../allP';
-import resolveP from '../../resolveP';
+import allP from '../../allP.js';
+import resolveP from '../../resolveP.js';
 
 const onFulfill = (value) => ({ status: 'fulfilled', value });
 const onReject = (reason) => ({ status: 'rejected', reason });

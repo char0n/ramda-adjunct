@@ -1,5 +1,5 @@
-import isNotFinite from '../../isNotFinite';
-import isNegative from '../../isNegative';
+import isNotFinite from '../../isNotFinite.js';
+import isNegative from '../../isNegative.js';
 
 const repeat = (value, count) => {
   let validCount = Number(count);

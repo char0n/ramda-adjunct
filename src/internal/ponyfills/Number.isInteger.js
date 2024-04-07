@@ -1,6 +1,6 @@
 import { both, converge, equals, identity } from 'ramda';
 
-import isFinite from '../../isFinite';
+import isFinite from '../../isFinite.js';
 
 const isIntegerPonyfill = both(
   isFinite,

@@ -1,4 +1,4 @@
-import padCharsEnd from './padCharsEnd';
+import padCharsEnd from './padCharsEnd.js';
 
 /**
  * The function pads the current string with an empty string

@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { lens, lensIndex, lensPath, lensProp, path } from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('lensEq', function () {
   context(

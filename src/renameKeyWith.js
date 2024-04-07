@@ -1,6 +1,6 @@
 import { curry, equals, when } from 'ramda';
 
-import renameKeysWith from './renameKeysWith';
+import renameKeysWith from './renameKeysWith.js';
 
 /**
  * Creates a new object with the own properties of the provided object, but the

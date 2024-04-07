@@ -1,8 +1,8 @@
 import { curryN, map, pipe } from 'ramda';
 
-import allP from './allP';
-import rejectP from './rejectP';
-import resolveP from './resolveP';
+import allP from './allP.js';
+import rejectP from './rejectP.js';
+import resolveP from './resolveP.js';
 
 /**
  * Returns a Promise that is resolved with an array of reasons when all of the provided Promises reject, or rejected when any Promise is resolved.

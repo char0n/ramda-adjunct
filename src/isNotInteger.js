@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isInteger from './isInteger';
+import isInteger from './isInteger.js';
 
 /**
  * Checks whether the passed value is complement of an `integer`.

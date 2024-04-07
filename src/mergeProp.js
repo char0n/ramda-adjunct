@@ -1,6 +1,6 @@
 import { curry, of } from 'ramda';
 
-import mergePath from './mergePath';
+import mergePath from './mergePath.js';
 
 /**
  * Create a new object with the own properties of the object under the `p`

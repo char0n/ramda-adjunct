@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import _ap from '../../src/internal/ap';
-import Identity from '../../src/fantasy-land/Identity';
+import _ap from '../../src/internal/ap.js';
+import Identity from '../../src/fantasy-land/Identity.js';
 
 describe('ap', function () {
   const m1 = Identity.of(1);

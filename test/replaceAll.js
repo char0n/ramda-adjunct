@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import { replaceAllPonyfill, replaceAllInvoker } from '../src/replaceAll';
+import * as RA from '../src/index.js';
+import { replaceAllPonyfill, replaceAllInvoker } from '../src/replaceAll.js';
 
 describe('replaceAll', function () {
   it('should replace all matches', function () {

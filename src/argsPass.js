@@ -1,7 +1,7 @@
 import { useWith, curry, compose } from 'ramda';
 
-import list from './list';
-import isTruthy from './isTruthy';
+import list from './list.js';
+import isTruthy from './isTruthy.js';
 
 /**
  * Takes a combining predicate and a list of functions and returns a function which will map the

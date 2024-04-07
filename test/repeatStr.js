@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import { repeatStrInvoker, repeatStrPonyfill } from '../src/repeatStr';
+import * as RA from '../src/index.js';
+import { repeatStrInvoker, repeatStrPonyfill } from '../src/repeatStr.js';
 
 describe('repeatStr', function () {
   specify('should repeat string n times', function () {

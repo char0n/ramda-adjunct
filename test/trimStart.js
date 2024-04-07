@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import { trimStartInvoker, trimStartPonyfill } from '../src/trimStart';
+import * as RA from '../src/index.js';
+import { trimStartInvoker, trimStartPonyfill } from '../src/trimStart.js';
 
 describe('trimStart', function () {
   it('should remove whitespace from the beginning of a string', function () {

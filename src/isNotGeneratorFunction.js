@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isGeneratorFunction from './isGeneratorFunction';
+import isGeneratorFunction from './isGeneratorFunction.js';
 
 /* eslint-disable max-len */
 /**

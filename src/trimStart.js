@@ -1,7 +1,7 @@
 import { invoker } from 'ramda';
 
-import ponyfill from './internal/ponyfills/String.trimStart';
-import isFunction from './isFunction';
+import ponyfill from './internal/ponyfills/String.trimStart.js';
+import isFunction from './isFunction.js';
 
 export const trimStartPonyfill = ponyfill;
 

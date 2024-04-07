@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isNilOrEmpty from './isNilOrEmpty';
+import isNilOrEmpty from './isNilOrEmpty.js';
 
 /**
  * Returns `false` if the given value is its type's empty value, `null` or `undefined`.

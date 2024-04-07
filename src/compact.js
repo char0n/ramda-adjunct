@@ -1,6 +1,6 @@
 import { reject } from 'ramda';
 
-import isFalsy from './isFalsy';
+import isFalsy from './isFalsy.js';
 
 /**
  * Creates an array with all falsy values removed.

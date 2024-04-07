@@ -1,6 +1,6 @@
 import { both, lt } from 'ramda';
 
-import isNumber from './isNumber';
+import isNumber from './isNumber.js';
 
 /**
  * Checks if value is a positive `Number` primitive or object. Zero is not considered positive.

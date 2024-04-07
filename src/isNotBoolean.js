@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isBoolean from './isBoolean';
+import isBoolean from './isBoolean.js';
 
 /**
  * Checks if input value is complement of `Boolean`.

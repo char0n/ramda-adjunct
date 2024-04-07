@@ -1,8 +1,8 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import { signPonyfill } from '../src/sign';
+import * as RA from '../src/index.js';
+import { signPonyfill } from '../src/sign.js';
 
 describe('sign', function () {
   it('should return proper sign result', function () {

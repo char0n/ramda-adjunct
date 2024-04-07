@@ -1,6 +1,6 @@
 import { curryN, map, range, always } from 'ramda';
 
-import floor from './floor';
+import floor from './floor.js';
 
 /**
  * Creates an array of numbers (positive and/or negative) progressing from start up to, but not including, end.

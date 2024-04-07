@@ -4,7 +4,7 @@ import ramdaFantasy from 'ramda-fantasy/dist/ramda-fantasy';
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('cata', function () {
   context('monet support', function () {

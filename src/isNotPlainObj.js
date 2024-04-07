@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isPlainObj from './isPlainObj';
+import isPlainObj from './isPlainObj.js';
 
 /* eslint-disable max-len */
 /**

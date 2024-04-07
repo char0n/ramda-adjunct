@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isValidDate from './isValidDate';
+import isValidDate from './isValidDate.js';
 
 /**
  * Checks if value is complement of valid `Date` object.

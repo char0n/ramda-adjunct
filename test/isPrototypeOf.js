@@ -1,7 +1,7 @@
 /* eslint-disable no-prototype-builtins */
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('isPrototypeOf', function () {
   context(

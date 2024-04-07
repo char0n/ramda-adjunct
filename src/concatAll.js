@@ -1,6 +1,6 @@
 import { concat, identical, identity, pipe, reduce, when } from 'ramda';
 
-import stubUndefined from './stubUndefined';
+import stubUndefined from './stubUndefined.js';
 
 const leftIdentitySemigroup = { concat: identity };
 

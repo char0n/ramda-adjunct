@@ -1,6 +1,6 @@
 import { uniqWith, identical, pipe, curryN } from 'ramda';
 
-import lengthLte from './lengthLte';
+import lengthLte from './lengthLte.js';
 
 /**
  * Returns true if all items in the list are equivalent using `R.identical` for equality comparisons.

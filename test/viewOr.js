@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { lensIndex, lensProp } from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('viewOr', function () {
   it('should return a "view", determined by the given lens', function () {

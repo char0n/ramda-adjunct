@@ -1,6 +1,6 @@
 import { curry } from 'ramda';
 
-import isFunction from './isFunction';
+import isFunction from './isFunction.js';
 
 /**
  * The catamorphism is a way of folding a type into a value.

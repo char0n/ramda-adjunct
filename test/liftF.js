@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import { Maybe } from 'monet';
 import * as R from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 const add3 = (a, b, c) => a + b + c;
 const add4 = (a, b, c, d) => a + b + c + d;

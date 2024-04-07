@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isAsyncFunction from './isAsyncFunction';
+import isAsyncFunction from './isAsyncFunction.js';
 
 /* eslint-disable max-len */
 /**

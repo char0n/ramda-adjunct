@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isString from './isString';
+import isString from './isString.js';
 
 /**
  * Checks if input value is complement of `String`.

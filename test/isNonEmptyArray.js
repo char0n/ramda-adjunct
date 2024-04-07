@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('isNonEmptyArray', function () {
   context('given non empty Array', function () {

@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 
-import * as RA from '../../src';
-import makeFlat from '../../src/internal/makeFlat';
+import * as RA from '../../src/index.js';
+import makeFlat from '../../src/internal/makeFlat.js';
 
 describe('makeFlat', function () {
   it('should flatten an ar of n levels', function () {

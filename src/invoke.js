@@ -1,6 +1,6 @@
 import { __ } from 'ramda';
 
-import invokeArgs from './invokeArgs';
+import invokeArgs from './invokeArgs.js';
 
 /**
  * Invokes the method at path of object.

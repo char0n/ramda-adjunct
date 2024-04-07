@@ -1,7 +1,7 @@
 import { complement, both } from 'ramda';
 
-import isInteger from './isInteger';
-import isFinite from './isFinite';
+import isInteger from './isInteger.js';
+import isFinite from './isFinite.js';
 
 /**
  * Checks whether the passed value is a `float`.

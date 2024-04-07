@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { assert } from 'chai';
 import sinon from 'sinon';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('dispatch', function () {
   it('should return first non-nil value', function () {

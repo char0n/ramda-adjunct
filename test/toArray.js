@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
 
-import * as RA from '../src';
-import { fromPonyfill } from '../src/toArray';
+import * as RA from '../src/index.js';
+import { fromPonyfill } from '../src/toArray.js';
 
 describe('toArray', function () {
   const assertIsEmptyArray = (val) => {

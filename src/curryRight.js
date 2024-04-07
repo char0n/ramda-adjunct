@@ -1,6 +1,6 @@
 import { converge, length, identity } from 'ramda';
 
-import curryRightN from './curryRightN';
+import curryRightN from './curryRightN.js';
 
 /**
  * Returns a curried equivalent of the provided function.

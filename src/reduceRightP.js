@@ -1,8 +1,8 @@
 import { curryN, pipe, equals, reduceRight, length, concat } from 'ramda';
 
-import isUndefined from './isUndefined';
-import resolveP from './resolveP';
-import allP from './allP';
+import isUndefined from './isUndefined.js';
+import resolveP from './resolveP.js';
+import allP from './allP.js';
 
 // in older ramda versions the order of the arguments is flipped
 const flipArgs = pipe(reduceRight(concat, ''), equals('ba'))(['a', 'b']);

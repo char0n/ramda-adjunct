@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isUndefined from './isUndefined';
+import isUndefined from './isUndefined.js';
 
 /**
  * Checks if input value is complement `undefined`.

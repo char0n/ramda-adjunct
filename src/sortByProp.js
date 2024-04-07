@@ -1,6 +1,6 @@
 import { __, append, identity, useWith } from 'ramda';
 
-import sortByProps from './sortByProps';
+import sortByProps from './sortByProps.js';
 
 /**
  * Sort a list of objects by a property.

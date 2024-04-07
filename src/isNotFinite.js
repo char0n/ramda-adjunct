@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import _isFinite from './isFinite';
+import _isFinite from './isFinite.js';
 
 /**
  * Checks whether the passed value is complement of finite `Number`.

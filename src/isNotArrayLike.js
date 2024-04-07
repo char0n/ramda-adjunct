@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isArrayLike from './isArrayLike';
+import isArrayLike from './isArrayLike.js';
 
 /**
  * Tests whether or not an object is similar to an array.

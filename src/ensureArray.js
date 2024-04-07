@@ -1,6 +1,6 @@
 import { when, of } from 'ramda';
 
-import isNotArray from './isNotArray';
+import isNotArray from './isNotArray.js';
 
 /**
  * Returns a singleton array containing the value provided.

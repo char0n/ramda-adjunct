@@ -1,6 +1,6 @@
 import { flip, gt } from 'ramda';
 
-import compareLength from './internal/compareLength';
+import compareLength from './internal/compareLength.js';
 
 /**
  * Returns `true` if the supplied list or string has a length greater than `valueLength`.

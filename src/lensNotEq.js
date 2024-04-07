@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import lensEq from './lensEq';
+import lensEq from './lensEq.js';
 
 /**
  * Returns `true` if data structure focused by the given lens doesn't equal provided value.

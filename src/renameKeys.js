@@ -1,6 +1,6 @@
 import { curry, has } from 'ramda';
 
-import renameKeysWith from './renameKeysWith';
+import renameKeysWith from './renameKeysWith.js';
 
 const valueOrKey = (keysMap) => (key) => {
   if (has(key, keysMap)) {

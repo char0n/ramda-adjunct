@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import { padEndInvoker, padEndPonyfill } from '../src/padCharsEnd';
+import * as RA from '../src/index.js';
+import { padEndInvoker, padEndPonyfill } from '../src/padCharsEnd.js';
 
 describe('padCharsEnd', function () {
   specify('should pad string with given padString', function () {

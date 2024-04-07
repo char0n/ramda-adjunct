@@ -9,9 +9,9 @@ import {
   curryN,
 } from 'ramda';
 
-import isNull from './isNull';
-import isObjLike from './isObjLike';
-import isFunction from './isFunction';
+import isNull from './isNull.js';
+import isObjLike from './isObjLike.js';
+import isFunction from './isFunction.js';
 
 const isObject = pipe(type, identical('Object'));
 const isObjectConstructor = pipe(toString, equals(toString(Object)));

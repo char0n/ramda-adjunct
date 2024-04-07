@@ -1,4 +1,4 @@
-import isArrayLike from '../isArrayLike';
+import isArrayLike from '../isArrayLike.js';
 
 /**
  * `makeFlat` is a helper function that returns a one-level or fully recursive

@@ -1,7 +1,7 @@
 import { both, complement, curryN } from 'ramda';
 
-import isInteger from './isInteger';
-import isNegative from './isNegative';
+import isInteger from './isInteger.js';
+import isNegative from './isNegative.js';
 
 /**
  * Checks if value is a natural number.

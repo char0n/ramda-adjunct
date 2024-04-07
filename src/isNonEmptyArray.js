@@ -1,7 +1,7 @@
 import { both } from 'ramda';
 
-import isNotEmpty from './isNotEmpty';
-import isArray from './isArray';
+import isNotEmpty from './isNotEmpty.js';
+import isArray from './isArray.js';
 
 /**
  * Checks if input value is not an empty `Array`.

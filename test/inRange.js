@@ -1,8 +1,8 @@
 import { assert } from 'chai';
 
-import * as RA from '../src';
-import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER';
-import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER';
+import * as RA from '../src/index.js';
+import MIN_SAFE_INTEGER from '../src/internal/ponyfills/Number.MIN_SAFE_INTEGER.js';
+import MAX_SAFE_INTEGER from '../src/internal/ponyfills/Number.MAX_SAFE_INTEGER.js';
 
 describe('inRange', function () {
   context('given integer falls within supplied range', function () {

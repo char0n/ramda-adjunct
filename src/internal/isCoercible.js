@@ -1,8 +1,8 @@
 import { both, hasIn } from 'ramda';
 
-import isObj from '../isObj';
-import isSymbol from '../isSymbol';
-import neither from '../neither';
+import isObj from '../isObj.js';
+import isSymbol from '../isSymbol.js';
+import neither from '../neither.js';
 
 const isCoercible = neither(
   isSymbol,

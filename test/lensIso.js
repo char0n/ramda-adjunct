@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { view, set, over, assoc, replace } from 'ramda';
 
-import * as RA from '../src';
+import * as RA from '../src/index.js';
 
 describe('lensIso', function () {
   const lensJSON = RA.lensIso(JSON.parse, JSON.stringify);

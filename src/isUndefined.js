@@ -1,6 +1,6 @@
 import { equals } from 'ramda';
 
-import stubUndefined from './stubUndefined';
+import stubUndefined from './stubUndefined.js';
 
 /**
  * Checks if input value is `undefined`.

@@ -1,6 +1,6 @@
 import { complement } from 'ramda';
 
-import isTruthy from './isTruthy';
+import isTruthy from './isTruthy.js';
 
 /**
  * A falsy value is a value that translates to false when evaluated in a Boolean context.

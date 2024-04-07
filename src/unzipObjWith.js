@@ -9,7 +9,7 @@ import {
   when,
 } from 'ramda';
 
-import lengthEq from './lengthEq';
+import lengthEq from './lengthEq.js';
 
 /**
  * Creates a new list out of the supplied object by applying the function to each key/value pairing.

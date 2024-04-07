@@ -1,7 +1,7 @@
 import { has, curryN } from 'ramda';
 
-import isArray from './isArray';
-import isString from './isString';
+import isArray from './isArray.js';
+import isString from './isString.js';
 
 /* eslint-disable max-len */
 /**

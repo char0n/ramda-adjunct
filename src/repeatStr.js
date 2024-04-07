@@ -1,7 +1,7 @@
 import { curry, invoker, flip } from 'ramda';
 
-import ponyfill from './internal/ponyfills/String.repeat';
-import isFunction from './isFunction';
+import ponyfill from './internal/ponyfills/String.repeat.js';
+import isFunction from './isFunction.js';
 
 export const repeatStrPonyfill = curry(ponyfill);
 
