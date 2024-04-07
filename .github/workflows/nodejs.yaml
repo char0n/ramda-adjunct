@@ -102,12 +102,13 @@ jobs:
         run: npm run coverage
       - name: Upload coverage report to codecov.io
         if: github.ref == 'refs/heads/master'
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v4
         with:
           directory: ./coverage
           flags: unittests
           fail_ci_if_error: true
           verbose: true
+          token: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload coverage artifacts
         uses: actions/upload-artifact@v2
         with:
