@@ -8,6 +8,7 @@ RA.allP([1, 'a']); // $ExpectType Promise<(string | number)[]>
 RA.allP([]); // $ExpectType Promise<never[]>
 RA.allP(customIterable); // $ExpectType Promise<number[]>
 RA.allP('abc'); // $ExpectType Promise<string[]>
+RA.allP([Promise.resolve(1), Promise.resolve(2)]); // $ExpectType Promise<number[]>
 
 // @ts-expect-error
 RA.allP({});
