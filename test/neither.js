@@ -1,9 +1,11 @@
 import { assert } from 'chai';
 import * as R from 'ramda';
-import { Just, Nothing } from 'monet';
+import monet from 'monet';
 import sinon from 'sinon';
 
 import * as RA from '../src/index.js';
+
+const { Just, Nothing } = monet;
 
 const supportsFantasyLand = () => {
   try {

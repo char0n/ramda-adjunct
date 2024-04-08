@@ -58,19 +58,29 @@
     }
   ],
   "sideEffects": false,
+  "type": "module",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "jsnext:main": "./es/index.js",
   "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./lib/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./es/*": "./es/*.js",
+    "./lib/*": "./lib/*.js"
+  },
   "scripts": {
     "docs": "better-npm-run docs",
     "lint": "better-npm-run lint",
     "lint:fix": "better-npm-run lint:fix",
     "changelog": "better-npm-run changelog",
-    "test": "better-npm-run test",
+    "test": "mocha",
     "test:web": "better-npm-run test:web",
     "test:ramda": "bnr test:ramda",
-    "test:types": "eslint --no-eslintrc --no-ignore -c ./types/dtslint.eslint.js ./types/test/*.ts",
+    "test:types": "eslint --no-eslintrc --no-ignore -c ./types/dtslint.eslint.cjs ./types/test/*.ts",
     "test:bundle-create": "better-npm-run test:bundle-create",
     "test:bundle-clean": "better-npm-run test:bundle-clean",
     "coverage": "better-npm-run coverage",
@@ -83,19 +93,13 @@
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.js",
-    "lint": "eslint ./ && eslint --no-ignore --no-eslintrc -c ./types/.eslintrc.js ./types/test/**/*.ts",
-    "lint:fix": "eslint --fix ./ && eslint --no-ignore --no-eslintrc --fix -c ./types/.eslintrc.js ./types/test/**/*.ts",
+    "lint": "eslint ./ && eslint --no-ignore --no-eslintrc -c ./types/.eslintrc.cjs ./types/test/**/*.ts",
+    "lint:fix": "eslint --fix ./ && eslint --no-ignore --no-eslintrc --fix -c ./types/.eslintrc.cjs ./types/test/**/*.ts",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
-    "test": {
-      "command": "mocha",
-      "env": {
-        "BABEL_ENV": "commonjs"
-      }
-    },
     "test:web": "testem ci",
     "test:ramda": "bnr test:ramda0.29.0",
     "test:ramda0.29.0": "npm install ramda@0.29.0 && npm test",
-    "test:bundle-create": "webpack --config webpack.config-test.web.js --progress",
+    "test:bundle-create": "webpack --config webpack.config-test.web.cjs --progress",
     "test:bundle-clean": "rimraf tmp-test-bundle.js",
     "coverage": {
       "command": "nyc mocha",
@@ -111,12 +115,12 @@
       }
     },
     "build:commonjs": {
-      "command": "babel src --out-dir lib",
+      "command": "babel src --out-dir lib && echo '{\"type\": \"commonjs\"}' > ./lib/package.json",
       "env": {
         "BABEL_ENV": "commonjs"
       }
     },
-    "build:umd": "webpack --config webpack.config.js --progress",
+    "build:umd": "webpack --config webpack.config.cjs --progress",
     "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run build && npm run docs",
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
@@ -138,7 +142,7 @@
     "babel-plugin-annotate-pure-calls": "0.4.0",
     "babel-plugin-istanbul": "6.1.1",
     "better-npm-run": "0.1.1",
-    "chai": "4.4.1",
+    "chai": "5.1.0",
     "codecov": "3.8.3",
     "core-js": "=3.35.1",
     "conventional-changelog-cli": "4.1.0",

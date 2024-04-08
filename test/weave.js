@@ -1,8 +1,10 @@
 import { assert } from 'chai';
 import { sum, curry } from 'ramda';
-import { Reader as reader } from 'monet';
+import monet from 'monet';
 
 import * as RA from '../src/index.js';
+
+const { Reader: reader } = monet;
 
 describe('weave', function () {
   const unaryReader = (a) => reader((config) => config + a);
