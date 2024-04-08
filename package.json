@@ -89,7 +89,8 @@
     "build:commonjs": "better-npm-run build:commonjs",
     "build:umd": "better-npm-run build:umd",
     "prepublishOnly": "better-npm-run prepublishOnly",
-    "clean": "better-npm-run clean"
+    "clean": "better-npm-run clean",
+    "prepare": "husky"
   },
   "betterScripts": {
     "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.cjs",
@@ -159,7 +160,7 @@
     "fantasy-laws": "=2.0.1",
     "folktale": "=2.3.2",
     "glob": "=10.3.10",
-    "husky": "8.0.3",
+    "husky": "9.0.11",
     "istanbul": "=0.4.5",
     "jsdoc": "=4.0.2",
     "jsverify": "0.8.4",
