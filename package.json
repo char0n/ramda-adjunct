@@ -92,7 +92,7 @@
     "clean": "better-npm-run clean"
   },
   "betterScripts": {
-    "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.js",
+    "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.cjs",
     "lint": "eslint ./ && eslint --no-ignore --no-eslintrc -c ./types/.eslintrc.cjs ./types/test/**/*.ts",
     "lint:fix": "eslint --fix ./ && eslint --no-ignore --no-eslintrc --fix -c ./types/.eslintrc.cjs ./types/test/**/*.ts",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
