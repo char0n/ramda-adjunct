@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { NEL, Nil } from 'monet';
+import monet from 'monet';
 import * as R from 'ramda';
 
 import * as RA from '../src/index.js';
@@ -14,7 +14,10 @@ describe('concatAll', function () {
   });
 
   it('should concatenate semigroups', function () {
-    assert.deepEqual(RA.concatAll([NEL(1), NEL(2)]), NEL(1, NEL(2, Nil)));
+    assert.deepEqual(
+      RA.concatAll([monet.NEL(1), monet.NEL(2)]),
+      monet.NEL(1, monet.NEL(2, monet.Nil))
+    );
   });
 
   context('given foldable is empty', function () {

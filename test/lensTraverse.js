@@ -1,8 +1,10 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
-import { Maybe } from 'monet';
+import monet from 'monet';
 
 import * as RA from '../src/index.js';
+
+const { Maybe } = monet;
 
 describe('lensTraverse', function () {
   it('should operate on a list of Applicatives', function () {

@@ -1,9 +1,11 @@
 import * as R from 'ramda';
 import { assert } from 'chai';
-import { Maybe } from 'monet';
+import monet from 'monet';
 
 import * as RA from '../src/index.js';
 import Identity from '../src/fantasy-land/Identity.js';
+
+const { Maybe } = monet;
 
 const addN = (...args) => R.sum(args);
 const add3 = (a, b, c) => a + b + c;

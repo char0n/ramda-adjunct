@@ -1,6 +1,6 @@
 import monet from 'monet';
 import folktale from 'folktale';
-import ramdaFantasy from 'ramda-fantasy/dist/ramda-fantasy';
+import ramdaFantasy from 'ramda-fantasy/dist/ramda-fantasy.js';
 import * as R from 'ramda';
 import { assert } from 'chai';
 

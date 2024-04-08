@@ -1,8 +1,10 @@
 import { assert } from 'chai';
 import { sum, curry, always } from 'ramda';
-import { Reader as reader } from 'monet';
+import monet from 'monet';
 
 import * as RA from '../src/index.js';
+
+const { Reader: reader } = monet;
 
 describe('weaveLazy', function () {
   const unaryReader = (a) => reader((config) => config + a);
