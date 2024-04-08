@@ -21,6 +21,6 @@ exclude_paths:
 - lib/
 - es/
 - test/
-- webpack.config.js
-- webpack.config-test.web.js
-- jsdoc.js
+- webpack.config.cjs
+- webpack.config-test.web.cjs
+- jsdoc.cjs

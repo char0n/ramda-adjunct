@@ -24,19 +24,18 @@
 /.prettierignore
 /.prettierrc
 /codecov.yml
-/jsdoc.js
+/jsdoc.cjs
 /jsdoc.json
 /tmp-test-bundle.js
 /testem.json
-/webpack.config.js
-/webpack.config-test.web.js
-/webpack.config-test.node.js
+/webpack.config.cjs
+/webpack.config-test.web.cjs
 /test-results.xml
 /types/tslint.json
 /types/tsconfig.json
 /types/test
-/types/.eslintrc.js
-/types/dtslint.eslint.js
+/types/.eslintrc.cjs
+/types/dtslint.eslint.cjs
 /RELEASE.md
 /CODE_OF_CONDUCT.md
 /CONTRIBUTING.md
@@ -45,7 +44,7 @@
 /ramda-adjunct-*.*.*.tgz
 /VERSIONS.md
 .eslintrc
-/.mocharc.js
+/.mocharc.cjs
 /.husky
 /tmp-test-bundle.js.LICENSE.txt
 

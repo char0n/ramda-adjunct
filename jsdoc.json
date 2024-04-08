@@ -21,7 +21,7 @@
     "readme": "./README.md",
     "package": "./package.json"
   },
-  "plugins": ["plugins/markdown", "./jsdoc.js"],
+  "plugins": ["plugins/markdown", "./jsdoc.cjs"],
   "templates": {
     "cleverLinks": true,
     "monospaceLinks": true
