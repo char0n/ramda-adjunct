@@ -1,6 +1,5 @@
-import { both } from 'ramda';
+import { both, isNotEmpty } from 'ramda';
 
-import isNotEmpty from './isNotEmpty.js';
 import isArray from './isArray.js';
 
 /**

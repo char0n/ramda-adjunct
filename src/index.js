@@ -202,7 +202,6 @@ export { default as inRange } from './inRange.js';
 export { default as notEqual } from './notEqual.js';
 export { default as overlaps } from './overlaps.js';
 // Logic
-export { default as isNotEmpty } from './isNotEmpty.js';
 export { default as defaultWhen } from './defaultWhen.js';
 export { default as notBoth } from './notBoth.js';
 export { default as nand } from './nand.js';
