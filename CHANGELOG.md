@@ -1,3 +1,19 @@
+# [5.0.0](https://github.com/char0n/ramda-adjunct/compare/v4.1.1...v5.0.0) (2024-04-29)
+
+
+### Features
+
+* add support for ramda@0.30.0 ([81b11d0](https://github.com/char0n/ramda-adjunct/commit/81b11d05e0cc53c901b5efc40003cb40a66e794a)), closes [#2982](https://github.com/char0n/ramda-adjunct/issues/2982)
+* convert to hybrid npm package (ESM & CommonJS) ([#2947](https://github.com/char0n/ramda-adjunct/issues/2947)) ([7ac2204](https://github.com/char0n/ramda-adjunct/commit/7ac2204b706e61d5d1cbf3390e16f3abdbb7f4f2)), closes [#2916](https://github.com/char0n/ramda-adjunct/issues/2916)
+* remove isNotEmpty ([3c47ddc](https://github.com/char0n/ramda-adjunct/commit/3c47ddc04278401df8ffc33387dc4045ae7bb2b8)), closes [#2982](https://github.com/char0n/ramda-adjunct/issues/2982)
+
+
+### BREAKING CHANGES
+
+* isNotEmpty is now part of ramda@0.30.0
+
+
+
 ## [4.1.1](https://github.com/char0n/ramda-adjunct/compare/v4.1.0...v4.1.1) (2023-08-21)
 
 
