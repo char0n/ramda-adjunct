@@ -96,7 +96,7 @@ describe('curryRight', function () {
       return [a, b, c];
     };
     const g = RA.curryRight(f);
-    const _ = { '@@functional/placeholder': true, x: Math.random() };
+    const _ = R.__;
 
     assert.sameOrderedMembers(g(1)(2)(3), [3, 2, 1]);
     assert.sameOrderedMembers(g(1)(2, 3), [3, 2, 1]);
@@ -165,7 +165,7 @@ describe('curryRight properties', function () {
     jsv.integer,
     jsv.integer,
     (a, b, c) => {
-      const _ = { '@@functional/placeholder': true, x: Math.random() };
+      const _ = R.__;
       const f = (_a, _b, _c) => _a + _b + _c;
       const g = RA.curryRight(f);
 
