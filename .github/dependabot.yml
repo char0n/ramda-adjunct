@@ -10,7 +10,7 @@ updates:
     open-pull-requests-limit: 10
 
   - package-ecosystem: "github-actions"
-    target-branch: "main"
+    target-branch: "master"
     directory: "/"
     schedule:
       interval: "daily"
