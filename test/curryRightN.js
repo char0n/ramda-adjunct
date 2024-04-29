@@ -75,7 +75,7 @@ describe('curryRightN', function () {
       return Array.prototype.slice.call(arguments);
     };
     const g = RA.curryRightN(3, f);
-    const _ = { '@@functional/placeholder': true, x: Math.random() };
+    const _ = R.__;
 
     assert.sameOrderedMembers(g(1)(2)(3), [3, 2, 1]);
     assert.sameOrderedMembers(g(1)(2, 3), [3, 2, 1]);

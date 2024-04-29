@@ -98,8 +98,8 @@
     "lint:fix": "eslint --fix ./ && eslint --no-ignore --no-eslintrc --fix -c ./types/.eslintrc.cjs ./types/test/**/*.ts",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
     "test:web": "testem ci",
-    "test:ramda": "bnr test:ramda0.29.0",
-    "test:ramda0.29.0": "npm install ramda@0.29.0 && npm test",
+    "test:ramda": "bnr test:ramda0.30.0",
+    "test:ramda0.30.0": "npm install ramda@0.30.0 && npm test",
     "test:bundle-create": "webpack --config webpack.config-test.web.cjs --progress",
     "test:bundle-clean": "rimraf tmp-test-bundle.js",
     "coverage": {
@@ -126,7 +126,7 @@
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
   "peerDependencies": {
-    "ramda": ">= 0.29.0"
+    "ramda": ">= 0.30.0"
   },
   "devDependencies": {
     "@babel/cli": "7.24.1",
@@ -172,7 +172,7 @@
     "nyc": "15.1.0",
     "prettier": "=3.2.5",
     "process": "=0.11.10",
-    "ramda": "=0.29.1",
+    "ramda": "=0.30.0",
     "ramda-fantasy": "=0.8.0",
     "regenerator-runtime": "=0.14.1",
     "rimraf": "5.0.5",
