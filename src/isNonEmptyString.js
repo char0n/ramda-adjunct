@@ -1,8 +1,7 @@
-import { allPass } from 'ramda';
+import { allPass, isNotEmpty } from 'ramda';
 
 import isString from './isString.js';
 import isNotObj from './isNotObj.js';
-import isNotEmpty from './isNotEmpty.js';
 
 /**
  * Checks if input value is not an empty `String`.
