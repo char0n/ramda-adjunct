@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 18
+      - name: Use Node.js 22
         uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: 22
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -49,14 +49,14 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14, 16, 18]
+        node-version: [18, 20, 22]
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup node 18
+      - name: Setup node 22
         uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: 22
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -84,10 +84,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 18
+      - name: Use Node.js 22
         uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: 22
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -125,10 +125,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 18
+      - name: Use Node.js 22
         uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: 22
       - name: Cache Node Modules
         id: cache-node-modules
         uses: actions/cache@v2
