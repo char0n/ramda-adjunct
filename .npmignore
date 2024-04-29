@@ -10,7 +10,7 @@
 /test
 /.huskyrc
 /.lintstagedrc
-/.babelrc
+/babel.config.cjs
 /.editorconfig
 /.eslintignore
 /.gitattributes
