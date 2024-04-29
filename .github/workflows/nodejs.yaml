@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js 22
         uses: actions/setup-node@v2
         with:
@@ -52,7 +52,7 @@ jobs:
         node-version: [18, 20, 22]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Setup node 22
         uses: actions/setup-node@v2
         with:
@@ -83,7 +83,7 @@ jobs:
     needs: [build]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js 22
         uses: actions/setup-node@v2
         with:
@@ -124,7 +124,7 @@ jobs:
     if: github.ref == 'refs/heads/master' && github.actor != 'dependabot[bot]'
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js 22
         uses: actions/setup-node@v2
         with:
