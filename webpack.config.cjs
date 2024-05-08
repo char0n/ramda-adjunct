@@ -21,6 +21,7 @@ const minimizeTrait = {
   optimization: {
     minimizer: [
       new TerserPlugin({
+        extractComments: false,
         terserOptions: {
           compress: {
             warnings: false,
@@ -44,9 +45,7 @@ const ra = {
     libraryTarget: 'umd',
     library: 'RA',
   },
-  externals: {
-    ramda: 'ramda',
-  },
+  externals: 'ramda',
   module: {
     rules: [
       {
@@ -58,18 +57,12 @@ const ra = {
             [
               '@babel/preset-env',
               {
-                targets: {
-                  node: '4',
-                },
+                targets: { node: 4 },
+                debug: false,
+                modules: 'auto',
+                useBuiltIns: false,
                 forceAllTransforms: true,
-              },
-            ],
-          ],
-          plugins: [
-            [
-              '@babel/plugin-transform-modules-commonjs',
-              {
-                loose: true,
+                ignoreBrowserslistConfig: true,
               },
             ],
           ],
@@ -90,9 +83,7 @@ const raMin = {
     libraryTarget: 'umd',
     library: 'RA',
   },
-  externals: {
-    ramda: 'ramda',
-  },
+  externals: 'ramda',
   module: {
     rules: [
       {
@@ -104,18 +95,12 @@ const raMin = {
             [
               '@babel/preset-env',
               {
-                targets: {
-                  node: '4',
-                },
+                targets: { node: 4 },
+                debug: false,
+                modules: 'auto',
+                useBuiltIns: false,
                 forceAllTransforms: true,
-              },
-            ],
-          ],
-          plugins: [
-            [
-              '@babel/plugin-transform-modules-commonjs',
-              {
-                loose: true,
+                ignoreBrowserslistConfig: true,
               },
             ],
           ],
@@ -154,15 +139,11 @@ const raWeb = {
             [
               '@babel/preset-env',
               {
+                debug: false,
+                modules: 'auto',
+                useBuiltIns: false,
                 forceAllTransforms: true,
-              },
-            ],
-          ],
-          plugins: [
-            [
-              '@babel/plugin-transform-modules-commonjs',
-              {
-                loose: true,
+                ignoreBrowserslistConfig: false,
               },
             ],
           ],
@@ -197,15 +178,11 @@ const raWebMin = {
             [
               '@babel/preset-env',
               {
+                debug: false,
+                modules: 'auto',
+                useBuiltIns: false,
                 forceAllTransforms: true,
-              },
-            ],
-          ],
-          plugins: [
-            [
-              '@babel/plugin-transform-modules-commonjs',
-              {
-                loose: true,
+                ignoreBrowserslistConfig: false,
               },
             ],
           ],
@@ -241,15 +218,11 @@ const raWebStandalone = {
             [
               '@babel/preset-env',
               {
+                debug: false,
+                modules: 'auto',
+                useBuiltIns: false,
                 forceAllTransforms: true,
-              },
-            ],
-          ],
-          plugins: [
-            [
-              '@babel/plugin-transform-modules-commonjs',
-              {
-                loose: true,
+                ignoreBrowserslistConfig: false,
               },
             ],
           ],
@@ -281,15 +254,11 @@ const rawWebStandaloneMin = {
             [
               '@babel/preset-env',
               {
+                debug: false,
+                modules: 'auto',
+                useBuiltIns: false,
                 forceAllTransforms: true,
-              },
-            ],
-          ],
-          plugins: [
-            [
-              '@babel/plugin-transform-modules-commonjs',
-              {
-                loose: true,
+                ignoreBrowserslistConfig: false,
               },
             ],
           ],
