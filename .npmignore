@@ -8,6 +8,7 @@
 /npm-debug.log
 /scripts/**/*
 /test
+/src
 /.huskyrc
 /.lintstagedrc
 /babel.config.cjs

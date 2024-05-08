@@ -62,6 +62,8 @@
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "jsnext:main": "./es/index.js",
+  "unpkg": "./dist/RA.web.standalone.min.js",
+  "jsdelivr": "./dist/RA.web.standalone.min.js",
   "types": "types/index.d.ts",
   "exports": {
     ".": {
@@ -70,7 +72,8 @@
       "types": "./types/index.d.ts"
     },
     "./es/*": "./es/*.js",
-    "./lib/*": "./lib/*.js"
+    "./lib/*": "./lib/*.js",
+    "./dist/*": "./dist/*"
   },
   "scripts": {
     "docs": "better-npm-run docs",
@@ -121,7 +124,7 @@
         "BABEL_ENV": "commonjs"
       }
     },
-    "build:umd": "webpack --config webpack.config.cjs --progress",
+    "build:umd": "webpack --config webpack.config.cjs --progress && echo '{\"type\": \"commonjs\"}' > ./dist/package.json",
     "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run build && npm run docs",
     "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es"
   },
