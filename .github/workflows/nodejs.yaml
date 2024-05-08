@@ -18,7 +18,7 @@ jobs:
           node-version: 22
       - name: Cache Node Modules
         id: cache-node-modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
@@ -34,7 +34,7 @@ jobs:
 #          fossa-api-key: ccf8289006445461c967cb7874f84a8a
       - run: npm run build
       - name: Upload build artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: build_artifacts
           path: |
@@ -59,7 +59,7 @@ jobs:
           node-version: 22
       - name: Cache Node Modules
         id: cache-node-modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
@@ -90,7 +90,7 @@ jobs:
           node-version: 22
       - name: Cache Node Modules
         id: cache-node-modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
@@ -111,7 +111,7 @@ jobs:
           verbose: true
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload coverage artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: |
@@ -131,7 +131,7 @@ jobs:
           node-version: 22
       - name: Cache Node Modules
         id: cache-node-modules
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: node-modules-${{ hashFiles('package-lock.json') }}
@@ -149,7 +149,7 @@ jobs:
           FOLDER: docs/ramda-adjunct # The folder the action should deploy.
           CLEAN: false # Automatically remove deleted files from the deploy branch
       - name: Upload docs artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: docs
           path: ./docs
