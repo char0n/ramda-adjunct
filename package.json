@@ -178,7 +178,7 @@
     "ramda": "=0.30.0",
     "ramda-fantasy": "=0.8.0",
     "regenerator-runtime": "=0.14.1",
-    "rimraf": "5.0.5",
+    "rimraf": "5.0.6",
     "sanctuary-show": "3.0.0",
     "sinon": "=17.0.2",
     "terser-webpack-plugin": "5.3.10",
