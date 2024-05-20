@@ -143,7 +143,7 @@ jobs:
       - run: npm run build:umd
       - run: npm run docs
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.6.0
+        uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: docs/ramda-adjunct # The folder the action should deploy.
