@@ -1,3 +1,10 @@
+# [5.0.1](https://github.com/char0n/ramda-adjunct/compare/v4.1.0...v4.1.1) (2024-06-02)
+
+### Bug Fixes
+
+* fix: rebuild corrupted UMD builds (#2994) ([324b30c](https://github.com/char0n/ramda-adjunct/commit/324b30c)), closes [#2994](https://github.com/char0n/ramda-adjunct/issues/2994)
+
+
 # [5.0.0](https://github.com/char0n/ramda-adjunct/compare/v4.1.1...v5.0.0) (2024-04-29)
 
 
