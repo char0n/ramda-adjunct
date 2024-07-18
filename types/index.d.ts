@@ -108,11 +108,6 @@ export function isNonEmptyArray(val: any): val is any[];
 export function isNotBoolean(val: any): boolean;
 
 /**
- * Returns true if the given value is not its type's empty value; `false` otherwise.
- */
-export function isNotEmpty(val: any): boolean;
-
-/**
  * Checks if input value is complement of `null` or `undefined`.
  */
 /* tslint:disable-next-line:no-null-undefined-union null or undefined is the accurate type here */
