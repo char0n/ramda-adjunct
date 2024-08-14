@@ -11,9 +11,9 @@ import mergePath from './mergePath.js';
  * @memberOf RA
  * @since {@link https://char0n.github.io/ramda-adjunct/1.18.0|v1.18.0}
  * @category Object
- * @sig [k] -> {a} -> {k: {a}} -> {k: {a}}
+ * @sig k -> {a} -> {k: {a}} -> {k: {a}}
  * @see {@link RA.mergePath|mergePath}
- * @param {!Array} p The property of the destination object
+ * @param {!string} p The property of the destination object
  * @param {!Object} source The source object
  * @param {!Object} obj The object that has destination object under corresponding property
  * @return {!Object} The new version of object
