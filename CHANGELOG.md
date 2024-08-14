@@ -3,7 +3,7 @@
 * fix(types): remove isNotEmpty type declaration (#3072) ([3de6d30](https://github.com/char0n/ramda-adjunct/commit/3de6d30)), closes [#3072](https://github.com/char0n/ramda-adjunct/issues/3072) [#2983](https://github.com/char0n/ramda-adjunct/issues/2983) [#3071](https://github.com/char0n/ramda-adjunct/issues/3071)
 * feat: add support for ramda@0.30.1 (#3020) ([de94706](https://github.com/char0n/ramda-adjunct/commit/de94706)), closes [#3020](https://github.com/char0n/ramda-adjunct/issues/3020)
 
-# [5.0.1](https://github.com/char0n/ramda-adjunct/compare/v4.1.0...v4.1.1) (2024-06-02)
+# [5.0.1](https://github.com/char0n/ramda-adjunct/compare/v5.0.0...v5.0.1) (2024-06-02)
 
 ### Bug Fixes
 
