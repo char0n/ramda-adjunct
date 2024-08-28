@@ -998,17 +998,17 @@ export function lensTraverse(of: Function): Function;
  * in R.equals terms, to the given value; false otherwise.
  */
 export function propNotEq(
-  prop: string | number,
   value: any,
+  prop: string | number,
   obj: object
 ): boolean;
 export function propNotEq(
-  prop: string | number,
-  value: any
+  value: any,
+  prop: string | number
 ): (obj: object) => boolean;
-export function propNotEq(prop: string | number): {
-  (value: any, obj: object): boolean;
-  (value: any): (obj: object) => boolean;
+export function propNotEq(value: any): {
+  (prop: string | number, obj: object): boolean;
+  (prop: string | number): (obj: object) => boolean;
 };
 
 /**
@@ -1016,17 +1016,17 @@ export function propNotEq(prop: string | number): {
  * in R.equals terms. Most likely used to filter a list.
  */
 export function pathNotEq(
-  path: Array<string | number>,
   value: any,
+  path: Array<string | number>,
   obj: object
 ): boolean;
 export function pathNotEq(
-  path: Array<string | number>,
-  value: any
+  value: any,
+  path: Array<string | number>
 ): (obj: object) => boolean;
-export function pathNotEq(path: Array<string | number>): {
-  (value: any, obj: object): boolean;
-  (value: any): (obj: object) => boolean;
+export function pathNotEq(value: any): {
+  (path: Array<string | number>, obj: object): boolean;
+  (path: Array<string | number>): (obj: object) => boolean;
 };
 
 /**
