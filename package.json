@@ -138,7 +138,7 @@
     "@babel/preset-env": "=7.25.4",
     "@babel/register": "7.24.6",
     "@commitlint/cli": "=19.4.0",
-    "@commitlint/config-conventional": "=19.2.2",
+    "@commitlint/config-conventional": "=19.4.1",
     "@typescript-eslint/eslint-plugin": "=7.18.0",
     "@typescript-eslint/parser": "=7.18.0",
     "assert": "=2.1.0",
