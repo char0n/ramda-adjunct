@@ -1,6 +1,6 @@
 import { ifElse, always } from 'ramda';
 
-import isCoercible from './internal/isCoercible.js';
+import isCoercible from './isCoercible.js';
 
 /**
  * Converts value to a number.
