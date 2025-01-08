@@ -183,7 +183,7 @@
     "sinon": "=18.0.1",
     "terser-webpack-plugin": "5.3.11",
     "testem": "=3.15.2",
-    "typescript": "=5.7.2",
+    "typescript": "=5.7.3",
     "webpack": "=5.97.1",
     "webpack-cli": "5.1.4",
     "taffydb": "npm:@jsdoc/salty@0.2.1"
