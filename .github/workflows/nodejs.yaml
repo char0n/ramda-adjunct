@@ -103,7 +103,7 @@ jobs:
         run: npm run coverage
       - name: Upload coverage report to codecov.io
         if: github.ref == 'refs/heads/master'
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           directory: ./coverage
           flags: unittests
