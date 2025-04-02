@@ -157,7 +157,7 @@
     "eslint-plugin-dtslint": "=3.0.2",
     "eslint-plugin-import": "=2.31.0",
     "eslint-plugin-mocha": "=10.5.0",
-    "eslint-plugin-prettier": "5.2.3",
+    "eslint-plugin-prettier": "5.2.6",
     "eslint-plugin-ramda": "2.5.1",
     "fantasy-land": "5.0.1",
     "fantasy-laws": "=2.0.1",
