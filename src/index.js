@@ -95,6 +95,8 @@ export { default as isPrimitive } from './isPrimitive.js';
 export { default as isNotPrimitive } from './isNotPrimitive.js';
 export { default as isSentinelValue } from './isSentinelValue.js';
 export { default as isBlank } from './isBlank.js';
+export { default as isCoercible } from './isCoercible.js';
+
 // Function
 export { default as stubUndefined } from './stubUndefined.js';
 export { default as stubNull } from './stubNull.js';
