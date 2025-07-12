@@ -15,9 +15,9 @@ import { type, identical, pipe, curryN } from 'ramda';
  *
  * RA.isMap(new Map()); //=> true
  * RA.isMap(new Map([[1, 2], [2, 1]])); //=> true
- * RA.isSet(new Set()); //=> false
- * RA.isSet(new Set([1,2]); //=> false
- * RA.isSet(new Object()); //=> false
+ * RA.isMap(new Set()); //=> false
+ * RA.isMap(new Set([1,2]); //=> false
+ * RA.isMap(new Object()); //=> false
  */
 
 const isMap = curryN(1, pipe(type, identical('Map')));
