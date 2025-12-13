@@ -171,7 +171,6 @@ export { default as invoke } from './invoke.js';
 export { default as invokeArgs } from './invokeArgs.js';
 export { default as paths } from './paths.js';
 export { default as renameKey } from './renameKey.js';
-export { default as renameKeys } from './renameKeys.js';
 export { default as renameKeysWith } from './renameKeysWith.js';
 export { default as renameKeyWith } from './renameKeyWith.js';
 export { default as copyKeys } from './copyKeys.js';

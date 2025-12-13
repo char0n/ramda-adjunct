@@ -1,6 +1,4 @@
-import { curryN } from 'ramda';
-
-import renameKeys from './renameKeys.js';
+import { curryN, renameKeys } from 'ramda';
 
 /**
  * Creates a new object with the own properties of the provided object, and the
@@ -17,7 +15,7 @@ import renameKeys from './renameKeys.js';
  * @param {!Object} keysMap
  * @param {!Object} obj
  * @return {!Object} New object with copied keys
- * @see {@link RA.renameKeys|renameKeys}
+ * @see {@link https://ramdajs.com/docs/#renameKeys|renameKeys}
  * @example
  *
  * copyKeys({ a: 'b' }, { a: true }); //=> { a: true, b: true }
