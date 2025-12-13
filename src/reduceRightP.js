@@ -7,7 +7,6 @@ import allP from './allP.js';
 // in older ramda versions the order of the arguments is flipped
 const flipArgs = pipe(reduceRight(concat, ''), equals('ba'))(['a', 'b']);
 
-/* eslint-disable max-len */
 /**
  * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
  * which produces promises (or a mix of promises and values),

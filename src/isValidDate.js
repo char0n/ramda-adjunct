@@ -3,7 +3,6 @@ import { invoker, both, pipe, curryN } from 'ramda';
 import isDate from './isDate.js';
 import isNotNaN from './isNotNaN.js';
 
-/* eslint-disable max-len */
 /**
  * Checks if value is valid `Date` object.
  *
@@ -20,7 +19,7 @@ import isNotNaN from './isNotNaN.js';
  * RA.isValidDate(new Date()); //=> true
  * RA.isValidDate(new Date('a')); //=> false
  */
-/* eslint-enable max-len */
+
 const isValidDate = curryN(
   1,
   both(isDate, pipe(invoker(0, 'getTime'), isNotNaN))

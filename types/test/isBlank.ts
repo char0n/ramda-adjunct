@@ -1,15 +1,16 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.isBlank(''); // $ExpectType boolean
-RA.isBlank('   '); // $ExpectType boolean
-RA.isBlank('\t\n'); // $ExpectType boolean
-RA.isBlank({}); // $ExpectType boolean
-RA.isBlank(null); // $ExpectType boolean
-RA.isBlank(undefined); // $ExpectType boolean
-RA.isBlank([]); // $ExpectType boolean
-RA.isBlank(false); // $ExpectType boolean
+expectType<boolean>(RA.isBlank(''));
+expectType<boolean>(RA.isBlank('   '));
+expectType<boolean>(RA.isBlank('\t\n'));
+expectType<boolean>(RA.isBlank({}));
+expectType<boolean>(RA.isBlank(null));
+expectType<boolean>(RA.isBlank(undefined));
+expectType<boolean>(RA.isBlank([]));
+expectType<boolean>(RA.isBlank(false));
 
-RA.isBlank('value'); // $ExpectType boolean
-RA.isBlank({ foo: 'foo' }); // $ExpectType boolean
-RA.isBlank([1, 2, 3]); // $ExpectType boolean
-RA.isBlank(true); // $ExpectType boolean
+expectType<boolean>(RA.isBlank('value'));
+expectType<boolean>(RA.isBlank({ foo: 'foo' }));
+expectType<boolean>(RA.isBlank([1, 2, 3]));
+expectType<boolean>(RA.isBlank(true));

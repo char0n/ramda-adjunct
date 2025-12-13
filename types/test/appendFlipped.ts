@@ -1,22 +1,17 @@
 import * as RA from 'ramda-adjunct';
 
 import { customIterable } from './helpers';
+import { expectType, expectError } from 'tsd';
 
-RA.appendFlipped([1, 2], 3); // $ExpectType number[]
-RA.appendFlipped(['a', 'b'], 'c'); // $ExpectType string[]
-RA.appendFlipped(['a', 2], 3); // $ExpectType (string | number)[]
-RA.appendFlipped<number>([1, 2], 3); // $ExpectType number[]
-RA.appendFlipped<string>(['a', 'b'], 'c'); // $ExpectType string[]
+expectType<number[]>(RA.appendFlipped([1, 2], 3));
+expectType<string[]>(RA.appendFlipped(['a', 'b'], 'c'));
+expectType<(string | number)[]>(RA.appendFlipped(['a', 2], 3));
+expectType<number[]>(RA.appendFlipped<number>([1, 2], 3));
+expectType<string[]>(RA.appendFlipped<string>(['a', 'b'], 'c'));
 
-// @ts-expect-error
-RA.appendFlipped<string>([1, 'b'], 'c');
-// @ts-expect-error
-RA.appendFlipped<string>([1, 'b'])('c');
-// @ts-expect-error
-RA.appendFlipped(1, 'c');
-// @ts-expect-error
-RA.appendFlipped(1)('c');
-// @ts-expect-error
-RA.appendFlipped(customIterable, 'c');
-// @ts-expect-error
-RA.appendFlipped(customIterable)('c');
+expectError(RA.appendFlipped<string>([1, 'b'], 'c'));
+expectError(RA.appendFlipped<string>([1, 'b'])('c'));
+expectError(RA.appendFlipped(1, 'c'));
+expectError(RA.appendFlipped(1)('c'));
+expectError(RA.appendFlipped(customIterable, 'c'));
+expectError(RA.appendFlipped(customIterable)('c'));

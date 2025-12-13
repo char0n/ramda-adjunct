@@ -1,6 +1,5 @@
 import { curry, compose, complement, either } from 'ramda';
 
-/* eslint-disable max-len */
 /**
  * A function which calls the two provided functions and returns the complement of `||`ing the
  * results.
@@ -32,7 +31,7 @@ import { curry, compose, complement, either } from 'ramda';
  * f(11); //=> false
  * f(9); //=> true
  */
-/* eslint-enable max-len */
+
 const neither = curry(compose(complement, either));
 
 export default neither;

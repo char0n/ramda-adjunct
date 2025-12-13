@@ -1,4 +1,3 @@
 {
-  "*.js": "eslint",
-  "*.ts": "eslint --no-ignore --no-eslintrc -c ./types/.eslintrc.js"
+  "*.js": "eslint"
 }

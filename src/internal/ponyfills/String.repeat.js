@@ -25,7 +25,7 @@ const repeat = (value, count) => {
   // Ensuring validCount is a 31-bit integer allows us to heavily optimize the
   // main part. But anyway, most current (August 2014) browsers can't handle
   // strings 1 << 28 chars or longer, so:
-  // eslint-disable-next-line no-bitwise
+
   if (value.length * validCount >= 1 << 28) {
     throw new RangeError('repeat count must not overflow maximum string size');
   }

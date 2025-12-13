@@ -1,27 +1,27 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
 const result1 = RA.cata(
   () => 1,
   () => true,
   { cata: () => '' }
 );
-result1; // $ExpectType number | boolean
+expectType<number | boolean>(result1);
 
 const result2 = RA.cata(
   () => 1,
   () => true
 )({ cata: () => '' });
-result2; // $ExpectType number | boolean
+expectType<number | boolean>(result2);
 
 const result3 = RA.cata<string, string, number, boolean>(() => 1)(() => true, {
   cata: () => '',
 });
-result3; // $ExpectType number | boolean
+expectType<number | boolean>(result3);
 
 const result4 = RA.cata<string, string, number, boolean>(() => 1)(() => true)({
   cata: () => '',
 });
-result4; // $ExpectType number | boolean
+expectType<number | boolean>(result4);
 
-// @ts-expect-error
-RA.cata(1, true, {});
+expectError(RA.cata(1, true, {}));

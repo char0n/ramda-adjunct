@@ -1,15 +1,14 @@
 import * as RA from 'ramda-adjunct';
 
 import { customIterable } from './helpers';
+import { expectType, expectError } from 'tsd';
 
-RA.allP([1, 2]); // $ExpectType Promise<number[]>
-RA.allP(['a', 'b']); // $ExpectType Promise<string[]>
-RA.allP([1, 'a']); // $ExpectType Promise<(string | number)[]>
-RA.allP([]); // $ExpectType Promise<never[]>
-RA.allP(customIterable); // $ExpectType Promise<number[]>
-RA.allP('abc'); // $ExpectType Promise<string[]>
+expectType<Promise<number[]>>(RA.allP([1, 2]));
+expectType<Promise<string[]>>(RA.allP(['a', 'b']));
+expectType<Promise<(string | number)[]>>(RA.allP([1, 'a']));
+expectType<Promise<never[]>>(RA.allP([]));
+expectType<Promise<number[]>>(RA.allP(customIterable));
+expectType<Promise<string[]>>(RA.allP('abc'));
 
-// @ts-expect-error
-RA.allP({});
-// @ts-expect-error
-RA.allP(1);
+expectError(RA.allP({}));
+expectError(RA.allP(1));

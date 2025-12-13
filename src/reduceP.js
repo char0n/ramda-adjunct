@@ -4,7 +4,6 @@ import isUndefined from './isUndefined.js';
 import resolveP from './resolveP.js';
 import allP from './allP.js';
 
-/* eslint-disable max-len */
 /**
  * Given an `Iterable`(arrays are `Iterable`), or a promise of an `Iterable`,
  * which produces promises (or a mix of promises and values),

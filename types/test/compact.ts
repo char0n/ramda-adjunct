@@ -1,22 +1,19 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
 class TestObject {
   test = 'test' as const;
 }
 
-RA.compact(['string', '']); // $ExpectType string[]
-RA.compact([true, false]); // $ExpectType true[]
-RA.compact([1, ''] as Array<number | ''>); // $ExpectType number[]
-RA.compact([new TestObject(), null, undefined]); // $ExpectType TestObject[]
-RA.compact(['string', false]); // $ExpectType (string | true)[]
-RA.compact([1, 0] as Array<1 | 0>); // $ExpectType 1[]
-RA.compact([new TestObject(), false, 0, null, NaN, undefined, '']); // $ExpectType (string | number | true | TestObject)[]
+expectType<string[]>(RA.compact(['string', '']));
+expectType<true[]>(RA.compact([true, false]));
+expectType<number[]>(RA.compact([1, ''] as Array<number | ''>));
+expectType<TestObject[]>(RA.compact([new TestObject(), null, undefined]));
+expectType<string[]>(RA.compact(['string', false] as Array<string | false>));
+expectType<1[]>(RA.compact([1, 0] as Array<1 | 0>));
+expectType<(string | number | TestObject)[]>(RA.compact([new TestObject(), false, 0, null, NaN, undefined, ''] as Array<TestObject | false | 0 | null | number | undefined | string>));
 
-// @ts-expect-error
-RA.compact(new TestObject());
-// @ts-expect-error
-RA.compact('string');
-// @ts-expect-error
-RA.compact(1);
-// @ts-expect-error
-RA.compact({});
+expectError(RA.compact(new TestObject()));
+expectError(RA.compact('string'));
+expectError(RA.compact(1));
+expectError(RA.compact({}));

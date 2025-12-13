@@ -1,7 +1,7 @@
 'use strict';
 
-const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
-const glob = require('glob'); // eslint-disable-line import/no-extraneous-dependencies
+const webpack = require('webpack');
+const glob = require('glob');
 const path = require('path');
 
 module.exports = {

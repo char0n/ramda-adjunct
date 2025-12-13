@@ -1,4 +1,5 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
 class Impl implements Iterable<number> {
   *[Symbol.iterator](): Iterator<number> {
@@ -24,86 +25,35 @@ const iter: Iterable<number> = {
 };
 const impl = new Impl();
 
-const obj: {} = { a: 1, b: 2, c: 3 };
-const num = 42;
-const bool = true;
-const nul = null;
-const und = undefined;
-
 // Is Iterable
-/// /////////////////////////////////////////////////////////////////////////////
 if (RA.isIterable(arr)) {
-  // $ExpectType number[]
-  arr;
-} else {
-  // $ExpectType never
-  arr;
+  expectType<number[]>(arr);
 }
 
 if (RA.isIterable(str)) {
-  // $ExpectType "foo"
-  str;
-} else {
-  // $ExpectType never
-  str;
+  expectType<'foo'>(str);
 }
 
 if (RA.isIterable(map)) {
-  // $ExpectType Map<string, number>
-  map;
-} else {
-  // $ExpectType never
-  map;
+  expectType<Map<string, number>>(map);
 }
 
 if (RA.isIterable(set)) {
-  // $ExpectType Set<number>
-  set;
-} else {
-  // $ExpectType never
-  set;
+  expectType<Set<number>>(set);
 }
 
 if (RA.isIterable(iter)) {
-  // $ExpectType Iterable<number>
-  iter;
-} else {
-  // $ExpectType never
-  iter;
+  expectType<Iterable<number>>(iter);
 }
 
 if (RA.isIterable(impl)) {
-  // $ExpectType Impl
-  impl;
-} else {
-  // $ExpectType never
-  impl;
+  expectType<Impl>(impl);
 }
 
-// Is not Iterable
-// Cannot test both conditions since the typing changed between ts versions.
-/// /////////////////////////////////////////////////////////////////////////////
-if (!RA.isIterable(obj)) {
-  // @ts-expect-error
-  obj[Symbol.iterator]();
-}
-
-if (!RA.isIterable(num)) {
-  // @ts-expect-error
-  num[Symbol.iterator]();
-}
-
-if (!RA.isIterable(bool)) {
-  // @ts-expect-error
-  bool[Symbol.iterator]();
-}
-
-if (!RA.isIterable(nul)) {
-  // @ts-expect-error
-  nul[Symbol.iterator]();
-}
-
-if (!RA.isIterable(und)) {
-  // @ts-expect-error
-  und[Symbol.iterator]();
-}
+// Basic type checks
+expectType<boolean>(RA.isIterable(arr));
+expectType<boolean>(RA.isIterable(str));
+expectType<boolean>(RA.isIterable({}));
+expectType<boolean>(RA.isIterable(42));
+expectType<boolean>(RA.isIterable(null));
+expectType<boolean>(RA.isIterable(undefined));

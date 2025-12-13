@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isAsyncFunction from './isAsyncFunction.js';
 
-/* eslint-disable max-len */
 /**
  * Checks if input value is complement of `Async Function`
  *
@@ -21,7 +20,7 @@ import isAsyncFunction from './isAsyncFunction.js';
  * RA.isNotAsyncFunction(function test() { }); //=> true
  * RA.isNotAsyncFunction(() => {}); //=> true
  */
-/* eslint-enable max-len */
+
 const isNotAsyncFunction = complement(isAsyncFunction);
 
 export default isNotAsyncFunction;

@@ -1,4 +1,5 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
 const alice = {
   name: 'ALICE',
@@ -17,12 +18,10 @@ const clara = {
 };
 const people = [clara, bob, alice];
 
-RA.sortByProps(['name'])(people); // $ExpectType object[]
-RA.sortByProps(['p'])(people); // $ExpectType object[]
-RA.sortByProps(['lastName', 'name'])(people); // $ExpectType object[]
-RA.sortByProps(['lastName', 'p', 'name'])(people); // $ExpectType object[]
+expectType<object[]>(RA.sortByProps(['name'])(people));
+expectType<object[]>(RA.sortByProps(['p'])(people));
+expectType<object[]>(RA.sortByProps(['lastName', 'name'])(people));
+expectType<object[]>(RA.sortByProps(['lastName', 'p', 'name'])(people));
 
-// @ts-expect-error
-RA.sortByProps(['name'])(123);
-// @ts-expect-error
-RA.sortByProps(123)(people);
+expectError(RA.sortByProps(['name'])(123));
+expectError(RA.sortByProps(123)(people));

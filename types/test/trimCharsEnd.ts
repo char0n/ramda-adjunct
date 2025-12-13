@@ -1,24 +1,16 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.trimCharsEnd('-_', '-_-abc-_-'); // $ExpectType string
-RA.trimCharsEnd('', '-_-abc-_-'); // $ExpectType string
-RA.trimCharsEnd('-_', ''); // $ExpectType string
+expectType<string>(RA.trimCharsEnd('-_', '-_-abc-_-'));
+expectType<string>(RA.trimCharsEnd('', '-_-abc-_-'));
+expectType<string>(RA.trimCharsEnd('-_', ''));
 
-// @ts-expect-error
-RA.trimCharsEnd(1, 42);
-// @ts-expect-error
-RA.trimCharsEnd([], 'abc');
-// @ts-expect-error
-RA.trimCharsEnd('-_', []);
-// @ts-expect-error
-RA.trimCharsEnd({}, 'abc');
-// @ts-expect-error
-RA.trimCharsEnd('-_', {});
-// @ts-expect-error
-RA.trimCharsEnd('-_', null);
-// @ts-expect-error
-RA.trimCharsEnd(null, 'abc');
-// @ts-expect-error
-RA.trimCharsEnd('-_', undefined);
-// @ts-expect-error
-RA.trimCharsEnd(undefined, 'abc');
+expectError(RA.trimCharsEnd(1, 42));
+expectError(RA.trimCharsEnd([], 'abc'));
+expectError(RA.trimCharsEnd('-_', []));
+expectError(RA.trimCharsEnd({}, 'abc'));
+expectError(RA.trimCharsEnd('-_', {}));
+expectError(RA.trimCharsEnd('-_', null));
+expectError(RA.trimCharsEnd(null, 'abc'));
+expectError(RA.trimCharsEnd('-_', undefined));
+expectError(RA.trimCharsEnd(undefined, 'abc'));

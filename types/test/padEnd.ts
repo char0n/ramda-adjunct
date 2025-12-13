@@ -1,16 +1,12 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.padEnd(3, 'a'); // $ExpectType string
-RA.padEnd(5)('abc'); // $ExpectType string
-RA.padEnd(10, 'hello'); // $ExpectType string
+expectType<string>(RA.padEnd(3, 'a'));
+expectType<string>(RA.padEnd(5)('abc'));
+expectType<string>(RA.padEnd(10, 'hello'));
 
-// @ts-expect-error
-RA.padEnd('10', 'afsd');
-// @ts-expect-error
-RA.padEnd('12', 54);
-// @ts-expect-error
-RA.padEnd(null, 'a');
-// @ts-expect-error
-RA.padEnd(undefined, 12);
-// @ts-expect-error
-RA.padEnd(undefined, 'abc');
+expectError(RA.padEnd('10', 'afsd'));
+expectError(RA.padEnd('12', 54));
+expectError(RA.padEnd(null, 'a'));
+expectError(RA.padEnd(undefined, 12));
+expectError(RA.padEnd(undefined, 'abc'));

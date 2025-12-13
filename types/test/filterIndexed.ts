@@ -1,4 +1,5 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
 interface Dictionary<T> {
   [key: string]: T;
@@ -11,24 +12,18 @@ const isEven = (n: number, _: number, __: Dictionary<number>): boolean =>
 const isVowel = (char: string, _: number, __: string) =>
   'aeiou'.includes(char.toLowerCase());
 
-RA.filterIndexed<number>(isValueGtIndex)([1, 2, 3, 4]); // $ExpectType number[]
-RA.filterIndexed<number>(isValueGtIndex, [1, 2, 3, 4]); // $ExpectType number[]
+expectType<number[]>(RA.filterIndexed<number>(isValueGtIndex)([1, 2, 3, 4]));
+expectType<number[]>(RA.filterIndexed<number>(isValueGtIndex, [1, 2, 3, 4]));
 
-RA.filterIndexed<number>(isEven)({ a: 0, b: 1, c: 2, d: 3, e: 4 }); // $ExpectType Dictionary<number>
-RA.filterIndexed<number>(isEven, { a: 0, b: 1, c: 2, d: 3, e: 4 }); // $ExpectType Dictionary<number>
+expectType<Dictionary<number>>(RA.filterIndexed<number>(isEven)({ a: 0, b: 1, c: 2, d: 3, e: 4 }));
+expectType<Dictionary<number>>(RA.filterIndexed<number>(isEven, { a: 0, b: 1, c: 2, d: 3, e: 4 }));
 
-RA.filterIndexed(isVowel)('The quick brown fox jumps over the lazy dog'); // $ExpectType string[]
-RA.filterIndexed(isVowel, 'The quick brown fox jumps over the lazy dog'); // $ExpectType string[]
+expectType<string[]>(RA.filterIndexed(isVowel)('The quick brown fox jumps over the lazy dog'));
+expectType<string[]>(RA.filterIndexed(isVowel, 'The quick brown fox jumps over the lazy dog'));
 
-// @ts-expect-error
-RA.filterIndexed<number>(isVowel)([1, 2, 3, 4]);
-// @ts-expect-error
-RA.filterIndexed<number>(isVowel, [1, 2, 3, 4]);
-// @ts-expect-error
-RA.filterIndexed<number>(isValueGtIndex)({ a: 0, b: 1, c: 2, d: 3, e: 4 });
-// @ts-expect-error
-RA.filterIndexed<number>(isValueGtIndex, { a: 0, b: 1, c: 2, d: 3, e: 4 });
-// @ts-expect-error
-RA.filterIndexed(isEven)('The quick brown fox jumps over the lazy dog');
-// @ts-expect-error
-RA.filterIndexed(isEven, 'The quick brown fox jumps over the lazy dog');
+expectError(RA.filterIndexed<number>(isVowel)([1, 2, 3, 4]));
+expectError(RA.filterIndexed<number>(isVowel, [1, 2, 3, 4]));
+expectError(RA.filterIndexed<number>(isValueGtIndex)({ a: 0, b: 1, c: 2, d: 3, e: 4 }));
+expectError(RA.filterIndexed<number>(isValueGtIndex, { a: 0, b: 1, c: 2, d: 3, e: 4 }));
+expectError(RA.filterIndexed(isEven)('The quick brown fox jumps over the lazy dog'));
+expectError(RA.filterIndexed(isEven, 'The quick brown fox jumps over the lazy dog'));

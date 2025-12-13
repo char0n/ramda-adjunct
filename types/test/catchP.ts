@@ -1,4 +1,5 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
 const always =
   <A>(x: A) =>
@@ -7,6 +8,6 @@ const always =
 
 const promise = RA.rejectP(1);
 
-RA.catchP(always('a'), promise); // $ExpectType Promise<string | number>
-RA.catchP<number, string>(always('a'))(promise); // $ExpectType Promise<string | number>
-RA.catchP<number, string>(always('a'))(promise); // $ExpectType Promise<string | number>
+expectType<Promise<string | number>>(RA.catchP(always('a'), promise));
+expectType<Promise<string | number>>(RA.catchP<number, string>(always('a'))(promise));
+expectType<Promise<string | number>>(RA.catchP<number, string>(always('a'))(promise));

@@ -1,27 +1,21 @@
 import * as RA from 'ramda-adjunct';
-
-/* eslint-disable no-unused-expressions */
+import { expectType, expectError } from 'tsd';
 
 // object with string as key
-RA.renameKey('A', 'B', { A: 1, C: 4 }).B; // $ExpectType number
-RA.renameKey('A')('B')({ A: 1, C: '123', D: 123 }).B // $ExpectType number
-RA.renameKey('A', 'B')({ A: 1, C: 4, D: 123 }).B; // $ExpectType number
+expectType<number>(RA.renameKey('A', 'B', { A: 1, C: 4 }).B);
+expectType<number>(RA.renameKey('A')('B')({ A: 1, C: '123', D: 123 }).B);
+expectType<number>(RA.renameKey('A', 'B')({ A: 1, C: 4, D: 123 }).B);
 
 // object with number as key
-RA.renameKey(1, 99, { 1: 'one', 2: 'two', 3: 'three' })[99]; // $ExpectType string
+expectType<string>(RA.renameKey(1, 99, { 1: 'one', 2: 'two', 3: 'three' })[99]);
 
 // object with symbol as key
-const symbol = Symbol('hello')
+const symbol = Symbol('hello');
 
-RA.renameKey(symbol, 'B', { [symbol]: 1, B: 2, C: 3 }).B; // $ExpectType number
-RA.renameKey('A', symbol, { A: 1, B: 2, C: 3 })[symbol]; // $ExpectType number
+expectType<number>(RA.renameKey(symbol, 'B', { [symbol]: 1, B: 2, C: 3 }).B);
+expectType<number>(RA.renameKey('A', symbol, { A: 1, B: 2, C: 3 })[symbol]);
 
-
-// @ts-expect-error
-RA.renameKey('Z', 'B', { A: 1, C: 4 })
-// @ts-expect-error
-RA.renameKey('A', 'B', { C: 4 })
-// @ts-expect-error
-RA.renameKey({ A: 1, C: 4 }, 'A', 'B')
-// @ts-expect-error
-RA.renameKey('A', { A: 1, C: 4 }, 'B')
+expectError(RA.renameKey('Z', 'B', { A: 1, C: 4 }));
+expectError(RA.renameKey('A', 'B', { C: 4 }));
+expectError(RA.renameKey({ A: 1, C: 4 }, 'A', 'B'));
+expectError(RA.renameKey('A', { A: 1, C: 4 }, 'B'));

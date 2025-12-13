@@ -1,16 +1,12 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.padStart(3, 'a'); // $ExpectType string
-RA.padStart(5)('abc'); // $ExpectType string
-RA.padStart(10, 'hello'); // $ExpectType string
+expectType<string>(RA.padStart(3, 'a'));
+expectType<string>(RA.padStart(5)('abc'));
+expectType<string>(RA.padStart(10, 'hello'));
 
-// @ts-expect-error
-RA.padStart('10', 'afsd');
-// @ts-expect-error
-RA.padStart('12', 54);
-// @ts-expect-error
-RA.padStart(null, 'a');
-// @ts-expect-error
-RA.padStart(undefined, 12);
-// @ts-expect-error
-RA.padStart(undefined, 'abc');
+expectError(RA.padStart('10', 'afsd'));
+expectError(RA.padStart('12', 54));
+expectError(RA.padStart(null, 'a'));
+expectError(RA.padStart(undefined, 12));
+expectError(RA.padStart(undefined, 'abc'));

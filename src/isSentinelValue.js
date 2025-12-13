@@ -20,7 +20,7 @@ import isInteger32 from './isInteger32.js';
  * RA.isSentinelValue(1); //=> false
  * RA.isSentinelValue([-1]); //=> false
  */
-// eslint-disable-next-line no-bitwise
+
 const isSentinelValue = curryN(1, (val) => isInteger32(val) && ~val === 0);
 
 export default isSentinelValue;

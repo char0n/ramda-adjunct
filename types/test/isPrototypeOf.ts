@@ -1,15 +1,15 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.isPrototypeOf(Object, {}); // $ExpectType boolean
-RA.isPrototypeOf(Array, []); // $ExpectType boolean
-RA.isPrototypeOf(Array, []); // $ExpectType boolean
-RA.isPrototypeOf(Array, () => {}); // $ExpectType boolean
-RA.isPrototypeOf(Function, () => {}); // $ExpectType boolean
-RA.isPrototypeOf(Object, () => {}); // $ExpectType boolean
-RA.isPrototypeOf(RegExp, /my regex/gi); // $ExpectType boolean
+expectType<boolean>(RA.isPrototypeOf(Object, {}));
+expectType<boolean>(RA.isPrototypeOf(Array, []));
+expectType<boolean>(RA.isPrototypeOf(Array, []));
+expectType<boolean>(RA.isPrototypeOf(Array, () => {}));
+expectType<boolean>(RA.isPrototypeOf(Function, () => {}));
+expectType<boolean>(RA.isPrototypeOf(Object, () => {}));
+expectType<boolean>(RA.isPrototypeOf(RegExp, /my regex/gi));
 
-RA.isPrototypeOf(Object)({}); // $ExpectType boolean
-RA.isPrototypeOf(Array)([]); // $ExpectType boolean
+expectType<boolean>(RA.isPrototypeOf(Object)({}));
+expectType<boolean>(RA.isPrototypeOf(Array)([]));
 
-// @ts-expect-error
-RA.isPrototypeOf(null, {});
+expectError(RA.isPrototypeOf(null, {}));

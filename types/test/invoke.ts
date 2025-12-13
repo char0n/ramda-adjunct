@@ -1,11 +1,9 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.invoke(['random'], Math); // $ExpectType any
-RA.invoke(['nonexistentMethod'], Math); // $ExpectType any
+expectType<any>(RA.invoke(['random'], Math));
+expectType<any>(RA.invoke(['nonexistentMethod'], Math));
 
-// @ts-expect-error
-RA.invoke([0, 'a'], Math);
-// @ts-expect-error
-RA.invoke([{}], Math);
-// @ts-expect-error
-RA.invoke([0], Math);
+expectError(RA.invoke([0, 'a'], Math));
+expectError(RA.invoke([{}], Math));
+expectError(RA.invoke([0], Math));

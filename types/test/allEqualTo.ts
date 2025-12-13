@@ -1,15 +1,13 @@
 import * as RA from 'ramda-adjunct';
 
 import { customIterable } from './helpers';
+import { expectType, expectError } from 'tsd';
 
-RA.allEqualTo(1, [1, 2, 3, 4]); // $ExpectType boolean
-RA.allEqualTo(1, []); // $ExpectType boolean
-RA.allEqualTo(1)([1, 2, 3, 4]); // $ExpectType boolean
-RA.allEqualTo(1)([]); // $ExpectType boolean
+expectType<boolean>(RA.allEqualTo(1, [1, 2, 3, 4]));
+expectType<boolean>(RA.allEqualTo(1, []));
+expectType<boolean>(RA.allEqualTo(1)([1, 2, 3, 4]));
+expectType<boolean>(RA.allEqualTo(1)([]));
 
-// @ts-expect-error
-RA.allEqualTo(1, {});
-// @ts-expect-error
-RA.allEqualTo(1, 'a');
-// @ts-expect-error
-RA.allEqualTo(1, customIterable);
+expectError(RA.allEqualTo(1, {}));
+expectError(RA.allEqualTo(1, 'a'));
+expectError(RA.allEqualTo(1, customIterable));

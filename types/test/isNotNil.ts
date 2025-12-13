@@ -1,4 +1,5 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
 interface Test {
   a: number | undefined;
@@ -10,20 +11,20 @@ interface Test {
 const obj: Test = { a: 1, b: 1, c: 1 };
 
 if (RA.isNotNil(obj.a)) {
-  obj.a; // $ExpectType number
+  expectType<number>(obj.a);
 }
 
 if (RA.isNotNil(obj.b)) {
-  obj.b; // $ExpectType number
+  expectType<number>(obj.b);
 }
 
 if (RA.isNotNil(obj.c)) {
-  obj.c; // $ExpectType number
+  expectType<number>(obj.c);
 }
 
-RA.isNotNil('string'); // $ExpectType boolean
-RA.isNotNil(1); // $ExpectType boolean
-RA.isNotNil([]); // $ExpectType boolean
-RA.isNotNil({}); // $ExpectType boolean
-RA.isNotNil(null); // $ExpectType boolean
-RA.isNotNil(undefined); // $ExpectType boolean
+expectType<boolean>(RA.isNotNil('string'));
+expectType<boolean>(RA.isNotNil(1));
+expectType<boolean>(RA.isNotNil([]));
+expectType<boolean>(RA.isNotNil({}));
+expectType<boolean>(RA.isNotNil(null));
+expectType<boolean>(RA.isNotNil(undefined));

@@ -1,11 +1,12 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.notEqual(1, 1); // $ExpectType boolean
-RA.notEqual(1, ''); // $ExpectType boolean
-RA.notEqual('', ''); // $ExpectType boolean
-RA.notEqual([], [1]); // $ExpectType boolean
-RA.notEqual([1, 2, 3, 4], []); // $ExpectType boolean
-RA.notEqual(['a', 'b', 'c', 'd'], {}); // $ExpectType boolean
+expectType<boolean>(RA.notEqual(1, 1));
+expectType<boolean>(RA.notEqual(1, ''));
+expectType<boolean>(RA.notEqual('', ''));
+expectType<boolean>(RA.notEqual([], [1]));
+expectType<boolean>(RA.notEqual([1, 2, 3, 4], []));
+expectType<boolean>(RA.notEqual(['a', 'b', 'c', 'd'], {}));
 
-RA.notEqual([1])([1]); // $ExpectType boolean
-RA.notEqual(1)(1); // $ExpectType boolean
+expectType<boolean>(RA.notEqual([1])([1]));
+expectType<boolean>(RA.notEqual(1)(1));

@@ -1,26 +1,23 @@
 import * as RA from 'ramda-adjunct';
 
 import { customIterable } from './helpers';
+import { expectType, expectError } from 'tsd';
 
-RA.anyP([1, 2]); // $ExpectType Promise<number>
-RA.anyP(['a', 'b']); // $ExpectType Promise<string>
-RA.anyP([1, 'a']); // $ExpectType Promise<string | number>
-RA.anyP([]); // $ExpectType Promise<never>
-RA.anyP(customIterable); // $ExpectType Promise<number>
+expectType<Promise<number>>(RA.anyP([1, 2]));
+expectType<Promise<string>>(RA.anyP(['a', 'b']));
+expectType<Promise<string | number>>(RA.anyP([1, 'a']));
+expectType<Promise<never>>(RA.anyP([]));
+expectType<Promise<number>>(RA.anyP(customIterable));
 
-// @ts-expect-error
-RA.anyP({});
-// @ts-expect-error
-RA.anyP(1);
+expectError(RA.anyP({}));
+expectError(RA.anyP(1));
 
 // alias
-RA.firstP([1, 2]); // $ExpectType Promise<number>
-RA.firstP(['a', 'b']); // $ExpectType Promise<string>
-RA.firstP([1, 'a']); // $ExpectType Promise<string | number>
-RA.firstP([]); // $ExpectType Promise<never>
-RA.firstP(customIterable); // $ExpectType Promise<number>
+expectType<Promise<number>>(RA.firstP([1, 2]));
+expectType<Promise<string>>(RA.firstP(['a', 'b']));
+expectType<Promise<string | number>>(RA.firstP([1, 'a']));
+expectType<Promise<never>>(RA.firstP([]));
+expectType<Promise<number>>(RA.firstP(customIterable));
 
-// @ts-expect-error
-RA.firstP({});
-// @ts-expect-error
-RA.firstP(1);
+expectError(RA.firstP({}));
+expectError(RA.firstP(1));
