@@ -608,15 +608,6 @@ type PickRenameMulti<
 > = {
   [P in keyof T as P extends keyof R ? R[P] : P]: T[P];
 };
-export function renameKeys<
-  MAP extends Dictionary<string>,
-  OBJ extends { readonly [s in keyof MAP]: any },
->(keysMap: MAP, obj: OBJ): PickRenameMulti<MAP, OBJ>;
-export function renameKeys<MAP extends Dictionary<string>>(
-  keysMap: MAP
-): <OBJ extends { readonly [s in keyof MAP]: any }>(
-  obj: OBJ
-) => PickRenameMulti<MAP, OBJ>;
 
 type Keyable = string | number | symbol;
 type RenameObjectKey<
