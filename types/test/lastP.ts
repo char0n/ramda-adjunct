@@ -1,14 +1,13 @@
 import * as RA from 'ramda-adjunct';
 
 import { customIterable } from './helpers';
+import { expectType, expectError } from 'tsd';
 
-RA.lastP([1, 2]); // $ExpectType Promise<number>
-RA.lastP(['a', 'b']); // $ExpectType Promise<string>
-RA.lastP([1, 'a']); // $ExpectType Promise<string | number>
-RA.lastP([]); // $ExpectType Promise<never>
-RA.lastP(customIterable); // $ExpectType Promise<number>
+expectType<Promise<number>>(RA.lastP([1, 2]));
+expectType<Promise<string>>(RA.lastP(['a', 'b']));
+expectType<Promise<string | number>>(RA.lastP([1, 'a']));
+expectType<Promise<never>>(RA.lastP([]));
+expectType<Promise<number>>(RA.lastP(customIterable));
 
-// @ts-expect-error
-RA.lastP({});
-// @ts-expect-error
-RA.lastP(1);
+expectError(RA.lastP({}));
+expectError(RA.lastP(1));

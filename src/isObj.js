@@ -4,7 +4,6 @@ import isNotNull from './isNotNull.js';
 import isFunction from './isFunction.js';
 import isOfTypeObject from './internal/isOfTypeObject.js';
 
-/* eslint-disable max-len */
 /**
  * Checks if input value is language type of `Object`.
  *
@@ -25,7 +24,7 @@ import isOfTypeObject from './internal/isOfTypeObject.js';
  * RA.isObj(null); //=> false
  * RA.isObj(undefined); //=> false
  */
-/* eslint-enable max-len */
+
 const isObj = curryN(1, both(isNotNull, either(isOfTypeObject, isFunction)));
 
 export default isObj;

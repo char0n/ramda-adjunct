@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isGeneratorFunction from './isGeneratorFunction.js';
 
-/* eslint-disable max-len */
 /**
  * Checks if input value is complement of `Generator Function`
  *
@@ -21,7 +20,7 @@ import isGeneratorFunction from './isGeneratorFunction.js';
  * RA.isNotGeneratorFunction(function test() { }); //=> true
  * RA.isNotGeneratorFunction(() => {}); //=> true
  */
-/* eslint-enable max-len */
+
 const isNotGeneratorFunction = complement(isGeneratorFunction);
 
 export default isNotGeneratorFunction;

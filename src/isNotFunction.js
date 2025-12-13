@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isFunction from './isFunction.js';
 
-/* eslint-disable max-len */
 /**
  * Checks if input value is complement of `Function`.
  *
@@ -23,7 +22,7 @@ import isFunction from './isFunction.js';
  * RA.isNotFunction(null); //=> true
  * RA.isNotFunction('abc'); //=> true
  */
-/* eslint-enable max-len */
+
 const isNotFunction = complement(isFunction);
 
 export default isNotFunction;

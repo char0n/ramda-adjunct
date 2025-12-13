@@ -1,16 +1,12 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.skipTake(2, [1, 2, 3, 4]); // $ExpectType number[]
-RA.skipTake<number>(2)([1, 2, 3, 4]); // $ExpectType number[]
-RA.skipTake<number>(2)([1, 2, 3, 4]); // $ExpectType number[]
+expectType<number[]>(RA.skipTake(2, [1, 2, 3, 4]));
+expectType<number[]>(RA.skipTake<number>(2)([1, 2, 3, 4]));
+expectType<number[]>(RA.skipTake<number>(2)([1, 2, 3, 4]));
 
-// @ts-expect-error
-RA.skipTake(0, 'asd');
-// @ts-expect-error
-RA.skipTake('12', []);
-// @ts-expect-error
-RA.skipTake(null, []);
-// @ts-expect-error
-RA.skipTake(undefined, []);
-// @ts-expect-error
-RA.skipTake(undefined, []);
+expectError(RA.skipTake(0, 'asd'));
+expectError(RA.skipTake('12', []));
+expectError(RA.skipTake(null, []));
+expectError(RA.skipTake(undefined, []));
+expectError(RA.skipTake(undefined, []));

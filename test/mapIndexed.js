@@ -112,6 +112,7 @@ describe('mapIndexed', function () {
 
   context('given third argument', function () {
     const initialList = ['f', 'o', 'o', 'b', 'a', 'r'];
+
     specify(
       'the third argument should be the same reference that original list',
       function () {

@@ -3,7 +3,6 @@ import { has, curryN } from 'ramda';
 import isArray from './isArray.js';
 import isString from './isString.js';
 
-/* eslint-disable max-len */
 /**
  * Tests whether or not an object is similar to an array.
  *
@@ -26,7 +25,7 @@ import isString from './isString.js';
  * RA.isArrayLike({length: 10}); //=> false
  * RA.isArrayLike({0: 'zero', 9: 'nine', length: 10}); //=> true
  */
-/* eslint-enable max-len */
+
 const isArrayLike = curryN(1, (val) => {
   if (isArray(val)) {
     return true;

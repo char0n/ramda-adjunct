@@ -1,17 +1,12 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.escapeRegExp('abc'); // $ExpectType string
-RA.escapeRegExp(''); // $ExpectType string
+expectType<string>(RA.escapeRegExp('abc'));
+expectType<string>(RA.escapeRegExp(''));
 
-// @ts-expect-error
-RA.escapeRegExp(new String('')); // tslint:disable-line:no-construct
-// @ts-expect-error
-RA.escapeRegExp(1);
-// @ts-expect-error
-RA.escapeRegExp({});
-// @ts-expect-error
-RA.escapeRegExp(null);
-// @ts-expect-error
-RA.escapeRegExp(undefined);
-// @ts-expect-error
-RA.escapeRegExp([]);
+expectError(RA.escapeRegExp(new String('')));
+expectError(RA.escapeRegExp(1));
+expectError(RA.escapeRegExp({}));
+expectError(RA.escapeRegExp(null));
+expectError(RA.escapeRegExp(undefined));
+expectError(RA.escapeRegExp([]));

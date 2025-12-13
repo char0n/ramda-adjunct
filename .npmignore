@@ -2,6 +2,7 @@
 /.tmp
 /.nyc_output
 /.github
+/.claude
 /coverage
 /docs
 /node_modules
@@ -13,13 +14,12 @@
 /.lintstagedrc
 /babel.config.cjs
 /.editorconfig
-/.eslintignore
 /.gitattributes
 /.gitignore
 /.npmignore
 /.npmrc
 /.nvmrc
-/.nycrc
+/.c8rc.json
 /.codeclimate.yml
 /.commitlintrc.json
 /.prettierignore
@@ -32,11 +32,9 @@
 /webpack.config.cjs
 /webpack.config-test.web.cjs
 /test-results.xml
-/types/tslint.json
 /types/tsconfig.json
 /types/test
-/types/.eslintrc.cjs
-/types/dtslint.eslint.cjs
+/eslint.config.js
 /RELEASE.md
 /CODE_OF_CONDUCT.md
 /CONTRIBUTING.md
@@ -44,8 +42,7 @@
 /logo.jpg
 /ramda-adjunct-*.*.*.tgz
 /VERSIONS.md
-.eslintrc
 /.mocharc.cjs
 /.husky
 /tmp-test-bundle.js.LICENSE.txt
-
+/CLAUDE.md

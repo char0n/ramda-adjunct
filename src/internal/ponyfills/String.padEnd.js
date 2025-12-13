@@ -3,7 +3,6 @@ import isNotUndefined from '../../isNotUndefined.js';
 import repeat from './String.repeat.js';
 
 const padEndPonyfill = (padString, targetLength, value) => {
-  // eslint-disable-next-line no-bitwise
   let finalLength = targetLength >> 0;
   let finalPadString = String(isNotUndefined(padString) ? padString : ' ');
 

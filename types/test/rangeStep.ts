@@ -1,13 +1,14 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.rangeStep(1, 0, 4); // $ExpectType number[]
-RA.rangeStep(-1, -4, 0); // $ExpectType number[]
-RA.rangeStep(1, 1, 5); // $ExpectType number[]
-RA.rangeStep(5, 0, 20); // $ExpectType number[]
-RA.rangeStep(-1, 0, -4); // $ExpectType number[]
-RA.rangeStep(0, 1, 4); // $ExpectType number[]
-RA.rangeStep(1, 0, 0); // $ExpectType number[]
+expectType<number[]>(RA.rangeStep(1, 0, 4));
+expectType<number[]>(RA.rangeStep(-1, -4, 0));
+expectType<number[]>(RA.rangeStep(1, 1, 5));
+expectType<number[]>(RA.rangeStep(5, 0, 20));
+expectType<number[]>(RA.rangeStep(-1, 0, -4));
+expectType<number[]>(RA.rangeStep(0, 1, 4));
+expectType<number[]>(RA.rangeStep(1, 0, 0));
 
-RA.rangeStep(1, 0)(4); // $ExpectType number[]
-RA.rangeStep(1)(0, 4); // $ExpectType number[]
-RA.rangeStep(1)(0)(4); // $ExpectType number[]
+expectType<number[]>(RA.rangeStep(1, 0)(4));
+expectType<number[]>(RA.rangeStep(1)(0, 4));
+expectType<number[]>(RA.rangeStep(1)(0)(4));

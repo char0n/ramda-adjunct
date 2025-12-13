@@ -1,24 +1,17 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.subtractNum(3, 5); // $ExpectType number
-RA.subtractNum(5, 3); // $ExpectType number
+expectType<number>(RA.subtractNum(3, 5));
+expectType<number>(RA.subtractNum(5, 3));
 
-RA.subtractNum(3)(5); // $ExpectType number
-RA.subtractNum(5)(3); // $ExpectType number
+expectType<number>(RA.subtractNum(3)(5));
+expectType<number>(RA.subtractNum(5)(3));
 
-// @ts-expect-error
-RA.subtractNum('a', 'b');
-// @ts-expect-error
-RA.subtractNum('a')('b');
-// @ts-expect-error
-RA.subtractNum(1, undefined);
-// @ts-expect-error
-RA.subtractNum(1)(undefined);
-// @ts-expect-error
-RA.subtractNum(1, {});
-// @ts-expect-error
-RA.subtractNum(1)({});
-// @ts-expect-error
-RA.subtractNum({}, 1);
-// @ts-expect-error
-RA.subtractNum({})(1);
+expectError(RA.subtractNum('a', 'b'));
+expectError(RA.subtractNum('a')('b'));
+expectError(RA.subtractNum(1, undefined));
+expectError(RA.subtractNum(1)(undefined));
+expectError(RA.subtractNum(1, {}));
+expectError(RA.subtractNum(1)({}));
+expectError(RA.subtractNum({}, 1));
+expectError(RA.subtractNum({})(1));

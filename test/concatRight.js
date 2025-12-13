@@ -8,7 +8,7 @@ describe('concatRight', function () {
     x: 'z1',
     concat(that) {
       return `${this.x} ${that.x}`;
-    }, // eslint-disable-line prefer-template
+    },
   };
   const z2 = { x: 'z2' };
 

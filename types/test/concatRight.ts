@@ -1,13 +1,11 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.concatRight('ab', 'cd'); // $ExpectType string
-RA.concatRight('ab')('cd'); // $ExpectType string
-RA.concatRight([1, 2], [3, 4]); // $ExpectType number[]
-RA.concatRight([1, 2])([3, 4]); // $ExpectType number[]
+expectType<string>(RA.concatRight('ab', 'cd'));
+expectType<string>(RA.concatRight('ab')('cd'));
+expectType<number[]>(RA.concatRight([1, 2], [3, 4]));
+expectType<number[]>(RA.concatRight([1, 2])([3, 4]));
 
-// @ts-expect-error
-RA.concatRight(1, 2);
-// @ts-expect-error
-RA.concatRight({}, {});
-// @ts-expect-error
-RA.concatRight('ab', [1, 2]);
+expectError(RA.concatRight(1, 2));
+expectError(RA.concatRight({}, {}));
+expectError(RA.concatRight('ab', [1, 2]));

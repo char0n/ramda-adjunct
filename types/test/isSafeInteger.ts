@@ -1,16 +1,17 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.isSafeInteger(3); // $ExpectType boolean
-RA.isSafeInteger(2 ** 53); // $ExpectType boolean
-RA.isSafeInteger(2 ** 53 - 1); // $ExpectType boolean
-RA.isSafeInteger(NaN); // $ExpectType boolean
-RA.isSafeInteger(Infinity); // $ExpectType boolean
-RA.isSafeInteger('3'); // $ExpectType boolean
-RA.isSafeInteger(3.1); // $ExpectType boolean
-RA.isSafeInteger(3.0); // $ExpectType boolean
-RA.isSafeInteger('string'); // $ExpectType boolean
-RA.isSafeInteger(null); // $ExpectType boolean
-RA.isSafeInteger(undefined); // $ExpectType boolean
-RA.isSafeInteger({}); // $ExpectType boolean
-RA.isSafeInteger(() => {}); // $ExpectType boolean
-RA.isSafeInteger(true); // $ExpectType boolean
+expectType<boolean>(RA.isSafeInteger(3));
+expectType<boolean>(RA.isSafeInteger(2 ** 53));
+expectType<boolean>(RA.isSafeInteger(2 ** 53 - 1));
+expectType<boolean>(RA.isSafeInteger(NaN));
+expectType<boolean>(RA.isSafeInteger(Infinity));
+expectType<boolean>(RA.isSafeInteger('3'));
+expectType<boolean>(RA.isSafeInteger(3.1));
+expectType<boolean>(RA.isSafeInteger(3.0));
+expectType<boolean>(RA.isSafeInteger('string'));
+expectType<boolean>(RA.isSafeInteger(null));
+expectType<boolean>(RA.isSafeInteger(undefined));
+expectType<boolean>(RA.isSafeInteger({}));
+expectType<boolean>(RA.isSafeInteger(() => {}));
+expectType<boolean>(RA.isSafeInteger(true));

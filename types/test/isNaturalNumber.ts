@@ -1,20 +1,21 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.isNaturalNumber(5); // $ExpectType boolean
-RA.isNaturalNumber(Number.MAX_VALUE); // $ExpectType boolean
-RA.isNaturalNumber(0); // $ExpectType boolean
-RA.isNaturalNumber(-1); // $ExpectType boolean
-RA.isNaturalNumber(0.9); // $ExpectType boolean
-RA.isNaturalNumber(+0); // $ExpectType boolean
-RA.isNaturalNumber(null); // $ExpectType boolean
-RA.isNaturalNumber(true); // $ExpectType boolean
-RA.isNaturalNumber(NaN); // $ExpectType boolean
-RA.isNaturalNumber({}); // $ExpectType boolean
-RA.isNaturalNumber([]); // $ExpectType boolean
-RA.isNaturalNumber(() => {}); // $ExpectType boolean
-RA.isNaturalNumber('string'); // $ExpectType boolean
-RA.isNaturalNumber(1); // $ExpectType boolean
-RA.isNaturalNumber(Object()); // $ExpectType boolean
-RA.isNaturalNumber(Object(5)); // $ExpectType boolean
-RA.isNaturalNumber(new Map()); // $ExpectType boolean
-RA.isNaturalNumber(new Set()); // $ExpectType boolean
+expectType<boolean>(RA.isNaturalNumber(5));
+expectType<boolean>(RA.isNaturalNumber(Number.MAX_VALUE));
+expectType<boolean>(RA.isNaturalNumber(0));
+expectType<boolean>(RA.isNaturalNumber(-1));
+expectType<boolean>(RA.isNaturalNumber(0.9));
+expectType<boolean>(RA.isNaturalNumber(+0));
+expectType<boolean>(RA.isNaturalNumber(null));
+expectType<boolean>(RA.isNaturalNumber(true));
+expectType<boolean>(RA.isNaturalNumber(NaN));
+expectType<boolean>(RA.isNaturalNumber({}));
+expectType<boolean>(RA.isNaturalNumber([]));
+expectType<boolean>(RA.isNaturalNumber(() => {}));
+expectType<boolean>(RA.isNaturalNumber('string'));
+expectType<boolean>(RA.isNaturalNumber(1));
+expectType<boolean>(RA.isNaturalNumber(Object()));
+expectType<boolean>(RA.isNaturalNumber(Object(5)));
+expectType<boolean>(RA.isNaturalNumber(new Map()));
+expectType<boolean>(RA.isNaturalNumber(new Set()));

@@ -2,7 +2,6 @@ import { complement } from 'ramda';
 
 import isPlainObj from './isPlainObj.js';
 
-/* eslint-disable max-len */
 /**
  * Check to see if an object is a not plain object (created using `{}`, `new Object()` or `Object.create(null)`).
  *
@@ -29,7 +28,7 @@ import isPlainObj from './isPlainObj.js';
  * RA.isNotPlainObj(Object.create(null); //=> false
  * RA.isNotPlainObj(new Object()); //=> false
  */
-/* eslint-enable max-len */
+
 const isNotPlainObj = complement(isPlainObj);
 
 export default isNotPlainObj;

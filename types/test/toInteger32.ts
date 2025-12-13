@@ -1,17 +1,14 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.toInteger32(1); // $ExpectType number
-RA.toInteger32(Infinity); // $ExpectType number
-RA.toInteger32(-Infinity); // $ExpectType number
-RA.toInteger32(+Infinity); // $ExpectType number
-RA.toInteger32(NaN); // $ExpectType number
-// @ts-expect-error
-RA.toInteger32({});
-// @ts-expect-error
-RA.toInteger32('s');
-// @ts-expect-error
-RA.toInteger32([]);
+expectType<number>(RA.toInteger32(1));
+expectType<number>(RA.toInteger32(Infinity));
+expectType<number>(RA.toInteger32(-Infinity));
+expectType<number>(RA.toInteger32(+Infinity));
+expectType<number>(RA.toInteger32(NaN));
+expectError(RA.toInteger32({}));
+expectError(RA.toInteger32('s'));
+expectError(RA.toInteger32([]));
 
-RA.toInt32(1); // $ExpectType number
-// @ts-expect-error
-RA.toInt32('s');
+expectType<number>(RA.toInt32(1));
+expectError(RA.toInt32('s'));

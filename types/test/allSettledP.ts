@@ -1,15 +1,15 @@
 import * as RA from 'ramda-adjunct';
+import type { SettledPromise } from 'ramda-adjunct';
 
 import { customIterable } from './helpers';
+import { expectType, expectError } from 'tsd';
 
-RA.allSettledP([1, 2]); // $ExpectType Promise<SettledPromise<number>[]>
-RA.allSettledP(['a', 'b']); // $ExpectType Promise<SettledPromise<string>[]>
-RA.allSettledP([1, 'a']); // $ExpectType Promise<SettledPromise<string | number>[]>
-RA.allSettledP([]); // $ExpectType Promise<SettledPromise<never>[]>
-RA.allSettledP(customIterable); // $ExpectType Promise<SettledPromise<number>[]>
-RA.allSettledP('abc'); // $ExpectType Promise<SettledPromise<string>[]>
+expectType<Promise<SettledPromise<number>[]>>(RA.allSettledP([1, 2]));
+expectType<Promise<SettledPromise<string>[]>>(RA.allSettledP(['a', 'b']));
+expectType<Promise<SettledPromise<string | number>[]>>(RA.allSettledP([1, 'a']));
+expectType<Promise<SettledPromise<never>[]>>(RA.allSettledP([]));
+expectType<Promise<SettledPromise<number>[]>>(RA.allSettledP(customIterable));
+expectType<Promise<SettledPromise<string>[]>>(RA.allSettledP('abc'));
 
-// @ts-expect-error
-RA.allSettledP({});
-// @ts-expect-error
-RA.allSettledP(1);
+expectError(RA.allSettledP({}));
+expectError(RA.allSettledP(1));

@@ -53,7 +53,6 @@ describe('lensTraverse', function () {
 
   it('should dispatch to traverse function', function () {
     class TraversableArray extends Array {
-      // eslint-disable-next-line class-methods-use-this
       traverse() {
         return 'traversed';
       }
@@ -70,7 +69,6 @@ describe('lensTraverse', function () {
 
   it('should dispatch to fantasy-land/traverse function', function () {
     class TraversableArray extends Array {
-      // eslint-disable-next-line class-methods-use-this
       ['fantasy-land/traverse']() {
         return 'traversed';
       }

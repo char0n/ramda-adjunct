@@ -1,30 +1,21 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.trimEnd('abc'); // $ExpectType string
-RA.trimEnd(''); // $ExpectType string
+expectType<string>(RA.trimEnd('abc'));
+expectType<string>(RA.trimEnd(''));
 
-// @ts-expect-error
-RA.trimEnd(1);
-// @ts-expect-error
-RA.trimEnd({});
-// @ts-expect-error
-RA.trimEnd(null);
-// @ts-expect-error
-RA.trimEnd(undefined);
-// @ts-expect-error
-RA.trimEnd([]);
+expectError(RA.trimEnd(1));
+expectError(RA.trimEnd({}));
+expectError(RA.trimEnd(null));
+expectError(RA.trimEnd(undefined));
+expectError(RA.trimEnd([]));
 
 // alias
-RA.trimRight('abc'); // $ExpectType string
-RA.trimRight(''); // $ExpectType string
+expectType<string>(RA.trimRight('abc'));
+expectType<string>(RA.trimRight(''));
 
-// @ts-expect-error
-RA.trimRight(1);
-// @ts-expect-error
-RA.trimRight({});
-// @ts-expect-error
-RA.trimRight(null);
-// @ts-expect-error
-RA.trimRight(undefined);
-// @ts-expect-error
-RA.trimRight([]);
+expectError(RA.trimRight(1));
+expectError(RA.trimRight({}));
+expectError(RA.trimRight(null));
+expectError(RA.trimRight(undefined));
+expectError(RA.trimRight([]));

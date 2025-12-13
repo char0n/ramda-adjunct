@@ -3,7 +3,6 @@ import { both, curryN } from 'ramda';
 import isNotNull from './isNotNull.js';
 import isOfTypeObject from './internal/isOfTypeObject.js';
 
-/* eslint-disable max-len */
 /**
  * Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
  *
@@ -24,7 +23,7 @@ import isOfTypeObject from './internal/isOfTypeObject.js';
  * RA.isObjLike(null); //=> false
  * RA.isObjLike(undefined); //=> false
  */
-/* eslint-enable max-len */
+
 const isObjLike = curryN(1, both(isNotNull, isOfTypeObject));
 
 export default isObjLike;

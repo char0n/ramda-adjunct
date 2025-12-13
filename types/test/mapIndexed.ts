@@ -1,4 +1,5 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.mapIndexed<number, number>((x) => x + 1)([1, 2, 3, 4]); // $ExpectType number[]
-RA.mapIndexed<number, number>((x) => x + 1, [1, 2, 3, 4]); // $ExpectType number[]
+expectType<number[]>(RA.mapIndexed<number, number>((x) => x + 1)([1, 2, 3, 4]));
+expectType<number[]>(RA.mapIndexed<number, number>((x) => x + 1, [1, 2, 3, 4]));

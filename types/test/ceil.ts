@@ -1,15 +1,13 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.ceil(0.95); // $ExpectType number
-RA.ceil(4); // $ExpectType number
-RA.ceil(7.004); // $ExpectType number
-RA.ceil(-0.95); // $ExpectType number
-RA.ceil(-4); // $ExpectType number
-RA.ceil(-7.004); // $ExpectType number
+expectType<number>(RA.ceil(0.95));
+expectType<number>(RA.ceil(4));
+expectType<number>(RA.ceil(7.004));
+expectType<number>(RA.ceil(-0.95));
+expectType<number>(RA.ceil(-4));
+expectType<number>(RA.ceil(-7.004));
 
-// @ts-expect-error
-RA.ceil(null);
-// @ts-expect-error
-RA.ceil(undefined);
-// @ts-expect-error
-RA.ceil('a');
+expectError(RA.ceil(null));
+expectError(RA.ceil(undefined));
+expectError(RA.ceil('a'));

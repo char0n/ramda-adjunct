@@ -37,7 +37,7 @@ import Identity from './fantasy-land/Identity.js';
  *
  * R.set(maybeLens, Maybe.Just(1), [Maybe.just(2), Maybe.Just(3)]); // => Maybe.Just([1, 1])
  */
-/* eslint-disable no-nested-ternary */
+
 const lensTraverse = curryN(1, (F) => {
   const of =
     typeof F['fantasy-land/of'] === 'function'
@@ -51,6 +51,5 @@ const lensTraverse = curryN(1, (F) => {
     Identity.of(traverse(TypeRep, pipe(toFunctorFn, prop('value')), target))
   );
 });
-/* eslint-enable */
 
 export default lensTraverse;

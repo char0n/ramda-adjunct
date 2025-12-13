@@ -1,6 +1,5 @@
 import { curry, compose, complement, both } from 'ramda';
 
-/* eslint-disable max-len */
 /**
  * A function which calls the two provided functions and returns the complement of `&&`ing the
  * results.
@@ -32,7 +31,7 @@ import { curry, compose, complement, both } from 'ramda';
  * f(11); //=> true
  * f(9); //=> true
  */
-/* eslint-enable max-len */
+
 const notBoth = curry(compose(complement, both));
 
 export default notBoth;

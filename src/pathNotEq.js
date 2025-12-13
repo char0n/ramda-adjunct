@@ -1,6 +1,5 @@
 import { pathEq, complement } from 'ramda';
 
-/* eslint-disable max-len */
 /**
  * Determines whether a nested path on an object doesn't have a specific value,
  * in R.equals terms. Most likely used to filter a list.
@@ -25,7 +24,7 @@ import { pathEq, complement } from 'ramda';
  * const isFamous = RA.pathNotEq(90210, ['address', 'zipCode']);
  * R.filter(isFamous, users); //=> [ user2, user3 ]
  */
-/* eslint-enable max-len */
+
 const pathNotEq = complement(pathEq);
 
 export default pathNotEq;

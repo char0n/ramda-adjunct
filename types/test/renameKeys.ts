@@ -1,13 +1,9 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-/* eslint-disable  no-unused-expressions */
+expectType<number>(RA.renameKeys({ A: 'B' } as const, { A: 1, C: 4 }).B);
+expectType<number>(RA.renameKeys({ A: 'B' }, { A: 1, C: 4 }).B);
 
-RA.renameKeys({ A: 'B' } as const, { A: 1, C: 4 }).B; // $ExpectType number
-RA.renameKeys({ A: 'B' }, { A: 1, C: 4 }).B; // $ExpectType number
-
-// @ts-expect-error
-RA.renameKeys(1, { A: 1, C: 4 });
-// @ts-expect-error
-RA.renameKeys(1, 2);
-// @ts-expect-error
-RA.renameKeys({ A: 'B' }, 2);
+expectError(RA.renameKeys(1, { A: 1, C: 4 }));
+expectError(RA.renameKeys(1, 2));
+expectError(RA.renameKeys({ A: 'B' }, 2));

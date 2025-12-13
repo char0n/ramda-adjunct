@@ -1,4 +1,5 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
 /**
  * Helpers.
@@ -21,18 +22,16 @@ const nonCurriedCombiningPredicate = <T>(
  * Tests.
  */
 
-RA.argsPass(combiningPredicate, [Boolean, Boolean])(1, 2); // $ExpectType boolean
-RA.argsPass(combiningPredicate)([Boolean, Boolean])(1, 2); // $ExpectType boolean
-RA.argsPass(combiningPredicate, [Boolean, Boolean])('a', 'b'); // $ExpectType boolean
-RA.argsPass(combiningPredicate)([Boolean, Boolean])('a', 'b'); // $ExpectType boolean
-RA.argsPass(combiningPredicate, [Boolean, Boolean])('a', 2); // $ExpectType boolean
-RA.argsPass(combiningPredicate)([Boolean, Boolean])('a', 2); // $ExpectType boolean
-RA.argsPass(combiningPredicate, [Boolean, Boolean])(); // $ExpectType boolean
+expectType<boolean>(RA.argsPass(combiningPredicate, [Boolean, Boolean])(1, 2));
+expectType<boolean>(RA.argsPass(combiningPredicate)([Boolean, Boolean])(1, 2));
+expectType<boolean>(RA.argsPass(combiningPredicate, [Boolean, Boolean])('a', 'b'));
+expectType<boolean>(RA.argsPass(combiningPredicate)([Boolean, Boolean])('a', 'b'));
+expectType<boolean>(RA.argsPass(combiningPredicate, [Boolean, Boolean])('a', 2));
+expectType<boolean>(RA.argsPass(combiningPredicate)([Boolean, Boolean])('a', 2));
+expectType<boolean>(RA.argsPass(combiningPredicate, [Boolean, Boolean])());
 
-RA.argsPass(combiningPredicate)([Boolean, Boolean])(); // $ExpectType boolean
+expectType<boolean>(RA.argsPass(combiningPredicate)([Boolean, Boolean])());
 
-// @ts-expect-error
-RA.argsPass(nonCurriedCombiningPredicate, [Boolean, Boolean])(1, 2);
+expectError(RA.argsPass(nonCurriedCombiningPredicate, [Boolean, Boolean])(1, 2));
 
-// @ts-expect-error
-RA.argsPass(combiningPredicate, [nonBoolPredicate])(1, 2);
+expectError(RA.argsPass(combiningPredicate, [nonBoolPredicate])(1, 2));

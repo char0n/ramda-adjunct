@@ -1,15 +1,16 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.isNotPrimitive(3); // $ExpectType boolean
-RA.isNotPrimitive(''); // $ExpectType boolean
-RA.isNotPrimitive(true); // $ExpectType boolean
-RA.isNotPrimitive(null); // $ExpectType boolean
-RA.isNotPrimitive(undefined); // $ExpectType boolean
-RA.isNotPrimitive(Symbol.for('')); // $ExpectType boolean
-RA.isNotPrimitive([]); // $ExpectType boolean
-RA.isNotPrimitive({}); // $ExpectType boolean
-RA.isNotPrimitive(() => {}); // $ExpectType boolean
-RA.isNotPrimitive(new Set()); // $ExpectType boolean
+expectType<boolean>(RA.isNotPrimitive(3));
+expectType<boolean>(RA.isNotPrimitive(''));
+expectType<boolean>(RA.isNotPrimitive(true));
+expectType<boolean>(RA.isNotPrimitive(null));
+expectType<boolean>(RA.isNotPrimitive(undefined));
+expectType<boolean>(RA.isNotPrimitive(Symbol.for('')));
+expectType<boolean>(RA.isNotPrimitive([]));
+expectType<boolean>(RA.isNotPrimitive({}));
+expectType<boolean>(RA.isNotPrimitive(() => {}));
+expectType<boolean>(RA.isNotPrimitive(new Set()));
 
 // test type narrowing
 interface SomeObj {
@@ -20,5 +21,5 @@ type PrimitiveOrSomeObj = SomeObj | string;
 const test: PrimitiveOrSomeObj = { a: 'hi' };
 
 if (RA.isNotPrimitive(test)) {
-  test; // $ExpectType SomeObj
+  expectType<SomeObj>(test);
 }

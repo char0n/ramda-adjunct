@@ -22,6 +22,6 @@ import { and, complement } from 'ramda';
  * RA.nand(0, 1.0); //=> true
  * RA.nand(0, 0); //=> true
  */
-const nand = complement(and); // eslint-disable-line ramda/complement-simplification
+const nand = complement(and);
 
 export default nand;

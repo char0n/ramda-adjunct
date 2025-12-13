@@ -7,7 +7,6 @@ const truncPonyfill = (v) => {
     return numV;
   }
 
-  // eslint-disable-next-line no-nested-ternary
   return numV - (numV % 1) || (numV < 0 ? -0 : numV === 0 ? numV : 0);
 };
 

@@ -1,6 +1,5 @@
 import { curry, map, tap } from 'ramda';
 
-/* eslint-disable max-len */
 /**
  * Runs the given list of functions in order with the supplied object, then returns the object.
  * Also known as the normal order sequencing combinator.
@@ -31,7 +30,6 @@ import { curry, map, tap } from 'ramda';
  *   R.toUpper
  * )('test'); //=> 'PREFIX TEST'
  */
-/* eslint-enable max-len */
 
 const seq = curry((fns, x) => tap((tx) => map((fn) => fn(tx))(fns))(x));
 

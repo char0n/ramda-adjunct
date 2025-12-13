@@ -1,7 +1,8 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.toArray([1, 2, 3]); // $ExpectType any[]
-RA.toArray(null); // $ExpectType any[]
-RA.toArray(undefined); // $ExpectType any[]
-RA.toArray(1); // $ExpectType any[]
-RA.toArray({}); // $ExpectType any[]
+expectType<any[]>(RA.toArray([1, 2, 3]));
+expectType<any[]>(RA.toArray(null));
+expectType<any[]>(RA.toArray(undefined));
+expectType<any[]>(RA.toArray(1));
+expectType<any[]>(RA.toArray({}));

@@ -21,7 +21,7 @@ const ap = curryN(2, (applyF, applyX) => {
   try {
     // new version of `ap` starting from ramda version > 0.23.0
     return applyF.ap(applyX);
-  } catch (e) {
+  } catch {
     // old version of `ap` till ramda version <= 0.23.0
     return applyX.ap(applyF);
   }

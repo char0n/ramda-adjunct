@@ -1,6 +1,7 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.isMap(new Map()); // $ExpectType boolean
+expectType<boolean>(RA.isMap(new Map()));
 // $ExpectType boolean
 RA.isMap(
   new Map([
@@ -8,16 +9,16 @@ RA.isMap(
     [2, 1],
   ])
 );
-RA.isMap(new Set()); // $ExpectType boolean
-RA.isMap(new Set([1, 2])); // $ExpectType boolean
-RA.isMap(+0); // $ExpectType boolean
-RA.isMap(null); // $ExpectType boolean
-RA.isMap(true); // $ExpectType boolean
-RA.isMap(NaN); // $ExpectType boolean
-RA.isMap({}); // $ExpectType boolean
-RA.isMap([]); // $ExpectType boolean
-RA.isMap(() => {}); // $ExpectType boolean
-RA.isMap('string'); // $ExpectType boolean
-RA.isMap(1); // $ExpectType boolean
-RA.isMap(Object()); // $ExpectType boolean
-RA.isMap(Object(5)); // $ExpectType boolean
+expectType<boolean>(RA.isMap(new Set()));
+expectType<boolean>(RA.isMap(new Set([1, 2])));
+expectType<boolean>(RA.isMap(+0));
+expectType<boolean>(RA.isMap(null));
+expectType<boolean>(RA.isMap(true));
+expectType<boolean>(RA.isMap(NaN));
+expectType<boolean>(RA.isMap({}));
+expectType<boolean>(RA.isMap([]));
+expectType<boolean>(RA.isMap(() => {}));
+expectType<boolean>(RA.isMap('string'));
+expectType<boolean>(RA.isMap(1));
+expectType<boolean>(RA.isMap(Object()));
+expectType<boolean>(RA.isMap(Object(5)));

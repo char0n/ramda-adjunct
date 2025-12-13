@@ -1,13 +1,11 @@
 import * as RA from 'ramda-adjunct';
 
 import { customIterable } from './helpers';
+import { expectType, expectError } from 'tsd';
 
-RA.allIdentical([1, 2, 3, 4]); // $ExpectType boolean
-RA.allIdentical([]); // $ExpectType boolean
+expectType<boolean>(RA.allIdentical([1, 2, 3, 4]));
+expectType<boolean>(RA.allIdentical([]));
 
-// @ts-expect-error
-RA.allIdentical({});
-// @ts-expect-error
-RA.allIdentical('a');
-// @ts-expect-error
-RA.allIdentical(customIterable);
+expectError(RA.allIdentical({}));
+expectError(RA.allIdentical('a'));
+expectError(RA.allIdentical(customIterable));

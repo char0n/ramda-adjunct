@@ -1,6 +1,5 @@
 import { complement, identity, pickBy, useWith } from 'ramda';
 
-/* eslint-disable max-len */
 /**
  * Returns a partial copy of an object containing only the keys
  * that don't satisfy the supplied predicate.
@@ -19,7 +18,7 @@ import { complement, identity, pickBy, useWith } from 'ramda';
  * const isLowerCase = (val, key) => key.toLowerCase() === key;
  * RA.omitBy(isLowerCase, {a: 1, b: 2, A: 3, B: 4}); //=> {A: 3, B: 4}
  */
-/* eslint-enable max-len */
+
 const omitBy = useWith(pickBy, [complement, identity]);
 
 export default omitBy;

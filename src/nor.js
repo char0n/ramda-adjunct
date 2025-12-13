@@ -23,6 +23,6 @@ import { or, complement } from 'ramda';
  * RA.nor(0, 1); //=> false
  * RA.nor(0, 0); //=> true
  */
-const nor = complement(or); // eslint-disable-line ramda/complement-simplification
+const nor = complement(or);
 
 export default nor;

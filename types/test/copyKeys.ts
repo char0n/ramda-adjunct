@@ -1,16 +1,12 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.copyKeys({ a: 'b' }, { a: true }); // $ExpectType object
-RA.copyKeys({ a: 'b' }, { a: true, b: false }); // $ExpectType object
-RA.copyKeys({ a: 'b' })({ a: true }); // $ExpectType object
+expectType<object>(RA.copyKeys({ a: 'b' }, { a: true }));
+expectType<object>(RA.copyKeys({ a: 'b' }, { a: true, b: false }));
+expectType<object>(RA.copyKeys({ a: 'b' })({ a: true }));
 
-// @ts-expect-error
-RA.copyKeys()();
-// @ts-expect-error
-RA.copyKeys();
-// @ts-expect-error
-RA.copyKeys(1, {});
-// @ts-expect-error
-RA.copyKeys(null, {});
-// @ts-expect-error
-RA.copyKeys({}, '');
+expectError(RA.copyKeys()());
+expectError(RA.copyKeys());
+expectError(RA.copyKeys(1, {}));
+expectError(RA.copyKeys(null, {}));
+expectError(RA.copyKeys({}, ''));

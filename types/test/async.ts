@@ -1,9 +1,7 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.async(() => {}); // $ExpectType Function
-// @ts-expect-error
-RA.async(1);
-// @ts-expect-error
-RA.async('');
-// @ts-expect-error
-RA.async({});
+expectType<Function>(RA.async(() => {}));
+expectError(RA.async(1));
+expectError(RA.async(''));
+expectError(RA.async({}));

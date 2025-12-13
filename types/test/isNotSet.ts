@@ -1,16 +1,17 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.isNotSet(new Set()); // $ExpectType boolean
-RA.isNotSet(new Set([1, 2])); // $ExpectType boolean
-RA.isNotSet(+0); // $ExpectType boolean
-RA.isNotSet(null); // $ExpectType boolean
-RA.isNotSet(true); // $ExpectType boolean
-RA.isNotSet(NaN); // $ExpectType boolean
-RA.isNotSet({}); // $ExpectType boolean
-RA.isNotSet([]); // $ExpectType boolean
-RA.isNotSet(() => {}); // $ExpectType boolean
-RA.isNotSet('string'); // $ExpectType boolean
-RA.isNotSet(1); // $ExpectType boolean
-RA.isNotSet(Object()); // $ExpectType boolean
-RA.isNotSet(Object(5)); // $ExpectType boolean
-RA.isNotSet(new Map()); // $ExpectType boolean
+expectType<boolean>(RA.isNotSet(new Set()));
+expectType<boolean>(RA.isNotSet(new Set([1, 2])));
+expectType<boolean>(RA.isNotSet(+0));
+expectType<boolean>(RA.isNotSet(null));
+expectType<boolean>(RA.isNotSet(true));
+expectType<boolean>(RA.isNotSet(NaN));
+expectType<boolean>(RA.isNotSet({}));
+expectType<boolean>(RA.isNotSet([]));
+expectType<boolean>(RA.isNotSet(() => {}));
+expectType<boolean>(RA.isNotSet('string'));
+expectType<boolean>(RA.isNotSet(1));
+expectType<boolean>(RA.isNotSet(Object()));
+expectType<boolean>(RA.isNotSet(Object(5)));
+expectType<boolean>(RA.isNotSet(new Map()));

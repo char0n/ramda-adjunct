@@ -1,18 +1,19 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.isSparseArray(new Array(3)); // $ExpectType boolean
+expectType<boolean>(RA.isSparseArray(new Array(3)));
 // tslint:disable-next-line:no-sparse-arrays
-RA.isSparseArray([1, , 3]); // $ExpectType boolean
+expectType<boolean>(RA.isSparseArray([1, , 3]));
 
-RA.isSparseArray([1, 2, 3]); // $ExpectType boolean
-RA.isSparseArray([]); // $ExpectType boolean
-RA.isSparseArray(new Array(0)); // $ExpectType boolean
+expectType<boolean>(RA.isSparseArray([1, 2, 3]));
+expectType<boolean>(RA.isSparseArray([]));
+expectType<boolean>(RA.isSparseArray(new Array(0)));
 
-RA.isSparseArray(new Date()); // $ExpectType boolean
-RA.isSparseArray(new Error()); // $ExpectType boolean
-RA.isSparseArray(RA.isSparseArray); // $ExpectType boolean
-RA.isSparseArray({ a: 1 }); // $ExpectType boolean
-RA.isSparseArray(3); // $ExpectType boolean
-RA.isSparseArray(/regex/); // $ExpectType boolean
-RA.isSparseArray('abc'); // $ExpectType boolean
-RA.isSparseArray(Symbol); // $ExpectType boolean
+expectType<boolean>(RA.isSparseArray(new Date()));
+expectType<boolean>(RA.isSparseArray(new Error()));
+expectType<boolean>(RA.isSparseArray(RA.isSparseArray));
+expectType<boolean>(RA.isSparseArray({ a: 1 }));
+expectType<boolean>(RA.isSparseArray(3));
+expectType<boolean>(RA.isSparseArray(/regex/));
+expectType<boolean>(RA.isSparseArray('abc'));
+expectType<boolean>(RA.isSparseArray(Symbol));

@@ -1,6 +1,7 @@
 import * as RA from 'ramda-adjunct';
+import { expectType } from 'tsd';
 
-RA.pathOrLazy(() => 7, ['a', 1, 'b'], {}); // $ExpectType number
-RA.pathOrLazy(() => 7, ['a', 1, 'b'])({}); // $ExpectType number
-RA.pathOrLazy(() => 7)(['a', 1, 'b'], {}); // $ExpectType number
-RA.pathOrLazy(() => 7)(['a', 1, 'b'])({}); // $ExpectType number
+expectType<number>(RA.pathOrLazy(() => 7, ['a', 1, 'b'], {}));
+expectType<number>(RA.pathOrLazy(() => 7, ['a', 1, 'b'])({}));
+expectType<number>(RA.pathOrLazy(() => 7)(['a', 1, 'b'], {}));
+expectType<number>(RA.pathOrLazy(() => 7)(['a', 1, 'b'])({}));

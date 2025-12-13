@@ -1,11 +1,9 @@
 import * as RA from 'ramda-adjunct';
+import { expectType, expectError } from 'tsd';
 
-RA.concatAll([[1], [2], [3]]); // $ExpectType number[] | undefined
-RA.concatAll([]); // $ExpectType undefined
+expectType<number[] | undefined>(RA.concatAll([[1], [2], [3]]));
+expectType<undefined>(RA.concatAll([]));
 
-// @ts-expect-error
-RA.concatAll(1);
-// @ts-expect-error
-RA.concatAll({});
-// @ts-expect-error
-RA.concatAll([1]);
+expectError(RA.concatAll(1));
+expectError(RA.concatAll({}));
+expectError(RA.concatAll([1]));

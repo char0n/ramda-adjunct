@@ -138,7 +138,6 @@ describe('curryRight', function () {
   });
 });
 
-/* eslint-disable max-len */
 describe('curryRight properties', function () {
   jsv.property(
     'should curry multiple values',
@@ -179,4 +178,3 @@ describe('curryRight properties', function () {
     }
   );
 });
-/* eslint-enable */

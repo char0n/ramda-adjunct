@@ -20,7 +20,6 @@ import { curryN } from 'ramda';
  * RA.toInteger32(2 ** 30); // => 1073741824
  */
 
-// eslint-disable-next-line no-bitwise
 const toUinteger32 = curryN(1, (val) => val >>> 0);
 
 export default toUinteger32;

@@ -1,6 +1,5 @@
 import { bind } from 'ramda';
 
-/* eslint-disable max-len */
 /**
  * Composable shortcut for `Promise.resolve`.
  *
@@ -22,7 +21,7 @@ import { bind } from 'ramda';
  * RA.resolveP('a'); //=> Promise('a')
  * RA.resolveP([1, 2, 3]); //=> Promise([1, 2, 3])
  */
-/* eslint-enable max-len */
+
 const resolveP = bind(Promise.resolve, Promise);
 
 export default resolveP;
