@@ -145,9 +145,9 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs/ramda-adjunct # The folder the action should deploy.
-          CLEAN: false # Automatically remove deleted files from the deploy branch
+          branch: gh-pages
+          folder: docs/ramda-adjunct
+          clean: false
       - name: Upload docs artifact
         uses: actions/upload-artifact@v6
         with:
