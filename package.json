@@ -143,7 +143,7 @@
     "regenerator-runtime": "=0.14.1",
     "rimraf": "6.1.2",
     "sanctuary-show": "3.0.0",
-    "sinon": "=21.0.0",
+    "sinon": "=21.0.1",
     "taffydb": "npm:@jsdoc/salty@0.2.9",
     "terser-webpack-plugin": "5.3.16",
     "testem": "=3.17.0",
