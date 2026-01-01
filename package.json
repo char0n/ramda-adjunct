@@ -105,7 +105,7 @@
     "@babel/preset-env": "=7.28.5",
     "@babel/register": "7.28.3",
     "@commitlint/cli": "=20.3.0",
-    "@commitlint/config-conventional": "=20.2.0",
+    "@commitlint/config-conventional": "=20.3.0",
     "@eslint/js": "^9.39.1",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
