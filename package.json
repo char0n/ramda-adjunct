@@ -118,7 +118,7 @@
     "core-js": "=3.48.0",
     "cross-env": "10.1.0",
     "docdash": "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
-    "eslint": "^9.39.1",
+    "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import-x": "^4.16.0",
     "eslint-plugin-mocha": "^11.2.0",
