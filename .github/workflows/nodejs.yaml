@@ -34,7 +34,7 @@ jobs:
 #          fossa-api-key: ccf8289006445461c967cb7874f84a8a
       - run: npm run build
       - name: Upload build artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: build_artifacts
           path: |
@@ -103,7 +103,7 @@ jobs:
         run: npm run coverage
       - name: Upload coverage report to codecov.io
         if: github.ref == 'refs/heads/master'
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           directory: ./coverage
           flags: unittests
@@ -111,7 +111,7 @@ jobs:
           verbose: true
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload coverage artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: coverage
           path: |
@@ -149,7 +149,7 @@ jobs:
           folder: docs/ramda-adjunct
           clean: false
       - name: Upload docs artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: docs
           path: ./docs
