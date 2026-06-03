@@ -375,6 +375,11 @@ export function isBigInt(val: any): boolean;
 export function isBlank(val: any): boolean;
 
 /**
+ * Checks if a value can be safely coerced to a number without throwing a `TypeError`.
+ */
+export function isCoercible(val: any): boolean;
+
+/**
  * Checks whether the passed value is a `float`.
  */
 export function isFloat(val: any): val is number;
