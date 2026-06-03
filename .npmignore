@@ -3,6 +3,7 @@
 /.nyc_output
 /.github
 /.claude
+/assets
 /coverage
 /docs
 /node_modules

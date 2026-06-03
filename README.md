@@ -32,7 +32,7 @@ articles about the library.
 <table>
   <tr>
     <td align="right" valign="middle">
-        <img src="https://cdn2.hubspot.net/hubfs/4008838/website/logos/logos_for_download/Tidelift_primary-shorthand-logo.png" alt="Tidelift" width="60" />
+        <img src="https://raw.githubusercontent.com/char0n/ramda-adjunct/master/assets/tidelift.webp" alt="Tidelift" width="60" />
       </td>
       <td valign="middle">
         <a href="https://tidelift.com/subscription/pkg/npm-ramda-adjunct?utm_source=npm-ramda-adjunct&utm_medium=referral&utm_campaign=readme">
