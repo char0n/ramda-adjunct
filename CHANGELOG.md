@@ -1,3 +1,15 @@
+# [6.1.0](https://github.com/char0n/ramda-adjunct/compare/v6.0.0...v6.1.0) (2026-06-03)
+
+
+### Bug Fixes
+
+* **docs:** fix broken TideLift image ([#3428](https://github.com/char0n/ramda-adjunct/issues/3428)) ([43efd43](https://github.com/char0n/ramda-adjunct/commit/43efd4345486522197abf890ca63bcefebadf4b1))
+
+
+### Features
+
+* **isCoercible:** move isCoercible to public API ([#3429](https://github.com/char0n/ramda-adjunct/issues/3429)) ([b745b48](https://github.com/char0n/ramda-adjunct/commit/b745b488939b02840470817bec8da1975641ee55))
+
 ## 6.0.0 (2025-12-13)
 
 * feat: add support for ramda@0.32.0 (#3357) ([614ded2](https://github.com/char0n/ramda-adjunct/commit/614ded2)), closes [#3357](https://github.com/char0n/ramda-adjunct/issues/3357)
