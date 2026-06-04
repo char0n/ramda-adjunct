@@ -1,45 +1,45 @@
-name: Merge me!
+name: Dependabot auto-merge
 
 on:
   pull_request_target:
+    types: [opened, synchronize, reopened]
+    branches: [master]
+
+concurrency:
+  group: dependabot-merge-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+# GITHUB_TOKEN needs no permissions: every API call goes through
+# MERGE_ME_GITHUB_TOKEN (a PAT that acts as a distinct identity from
+# dependabot[bot], satisfying the non-author review requirement).
+permissions: {}
 
 jobs:
-  merge-me:
-    name: Merge me!
+  dependabot-auto-merge:
+    name: Auto-merge non-major updates
     runs-on: ubuntu-latest
-    # Checking the actor will prevent your Action run failing on non-Dependabot
-    # PRs but also ensures that it only does work for Dependabot PRs.
-    if: github.actor == 'dependabot[bot]'
+    # Use pull_request.user.login (PR author, immutable) rather than
+    # github.actor — actor flips to whoever pushed the latest commit on
+    # `synchronize`, which would skip this job if a maintainer pushed a
+    # fixup to the dependabot branch.
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
-      - name: 'Wait for status checks'
-        id: waitforstatuschecks
-        uses: WyriHaximus/github-action-wait-for-status@v1.8.0
+      - name: Fetch Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v3
         with:
-          ignoreActions: Merge me!
-          checkInterval: 13
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # This first step will fail if there's no metadata and so the approval
-      # will not occur.
-      - name: Dependabot metadata
-        id: dependabot-metadata
-        uses: dependabot/fetch-metadata@v3.1.0
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      # Here the PR gets approved.
-      - name: Approve a PR
+          github-token: "${{ secrets.MERGE_ME_GITHUB_TOKEN }}"
+
+      - name: Approve PR
+        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
-      # Finally, tell dependabot to merge the PR if all checks are successful
-      - name: Instruct dependabot to squash & merge
-        if: ${{ steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major' }}
-        uses: mshick/add-pr-comment@v3
-        with:
-          repo-token: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
-          allow-repeats: true
-          message: |
-            @dependabot squash and merge
+          GH_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
+
+      - name: Enable auto-merge for non-major updates
+        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+        run: gh pr merge --auto --squash "$PR_URL"
         env:
-          GITHUB_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.MERGE_ME_GITHUB_TOKEN }}
