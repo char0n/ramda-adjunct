@@ -1,175 +1,178 @@
-{
-  "name": "ramda-adjunct",
-  "description": "Ramda Adjunct is the most popular and most comprehensive set of utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation.",
-  "keywords": [
-    "ramda",
-    "utils",
-    "utilities",
-    "toolkit",
-    "extensions",
-    "addons",
-    "adjunct",
-    "recipes",
-    "extras",
-    "cookbook",
-    "functional"
-  ],
-  "version": "6.2.0",
-  "homepage": "https://github.com/char0n/ramda-adjunct",
-  "license": "BSD-3-Clause",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/char0n/ramda-adjunct.git"
-  },
-  "funding": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/ramda-adjunct"
-  },
-  "engines": {
-    "node": ">=0.10.3"
-  },
-  "author": {
-    "name": "Vladimir Gorej",
-    "email": "vladimir.gorej@gmail.com",
-    "url": "https://www.linkedin.com/in/vladimirgorej/"
-  },
-  "contributors": [
-    {
-      "name": "Sergey Homa",
-      "url": "https://github.com/srghma"
-    },
-    {
-      "name": "Pedr Browne",
-      "url": "https://github.com/Undistraction"
-    },
-    {
-      "name": "Rocky Madden",
-      "url": "https://github.com/rockymadden"
-    },
-    {
-      "name": "Guillaume ARM",
-      "email": "trapcodien@gmail.com",
-      "url": "https://github.com/guillaumearm"
-    },
-    {
-      "name": "Alexander Zaika",
-      "email": "js636f@gmail.com",
-      "url": "https://github.com/js636f"
-    }
-  ],
-  "sideEffects": false,
-  "type": "module",
-  "main": "./lib/index.js",
-  "module": "./es/index.js",
-  "jsnext:main": "./es/index.js",
-  "unpkg": "./dist/RA.web.standalone.min.js",
-  "jsdelivr": "./dist/RA.web.standalone.min.js",
-  "types": "types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./es/index.js",
-      "require": "./lib/index.js",
-      "types": "./types/index.d.ts"
-    },
-    "./es/*": "./es/*.js",
-    "./lib/*": "./lib/*.js",
-    "./dist/*": "./dist/*"
-  },
-  "scripts": {
-    "docs": "jsdoc -c jsdoc.json && node ./scripts/jsdoc-inject-dist.cjs",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s",
-    "test": "mocha",
-    "test:web": "testem ci",
-    "test:ramda": "npm i --no-save ramda@0.32.0 && npm test",
-    "test:types": "tsd",
-    "test:bundle-create": "webpack --config webpack.config-test.web.cjs --progress",
-    "test:bundle-clean": "rimraf tmp-test-bundle.js",
-    "coverage": "c8 mocha",
-    "build": "npm run build:es && npm run build:commonjs && npm run build:umd",
-    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib && echo '{\"type\": \"commonjs\"}' > ./lib/package.json",
-    "build:umd": "webpack --config webpack.config.cjs --progress && echo '{\"type\": \"commonjs\"}' > ./dist/package.json",
-    "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run build && npm run docs",
-    "clean": "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es",
-    "prepare": "husky"
-  },
-  "peerDependencies": {
-    "ramda": ">= 0.32.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "7.29.7",
-    "@babel/core": "=7.29.7",
-    "@babel/plugin-transform-modules-commonjs": "=7.29.7",
-    "@babel/preset-env": "=7.29.7",
-    "@babel/register": "7.29.7",
-    "@commitlint/cli": "=20.4.1",
-    "@commitlint/config-conventional": "=20.4.1",
-    "@eslint/js": "^10.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.60.1",
-    "@typescript-eslint/parser": "^8.60.1",
-    "assert": "=2.1.0",
-    "babel-loader": "=10.1.1",
-    "babel-plugin-annotate-pure-calls": "0.5.0",
-    "c8": "10.1.3",
-    "chai": "6.2.2",
-    "conventional-changelog-cli": "5.0.0",
-    "core-js": "=3.49.0",
-    "cross-env": "10.1.0",
-    "docdash": "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
-    "eslint": "^10.0.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import-x": "^4.16.2",
-    "eslint-plugin-mocha": "^11.2.0",
-    "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-ramda": "^2.5.1",
-    "fantasy-land": "5.0.1",
-    "fantasy-laws": "=2.0.1",
-    "folktale": "=2.3.2",
-    "glob": "=13.0.6",
-    "husky": "9.1.7",
-    "jsdoc": "=4.0.5",
-    "jsverify": "0.8.4",
-    "lint-staged": "17.0.7",
-    "mocha": "=11.7.6",
-    "mocha-junit-reporter": "2.2.1",
-    "mocha-multi-reporters": "1.5.1",
-    "monet": "0.9.3",
-    "prettier": "=3.8.4",
-    "process": "=0.11.10",
-    "ramda": "=0.32.0",
-    "ramda-fantasy": "=0.8.0",
-    "regenerator-runtime": "=0.14.1",
-    "rimraf": "6.1.3",
-    "sanctuary-show": "3.0.0",
-    "sinon": "=21.0.1",
-    "taffydb": "npm:@jsdoc/salty@0.2.9",
-    "terser-webpack-plugin": "5.6.1",
-    "testem": "=3.20.1",
-    "tsd": "0.33.0",
-    "typescript": "=5.9.3",
-    "webpack": "=5.107.2",
-    "webpack-cli": "7.0.3"
-  },
-  "tsd": {
-    "directory": "types/test",
-    "typingsFile": "types/index.d.ts",
-    "compilerOptions": {
-      "strict": true,
-      "baseUrl": ".",
-      "paths": {
-        "ramda-adjunct": [
-          "types/index.d.ts"
-        ]
-      }
-    }
-  },
-  "browserslist": "> 0.25%, ie 10, ie 11, not op_mini all",
-  "tonicExampleFilename": "tonicExample.js",
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/ramda-adjunct",
-    "logo": "https://opencollective.com/ramda-adjunct/logo.txt"
-  }
+﻿{
+    "name":  "ramda-adjunct",
+    "description":  "Ramda Adjunct is the most popular and most comprehensive set of utilities for use with Ramda, providing a variety of useful, well tested functions with excellent documentation.",
+    "keywords":  [
+                     "ramda",
+                     "utils",
+                     "utilities",
+                     "toolkit",
+                     "extensions",
+                     "addons",
+                     "adjunct",
+                     "recipes",
+                     "extras",
+                     "cookbook",
+                     "functional"
+                 ],
+    "version":  "6.2.0",
+    "homepage":  "https://github.com/char0n/ramda-adjunct",
+    "license":  "BSD-3-Clause",
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git://github.com/char0n/ramda-adjunct.git"
+                   },
+    "funding":  {
+                    "type":  "opencollective",
+                    "url":  "https://opencollective.com/ramda-adjunct"
+                },
+    "engines":  {
+                    "node":  "\u003e=0.10.3"
+                },
+    "author":  {
+                   "name":  "Vladimir Gorej",
+                   "email":  "vladimir.gorej@gmail.com",
+                   "url":  "https://www.linkedin.com/in/vladimirgorej/"
+               },
+    "contributors":  [
+                         {
+                             "name":  "Sergey Homa",
+                             "url":  "https://github.com/srghma"
+                         },
+                         {
+                             "name":  "Pedr Browne",
+                             "url":  "https://github.com/Undistraction"
+                         },
+                         {
+                             "name":  "Rocky Madden",
+                             "url":  "https://github.com/rockymadden"
+                         },
+                         {
+                             "name":  "Guillaume ARM",
+                             "email":  "trapcodien@gmail.com",
+                             "url":  "https://github.com/guillaumearm"
+                         },
+                         {
+                             "name":  "Alexander Zaika",
+                             "email":  "js636f@gmail.com",
+                             "url":  "https://github.com/js636f"
+                         }
+                     ],
+    "sideEffects":  false,
+    "type":  "module",
+    "main":  "./lib/index.js",
+    "module":  "./es/index.js",
+    "jsnext:main":  "./es/index.js",
+    "unpkg":  "./dist/RA.web.standalone.min.js",
+    "jsdelivr":  "./dist/RA.web.standalone.min.js",
+    "types":  "types/index.d.ts",
+    "exports":  {
+                    ".":  {
+                              "import":  "./es/index.js",
+                              "require":  "./lib/index.js",
+                              "types":  "./types/index.d.ts"
+                          },
+                    "./es/*":  "./es/*.js",
+                    "./lib/*":  "./lib/*.js",
+                    "./dist/*":  "./dist/*"
+                },
+    "scripts":  {
+                    "docs":  "jsdoc -c jsdoc.json \u0026\u0026 node ./scripts/jsdoc-inject-dist.cjs",
+                    "lint":  "eslint .",
+                    "lint:fix":  "eslint --fix .",
+                    "changelog":  "conventional-changelog -p angular -i ./CHANGELOG.md -s",
+                    "test":  "mocha",
+                    "test:web":  "testem ci",
+                    "test:ramda":  "npm i --no-save ramda@0.32.0 \u0026\u0026 npm test",
+                    "test:types":  "tsd",
+                    "test:bundle-create":  "webpack --config webpack.config-test.web.cjs --progress",
+                    "test:bundle-clean":  "rimraf tmp-test-bundle.js",
+                    "coverage":  "c8 mocha",
+                    "build":  "npm run build:es \u0026\u0026 npm run build:commonjs \u0026\u0026 npm run build:umd",
+                    "build:es":  "cross-env BABEL_ENV=es babel src --out-dir es",
+                    "build:commonjs":  "cross-env BABEL_ENV=commonjs babel src --out-dir lib \u0026\u0026 echo \u0027{\"type\": \"commonjs\"}\u0027 \u003e ./lib/package.json",
+                    "build:umd":  "webpack --config webpack.config.cjs --progress \u0026\u0026 echo \u0027{\"type\": \"commonjs\"}\u0027 \u003e ./dist/package.json",
+                    "prepublishOnly":  "npm run clean \u0026\u0026 npm run lint \u0026\u0026 npm run test \u0026\u0026 npm run build \u0026\u0026 npm run docs",
+                    "clean":  "rimraf .nyc_output .tmp docs coverage tmp-test-bundle.js dist lib es",
+                    "prepare":  "husky"
+                },
+    "peerDependencies":  {
+                             "ramda":  "\u003e= 0.32.0"
+                         },
+    "devDependencies":  {
+                            "@babel/cli":  "7.29.7",
+                            "@babel/core":  "=7.29.7",
+                            "@babel/plugin-transform-modules-commonjs":  "=7.29.7",
+                            "@babel/preset-env":  "=7.29.7",
+                            "@babel/register":  "7.29.7",
+                            "@commitlint/cli":  "=20.4.1",
+                            "@commitlint/config-conventional":  "=20.4.1",
+                            "@eslint/js":  "^10.0.1",
+                            "@typescript-eslint/eslint-plugin":  "^8.60.1",
+                            "@typescript-eslint/parser":  "^8.60.1",
+                            "assert":  "=2.1.0",
+                            "babel-loader":  "=10.1.1",
+                            "babel-plugin-annotate-pure-calls":  "0.5.0",
+                            "c8":  "10.1.3",
+                            "chai":  "6.2.2",
+                            "conventional-changelog-cli":  "5.0.0",
+                            "core-js":  "=3.49.0",
+                            "cross-env":  "10.1.0",
+                            "docdash":  "git+https://github.com/char0n/docdash.git#534b44382138a55dd8d93642c979e51e46471185",
+                            "eslint":  "^10.0.0",
+                            "eslint-config-prettier":  "^10.1.8",
+                            "eslint-plugin-import-x":  "^4.16.2",
+                            "eslint-plugin-mocha":  "^11.2.0",
+                            "eslint-plugin-prettier":  "^5.5.4",
+                            "eslint-plugin-ramda":  "^2.5.1",
+                            "fantasy-land":  "5.0.1",
+                            "fantasy-laws":  "=2.0.1",
+                            "folktale":  "=2.3.2",
+                            "glob":  "=13.0.6",
+                            "husky":  "9.1.7",
+                            "jsdoc":  "=4.0.5",
+                            "jsverify":  "0.8.4",
+                            "lint-staged":  "17.0.7",
+                            "mocha":  "=11.7.6",
+                            "mocha-junit-reporter":  "2.2.1",
+                            "mocha-multi-reporters":  "1.5.1",
+                            "monet":  "0.9.3",
+                            "prettier":  "=3.8.4",
+                            "process":  "=0.11.10",
+                            "ramda":  "=0.32.0",
+                            "ramda-fantasy":  "=0.8.0",
+                            "regenerator-runtime":  "=0.14.1",
+                            "rimraf":  "6.1.3",
+                            "sanctuary-show":  "3.0.0",
+                            "sinon":  "=21.0.1",
+                            "taffydb":  "npm:@jsdoc/salty@0.2.9",
+                            "terser-webpack-plugin":  "5.6.1",
+                            "testem":  "=3.20.1",
+                            "tsd":  "0.33.0",
+                            "typescript":  "=5.9.3",
+                            "webpack":  "=5.107.2",
+                            "webpack-cli":  "7.0.3"
+                        },
+    "tsd":  {
+                "directory":  "types/test",
+                "typingsFile":  "types/index.d.ts",
+                "compilerOptions":  {
+                                        "strict":  true,
+                                        "baseUrl":  ".",
+                                        "paths":  {
+                                                      "ramda-adjunct":  [
+                                                                            "types/index.d.ts"
+                                                                        ]
+                                                  }
+                                    }
+            },
+    "browserslist":  "\u003e 0.25%, ie 10, ie 11, not op_mini all",
+    "tonicExampleFilename":  "tonicExample.js",
+    "collective":  {
+                       "type":  "opencollective",
+                       "url":  "https://opencollective.com/ramda-adjunct",
+                       "logo":  "https://opencollective.com/ramda-adjunct/logo.txt"
+                   },
+    "bugs":  {
+                 "url":  "https://github.com/char0n/ramda-adjunct/issues"
+             }
 }
