@@ -104,7 +104,7 @@
     "@babel/plugin-transform-modules-commonjs": "=7.29.7",
     "@babel/preset-env": "=7.29.7",
     "@babel/register": "7.29.7",
-    "@commitlint/cli": "=20.4.1",
+    "@commitlint/cli": "=21.1.0",
     "@commitlint/config-conventional": "=20.4.1",
     "@eslint/js": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^8.60.1",
