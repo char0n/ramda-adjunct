@@ -150,7 +150,7 @@
     "tsd": "0.33.0",
     "typescript": "=5.9.3",
     "webpack": "=5.107.2",
-    "webpack-cli": "7.0.3"
+    "webpack-cli": "7.2.2"
   },
   "tsd": {
     "directory": "types/test",
