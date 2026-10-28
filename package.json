@@ -149,7 +149,7 @@
     "testem": "=3.21.3",
     "tsd": "0.33.0",
     "typescript": "=5.9.3",
-    "webpack": "=5.111.1",
+    "webpack": "=5.112.2",
     "webpack-cli": "7.2.3"
   },
   "tsd": {
